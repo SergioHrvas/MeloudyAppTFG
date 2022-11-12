@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  12 NOV 2022 12:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  12 NOV 2022 13:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -373,7 +373,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (./portada/portada.tex
 \centeroffset=\skip69
-<imagenes/logo_ugr.jpg, id=44, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=60, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -389,7 +389,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=45, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=61, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 33.
@@ -551,40 +551,60 @@ l.1 \chapter
 
 ]
 Cap\'{\i }tulo 5.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has been already used, duplicate ignored
+) (./capitulos/06_Diseño.texpdfTeX warning (ext4): destination with the same identifier (name{page.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.228 \chapter
-              *{} [9]pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has been already used, duplicate ignored
+l.1 \chapter
+            {Diseño} [9]pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.228 \chapter
-              *{} [10
+l.1 \chapter
+            {Diseño} [10
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
+]
+Cap\'{\i }tulo 6.
+) (./capitulos/07_Implementacion.texpdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.231 \end{document}
-                     [11] (./proyecto.aux
+l.1 \chapter
+            {Implementación} [11]pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Implementación} [12
+
+]
+Cap\'{\i }tulo 7.
+) (./capitulos/08_Pruebas.tex [13] [14
+
+]
+Cap\'{\i }tulo 8.
+) (./capitulos/09_Conclusion.tex [15] [16
+
+]
+Cap\'{\i }tulo 9.
+) [17] [18
+
+] [19] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: DE087D75660B178594223986D5C3802A;1414.
+(rerunfilecheck)             Checksum: CC4F43DE0FA4F363DB6C268DC743A4C3;1791.
  ) 
 Here is how much of TeX's memory you used:
- 12558 strings out of 478287
- 199561 string characters out of 5849290
+ 12599 strings out of 478287
+ 200374 string characters out of 5849290
  505084 words of memory out of 5000000
- 30524 multiletter control sequences out of 15000+600000
+ 30542 multiletter control sequences out of 15000+600000
  476035 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,271b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on proyecto.pdf (31 pages, 195551 bytes).
+Output written on proyecto.pdf (39 pages, 199675 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 277 PDF objects out of 1000 (max. 8388607)
+ 220 compressed objects within 3 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

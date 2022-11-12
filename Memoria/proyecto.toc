@@ -9,3 +9,7 @@
 \contentsline {chapter}{\numberline {3}Especificación de requisitos}{5}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Planificacion}{7}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Análisis del problema}{9}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Diseño}{11}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Implementación}{13}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pruebas}{15}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{17}{chapter.9}%
