@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  12 NOV 2022 13:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  13 NOV 2022 00:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -501,25 +501,31 @@ LaTeX Info: Redefining \% on input line 1.
 
 ] (./capitulos/01_Introduccion.tex
 Cap\'{\i }tulo 1.
-) (./capitulos/02_EstadoDelArte.texpdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.27 
+      [1
+
+]) (./capitulos/02_EstadoDelArte.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1     \chapter
-                {Estado del Arte} [1
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1     \chapter
-                {Estado del Arte} [2
-
-]
+                {Estado del Arte} [2]
 Cap\'{\i }tulo 2.
 ) (./capitulos/03_Requisitos.texpdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Especificación de requisitos} [3]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+            {Especificación de requisitos} [3
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1 \chapter
@@ -593,15 +599,15 @@ Package rerunfilecheck Info: File `proyecto.out' has not changed.
 (rerunfilecheck)             Checksum: CC4F43DE0FA4F363DB6C268DC743A4C3;1791.
  ) 
 Here is how much of TeX's memory you used:
- 12599 strings out of 478287
- 200374 string characters out of 5849290
- 505084 words of memory out of 5000000
- 30542 multiletter control sequences out of 15000+600000
+ 12601 strings out of 478287
+ 200411 string characters out of 5849290
+ 507084 words of memory out of 5000000
+ 30544 multiletter control sequences out of 15000+600000
  476035 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,271b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,63p,281b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on proyecto.pdf (39 pages, 199675 bytes).
+Output written on proyecto.pdf (39 pages, 203693 bytes).
 PDF statistics:
  277 PDF objects out of 1000 (max. 8388607)
  220 compressed objects within 3 object streams
