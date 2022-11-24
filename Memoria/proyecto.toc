@@ -6,26 +6,25 @@
 \contentsline {section}{\numberline {2.1}Software a desarrollar}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Aplicaciones de aprendizaje}{5}{subsection.2.1.1}%
 \contentsline {subsubsection}{Duolingo}{5}{section*.7}%
-\contentsline {subsubsection}{FisicaMaster \& QuímicaMaster}{6}{section*.8}%
-\contentsline {subsubsection}{BMath}{6}{section*.9}%
-\contentsline {subsubsection}{Academons}{6}{section*.10}%
-\contentsline {subsection}{\numberline {2.1.2}Aplicaciones de aprendizaje musical}{6}{subsection.2.1.2}%
-\contentsline {subsubsection}{--}{6}{section*.11}%
-\contentsline {subsubsection}{--}{6}{section*.12}%
-\contentsline {subsubsection}{--}{6}{section*.13}%
-\contentsline {subsubsection}{Guitar Pro}{6}{section*.14}%
-\contentsline {section}{\numberline {2.2}Desarrollo de Software}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Flutter}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Kotlin}{6}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}React native}{6}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}NodeJS}{6}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}React}{6}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Angular}{6}{subsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.2.7}SQL}{6}{subsection.2.2.7}%
-\contentsline {chapter}{\numberline {3}Especificación de requisitos}{7}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Planificacion}{9}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Análisis del problema}{11}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Diseño}{13}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Implementación}{15}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Pruebas}{17}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{19}{chapter.9}%
+\contentsline {subsubsection}{Artly}{6}{section*.8}%
+\contentsline {subsubsection}{BMath}{7}{section*.9}%
+\contentsline {subsection}{\numberline {2.1.2}Aplicaciones de aprendizaje musical}{8}{subsection.2.1.2}%
+\contentsline {subsubsection}{Curso de Lenguaje Musical}{8}{section*.10}%
+\contentsline {subsubsection}{Sonid}{8}{section*.11}%
+\contentsline {subsubsection}{--}{9}{section*.12}%
+\contentsline {section}{\numberline {2.2}Desarrollo de Software}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Flutter}{9}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}React Native}{9}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Dart}{10}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Kotlin}{10}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}NodeJS}{10}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}React}{10}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Angular}{10}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}SQL}{10}{subsection.2.2.8}%
+\contentsline {chapter}{\numberline {3}Especificación de requisitos}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Planificacion}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Análisis del problema}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Diseño}{17}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Implementación}{19}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pruebas}{21}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{23}{chapter.9}%
