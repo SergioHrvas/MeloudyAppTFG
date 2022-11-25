@@ -17,14 +17,14 @@
 \contentsline {subsection}{\numberline {2.2.2}React Native}{9}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Dart}{10}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Kotlin}{10}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}NodeJS}{10}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}React}{10}{subsection.2.2.6}%
-\contentsline {subsection}{\numberline {2.2.7}Angular}{10}{subsection.2.2.7}%
-\contentsline {subsection}{\numberline {2.2.8}SQL}{10}{subsection.2.2.8}%
-\contentsline {chapter}{\numberline {3}Especificación de requisitos}{11}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Planificacion}{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Análisis del problema}{15}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Diseño}{17}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Implementación}{19}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Pruebas}{21}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{23}{chapter.9}%
+\contentsline {subsection}{\numberline {2.2.5}NodeJS}{11}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Angular}{11}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}React}{11}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}MariaDB}{11}{subsection.2.2.8}%
+\contentsline {chapter}{\numberline {3}Especificación de requisitos}{13}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Planificacion}{15}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Análisis del problema}{17}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Diseño}{19}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Implementación}{21}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pruebas}{23}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{25}{chapter.9}%

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1669332658 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1669332658
+["pdflatex"] 1669393355 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1669393356
   "/etc/texmf/web2c/texmf.cnf" 1650479083 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" 1669328671 5674 913fb8da263517149cbdcc30bb679aae ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -97,7 +97,7 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1654045634 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1654045653 2802494 bb80b4e57bfca042d26243ded76e77d9 ""
   "capitulos/01_Introduccion.tex" 1668644696 5506 205fed79503c59516ed30d5e78bc860a ""
-  "capitulos/02_EstadoDelArte.tex" 1669332658 8859 23ecf06321ed5f1651cc63f64d18a935 ""
+  "capitulos/02_EstadoDelArte.tex" 1669393355 11377 5752e2ed9d359ebe38a27dea723f8849 ""
   "capitulos/03_Requisitos.tex" 1668252757 40 102fbaeb8c77a93267f8974703f28c5f ""
   "capitulos/04_Planificacion.tex" 1668252763 24 f55c43eb24445ab008331e3048ec60c8 ""
   "capitulos/05_Analisis.tex" 1668252749 33 0c9fc73d61824ec4901e4737b32b3b89 ""
@@ -114,11 +114,11 @@
   "portada/portada.tex" 1668251997 1142 a402399b0f22146e34e4c13ff33dd541 ""
   "portada/portada_2.tex" 1668251614 1192 bbdcbec8504e23108950405322ec271f ""
   "prefacios/prefacio.tex" 1668251154 2618 b1bc60cf82215c54c475f5a6f76b3785 ""
-  "proyecto.aux" 1669332658 5411 3b859d26b50127ad8beed319f516233e "pdflatex"
-  "proyecto.lof" 1669332658 601 01d96180479510f487f081dcff2c9446 "pdflatex"
-  "proyecto.out" 1669332658 2955 db1725dc83bd3934fff13b541200fe56 "pdflatex"
+  "proyecto.aux" 1669393356 5415 d9245f79c35f568e37e52cfd442135f0 "pdflatex"
+  "proyecto.lof" 1669393356 601 01d96180479510f487f081dcff2c9446 "pdflatex"
+  "proyecto.out" 1669393356 2975 fe58b03f70c4db9f275d3fa39ccc5756 "pdflatex"
   "proyecto.tex" 1669328671 5674 913fb8da263517149cbdcc30bb679aae ""
-  "proyecto.toc" 1669332658 2164 0277429b79dc7f49d44db6aadbbbd07a "pdflatex"
+  "proyecto.toc" 1669393356 2168 dca0d3559235c20579f3658206c0a490 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.lof"
