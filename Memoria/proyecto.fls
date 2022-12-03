@@ -828,10 +828,11 @@ INPUT ./imagenes/c2/bmath.jpeg
 INPUT imagenes/c2/bmath.jpeg
 INPUT ./imagenes/c2/bmath.jpeg
 INPUT ./imagenes/c2/bmath.jpeg
-INPUT ./imagenes/c2/bmath.jpeg
-INPUT ./imagenes/c2/bmath.jpeg
-INPUT imagenes/c2/bmath.jpeg
-INPUT ./imagenes/c2/bmath.jpeg
+INPUT ./imagenes/c2/bmath2.jpeg
+INPUT ./imagenes/c2/bmath2.jpeg
+INPUT imagenes/c2/bmath2.jpeg
+INPUT ./imagenes/c2/bmath2.jpeg
+INPUT ./imagenes/c2/bmath2.jpeg
 INPUT ./imagenes/c2/cursomusica.jpeg
 INPUT ./imagenes/c2/cursomusica.jpeg
 INPUT imagenes/c2/cursomusica.jpeg

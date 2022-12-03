@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1669510468 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1669510468
+["pdflatex"] 1670084608 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1670084608
   "/etc/texmf/web2c/texmf.cnf" 1650479083 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" 1669508375 5730 3785d4e2454c7f2ef0c8817c08ab7429 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -103,8 +103,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1654045634 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1654045653 2802494 bb80b4e57bfca042d26243ded76e77d9 ""
-  "capitulos/01_Introduccion.tex" 1668644696 5506 205fed79503c59516ed30d5e78bc860a ""
-  "capitulos/02_EstadoDelArte.tex" 1669510467 18357 57ca6668f5efc57ddb4d9f2512edbd03 ""
+  "capitulos/01_Introduccion.tex" 1670080792 5331 4b8bf64de568f952aafc57882b679976 ""
+  "capitulos/02_EstadoDelArte.tex" 1670084607 18794 0b7494f14857455e3b83a13a08600585 ""
   "capitulos/03_Requisitos.tex" 1668252757 40 102fbaeb8c77a93267f8974703f28c5f ""
   "capitulos/04_Planificacion.tex" 1668252763 24 f55c43eb24445ab008331e3048ec60c8 ""
   "capitulos/05_Analisis.tex" 1668252749 33 0c9fc73d61824ec4901e4737b32b3b89 ""
@@ -115,6 +115,7 @@
   "imagenes/c2/MERN.png" 1669508265 100291 4e46ee86e41535f0939d13bca37b99cf ""
   "imagenes/c2/artly.jpeg" 1669326162 263311 b88dcf079863c2b57fd19397c367089c ""
   "imagenes/c2/bmath.jpeg" 1669329923 645309 bf2692de3a1195dbf54b87f74aa58522 ""
+  "imagenes/c2/bmath2.jpeg" 1669592735 327991 40fdd352c44fa5a1d84f49cb06f6371f ""
   "imagenes/c2/cursomusica.jpeg" 1669476028 899721 8edd98aec832a92bbb5f63ff4d644bf3 ""
   "imagenes/c2/dart.png" 1669482778 51517 9c836a1c10c99b1777e4afb0971d31c0 ""
   "imagenes/c2/duolingo.jpeg" 1669467588 212132 812502fba34969b8447345f4edbd3b71 ""
@@ -130,11 +131,11 @@
   "portada/portada.tex" 1668251997 1142 a402399b0f22146e34e4c13ff33dd541 ""
   "portada/portada_2.tex" 1668251614 1192 bbdcbec8504e23108950405322ec271f ""
   "prefacios/prefacio.tex" 1668251154 2618 b1bc60cf82215c54c475f5a6f76b3785 ""
-  "proyecto.aux" 1669510468 7212 8b00b2a1d18c571afa28e75a50cbc71b "pdflatex"
-  "proyecto.lof" 1669510468 1823 24a4b942690d300bba361c8a1e76cf26 "pdflatex"
-  "proyecto.out" 1669510468 3232 52ce4c66679460509cdc27b2ff585656 "pdflatex"
+  "proyecto.aux" 1670084608 8637 3b15f1ecf9cecebea53e1e4407695e8a "pdflatex"
+  "proyecto.lof" 1670084608 2146 1ebd71a8648289f46bfe1ae317ea61a2 "pdflatex"
+  "proyecto.out" 1670084608 3082 c063a34cf9864a9f25fbd3b06cc58d40 "pdflatex"
   "proyecto.tex" 1669508375 5730 3785d4e2454c7f2ef0c8817c08ab7429 ""
-  "proyecto.toc" 1669510468 2294 d5a09b94e66fb793516c008d613ea16a "pdflatex"
+  "proyecto.toc" 1670084608 2266 71b558e760dfcfc2bf2857b7ec86535a "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.lof"
