@@ -26,23 +26,23 @@
 \contentsline {section}{\numberline {3.1}Introducción}{19}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Propósito}{19}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Ámbito del Sistema}{19}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Definiciones, Acrónimos y Abreviaturas}{19}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.3}Definiciones, Acrónimos y Abreviaturas}{20}{subsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.1.4}Referencias}{20}{subsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.1.5}Visión General del Documento}{20}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}Descripción General}{20}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Perspectiva del producto}{20}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Funciones del producto}{20}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Características de los usuarios}{20}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Restricciones}{20}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Suposiciones y dependencias}{20}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Requisitos Específicos}{20}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Requisitos funcionales}{20}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Requisitos no funcionales}{20}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Requisitos de información}{20}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Bocetos de interfaz de usuario}{20}{subsection.3.3.4}%
-\contentsline {chapter}{\numberline {4}Planificacion}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Análisis del problema}{23}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Diseño}{25}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Implementación}{27}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Pruebas}{29}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{31}{chapter.9}%
+\contentsline {section}{\numberline {3.2}Descripción General}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Perspectiva del producto}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Funciones del producto}{21}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Características de los usuarios}{22}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Restricciones}{22}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Suposiciones y dependencias}{22}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Requisitos Específicos}{22}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Requisitos funcionales}{22}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Requisitos no funcionales}{22}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Requisitos de información}{22}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Bocetos de interfaz de usuario}{22}{subsection.3.3.4}%
+\contentsline {chapter}{\numberline {4}Planificacion}{23}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Análisis del problema}{25}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Diseño}{27}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Implementación}{29}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pruebas}{31}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{33}{chapter.9}%

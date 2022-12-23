@@ -14,29 +14,72 @@ conocer las necesidades del sistema y a los usuarios finales.
 Además, este documento servirá como base para el desarrollo de las funcionalidades descritas y como medio de comunicación 
 entre las partes involucradas en el proyecto.
 \subsection{Ámbito del Sistema}
-El sistema que vamos a desarrollar es una aplicación multiplataforma que permitirá a los usuarios
-aprender conceptos musicales de una forma amena y divertida.
+El sistema que vamos a desarrollar es una aplicación multiplataforma llamada "Meloudy" que permitirá a los usuarios
+aprender conceptos musicales de una forma amena y divertida. La aplicación llevará el progreso de los usuarios que les permitirá saber cómo van en su aprendizaje.
+
+Las gestiones que se realizarán en el sistema son:
+\begin{itemize}
+    \item \textbf{Gestión de usuarios: } El sistema permitirá a los administradores crear y eliminar usuarios, además de modificar sus datos. Los usuarios también podrán
+    modificar sus datos.
+    \item \textbf{Gestión de lecciones: } El sistema facilitará la modificación de los textos de las lecciones y de las preguntas asociadas a estas.
+\end{itemize}
+
 
 \subsection{Definiciones, Acrónimos y Abreviaturas}
-
+A continuación se detallará el significado de algunos conceptos importantes para la comprensión del documento y de nuestro sistema.
 \begin{itemize}
     \item \textbf{Requisito:} Es una condición o característica que debe cumplir el sistema para satisfacer una necesidad o cumplir una función.
     \item \textbf{Funcionalidad:} Descripción de lo que debe hacer el producto software.
     \item \textbf{Restricción:} Condición que limita la funcionalidad del sistema.
-    \item \textbf{Interfaces externas:} 
-    \item \textbf{Rendimiento: }
-    \item \textbf{Usuarios/Cliente: }
-    \item \textbf{}
+    \item \textbf{Interfaces externas:} Tipo de requisito que incluye la interfaz de usuario (interacción entre el software y el usuario), los diseños de pantallas, las interfaces hardware y software, etc.
+    \item \textbf{Usuario: }Persona que utilizará la aplicación para la intención final de esta.
+    \item \textbf{Administrador: } Persona encargada del sistema software y del mantenimiento de este para su buen funcionamiento.
+    \item \textbf{RF / RNF:} Requisito funcional / Requisito No Funcional.
 \end{itemize}
 
 \subsection{Referencias}
-\subsection{Visión General del Documento}
+Esta sección de Especificación de requisitos ha sido redactada consultando los documentos del estándar IEEE Recommended Practice for Software Requirements Specification ANSI/IEEE 830, 1998.
 
+\subsection{Visión General del Documento}
+El documento consta de tres partes bien diferenciadas:
+\begin{itemize}
+    \item \textbf{Introducción:} Proporciona una visión general sobre el apartado de Especificación de Requisitos sin profundizar en los requisitos como tal.
+    \item \textbf{Descripción General:} Se describirá el sistema a construir para saber las funciones principales, los datos necesarios, las restricciones y otros aspectos que puedan afectar al desarrollo de la aplicación.
+    \item \textbf{Requisitos Específicos:} Se profundiza en las necesidades del usuario definiendo los requisitos que debe tener nuestro sistema tras el desarrollo y la implementación de este.
+\end{itemize}
 
 \section{Descripción General}
+A continuación, se procederá a describir con poco detalle los requisitos del sistema de una forma general para saber las funciones principales a desarrollar, las características de los usuarios, las dependencias, etc.
 \subsection{Perspectiva del producto}
+Se pretende implementar un sistema que permita el aprendizaje del usuario mediante técnicas de gamificación y ejercicios a resolver. Algunas de estas actividades utilizarán librerías para la detección de notas musicales
+a partir de la frecuencia captada por el micrófono del usuario y, por tanto, la aplicación dependerá de dichas librerías que se incluyan.
+Por otro lado, el sistema de administración y el progreso de los usuarios se llevará a cabo utilizando una base de datos en la que se almacenará la información necesaria de los usuarios y su progreso.
+
+La interacción de los usuarios con la aplicación será mediante una interfaz gráfica que podrá ser utilizada con la pantalla táctil o el ratón del dispositivo usado.
+
 \subsection{Funciones del producto}
+Las principales funciones que el usuario podrá realizar dentro de la aplicación son:
+\begin{itemize}
+    \item Selección de lecciones a aprender.
+    \item Respuesta (mediante selección o escritura) de las preguntas y actividades que ofrezca la aplicación.
+    \item Consulta del progreso individual, de los logros obtenidos y de la clasifiación global.
+    \item Modificación de los datos del perfil.
+\end {itemize}
+
+Además, el encargado/profesor se encargará de parte de la administración de las lecciones mediante:
+\begin{itemize}
+    \item Modificación y creación del texto de la lección
+    \item Modificación de las preguntas y actividades
+    \item Creación de preguntas para una lección
+\end{itemize}
+
 \subsection{Características de los usuarios}
+Los usuarios que usarán la aplicación tendrán distintos perfiles y abarcarán edades muy distintas. Aún así,
+el perfil objetivo para el uso del sistema será las personas jóvenes, pues suelen utilizar mucho más las nuevas tecnologías
+y estarán más familiarizados con este tipo de aplicaciones. No se necesita conocimiento musical previo para utilizar el software y, 
+de hecho, las lecciones pueden ser bastante básicas y sencillas para las personas que ya conozcan conceptos y aspectos avanzados del lenguaje musical.
+
+
 \subsection{Restricciones}
 \subsection{Suposiciones y dependencias}
 
