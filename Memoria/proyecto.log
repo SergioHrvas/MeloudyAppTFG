@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  23 DEC 2022 16:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  23 DEC 2022 17:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -437,7 +437,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )) (portada/portada.tex
 \centeroffset=\skip74
-<imagenes/logo_ugr.jpg, id=171, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=175, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -453,7 +453,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=172, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=176, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 33.
@@ -612,7 +612,7 @@ l.1 \chapter
 
 ]
 Cap\'{\i }tulo 2.
-<imagenes/c2/duolingo.png, id=350, 513.92pt x 513.92pt>
+<imagenes/c2/duolingo.png, id=355, 513.92pt x 513.92pt>
 File: imagenes/c2/duolingo.png Graphic file (type png)
 <use imagenes/c2/duolingo.png>
 Package pdftex.def Info: imagenes/c2/duolingo.png  used on input line 16.
@@ -623,7 +623,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has b
                    \relax 
 l.25 \newpage
               [5 <./imagenes/c2/duolingo.png>]
-<imagenes/c2/duolingo.jpeg, id=359, 221.8689pt x 446.6286pt>
+<imagenes/c2/duolingo.jpeg, id=364, 221.8689pt x 446.6286pt>
 File: imagenes/c2/duolingo.jpeg Graphic file (type jpg)
 <use imagenes/c2/duolingo.jpeg>
 Package pdftex.def Info: imagenes/c2/duolingo.jpeg  used on input line 43.
@@ -636,7 +636,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has b
                    \relax 
 l.53 
       [6 <./imagenes/c2/duolingo.jpeg>]
-<imagenes/c2/artly.jpeg, id=364, 221.8689pt x 448.7967pt>
+<imagenes/c2/artly.jpeg, id=369, 221.8689pt x 448.7967pt>
 File: imagenes/c2/artly.jpeg Graphic file (type jpg)
 <use imagenes/c2/artly.jpeg>
 Package pdftex.def Info: imagenes/c2/artly.jpeg  used on input line 64.
@@ -652,12 +652,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has b
                    \relax 
 l.76 
       [7 <./imagenes/c2/artly.jpeg>]
-<imagenes/c2/bmath.jpeg, id=371, 370.5042pt x 173.448pt>
+<imagenes/c2/bmath.jpeg, id=376, 370.5042pt x 173.448pt>
 File: imagenes/c2/bmath.jpeg Graphic file (type jpg)
 <use imagenes/c2/bmath.jpeg>
 Package pdftex.def Info: imagenes/c2/bmath.jpeg  used on input line 91.
 (pdftex.def)             Requested size: 360.0pt x 168.53018pt.
-<imagenes/c2/bmath2.jpeg, id=372, 370.5042pt x 173.448pt>
+<imagenes/c2/bmath2.jpeg, id=377, 370.5042pt x 173.448pt>
 File: imagenes/c2/bmath2.jpeg Graphic file (type jpg)
 <use imagenes/c2/bmath2.jpeg>
 Package pdftex.def Info: imagenes/c2/bmath2.jpeg  used on input line 99.
@@ -681,7 +681,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has b
                    \relax 
 l.106 \newpage
                [9 <./imagenes/c2/bmath2.jpeg>]
-<imagenes/c2/cursomusica.jpeg, id=381, 221.8689pt x 450.2421pt>
+<imagenes/c2/cursomusica.jpeg, id=386, 221.8689pt x 450.2421pt>
 File: imagenes/c2/cursomusica.jpeg Graphic file (type jpg)
 <use imagenes/c2/cursomusica.jpeg>
 Package pdftex.def Info: imagenes/c2/cursomusica.jpeg  used on input line 123.
@@ -694,12 +694,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has 
                    \relax 
 l.134 
        [10 <./imagenes/c2/cursomusica.jpeg>]
-<imagenes/c2/sonid.jpeg, id=388, 221.1462pt x 323.0469pt>
+<imagenes/c2/sonid.jpeg, id=393, 221.1462pt x 323.0469pt>
 File: imagenes/c2/sonid.jpeg Graphic file (type jpg)
 <use imagenes/c2/sonid.jpeg>
 Package pdftex.def Info: imagenes/c2/sonid.jpeg  used on input line 153.
 (pdftex.def)             Requested size: 126.0022pt x 184.0647pt.
-<imagenes/c2/sonid1.jpeg, id=389, 218.9781pt x 317.988pt>
+<imagenes/c2/sonid1.jpeg, id=394, 218.9781pt x 317.988pt>
 File: imagenes/c2/sonid1.jpeg Graphic file (type jpg)
 <use imagenes/c2/sonid1.jpeg>
 Package pdftex.def Info: imagenes/c2/sonid1.jpeg  used on input line 155.
@@ -712,12 +712,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has 
                    \relax 
 l.158 \newpage
                [11 <./imagenes/c2/sonid.jpeg> <./imagenes/c2/sonid1.jpeg>]
-<imagenes/c2/flutter.png, id=399, 801.99625pt x 228.855pt>
+<imagenes/c2/flutter.png, id=404, 801.99625pt x 228.855pt>
 File: imagenes/c2/flutter.png Graphic file (type png)
 <use imagenes/c2/flutter.png>
 Package pdftex.def Info: imagenes/c2/flutter.png  used on input line 170.
 (pdftex.def)             Requested size: 97.20154pt x 27.73378pt.
-<imagenes/c2/reactnative.png, id=400, 185.69376pt x 49.18375pt>
+<imagenes/c2/reactnative.png, id=405, 185.69376pt x 49.18375pt>
 File: imagenes/c2/reactnative.png Graphic file (type png)
 <use imagenes/c2/reactnative.png>
 Package pdftex.def Info: imagenes/c2/reactnative.png  used on input line 194.
@@ -730,7 +730,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has 
                    \relax 
 l.200 
        [12 <./imagenes/c2/flutter.png> <./imagenes/c2/reactnative.png>]
-<imagenes/c2/dart.png, id=406, 2007.5pt x 532.99126pt>
+<imagenes/c2/dart.png, id=411, 2007.5pt x 532.99126pt>
 File: imagenes/c2/dart.png Graphic file (type png)
 <use imagenes/c2/dart.png>
 Package pdftex.def Info: imagenes/c2/dart.png  used on input line 219.
@@ -745,7 +745,7 @@ LaTeX Info: Redefining \% on input line 239.
 LaTeX Info: Redefining \. on input line 271.
 LaTeX Info: Redefining \% on input line 271.
  [14]
-<imagenes/c2/mongodb.png, id=416, 291.0875pt x 104.39pt>
+<imagenes/c2/mongodb.png, id=421, 291.0875pt x 104.39pt>
 File: imagenes/c2/mongodb.png Graphic file (type png)
 <use imagenes/c2/mongodb.png>
 Package pdftex.def Info: imagenes/c2/mongodb.png  used on input line 297.
@@ -753,12 +753,12 @@ Package pdftex.def Info: imagenes/c2/mongodb.png  used on input line 297.
 LaTeX Info: Redefining \. on input line 304.
 LaTeX Info: Redefining \% on input line 304.
  [15 <./imagenes/c2/mongodb.png>]
-<imagenes/c2/MERN.png, id=422, 856.19875pt x 192.72pt>
+<imagenes/c2/MERN.png, id=427, 856.19875pt x 192.72pt>
 File: imagenes/c2/MERN.png Graphic file (type png)
 <use imagenes/c2/MERN.png>
 Package pdftex.def Info: imagenes/c2/MERN.png  used on input line 316.
 (pdftex.def)             Requested size: 251.9989pt x 56.71956pt.
-<imagenes/c2/mariadb.png, id=423, 417.56pt x 118.4425pt>
+<imagenes/c2/mariadb.png, id=428, 417.56pt x 118.4425pt>
 File: imagenes/c2/mariadb.png Graphic file (type png)
 <use imagenes/c2/mariadb.png>
 Package pdftex.def Info: imagenes/c2/mariadb.png  used on input line 328.
@@ -779,36 +779,39 @@ LaTeX Info: Redefining \% on input line 49.
  [20]
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
- [21]) (capitulos/04_Planificacion.tex
+ [21]
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
+ [22]) (capitulos/04_Planificacion.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [22]
-Cap\'{\i }tulo 4.
-) (capitulos/05_Analisis.tex [23
+ [23] [24
 
-] [24
+]
+Cap\'{\i }tulo 4.
+) (capitulos/05_Analisis.tex [25] [26
 
 ]
 Cap\'{\i }tulo 5.
-) (capitulos/06_Diseño.tex [25] [26
+) (capitulos/06_Diseño.tex [27] [28
 
 ]
 Cap\'{\i }tulo 6.
-) (capitulos/07_Implementacion.tex [27] [28
+) (capitulos/07_Implementacion.tex [29] [30
 
 ]
 Cap\'{\i }tulo 7.
-) (capitulos/08_Pruebas.tex [29] [30
+) (capitulos/08_Pruebas.tex [31] [32
 
 ]
 Cap\'{\i }tulo 8.
-) (capitulos/09_Conclusion.tex [31] [32
+) (capitulos/09_Conclusion.tex [33] [34
 
 ]
 Cap\'{\i }tulo 9.
-) [33] [34
+) [35] [36
 
-] [35] (proyecto.aux
+] [37] (proyecto.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -816,20 +819,20 @@ LaTeX Info: Redefining \% on input line 22.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 47C30300E8152D59C9927CB418DC2EA7;6106.
+(rerunfilecheck)             Checksum: B932E70FA79904378ACB7E6DDCDC9C79;6261.
  ) 
 Here is how much of TeX's memory you used:
- 14609 strings out of 475385
- 244624 string characters out of 2776906
+ 14613 strings out of 475385
+ 244672 string characters out of 2776906
  593382 words of memory out of 3000000
- 35617 multiletter control sequences out of 15000+600000
+ 35618 multiletter control sequences out of 15000+600000
  476643 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,13n,79p,384b,769s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on proyecto.pdf (55 pages, 3130564 bytes).
+Output written on proyecto.pdf (57 pages, 3133869 bytes).
 PDF statistics:
- 573 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
- 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 112 named destinations out of 1000 (max. 500000)
+ 425 words of extra memory for PDF output out of 10000 (max. 10000000)
 

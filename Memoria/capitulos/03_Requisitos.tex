@@ -81,8 +81,32 @@ de hecho, las lecciones pueden ser bastante básicas y sencillas para las person
 
 
 \subsection{Restricciones}
-\subsection{Suposiciones y dependencias}
 
+Las restricciones del sistema a desarrollar son:
+\begin{itemize}
+    \item La aplicación del cliente estará desarrollada en Flutter y/o Dart y para la del servidor se utilizará NodeJS con Express.
+    \item Se utilizarán las consultas, inserciones, modificaciones y borrados de MongoDB para la base de datos, usando un modelo no relacional.
+    \item Al hacer uso de librerías externas para desarrollar algunas de las funciones, el rendimiento y las limitaciones hardware pueden depender de estas.
+    \item No se podrá registrar un usuario en la aplicación con un correo o nombre de usuario ya existente.
+    \item Para completar una lección, el usuario deberá pasar por la pantalla del temario y de los ejercicios, respondiendo a estos.
+\end{itemize}
+
+
+Además, es posible que el sistema tenga que adaptarse a los cambios del entorno y necesite agregar con el paso del tiempo funcionalidades que añadan valor
+al producto. 
+
+
+\subsection{Suposiciones y dependencias}
+Los requisitos especificados en este documento pueden estar sujetos a cambios por motivos técnicos, de alcance o de refinamiento por la necesidad de la adaptación
+al entorno y a la evolución continua del proyecto. 
+
+No habrá ningúna suposición respecto al sistema operativo a utilizar puesto que pretendemos desarrollar una aplicación multiplataforma, aunque se priorizará el buen funcionamiento en Android y en navegadores web.
+
+Asumiremos también que las bibliotecas a utilizar para el desarrollo de ciertos requisitos funcionan correctamente y son estables.
+
+\subsection{Futuros requisitos}
+Puesto que el entorno puede ser cambiante, el sistema deberá adaptarse a los cambios y a las nuevas necesidades para los usuarios que surjan.
+Por tanto, es posible que se añadan nuevos requisitos cuando se modifiquen o añadan funcionalidades al software.
 
 \section{Requisitos Específicos}
 \subsection{Requisitos funcionales}
