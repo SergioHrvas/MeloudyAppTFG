@@ -935,6 +935,7 @@ INPUT capitulos\03_Requisitos.tex
 INPUT .\capitulos\03_Requisitos.tex
 INPUT .\capitulos\03_Requisitos.tex
 INPUT capitulos\03_Requisitos.tex
+INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT .\capitulos\04_Planificacion.tex
 INPUT .\capitulos\04_Planificacion.tex
 INPUT .\capitulos\04_Planificacion.tex
@@ -980,6 +981,8 @@ INPUT capitulos\09_Conclusion.tex
 INPUT proyecto.aux
 INPUT .\proyecto.out
 INPUT .\proyecto.out
+INPUT C:\Users\sergi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
+INPUT C:\Users\sergi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -996,3 +999,5 @@ INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
 INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
+INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\sergi\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb

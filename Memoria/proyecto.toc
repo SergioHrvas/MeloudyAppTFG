@@ -38,9 +38,9 @@
 \contentsline {subsection}{\numberline {3.2.6}Futuros requisitos}{23}{subsection.3.2.6}%
 \contentsline {section}{\numberline {3.3}Requisitos Específicos}{23}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Requisitos funcionales}{23}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Requisitos no funcionales}{23}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Requisitos de información}{23}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Bocetos de interfaz de usuario}{23}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.2}Requisitos no funcionales}{24}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Requisitos de información}{24}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Bocetos de interfaz de usuario}{24}{subsection.3.3.4}%
 \contentsline {chapter}{\numberline {4}Planificacion}{25}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Análisis del problema}{27}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Diseño}{29}{chapter.6}%

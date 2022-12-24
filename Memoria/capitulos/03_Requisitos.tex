@@ -109,7 +109,45 @@ Puesto que el entorno puede ser cambiante, el sistema deberá adaptarse a los ca
 Por tanto, es posible que se añadan nuevos requisitos cuando se modifiquen o añadan funcionalidades al software.
 
 \section{Requisitos Específicos}
+A continuación se listarán todos los requisitos que debe cumplir el sistema a desarrollar. Se dividirán en distintos tipos en función de sus objetivos.
+
 \subsection{Requisitos funcionales}
+En esta sección se presentan los requisitos relacionados con las funcionalidades del sistema y su comportamiento, sus servicios y las tareas que este debe realizar.
+
+\begin{itemize}
+    \item \textbf{General}
+    \begin{itemize}
+        \item \textbf{RF 1 - Registro de usuarios: }Los usuarios deberán registrarse en el sistema para utilizar la funcionalidad de la aplicación.
+        \item \textbf{RF 2 - Identificar usuarios: }Los usuarios deberán identificarse en el sistema con su cuenta para poder utilizar la funcionalidad de la aplicación.
+        
+    \end{itemize}
+    \item \textbf{Usuarios}
+    \begin{itemize}
+\item \textbf{RF 3 - Consultar datos de la cuenta: }Los usuarios podrán consultar los datos de su perfil.
+        \item \textbf{RF 4 - Modificar datos de la cuenta: }Los usuarios podrán modificar los datos de su perfil (imagen de perfil, nombre, contraseña...).
+        \item \textbf{RF 5 - Selección de lección: }Los usuarios podrán seleccionar la lección a estudiar de la lista de lecciones de la pantalla principal. 
+        \item \textbf{RF 6 - Responder preguntas: }Los usuarios podrán responder las preguntas de cada tipo en la lección que estén.
+            \begin{itemize}
+                \item \textbf{RF 6.1 - Responder con texto: }Los usuarios podrán responder preguntas que necesiten insertar texto como respuesta.
+                \item \textbf{RF 6.2 - Responder seleccionando una opción: }Los usuarios podrán responder preguntas que necesiten seleccionar una opción de varias que hay.
+                \item \textbf{RF 6.3 - Responder tocando una nota: }Los usuarios podrán responder preguntas que necesiten toca una nota de un instrumento y captarla por el micrófono.
+            \end{itemize}
+
+        \item \textbf{RF7 - Consultar ranking: }Los usuarios podrán consultar la clasificación global de los usuarios.
+        \item \textbf{RF8 - Consultar progreso: } Los usuarios podrán consultar su progreso y sus logros obtenidos en su perfil.
+    \end{itemize}
+    \item \textbf{Profesores}
+    \begin{itemize}
+        \item \textbf{RF 9 - Modificar temarios: }Los profesores podrán modificar el texto de los temarios de las distintas lecciones.
+        \item \textbf{RF 10 - Añadir lección: }Los profesores podrán 
+    \end{itemize}
+    \item \textbf{Administradores}
+    \begin{itemize}
+        \item \textbf{RF 11 - Modificar datos de usuarios: }Los administradores podrán modificar los datos de un usuario
+        \item \textbf{RF 12 - Crear usuario: }Los administradores podrán crear usuarios en el sistema
+        \item \textbf{RF 13 - Eliminar usuario: }Los administradores podrán eliminar usuarios registrados en el sistema
+    \end{itemize}
+\end{itemize}
 \subsection{Requisitos no funcionales}
 \subsection{Requisitos de información}
 \subsection{Bocetos de interfaz de usuario}
