@@ -2,28 +2,18 @@
 
 
 \section{Introducción}
-A continuación, vamos a describir y detallar los requisitos del sistema 
+A continuación, vamos a describir y detallar los requisitos del sistema
 que vamos a desarrollar. En esta sección se describirá qué vamos a construir y cómo lo vamos
 a hacer, con sus restricciones específicas.
 
 \subsection{Propósito}
-En este capítulo se pretende describir de forma clara y precisa las funciones, carasterísticas y restricciones 
-del sistema que se va a desarrollar. Estas definiciones servirán al equipo de desarrolo para 
-conocer las necesidades del sistema y a los usuarios finales. 
+En este capítulo se pretende describir de forma clara y precisa las funciones, carasterísticas y restricciones
+del sistema que se va a desarrollar. Estas definiciones servirán al equipo de desarrolo para
+conocer las necesidades del sistema y a los usuarios finales. Además, este documento servirá como base para el desarrollo de las funcionalidades descritas.
 
-Además, este documento servirá como base para el desarrollo de las funcionalidades descritas y como medio de comunicación 
-entre las partes involucradas en el proyecto.
 \subsection{Ámbito del Sistema}
 El sistema que vamos a desarrollar es una aplicación multiplataforma llamada "Meloudy" que permitirá a los usuarios
 aprender conceptos musicales de una forma amena y divertida. La aplicación llevará el progreso de los usuarios que les permitirá saber cómo van en su aprendizaje.
-
-Las gestiones que se realizarán en el sistema son:
-\begin{itemize}
-    \item \textbf{Gestión de usuarios: } El sistema permitirá a los administradores crear y eliminar usuarios, además de modificar sus datos. Los usuarios también podrán
-    modificar sus datos.
-    \item \textbf{Gestión de lecciones: } El sistema facilitará la modificación de los textos de las lecciones y de las preguntas asociadas a estas.
-\end{itemize}
-
 
 \subsection{Definiciones, Acrónimos y Abreviaturas}
 A continuación se detallará el significado de algunos conceptos importantes para la comprensión del documento y de nuestro sistema.
@@ -60,10 +50,10 @@ La interacción de los usuarios con la aplicación será mediante una interfaz g
 \subsection{Funciones del producto}
 Las principales funciones que el usuario podrá realizar dentro de la aplicación son:
 \begin{itemize}
-    \item Selección de lecciones a aprender.
-    \item Respuesta (mediante selección o escritura) de las preguntas y actividades que ofrezca la aplicación.
-    \item Consulta del progreso individual, de los logros obtenidos y de la clasifiación global.
-    \item Modificación de los datos del perfil.
+\item Selección de lecciones a aprender.
+\item Respuesta (mediante selección o escritura) de las preguntas y actividades que ofrezca la aplicación.
+\item Consulta del progreso individual, de los logros obtenidos y de la clasifiación global.
+\item Modificación de los datos del perfil.
 \end {itemize}
 
 Además, el encargado/profesor se encargará de parte de la administración de las lecciones mediante:
@@ -76,7 +66,7 @@ Además, el encargado/profesor se encargará de parte de la administración de l
 \subsection{Características de los usuarios}
 Los usuarios que usarán la aplicación tendrán distintos perfiles y abarcarán edades muy distintas. Aún así,
 el perfil objetivo para el uso del sistema será las personas jóvenes, pues suelen utilizar mucho más las nuevas tecnologías
-y estarán más familiarizados con este tipo de aplicaciones. No se necesita conocimiento musical previo para utilizar el software y, 
+y estarán más familiarizados con este tipo de aplicaciones. No se necesita conocimiento musical previo para utilizar el software y,
 de hecho, las lecciones pueden ser bastante básicas y sencillas para las personas que ya conozcan conceptos y aspectos avanzados del lenguaje musical.
 
 
@@ -93,12 +83,12 @@ Las restricciones del sistema a desarrollar son:
 
 
 Además, es posible que el sistema tenga que adaptarse a los cambios del entorno y necesite agregar con el paso del tiempo funcionalidades que añadan valor
-al producto. 
+al producto.
 
 
 \subsection{Suposiciones y dependencias}
 Los requisitos especificados en este documento pueden estar sujetos a cambios por motivos técnicos, de alcance o de refinamiento por la necesidad de la adaptación
-al entorno y a la evolución continua del proyecto. 
+al entorno y a la evolución continua del proyecto.
 
 No habrá ningúna suposición respecto al sistema operativo a utilizar puesto que pretendemos desarrollar una aplicación multiplataforma, aunque se priorizará el buen funcionamiento en Android y en navegadores web.
 
@@ -116,38 +106,66 @@ En esta sección se presentan los requisitos relacionados con las funcionalidade
 
 \begin{itemize}
     \item \textbf{General}
-    \begin{itemize}
-        \item \textbf{RF 1 - Registro de usuarios: }Los usuarios deberán registrarse en el sistema para utilizar la funcionalidad de la aplicación.
-        \item \textbf{RF 2 - Identificar usuarios: }Los usuarios deberán identificarse en el sistema con su cuenta para poder utilizar la funcionalidad de la aplicación.
-        
-    \end{itemize}
-    \item \textbf{Usuarios}
-    \begin{itemize}
-\item \textbf{RF 3 - Consultar datos de la cuenta: }Los usuarios podrán consultar los datos de su perfil.
-        \item \textbf{RF 4 - Modificar datos de la cuenta: }Los usuarios podrán modificar los datos de su perfil (imagen de perfil, nombre, contraseña...).
-        \item \textbf{RF 5 - Selección de lección: }Los usuarios podrán seleccionar la lección a estudiar de la lista de lecciones de la pantalla principal. 
-        \item \textbf{RF 6 - Responder preguntas: }Los usuarios podrán responder las preguntas de cada tipo en la lección que estén.
-            \begin{itemize}
-                \item \textbf{RF 6.1 - Responder con texto: }Los usuarios podrán responder preguntas que necesiten insertar texto como respuesta.
-                \item \textbf{RF 6.2 - Responder seleccionando una opción: }Los usuarios podrán responder preguntas que necesiten seleccionar una opción de varias que hay.
-                \item \textbf{RF 6.3 - Responder tocando una nota: }Los usuarios podrán responder preguntas que necesiten toca una nota de un instrumento y captarla por el micrófono.
-            \end{itemize}
+          \begin{itemize}
+              \item \textbf{RF 1 - Registro de usuarios: }Los usuarios deberán registrarse en el sistema para utilizar la funcionalidad de la aplicación.
+              \item \textbf{RF 2 - Identificar usuarios: }Los usuarios deberán identificarse en el sistema con su cuenta para poder utilizar la funcionalidad de la aplicación.
 
-        \item \textbf{RF7 - Consultar ranking: }Los usuarios podrán consultar la clasificación global de los usuarios.
-        \item \textbf{RF8 - Consultar progreso: } Los usuarios podrán consultar su progreso y sus logros obtenidos en su perfil.
-    \end{itemize}
-    \item \textbf{Profesores}
-    \begin{itemize}
-        \item \textbf{RF 9 - Modificar temarios: }Los profesores podrán modificar el texto de los temarios de las distintas lecciones.
-        \item \textbf{RF 10 - Añadir lección: }Los profesores podrán 
-    \end{itemize}
+          \end{itemize}
+    \item \textbf{Usuarios}
+          \begin{itemize}
+              \item \textbf{RF 3 - Consultar datos de la cuenta: }Los usuarios podrán consultar los datos de su perfil.
+              \item \textbf{RF 4 - Modificar datos de la cuenta: }Los usuarios podrán modificar los datos de su perfil (imagen de perfil, nombre, contraseña...).
+              \item \textbf{RF 5 - Selección de lección: }Los usuarios podrán seleccionar la lección a estudiar de la lista de lecciones de la pantalla principal.
+              \item \textbf{RF 6 - Responder preguntas: }Los usuarios podrán responder las preguntas de cada tipo en la lección que estén.
+                    \begin{itemize}
+                        \item \textbf{RF 6.1 - Responder con texto: }Los usuarios podrán responder preguntas que necesiten insertar texto como respuesta.
+                        \item \textbf{RF 6.2 - Responder seleccionando una opción: }Los usuarios podrán responder preguntas que necesiten seleccionar una opción de varias que hay.
+                        \item \textbf{RF 6.3 - Responder tocando una nota: }Los usuarios podrán responder preguntas que necesiten toca una nota de un instrumento y captarla por el micrófono.
+                    \end{itemize}
+
+              \item \textbf{RF7 - Consultar ranking: }Los usuarios podrán consultar la clasificación global de los usuarios.
+              \item \textbf{RF8 - Consultar progreso: } Los usuarios podrán consultar su progreso y sus logros obtenidos en su perfil.
+          \end{itemize}
+    \item \textbf{Profesores/Encargados}
+          \begin{itemize}
+              \item \textbf{RF 9 - Obtener lista de lecciones: } Los profesores podrán obtener una lista de todas las lecciones que existen en el sistema.
+              \item \textbf{RF 10 - Crear lección: }Los profesores podrán crear nuevas lecciones.
+              \item \textbf{RF 11 - Modificar temarios: }Los profesores podrán modificar el texto y las imágenes de los temarios de las distintas lecciones.
+              \item \textbf{RF 12 - Crear preguntas: } Los profesores podrán crear nuevas preguntas sobre las disintas lecciones
+              \item \textbf{RF 13 - Obtener lista de preguntas: } Los profesores podrán obtener una lista de todas las preguntas que existen en el sistema.
+              \item \textbf{RF 14 - Modificar preguntas: } Los profesores podrán modificar preguntas ya creadas.
+              \item \textbf{RF 15 - Eliminar preguntas: } Los profesores podrán eliminar preguntas del sistema.
+          \end{itemize}
     \item \textbf{Administradores}
-    \begin{itemize}
-        \item \textbf{RF 11 - Modificar datos de usuarios: }Los administradores podrán modificar los datos de un usuario
-        \item \textbf{RF 12 - Crear usuario: }Los administradores podrán crear usuarios en el sistema
-        \item \textbf{RF 13 - Eliminar usuario: }Los administradores podrán eliminar usuarios registrados en el sistema
-    \end{itemize}
+          \begin{itemize}
+              \item \textbf{RF 16 - Modificar datos de usuarios: }Los administradores podrán modificar los datos de un usuario
+              \item \textbf{RF 17 - Crear usuario: }Los administradores podrán crear usuarios en el sistema
+              \item \textbf{RF 18 - Obtener lista de usuarios: } Los administradores podrán obtener una lista con todos los usuarios registrados en el sistema.
+              \item \textbf{RF 19 - Eliminar usuario: }Los administradores podrán eliminar usuarios registrados en el sistema
+          \end{itemize}
 \end{itemize}
+
 \subsection{Requisitos no funcionales}
+Estos requisitos se refieren a aquellas condiciones que debe cumplir el sistema en cuanto a rendimiento, accesibilidad, seguridad, robustez...
+\begin{itemize}
+    \item \textbf{RNF 1 - } La aplicación cifrará las claves en todo momento para garantizar la seguridad de los usuarios.
+    \item \textbf{RNF 2 - } El número de usuarios simultáneos solo estará limitado por la capacidad del hardware del servidor.
+    \item \textbf{RNF 3 - } La cantidad máxima de datos a almacenar solo estará limitada por la capacidad del hardware del servidor de la base de datos.
+    \item \textbf{RNF 4 - } La aplicación será multiplataforma, pudiendose ejecutar en dispositivos (móvil, ordenador, tablet...) diferentes con distintos sistemas operativos (Windows, Android...)
+    \item \textbf{RNF 5 - } La aplicación será lo más accesible posible para personas con distintas discapacidades. 
+\end{itemize}
 \subsection{Requisitos de información}
-\subsection{Bocetos de interfaz de usuario}
+Los requisitos que se detallarán a continuación corresponden a aquellos relacionados con la información que se debe almacenar.
+\begin {itemize}
+    \item \textbf{RI 1 - }
+    \item \textbf{RI 2 - }
+\end {itemize}
+
+\subsection{Interfaces externas}
+En esta sección vamos a detallar los requisitos relacionados con las distintas interfaces relacionadas con el sistema, 
+tanto hardware, software o de usuario.
+
+\subsubsection{Interfaz de usuario}
+Se tratará que la interfaz de usuario siga un diseño minimalista y sencillo para facilitar el uso de la aplicación a todo tipo de personas y 
+garantizar cierto grado de accesibilidad. En cuanto a los colores, se usarán tonalidades de azul junto con grises.
+A continuación se presenta un primer boceto de lo que podría ser la interfaz de usuario para móviles.

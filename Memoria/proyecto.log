@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  24 DEC 2022 12:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.12.23)  12 JAN 2023 02:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -774,47 +774,50 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 Cap\'{\i }tulo 3.
 [19]
-LaTeX Info: Redefining \. on input line 49.
-LaTeX Info: Redefining \% on input line 49.
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
  [20]
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
  [21]
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
  [22]
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
- [23]) (capitulos/04_Planificacion.tex
+LaTeX Info: Redefining \. on input line 131.
+LaTeX Info: Redefining \% on input line 131.
+ [23]
+LaTeX Info: Redefining \. on input line 154.
+LaTeX Info: Redefining \% on input line 154.
+ [24]) (capitulos/04_Planificacion.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [24]
-Cap\'{\i }tulo 4.
-) (capitulos/05_Analisis.tex [25
+ [25] [26
 
-] [26
+]
+Cap\'{\i }tulo 4.
+) (capitulos/05_Analisis.tex [27] [28
 
 ]
 Cap\'{\i }tulo 5.
-) (capitulos/06_Diseño.tex [27] [28
+) (capitulos/06_Diseño.tex [29] [30
 
 ]
 Cap\'{\i }tulo 6.
-) (capitulos/07_Implementacion.tex [29] [30
+) (capitulos/07_Implementacion.tex [31] [32
 
 ]
 Cap\'{\i }tulo 7.
-) (capitulos/08_Pruebas.tex [31] [32
+) (capitulos/08_Pruebas.tex [33] [34
 
 ]
 Cap\'{\i }tulo 8.
-) (capitulos/09_Conclusion.tex [33] [34
+) (capitulos/09_Conclusion.tex [35] [36
 
 ]
 Cap\'{\i }tulo 9.
-) [35] [36
+) [37] [38
 
-] [37] (proyecto.aux
+] [39] (proyecto.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -822,20 +825,20 @@ LaTeX Info: Redefining \% on input line 22.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: B932E70FA79904378ACB7E6DDCDC9C79;6261.
+(rerunfilecheck)             Checksum: 37F1B5A8AB01B54B8C995E51C5C31C84;6197.
  ) 
 Here is how much of TeX's memory you used:
- 14616 strings out of 475385
- 244711 string characters out of 2776906
+ 14619 strings out of 475385
+ 244736 string characters out of 2776906
  593382 words of memory out of 3000000
  35620 multiletter control sequences out of 15000+600000
  476984 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,13n,79p,384b,769s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\sergi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/sergi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on proyecto.pdf (57 pages, 3145847 bytes).
+Output written on proyecto.pdf (59 pages, 3149030 bytes).
 PDF statistics:
- 596 PDF objects out of 1000 (max. 8388607)
- 112 named destinations out of 1000 (max. 500000)
+ 606 PDF objects out of 1000 (max. 8388607)
+ 115 named destinations out of 1000 (max. 500000)
  425 words of extra memory for PDF output out of 10000 (max. 10000000)
 
