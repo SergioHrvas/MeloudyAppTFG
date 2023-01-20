@@ -2,18 +2,21 @@
 
 
 \section{Introducción}
-A continuación, vamos a describir y detallar los requisitos del sistema
-que vamos a desarrollar. En esta sección se describirá qué vamos a construir y cómo lo vamos
-a hacer, con sus restricciones específicas.
+En esta sección se describirá qué vamos a construir y cómo lo vamos a hacer, 
+con sus restricciones específicas. Esto se realizará especificando y describiendo
+ detallar los requisitos del sistema que vamos a desarrollar. 
 
 \subsection{Propósito}
 En este capítulo se pretende describir de forma clara y precisa las funciones, carasterísticas y restricciones
 del sistema que se va a desarrollar. Estas definiciones servirán al equipo de desarrolo para
-conocer las necesidades del sistema y a los usuarios finales. Además, este documento servirá como base para el desarrollo de las funcionalidades descritas.
+conocer las necesidades del sistema y a los usuarios finales. Además, este documento será será consultado como
+base para el desarrollo de las funcionalidades descritas en la sección de implementación.
 
 \subsection{Ámbito del Sistema}
 El sistema que vamos a desarrollar es una aplicación multiplataforma llamada "Meloudy" que permitirá a los usuarios
-aprender conceptos musicales de una forma amena y divertida. La aplicación llevará el progreso de los usuarios que les permitirá saber cómo van en su aprendizaje.
+aprender conceptos musicales de una forma amena, fácil y divertida. Esto se logrará mediante el método de gamificación,
+utilizando un sistema de logros y de recompensas con la superación de los distintos ejercicios y actividades de distintos tipos que el usuario deberá completar.
+Además, la aplicación llevará el progreso de los usuarios que les permitirá saber cómo van en su aprendizaje.
 
 \subsection{Definiciones, Acrónimos y Abreviaturas}
 A continuación se detallará el significado de algunos conceptos importantes para la comprensión del documento y de nuestro sistema.
@@ -154,28 +157,25 @@ Estos requisitos se refieren a aquellas condiciones que debe cumplir el sistema 
     \item \textbf{RNF 4 - } La aplicación será multiplataforma, pudiendose ejecutar en dispositivos (móvil, ordenador, tablet...) diferentes con distintos sistemas operativos (Windows, Android...)
     \item \textbf{RNF 5 - } La aplicación será lo más accesible posible para personas con distintas discapacidades. 
 \end{itemize}
-\subsection{Requisitos de información}
-Los requisitos que se detallarán a continuación corresponden a aquellos relacionados con la información que se debe almacenar.
-\begin {itemize}
-    \item \textbf{RI 1 - }
-    \item \textbf{RI 2 - }
-\end {itemize}
 
-\subsection{Interfaces externas}
-En esta sección vamos a detallar los requisitos relacionados con las distintas interfaces relacionadas con el sistema, 
-tanto hardware, software o de usuario.
 
-\subsubsection{Interfaz de usuario}
+
+\subsection{Interfaz de usuario}
 Se tratará que la interfaz de usuario siga un diseño minimalista y sencillo para facilitar el uso de la aplicación a todo tipo de personas y 
 garantizar cierto grado de accesibilidad. En cuanto a los colores, se usarán tonalidades de azul junto con grises.
-A continuación se presenta un primer boceto de lo que podría ser la interfaz de usuario para móviles.
+En móviles la pantalla estará dividida en dos partes principales: 
+\begin{itemize}
+    \item La cabecera con el título de la aplicación, un menú estilo hamburguesa que se abrirá lateralmente y un icono para el acceso al perfil del usuario.
+    \item El contenido principal de la sección correspondiente (el cuerpo)
+\end{itemize}
 
+    A continuación se presenta un primer boceto de lo que podría ser la interfaz de usuario para móviles.
 
 \begin{figure}[H]
 
     \centering
     \includegraphics[width=0.8\textwidth]{imagenes/c3/boceto.png}
-    \caption{Menú de selección de las lecciones de Artly clasificadas en movimientos artísticos}
+    \caption{Primer boceto de la interfaz de usuario de la página de inicio de la aplicación para los usuarios, donde se muestra la lista de las lecciones}
     \label{fig:artly}
 
 \end{figure}
