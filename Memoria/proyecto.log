@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  23 JAN 2023 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  30 JAN 2023 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -382,6 +382,9 @@ LaTeX Warning: Label `fig:artly' multiply defined.
 
 LaTeX Warning: Label `fig:artly' multiply defined.
 
+
+LaTeX Warning: Label `fig:artly' multiply defined.
+
 )
 \openout1 = `proyecto.aux'.
 
@@ -459,7 +462,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (./portada/portada.tex
 \centeroffset=\skip74
-<imagenes/logo_ugr.jpg, id=249, 777.90625pt x 231.86626pt>
+<imagenes/logo_ugr.jpg, id=253, 777.90625pt x 231.86626pt>
 File: imagenes/logo_ugr.jpg Graphic file (type jpg)
 <use imagenes/logo_ugr.jpg>
 Package pdftex.def Info: imagenes/logo_ugr.jpg  used on input line 12.
@@ -475,7 +478,7 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 9--24
 | $[]$ 
  []
 
-<imagenes/etsiit_logo.png, id=250, 110.814pt x 40.4712pt>
+<imagenes/etsiit_logo.png, id=254, 110.814pt x 40.4712pt>
 File: imagenes/etsiit_logo.png Graphic file (type png)
 <use imagenes/etsiit_logo.png>
 Package pdftex.def Info: imagenes/etsiit_logo.png  used on input line 33.
@@ -626,7 +629,7 @@ l.1 \chapter
 
 ]
 Cap\'{\i }tulo 2.
-<imagenes/c2/duolingo.png, id=454, 513.92pt x 513.92pt>
+<imagenes/c2/duolingo.png, id=465, 513.92pt x 513.92pt>
 File: imagenes/c2/duolingo.png Graphic file (type png)
 <use imagenes/c2/duolingo.png>
 Package pdftex.def Info: imagenes/c2/duolingo.png  used on input line 16.
@@ -636,7 +639,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has b
                    \relax 
 l.25 \newpage
               [5 <./imagenes/c2/duolingo.png>]
-<imagenes/c2/duolingo.jpeg, id=463, 221.8689pt x 446.6286pt>
+<imagenes/c2/duolingo.jpeg, id=474, 221.8689pt x 446.6286pt>
 File: imagenes/c2/duolingo.jpeg Graphic file (type jpg)
 <use imagenes/c2/duolingo.jpeg>
 Package pdftex.def Info: imagenes/c2/duolingo.jpeg  used on input line 43.
@@ -648,7 +651,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has b
                    \relax 
 l.53 
       [6 <./imagenes/c2/duolingo.jpeg>]
-<imagenes/c2/artly.jpeg, id=468, 221.8689pt x 448.7967pt>
+<imagenes/c2/artly.jpeg, id=479, 221.8689pt x 448.7967pt>
 File: imagenes/c2/artly.jpeg Graphic file (type jpg)
 <use imagenes/c2/artly.jpeg>
 Package pdftex.def Info: imagenes/c2/artly.jpeg  used on input line 64.
@@ -663,12 +666,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has b
                    \relax 
 l.76 
       [7 <./imagenes/c2/artly.jpeg>]
-<imagenes/c2/bmath.jpeg, id=475, 370.5042pt x 173.448pt>
+<imagenes/c2/bmath.jpeg, id=487, 370.5042pt x 173.448pt>
 File: imagenes/c2/bmath.jpeg Graphic file (type jpg)
 <use imagenes/c2/bmath.jpeg>
 Package pdftex.def Info: imagenes/c2/bmath.jpeg  used on input line 91.
 (pdftex.def)             Requested size: 360.0pt x 168.53018pt.
-<imagenes/c2/bmath2.jpeg, id=476, 370.5042pt x 173.448pt>
+<imagenes/c2/bmath2.jpeg, id=488, 370.5042pt x 173.448pt>
 File: imagenes/c2/bmath2.jpeg Graphic file (type jpg)
 <use imagenes/c2/bmath2.jpeg>
 Package pdftex.def Info: imagenes/c2/bmath2.jpeg  used on input line 99.
@@ -690,7 +693,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has b
                    \relax 
 l.106 \newpage
                [9 <./imagenes/c2/bmath2.jpeg>]
-<imagenes/c2/cursomusica.jpeg, id=486, 221.8689pt x 450.2421pt>
+<imagenes/c2/cursomusica.jpeg, id=497, 221.8689pt x 450.2421pt>
 File: imagenes/c2/cursomusica.jpeg Graphic file (type jpg)
 <use imagenes/c2/cursomusica.jpeg>
 Package pdftex.def Info: imagenes/c2/cursomusica.jpeg  used on input line 123.
@@ -702,12 +705,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has 
                    \relax 
 l.134 
        [10 <./imagenes/c2/cursomusica.jpeg>]
-<imagenes/c2/sonid.jpeg, id=493, 221.1462pt x 323.0469pt>
+<imagenes/c2/sonid.jpeg, id=504, 221.1462pt x 323.0469pt>
 File: imagenes/c2/sonid.jpeg Graphic file (type jpg)
 <use imagenes/c2/sonid.jpeg>
 Package pdftex.def Info: imagenes/c2/sonid.jpeg  used on input line 153.
 (pdftex.def)             Requested size: 126.0022pt x 184.0647pt.
-<imagenes/c2/sonid1.jpeg, id=494, 218.9781pt x 317.988pt>
+<imagenes/c2/sonid1.jpeg, id=505, 218.9781pt x 317.988pt>
 File: imagenes/c2/sonid1.jpeg Graphic file (type jpg)
 <use imagenes/c2/sonid1.jpeg>
 Package pdftex.def Info: imagenes/c2/sonid1.jpeg  used on input line 155.
@@ -719,12 +722,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has 
                    \relax 
 l.158 \newpage
                [11 <./imagenes/c2/sonid.jpeg> <./imagenes/c2/sonid1.jpeg>]
-<imagenes/c2/flutter.png, id=504, 801.99625pt x 228.855pt>
+<imagenes/c2/flutter.png, id=515, 801.99625pt x 228.855pt>
 File: imagenes/c2/flutter.png Graphic file (type png)
 <use imagenes/c2/flutter.png>
 Package pdftex.def Info: imagenes/c2/flutter.png  used on input line 170.
 (pdftex.def)             Requested size: 97.20154pt x 27.73378pt.
-<imagenes/c2/reactnative.png, id=505, 185.69376pt x 49.18375pt>
+<imagenes/c2/reactnative.png, id=516, 185.69376pt x 49.18375pt>
 File: imagenes/c2/reactnative.png Graphic file (type png)
 <use imagenes/c2/reactnative.png>
 Package pdftex.def Info: imagenes/c2/reactnative.png  used on input line 194.
@@ -736,7 +739,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has 
                    \relax 
 l.200 
        [12 <./imagenes/c2/flutter.png> <./imagenes/c2/reactnative.png>]
-<imagenes/c2/dart.png, id=511, 2007.5pt x 532.99126pt>
+<imagenes/c2/dart.png, id=522, 2007.5pt x 532.99126pt>
 File: imagenes/c2/dart.png Graphic file (type png)
 <use imagenes/c2/dart.png>
 Package pdftex.def Info: imagenes/c2/dart.png  used on input line 219.
@@ -751,7 +754,7 @@ LaTeX Info: Redefining \% on input line 239.
 LaTeX Info: Redefining \. on input line 271.
 LaTeX Info: Redefining \% on input line 271.
  [14]
-<imagenes/c2/mongodb.png, id=521, 291.0875pt x 104.39pt>
+<imagenes/c2/mongodb.png, id=532, 291.0875pt x 104.39pt>
 File: imagenes/c2/mongodb.png Graphic file (type png)
 <use imagenes/c2/mongodb.png>
 Package pdftex.def Info: imagenes/c2/mongodb.png  used on input line 297.
@@ -759,12 +762,12 @@ Package pdftex.def Info: imagenes/c2/mongodb.png  used on input line 297.
 LaTeX Info: Redefining \. on input line 304.
 LaTeX Info: Redefining \% on input line 304.
  [15 <./imagenes/c2/mongodb.png>]
-<imagenes/c2/MERN.png, id=527, 856.19875pt x 192.72pt>
+<imagenes/c2/MERN.png, id=538, 856.19875pt x 192.72pt>
 File: imagenes/c2/MERN.png Graphic file (type png)
 <use imagenes/c2/MERN.png>
 Package pdftex.def Info: imagenes/c2/MERN.png  used on input line 316.
 (pdftex.def)             Requested size: 251.9989pt x 56.71956pt.
-<imagenes/c2/mariadb.png, id=528, 417.56pt x 118.4425pt>
+<imagenes/c2/mariadb.png, id=539, 417.56pt x 118.4425pt>
 File: imagenes/c2/mariadb.png Graphic file (type png)
 <use imagenes/c2/mariadb.png>
 Package pdftex.def Info: imagenes/c2/mariadb.png  used on input line 328.
@@ -786,7 +789,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 47.
 LaTeX Info: Redefining \% on input line 47.
  [20]
-<imagenes/c3/diagrama.png, id=552, 655.44875pt x 723.70375pt>
+<imagenes/c3/diagrama.png, id=563, 655.44875pt x 723.70375pt>
 File: imagenes/c3/diagrama.png Graphic file (type png)
 <use imagenes/c3/diagrama.png>
 Package pdftex.def Info: imagenes/c3/diagrama.png  used on input line 51.
@@ -800,7 +803,7 @@ LaTeX Info: Redefining \% on input line 96.
 LaTeX Info: Redefining \. on input line 127.
 LaTeX Info: Redefining \% on input line 127.
  [23]
-<imagenes/c3/boceto.png, id=567, 813.0375pt x 1016.29688pt>
+<imagenes/c3/boceto.png, id=578, 813.0375pt x 1016.29688pt>
 File: imagenes/c3/boceto.png Graphic file (type png)
 <use imagenes/c3/boceto.png>
 Package pdftex.def Info: imagenes/c3/boceto.png  used on input line 137.
@@ -821,21 +824,33 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 Cap\'{\i }tulo 4.
 [29]
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
  [30]
-LaTeX Info: Redefining \. on input line 58.
-LaTeX Info: Redefining \% on input line 58.
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
  [31]
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
+LaTeX Info: Redefining \. on input line 91.
+LaTeX Info: Redefining \% on input line 91.
  [32]
-LaTeX Info: Redefining \. on input line 134.
-LaTeX Info: Redefining \% on input line 134.
- [33]) (./capitulos/05_Analisis.tex
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
+ [33]
+LaTeX Info: Redefining \. on input line 145.
+LaTeX Info: Redefining \% on input line 145.
+ [34]
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
+ [35]
+<imagenes/c4/gantt.png, id=634, 1868.9825pt x 927.465pt>
+File: imagenes/c4/gantt.png Graphic file (type png)
+<use imagenes/c4/gantt.png>
+Package pdftex.def Info: imagenes/c4/gantt.png  used on input line 196.
+(pdftex.def)             Requested size: 450.0pt x 223.30374pt.
+) (./capitulos/05_Analisis.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [34]
+ [36 <./imagenes/c4/gantt.png>]
 Cap\'{\i }tulo 5.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -846,27 +861,27 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./capitulos/06_Diseño.tex [35
+) (./capitulos/06_Diseño.tex [37
 
-] [36]
+] [38]
 Cap\'{\i }tulo 6.
-) (./capitulos/07_Implementacion.tex [37
+) (./capitulos/07_Implementacion.tex [39
 
-] [38
+] [40
 
 ]
 Cap\'{\i }tulo 7.
-) (./capitulos/08_Pruebas.tex [39] [40
+) (./capitulos/08_Pruebas.tex [41] [42
 
 ]
 Cap\'{\i }tulo 8.
-) (./capitulos/09_Conclusion.tex [41] [42
+) (./capitulos/09_Conclusion.tex [43] [44
 
 ]
 Cap\'{\i }tulo 9.
-) [43] [44
+) [45] [46
 
-] [45] (./proyecto.aux
+] [47] (./proyecto.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -877,21 +892,21 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: 91E3A7CEE15179471E5B72893737FC82;9475.
+(rerunfilecheck)             Checksum: E83A221B6862AE5A133AA6CDC176480B;11094.
  ) 
 Here is how much of TeX's memory you used:
- 15066 strings out of 478287
- 243562 string characters out of 5849290
- 563834 words of memory out of 5000000
- 32857 multiletter control sequences out of 15000+600000
+ 15079 strings out of 478287
+ 243807 string characters out of 5849290
+ 563766 words of memory out of 5000000
+ 32864 multiletter control sequences out of 15000+600000
  476984 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,18n,79p,808b,675s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on proyecto.pdf (65 pages, 3382347 bytes).
+Output written on proyecto.pdf (67 pages, 3463977 bytes).
 PDF statistics:
- 756 PDF objects out of 1000 (max. 8388607)
- 632 compressed objects within 7 object streams
- 146 named destinations out of 1000 (max. 500000)
- 579 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 778 PDF objects out of 1000 (max. 8388607)
+ 650 compressed objects within 7 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 592 words of extra memory for PDF output out of 10000 (max. 10000000)
 

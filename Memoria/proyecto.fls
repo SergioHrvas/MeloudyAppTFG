@@ -930,6 +930,11 @@ INPUT capitulos/04_Planificacion.tex
 INPUT ./capitulos/04_Planificacion.tex
 INPUT ./capitulos/04_Planificacion.tex
 INPUT capitulos/04_Planificacion.tex
+INPUT ./imagenes/c4/gantt.png
+INPUT ./imagenes/c4/gantt.png
+INPUT imagenes/c4/gantt.png
+INPUT ./imagenes/c4/gantt.png
+INPUT ./imagenes/c4/gantt.png
 INPUT ./capitulos/05_Analisis.tex
 INPUT ./capitulos/05_Analisis.tex
 INPUT ./capitulos/05_Analisis.tex
