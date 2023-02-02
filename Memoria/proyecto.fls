@@ -942,6 +942,11 @@ INPUT capitulos/05_Analisis.tex
 INPUT ./capitulos/05_Analisis.tex
 INPUT ./capitulos/05_Analisis.tex
 INPUT capitulos/05_Analisis.tex
+INPUT ./imagenes/c5/diagramadeclases.png
+INPUT ./imagenes/c5/diagramadeclases.png
+INPUT imagenes/c5/diagramadeclases.png
+INPUT ./imagenes/c5/diagramadeclases.png
+INPUT ./imagenes/c5/diagramadeclases.png
 INPUT ./capitulos/06_Diseño.tex
 INPUT ./capitulos/06_Diseño.tex
 INPUT ./capitulos/06_Diseño.tex

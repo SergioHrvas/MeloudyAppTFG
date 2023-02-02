@@ -54,15 +54,16 @@
 \contentsline {subsection}{\numberline {4.4.8}Sprint \#8 - Funcionalidades del profesor con lecciones}{34}{subsection.4.4.8}%
 \contentsline {subsection}{\numberline {4.4.9}Sprint \#9 - Funcionalidades del profesor con tests}{35}{subsection.4.4.9}%
 \contentsline {subsection}{\numberline {4.4.10}Sprint \#10 - Funcionalidades del administrador y ranking}{35}{subsection.4.4.10}%
-\contentsline {subsection}{\numberline {4.4.11}Sprint \#11 - Pruebas y finalización del proyecto}{36}{subsection.4.4.11}%
+\contentsline {subsection}{\numberline {4.4.11}Sprint \#11 - Funcionalidades poco prioritarias y valor añadido}{36}{subsection.4.4.11}%
 \contentsline {subsection}{\numberline {4.4.12}Sprint \#12 - Pruebas, conclusión y finalización del proyecto}{36}{subsection.4.4.12}%
 \contentsline {subsection}{\numberline {4.4.13}Sprint \#13 - Pruebas y mejoras}{36}{subsection.4.4.13}%
 \contentsline {subsection}{\numberline {4.4.14}Sprint \#14 - Pruebas, conclusión y finalización del proyecto}{36}{subsection.4.4.14}%
 \contentsline {section}{\numberline {4.5}Diagrama de Gantt}{37}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Análisis del problema}{39}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Historias de Usuario}{39}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Diagrama de Clases}{42}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Diseño}{43}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Implementación}{45}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Pruebas}{47}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{49}{chapter.9}%
+\contentsline {section}{\numberline {5.1}Introducción}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Historias de Usuario}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Diagrama de Clases}{44}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Diseño}{45}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Implementación}{47}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pruebas}{49}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{51}{chapter.9}%

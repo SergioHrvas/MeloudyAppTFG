@@ -1,11 +1,13 @@
 \chapter{Análisis del problema}
 
-
+\section{Introducción}
+En este capítulo se va a describir de forma más detallada el problema que se va a resolver con la aplicación a desarrollar. De esta forma, vamos a especificar qué es lo que 
+tiene que hacer el sistema.  
 \section{Historias de Usuario}
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-
+A continuación, se procederá a describir las historias de usuario que se han definido para el proyecto. 
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -13,10 +15,10 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
-            \textbf{ID}                  & HU1                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como usuario quiero registrarme en la aplicación para poder comenzar \\ a utilizar sus funcionalidades.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
+            \textbf{ID}                  & HU1                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como usuario quiero registrarme en la aplicación para poder\\ comenzar a utilizar sus funcionalidades.\end{tabular}}\\ \hline
+            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario\\ con campos como el nombre de usuario, el correo electrónico, la \\contraseña... \end{tabular}}  \\ \hline
             \textbf{Prioridad}           & Alta                                       & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la \\ base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad \\ del usuario \end{tabular}}                                                                                                                                                                                                                                                                                               \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados \\en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer \\la seguridad del usuario \end{tabular}}                                                                                                                                                                                                                                                                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -32,10 +34,10 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
-            \textbf{ID}                                                                  & HU2                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como usuario quiero iniciar sesión en la aplicación para poder acceder a sus funcionalidades.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá iniciar sesióm en el sistema rellenando un formulario con campos \\ como el nombre de usuario o correo electrónico y la contraseña... \end{tabular}}  \\ \hline
+            \textbf{ID}                                                                  & HU2                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como usuario quiero iniciar sesión en la aplicación para \\poder acceder a sus funcionalidades.\end{tabular}}\\ \hline
+            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá iniciar sesióm en el sistema rellenando \\un formulario con campos  como el nombre de usuario \\o correo electrónico y la contraseña... \end{tabular}}  \\ \hline
             \textbf{Prioridad}           & Alta                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 2\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Se compararán los campos rellenados por el usuario con los almacenados \\ para comprobar la identidad del usuario.\\ 2. La contraseña procesará de forma cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Se compararán los campos rellenados por el usuario con los \\almacenados para comprobar la identidad del usuario.\\ 2. La contraseña procesará de forma cifrada para no comprometer\\ la seguridad del usuario \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -179,7 +181,7 @@
             \textbf{ID}                  & HU11                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como usuario quiero ver el resultado de un test.\end{tabular}}\\ \hline
             \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá visualizar el resultado del test una vez finalizado.\end{tabular}}  \\ \hline
             \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} HU7, HU8, HU9, HU10, HU26 \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 6\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. El resultado del test será almacenado en la base de datos. \\ 2. La puntuación mostrada en pantalla corresponderá a las preguntas acertadas en dicho test. \end{tabular}}                                               \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. El resultado del test será almacenado en la base de datos. \\ 2. La puntuación mostrada en pantalla corresponderá a las\\ preguntas acertadas en dicho test. \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -211,7 +213,7 @@
             \textbf{ID}                  & HU13                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como usuario quiero ver mi progreso en las lecciones.\end{tabular}}\\ \hline
             \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá ver su progreso en cada lección, los resultados de cada test\\ y los puntos que le faltan para completar la lección.\end{tabular}}  \\ \hline
             \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} HU6 \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Se mostrarán los datos relacionados con el progreso del usuario de la lección correspondiente. \end{tabular}}                                               \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Se mostrarán los datos relacionados con el progreso del usuario de la lección\\ correspondiente. \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -281,38 +283,37 @@
     }
 \end{table}
 
-
 \begin{table}[H]
     \centering
     \resizebox{\textwidth}{!}{%
         \begin{tabular}{|
-                >{\columncolor[HTML]{D8D8D8}}l |l|
-                >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
-            \hline
+            >{\columncolor[HTML]{D8D8D8}}l |l|
+            >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
+        \hline
             \textbf{ID}                  & HU18                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero añadir preguntas a un test del tipo selección múltiple.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
-        \end{tabular}%
+            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor creará preguntas de tipo selección multiple y las añadirá a un test.\end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 14\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el profesor serán almacenados en la base de datos. \\ 2. La pregunta se mostrará en su test correspondiente. \end{tabular}}                                               \\ \hline
+      \end{tabular}%
     }
 \end{table}
 
 
-\begin{table}[H]
-    \centering
-    \resizebox{\textwidth}{!}{%
-        \begin{tabular}{|
-                >{\columncolor[HTML]{D8D8D8}}l |l|
-                >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
-            \hline
-            \textbf{ID}                  & HU19                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero añadir preguntas a un test del tipo selección única.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
-        \end{tabular}%
-    }
-\end{table}
-
+    
+    \begin{table}[H]
+        \centering
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{|
+                    >{\columncolor[HTML]{D8D8D8}}l |l|
+                    >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
+                \hline
+                \textbf{ID}                  & HU19                                     & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero añadir preguntas a un test del tipo selección única.\end{tabular}}\\ \hline
+                \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor creará preguntas de tipo selección única y las añadirá a un test.\end{tabular}}  \\ \hline
+                \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 14\end{tabular} \\ \hline
+                \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el profesor serán almacenados en la base de datos. \\ 2. La pregunta se mostrará en su test correspondiente. \end{tabular}}                                               \\ \hline
+            \end{tabular}%
+        }
+    \end{table}
 
 \begin{table}[H]
     \centering
@@ -322,9 +323,9 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
             \textbf{ID}                  & HU20                                     & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero añadir preguntas a un test del tipo respuesta por micrófono.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \textbf{PH}                  & 3                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor creará preguntas de tipo respuesta por micrófono y las añadirá a un test.\end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 14\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el profesor serán almacenados en la base de datos. \\ 2. La pregunta se mostrará en su test correspondiente.  \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -338,9 +339,9 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
             \textbf{ID}                  & HU21                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero eliminar preguntas de un test.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.25                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la \\ base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad \\ del usuario \end{tabular}}                                               \\ \hline
+            \textbf{PH}                  & 0.25                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá eliminar preguntas existentes de un test. \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} HU29 \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 17\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Se eliminará la información de dicha pregunta de la base de datos \\ \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -354,9 +355,9 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
             \textbf{ID}                  & HU22                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero modificar preguntas de un test.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor' podrá modificar tanto el enunciado (la cuestión) como las\\ posibles respuestas de cada pregunta de un test a través de un formulario.\end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} HU29 \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 16\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el profesor serán actualizados en la \\base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad\\del usuario \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -370,9 +371,9 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
             \textbf{ID}                  & HU23                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como administrador quiero crear un usuario.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Baja                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El administrador podrá crear usuarios rellenando un formulario con campos\\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Baja                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 19\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el administrador serán almacenados en la\\ base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad\\ del usuario \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -386,9 +387,9 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
             \textbf{ID}                  & HU24                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como administrador quiero modificar los datos de un usuario.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \textbf{PH}                  & 1                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El administrador podrá modificar los datos de un usuario registrado en el\\ sistema rellenando un formulario con campos  como el nombre de usuario,\\ el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} HU30 \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 18\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la\\base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad \\del usuario \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -402,9 +403,9 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
             \textbf{ID}                  & HU25                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como administrador quiero eliminar un usuario.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El administrador podrá eliminar un usuario registrado en el sistema. \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} HU30 \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 21\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Los datos del usuario serán eliminados de la base de datos. \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -417,10 +418,13 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
-            \textbf{ID}                  & HU26                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como administrador quiero eliminar un usuario.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+
+
+
+            \textbf{ID}                  & HU26                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como usuario quiero responder una pregunta de un test del \\tipo escritura de texto.\end{tabular}}\\ \hline
+            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá responder a una pregunta escribiendo \\la respuesta en un campo de texto. \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} HU7 \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 6.1\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. La respuesta del usuario quedará registrada en el sistema para\\ un futuro procesamiento.\end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -433,10 +437,10 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
-            \textbf{ID}                  & HU27                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como administrador quiero eliminar un usuario.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \textbf{ID}                  & HU27                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero añadir preguntas a un test del tipo \\escritura de texto. \end{tabular}}\\ \hline
+            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor creará preguntas de tipo escritura de texto y las\\ añadirá a un test. \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 14\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el profesor serán almacenados \\en la base de datos. \\ 2. La pregunta se mostrará en su test correspondiente. \end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
@@ -449,12 +453,53 @@
                 >{\columncolor[HTML]{D8D8D8}}l |l|
                 >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
             \hline
-            \textbf{ID}                  & HU28                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como administrador quiero eliminar un usuario.\end{tabular}}\\ \hline
-            \textbf{PH}                  & 0.5                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El usuario podrá registrarse en el sistema rellenando un formulario con campos \\ como el nombre de usuario, el correo electrónico, la contraseña... \end{tabular}}  \\ \hline
-            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 1\end{tabular} \\ \hline
-            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los campos rellenados por el usuario serán almacenados en la base de datos \\ 2. La contraseña se almacenará cifrada para no comprometer la seguridad del usuario \end{tabular}}                                               \\ \hline
+            \textbf{ID}                  & HU28                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero ver una lista de todas las lecciones.\end{tabular}}\\ \hline
+            \textbf{PH}                  & 0.25                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor podrá ver una lista de todas las lecciones almacenadas\\ en el sistema. \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 10\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todas las lecciones almacenados en la base de datos del sistema\\ se mostrarán  en pantalla\end{tabular}}                                               \\ \hline
         \end{tabular}%
     }
 \end{table}
 
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|
+                >{\columncolor[HTML]{D8D8D8}}l |l|
+                >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
+            \hline
+            \textbf{ID}                  & HU29                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como profesor quiero ver una lista de todas las preguntas.\end{tabular}}\\ \hline
+            \textbf{PH}                  & 0.25                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor podrá ver una lista de todas las preguntas almacenadas \\en el sistema. \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 15\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todas las preguntas almacenadas en la base de datos del sistema \\se mostrarán en pantalla\end{tabular}}                                               \\ \hline
+        \end{tabular}%
+    }
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+        \begin{tabular}{|
+                >{\columncolor[HTML]{D8D8D8}}l |l|
+                >{\columncolor[HTML]{D8D8D8}}l |l|l|l|}
+            \hline
+            \textbf{ID}                  & HU30                                      & \textbf{Nombre}       & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}Como administrador quiero ver una lista de todos los usuarios.\end{tabular}}\\ \hline
+            \textbf{PH}                  & 0.25                                        & \textbf{Descripcion}  & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}El profesor podrá ver una lista de todos los alumnos registrados\\ en el sistema. \end{tabular}}  \\ \hline
+            \textbf{Prioridad}           & Media                                        & \textbf{Dependencias} & \begin{tabular}[c]{@{}l@{}} --- \end{tabular}                      & \cellcolor[HTML]{D8D8D8}\begin{tabular}[c]{@{}l@{}}\textbf{Requisitos Funcionales}\end{tabular} & \begin{tabular}[c]{@{}l@{}}RF 20\end{tabular} \\ \hline
+            \multicolumn{3}{|l|}{\cellcolor[HTML]{D8D8D8}\textbf{Pruebas de aceptacion}} & \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}1. Todos los usuarios almacenados en la base de datos del sistema\\ se mostrarán en pantalla\end{tabular}}                                                                                   \\ \hline
+        \end{tabular}%
+    }
+\end{table}
+\newpage
 \section{Diagrama de Clases}
+Para finalizar esta sección, se muestra el diagrama de clases de nuestro proyecto, que nos permite ver las relaciones entre las diferentes clases que componen el sistema y que nos ayudará a entender mejor el funcionamiento del mismo.
+
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=1.25\textwidth]{imagenes/c5/diagramadeclases.png}}
+    \caption{Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.}
+    \label{fig:diagramadeclases}
+    
+    
+\end{figure}
