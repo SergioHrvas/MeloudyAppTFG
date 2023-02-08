@@ -64,6 +64,8 @@
 \contentsline {section}{\numberline {5.2}Historias de Usuario}{39}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Diagrama de Clases}{44}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Diseño}{45}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Implementación}{47}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Pruebas}{49}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{51}{chapter.9}%
+\contentsline {section}{\numberline {6.1}Introducción}{45}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Diseño de interfaces de usuario}{45}{subsection.6.1.1}%
+\contentsline {chapter}{\numberline {7}Implementación}{51}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pruebas}{53}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{55}{chapter.9}%

@@ -23,6 +23,16 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.\relax }}{44}{figure.caption.58}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Boceto de la pantalla principal de la aplicación donde se muestran las lecciones disponibles para el usuario.\relax }}{45}{figure.caption.59}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Boceto de la pantalla del perfil de usuario con la sesión iniciada donde se muestran sus datos.\relax }}{46}{figure.caption.60}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Boceto de la pantalla de logros conseguidos por el usuario.\relax }}{46}{figure.caption.61}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Boceto de la pantalla de una lección, con el texto, el contenido multimedia y el botón para comenzar el test.\relax }}{47}{figure.caption.62}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección única.\relax }}{47}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección multiple.\relax }}{48}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo escritura de texto.\relax }}{48}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.\relax }}{49}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.\relax }}{49}{figure.caption.67}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.\relax }}{50}{figure.caption.68}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
