@@ -1,66 +1,107 @@
-\chapter{Planificacion}
+\chapter{Planificación}
+
 \section{Introducción}
-En este capítulo vamos a realizar la planificación para el desarrollo del proyecto, la cual va a servir para poder
-realizar un control de los avances del producto y asegurar que se cumplan los objetivos marcados en cada sprint (o iteración).
-Para ello, se utilizarán algunos elementos de la metodología SCRUM, como son los sprints, las historias de usuario y el product backlog, etc. Es importante esto último
-porque solo usaremos algunos principios y conceptos de metodologías ágiles pero no vamos a seguir al pie de la letra ninguna de ellas debido
-a las condiciones en las que se va a desarrollar el proyecto (no hay un cliente real, no hay un equipo de desarrollo real, etc.).
+En este capítulo se describirá la planificación para el desarrollo del proyecto, la cual va a servir para poder
+realizar un control de los avances del producto y asegurar que se cumplan los objetivos marcados en cada sprint/iteración.
+Para ello, se utilizarán ciertos elementos de la metodología SCRUM, el cual definiremos brevemente a continuación:
 
-\section{Velocidad}
-A continuación vamos a estimar la velocidad inicial de trabajo que se tendrá en el desarrollo. Esta será una aproximación que nos ayudará a estimar la cantidad de trabajo que se debería realizar
-en cada iteración. Sin embargo, esta podrá variar y ajustarse a lo largo del proyecto en función de la cantidad de trabajo que se logre completar en cada sprint.
 
-Para calcular la velocidad, vamos a considerar las horas de trabajo que se pretenden dedicar al proyecto cada día y tratar de estimar cuanta cantidad de trabajo se podría realizar.
 
+\subsection*{SCRUM}
+SCRUM es un marco de trabajo iterativo e incremental que se utiliza para desarrollar proyectos de software.
+Este marco de trabajo se basa en la idea de que el desarrollo de software es un proceso complejo que se adapta continuamente
+a las circunstancias. Por ello, se divide en pequeñas iteraciones que se van realizando de forma incremental y utiliza una serie de elementos
+para poder controlar el desarrollo del proyecto:
 \begin{itemize}
-\item Podríamos decir que partimos de un "equipo de desarrollo" de 1 miembro.
-\item Se pretende dedicar 5 horas al día de trabajo aproximadamente.
-\item Cada Sprint dura 2 semanas (14 días). Si cada día trabajamos 5 horas aproximadamente, obtenemos un total de 70 horas en cada Sprint, que equivalen a 3 días de trabajo reales.
-\item En mi entorno, se estima que 1 PH es un día de trabajo ideal. Esto quiere decir que en cada jornada de trabajo real, se debería completar 1 PH. Sin embargo, en la realidad, esto no siempre es así ya que es una aproximación.
-\item Si multiplicamos un programador por los 3 días de trabajo reales, obtenemos que deberíamos completar \textbf{3 PH} por sprint aproximadamente.
+    \item \textbf{Artefactos:} Son documentos que se utilizan para controlar el desarrollo del proyecto.
+    \item \textbf{Reuniones: } Se realizan cuatro tipos de reuniones de forma periódica para poder controlar y seguir el progreso del proyecto.
+    \item \textbf{Roles:} Representan la responsabilidad de cada persona en el proceso.
 \end{itemize}
 
-\textit{Nota: La duración de los Sprints puede variar en función de factores externos al proyecto. Pero se tratará de que duren 2 semanas para seguir un ritmo de trabajo constante.}
+\hfill
 
-\textit{Nota 2: Puesto que estamos realizando estimaciones y suposiciones para la planificación, esta está sujeta a cambios a lo largo del proyecto.}
+Es importante recalcar que no voy a seguir la metodología SCRUM, sino que solo usaré algunos principios y 
+conceptos de metodologías ágiles debido a las condiciones en las que se va a desarrollar el proyecto 
+(no hay un cliente real, no hay un equipo de desarrollo real, etc.). Por tanto, se utilizarán los siguientes aspectos de SCRUM:
+\begin{itemize}
+    \item \textbf{Sprints:} Se definirán los Sprints (iteraciones) que se realizarán para el desarrollo del proyecto, explicando
+    el objetivo de cada uno de ellos y detallando la duración y las fechas de inicio y de fin.
+    \item \textbf{Historias de Usuario:} Se listarán y describirán las historias de usuario que se van a implementar en cada sprint a partir
+    de los requisitos funcionales del proyecto especificados en el capítulo de Especificación de Requisitos.
+    \item \textbf{Product Backlog: } Se definirá el product backlog, que es una lista de todas las funcionalidades (Historias de usuario) que se
+    pretenden implementar en el proyecto. Esta lista se ordenará por prioridad de acuerdo a la importancia que tienen para el usuario final.
+    \item \textbf{Velocidad:} Se calculará la velocidad de trabajo que se tendrá en el desarrollo del proyecto a partir de la cantidad de horas
+    que se pretenden dedicar al proyecto cada día y la duración de los Sprints.
+    \item \textbf{Puntos de historia: } Se asignarán los puntos de historia a cada historia de usuario para poder estimar la cantidad de trabajo
+    que se debería realizar en cada sprint. Los valores de estos puntos de historia se calcularán a partir de la estimación de la complejidad de cada historia de usuario.
+\end{itemize}
+
+
+
+\section{Velocidad}
+A continuación vamos a estimar la velocidad inicial de trabajo que se tendrá en el desarrollo. Esta será una aproximación
+que nos ayudará a estimar la cantidad de trabajo que se debería realizar en cada iteración. Sin embargo, esta podrá variar
+y ajustarse a lo largo del proyecto en función de la cantidad de trabajo que se logre completar en cada sprint.
+
+Para calcular la velocidad, vamos a considerar las horas de trabajo que se pretenden dedicar al proyecto cada día y tratar
+de estimar cuanta cantidad de trabajo se podría realizar.
+
+\begin{itemize}
+    \item Partimos de un ``equipo de desarrollo'' de 1 miembro.
+    \item Se pretende dedicar 5 horas al día de trabajo aproximadamente.
+    \item Cada Sprint dura 2 semanas (14 días). Si cada día trabajamos 5 horas de forma aproximada, obtenemos un total de 70 horas
+          en cada Sprint.
+    \item En mi entorno, se estima que 1 PH son dos días de trabajo ideal (es decir, 10 horas equivalen a 1 punto de historia).
+    Esto significa que cada dos jornadas de trabajo real, se debería completar 1 PH. Sin embargo, en la realidad, esto no siempre 
+    es así ya que estamos realizando una aproximación.
+    \item Si multiplicamos un programador por las 70 horas de trabajo y lo dividimos por el número de horas de trabajo por cada punto de hisotira
+    (10 horas), obtenemos que deberíamos completar \textbf{7 PH} por sprint aproximadamente.
+\end{itemize}
+
+\textit{Nota: La duración de los Sprints puede variar en función de factores externos al proyecto. Pero se tratará de que duren 
+2 semanas para seguir un ritmo de trabajo constante.}
+\textit{Nota 2: Puesto que estamos realizando estimaciones y suposiciones para la planificación, esta está sujeta a cambios a 
+lo largo del proyecto.}
+
 \section{Product Backlog}
 A continuación, se listarán todas las historias de usuario ordenadas por prioridad de acuerdo a la importancia que tienen para el usuario final del producto.
 \begin{itemize}
-    \item \textbf{HU1 - } Como usuario quiero registrarme en la aplicación para poder comenzar a utilizar sus funcionalidades. (Prioridad: Alta | Puntos de Historia: 1)
-    \item \textbf{HU2 - } Como usuario quiero iniciar sesión en la aplicación para poder acceder a sus funcionalidades. (Prioridad: Alta | Puntos de Historia: 1)
-    \item \textbf{HU6 - } Como usuario quiero seleccionar una lección para leer el temario. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item \textbf{HU7 - } Como usuario quiero empezar un test de una lección. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item \textbf{HU26 - } Como usuario quiero responder una pregunta de un test del tipo escritura de texto. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item \textbf{HU8 - } Como usuario quiero responder una pregunta de un test del tipo selección múltiple. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item \textbf{HU9 - } Como usuario quiero responder una pregunta de un test del tipo selección única. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item \textbf{HU10 - } Como usuario quiero responder una pregunta de un test del tipo respuesta por micrófono. (Prioridad: Alta | Puntos de Historia: 3)
-    \item \textbf{HU29 - } Como profesor quiero ver una lista de todas las preguntas. (Prioridad: Alta | Puntos de Historia: 0.25)
-    \item \textbf{HU11 - } Como usuario quiero ver el resultado de un test. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU13 - } Como usuario quiero ver mi progreso en las lecciones. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU28 - } Como profesor quiero ver una lista de todas las lecciones. (Prioridad: Media | Puntos de Historia: 0.25)
-    \item \textbf{HU14 - } Como profesor quiero crear una lección. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU15 - } Como profesor quiero modificar el texto de una lección. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU16 - } Como profesor quiero añadir contenido multimedia a una lección. (Prioridad: Media | Puntos de Historia: 1)
-    \item \textbf{HU17 - } Como profesor quiero eliminar contenido multimedia de una lección. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU27 - } Como profesor quiero añadir preguntas a un test del tipo escritura de texto. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU18 - } Como profesor quiero añadir preguntas a un test del tipo selección múltiple. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU19 - } Como profesor quiero añadir preguntas a un test del tipo selección única. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU20 - } Como profesor quiero añadir preguntas a un test del tipo respuesta por micrófono. (Prioridad: Media | Puntos de Historia: 1)
-    \item \textbf{HU21 - } Como profesor quiero eliminar preguntas de un test. (Prioridad: Media | Puntos de Historia: 0.25)
-    \item \textbf{HU22 - } Como profesor quiero modificar preguntas de un test. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU30 - } Como administrador quiero ver una lista de todos los usuarios. (Prioridad: Media | Puntos de Historia: 0.25)
-    \item \textbf{HU24 - } Como administrador quiero modificar los datos de un usuario. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU1 - } Como usuario quiero registrarme en la aplicación para poder comenzar a utilizar sus funcionalidades. (Prioridad: Alta | Puntos de Historia: 2)
+    \item \textbf{HU2 - } Como usuario quiero iniciar sesión en la aplicación para poder acceder a sus funcionalidades. (Prioridad: Alta | Puntos de Historia: 2)
+    \item \textbf{HU6 - } Como usuario quiero seleccionar una lección para leer el temario. (Prioridad: Alta | Puntos de Historia: 1)
+    \item \textbf{HU7 - } Como usuario quiero empezar un test de una lección. (Prioridad: Alta | Puntos de Historia: 1)
+    \item \textbf{HU26 - } Como usuario quiero responder una pregunta de un test del tipo escritura de texto. (Prioridad: Alta | Puntos de Historia: 1)
+    \item \textbf{HU8 - } Como usuario quiero responder una pregunta de un test del tipo selección múltiple. (Prioridad: Alta | Puntos de Historia: 1)
+    \item \textbf{HU9 - } Como usuario quiero responder una pregunta de un test del tipo selección única. (Prioridad: Alta | Puntos de Historia: 1)
+    \item \textbf{HU10 - } Como usuario quiero responder una pregunta de un test del tipo respuesta por micrófono. (Prioridad: Alta | Puntos de Historia: 8)
+    \item \textbf{HU29 - } Como profesor quiero ver una lista de todas las preguntas. (Prioridad: Alta | Puntos de Historia: 0.5)
+    \item \textbf{HU11 - } Como usuario quiero ver el resultado de un test. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU13 - } Como usuario quiero ver mi progreso en las lecciones. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU28 - } Como profesor quiero ver una lista de todas las lecciones. (Prioridad: Media | Puntos de Historia: 0.5)
+    \item \textbf{HU14 - } Como profesor quiero crear una lección. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU15 - } Como profesor quiero modificar el texto de una lección. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU16 - } Como profesor quiero añadir contenido multimedia a una lección. (Prioridad: Media | Puntos de Historia: 2)
+    \item \textbf{HU17 - } Como profesor quiero eliminar contenido multimedia de una lección. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU27 - } Como profesor quiero añadir preguntas a un test del tipo entrada de texto. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU18 - } Como profesor quiero añadir preguntas a un test del tipo selección múltiple. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU19 - } Como profesor quiero añadir preguntas a un test del tipo selección única. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU20 - } Como profesor quiero añadir preguntas a un test del tipo respuesta por micrófono. (Prioridad: Media | Puntos de Historia: 2)
+    \item \textbf{HU21 - } Como profesor quiero eliminar preguntas de un test. (Prioridad: Media | Puntos de Historia: 0.5)
+    \item \textbf{HU22 - } Como profesor quiero modificar preguntas de un test. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU30 - } Como administrador quiero ver una lista de todos los usuarios. (Prioridad: Media | Puntos de Historia: 0.5)
+    \item \textbf{HU24 - } Como administrador quiero modificar los datos de un usuario. (Prioridad: Media | Puntos de Historia: 2)
     \item \textbf{HU25 - } Como administrador quiero eliminar un usuario. (Prioridad: Media | Puntos de Historia: 0.5)
     \item \textbf{HU23 - } Como administrador quiero crear un usuario. (Prioridad: Baja | Puntos de Historia: 1)
-    \item \textbf{HU12 - } Como usuario quiero ver el ranking de usuarios. (Prioridad: Baja | Puntos de Historia: 0.5)
-    \item \textbf{HU5 - } Como usuario quiero ver el perfil de otros usuarios.  (Prioridad: Baja | Puntos de Historia: 0.5)
-    \item \textbf{HU3 - } Como usuario quiero ver los datos personales y los logros de mi perfil. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item \textbf{HU4 - } Como usuario quiero editar los datos de mi perfil. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU12 - } Como usuario quiero ver el ranking de usuarios. (Prioridad: Baja | Puntos de Historia: 1)
+    \item \textbf{HU5 - } Como usuario quiero ver el perfil de otros usuarios.  (Prioridad: Baja | Puntos de Historia: 1)
+    \item \textbf{HU3 - } Como usuario quiero ver los datos personales y los logros de mi perfil. (Prioridad: Media | Puntos de Historia: 1)
+    \item \textbf{HU4 - } Como usuario quiero editar los datos de mi perfil. (Prioridad: Media | Puntos de Historia: 2)
 \end{itemize}
 
 \section{Sprints}
-Nuestro proyecto se va a desarrollar en distintos Sprints, que son iteraciones de trabajo que se van a realizar en el proyecto.
-Cada Sprint tendrá una duración de 2 semanas, y se pretenden realizar
+Nuestro proyecto se pretende desarrollar en 14 Sprints. Cada Sprint tendrá una duración de 2 semanas, y se pretenden realizar una media 
+de 7 puntos de historia por Sprint. A continuación se especificará el contenido de cada Sprint con las fechas de inicio y fin de cada uno de ellos.
+
 \subsection{Sprint \#1 - Documentación inicial}
 \textit{24/11/2022   -   08/12/2022}
 
@@ -93,105 +134,143 @@ En este Sprint se terminará la documentación y comenzará el desarrollo con:
 \begin{itemize}
     \item Redactar Capítulo 6 - Diseño.
     \item Preparación del backend para el desarrollo.
-    \begin{itemize}
-        \item Creación de la base de datos.
-        \item Creación de los modelos, rutas y controladores del servidor con NodeJS.
-    \end{itemize}
+          \begin{itemize}
+              \item Creación de la base de datos.
+              \item Creación de los modelos, rutas y controladores del servidor con NodeJS.
+          \end{itemize}
     \item Preparación del frontend para el desarrollo (creación de la aplicación de Flutter).
 \end{itemize}
+
 \subsection{Sprint \#5 - Registro y login de usuarios}
 \textit{17/02/2023   -   03/03/2023}
+
+En este Sprint se comenzará el desarrollo de la aplicación realizando las funcionalidades iniciales del usuario 
+que utilizará la aplicación, tales como el registro, el login, la selección de lección, etc. 
 \begin{itemize}
-    \item Realizar la HU1 - Como alumno quiero registrarme en la aplicación. (Prioridad: Alta | Puntos de Historia: 1)
-    \item Realizar la HU2 - Como alumno quiero iniciar sesión en la aplicación. (Prioridad: Alta | Puntos de Historia: 1)
-    \item Realizar la HU6 - Como usuario quiero seleccionar una lección para leer el temario. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item Realizar la HU7 - Como usuario quiero empezar un test de una lección. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item Realizar la HU29 - Como profesor quiero ver una lista de todas las preguntas. (Prioridad: Alta | Puntos de Historia: 0.25)
+    \item HU1 - Como alumno quiero registrarme en la aplicación.
+    \item HU2 - Como alumno quiero iniciar sesión en la aplicación.
+    \item HU6 - Como usuario quiero seleccionar una lección para leer el temario.
+    \item HU7 - Como usuario quiero empezar un test de una lección.
+    \item HU29 - Como profesor quiero ver una lista de todas las preguntas.
 
 \end{itemize}
 
 
 \subsection{Sprint \#6 - Tests y progreso}
 \textit{03/03/2023   -   17/03/2023}
+
+Este Sprint tendrá como objetivo el desarrollo de los tests permitiendo al usuario responder a las preguntas y ver el resultado.
+Además, podrá comprobar su progreso en cada lección y en la pantalla principal que muestra todas las lecciones (desbloqueando las correspondientes en su caso).
 \begin{itemize}
-    \item Realizar la HU26 - Como usuario quiero responder una pregunta de un test del tipo escritura de texto. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item Realizar la HU8 - Como usuario quiero responder una pregunta de un test del tipo selección múltiple. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item Realizar la HU9 - Como usuario quiero responder una pregunta de un test del tipo selección única. (Prioridad: Alta | Puntos de Historia: 0.5)
-    \item Realizar la HU11 - Como usuario quiero ver el resultado de un test. (Prioridad: Media | Puntos de Historia: 0.5)
-    \item Realizar la HU12 - Como usuario quiero ver mi progreso en las lecciones. (Prioridad: Media | Puntos de Historia: 0.5)
+    \item HU26 - Como usuario quiero responder una pregunta de un test del tipo escritura de texto.
+    \item HU8 - Como usuario quiero responder una pregunta de un test del tipo selección múltiple.
+    \item HU9 - Como usuario quiero responder una pregunta de un test del tipo selección única.
+    \item HU11 - Como usuario quiero ver el resultado de un test.
+    \item HU12 - Como usuario quiero ver mi progreso en las lecciones.
 
 \end{itemize}
 
 \subsection{Sprint \#7 - Entrada de micrófono y detección de tono}
 \textit{17/03/2023   -   31/03/2023}
+
+En este Sprint se realizará la funcionalidad de la entrada de micrófono y la detección de tono. Puesto que la historia de usuario es muy grande y compleja, se reservará
+un Sprint entero para su desarrollo. Para desarrollar esta funcionalidad, se utilizarán librerías de Flutter que permitan la entrada de audio y trabajar con el mismo.
 \begin{itemize}
-    \item Realizar la HU10 - Como usuario quiero responder una pregunta de un test del tipo respuesta por micrófono. (Prioridad: Alta | Puntos de Historia: 3)
+    \item HU10 - Como usuario quiero responder una pregunta de un test del tipo respuesta por micrófono.
 \end{itemize}
 
 \subsection{Sprint \#8 - Funcionalidades del profesor con lecciones}
 \textit{31/03/2023   -   14/04/2023}
-\begin{itemize}
 
-\item Realizar la HU13 - Como usuario quiero ver mi progreso en las lecciones. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU28 - Como profesor quiero ver una lista de todas las lecciones. (Prioridad: Media | Puntos de Historia: 0.25)
-\item Realizar la HU14 - Como profesor quiero crear una lección. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU15 - Como profesor quiero modificar el texto de una lección. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU16 - Como profesor quiero añadir contenido multimedia a una lección. (Prioridad: Media | Puntos de Historia: 1)
-\item Realizar la HU17 - Como profesor quiero eliminar contenido multimedia de una lección. (Prioridad: Media | Puntos de Historia: 0.5)
+En la octava iteración se comenzarán a realizar las funcionalidades relacionadas con el profesor y la gestión de las lecciones.
+Además, puede que se necesite terminar la funcionalidad de la entrada de micrófono de la iteración anterior debido a que su estimación
+supera los puntos de historia de un Sprint.
+
+
+\begin{itemize}
+    \item HU13 - Como usuario quiero ver mi progreso en las lecciones.
+    \item HU28 - Como profesor quiero ver una lista de todas las lecciones. 
+    \item HU14 - Como profesor quiero crear una lección.
+    \item HU15 - Como profesor quiero modificar el texto de una lección.
+    \item HU16 - Como profesor quiero añadir contenido multimedia a una lección.
+    \item HU17 - Como profesor quiero eliminar contenido multimedia de una lección.
 \end{itemize}
 
 \subsection{Sprint \#9 - Funcionalidades del profesor con tests}
 \textit{14/04/2023   -   28/04/2023}
+
+En esta iteración se realizarán las funcionalidades relacionadas con el profesor y la gestión de los tests, tales como la creación, modificación y eliminación de las preguntas
+de los distintos tipos. Además, se realizará la funcionalidad de ver todos los usuarios registrados en la aplicación.
+
+
 \begin{itemize}
-\item Realizar la HU27 - Como profesor quiero añadir preguntas a un test del tipo escritura de texto. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU18 - Como profesor quiero añadir preguntas a un test del tipo selección múltiple. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU19 - Como profesor quiero añadir preguntas a un test del tipo selección única. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU20 - Como profesor quiero añadir preguntas a un test del tipo respuesta por micrófono. (Prioridad: Media | Puntos de Historia: 1)
-\item Realizar la HU21 - Como profesor quiero eliminar preguntas de un test. (Prioridad: Media | Puntos de Historia: 0.25)
-\item Realizar la HU22 - Como profesor quiero modificar preguntas de un test. (Prioridad: Media | Puntos de Historia: 0.5)
+    \item HU27 - Como profesor quiero añadir preguntas a un test del tipo escritura de texto.
+    \item HU18 - Como profesor quiero añadir preguntas a un test del tipo selección múltiple.
+    \item HU19 - Como profesor quiero añadir preguntas a un test del tipo selección única.
+    \item HU20 - Como profesor quiero añadir preguntas a un test del tipo respuesta por micrófono. 
+    \item HU21 - Como profesor quiero eliminar preguntas de un test.
+    \item HU22 - Como profesor quiero modificar preguntas de un test.
+    \item HU30 - Como administrador quiero ver una lista de todos los usuarios.
 \end{itemize}
+
+\newpage
 
 \subsection{Sprint \#10 - Funcionalidades del administrador y ranking}
 \textit{28/04/2023   -   12/05/2023}
+
+En la decima iteración se pretenden implementar todas las funcionalidades que tienen que ver con la administración de los usuarios, además de
+dos historias relacionadas con el perfil propio del usuario.
 \begin{itemize}
-\item Realizar la HU24 - Como administrador quiero modificar los datos de un usuario. (Prioridad: Media | Puntos de Historia: 1)
-\item Realizar la HU30 - Como administrador quiero ver una lista de todos los usuarios. (Prioridad: Media | Puntos de Historia: 0.25)
-\item Realizar la HU25 - Como administrador quiero eliminar un usuario. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU3 - Como usuario quiero ver los datos personales y los logros de mi perfil. (Prioridad: Media | Puntos de Historia: 0.5)
-\item Realizar la HU4 - Como usuario quiero editar los datos de mi perfil. (Prioridad: Media | Puntos de Historia: 1)
+    \item HU24 - Como administrador quiero modificar los datos de un usuario.
+    \item HU25 - Como administrador quiero eliminar un usuario.
+    \item HU3 - Como usuario quiero ver los datos personales y los logros de mi perfil.
+    \item HU4 - Como usuario quiero editar los datos de mi perfil.
+    \item HU23 - Como administrador quiero crear un usuario.
 
 \end{itemize}
 
 \subsection{Sprint \#11 - Funcionalidades poco prioritarias y valor añadido}
 \textit{12/05/2023   -   26/05/2023}
+
+El objetivo de este Sprint es acabar todas las historias de usuario que quedan del product backlog y cuya prioridad es baja como lo es la interacción entre los distintos usuarios de la aplicación. Además, se añadirá una funcionalidad de valor añadido
+en función del tiempo disponible y de las funcionalidades que se hayan podido implementar en los Sprints anteriores.
 \begin{itemize}
-    \item Realizar la HU5 - Como usuario quiero ver el perfil de otros usuarios.  (Prioridad: Baja | Puntos de Historia: 0.5)
-    \item Realizar la HU23 - Como administrador quiero crear un usuario. (Prioridad: Baja | Puntos de Historia: 1)
-    \item Realizar la HU12 - Como usuario quiero ver el ranking de usuarios. (Prioridad: Baja | Puntos de Historia: 0.5)
+    \item HU5 - Como usuario quiero ver el perfil de otros usuarios.
+    \item HU12 - Como usuario quiero ver el ranking de usuarios.
     \item Añadir funcionalidad de valor añadido (a definir)
-    \end{itemize}
-    
-    \subsection{Sprint \#12 - Pruebas, conclusión y finalización del proyecto}
+\end{itemize}
+
+\subsection{Sprint \#12 - Pruebas, conclusión y finalización del proyecto}
 \textit{26/05/2023   -   09/06/2023}
+
+En este Sprint se pretende realizar mejoras de código en cuanto a estilo, formato y calidad del mismo. Además, se pretende dejar terminado la redacción
+del séptimo capítulo del documento.
 \begin{itemize}
     \item Redactar Capítulo 7 - Implementación
     \item Realizar mejoras de código.
-
 \end{itemize}
+
 \subsection{Sprint \#13 - Pruebas y mejoras}
 \textit{09/06/2023   -   23/06/2023}
+
+Este Sprint se dedicará a realizar todas las pruebas necesarias para comprobar que la aplicación funciona correctamente y que no hay errores en el código, tanto
+en el frontend como en el backend. También se redactará el octavo capítulo del documento con las pruebas realizadas.
+
 \begin{itemize}
     \item Realizar pruebas de integración.
     \item Realizar pruebas de unidad.
-    \end{itemize}
+    \item Redactar Capítulo 8 - Pruebas.
+\end{itemize}
 
 \subsection{Sprint \#14 - Pruebas, conclusión y finalización del proyecto}
 \textit{23/06/2023   -   15/07/2023}
-\begin{itemize}
 
-    \item Redactar Capítulo 8 - Pruebas.
+El último Sprint se dedicará por completo a la redacción del último capítulo del documento, en el que se recogerán las conclusiones del proyecto y se realizará una revisión
+de todos los capítulos para corregir errores y mejorar la redacción. Se prepará también la presentación del proyecto para la defensa ante el tribunal.
+\begin{itemize}
     \item Redactar Capítulo 9 - Conclusiones.
     \item Revisión de todo el documento y corrección de errores.
+    \item Preparación de la presentación del proyecto.
 \end{itemize}
 
 
@@ -205,6 +284,6 @@ Por último, se muestra el diagrama de Gantt de la planificación del proyecto, 
     \centerline{\includegraphics[width=1.25\textwidth]{imagenes/c4/gantt.png}}
     \caption{Diagrama de Gantt de la planificación del proyecto, divivido por Sprints.}
     \label{fig:diagrama_gantt}
-    
-    
+
+
 \end{figure}
