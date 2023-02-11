@@ -58,14 +58,14 @@
 \contentsline {subsection}{\numberline {4.4.12}Sprint \#12 - Pruebas, conclusión y finalización del proyecto}{37}{subsection.4.4.12}%
 \contentsline {subsection}{\numberline {4.4.13}Sprint \#13 - Pruebas y mejoras}{38}{subsection.4.4.13}%
 \contentsline {subsection}{\numberline {4.4.14}Sprint \#14 - Pruebas, conclusión y finalización del proyecto}{38}{subsection.4.4.14}%
-\contentsline {section}{\numberline {4.5}Diagrama de Gantt}{38}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Análisis del problema}{41}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introducción}{41}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Historias de Usuario}{41}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Diagrama de Clases}{46}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Diseño}{47}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introducción}{47}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Diseño de interfaces de usuario}{47}{subsection.6.1.1}%
-\contentsline {chapter}{\numberline {7}Implementación}{53}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Pruebas}{55}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{57}{chapter.9}%
+\contentsline {section}{\numberline {4.5}Diagrama de Gantt}{39}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Análisis del problema}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducción}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Historias de Usuario}{43}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Diagrama de Clases}{48}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Diseño}{49}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introducción}{49}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Diseño de interfaces de usuario}{49}{subsection.6.1.1}%
+\contentsline {chapter}{\numberline {7}Implementación}{55}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Pruebas}{57}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{59}{chapter.9}%

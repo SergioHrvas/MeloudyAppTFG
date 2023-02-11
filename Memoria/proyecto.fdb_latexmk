@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1676069265 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1676069267
+["pdflatex"] 1676073919 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1676073921
   "/etc/texmf/web2c/texmf.cnf" 1650479083 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" 1675374540 5854 ed428762162eb0006262b6723f99cf95 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -126,7 +126,7 @@
   "capitulos/01_Introduccion.tex" 1670080792 5331 4b8bf64de568f952aafc57882b679976 ""
   "capitulos/02_EstadoDelArte.tex" 1675188437 19024 accc16c7363a34b2c727e5900c8d4a16 ""
   "capitulos/03_Requisitos.tex" 1675203532 14412 da1713fda6e78dc6c7a1d5de6d4a342c ""
-  "capitulos/04_Planificacion.tex" 1676069265 18429 9b1eafd8ba6427dec40e6b2be8f5902b ""
+  "capitulos/04_Planificacion.tex" 1676073918 21029 624038e1e6a795a30d7a3b3ca1018908 ""
   "capitulos/05_Analisis.tex" 1675287423 45738 ae181a2ac65f2464d0278904ea6a759a ""
   "capitulos/06_Diseño.tex" 1675378067 2813 2b2f7d971fe462247b5788981b7cb777 ""
   "capitulos/07_Implementacion.tex" 1668254413 26 ca3029cbc7350f29fd8041c7d7e80974 ""
@@ -149,6 +149,10 @@
   "imagenes/c3/boceto.png" 1674314141 258838 6176991824a6fe211574df679acdd48a ""
   "imagenes/c3/diagrama.png" 1674313726 40938 e4da66dce927ed67ccf3a2464306a7fe ""
   "imagenes/c4/gantt.png" 1675112866 103882 4ddc73f0dc86e3682d45d727b84a0b98 ""
+  "imagenes/c4/gantt1.png" 1676070673 62499 a2f15f8f51d58f2bb96afec81e983d3f ""
+  "imagenes/c4/gantt2.png" 1676071900 53497 2a7df283b00fadb4a9ed1aaf5230ebe5 ""
+  "imagenes/c4/gantt3.png" 1676072482 51928 7c58b8511bc355f935c300b38d9cda6c ""
+  "imagenes/c4/gantt4.png" 1676072955 45729 13362ad45acacd30d5decfbeb8443d28 ""
   "imagenes/c5/diagramadeclases.png" 1675424562 57588 d03cd2952c682d636a9b3a03403c359a ""
   "imagenes/c6/1.png" 1675370116 258857 99d195cb2b6e776cea62300a0cb69204 ""
   "imagenes/c6/10.png" 1675374094 87713 68ff4b016e9329cb16991b993e5015f7 ""
@@ -165,11 +169,11 @@
   "portada/portada.tex" 1668251997 1142 a402399b0f22146e34e4c13ff33dd541 ""
   "portada/portada_2.tex" 1668251614 1192 bbdcbec8504e23108950405322ec271f ""
   "prefacios/prefacio.tex" 1668251154 2618 b1bc60cf82215c54c475f5a6f76b3785 ""
-  "proyecto.aux" 1676069267 19699 be2e69328bb3eb9d063794c43b8a154b "pdflatex"
-  "proyecto.lof" 1676069267 4754 d942fde720f3389a3c13b4a36a84f2d1 "pdflatex"
-  "proyecto.out" 1676069267 11638 81f6570df4fa5d103d16b9b5da7170b3 "pdflatex"
+  "proyecto.aux" 1676073921 20873 7555b50dc71e699141595c5e2c3ec952 "pdflatex"
+  "proyecto.lof" 1676073921 5293 fc9f1cf5b5d4c1f8d9f2edc1dbc62db9 "pdflatex"
+  "proyecto.out" 1676073921 11638 81f6570df4fa5d103d16b9b5da7170b3 "pdflatex"
   "proyecto.tex" 1675374540 5854 ed428762162eb0006262b6723f99cf95 ""
-  "proyecto.toc" 1676069267 6166 241ab322be817d69dc3524c40b1bd54b "pdflatex"
+  "proyecto.toc" 1676073921 6166 3edae531f0050c5df65e8222d5fa789b "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.lof"
