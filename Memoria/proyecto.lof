@@ -25,18 +25,22 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de Gantt de los Sprints 9, 10 y 11.\relax }}{41}{figure.caption.31}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de Gantt de los Sprints 12, 13 y 14.\relax }}{41}{figure.caption.32}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.\relax }}{48}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.\relax }}{49}{figure.caption.67}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Boceto de la pantalla principal de la aplicación donde se muestran las lecciones disponibles para el usuario.\relax }}{49}{figure.caption.64}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Boceto de la pantalla del perfil de usuario con la sesión iniciada donde se muestran sus datos.\relax }}{50}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Boceto de la pantalla de logros conseguidos por el usuario.\relax }}{50}{figure.caption.66}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Boceto de la pantalla de una lección, con el texto, el contenido multimedia y el botón para comenzar el test.\relax }}{51}{figure.caption.67}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección única.\relax }}{51}{figure.caption.68}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección multiple.\relax }}{52}{figure.caption.69}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo escritura de texto.\relax }}{52}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.\relax }}{53}{figure.caption.71}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.\relax }}{53}{figure.caption.72}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.\relax }}{54}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.\relax }}{52}{figure.caption.68}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrama de base de datos del sistema, donde se muestran los documentos que se van a almacenar en nuestra base de datos de MongoDB.\relax }}{52}{figure.caption.69}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagrama de clases del sistema donde se detallan las propiedades y las relaciones de las distintas clases o entidades que tendrá el software.\relax }}{53}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Diagrama de secuencia de un usuario registrandose, el cual interactuará con la vista para poder hacer la petición al controlador y guardar su usuario en el modelo.\relax }}{54}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Boceto de la pantalla principal de la aplicación donde se muestran las lecciones disponibles para el usuario.\relax }}{55}{figure.caption.72}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Boceto de la pantalla del perfil de usuario con la sesión iniciada donde se muestran sus datos.\relax }}{55}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Boceto de la pantalla de logros conseguidos por el usuario.\relax }}{56}{figure.caption.74}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Boceto de la pantalla de una lección, con el texto, el contenido multimedia y el botón para comenzar el test.\relax }}{56}{figure.caption.75}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección única.\relax }}{57}{figure.caption.76}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección multiple.\relax }}{57}{figure.caption.77}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo escritura de texto.\relax }}{58}{figure.caption.78}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.\relax }}{58}{figure.caption.79}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.\relax }}{59}{figure.caption.80}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.\relax }}{59}{figure.caption.81}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

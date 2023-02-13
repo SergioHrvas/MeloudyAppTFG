@@ -1,10 +1,59 @@
 \chapter{Diseño}
 
 \section{Introducción}
-En este capítulo 
+En este capítulo se realizará el diseño del software a desarrollar. Para ello, se detallará cómo se va a desarrollar la aplicación, qué arquitectura y tecnologías se van a utilizar y cómo se va a realizar el diseño de la interfaz de usuario. 
+Esta fase tiene como objetivo definir la estructura del sistema y la función de cada una de sus partes, lo cual permitirá que el desarrollo sea más eficiente y que el resultado final tenga mayor calidad.
+
+\subsection{Arquitectura del sistema}
+Para el desarrollo de la aplicación se ha decidido utilizar una arquitectura \textbf{cliente-servidor}, donde el servidor se encargará de gestionar la base de datos y de realizar las operaciones necesarias para extraer la información de dicho modelo, mientras que el cliente será 
+la aplicación móvil que se encargará de mostrar la información al usuario y de realizar las operaciones que el usuario solicite. Además, también será una arquitectura basada en el patrón de diseño \textbf{Modelo / Vista / Controlador (MVC)}, donde el modelo gestionará la información
+de la base de datos, la vista se hará cargo de mostrar la información al usuario y facilitar la interacción de este con el sistema y el controlador se encargará de gestionar las operaciones que el usuario solicite. Todo esto mediante las tecnologías \textbf{Node.js} para el controlador,  \textbf{MongoDB} (y mongoose) para
+el modelo y Flutter para las distintas vistas que los usuarios tendrán. 
+
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=\textwidth]{imagenes/c6/arch.png}}
+    \caption{Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.}
+    \label{fig:diagramadearquitectura}    
+\end{figure}
+
+\subsection{Diagrama de base de datos}
+
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=\textwidth]{imagenes/c6/bbdd.png}}
+    \caption{Diagrama de base de datos del sistema, donde se muestran los documentos que se van a almacenar en nuestra base de datos de MongoDB.}
+    \label{fig:diagramadearquitectura}    
+\end{figure}
+
+
+\subsection{Diagrama de clases}
+A continuación se muestra el diagrama de clases de diseño, el cual se ha realizado a partir del diagrama de clases de análisis del capítulo anterior En esta ocasión se han detallado más
+los atributos y los métodos de cada clase, facilitando así la comprensión de las relaciones entre las clases y de la estructura del sistema.
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=\textwidth]{imagenes/c6/diagramadeclases.png}}
+    \caption{Diagrama de clases del sistema donde se detallan las propiedades y las relaciones de las distintas clases o entidades que tendrá el software.}
+    \label{fig:diagramadearquitectura}    
+\end{figure}
+
+\subsection{Diagramas de secuencia}
+En lo que respecta a los diagramas de secuencia, se han realizado algunos ejemplos de cómo sería el flujo de una operación en el sistema. Como hemos visto anteriormente,
+se seguirá una arquitectura basada en el patrón de diseño MVC, por lo que las peticiones pasarán por la vista, luego por el controlador y finalmente por el modelo.
+En este caso, se ha realizado un diagrama de secuencia de cómo sería el flujo de una operación en la que un usuario se registra en la aplicación, otro para un usuario que contesta un test y otro
+para un profesor que modifica una lección.
+
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=\textwidth]{imagenes/c6/diagramadesecuencia.png}}
+    \caption{Diagrama de secuencia de un usuario registrandose, el cual interactuará con la vista para poder hacer la petición al controlador y guardar su usuario en el modelo.}
+    \label{fig:diagramadesecuencia}    
+\end{figure}
+
 
 \subsection{Diseño de interfaces de usuario}
-
+Por último, en este apartado se presentan los bocetos de las interfaces de usuario que se han diseñado para la aplicación. Estos bocetos se han realizado con la herramienta Canva y serán de ayuda para la realización del diseño final de las interfaces de usuario,
+que, pese a que seguirán una estructura similar a la de los bocetos, podrán variar en algunos detalles y aspectos de diseño.
 
 \begin{figure}[H]
     \centering
