@@ -19,13 +19,14 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama general de la perspectiva del producto a desarrollar.\relax }}{21}{figure.caption.25}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Primer boceto de la interfaz de usuario de la página de inicio de la aplicación para los usuarios, donde se muestra la lista de las lecciones\relax }}{24}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de Gantt de la planificación del proyecto, divivido por Sprints.\relax }}{39}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Gantt de los cuatro primeros Sprints.\relax }}{40}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de Gantt de los Sprints 5, 6, 7 y 8.\relax }}{40}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de Gantt de los Sprints 9, 10 y 11.\relax }}{41}{figure.caption.31}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de Gantt de los Sprints 12, 13 y 14.\relax }}{41}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.\relax }}{30}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Gantt de la planificación del proyecto, divivido por Sprints.\relax }}{39}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de Gantt de los cuatro primeros Sprints.\relax }}{40}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de Gantt de los Sprints 5, 6, 7 y 8.\relax }}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de Gantt de los Sprints 9, 10 y 11.\relax }}{41}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama de Gantt de los Sprints 12, 13 y 14.\relax }}{42}{figure.caption.33}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.\relax }}{49}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.\relax }}{48}{figure.caption.67}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.\relax }}{52}{figure.caption.68}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrama de base de datos del sistema, donde se muestran los documentos que se van a almacenar en nuestra base de datos de MongoDB.\relax }}{52}{figure.caption.69}%

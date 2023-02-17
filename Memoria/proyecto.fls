@@ -1033,6 +1033,11 @@ INPUT capitulos/04_Planificacion.tex
 INPUT ./capitulos/04_Planificacion.tex
 INPUT ./capitulos/04_Planificacion.tex
 INPUT capitulos/04_Planificacion.tex
+INPUT ./imagenes/c4/scrum.png
+INPUT ./imagenes/c4/scrum.png
+INPUT imagenes/c4/scrum.png
+INPUT ./imagenes/c4/scrum.png
+INPUT ./imagenes/c4/scrum.png
 INPUT ./imagenes/c4/gantt.png
 INPUT ./imagenes/c4/gantt.png
 INPUT imagenes/c4/gantt.png

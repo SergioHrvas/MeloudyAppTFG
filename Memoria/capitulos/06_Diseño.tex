@@ -5,10 +5,10 @@ En este capítulo se realizará el diseño del software a desarrollar. Para ello
 Esta fase tiene como objetivo definir la estructura del sistema y la función de cada una de sus partes, lo cual permitirá que el desarrollo sea más eficiente y que el resultado final tenga mayor calidad.
 
 \subsection{Arquitectura del sistema}
-Para el desarrollo de la aplicación se ha decidido utilizar una arquitectura \textbf{cliente-servidor}, donde el servidor se encargará de gestionar la base de datos y de realizar las operaciones necesarias para extraer la información de dicho modelo, mientras que el cliente será 
-la aplicación móvil que se encargará de mostrar la información al usuario y de realizar las operaciones que el usuario solicite. Además, también será una arquitectura basada en el patrón de diseño \textbf{Modelo / Vista / Controlador (MVC)}, donde el modelo gestionará la información
+Para el desarrollo de la aplicación se ha decidido utilizar una arquitectura \textbf{cliente-servidor}, donde el servidor será responsable de las operaciones relacionadas con la gestión (añadir, extraer, eliminar y/o modificar) de la información almacenada en la base de datos, mientras que el cliente será 
+la aplicación móvil que se encargará de mostrar la información al usuario y de realizar las operaciones que el usuario solicite. Además, también será una arquitectura basada en el patrón de diseño \textbf{Modelo / Vista / Controlador (MVC)}, donde el modelo gestionará y mantendrá la estructura de la información
 de la base de datos, la vista se hará cargo de mostrar la información al usuario y facilitar la interacción de este con el sistema y el controlador se encargará de gestionar las operaciones que el usuario solicite. Todo esto mediante las tecnologías \textbf{Node.js} para el controlador,  \textbf{MongoDB} (y mongoose) para
-el modelo y Flutter para las distintas vistas que los usuarios tendrán. 
+el modelo y \textbf{Flutter} para las distintas vistas que los usuarios tendrán. 
 
 \begin{figure}[H]
     \centering
@@ -18,6 +18,9 @@ el modelo y Flutter para las distintas vistas que los usuarios tendrán.
 \end{figure}
 
 \subsection{Diagrama de base de datos}
+En cuanto al diagrama de base de datos, se ha realizado un diagrama de base de datos no relacional, que representa los distintos documentos 
+que tendrá nuestra base de datos de MongoDB. En este caso, se han definido 5 documentos, uno para los usuarios, otro para las lecciones, otro para los tests, otro para las preguntas de los tests y otro para
+los logros. También se han definido las referencias que habrá entre los documentos, como por ejemplo que un usuario tiene varios logros.
 
 \begin{figure}[H]
     \centering
