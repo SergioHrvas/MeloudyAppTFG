@@ -1,9 +1,6 @@
 const User = require("../models/User");
-const Cookies = require("universal-cookie");
 const fs = require('fs');
 const path = require('path');
-
-const cookies = new Cookies();
 
 const create = (req, res) => {
     
@@ -32,7 +29,23 @@ const create = (req, res) => {
 
 }
 
-
+const index = (req, res) => {
+    // Return all users
+    User.find({}, (error, users) => {
+        if(error || !users){
+            return res.status(404).json({
+                status:"error",
+                mensaje:"El usuario no se ha podido encontrar"
+            });
+        }
+        return res.status(200).json({
+            status:"success",
+            usuario: users,
+            mensaje:"El usuario se ha encontrado"
+        });
+    }
+    );
+}
 const get = (req, res) => {
     const id = req.params.id;
     User.findById(id, (error, user) => {
@@ -71,5 +84,6 @@ const remove = (req, res) => {
 module.exports = {
     create, 
     get,
-    remove
+    remove,
+    index
 }

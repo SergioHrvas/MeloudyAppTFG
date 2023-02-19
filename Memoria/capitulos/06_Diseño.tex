@@ -4,20 +4,23 @@
 En este capítulo se realizará el diseño del software a desarrollar. Para ello, se detallará cómo se va a desarrollar la aplicación, qué arquitectura y tecnologías se van a utilizar y cómo se va a realizar el diseño de la interfaz de usuario. 
 Esta fase tiene como objetivo definir la estructura del sistema y la función de cada una de sus partes, lo cual permitirá que el desarrollo sea más eficiente y que el resultado final tenga mayor calidad.
 
-\subsection{Arquitectura del sistema}
+\section{Arquitectura del sistema}
 Para el desarrollo de la aplicación se ha decidido utilizar una arquitectura \textbf{cliente-servidor}, donde el servidor será responsable de las operaciones relacionadas con la gestión (añadir, extraer, eliminar y/o modificar) de la información almacenada en la base de datos, mientras que el cliente será 
 la aplicación móvil que se encargará de mostrar la información al usuario y de realizar las operaciones que el usuario solicite. Además, también será una arquitectura basada en el patrón de diseño \textbf{Modelo / Vista / Controlador (MVC)}, donde el modelo gestionará y mantendrá la estructura de la información
-de la base de datos, la vista se hará cargo de mostrar la información al usuario y facilitar la interacción de este con el sistema y el controlador se encargará de gestionar las operaciones que el usuario solicite. Todo esto mediante las tecnologías \textbf{Node.js} para el controlador,  \textbf{MongoDB} (y mongoose) para
-el modelo y \textbf{Flutter} para las distintas vistas que los usuarios tendrán. 
+de la base de datos, la vista se hará cargo de mostrar la información al usuario y facilitar la interacción de este con el sistema y el controlador se encargará de gestionar las operaciones que el usuario solicite. Todo esto mediante las tecnologías \textbf{Node.js} para el controlador, \textbf{Mongoose} para
+el modelo, \textbf{MongoDB} para la base de datos y \textbf{Flutter} para las distintas vistas que los usuarios tendrán. 
 
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=\textwidth]{imagenes/c6/arch.png}}
+    \centerline{\includegraphics[width=1.1\textwidth]{imagenes/c6/arch.png}}
     \caption{Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.}
     \label{fig:diagramadearquitectura}    
 \end{figure}
 
-\subsection{Diagrama de base de datos}
+Como podemos ver en el diagrama, el controlador tendrá una API REST que será la encargada de gestionar las peticiones que se realicen desde la aplicación móvil. La API REST es una interfaz que permite la comunicación entre dos sistemas de computación (en nuestro caso, entre el cliente y el servidor) para
+el intercambio de información de manera segura. REST definirá las restricciones a cumplir dentro de nuestra arquitectura, como por ejemplo la necesidad de utilizar los principales verbos HTTP (GET, POST, PUT y DELETE) para realizar las operaciones de lectura, creación, actualización y eliminación de la información.
+
+\section{Diagrama de base de datos}
 En cuanto al diagrama de base de datos, se ha realizado un diagrama de base de datos no relacional, que representa los distintos documentos 
 que tendrá nuestra base de datos de MongoDB. En este caso, se han definido 5 documentos, uno para los usuarios, otro para las lecciones, otro para los tests, otro para las preguntas de los tests y otro para
 los logros. También se han definido las referencias que habrá entre los documentos, como por ejemplo que un usuario tiene varios logros.
@@ -29,8 +32,16 @@ los logros. También se han definido las referencias que habrá entre los docume
     \label{fig:diagramadearquitectura}    
 \end{figure}
 
+En el diagrama se pueden ver varias referencias entre las colecciones de datos que se explicarán a continuación:
+\begin{itemize}
+    \item Un usuario tendrá los logros que consiga al progresar en la aplicación.
+    \item Un usuario tiene un progreso, que contendrá las lecciones que realice junto con los tests que haya contestado.
+    \item Un test tendrá varias preguntas (alrededor de 10) y estas se generarán de forma aleatoria cuando se cree el test.
+    \item Una lección tendrá varias preguntas y de dicho conjunto de preguntas se seleccionarán algunas al azar para formar el test.
+    \item Un test pertenecerá a una lección: un test solo podrá pertenecer a una lección (aquella donde se generó dicho test).
+\end{itemize}
 
-\subsection{Diagrama de clases}
+\section{Diagrama de clases}
 A continuación se muestra el diagrama de clases de diseño, el cual se ha realizado a partir del diagrama de clases de análisis del capítulo anterior En esta ocasión se han detallado más
 los atributos y los métodos de cada clase, facilitando así la comprensión de las relaciones entre las clases y de la estructura del sistema.
 \begin{figure}[H]
@@ -40,7 +51,7 @@ los atributos y los métodos de cada clase, facilitando así la comprensión de 
     \label{fig:diagramadearquitectura}    
 \end{figure}
 
-\subsection{Diagramas de secuencia}
+\section{Diagramas de secuencia}
 En lo que respecta a los diagramas de secuencia, se han realizado algunos ejemplos de cómo sería el flujo de una operación en el sistema. Como hemos visto anteriormente,
 se seguirá una arquitectura basada en el patrón de diseño MVC, por lo que las peticiones pasarán por la vista, luego por el controlador y finalmente por el modelo.
 En este caso, se ha realizado un diagrama de secuencia de cómo sería el flujo de una operación en la que un usuario se registra en la aplicación, otro para un usuario que contesta un test y otro
@@ -54,26 +65,39 @@ para un profesor que modifica una lección.
 \end{figure}
 
 
-\subsection{Diseño de interfaces de usuario}
+\section{Diseño de interfaces de usuario}
 Por último, en este apartado se presentan los bocetos de las interfaces de usuario que se han diseñado para la aplicación. Estos bocetos se han realizado con la herramienta Canva y serán de ayuda para la realización del diseño final de las interfaces de usuario,
 que, pese a que seguirán una estructura similar a la de los bocetos, podrán variar en algunos detalles y aspectos de diseño.
+
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/9.png}}
+    \caption{Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.}
+    \label{fig:login}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/10.png}}
+    \caption{Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.}
+    \label{fig:registro}
+\end{figure}
+
 
 \begin{figure}[H]
     \centering
     \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/1.png}}
     \caption{Boceto de la pantalla principal de la aplicación donde se muestran las lecciones disponibles para el usuario.}
     \label{fig:pantallaprincipal}
-    
-    
 \end{figure}
+
 
 \begin{figure}[H]
     \centering
     \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/2.png}}
     \caption{Boceto de la pantalla del perfil de usuario con la sesión iniciada donde se muestran sus datos.}
     \label{fig:perfil}
-    
-    
 \end{figure}
 
 
@@ -82,8 +106,6 @@ que, pese a que seguirán una estructura similar a la de los bocetos, podrán va
     \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/3.png}}
     \caption{Boceto de la pantalla de logros conseguidos por el usuario.}
     \label{fig:logros}
-    
-    
 \end{figure}
 
 
@@ -101,12 +123,14 @@ que, pese a que seguirán una estructura similar a la de los bocetos, podrán va
     \label{fig:seleccionunica}
 \end{figure}
 
+
 \begin{figure}[H]
     \centering
     \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/6.png}}
     \caption{Boceto de la pantalla de una pregunta de test de tipo selección multiple.}
     \label{fig:seleccionmultiple}
 \end{figure}
+
 
 \begin{figure}[H]
     \centering
@@ -115,6 +139,7 @@ que, pese a que seguirán una estructura similar a la de los bocetos, podrán va
     \label{fig:escrituratexto}
 \end{figure}
 
+x
 \begin{figure}[H]
     \centering
     \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/8.png}}
@@ -122,16 +147,13 @@ que, pese a que seguirán una estructura similar a la de los bocetos, podrán va
     \label{fig:microfono}
 \end{figure}
 
+\newpage
+
+Para finalizar la sección se presenta un diagrama de navegación de la aplicación, el cual muestra las distintas pantallas que tendrá la aplicación siguiendo el flujo que un usuario tendría al utilizar la aplicación.
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/9.png}}
-    \caption{Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.}
-    \label{fig:login}
+    \centerline{\includegraphics[width=1.2\textwidth]{imagenes/c6/diagrambocetos.png}}
+    \caption{Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.}
+    \label{fig:microfono}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/10.png}}
-    \caption{Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.}
-    \label{fig:registro}
-\end{figure}
