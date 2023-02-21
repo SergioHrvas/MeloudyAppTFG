@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:meloudy_app/leccion.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+import 'package:meloudy_app/providers/auth.dart';
 
 
-
+enum AuthMode { Signup, Login }
 class Login extends StatelessWidget {
 
   final GlobalKey<ScaffoldState> _drawerscaffoldkey =
@@ -14,9 +16,8 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(
-        home: Scaffold(
+    final deviceSize = MediaQuery.of(context).size;
+    return Scaffold(
             appBar: AppBar(title: Text("MELOUDY")),
             drawer: Drawer(
               child: ListView(
@@ -41,28 +42,206 @@ class Login extends StatelessWidget {
                 ],
               ),
             ),
-            body: SingleChildScrollView(
-                child: Container(
+            body: Stack(
+                children:[Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromRGBO(117, 234, 255, 1.0).withOpacity(0.5),
+                        Color.fromRGBO(115, 100, 200, 1).withOpacity(0.9),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      stops: [0,1],
+                    ),
+                  ),
+                ), SingleChildScrollView(child: Container(
+                  height: deviceSize.height,
+                    width: deviceSize.width,
+
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Flexible(
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: 20.0, top: 30.0),
+                            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 70.0),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.lightBlue.shade500,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 8,
+                                  color: Colors.black26,
+                                  offset: Offset(0,2),
+                                )
+                              ],
+                            ),
+                            child: Text(
+                              "MELOUDY",
+                              style: TextStyle(color: Colors.white,
+                              fontSize: 50,
+                              fontFamily: 'Anton',
+                              fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: deviceSize.width > 600 ? 2 : 1,
+                          child: AuthCard(),)
+                      ],
+                    ),
                   padding: EdgeInsets.only(left: 20, right: 20),
                     margin: EdgeInsets.only(top:5),
-                    child: Column(
-              children: [Container(child: TextFormField(
-                decoration: InputDecoration(
-                  border: UnderlineInputBorder(),
-                    labelText: "Correo Electrónico"
-                ),
-              ),
-              margin: EdgeInsets.only(bottom: 20),), TextFormField(
-                decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
-                    labelText: "Contraseña"
-                ),
-                obscureText: true,
-              ),
-              ElevatedButton(
-                child: Text("Iniciar Sesión"),
-              )]
-            )))));
+                    ),),]));
+  }
+}
+
+
+class AuthCard extends StatefulWidget {
+  const AuthCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _AuthCardState createState() => _AuthCardState();
+}
+
+class _AuthCardState extends State<AuthCard> {
+  final GlobalKey<FormState> _formKey = GlobalKey();
+  AuthMode _authMode = AuthMode.Login;
+  Map<String, String> _authData = {
+    'Correo electrónico': '',
+    'Contraseña': '',
+  };
+  var _isLoading = false;
+  final _passwordController = TextEditingController();
+
+  Future<void> _submit() async {
+    if (!_formKey.currentState.validate()) {
+      // Invalid!
+      return;
+    }
+    _formKey.currentState.save();
+    setState(() {
+      _isLoading = true;
+    });
+    if (_authMode == AuthMode.Login) {
+      // Log user in
+    } else {
+      await Provider.of<Auth>(context, listen: false).registro(_authData['email'], _authData['password']);
+      // Sign user up
+    }
+    setState(() {
+      _isLoading = false;
+    });
   }
 
+  void _switchAuthMode() {
+    if (_authMode == AuthMode.Login) {
+      setState(() {
+        _authMode = AuthMode.Signup;
+      });
+    } else {
+      setState(() {
+        _authMode = AuthMode.Login;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final deviceSize = MediaQuery.of(context).size;
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      elevation: 8.0,
+      child: Container(
+        height: _authMode == AuthMode.Signup ? 320 : 260,
+        constraints:
+        BoxConstraints(minHeight: _authMode == AuthMode.Signup ? 320 : 260),
+        width: deviceSize.width * 0.75,
+        padding: EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Correo electrónico'),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value.isEmpty || !value.contains('@')) {
+                      return '¡Correo inválido!';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    _authData['email'] = value;
+                  },
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: 'Contraseña'),
+                  obscureText: true,
+                  controller: _passwordController,
+                  validator: (value) {
+                    if (value.isEmpty || value.length < 5) {
+                      return '¡Contraseña demasiado corta!';
+                    }
+                  },
+                  onSaved: (value) {
+                    _authData['password'] = value;
+                  },
+                ),
+                if (_authMode == AuthMode.Signup)
+                  TextFormField(
+                    enabled: _authMode == AuthMode.Signup,
+                    decoration: InputDecoration(labelText: 'Confirmar contraseña'),
+                    obscureText: true,
+                    validator: _authMode == AuthMode.Signup
+                        ? (value) {
+                      if (value != _passwordController.text) {
+                        return '¡Las contraseñas no coinciden!';
+                      }
+                    }
+                        : null,
+                  ),
+                SizedBox(
+                  height: 20,
+                ),
+                if (_isLoading)
+                  CircularProgressIndicator()
+                else ElevatedButton(
+                    child:
+                    Text(_authMode == AuthMode.Login ? 'INICIAR SESIÓN' : 'REGISTRARME'),
+                    onPressed: _submit,
+                    style: ButtonStyle(shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    )),
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 30.0, vertical: 8.0)),
+                        backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                        foregroundColor: MaterialStateProperty.all(Theme.of(context).primaryTextTheme.button.color)),
+
+                  ),
+                TextButton(
+                  child: Text(
+                      'QUIERO ${_authMode == AuthMode.Login ? 'REGISTRARME' : 'INICIAR SESIÓN'}'),
+                  onPressed: _switchAuthMode,
+                  style: ButtonStyle(
+                      padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 30.0, vertical: 4)),
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      foregroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor)
+                  ),
+
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

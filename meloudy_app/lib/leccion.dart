@@ -13,18 +13,17 @@ class Leccion extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 130,
-              width: 130,
-              margin: EdgeInsets.only(bottom: 8.0),
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 179, 179, 179),
-                  borderRadius: BorderRadius.circular(100)),
-              child: Container(
-                height: 30,
-                width: 30,
-                child: Image.asset('assets/musica.png'),
-              )
-            ),
+                height: 130,
+                width: 130,
+                margin: EdgeInsets.only(bottom: 8.0),
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 179, 179, 179),
+                    borderRadius: BorderRadius.circular(100)),
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  child: Image.asset('assets/musica.png'),
+                )),
             Container(
               padding: EdgeInsets.all(10),
               child: Text(
