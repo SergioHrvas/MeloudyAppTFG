@@ -1,31 +1,63 @@
 const User = require("../models/User");
 const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const create = (req, res) => {
     
     //Recoger parametros por post
     let param = req.body;
 
-    //Crear objeto usuario y se asignan parámetros automáticamente
-    const user = new User(param);
+    if(!(param.correo && param.password && param.nombre && param.apellidos && param.rol)){
+        res.status(400).send("All input is required");
+    }
 
-    console.log(param);
-    //Guardar el objeto en la base de datos
-    user.save((error, userSaved) => {
-        if(error || !userSaved){
+    const antiguoUsuario = User.findOne({correo: param.correo});
+
+    if(antiguoUsuario){
+        return res.status(409).send("User Already Exist. Please Login");
+    }
+
+    encryptedpassword = bcrypt.hashSync(param.password, 10);
+
+    param.password = encryptedpassword;
+
+    console.log("param" + param.nombre);
+
+    //Crear objeto de usuario
+    let user = new User(param);
+
+    const token = jwt.sign(
+        {user_id: user._id, email},
+        process.env.TOKEN_KEY,
+        {
+            expiresIn: "2h",
+        }
+    );
+
+    user.token = token;
+
+    //Asignar valores al objeto de usuario
+    user.nombre = param.nombre;
+    user.password = param.password;
+
+    console.log(user);
+    //Guardar el usuario en la base de datos
+    user.save((error, userStored) => {
+        if(error || !userStored){
             return res.status(404).json({
                 status:"error",
-                mensaje:"El usuario no se ha podido guardar correctamente"
+                mensaje:"El usuario no se ha podido guardar"
             });
         }
         return res.status(200).json({
             status:"success",
-            usuario: userSaved,
-            mensaje:"El usuario se ha guardado correctamente"
+            usuario: userStored,
+            mensaje:"El usuario se ha guardado"
         });
-
-    }); 
+    }
+    );
 
 }
 
@@ -80,10 +112,33 @@ const remove = (req, res) => {
     });
 }
 
+const login = (req, res) => {
+    const correo = req.body.correo;
+    const password = req.body.password;
+    console.log(correo);
+    console.log(password);
+    User.findOne({correo: correo, password: password}, (error, user) => {
+        if(error || !user){
+            return res.status(404).json({
+                status:"error",
+                mensaje:"El usuario no se ha podido encontrar"
+            });
+        }
+        return res.status(200).json({
+            status:"success",
+            usuario: user,
+            mensaje:"El usuario se ha encontrado"
+        });
+    }
+    );
+
+}
+
 
 module.exports = {
     create, 
     get,
     remove,
-    index
+    index,
+    login
 }

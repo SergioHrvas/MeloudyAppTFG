@@ -10,6 +10,10 @@ const UsuarioSchema = Schema({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     apellidos: [{
         type: String,
         required: true
@@ -24,12 +28,15 @@ const UsuarioSchema = Schema({
     },
     foto:{ 
         type: String,
-        required: true
     },
     correo: {
         type: String,
         required: true
-    }
+    },
+    token: {
+        type: String,
+    },
+
 });
 
 module.exports = model('Usuario', UsuarioSchema);

@@ -9,5 +9,5 @@ router.post("/create-user" , UserController.create);
 router.get("/get-user/:id" , UserController.get);
 router.delete("/delete-user/:id" , UserController.remove);
 router.get("/get-users" , UserController.index);
-
+router.post("/login" , UserController.login);
 module.exports = router;
