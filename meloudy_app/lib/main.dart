@@ -19,15 +19,13 @@ class MyApp extends StatelessWidget {
           value: Auth(),
         ),
       ],
-        child: MaterialApp(
+        child: Consumer<Auth>(builder: (ctx, auth, _) => MaterialApp(
           title: 'Meloudy',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: Login(),
-        ),
-
-    );
+          home: auth.isAuth ? Lecciones() : Login(),
+        ),),);
   }
 
 }

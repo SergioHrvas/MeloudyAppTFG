@@ -2,78 +2,72 @@ const User = require("../models/User");
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const { generateToken } = require('../services/jwt');
 
-const create = (req, res) => {
-    
+const create = async (req, res) => {
     //Recoger parametros por post
     let param = req.body;
 
-    if(!(param.correo && param.password && param.nombre && param.apellidos && param.rol)){
-        res.status(400).send("All input is required");
-    }
-
-    const antiguoUsuario = User.findOne({correo: param.correo});
-
-    if(antiguoUsuario){
-        return res.status(409).send("User Already Exist. Please Login");
-    }
-
-    encryptedpassword = bcrypt.hashSync(param.password, 10);
-
-    param.password = encryptedpassword;
-
-    console.log("param" + param.nombre);
-
-    //Crear objeto de usuario
-    let user = new User(param);
-
-    const token = jwt.sign(
-        {user_id: user._id, email},
-        process.env.TOKEN_KEY,
-        {
-            expiresIn: "2h",
+    try {
+        if (!(param.correo && param.password && param.nombre && param.apellidos && param.rol)) {
+            res.status(400).send("All input is required");
         }
-    );
 
-    user.token = token;
 
-    //Asignar valores al objeto de usuario
-    user.nombre = param.nombre;
-    user.password = param.password;
+        encryptedpassword = bcrypt.hashSync(param.password, 10);
 
-    console.log(user);
-    //Guardar el usuario en la base de datos
-    user.save((error, userStored) => {
-        if(error || !userStored){
-            return res.status(404).json({
-                status:"error",
-                mensaje:"El usuario no se ha podido guardar"
+        param.password = encryptedpassword;
+
+
+        //Crear objeto de usuario
+        let user = new User(param);
+
+        const token = await generateToken(user._id);
+
+        //Asignar valores al objeto de usuario
+        user.password = param.password;
+
+        console.log(user);
+        console.log(token);
+        
+        //Guardar el usuario en la base de datos
+        user.save((error, userStored) => {
+            if (error || !userStored) {
+                return res.status(404).json({
+                    status: "error",
+                    mensaje: "El usuario no se ha podido guardar"
+                });
+            }
+            return res.status(200).json({
+                status: "success",
+                usuario: userStored,
+                token: token,
+                expiresIn: 14400,
+                mensaje: "El usuario se ha guardado"
             });
         }
-        return res.status(200).json({
-            status:"success",
-            usuario: userStored,
-            mensaje:"El usuario se ha guardado"
-        });
+        );
     }
-    );
+    catch (error) {
+        console.log(error);
+
+    }
 
 }
 
 const index = (req, res) => {
     // Return all users
     User.find({}, (error, users) => {
-        if(error || !users){
+        if (error || !users) {
             return res.status(404).json({
-                status:"error",
-                mensaje:"El usuario no se ha podido encontrar"
+                status: "error",
+                mensaje: "El usuario no se ha podido encontrar"
             });
         }
         return res.status(200).json({
-            status:"success",
+            status: "success",
             usuario: users,
-            mensaje:"El usuario se ha encontrado"
+            mensaje: "El usuario se ha encontrado"
         });
     }
     );
@@ -81,16 +75,16 @@ const index = (req, res) => {
 const get = (req, res) => {
     const id = req.params.id;
     User.findById(id, (error, user) => {
-        if(error || !user){
+        if (error || !user) {
             return res.status(404).json({
-                status:"error",
-                mensaje:"El usuario no se ha podido encontrar"
+                status: "error",
+                mensaje: "El usuario no se ha podido encontrar"
             });
         }
         return res.status(200).json({
-            status:"success",
+            status: "success",
             usuario: user,
-            mensaje:"El usuario se ha encontrado"
+            mensaje: "El usuario se ha encontrado"
         });
     });
 }
@@ -98,37 +92,65 @@ const get = (req, res) => {
 const remove = (req, res) => {
     const id = req.params.id;
     User.findByIdAndDelete(id, (error, user) => {
-        if(error || !user){
+        if (error || !user) {
             return res.status(404).json({
-                status:"error",
-                mensaje:"El usuario no se ha podido eliminar"
+                status: "error",
+                mensaje: "El usuario no se ha podido eliminar"
             });
         }
         return res.status(200).json({
-            status:"success",
+            status: "success",
             usuario: user,
-            mensaje:"El usuario se ha eliminado"
+            mensaje: "El usuario se ha eliminado"
         });
     });
 }
 
-const login = (req, res) => {
+const login = async (req, res) => {
     const correo = req.body.correo;
     const password = req.body.password;
+
+    const user = await User.findOne({ correo: correo });
+    const token = await generateToken(user._id);
+
+
     console.log(correo);
     console.log(password);
-    User.findOne({correo: correo, password: password}, (error, user) => {
-        if(error || !user){
+    User.findOne({ correo: correo }, (error, user) => {
+        if (error || !user) {
             return res.status(404).json({
-                status:"error",
-                mensaje:"El usuario no se ha podido encontrar"
+                status: "error",
+                mensaje: "El usuario no se ha podido encontrar"
             });
         }
-        return res.status(200).json({
-            status:"success",
-            usuario: user,
-            mensaje:"El usuario se ha encontrado"
-        });
+
+        if (user) {
+            bcrypt.compare(password, user.password, (error, result) => {
+                if (result) {
+                    return res.status(200).json({
+                        status: "success",
+                        usuario: user,
+                        token: token,
+                        expiresIn: 14400,
+                        mensaje: "El usuario se ha encontrado"
+                    });
+                }
+                else {
+                    return res.status(404).json({
+                        status: "error",
+                        mensaje: "El usuario no se ha podido identificar"
+                    });
+                }
+            }
+            );
+
+        }
+        else {
+            return res.status(404).json({
+                status: "error",
+                mensaje: "El usuario no se ha podido encontrar"
+            });
+        }
     }
     );
 
@@ -136,7 +158,7 @@ const login = (req, res) => {
 
 
 module.exports = {
-    create, 
+    create,
     get,
     remove,
     index,

@@ -137,9 +137,6 @@ class _AuthCardState extends State<AuthCard> {
         _authData['password']
       );
     } else {
-      print("EMAIL: " + _authData['email']);
-      print("PASSWORD: " + _authData['password']);
-
       await Provider.of<Auth>(context, listen: false).registro(
           _authData['email'],
           _authData['password'],

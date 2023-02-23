@@ -10,6 +10,11 @@ const UsuarioSchema = Schema({
         type: String,
         required: true
     },
+    username: {
+        type: String,
+        // required: true,
+        unique: true
+    },
     password: {
         type: String,
         required: true
@@ -31,7 +36,8 @@ const UsuarioSchema = Schema({
     },
     correo: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     token: {
         type: String,
