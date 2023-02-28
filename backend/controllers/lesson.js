@@ -1,4 +1,4 @@
-const Lesson = require("../models/User");
+const Lesson = require("../models/Lesson");
 const fs = require('fs');
 const path = require('path');
 
@@ -21,7 +21,7 @@ const create = (req, res) => {
         }
         return res.status(200).json({
             status: "success",
-            usuario: lessonSaved,
+            leccion: lessonSaved,
             mensaje: "El usuario se ha guardado correctamente"
         });
 
@@ -35,13 +35,12 @@ const index = (req, res) => {
         if (error || !lessons) {
             return res.status(404).json({
                 status: "error",
-                mensaje: "El usuario no se ha podido encontrar"
+                mensaje: "La lección no se ha podido encontrar"
             });
         }
         return res.status(200).json({
             status: "success",
-            usuario: lessons,
-            mensaje: "El usuario se ha encontrado"
+            leccion: lessons,
         });
     }
     );

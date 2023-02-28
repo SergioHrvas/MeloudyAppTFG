@@ -1,13 +1,12 @@
 const express = require('express');
-const multer = require('multer'); //Trabajar con subida de archivos
 const router = express.Router();
-// const upload = multer({ storage: storage })
 const UserController = require('../controllers/user.js');
+const auth = require('../middleware/auth'); 
 
 // Rutas asociadas a los usuarios
-router.post("/create-user" , UserController.create);
-router.get("/get-user/:id" , UserController.get);
-router.delete("/delete-user/:id" , UserController.remove);
+router.post("/registro", UserController.create);
+router.get("/get-user/:id" , auth, UserController.get);
+router.delete("/delete-user/:id", auth, UserController.remove);
 router.get("/get-users" , UserController.index);
 router.post("/login" , UserController.login);
 module.exports = router;

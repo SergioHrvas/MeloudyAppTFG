@@ -71,5 +71,8 @@
 \contentsline {section}{\numberline {6.5}Diagramas de secuencia}{54}{section.6.5}%
 \contentsline {section}{\numberline {6.6}Diseño de interfaces de usuario}{55}{section.6.6}%
 \contentsline {chapter}{\numberline {7}Implementación}{63}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Estructura del proyecto}{63}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Funcionalidad genérica}{64}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Funcionalidad de usuario}{64}{section.7.3}%
 \contentsline {chapter}{\numberline {8}Pruebas}{65}{chapter.8}%
 \contentsline {chapter}{\numberline {9}Conclusiones}{67}{chapter.9}%

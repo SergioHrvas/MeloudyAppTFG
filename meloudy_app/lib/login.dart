@@ -1,46 +1,17 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:meloudy_app/leccion.dart';
-import 'package:flutter/widgets.dart';
-import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/auth.dart';
-
+import 'package:meloudy_app/widget/drawer_app.dart';
 enum AuthMode { Signup, Login }
 
 class Login extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _drawerscaffoldkey =
-      new GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(title: Text("MELOUDY")),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: Text("sadasdadasd"),
-                decoration: BoxDecoration(color: Colors.blue),
-              ),
-              ListTile(
-                title: Text("Item 1"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text("Item 2"),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              )
-            ],
-          ),
-        ),
+        drawer: DrawerApp(),
         body: Stack(children: [
           Container(
             decoration: BoxDecoration(
@@ -116,7 +87,7 @@ class AuthCard extends StatefulWidget {
 class _AuthCardState extends State<AuthCard> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode = AuthMode.Login;
-  Map<String, String> _authData = {'email': 'ss', 'password': 'dsdsd'};
+  Map<String, String> _authData = {'email': '', 'password': ''};
   var _isLoading = false;
   final _passwordController = TextEditingController();
 
@@ -242,7 +213,7 @@ class _AuthCardState extends State<AuthCard> {
                         backgroundColor: MaterialStateProperty.all(
                             Theme.of(context).primaryColor),
                         foregroundColor: MaterialStateProperty.all(
-                            Theme.of(context).primaryTextTheme.button.color)),
+                            Theme.of(context).primaryTextTheme.labelLarge.color)),
                   ),
                 TextButton(
                   child: Text(
@@ -263,18 +234,4 @@ class _AuthCardState extends State<AuthCard> {
     );
   }
 
-  void obtenerLecciones() {
-    fetchLeccion().then((value) {
-      print(value.body);
-      print("=================");
-      var a = jsonDecode(value.body);
-      for(var i = 0; i < a['usuario'].length; i++) {
-        print(i.toString() + "d " + a['usuario'][i]['nombre']);
-      }
-    });
-  }
-
-  Future<http.Response> fetchLeccion() {
-    return http.get(Uri.parse('http://10.0.2.2:5000/api/user/get-users'));
-  }
 }

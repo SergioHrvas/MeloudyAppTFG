@@ -13,11 +13,13 @@ function createServer() {
 
     //Conectar las rutas
     const userRoutes = require('./routes/user');
+    const lessonRoutes = require('./routes/lesson');
     // const rutas_menu = require('./routes/menu');
     // const rutas_tarea = require('./routes/tareasDia');
     // const rutas_material = require('./routes/material');
 
     app.use("/api/user", userRoutes);
+    app.use("/api/lesson", lessonRoutes);
     // app.use("/api/menus", rutas_menu);
     // app.use("/api/tareas", rutas_tarea);
     // app.use("/api/materials", rutas_material);

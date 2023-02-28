@@ -1,11 +1,14 @@
-
-import 'package:meloudy_app/lecciones.dart';
+import 'package:meloudy_app/screen/leccion_pantalla.dart';
+import 'package:meloudy_app/screen/lecciones_pantalla.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:meloudy_app/login.dart';
 import 'package:meloudy_app/providers/auth.dart';
+import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
+import 'package:meloudy_app/screen/leccion_pantalla_profesor.dart';
 import 'package:provider/provider.dart';
-
+import 'package:meloudy_app/providers/lecciones.dart';
+import 'package:meloudy_app/screen/pantalla_cargando.dart';
+import 'package:meloudy_app/screen/pantalla_dashboard.dart';
 void main() {
   runApp(MyApp());
 }
@@ -18,14 +21,31 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Auth(),
         ),
+        ChangeNotifierProxyProvider<Auth, Lecciones>(
+            update: (ctx, auth, leccionesAnteriores) =>
+                Lecciones(auth.token, leccionesAnteriores == null ? [] : leccionesAnteriores.items)),
       ],
-        child: Consumer<Auth>(builder: (ctx, auth, _) => MaterialApp(
+      child: Consumer<Auth>(
+        builder: (ctx, auth, _) => MaterialApp(
           title: 'Meloudy',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: auth.isAuth ? Lecciones() : Login(),
-        ),),);
-  }
+          home: auth.isAuth
+              ? LeccionesPantalla() : FutureBuilder(
+                future: auth.tryAutoLogin(),
+                builder: (ctx, authResultSnapshot) =>
+                  authResultSnapshot.connectionState == ConnectionState.waiting ? PantallaCargando() : Login(),
+          ),
+          routes: {
+              LeccionPantalla.routeName: (ctx) => LeccionPantalla(),
+              LeccionesPantallaProfesor.routeName: (ctx) => LeccionesPantallaProfesor(),
+              LeccionPantallaProfesor.routeName: (ctx) => LeccionPantallaProfesor(),
+            PantallaDashboard.routeName: (ctx) => PantallaDashboard(),
 
+          },
+        ),
+      ),
+    );
+  }
 }

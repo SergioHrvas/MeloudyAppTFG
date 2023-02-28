@@ -14,21 +14,23 @@ const LessonSchema = Schema({
         type: String,
         required: true
     },
-    descripcion: {
-        type: String,
-    },
-    imagenes: [{  //alumno, profesor o administrador
-        type: String,
-    }],
-    videos: [{
-        type: String,
-    }],
-    audios: [{
-        type: String,
-    }]
+    contenido: [
+        {
+            tipo: {
+                type: String,
+                required: true
+            },
+            texto: {
+                type: String,
+                required: true
+            }
+
+        },
+
+    ]
 });
 
-module.exports = model('Usuario', UsuarioSchema);
+module.exports = model('Lesson', LessonSchema);
 /*
     . Usuario es el nombre del modelo ("el nombre del constructor y de la clase")
     . UsuarioSchema es el esquema que define como se comporta el modelo
