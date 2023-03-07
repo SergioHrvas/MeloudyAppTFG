@@ -14,15 +14,15 @@ function createServer() {
     //Conectar las rutas
     const userRoutes = require('./routes/user');
     const lessonRoutes = require('./routes/lesson');
-    // const rutas_menu = require('./routes/menu');
-    // const rutas_tarea = require('./routes/tareasDia');
-    // const rutas_material = require('./routes/material');
+    const questionRoutes = require('./routes/question');
+    const testRoutes = require('./routes/test');
 
     app.use("/api/user", userRoutes);
     app.use("/api/lesson", lessonRoutes);
-    // app.use("/api/menus", rutas_menu);
-    // app.use("/api/tareas", rutas_tarea);
-    // app.use("/api/materials", rutas_material);
+    app.use("/api/question", questionRoutes);
+    app.use("/api/test", testRoutes);
+    
+
 
     return app;
 }

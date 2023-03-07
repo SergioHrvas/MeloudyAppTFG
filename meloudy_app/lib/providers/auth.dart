@@ -22,21 +22,21 @@ class Auth with ChangeNotifier {
   }
 
   String get token {
-    if(_expiryDate != null && _expiryDate.isAfter(DateTime.now()) && _token != null){
+    if (_expiryDate != null &&
+        _expiryDate.isAfter(DateTime.now()) &&
+        _token != null) {
       return _token;
     }
     return null;
   }
 
-  String get userId{
+  String get userId {
     return _userId;
   }
 
   Future<void> registro(String email, String password, String nombre,
       List<String> apellidos, String rol) async {
     const url = 'http://${IP.ip}:5000/api/user/registro';
-    print("->EMAIL " + email);
-    print("->PASSWORD " + password);
     try {
       final response = await http.post(Uri.parse(url),
           headers: {
@@ -59,12 +59,11 @@ class Auth with ChangeNotifier {
       }
       _token = responseData['token'];
       _userId = responseData['usuario']['_id'];
-      _expiryDate = DateTime.now().add(
-          Duration(seconds: responseData['expiresIn']));
+      _expiryDate =
+          DateTime.now().add(Duration(seconds: responseData['expiresIn']));
       _autoLogout();
       notifyListeners();
-    }
-    catch (error){
+    } catch (error) {
       throw error;
     }
   }
@@ -89,66 +88,67 @@ class Auth with ChangeNotifier {
       _token = responseData['token'];
       _userId = responseData['usuario']['_id'];
       _rol = responseData['usuario']['rol'];
-      _expiryDate = DateTime.now().add(
-          Duration(seconds: responseData['expiresIn']));
+      _expiryDate =
+          DateTime.now().add(Duration(seconds: responseData['expiresIn']));
       _autoLogout();
       notifyListeners();
 
       final prefs = await SharedPreferences.getInstance();
-      final userData = json.encode({
-        'token': _token,
-        'userId' : _userId,
-        'rol' : _rol,
-        'expireDate' : _expiryDate.toIso8601String(),
-      },);
+      final userData = json.encode(
+        {
+          'token': _token,
+          'userId': _userId,
+          'rol': _rol,
+          'expireDate': _expiryDate.toIso8601String(),
+        },
+      );
 
       print("USERDATA:");
       print(userData);
 
       prefs.setString('userData', userData);
-    }
-    catch (error){
+    } catch (error) {
       throw error;
     }
+  }
+
+  Future<bool> tryAutoLogin() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (!prefs.containsKey('userData')) {
+      print("ENTRO");
+      return false;
     }
 
-    Future<bool> tryAutoLogin() async{
-       final prefs = await SharedPreferences.getInstance();
-       if(!prefs.containsKey('userData')){
-         print("ENTRO");
-         return false;
-       }
+    final extractedUserData =
+        json.decode(prefs.getString('userData')) as Map<String, Object>;
+    print("EXTRACTED:");
+    print(extractedUserData);
 
-       final extractedUserData = json.decode(prefs.getString('userData')) as Map<String, Object>;
-       print("EXTRACTED:");
-       print(extractedUserData);
+    final expiryDate = DateTime.parse(extractedUserData['expireDate']);
 
-       final expiryDate = DateTime.parse(extractedUserData['expireDate']);
-
-       if(expiryDate.isBefore(DateTime.now())){
-         return false;
-       }
-       _token = extractedUserData['token'];
-       _userId = extractedUserData['userId'];
-       _rol = extractedUserData['rol'];
-       print(_rol);
-       _expiryDate = expiryDate;
-
-       print(_token);
-       print(_userId);
-       print(_expiryDate);
-
-       notifyListeners();
-       _autoLogout();
-       return true;
+    if (expiryDate.isBefore(DateTime.now())) {
+      return false;
     }
+    _token = extractedUserData['token'];
+    _userId = extractedUserData['userId'];
+    _rol = extractedUserData['rol'];
+    print(_rol);
+    _expiryDate = expiryDate;
 
+    print(_token);
+    print(_userId);
+    print(_expiryDate);
 
-  Future<void> logout() async{
+    notifyListeners();
+    _autoLogout();
+    return true;
+  }
+
+  Future<void> logout() async {
     _token = null;
     _userId = null;
     _expiryDate = null;
-    if(_authTimer != null){
+    if (_authTimer != null) {
       _authTimer.cancel();
       _authTimer = null;
     }
@@ -157,14 +157,11 @@ class Auth with ChangeNotifier {
     prefs.clear();
   }
 
-
-  void _autoLogout(){
-    if(_authTimer !=null) {
+  void _autoLogout() {
+    if (_authTimer != null) {
       _authTimer.cancel();
     }
     final timeToExpiry = _expiryDate.difference(DateTime.now()).inSeconds;
     _authTimer = Timer(Duration(seconds: timeToExpiry), logout);
-    }
   }
-
-
+}

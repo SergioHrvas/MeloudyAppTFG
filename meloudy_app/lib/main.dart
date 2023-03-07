@@ -1,3 +1,4 @@
+import 'package:meloudy_app/providers/preguntas.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:meloudy_app/login.dart';
 import 'package:meloudy_app/providers/auth.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/leccion_pantalla_profesor.dart';
+import 'package:meloudy_app/screen/pregunta_pantalla.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
 import 'package:meloudy_app/screen/pantalla_cargando.dart';
@@ -24,6 +26,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProxyProvider<Auth, Lecciones>(
             update: (ctx, auth, leccionesAnteriores) =>
                 Lecciones(auth.token, leccionesAnteriores == null ? [] : leccionesAnteriores.items)),
+        ChangeNotifierProxyProvider<Auth, Preguntas>(
+            update: (ctx, auth, preguntasAnteriores) =>
+              Preguntas(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items))
       ],
       child: Consumer<Auth>(
         builder: (ctx, auth, _) => MaterialApp(
@@ -38,10 +43,13 @@ class MyApp extends StatelessWidget {
                   authResultSnapshot.connectionState == ConnectionState.waiting ? PantallaCargando() : Login(),
           ),
           routes: {
-              LeccionPantalla.routeName: (ctx) => LeccionPantalla(),
-              LeccionesPantallaProfesor.routeName: (ctx) => LeccionesPantallaProfesor(),
-              LeccionPantallaProfesor.routeName: (ctx) => LeccionPantallaProfesor(),
+            LeccionPantalla.routeName: (ctx) => LeccionPantalla(),
+            LeccionesPantallaProfesor.routeName: (ctx) => LeccionesPantallaProfesor(),
+            LeccionPantallaProfesor.routeName: (ctx) => LeccionPantallaProfesor(),
             PantallaDashboard.routeName: (ctx) => PantallaDashboard(),
+            PreguntaPantalla.routeName: (ctx) => PreguntaPantalla(),
+
+
 
           },
         ),

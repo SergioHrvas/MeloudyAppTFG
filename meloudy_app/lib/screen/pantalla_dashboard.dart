@@ -11,15 +11,25 @@ class PantallaDashboard extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(title: Text("DASHBOARD"),),
       drawer: DrawerApp(),
-      body: Container(child: Column(
+      body: Container(
+        padding: EdgeInsets.only(top: 20),
+          alignment: Alignment.center, child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: (){
-            Navigator.of(context).pushNamed(
-              LeccionesPantallaProfesor.routeName,
-            );
-          }, child: Text("Lecciones")),
-          ElevatedButton(onPressed: (){}, child: Text("Preguntas")),
-          ElevatedButton(onPressed: (){}, child: Text("Usuarios")),
+
+          Container(
+            margin: EdgeInsets.only(bottom: 20),
+            child: ElevatedButton(style: ElevatedButton.styleFrom(minimumSize: Size(180, 50), primary: Colors.purple),onPressed: (){
+              Navigator.of(context).pushNamed(
+                LeccionesPantallaProfesor.routeName,
+              );
+
+            }, child: Text("Lecciones")),
+          ),
+          Container(            margin: EdgeInsets.only(bottom: 20),
+              child: ElevatedButton(style: ElevatedButton.styleFrom(minimumSize: Size(180, 50), primary: Colors.purple), onPressed: (){}, child: Text("Preguntas"))),
+          Container(            margin: EdgeInsets.only(bottom: 20),
+              child: ElevatedButton(style: ElevatedButton.styleFrom(minimumSize: Size(180, 50), primary: Colors.purple), onPressed: (){}, child: Text("Usuarios"))),
 
         ],
       ))

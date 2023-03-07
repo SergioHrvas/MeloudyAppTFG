@@ -64,65 +64,105 @@ para un profesor que modifica una lección.
     \label{fig:diagramadesecuencia}    
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \centerline{\includegraphics[width=\textwidth]{imagenes/c6/diagramadesecuencia2.png}}
+    \caption{Diagrama de secuencia de un usuario iniciando sesión, el cual interactuará con la vista para poder hacer la petición al controlador y buscar su usuario en el modelo para la validación. Tras esto, se cambiará la vista a la pantalla principal que lista las lecciones, por lo que la vista deberá hacer otra petición al controlador de lecciones para obtener las lecciones del modelo.}
+    \label{fig:diagramadesecuencia}    
+\end{figure}
 
+\newpage
 \section{Diseño de interfaces de usuario}
 Por último, en este apartado se presentan los bocetos de las interfaces de usuario que se han diseñado para la aplicación. Estos bocetos se han realizado con la herramienta Canva y serán de ayuda para la realización del diseño final de las interfaces de usuario,
 que, pese a que seguirán una estructura similar a la de los bocetos, podrán variar en algunos detalles y aspectos de diseño.
+\\
+
+\subsection*{Inicio de sesión}
+
+Esta vista se mostrará al usuario cuando inicie la aplicación y no tenga la sesión iniciada. En ella se pedirá al usuario que introduzca su correo electrónico y su contraseña para poder iniciar sesión en la aplicación. Si el usuario no tiene una cuenta, podrá pulsar en el botón de registro para poder crear una nueva cuenta.
 
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/9.png}}
+    \centerline{\includegraphics[width=0.45\textwidth, frame]{imagenes/c6/9.png}}
     \caption{Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.}
     \label{fig:login}
 \end{figure}
 
 
+\subsection*{Registro}
+
+Esta vista se mostrará al usuario cuando pulse en el botón de registro de la pantalla de inicio de sesión. En ella se pedirá al usuario que introduzca sus datos personales para poder crear una nueva cuenta en la aplicación. Si el usuario ya tiene una cuenta, podrá pulsar en el botón de inicio de sesión para poder iniciar sesión en la aplicación.
+
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/10.png}}
+    \centerline{\includegraphics[width=0.45\textwidth, frame]{imagenes/c6/10.png}}
     \caption{Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.}
     \label{fig:registro}
 \end{figure}
 
 
+\subsection*{Lista de lecciones}
+
+Esta vista se mostrará al usuario cuando inicie la aplicación y tenga la sesión iniciada. En ella se mostrarán las lecciones disponibles para el usuario y podrá seleccionar una de ellas para poder acceder a su contenido.
+
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/1.png}}
+    \centerline{\includegraphics[width=0.45\textwidth, frame]{imagenes/c6/1.png}}
     \caption{Boceto de la pantalla principal de la aplicación donde se muestran las lecciones disponibles para el usuario.}
     \label{fig:pantallaprincipal}
 \end{figure}
 
 
+\subsection*{Perfil de usuario}
+
+Esta vista se mostrará al usuario cuando pulse en el botón de perfil de la pantalla principal de la aplicación. En ella se mostrarán los datos del usuario y podrá acceder a sus logros y a la modificación de sus datos.
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/2.png}}
-    \caption{Boceto de la pantalla del perfil de usuario con la sesión iniciada donde se muestran sus datos.}
+    \centerline{\includegraphics[width=0.40\textwidth, frame]{imagenes/c6/2.png}}
+    \caption{Boceto de la pantalla del perfil de usuario con sus datos.}
     \label{fig:perfil}
 \end{figure}
 
+\subsection*{Lista de logros}
 
+Esta vista se mostrará al usuario cuando pulse en el botón de logros de la pantalla del perfil de usuario. En ella se mostrarán los logros conseguidos por el usuario. Pulsando en cada logro se mostrará el nombre y la descripción de este.
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/3.png}}
+    \centerline{\includegraphics[width=0.40\textwidth, frame]{imagenes/c6/3.png}}
     \caption{Boceto de la pantalla de logros conseguidos por el usuario.}
     \label{fig:logros}
 \end{figure}
 
+\subsection*{Lección}
+
+Esta vista se mostrará al usuario cuando pulse en una lección de la pantalla principal de la aplicación. En ella se mostrará el texto de la lección, el contenido multimedia y el botón para comenzar el test.
 
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/4.png}}
+    \centerline{\includegraphics[width=0.45\textwidth, frame]{imagenes/c6/4.png}}
     \caption{Boceto de la pantalla de una lección, con el texto, el contenido multimedia y el botón para comenzar el test.}
     \label{fig:leccion}
 \end{figure}
 
+\newpage
+
+\subsection*{Pregunta de selección única}
+
+Con esta vista se mostrará al usuario una pregunta de test de tipo selección única. En ella se mostrará la pregunta y las opciones de respuesta. El usuario podrá seleccionar solamente una de ellas y pulsar en el botón de comprobar para comprobar si la respuesta es correcta o no. Si la respuesta es correcta, se mostrará un mensaje de felicitación y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si la respuesta es incorrecta, se mostrará un mensaje de error y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si el usuario no ha seleccionado ninguna opción, se mostrará un mensaje de error y no se podrá pasar a la siguiente pregunta hasta que no seleccione una opción.
+
+
 \begin{figure}[H]
     \centering
-    \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/5.png}}
+    \centerline{\includegraphics[width=0.45\textwidth, frame]{imagenes/c6/5.png}}
     \caption{Boceto de la pantalla de una pregunta de test de tipo selección única.}
     \label{fig:seleccionunica}
 \end{figure}
 
+\newpage
+
+\subsection*{Pregunta de selección múltiple}
+
+Con esta vista se mostrará al usuario una pregunta de test de tipo selección múltiple. En ella se mostrará la pregunta y las opciones de respuesta. El usuario podrá seleccionar todas las opciones que considere correctas y pulsar en el botón de comprobar para comprobar si las respuestas son correctas o no. Si las respuestas son correctas, se mostrará un mensaje de felicitación y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si las respuestas son incorrectas, se mostrará un mensaje de error y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si el usuario no ha seleccionado ninguna opción, se mostrará un mensaje de error y no se podrá pasar a la siguiente pregunta hasta que no seleccione una opción.
 
 \begin{figure}[H]
     \centering
@@ -131,6 +171,11 @@ que, pese a que seguirán una estructura similar a la de los bocetos, podrán va
     \label{fig:seleccionmultiple}
 \end{figure}
 
+\newpage
+
+\subsection*{Pregunta de escritura de texto}
+
+Con esta vista se mostrará al usuario una pregunta de test de tipo escritura de texto. En ella se mostrará la pregunta y el usuario deberá escribir la respuesta en el campo de texto. El usuario podrá pulsar en el botón de comprobar para comprobar si la respuesta es correcta o no. Si la respuesta es correcta, se mostrará un mensaje de felicitación y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si la respuesta es incorrecta, se mostrará un mensaje de error y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si el usuario no ha escrito ninguna respuesta, se mostrará un mensaje de error y no se podrá pasar a la siguiente pregunta hasta que no escriba una respuesta.
 
 \begin{figure}[H]
     \centering
@@ -139,7 +184,12 @@ que, pese a que seguirán una estructura similar a la de los bocetos, podrán va
     \label{fig:escrituratexto}
 \end{figure}
 
-x
+\newpage
+
+\subsection*{Pregunta de entrada por micrófono}
+
+Con esta vista se mostrará al usuario una pregunta de test de tipo entrada por micrófono. En ella se mostrará la pregunta y el usuario deberá pulsar en el botón de grabar para grabar la respuesta, que deberá ser la melodia que pida la pregunta. El usuario podrá pulsar en el botón de comprobar para comprobar si la respuesta es correcta o no. Si la respuesta es correcta, se mostrará un mensaje de felicitación y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si la respuesta es incorrecta, se mostrará un mensaje de error y se mostrará el botón de siguiente para pasar a la siguiente pregunta. Si el usuario no ha grabado ninguna respuesta, se mostrará un mensaje de error y no se podrá pasar a la siguiente pregunta hasta que no grabe una respuesta.
+
 \begin{figure}[H]
     \centering
     \centerline{\includegraphics[width=0.55\textwidth, frame]{imagenes/c6/8.png}}
@@ -149,11 +199,13 @@ x
 
 \newpage
 
+\subsection*{Diagrama de navegación}
+
 Para finalizar la sección se presenta un diagrama de navegación de la aplicación, el cual muestra las distintas pantallas que tendrá la aplicación siguiendo el flujo que un usuario tendría al utilizar la aplicación.
 \begin{figure}[H]
     \centering
     \centerline{\includegraphics[width=1.2\textwidth]{imagenes/c6/diagrambocetos.png}}
-    \caption{Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.}
+    \caption{Diagrama de navegación de la aplicación por los distintos bocetos presentados anteriormente que muestra las pantallas que seguirá el usuario cuando utilice la aplicación.}
     \label{fig:microfono}
 \end{figure}
 

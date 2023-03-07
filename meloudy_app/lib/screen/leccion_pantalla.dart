@@ -3,6 +3,8 @@ import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
 
+import '../providers/preguntas.dart';
+
 class LeccionPantalla extends StatelessWidget {
   static const routeName = '/leccion';
   @override
@@ -80,7 +82,12 @@ class LeccionPantalla extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(bottom: 30),
-              child: ElevatedButton(onPressed: (){}, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),))
+              child: ElevatedButton(onPressed: (
+                  ){
+                Provider.of<Preguntas>(context, listen: false).fetchAndSetPreguntas(leccionId);
+
+                Navigator.pushReplacementNamed(context, '/pregunta');
+              }, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),))
         ],
       )),
     );

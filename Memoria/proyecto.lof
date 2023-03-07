@@ -1,48 +1,59 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Logo de Duolingo\relax }}{5}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Ejercicio de Duolingo donde el usuario debe adivinar qué palabra corresponde al audio\relax }}{6}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Menú de selección de las lecciones de Artly clasificadas en movimientos artísticos\relax }}{7}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ciudad de BMath donde se seleccionan los niveles y se construyen los edificios para mostrar el progreso del usuario\relax }}{8}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ejercicio de BMath sobre cálculo matemático (sumas y restas) con calculadora, con papel y mentalmente\relax }}{9}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Lista de lecciones que ofrece la aplicación Curso de Lenguaje Musical\relax }}{10}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Logo de Duolingo\relax }}{5}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ejercicio de Duolingo donde el usuario debe adivinar qué palabra corresponde al audio\relax }}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Menú de selección de las lecciones de Artly clasificadas en movimientos artísticos\relax }}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ciudad de BMath donde se seleccionan los niveles y se construyen los edificios para mostrar el progreso del usuario\relax }}{8}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ejercicio de BMath sobre cálculo matemático (sumas y restas) con calculadora, con papel y mentalmente\relax }}{9}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Lista de lecciones que ofrece la aplicación Curso de Lenguaje Musical\relax }}{10}{figure.caption.12}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Ejercicio de Sonid para conocer las notas de un piano}}}{11}{subfigure.7.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Menú de selección de lecciones de Sonid dividido por escalas}}}{11}{subfigure.7.2}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Logo de Flutter\relax }}{12}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Logo de React Native\relax }}{12}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Logo de Dart\relax }}{13}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Logo de MongoDB\relax }}{15}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Pilas MEAN y MERN\relax }}{16}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Logo de MariaDB\relax }}{16}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Logo de Flutter\relax }}{12}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Logo de React Native\relax }}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Logo de Dart\relax }}{13}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Logo de MongoDB\relax }}{15}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Pilas MEAN y MERN\relax }}{16}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Logo de MariaDB\relax }}{16}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama general de la perspectiva del producto a desarrollar.\relax }}{21}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Primer boceto de la interfaz de usuario de la página de inicio de la aplicación para los usuarios, donde se muestra la lista de las lecciones\relax }}{24}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama general de la perspectiva del producto a desarrollar.\relax }}{21}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Primer boceto de la interfaz de usuario de la página de inicio de la aplicación para los usuarios, donde se muestra la lista de las lecciones\relax }}{24}{figure.caption.21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.\relax }}{30}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Gantt de la planificación del proyecto, divivido por Sprints.\relax }}{40}{figure.caption.29}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de Gantt de los cuatro primeros Sprints.\relax }}{41}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de Gantt de los Sprints 5, 6, 7 y 8.\relax }}{41}{figure.caption.31}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de Gantt de los Sprints 9, 10 y 11.\relax }}{42}{figure.caption.32}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama de Gantt de los Sprints 12, 13 y 14.\relax }}{42}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.\relax }}{30}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Gantt de la planificación del proyecto, divivido por Sprints.\relax }}{40}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de Gantt de los cuatro primeros Sprints.\relax }}{41}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de Gantt de los Sprints 5, 6, 7 y 8.\relax }}{41}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de Gantt de los Sprints 9, 10 y 11.\relax }}{42}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Diagrama de Gantt de los Sprints 12, 13 y 14.\relax }}{42}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.\relax }}{48}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de clases de nuestro proyecto donde se muestran las relaciones entre las diferentes clases que componen el sistema.\relax }}{48}{figure.caption.62}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.\relax }}{52}{figure.caption.68}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrama de base de datos del sistema, donde se muestran los documentos que se van a almacenar en nuestra base de datos de MongoDB.\relax }}{53}{figure.caption.69}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagrama de clases del sistema donde se detallan las propiedades y las relaciones de las distintas clases o entidades que tendrá el software.\relax }}{54}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Diagrama de secuencia de un usuario registrandose, el cual interactuará con la vista para poder hacer la petición al controlador y guardar su usuario en el modelo.\relax }}{55}{figure.caption.71}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.\relax }}{56}{figure.caption.72}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.\relax }}{56}{figure.caption.73}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Boceto de la pantalla principal de la aplicación donde se muestran las lecciones disponibles para el usuario.\relax }}{57}{figure.caption.74}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Boceto de la pantalla del perfil de usuario con la sesión iniciada donde se muestran sus datos.\relax }}{57}{figure.caption.75}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Boceto de la pantalla de logros conseguidos por el usuario.\relax }}{58}{figure.caption.76}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Boceto de la pantalla de una lección, con el texto, el contenido multimedia y el botón para comenzar el test.\relax }}{58}{figure.caption.77}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección única.\relax }}{59}{figure.caption.78}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección multiple.\relax }}{59}{figure.caption.79}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo escritura de texto.\relax }}{60}{figure.caption.80}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.\relax }}{60}{figure.caption.81}%
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.\relax }}{61}{figure.caption.82}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagrama de la arquitectura del sistema, donde se muestra la comunicación entre el servidor y la aplicación móvil.\relax }}{52}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrama de base de datos del sistema, donde se muestran los documentos que se van a almacenar en nuestra base de datos de MongoDB.\relax }}{53}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagrama de clases del sistema donde se detallan las propiedades y las relaciones de las distintas clases o entidades que tendrá el software.\relax }}{54}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Diagrama de secuencia de un usuario registrandose, el cual interactuará con la vista para poder hacer la petición al controlador y guardar su usuario en el modelo.\relax }}{55}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Diagrama de secuencia de un usuario iniciando sesión, el cual interactuará con la vista para poder hacer la petición al controlador y buscar su usuario en el modelo para la validación. Tras esto, se cambiará la vista a la pantalla principal que lista las lecciones, por lo que la vista deberá hacer otra petición al controlador de lecciones para obtener las lecciones del modelo.\relax }}{55}{figure.caption.67}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Boceto de la pantalla de inicio de sesión, donde se pedirá al usuario el correo electrónico y la contraseña.\relax }}{56}{figure.caption.69}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Boceto de la pantalla de registro, donde se pedirá al usuario sus datos personales necesarios para crear la cuenta como el nombre, los apellidos, el correo y la contraseña.\relax }}{57}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Boceto de la pantalla principal de la aplicación donde se muestran las lecciones disponibles para el usuario.\relax }}{57}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Boceto de la pantalla del perfil de usuario con sus datos.\relax }}{58}{figure.caption.75}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Boceto de la pantalla de logros conseguidos por el usuario.\relax }}{58}{figure.caption.77}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Boceto de la pantalla de una lección, con el texto, el contenido multimedia y el botón para comenzar el test.\relax }}{59}{figure.caption.79}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección única.\relax }}{60}{figure.caption.81}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo selección multiple.\relax }}{61}{figure.caption.83}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo escritura de texto.\relax }}{62}{figure.caption.85}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.\relax }}{63}{figure.caption.87}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Diagrama de navegación de la aplicación por los distintos bocetos presentados anteriormente que muestra las pantallas que seguirá el usuario cuando utilice la aplicación.\relax }}{64}{figure.caption.89}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Estructura del proyecto, donde se puede ver la parte de frontend y la parte de backend.\relax }}{65}{figure.caption.90}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Drawer abierto en la aplicación con tres opciones (por ser desde la vista del profesor): Inicio, Dashboard y Cerrar sesión.\relax }}{67}{figure.caption.91}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Diagrama que explica el proceso de encriptación en el inicio de sesión desarrollado en la aplicación.\relax }}{68}{figure.caption.92}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Pantalla de inicio de sesión\relax }}{69}{figure.caption.93}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Pantalla de registro de los usuarios\relax }}{70}{figure.caption.97}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Pantalla de inicio de sesión\relax }}{72}{figure.caption.102}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Pantalla de inicio de sesión\relax }}{73}{figure.caption.104}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Pantalla de inicio de sesión\relax }}{74}{figure.caption.105}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Pantalla de inicio de sesión\relax }}{75}{figure.caption.107}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Pantalla de inicio de sesión\relax }}{76}{figure.caption.109}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
