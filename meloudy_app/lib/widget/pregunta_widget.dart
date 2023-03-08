@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/widget/opcion_boton.dart';
@@ -33,8 +35,14 @@ class _PreguntaWidgetState extends State {
   @override
   Widget build(BuildContext context) {
     final preguntasData = Provider.of<Preguntas>(context);
+
     final preguntas = preguntasData.items;
     final indice = preguntasData.indiceValor;
+
+    while(preguntas.length <= 0){
+
+    }
+
 
     List<Widget> opciones = [];
     if (preguntas[indice].tipo == 'unica' ||
@@ -46,8 +54,10 @@ class _PreguntaWidgetState extends State {
       opciones.add(Container(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: TextFormField(
+          onChanged: (texto){
+            Provider.of<Preguntas>(context, listen: false).setRespuestas(texto);
+          },
           decoration: InputDecoration(labelText: 'Respuesta'),
-          obscureText: true,
         ),
       ));
     }
@@ -65,6 +75,7 @@ class _PreguntaWidgetState extends State {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  if(indice > 0)
                   Container(
                       child: IconButton(
                     iconSize: 60,
@@ -76,7 +87,7 @@ class _PreguntaWidgetState extends State {
                         Provider.of<Preguntas>(context, listen: false)
                             .preguntaAnterior();
 
-                        Navigator.pushReplacementNamed(context, '/pregunta');
+                        //Navigator.pushReplacementNamed(context, '/pregunta');
                       }
                     },
                   )),
@@ -85,6 +96,7 @@ class _PreguntaWidgetState extends State {
                       margin: EdgeInsets.only(bottom: 20),
                       child: Image.asset('assets/${preguntas[indice].imagen}',
                           fit: BoxFit.cover)),
+                  if(indice<preguntas.length-1)
                   Container(
                       child: IconButton(
                     iconSize: 60,
@@ -97,10 +109,12 @@ class _PreguntaWidgetState extends State {
                       if (indice < preguntas.length - 1) {
                         Provider.of<Preguntas>(context, listen: false)
                             .siguientePregunta();
-                        Navigator.pushReplacementNamed(context, '/pregunta');
+                      //  Navigator.pushReplacementNamed(context, '/pregunta');
                       }
                     },
                   )),
+
+
                 ],
               ),
               Container(
@@ -112,7 +126,13 @@ class _PreguntaWidgetState extends State {
                           fontWeight: FontWeight.bold,
                           fontSize: 24))),
               Column(
-                children: opciones,
+                children: [...opciones,
+                  if(indice>=preguntas.length-1)
+                    Container(
+                      margin: EdgeInsets.only(top:20),
+                      child: ElevatedButton(onPressed: (){
+                        Provider.of<Preguntas>(context,listen:false).enviarTest();
+                      }, child: Text("FINALIZAR"),),),],
               ),
             ],
           )),

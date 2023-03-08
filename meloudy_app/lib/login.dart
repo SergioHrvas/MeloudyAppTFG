@@ -36,9 +36,9 @@ class Login extends StatelessWidget {
                 children: <Widget>[
                   Flexible(
                     child: Container(
-                      margin: EdgeInsets.only(bottom: 20.0, top: 30.0),
+                      margin: EdgeInsets.only(bottom: 30.0, top: 30.0),
                       padding:
-                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 70.0),
+                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 40.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.lightBlue.shade500,

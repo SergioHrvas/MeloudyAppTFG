@@ -16,11 +16,13 @@ function createServer() {
     const lessonRoutes = require('./routes/lesson');
     const questionRoutes = require('./routes/question');
     const testRoutes = require('./routes/test');
+    const progressRoutes = require('./routes/progress');
 
     app.use("/api/user", userRoutes);
     app.use("/api/lesson", lessonRoutes);
     app.use("/api/question", questionRoutes);
     app.use("/api/test", testRoutes);
+    app.use("/api/progress", progressRoutes);
     
 
 

@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../providers/leccion.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
 
+import '../providers/preguntas.dart';
+
 class LeccionItem extends StatelessWidget {
   final String _nombre;
   final List<Contenido> _contenido;
@@ -30,6 +32,8 @@ class LeccionItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(100)),
                 child: GestureDetector(
                     onTap: () {
+                      Provider.of<Preguntas>(context, listen: false).fetchAndSetPreguntas();
+
                       Navigator.of(context).pushNamed(
                         LeccionPantalla.routeName,
                         arguments: leccion.id,

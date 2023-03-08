@@ -8,6 +8,7 @@ class Pregunta with ChangeNotifier {
   final List<String> respuestascorrectas;
   final String imagen;
   List<String> respuestas = [];
+  List <bool> pulsado = [];
 
   Pregunta({
     @required this.id,
@@ -15,7 +16,8 @@ class Pregunta with ChangeNotifier {
     @required this.tipo,
     @required this.opciones,
     @required this.respuestascorrectas,
-    @required this.imagen
+    @required this.imagen,
+    @required this.pulsado
   });
 
 }

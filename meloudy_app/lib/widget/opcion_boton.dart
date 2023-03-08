@@ -28,6 +28,9 @@ class _OpcionBotonState extends State{
 
   Widget build(context){
 
+    _pulsado = Provider.of<Preguntas>(context, listen: false).getPulsado(_num);
+
+    print("PULSADO: " + _pulsado.toString());
     return Container(
         width: 180,
         child: ElevatedButton(
@@ -36,6 +39,8 @@ class _OpcionBotonState extends State{
             onPressed: () {
               setState(() {
                 _pulsado = !_pulsado;
+                Provider.of<Preguntas>(context, listen: false).setPulsado(_num);
+
                 Provider.of<Preguntas>(context, listen: false).setRespuestas(_num.toString());
               });
             },

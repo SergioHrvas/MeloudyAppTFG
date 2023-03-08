@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
@@ -84,8 +86,6 @@ class LeccionPantalla extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 30),
               child: ElevatedButton(onPressed: (
                   ){
-                Provider.of<Preguntas>(context, listen: false).fetchAndSetPreguntas(leccionId);
-
                 Navigator.pushReplacementNamed(context, '/pregunta');
               }, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),))
         ],

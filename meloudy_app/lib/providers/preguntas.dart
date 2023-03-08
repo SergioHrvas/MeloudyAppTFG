@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:meloudy_app/ips.dart';
@@ -16,12 +18,20 @@ class Preguntas with ChangeNotifier {
 
   void setRespuestas(resp) {
     if(preguntas[indice].respuestas.contains(resp)) {
-      if(preguntas[indice].tipo == 'multiple' || preguntas[indice].tipo == 'unica'){
+      if(preguntas[indice].tipo == 'multiple'){
         preguntas[indice].respuestas.remove(resp);
       }
     }
     else{
-      preguntas[indice].respuestas.add(resp);
+      if(preguntas[indice].tipo == 'texto' || preguntas[indice].tipo == 'unica') {
+        preguntas[indice].respuestas.removeRange(
+            0, preguntas[indice].respuestas.length);
+        preguntas[indice].respuestas.add(resp);
+      }
+      else if(preguntas[indice].tipo == 'multiple'){
+        preguntas[indice].respuestas.add(resp);
+
+      }
     }
 
     print("RESPUESTAS: " + preguntas[indice].respuestas.toString());
@@ -34,6 +44,23 @@ class Preguntas with ChangeNotifier {
     return [...preguntas];
   }
 
+  Future<void> setPulsado(num) async{
+    preguntas[indice].pulsado[num] = !preguntas[indice].pulsado[num];
+    if(preguntas[indice].tipo == 'unica' && preguntas[indice].pulsado[num] == true){
+      for(var i = 0; i < preguntas[indice].pulsado.length; i++){
+        if (i != num){
+          preguntas[indice].pulsado[i] = false;
+        }
+      }
+    }
+    notifyListeners();
+  }
+
+
+  bool getPulsado(num){
+    return preguntas[indice].pulsado[num];
+  }
+
 
   int get indiceValor {
     // if (_showFavoritesOnly) {
@@ -42,7 +69,8 @@ class Preguntas with ChangeNotifier {
     return indice;
   }
 
-  Future<void> fetchAndSetPreguntas(idLeccion) async {
+
+  Future<void> fetchAndSetPreguntas() async {
     print("TOKENE:" + authToken);
 
     final url = Uri.parse(
@@ -68,19 +96,20 @@ class Preguntas with ChangeNotifier {
 
         final List<String> contenidoCargado = [];
         var contenidoLista = extractedData['pregunta'][i]['opciones'];
+        List<bool> pulsadoLista = [];
         for (var i = 0; i < contenidoLista.length; i++) {
           contenidoCargado.add(contenidoLista[i]);
+          pulsadoLista.add(false);
         }
         preguntasCargadas.add(Pregunta(
             id: preguntasLista[i]['_id'],
             cuestion: preguntasLista[i]['cuestion'],
             tipo: preguntasLista[i]['tipo'],
             imagen: preguntasLista[i]['imagen'],
-            opciones: contenidoCargado
+            opciones: contenidoCargado,
+            pulsado: pulsadoLista
 
         ));
-        print("aasas");
-        print(preguntasCargadas[i].opciones.toString());
       }
 
       preguntas = preguntasCargadas;
@@ -92,10 +121,38 @@ class Preguntas with ChangeNotifier {
 
   Future<void> siguientePregunta() async{
     indice++;
+    notifyListeners();
+
   }
 
   Future<void> preguntaAnterior() async{
     indice--;
+    notifyListeners();
+  }
+
+  Future<void> enviarTest() async{
+    final url = Uri.parse('http://${IP.ip}:5000/api/progress/create-test-and-progress');
+
+    try{
+
+      final response = await http.post(url,
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          body: json.encode({
+            "preguntas": preguntas[0].respuestas[0],
+            //habra que pasarle más parámetrosp
+          }));
+      final responseData = json.decode(response.body);
+      print(responseData);
+      if (responseData['error'] != null) {
+        throw HttpException(responseData['error']['message']);
+      }
+
+    } catch (error){
+      throw(error);
+    }
   }
 
 }
