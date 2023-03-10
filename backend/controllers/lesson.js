@@ -10,7 +10,6 @@ const create = (req, res) => {
     //Crear objeto usuario y se asignan parámetros automáticamente
     const lesson = new Lesson(param);
 
-    console.log(param);
     //Guardar el objeto en la base de datos
     lesson.save((error, lessonSaved) => {
         if (error || !lessonSaved) {

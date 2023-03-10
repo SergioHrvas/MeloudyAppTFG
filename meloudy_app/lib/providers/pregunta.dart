@@ -5,7 +5,7 @@ class Pregunta with ChangeNotifier {
   final String cuestion;
   final String tipo;
   final List<String> opciones;
-  final List<String> respuestascorrectas;
+  List<String> respuestascorrectas = [];
   final String imagen;
   List<String> respuestas = [];
   List <bool> pulsado = [];

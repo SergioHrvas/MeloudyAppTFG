@@ -6,8 +6,20 @@ const { Schema, model } = require('mongoose');
 // Campos de Usuario y su tipo
 
 const ProgressSchema = Schema({
-    test: [{
-        required: true,
+    idUsuario: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    idLeccion: {
+        type: Schema.Types.ObjectId,
+        ref: 'Lesson',
+        required: true
+    },
+    completado: {
+        type: Boolean,
+    },
+    tests: [{
         type: Schema.Types.ObjectId,
         ref: 'Test'
     }],

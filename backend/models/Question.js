@@ -11,7 +11,7 @@ const QuestionSchema = Schema({
         required: true
     },
     respuestascorrectas: [{
-        type: Number,
+        type: String,
         required: true
     },],
     opciones: [{

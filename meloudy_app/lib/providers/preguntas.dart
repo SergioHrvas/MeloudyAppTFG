@@ -6,16 +6,27 @@ import 'package:meloudy_app/ips.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:meloudy_app/providers/pregunta.dart';
+import 'package:provider/provider.dart';
+
+import 'auth.dart';
 
 
 
 class Preguntas with ChangeNotifier {
   List <Pregunta> preguntas = [];
   int indice = 0;
+  String idLeccion;
   final String authToken;
+  String userId;
+  String testId;
+  String modo;
 
   Preguntas(this.authToken, this.preguntas);
 
+  void setModo(nuevomodo){
+    modo = nuevomodo;
+    indice = 0;
+  }
   void setRespuestas(resp) {
     if(preguntas[indice].respuestas.contains(resp)) {
       if(preguntas[indice].tipo == 'multiple'){
@@ -37,11 +48,25 @@ class Preguntas with ChangeNotifier {
     print("RESPUESTAS: " + preguntas[indice].respuestas.toString());
   }
 
+  void setIdLeccion(id){
+    idLeccion = id;
+  }
+
+  void setIdUser(id){
+    userId = id;
+  }
+
   List<Pregunta> get items {
     // if (_showFavoritesOnly) {
     //   return _items.where((prodItem) => prodItem.isFavorite).toList();
     // }
     return [...preguntas];
+  }
+
+  String get idtest {
+    print("SALGO");
+    print(testId);
+    return testId;
   }
 
   Future<void> setPulsado(num) async{
@@ -69,6 +94,23 @@ class Preguntas with ChangeNotifier {
     return indice;
   }
 
+  int getAciertos(){
+    var fallo;
+    var contador = 0;
+    for(var i = 0; i < preguntas.length; i++){
+      fallo = false;
+      for (var j = 0; j < preguntas[i].respuestas.length; j++){
+        if(preguntas[i].respuestascorrectas.contains(preguntas[i].respuestas[j]) == false || preguntas[i].respuestascorrectas.length != preguntas[i].respuestas.length){
+            fallo = true;
+        }
+
+      }
+      if(!fallo){
+        contador++;
+      }
+    }
+    return contador;
+  }
 
   Future<void> fetchAndSetPreguntas() async {
     print("TOKENE:" + authToken);
@@ -91,24 +133,35 @@ class Preguntas with ChangeNotifier {
       final List<Pregunta> preguntasCargadas = [];
       var preguntasLista = extractedData['pregunta'];
 
-
+      print(extractedData['pregunta']);
       for (var i = 0; i < extractedData['pregunta'].length; i++) {
 
         final List<String> contenidoCargado = [];
         var contenidoLista = extractedData['pregunta'][i]['opciones'];
         List<bool> pulsadoLista = [];
-        for (var i = 0; i < contenidoLista.length; i++) {
-          contenidoCargado.add(contenidoLista[i]);
+        for (var j = 0; j < contenidoLista.length; j++) {
+          contenidoCargado.add(contenidoLista[j]);
           pulsadoLista.add(false);
         }
+
+        List<String> respuestasCorrectas = [];
+        var contenidoListaRP = extractedData['pregunta'][i]['respuestascorrectas'];
+        print("RC: " + extractedData['pregunta'][i]['respuestascorrectas'].toString());
+        print(contenidoListaRP.length);
+        for (var j = 0; j < contenidoListaRP.length; j++) {
+          respuestasCorrectas.add(contenidoListaRP[j]);
+        }
+
+        print("RC2:" + respuestasCorrectas.toString());
+
         preguntasCargadas.add(Pregunta(
             id: preguntasLista[i]['_id'],
             cuestion: preguntasLista[i]['cuestion'],
             tipo: preguntasLista[i]['tipo'],
             imagen: preguntasLista[i]['imagen'],
             opciones: contenidoCargado,
-            pulsado: pulsadoLista
-
+            pulsado: pulsadoLista,
+            respuestascorrectas: respuestasCorrectas
         ));
       }
 
@@ -135,23 +188,41 @@ class Preguntas with ChangeNotifier {
 
     try{
 
+      var preguntasTest = <Map<String, dynamic>>[];
+
+      for(var i = 0; i < preguntas.length; i++){
+        preguntasTest.add(<String, dynamic>{
+          "idPregunta": preguntas[i].id,
+          "respuestas": preguntas[i].respuestas,
+        });
+        print(preguntasTest.toString());
+      }
+
+
       final response = await http.post(url,
           headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"
           },
           body: json.encode({
-            "preguntas": preguntas[0].respuestas[0],
-            //habra que pasarle más parámetrosp
+            'idLeccion': idLeccion,
+            'preguntas': preguntasTest,
+            'idUsuario': userId,
+
           }));
       final responseData = json.decode(response.body);
       print(responseData);
+      testId = responseData['test'];
+      print(testId);
+      print("aaaaaa");
+      return testId;
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);
       }
 
+
     } catch (error){
-      throw(error);
+        throw(error);
     }
   }
 

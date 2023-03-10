@@ -7,18 +7,21 @@ class OpcionBoton extends StatefulWidget{
 
   final _texto;
   final _num;
-  OpcionBoton(this._texto, this._num);
+  final _color;
+  OpcionBoton(this._texto, this._num, this._color);
 
   @override
-  _OpcionBotonState createState() => _OpcionBotonState(_texto, _num);
+  _OpcionBotonState createState() => _OpcionBotonState(_texto, _num, _color);
 }
 
 class _OpcionBotonState extends State{
   var _pulsado = false;
   var _texto;
   var _num;
+  var _color;
+  var _modo;
 
-  _OpcionBotonState(this._texto, this._num);
+  _OpcionBotonState(this._texto, this._num, this._color);
 
 
   @override
@@ -27,15 +30,16 @@ class _OpcionBotonState extends State{
   }
 
   Widget build(context){
-
     _pulsado = Provider.of<Preguntas>(context, listen: false).getPulsado(_num);
-
-    print("PULSADO: " + _pulsado.toString());
+    _modo = Provider.of<Preguntas>(context, listen: false).modo;
+    print("NUM: " + _num.toString());
+    print("COLOR:" + _color.toString());
+    print("modo:" + _modo.toString());
     return Container(
         width: 180,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-                backgroundColor: _pulsado ? Color.fromRGBO(50, 100, 250, 1): Color.fromRGBO(50, 200, 250, 1)),
+                backgroundColor: (_modo == 'respondiendo') ? _pulsado ? Color.fromRGBO(50, 100, 250, 1): Color.fromRGBO(50, 200, 250, 1) : (_color=='verde') ? Colors.green : (_color=='rojo') ? Colors.red : Colors.blue),
             onPressed: () {
               setState(() {
                 _pulsado = !_pulsado;

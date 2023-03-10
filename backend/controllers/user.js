@@ -7,8 +7,6 @@ const { generateToken } = require('../services/jwt');
 const create = async (req, res) => {
     //Recoger parametros por post
     let param = req.body;
-    console.log("params:");
-    console.log(param);
     try {
         if (!(param.correo && param.password && param.nombre && param.apellidos && param.rol)) {
             res.status(400).send("All input is required");
@@ -27,9 +25,6 @@ const create = async (req, res) => {
 
         //Asignar valores al objeto de usuario
         user.password = param.password;
-
-        console.log("user" + user);
-        console.log("token" + token);
         
         //Guardar el usuario en la base de datos
         user.save((error, userStored) => {
@@ -114,9 +109,6 @@ const login = async (req, res) => {
     const user = await User.findOne({ correo: correo });
     const token = await generateToken(user._id);
 
-
-    console.log(correo);
-    console.log(password);
     User.findOne({ correo: correo }, (error, user) => {
         if (error || !user) {
             return res.status(404).json({

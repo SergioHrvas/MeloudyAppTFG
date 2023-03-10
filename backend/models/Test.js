@@ -1,25 +1,21 @@
 const {Schema, model} = require('mongoose');
 
 const TestSchema = Schema({
-    leccionId: {
+    idLeccion: {
         type: Schema.Types.ObjectId,
         ref: 'Lesson',
         required: true
     },
     preguntas: [{
-        preguntaId:{
+        idPregunta:{
             type: Schema.Types.ObjectId,
-        ref: 'Question',
-        required: true
+            ref: 'Question',
+            required: true
         },
-        respuesta: {
+        respuestas: [{
             type: String,
-            required: true,
-        },
-        correcta: {
-            type: Boolean,
-            required: true,
-        }
+            //required: true,
+        }],
     }],
     
 });

@@ -32,6 +32,7 @@ class LeccionItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(100)),
                 child: GestureDetector(
                     onTap: () {
+
                       Provider.of<Preguntas>(context, listen: false).fetchAndSetPreguntas();
 
                       Navigator.of(context).pushNamed(

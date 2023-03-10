@@ -3,8 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/widget/opcion_boton.dart';
+import '../providers/lecciones.dart';
 import '../providers/pregunta.dart';
 import '../providers/preguntas.dart';
+import '../screen/TestAcabadoPantalla.dart';
 
 class PreguntaWidget extends StatefulWidget {
   @override
@@ -39,16 +41,35 @@ class _PreguntaWidgetState extends State {
     final preguntas = preguntasData.items;
     final indice = preguntasData.indiceValor;
 
-    while(preguntas.length <= 0){
+    final leccionId = ModalRoute.of(context).settings.arguments as String; // is the id!
+    final modo = Provider.of<Preguntas>(context, listen:false).modo;
+    if(modo == 'revisando') {
+
 
     }
 
-
+    print(preguntas[indice].respuestascorrectas);
+    var color = 'azul';
     List<Widget> opciones = [];
     if (preguntas[indice].tipo == 'unica' ||
         preguntas[indice].tipo == 'multiple') {
       for (int i = 0; i < preguntas[indice].opciones.length; i++) {
-        opciones.add(OpcionBoton(preguntas[indice].opciones[i], i));
+          color = 'azul';
+         // print(preguntas[indice].respuestas.toString() + '<<<<' + i.toString() + " --- " + preguntas[indice].respuestas.contains(i.toString()).toString());
+        if(preguntas[indice].respuestas.contains(i.toString())) {
+          print(preguntas[indice].respuestascorrectas.contains(i.toString()));
+          if(preguntas[indice].respuestascorrectas.contains(i.toString())){
+            color = 'verde';
+          }
+          else{
+            color = 'rojo';
+          }
+
+        }
+        print(color);
+
+
+        opciones.add(OpcionBoton(preguntas[indice].opciones[i], i, color));
       }
     } else if (preguntas[indice].tipo == 'texto') {
       opciones.add(Container(
@@ -87,7 +108,7 @@ class _PreguntaWidgetState extends State {
                         Provider.of<Preguntas>(context, listen: false)
                             .preguntaAnterior();
 
-                        //Navigator.pushReplacementNamed(context, '/pregunta');
+                        Navigator.pushReplacementNamed(context, '/pregunta');
                       }
                     },
                   )),
@@ -109,7 +130,7 @@ class _PreguntaWidgetState extends State {
                       if (indice < preguntas.length - 1) {
                         Provider.of<Preguntas>(context, listen: false)
                             .siguientePregunta();
-                      //  Navigator.pushReplacementNamed(context, '/pregunta');
+                        Navigator.pushReplacementNamed(context, '/pregunta');
                       }
                     },
                   )),
@@ -127,11 +148,11 @@ class _PreguntaWidgetState extends State {
                           fontSize: 24))),
               Column(
                 children: [...opciones,
-                  if(indice>=preguntas.length-1)
+                  if(indice>=preguntas.length-1 && modo == 'respondiendo')
                     Container(
                       margin: EdgeInsets.only(top:20),
                       child: ElevatedButton(onPressed: (){
-                        Provider.of<Preguntas>(context,listen:false).enviarTest();
+                        Navigator.pushReplacementNamed(context, TestAcabadoPantalla.routeName, arguments: leccionId);
                       }, child: Text("FINALIZAR"),),),],
               ),
             ],

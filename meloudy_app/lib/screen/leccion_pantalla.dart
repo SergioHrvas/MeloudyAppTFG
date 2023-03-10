@@ -5,6 +5,7 @@ import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
 
+import '../providers/auth.dart';
 import '../providers/preguntas.dart';
 
 class LeccionPantalla extends StatelessWidget {
@@ -18,7 +19,6 @@ class LeccionPantalla extends StatelessWidget {
       context,
       listen: false,
     ).findById(leccionId);
-    print("LOADED LESSON");
     final contenido = loadedLesson.contenido;
     var contenidos = List<Widget>();
     for (var i = 0; i < contenido.length; i++) {
@@ -86,7 +86,11 @@ class LeccionPantalla extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 30),
               child: ElevatedButton(onPressed: (
                   ){
-                Navigator.pushReplacementNamed(context, '/pregunta');
+                var id = Provider.of<Auth>(context,listen:false).userId;
+                Provider.of<Preguntas>(context, listen:false).setIdLeccion(leccionId);
+                Provider.of<Preguntas>(context, listen:false).setIdUser(id);
+                Provider.of<Preguntas>(context, listen:false).setModo('respondiendo');
+                Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
               }, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),))
         ],
       )),
