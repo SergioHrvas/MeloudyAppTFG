@@ -1,5 +1,6 @@
 const Test = require('../models/Test');
 const Lesson = require('../models/Lesson');
+const Question = require('../models/Question');
 const { model } = require('mongoose');
 
 
@@ -13,12 +14,6 @@ const create = (req, res) => {
         }
         return lesson.preguntas;
     });
-
-    //extraer 10 preguntas aleatorias 
-    const preguntasAleatorias = preguntas.sort(() => Math.random() - 0.5).slice(0, 10);
-
-    //crear un test con las preguntas aleatorias
-    req.body.preguntas = preguntasAleatorias;
 
     const test = new Test(req.body);
     test.save((error, testSaved) => {
@@ -69,6 +64,10 @@ const get = (req, res) => {
     }
     );
 }
+
+
+        
+
 
 const remove = (req, res) => {
     const id = req.params.id;

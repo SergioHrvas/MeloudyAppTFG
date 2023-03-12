@@ -15,10 +15,14 @@ class LeccionPantalla extends StatelessWidget {
     final leccionId =
         ModalRoute.of(context).settings.arguments as String; // is the id!
 
+    var idUsuario = Provider.of<Auth>(context, listen: false).userId;
+    Provider.of<Lecciones>(context, listen:false).fetchAndSetTests(leccionId, idUsuario);
+    
     final loadedLesson = Provider.of<Lecciones>(
       context,
       listen: false,
     ).findById(leccionId);
+
     final contenido = loadedLesson.contenido;
     var contenidos = List<Widget>();
     for (var i = 0; i < contenido.length; i++) {
@@ -44,7 +48,6 @@ class LeccionPantalla extends StatelessWidget {
             child: Text(contenido[i].texto,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))));
       }
-      print(contenidos.length);
     }
 
     return Scaffold(
@@ -91,7 +94,11 @@ class LeccionPantalla extends StatelessWidget {
                 Provider.of<Preguntas>(context, listen:false).setIdUser(id);
                 Provider.of<Preguntas>(context, listen:false).setModo('respondiendo');
                 Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
-              }, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),))
+              }, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),)),
+
+          Column(children: [Container(child:ElevatedButton(child: Text("Historial de Tests"), onPressed: (){
+            Navigator.pushReplacementNamed(context, '/historial-tests', arguments: leccionId);
+          },))])
         ],
       )),
     );

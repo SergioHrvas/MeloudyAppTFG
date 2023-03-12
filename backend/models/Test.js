@@ -17,7 +17,22 @@ const TestSchema = Schema({
             //required: true,
         }],
     }],
+    aprobado: {
+        type: Boolean,
+        required: true
+    },
+    aciertos: 
+    {
+        type: Number,
+        required: true
+    },
+    fecha_creacion: {
+        type: Date,
+        default: Date.now
+    },
+
     
+
 });
 
 module.exports = model('Test', TestSchema);

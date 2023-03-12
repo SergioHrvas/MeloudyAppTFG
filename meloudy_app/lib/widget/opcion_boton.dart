@@ -36,9 +36,11 @@ class _OpcionBotonState extends State{
     print("COLOR:" + _color.toString());
     print("modo:" + _modo.toString());
     return Container(
-        width: 180,
+        width: 280,
+        margin: EdgeInsets.only(bottom: 10),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 backgroundColor: (_modo == 'respondiendo') ? _pulsado ? Color.fromRGBO(50, 100, 250, 1): Color.fromRGBO(50, 200, 250, 1) : (_color=='verde') ? Colors.green : (_color=='rojo') ? Colors.red : Colors.blue),
             onPressed: () {
               setState(() {

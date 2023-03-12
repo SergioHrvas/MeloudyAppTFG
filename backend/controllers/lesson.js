@@ -1,6 +1,7 @@
 const Lesson = require("../models/Lesson");
 const fs = require('fs');
 const path = require('path');
+const Progress = require("../models/Progress");
 
 const create = (req, res) => {
 
@@ -28,6 +29,7 @@ const create = (req, res) => {
 
 }
 
+
 const index = (req, res) => {
     // Return all users
     Lesson.find({}, (error, lessons) => {
@@ -37,11 +39,31 @@ const index = (req, res) => {
                 mensaje: "La lección no se ha podido encontrar"
             });
         }
-        return res.status(200).json({
-            status: "success",
-            leccion: lessons,
-        });
+        else {
+
+            var tests = [];
+
+            Progress.find({ idUsuario: req.params.id }, (error, progress) => {
+                if (error || !progress) {
+                    return res.status(404).json({
+                        status: "error",
+                        mensaje: "El progreso no se ha podido encontrar"
+                    });
+                }
+                else {
+                    
+                    return res.status(200).json({
+                        status: "success",
+                        leccion: lessons,
+                        progreso: progress,
+                        mensaje: "Las lecciones se ha encontrado"
+                    });
+                }
+            }
+            );
+        }
     }
+
     );
 }
 

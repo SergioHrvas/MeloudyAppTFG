@@ -9,7 +9,8 @@ class LeccionItem extends StatelessWidget {
   final String _nombre;
   final List<Contenido> _contenido;
   final String _imagenprincipal;
-  LeccionItem(this._nombre, this._contenido, this._imagenprincipal);
+  final String _estado;
+  LeccionItem(this._nombre, this._contenido, this._imagenprincipal, this._estado);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,19 @@ class LeccionItem extends StatelessWidget {
         width: 300,
         alignment: Alignment.topCenter,
         margin: EdgeInsets.only(bottom: 12.0),
-        child: Row(
+        child: GestureDetector(
+            onTap: () {
+
+              if(_estado != 'bloqueado') {
+                Provider.of<Preguntas>(context, listen: false)
+                    .fetchAndSetPreguntas(leccion.id);
+                Navigator.of(context).pushNamed(
+                  LeccionPantalla.routeName,
+                  arguments: leccion.id,
+                );
+              }
+            },
+            child: Row(
           children: [
             Container(
                 height: 90,
@@ -30,29 +43,13 @@ class LeccionItem extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 179, 179, 179),
                     borderRadius: BorderRadius.circular(100)),
-                child: GestureDetector(
-                    onTap: () {
 
-                      Provider.of<Preguntas>(context, listen: false).fetchAndSetPreguntas();
-
-                      Navigator.of(context).pushNamed(
-                        LeccionPantalla.routeName,
-                        arguments: leccion.id,
-                      );
-                    },
                     child: Container(
                       height: 30,
                       width: 30,
                       child: Image.asset('assets/${_imagenprincipal}'),
-                    ))),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(
-                  LeccionPantalla.routeName,
-                  arguments: leccion.id,
-                );
-              },
-              child: Container(
+                    )),
+          Container(
                 margin: EdgeInsets.only(left: 12),
                 padding: EdgeInsets.all(10),
                 width: 190,
@@ -63,11 +60,11 @@ class LeccionItem extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Color.fromARGB(255, 101, 168, 255)),
+                    color: _estado == 'completado' ? Colors.green : _estado == 'desbloqueado' ? Color.fromARGB(255, 101, 168, 255) : Colors.grey),
               ),
-            )
           ],
         ),
+      ),
       ),
     );
   }

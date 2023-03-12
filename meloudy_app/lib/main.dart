@@ -1,5 +1,6 @@
 import 'package:meloudy_app/providers/preguntas.dart';
 import 'package:meloudy_app/screen/TestAcabadoPantalla.dart';
+import 'package:meloudy_app/screen/historial_tests.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
             PantallaDashboard.routeName: (ctx) => PantallaDashboard(),
             PreguntaPantalla.routeName: (ctx) => PreguntaPantalla(),
             TestAcabadoPantalla.routeName: (ctx) => TestAcabadoPantalla(),
+            HistorialTests.routeName: (ctx) => HistorialTests(),
 
 
 

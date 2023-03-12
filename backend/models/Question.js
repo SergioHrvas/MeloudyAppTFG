@@ -29,7 +29,13 @@ const QuestionSchema = Schema({
     video: {
         type: String,
         required: false
-    }
+    },
+    leccion: {
+        type: Schema.Types.ObjectId,
+        ref: 'Leccion',
+        required: true
+    },
+    
 });
 
 module.exports = model('Question', QuestionSchema);

@@ -4,7 +4,6 @@ const config = process.env;
 
 const verifyToken = (req, res, next) => {
     const token = req.body.auth || req.query.auth || req.headers['x-access-token'];
-    console.log(token);
     if(!token){
         return res.status(403).send({ auth: false, message: 'No token provided.' });
     }

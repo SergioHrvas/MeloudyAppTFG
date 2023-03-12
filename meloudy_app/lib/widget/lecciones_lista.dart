@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../providers/auth.dart';
 import '../providers/lecciones.dart';
 import './leccion_item.dart';
 
@@ -15,9 +16,9 @@ class _LeccionesListaState extends State<LeccionesLista> {
 
   @override
   void initState() {
-    // Provider.of<Products>(context).fetchAndSetProducts(); // WON'T WORK!
+    // Provider.of<Products>(context).fetchAndSetLecciones(); // WON'T WORK!
     // Future.delayed(Duration.zero).then((_) {
-    //   Provider.of<Products>(context).fetchAndSetProducts();
+    //   Provider.of<Products>(context).fetchAndSetLecciones();
     // });
     super.initState();
   }
@@ -28,7 +29,9 @@ class _LeccionesListaState extends State<LeccionesLista> {
       setState(() {
         _isLoading = true;
       });
-      Provider.of<Lecciones>(context).fetchAndSetProducts().then((_) {
+      var id = Provider.of<Auth>(context).userId;
+
+        Provider.of<Lecciones>(context).fetchAndSetLecciones(id).then((_) {
         setState(() {
           _isLoading = false;
         });
@@ -53,6 +56,7 @@ class _LeccionesListaState extends State<LeccionesLista> {
             lecciones[i].nombre,
             lecciones[i].contenido,
             lecciones[i].imagenprincipal,
+            lecciones[i].estado
             // products[i].imageUrl,
           ),
         ),

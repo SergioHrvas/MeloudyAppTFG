@@ -37,17 +37,18 @@ class _PreguntaWidgetState extends State {
   @override
   Widget build(BuildContext context) {
     final preguntasData = Provider.of<Preguntas>(context);
-
+    print("aa");
     final preguntas = preguntasData.items;
     final indice = preguntasData.indiceValor;
 
-    final leccionId = ModalRoute.of(context).settings.arguments as String; // is the id!
-    final modo = Provider.of<Preguntas>(context, listen:false).modo;
-    if(modo == 'revisando') {
+    final leccionId = ModalRoute.of(context).settings.arguments as String;
 
-
+    var textovalor;
+    if(preguntas[indice].tipo == 'texto'){
+      textovalor =  Provider.of<Preguntas>(context, listen:false).getRespuesta();; // is the id!
     }
 
+    final modo = Provider.of<Preguntas>(context, listen:false).modo;
     print(preguntas[indice].respuestascorrectas);
     var color = 'azul';
     List<Widget> opciones = [];
@@ -72,13 +73,17 @@ class _PreguntaWidgetState extends State {
         opciones.add(OpcionBoton(preguntas[indice].opciones[i], i, color));
       }
     } else if (preguntas[indice].tipo == 'texto') {
+
       opciones.add(Container(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: TextFormField(
+          initialValue: textovalor,
           onChanged: (texto){
             Provider.of<Preguntas>(context, listen: false).setRespuestas(texto);
           },
-          decoration: InputDecoration(labelText: 'Respuesta'),
+          decoration: InputDecoration(labelText: 'Respuesta',
+          filled: modo == 'revisando' ? true : false,
+          fillColor: modo == 'revisando' ? preguntas[indice].respuestascorrectas.contains(preguntas[indice].respuestas[0].toLowerCase()) ? Colors.green : Colors.red : Colors.white),
         ),
       ));
     }
@@ -108,7 +113,7 @@ class _PreguntaWidgetState extends State {
                         Provider.of<Preguntas>(context, listen: false)
                             .preguntaAnterior();
 
-                        Navigator.pushReplacementNamed(context, '/pregunta');
+                        Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
                       }
                     },
                   )),
@@ -130,7 +135,7 @@ class _PreguntaWidgetState extends State {
                       if (indice < preguntas.length - 1) {
                         Provider.of<Preguntas>(context, listen: false)
                             .siguientePregunta();
-                        Navigator.pushReplacementNamed(context, '/pregunta');
+                        Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
                       }
                     },
                   )),

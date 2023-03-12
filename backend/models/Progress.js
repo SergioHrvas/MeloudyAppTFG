@@ -23,6 +23,11 @@ const ProgressSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Test'
     }],
+    completado: {
+        type: Boolean,
+        required: true
+    },
+
 
 });
 

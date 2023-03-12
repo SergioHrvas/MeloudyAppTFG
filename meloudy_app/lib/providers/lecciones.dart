@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:meloudy_app/ips.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:meloudy_app/providers/test.dart';
 import './leccion.dart';
 
 class Lecciones with ChangeNotifier {
@@ -17,38 +18,64 @@ class Lecciones with ChangeNotifier {
     return [...lecciones];
   }
 
+  List<Test> getTests(id){
+    return findById(id).tests;
+  }
+
   Leccion findById(String id) {
     return lecciones.firstWhere((prod) => prod.id == id);
   }
 
-  // void showFavoritesOnly() {
-  //   _showFavoritesOnly = true;
-  //   notifyListeners();
-  // }
+  Future<void> fetchAndSetLecciones(id) async {
 
-  // void showAll() {
-  //   _showFavoritesOnly = false;
-  //   notifyListeners();
-  // }
-
-  Future<void> fetchAndSetProducts() async {
-    print("TOKEN:" + authToken);
     final url = Uri.parse(
-        'http://${IP.ip}:5000/api/lesson/get-lessons?auth=$authToken');
+        'http://${IP.ip}:5000/api/lesson/get-lessons/${id}?auth=$authToken');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
-
       if (extractedData == null) {
         return;
       }
       if (extractedData['auth'] == false) {
         return;
       }
-      final List<Leccion> leccionesCargadas = [];
-      var leccionesLista = extractedData['leccion'];
 
+      final List<Leccion> leccionesCargadas = [];
+      var ultimo = false;
+      var leccionesLista = extractedData['leccion'];
       for (var i = 0; i < extractedData['leccion'].length; i++) {
+        var completadovar = null;
+        var estado = 'bloqueado';
+        print(extractedData['progreso'].length);
+        for(var j = 0; j < extractedData['progreso'].length; j++){
+
+          if(extractedData['progreso'][j]['idLeccion']==extractedData['leccion'][i]['_id']) {
+            completadovar = extractedData['progreso'][j]['completado'];
+            print(i.toString() + completadovar.toString());
+            if (completadovar == null){
+              if(ultimo == false){
+                estado = 'desbloqueado';
+                ultimo = true;
+              }
+              else{
+                estado = 'bloqueado';
+              }
+          }
+            else {
+              estado = 'completado';
+            }
+          }
+          else{
+            if(ultimo == false){
+              estado = 'desbloqueado';
+              ultimo = true;
+            }
+            else{
+              estado = 'bloqueado';
+            }
+          }
+        }
+        print("Estado;" + estado);
         final List<Contenido> contenidoCargado = [];
         var contenidoLista = extractedData['leccion'][i]['contenido'];
         for (var i = 0; i < contenidoLista.length; i++) {
@@ -60,14 +87,50 @@ class Lecciones with ChangeNotifier {
             id: leccionesLista[i]['_id'],
             nombre: leccionesLista[i]['nombre'],
             contenido: contenidoCargado,
-            imagenprincipal: leccionesLista[i]['imagenprincipal']));
+            imagenprincipal: leccionesLista[i]['imagenprincipal'],
+            estado: estado));
+
       }
       lecciones = leccionesCargadas;
+      print(lecciones[0].estado);
+
+
       notifyListeners();
     } catch (error) {
       throw (error);
     }
   }
+
+  Future<void> fetchAndSetTests(idLeccion, idUsuario) async{
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/progress/get-tests-progress/${idUsuario}/${idLeccion}');
+    try {
+      final response = await http.get(url);
+      final extractedData = json.decode(response.body) as Map<String, dynamic>;
+      print("eeeddd: " + extractedData.toString());
+
+      final List<Test> testsCargados = [];
+
+      print(extractedData['tests'].length);
+      for(var i = 0; i < extractedData['tests'].length; i++){
+        testsCargados.add(Test(
+            id: extractedData['tests'][i]['_id'],
+            fecha_creacion: extractedData['tests'][i]['fecha_creacion'],
+            aciertos: extractedData['tests'][i]['aciertos'],
+        ));
+      }
+
+      findById(idLeccion).setTests(testsCargados);
+
+
+    }
+    catch (error){
+      throw(error);
+    }
+
+  }
+
+
 
   /* Future<void> addProduct(Leccion leccion) async {
     final url = Uri.parse('https://flutter-update.firebaseio.com/products.json');

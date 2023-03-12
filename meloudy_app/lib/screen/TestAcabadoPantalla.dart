@@ -26,6 +26,8 @@ class _TestAcabadoPantallaState extends State{
 
 
     idTest = Provider.of<Preguntas>(context, listen:false).testId;
+    Provider.of<Preguntas>(context, listen:false).calcularAciertos();
+    print(Provider.of<Preguntas>(context, listen: false).getAciertos());
 
     super.didChangeDependencies();
   }
@@ -36,6 +38,7 @@ class _TestAcabadoPantallaState extends State{
     final leccionId =
     ModalRoute.of(context).settings.arguments as String; // is the id!
 
+    print("l" + leccionId.toString());
     final leccion = Provider.of<Lecciones>(
       context,
       listen: false,

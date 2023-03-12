@@ -7,9 +7,7 @@ const path = require('path');
 
 
 const create = (req, res) => {
-    console.log("aaaaaaaaaa");
     let param = req.body;
-    console.log(param);
 
     //Creamos un test
     const test = new Test(param);
@@ -33,8 +31,6 @@ const create = (req, res) => {
                 progress = new Progress();
                 progress.idUsuario = ObjectId(param.idUsuario);
                 progress.idLeccion = ObjectId(param.idLeccion);
-                console.log(progress.idLeccion)
-                console.log(progress.idUsuario)
                 progress.tests = [];
                 progress.tests.push(testSaved);
 
@@ -56,7 +52,6 @@ const create = (req, res) => {
             }
             else {
                 progress.tests.push(testSaved);
-                console.log(progress);
                 //guardamos el progreso
                 progress.save((error, progressSaved) => {
                     if (error || !progressSaved) {
@@ -82,12 +77,68 @@ const create = (req, res) => {
 
     });
 
-
-
 }
+
+
+const indexTests = async (req, res) => {
+    Progress.find({ idUsuario: req.params.idUsuario, idLeccion: req.params.idLeccion }, async (error, progress) => {
+            if (error || !progress) {
+            return res.status(404).json({
+                status: "error",
+                mensaje: "El progreso no se ha podido encontrar"
+            });
+        }
+        //Find all tests of a progress
+        var tests = [];
+        for (let i = 0; i < progress[0].tests.length; i++) {
+            try{
+            var test = await Test.findOne({ _id: progress[0].tests[i].toString() }, (error, test) => {
+                if (error || !test) {
+                    return res.status(404).json({
+                        status: "error",
+                        mensaje: "El test no se ha podido encontrar"
+                    });
+                }
+            }).clone();
+            tests.push(test);
+        }catch(error){
+            console.log(error);
+        }
+        }
+
+        return res.status(200).json({
+            status: "success",
+            tests: tests,
+        });        
+    }
+    );
+}
+
+
+const index = (req, res) => {
+    // Return all progress of a user
+    Progress.find({ idUsuario: req.params.idUsuario }, (error, progress) => {
+        if (error || !progress) {
+            return res.status(404).json({
+                status: "error",
+                mensaje: "El progreso no se ha podido encontrar"
+            });
+        }
+        return res.status(200).json({
+            status: "success",
+            progreso: progress,
+        });
+    }
+    );
+}
+
+
+
 
 
 
 module.exports = {
     create,
+    index,
+    indexTests
 };

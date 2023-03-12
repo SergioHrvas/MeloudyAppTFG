@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../providers/auth.dart';
 import '../providers/lecciones.dart';
 import './leccion_item_profesor.dart';
 
@@ -15,10 +16,7 @@ class _LeccionesListaProfesorState extends State<LeccionesListaProfesor> {
 
   @override
   void initState() {
-    // Provider.of<Products>(context).fetchAndSetProducts(); // WON'T WORK!
-    // Future.delayed(Duration.zero).then((_) {
-    //   Provider.of<Products>(context).fetchAndSetProducts();
-    // });
+
     super.initState();
   }
 
@@ -28,7 +26,9 @@ class _LeccionesListaProfesorState extends State<LeccionesListaProfesor> {
       setState(() {
         _isLoading = true;
       });
-      Provider.of<Lecciones>(context).fetchAndSetProducts().then((_) {
+      var id = Provider.of<Auth>(context).userId;
+
+      Provider.of<Lecciones>(context).fetchAndSetLecciones(id).then((_) {
         setState(() {
           _isLoading = false;
         });
