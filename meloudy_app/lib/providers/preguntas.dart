@@ -140,7 +140,7 @@ class Preguntas with ChangeNotifier {
     print("TOKENE:" + authToken);
     print(leccion);
     final url = Uri.parse(
-        'http://${IP.ip}:5000/api/question/get-questions-test/${leccion}?auth=$authToken');
+        'http://${IP.ip}:5000/api/question/get-questions/${leccion}?auth=$authToken');
     try {
       final response = await http.get(url);
 
@@ -170,7 +170,7 @@ class Preguntas with ChangeNotifier {
   Future<void> setPreguntas(test) async {
     print(test);
     final url = Uri.parse(
-        'http://${IP.ip}:5000/api/question/get-questions-test-done/${test}?auth=$authToken');
+        'http://${IP.ip}:5000/api/question/get-questions-test/${test}?auth=$authToken');
     try {
       final response = await http.get(url);
 

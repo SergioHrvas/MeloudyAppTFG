@@ -80,40 +80,6 @@ const create = (req, res) => {
 }
 
 
-const indexTests = async (req, res) => {
-    Progress.find({ idUsuario: req.params.idUsuario, idLeccion: req.params.idLeccion }, async (error, progress) => {
-            if (error || !progress) {
-            return res.status(404).json({
-                status: "error",
-                mensaje: "El progreso no se ha podido encontrar"
-            });
-        }
-        //Find all tests of a progress
-        var tests = [];
-        for (let i = 0; i < progress[0].tests.length; i++) {
-            try{
-            var test = await Test.findOne({ _id: progress[0].tests[i].toString() }, (error, test) => {
-                if (error || !test) {
-                    return res.status(404).json({
-                        status: "error",
-                        mensaje: "El test no se ha podido encontrar"
-                    });
-                }
-            }).clone();
-            tests.push(test);
-        }catch(error){
-            console.log(error);
-        }
-        }
-
-        return res.status(200).json({
-            status: "success",
-            tests: tests,
-        });        
-    }
-    );
-}
-
 
 const index = (req, res) => {
     // Return all progress of a user
@@ -140,5 +106,4 @@ const index = (req, res) => {
 module.exports = {
     create,
     index,
-    indexTests
 };

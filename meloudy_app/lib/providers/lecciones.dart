@@ -103,7 +103,7 @@ class Lecciones with ChangeNotifier {
 
   Future<void> fetchAndSetTests(idLeccion, idUsuario) async{
     final url = Uri.parse(
-        'http://${IP.ip}:5000/api/progress/get-tests-progress/${idUsuario}/${idLeccion}');
+        'http://${IP.ip}:5000/api/test/get-tests-progress/${idUsuario}/${idLeccion}');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;

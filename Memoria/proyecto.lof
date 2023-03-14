@@ -45,15 +45,43 @@
 \contentsline {figure}{\numberline {6.15}{\ignorespaces Boceto de la pantalla de una pregunta de test de tipo entrada por micrófono.\relax }}{63}{figure.caption.87}%
 \contentsline {figure}{\numberline {6.16}{\ignorespaces Diagrama de navegación de la aplicación por los distintos bocetos presentados anteriormente que muestra las pantallas que seguirá el usuario cuando utilice la aplicación.\relax }}{64}{figure.caption.89}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Estructura del proyecto, donde se puede ver la parte de frontend y la parte de backend.\relax }}{65}{figure.caption.90}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Drawer abierto en la aplicación con tres opciones (por ser desde la vista del profesor): Inicio, Dashboard y Cerrar sesión.\relax }}{67}{figure.caption.91}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Diagrama que explica el proceso de encriptación en el inicio de sesión desarrollado en la aplicación.\relax }}{68}{figure.caption.92}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Pantalla de inicio de sesión\relax }}{69}{figure.caption.93}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Pantalla de registro de los usuarios\relax }}{70}{figure.caption.97}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Pantalla de inicio de sesión\relax }}{72}{figure.caption.102}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Pantalla de inicio de sesión\relax }}{73}{figure.caption.104}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Pantalla de inicio de sesión\relax }}{74}{figure.caption.105}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Pantalla de inicio de sesión\relax }}{75}{figure.caption.107}%
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Pantalla de inicio de sesión\relax }}{76}{figure.caption.109}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Captura de pantalla de Jira. En ella se puede ver el Sprint Backlog, donde se encuentran las historias de usuario repartidas entre los sprints.\relax }}{66}{figure.caption.90}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Captura de pantalla de Jira. En ella se puede ver el Sprint Backlog, donde se encuentran las historias de usuario repartidas entre los sprints.\relax }}{67}{figure.caption.91}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Estructura del proyecto, donde se puede ver la parte de frontend y la parte de backend.\relax }}{68}{figure.caption.92}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Drawer abierto en la aplicación con tres opciones (por ser desde la vista del profesor): Inicio, Dashboard y Cerrar sesión.\relax }}{72}{figure.caption.93}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Diagrama que explica el proceso de encriptación en el inicio de sesión desarrollado en la aplicación.\relax }}{73}{figure.caption.94}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Diagrama que explica el proceso de intercambio de token en el inicio de sesión desarrollado en la aplicación.\relax }}{74}{figure.caption.95}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Diagrama que explica el proceso de sesión entre instancias en el inicio de sesión desarrollado en la aplicación.\relax }}{75}{figure.caption.96}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Pantalla de inicio de sesión del usuario donde se puede ver el formulario de inicio de sesión con los campos de usuario (correo) y contraseña.\relax }}{76}{figure.caption.97}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Pantalla de login}}}{76}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Estructura en componentes de la pantalla de login.}}}{76}{subfigure.8.2}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Pantalla de registro de los usuarios donde se puede ver el formulario de registro con los campos de usuario (correo), contraseña y repetir la contraseña.\relax }}{78}{figure.caption.100}%
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Pantalla de inicio de sesión\relax }}{80}{figure.caption.106}%
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Pantalla de una lección en concreto con los contenidos (títulos, texto, multimedia...) del temario.\relax }}{81}{figure.caption.108}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Parte 1.}}}{81}{subfigure.11.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Parte 2.}}}{81}{subfigure.11.2}%
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Pantalla de una pregunta de selección única en la que las opciones se muestran en forma de lista.\relax }}{83}{figure.caption.110}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Selección única sin una respuesta seleccionada.}}}{83}{subfigure.12.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Selección única con una respuesta seleccionada.}}}{83}{subfigure.12.2}%
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Pantalla de una pregunta de selección múltiple en la que las opciones se muestran en forma de lista.\relax }}{84}{figure.caption.112}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Selección múltiple sin una respuesta seleccionada.}}}{84}{subfigure.13.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Selección múltiple con varias respuestas seleccionadas.}}}{84}{subfigure.13.2}%
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Pantalla de una pregunta de entrada de texto. \relax }}{85}{figure.caption.114}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Entrada de texto sin respuesta introducida.}}}{85}{subfigure.14.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Entrada de texto con respuesta introducida.}}}{85}{subfigure.14.2}%
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Pantalla que muestra el resultado del test con el número de aciertos y el porcentaje de aciertos respecto a las preguntas con un Progress Bar.\relax }}{86}{figure.caption.115}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Resultado aprobado (50\% o más).}}}{86}{subfigure.15.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Resultado suspenso (menos del 50\%).}}}{86}{subfigure.15.2}%
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Pantalla de la pregunta de selección única en revisión.\relax }}{87}{figure.caption.117}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Selección única acertada.}}}{87}{subfigure.16.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Selección única fallida.}}}{87}{subfigure.16.2}%
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Pantalla de la pregunta de selección múltiple en revisión.\relax }}{88}{figure.caption.119}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Selección múltiple acertada.}}}{88}{subfigure.17.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Selección múltiple fallida.}}}{88}{subfigure.17.2}%
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Pantalla de la pregunta de entrada de texto en revisión.\relax }}{89}{figure.caption.121}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Entrada de texto acertada.}}}{89}{subfigure.18.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Entrada de texto fallida.}}}{89}{subfigure.18.2}%
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Pantalla de dashboard\relax }}{90}{figure.caption.123}%
+\contentsline {figure}{\numberline {7.20}{\ignorespaces Pantalla de inicio de sesión\relax }}{91}{figure.caption.125}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

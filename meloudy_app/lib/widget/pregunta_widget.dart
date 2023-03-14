@@ -83,7 +83,7 @@ class _PreguntaWidgetState extends State {
           },
           decoration: InputDecoration(labelText: 'Respuesta',
           filled: modo == 'revisando' ? true : false,
-          fillColor: modo == 'revisando' ? preguntas[indice].respuestascorrectas.contains(preguntas[indice].respuestas[0].toLowerCase()) ? Colors.green : Colors.red : Colors.white),
+          fillColor: modo == 'revisando' ? preguntas[indice].respuestas.length>0 ? preguntas[indice].respuestascorrectas.contains(preguntas[indice].respuestas[0].toLowerCase()) ? Colors.green : Colors.red : Colors.red : Colors.white),
         ),
       ));
     }
