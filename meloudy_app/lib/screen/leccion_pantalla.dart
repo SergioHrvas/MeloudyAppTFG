@@ -16,8 +16,7 @@ class LeccionPantalla extends StatelessWidget {
         ModalRoute.of(context).settings.arguments as String; // is the id!
 
     var idUsuario = Provider.of<Auth>(context, listen: false).userId;
-    Provider.of<Lecciones>(context, listen:false).fetchAndSetTests(leccionId, idUsuario);
-    
+
     final loadedLesson = Provider.of<Lecciones>(
       context,
       listen: false,
@@ -47,9 +46,22 @@ class LeccionPantalla extends StatelessWidget {
             margin: EdgeInsets.only(top: 10),
             child: Text(contenido[i].texto,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))));
-      }
+      } else if (contenido[i].tipo == 'subtitulo') {
+    contenidos.add(Container(
+    width: double.infinity,
+    padding: EdgeInsets.only(left: 20, top: 5, bottom: 0),
+    margin: EdgeInsets.only(top: 10),
+    child: Text(contenido[i].texto,
+    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))));
     }
-
+    else{
+        contenidos.add(Container(
+            width: double.infinity,
+            child: Text("ERROR",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red))));
+      }
+      }
     return Scaffold(
       appBar: AppBar(title: Text("MELOUDY")),
       drawer: DrawerApp(),
@@ -93,11 +105,14 @@ class LeccionPantalla extends StatelessWidget {
                 Provider.of<Preguntas>(context, listen:false).setIdLeccion(leccionId);
                 Provider.of<Preguntas>(context, listen:false).setIdUser(id);
                 Provider.of<Preguntas>(context, listen:false).setModo('respondiendo');
+                print(leccionId);
                 Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
               }, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),)),
 
           Column(children: [Container(child:ElevatedButton(child: Text("Historial de Tests"), onPressed: (){
-            Navigator.pushReplacementNamed(context, '/historial-tests', arguments: leccionId);
+            Provider.of<Lecciones>(context, listen:false).fetchAndSetTests(leccionId, idUsuario).then((resultado) {
+              Navigator.pushReplacementNamed(context, '/historial-tests', arguments: leccionId);
+            });
           },))])
         ],
       )),

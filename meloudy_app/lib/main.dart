@@ -8,6 +8,7 @@ import 'package:meloudy_app/login.dart';
 import 'package:meloudy_app/providers/auth.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/leccion_pantalla_profesor.dart';
+import 'package:meloudy_app/screen/microfono_pantalla.dar.dart';
 import 'package:meloudy_app/screen/pregunta_pantalla.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
+          /*home: MicrofonoPantalla()*/
           home: auth.isAuth
               ? LeccionesPantalla() : FutureBuilder(
                 future: auth.tryAutoLogin(),

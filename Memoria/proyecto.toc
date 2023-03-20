@@ -94,13 +94,18 @@
 \contentsline {subsubsection}{\numberline {7.4.2.3}Cierre de sesión}{79}{subsubsection.7.4.2.3}%
 \contentsline {section}{\numberline {7.5}Funcionalidad de usuario}{80}{section.7.5}%
 \contentsline {subsection}{\numberline {7.5.1}Lista de lecciones}{80}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Lección}{80}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}Test}{81}{subsection.7.5.3}%
-\contentsline {subsubsection}{\numberline {7.5.3.1}Responder pregunta}{82}{subsubsection.7.5.3.1}%
-\contentsline {subsubsection}{\numberline {7.5.3.2}Resultado del test}{86}{subsubsection.7.5.3.2}%
-\contentsline {subsubsection}{\numberline {7.5.3.3}Revisar pregunta}{86}{subsubsection.7.5.3.3}%
-\contentsline {section}{\numberline {7.6}Funcionalidad del profesor}{90}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Dashboard}{90}{subsection.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}Lista de lecciones}{91}{subsection.7.6.2}%
-\contentsline {chapter}{\numberline {8}Pruebas}{93}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{95}{chapter.9}%
+\contentsline {subsection}{\numberline {7.5.2}Lección}{81}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}Test}{83}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}Pregunta de selección única.}{85}{subsubsection.7.5.3.1}%
+\contentsline {subsubsection}{\numberline {7.5.3.2}Pregunta de selección múltiple}{86}{subsubsection.7.5.3.2}%
+\contentsline {subsubsection}{\numberline {7.5.3.3}Pregunta de entrada de texto}{87}{subsubsection.7.5.3.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.4}Resultado del test}{88}{subsubsection.7.5.3.4}%
+\contentsline {subsection}{\numberline {7.5.4}Revisar pregunta}{89}{subsection.7.5.4}%
+\contentsline {subsubsection}{\numberline {7.5.4.1}Pregunta de selección única}{90}{subsubsection.7.5.4.1}%
+\contentsline {subsubsection}{\numberline {7.5.4.2}Pregunta de selección múltiple}{91}{subsubsection.7.5.4.2}%
+\contentsline {subsubsection}{\numberline {7.5.4.3}Pregunta de entrada de texto}{92}{subsubsection.7.5.4.3}%
+\contentsline {section}{\numberline {7.6}Funcionalidad del profesor}{93}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Dashboard}{93}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Lista de lecciones}{94}{subsection.7.6.2}%
+\contentsline {chapter}{\numberline {8}Pruebas}{95}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{97}{chapter.9}%

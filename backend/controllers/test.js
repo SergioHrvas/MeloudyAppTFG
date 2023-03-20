@@ -33,36 +33,46 @@ const create = (req, res) => {
 }
 
 const indexTests = async (req, res) => {
+    console.log("- req.params.idUsuario: " + req.params.idUsuario);
+    console.log("- req.params.idLeccion: " + req.params.idLeccion);
     Progress.find({ idUsuario: req.params.idUsuario, idLeccion: req.params.idLeccion }, async (error, progress) => {
-            if (error || !progress) {
-            return res.status(404).json({
-                status: "error",
-                mensaje: "El progreso no se ha podido encontrar"
-            });
-        }
-        //Find all tests of a progress
-        var tests = [];
-        for (let i = 0; i < progress[0].tests.length; i++) {
-            try{
-            var test = await Test.findOne({ _id: progress[0].tests[i].toString() }, (error, test) => {
-                if (error || !test) {
-                    return res.status(404).json({
-                        status: "error",
-                        mensaje: "El test no se ha podido encontrar"
-                    });
+        try {
+            console.log(progress);
+            if (error || progress.length == 0 || !progress) {
+                return res.status(404).json({
+                    status: "error",
+                    mensaje: "El progreso no se ha podido encontrar"
+                });
+            }
+            else {
+                console.log("a");
+                //Find all tests of a progress
+                var tests = [];
+                for (let i = 0; i < progress[0].tests.length; i++) {
+                    try {
+                        var test = await Test.findOne({ _id: progress[0].tests[i].toString() }, (error, test) => {
+                            if (error || !test) {
+                                return res.status(404).json({
+                                    status: "error",
+                                    mensaje: "El test no se ha podido encontrar"
+                                });
+                            }
+                        }).clone();
+                        tests.push(test);
+                    } catch (error) {
+                        console.log(error);
+                    }
                 }
-            }).clone();
-            tests.push(test);
-        }catch(error){
+
+                return res.status(200).json({
+                    status: "success",
+                    tests: tests,
+                });
+            }
+        } catch (error) {
             console.log(error);
         }
         }
-
-        return res.status(200).json({
-            status: "success",
-            tests: tests,
-        });        
-    }
     );
 }
 
@@ -102,7 +112,7 @@ const get = (req, res) => {
 }
 
 
-        
+
 
 
 const remove = (req, res) => {

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:meloudy_app/screen/microfono_pantalla.dar.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/widget/opcion_boton.dart';
 import '../providers/lecciones.dart';
@@ -37,15 +38,16 @@ class _PreguntaWidgetState extends State {
   @override
   Widget build(BuildContext context) {
     final preguntasData = Provider.of<Preguntas>(context);
-    print("aa");
+
     final preguntas = preguntasData.items;
     final indice = preguntasData.indiceValor;
 
     final leccionId = ModalRoute.of(context).settings.arguments as String;
 
     var textovalor;
+    print("PREGUNTAS: " + preguntas.toString());
     if(preguntas[indice].tipo == 'texto'){
-      textovalor =  Provider.of<Preguntas>(context, listen:false).getRespuesta();; // is the id!
+      textovalor =  Provider.of<Preguntas>(context, listen:false).getRespuesta(); // is the id!
     }
 
     final modo = Provider.of<Preguntas>(context, listen:false).modo;
@@ -87,6 +89,9 @@ class _PreguntaWidgetState extends State {
         ),
       ));
     }
+    else if (preguntas[indice].tipo == 'microfono'){
+      opciones.add(Container(child: MicrofonoPantalla()));
+    }
     print("PREGUNTAS: " + preguntas.toString());
     print("INDICE; " + indice.toString());
     // TODO: implement build
@@ -98,50 +103,54 @@ class _PreguntaWidgetState extends State {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if(indice > 0)
-                  Container(
-                      child: IconButton(
-                    iconSize: 60,
-                    padding: new EdgeInsets.all(0.0),
-                    color: Colors.blue,
-                    icon: new Icon(Icons.arrow_circle_left),
-                    onPressed: () {
-                      if (indice > 0) {
-                        Provider.of<Preguntas>(context, listen: false)
-                            .preguntaAnterior();
+              Container(
+                width: double.infinity,
+                height: 140,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
 
-                        Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
-                      }
-                    },
-                  )),
-                  Container(
-                      width: 250,
-                      margin: EdgeInsets.only(bottom: 20),
-                      child: Image.asset('assets/${preguntas[indice].imagen}',
-                          fit: BoxFit.cover)),
-                  if(indice<preguntas.length-1)
-                  Container(
-                      child: IconButton(
-                    iconSize: 60,
-                    padding: new EdgeInsets.all(0.0),
-                    color: Colors.blue,
-                    icon: new Icon(
-                      Icons.arrow_circle_right,
-                    ),
-                    onPressed: () {
-                      if (indice < preguntas.length - 1) {
-                        Provider.of<Preguntas>(context, listen: false)
-                            .siguientePregunta();
-                        Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
-                      }
-                    },
-                  )),
+                    Container(
+                        child:  IconButton(
+                      iconSize: 60,
+                      padding: new EdgeInsets.all(0.0),
+                      color: indice > 0 ? Colors.blue : Colors.grey,
+                      icon: new Icon(Icons.arrow_circle_left),
+                      onPressed: () {
+                        if (indice > 0) {
+                          Provider.of<Preguntas>(context, listen: false)
+                              .preguntaAnterior();
+
+                          Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
+                        }
+                      },
+                    )),
+                    Container(
+                        width: 250,
+                        margin: EdgeInsets.only(bottom: 20),
+                        child: Container(
+                            child: Image.asset('assets/${preguntas[indice].imagen}',))),
+                    Container(
+                        child: IconButton(
+                      iconSize: 60,
+                      padding: new EdgeInsets.all(0.0),
+                      color: indice<preguntas.length-1 ? Colors.blue : Colors.grey,
+                      icon: new Icon(
+                        Icons.arrow_circle_right,
+                      ),
+                      onPressed: () {
+                        if (indice < preguntas.length - 1) {
+                          Provider.of<Preguntas>(context, listen: false)
+                              .siguientePregunta();
+                          Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
+
+                        }
+                      },
+                    )),
 
 
-                ],
+                  ],
+                ),
               ),
               Container(
                   padding: EdgeInsets.only(left: 20, right: 20),

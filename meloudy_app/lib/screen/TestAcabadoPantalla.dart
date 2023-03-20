@@ -59,7 +59,7 @@ class _TestAcabadoPantallaState extends State{
               lineWidth: 10.0,
               percent: aciertos/10,
               center: new Text("${aciertos/10*100}%", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),),
-              progressColor: Colors.blue,
+              progressColor: aciertos > 8 ? Colors.blue : aciertos > 5 ? Colors.orangeAccent : Colors.red,
             )),
               Container(child: FutureBuilder(
                future: Provider.of<Preguntas>(context,listen:false).enviarTest(),

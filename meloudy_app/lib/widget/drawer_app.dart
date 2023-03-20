@@ -43,7 +43,9 @@ class DrawerApp extends StatelessWidget {
 
                 // Navigator.of(context)
                 //     .pushReplacementNamed(UserProductsScreen.routeName);
-                Provider.of<Auth>(context, listen: false).logout();
+                Provider.of<Auth>(context, listen: false).logout().then((result){
+                  Navigator.pushReplacementNamed(context, '/');
+                });
               },
             ),
 

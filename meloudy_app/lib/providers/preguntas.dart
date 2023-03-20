@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -143,8 +144,8 @@ class Preguntas with ChangeNotifier {
         'http://${IP.ip}:5000/api/question/get-questions/${leccion}?auth=$authToken');
     try {
       final response = await http.get(url);
-
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
+      print("RESPONSEPREGUNTAS:" + extractedData.toString());
 
       extractedData['preguntas'].shuffle();
 
@@ -155,8 +156,13 @@ class Preguntas with ChangeNotifier {
         return;
       }
 
+      preguntas = [];
+      var n = extractedData['preguntas'].length;
 
-      var num_preguntas = 10;
+
+      var num_preguntas = min<int>(10, n);
+
+      print(num_preguntas);
 
       cambiarPreguntas(num_preguntas, extractedData);
 
@@ -241,6 +247,10 @@ class Preguntas with ChangeNotifier {
 
   void vaciarPreguntas(){
     preguntas = [];
+  }
+
+  void vaciarRespuestas(){
+    preguntas[indice].respuestas = [];
   }
 
   Future<void> siguientePregunta() async{
