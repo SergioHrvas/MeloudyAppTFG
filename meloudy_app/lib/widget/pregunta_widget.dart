@@ -142,6 +142,8 @@ class _PreguntaWidgetState extends State {
                         if (indice < preguntas.length - 1) {
                           Provider.of<Preguntas>(context, listen: false)
                               .siguientePregunta();
+                          Provider.of<Preguntas>(context, listen: false)
+                              .limpiarVariable();
                           Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
 
                         }

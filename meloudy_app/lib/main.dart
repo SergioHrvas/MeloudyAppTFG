@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          /*home: MicrofonoPantalla()*/
+          //home: MicrofonoPantalla(),
           home: auth.isAuth
               ? LeccionesPantalla() : FutureBuilder(
                 future: auth.tryAutoLogin(),

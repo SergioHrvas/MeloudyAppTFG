@@ -22,9 +22,18 @@ class Preguntas with ChangeNotifier {
   String testId;
   String modo;
   int aciertos = 0;
+  int variable = 0;
 
   Preguntas(this.authToken, this.preguntas);
 
+  void setVariable(){
+    variable++;
+  }
+
+
+  void limpiarVariable(){
+    variable = 0;
+  }
   void setModo(nuevomodo){
     modo = nuevomodo;
     indice = 0;
@@ -126,26 +135,23 @@ class Preguntas with ChangeNotifier {
       }
       if(!fallo){
         aciertos++;
-       print("------------VERIFICADOR------------");
+    /*   print("------------VERIFICADOR------------");
         print("pregunta" + i.toString());
         print("respuestas: " + preguntas[i].respuestas.toString());
 
         print("respuestascorrectas: " + preguntas[i].respuestascorrectas.toString());
         print("CONTADOR:" + aciertos.toString());
-      }
+      */}
     }
 
   }
 
   Future<void> fetchAndSetPreguntas(leccion) async {
-    print("TOKENE:" + authToken);
-    print(leccion);
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/get-questions/${leccion}?auth=$authToken');
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
-      print("RESPONSEPREGUNTAS:" + extractedData.toString());
 
       extractedData['preguntas'].shuffle();
 
@@ -160,9 +166,7 @@ class Preguntas with ChangeNotifier {
       var n = extractedData['preguntas'].length;
 
 
-      var num_preguntas = min<int>(10, n);
-
-      print(num_preguntas);
+      var num_preguntas = min<int>(20, n);
 
       cambiarPreguntas(num_preguntas, extractedData);
 
@@ -174,7 +178,6 @@ class Preguntas with ChangeNotifier {
 
 
   Future<void> setPreguntas(test) async {
-    print(test);
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/get-questions-test/${test}?auth=$authToken');
     try {
@@ -195,10 +198,7 @@ class Preguntas with ChangeNotifier {
 
       //Cambiamos las respuestas
 
-      print(preguntas[0]);
-
-      print(extractedData['test']);
-      for(var i = 0; i < extractedData['test']['preguntas'].length; i++){
+    for(var i = 0; i < extractedData['test']['preguntas'].length; i++){
         for(var j = 0; j < extractedData['test']['preguntas'][i]['respuestas'].length; j++) {
           preguntas[i].respuestas.add(extractedData['test']['preguntas'][i]['respuestas'][j]);
         }
