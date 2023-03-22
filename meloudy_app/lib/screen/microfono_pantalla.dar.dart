@@ -73,6 +73,10 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
 
   @override
   Widget build(BuildContext context) {
+    var ind = Provider.of<Preguntas>(context, listen: false).indice;
+
+    notascorrectas = Provider.of<Preguntas>(context, listen: false).preguntas[ind].respuestascorrectas;
+    print("A" +notascorrectas.toString());
     List<Widget> notas = [];
 
     for (var i = 0; i < notascorrectas.length; i++) {
@@ -155,7 +159,11 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
 */
   _initialize() async {
     print("Starting recorder...");
+    print(flutterFft.getIsRecording);
 
+    if(flutterFft.getIsRecording == true){
+      await flutterFft.stopRecorder();
+    }
     await flutterFft.startRecorder();
     print(flutterFft.getIsRecording);
     print("Recorder started...");
@@ -180,6 +188,8 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
                       Provider.of<Preguntas>(context, listen: false).setRespuestas(note),
 
                       respuestas[indice] = note,
+                      print("s" + notascorrectas[indice]),
+                      print(note),
                       if (notascorrectas[indice] == note)
                         {
                           acertadas[indice] = 'T',
@@ -209,5 +219,13 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
 
   parar() async {
     await flutterFft.stopRecorder();
+  }
+
+  @override
+  void dispose(){
+    super.dispose();
+    if(flutterFft.getIsRecording){
+      flutterFft.stopRecorder();
+    }
   }
 }
