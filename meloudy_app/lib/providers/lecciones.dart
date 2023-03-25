@@ -46,12 +46,10 @@ class Lecciones with ChangeNotifier {
       for (var i = 0; i < extractedData['leccion'].length; i++) {
         var completadovar = null;
         var estado = 'bloqueado';
-        print(extractedData['progreso'].length);
         for(var j = 0; j < extractedData['progreso'].length; j++){
 
           if(extractedData['progreso'][j]['idLeccion']==extractedData['leccion'][i]['_id']) {
             completadovar = extractedData['progreso'][j]['completado'];
-            print(i.toString() + completadovar.toString());
             if (completadovar == null){
               if(ultimo == false){
                 estado = 'desbloqueado';
@@ -75,7 +73,7 @@ class Lecciones with ChangeNotifier {
             }
           }
         }
-        print("Estado;" + estado);
+
         final List<Contenido> contenidoCargado = [];
         var contenidoLista = extractedData['leccion'][i]['contenido'];
         for (var i = 0; i < contenidoLista.length; i++) {
@@ -92,8 +90,6 @@ class Lecciones with ChangeNotifier {
 
       }
       lecciones = leccionesCargadas;
-      print(lecciones[0].estado);
-
 
       notifyListeners();
     } catch (error) {

@@ -40,24 +40,29 @@ class Preguntas with ChangeNotifier {
   }
 
   void setRespuestas(resp) {
+    if(preguntas[indice].tipo == 'microfono'){
+      preguntas[indice].respuestas.add(resp);
+    }
+    else{
     if(preguntas[indice].respuestas.contains(resp)) {
       if(preguntas[indice].tipo == 'multiple'){
         preguntas[indice].respuestas.remove(resp);
       }
     }
-    else{
-      if(preguntas[indice].tipo == 'texto' || preguntas[indice].tipo == 'unica') {
+    else {
+      if (preguntas[indice].tipo == 'texto' ||
+          preguntas[indice].tipo == 'unica') {
         preguntas[indice].respuestas.removeRange(
             0, preguntas[indice].respuestas.length);
         preguntas[indice].respuestas.add(resp);
       }
-      else if(preguntas[indice].tipo == 'multiple'){
+      else if (preguntas[indice].tipo == 'multiple') {
         preguntas[indice].respuestas.add(resp);
-
       }
     }
+    }
 
-    print("RESPUESTAS: " + preguntas[indice].respuestas.toString());
+  //  print("RESPUESTAS: " + preguntas[indice].respuestas.toString());
   }
 
   void setIdLeccion(id){
@@ -76,8 +81,7 @@ class Preguntas with ChangeNotifier {
   }
 
   String get idtest {
-    print("SALGO");
-    print(testId);
+
     return testId;
   }
 
@@ -127,21 +131,36 @@ class Preguntas with ChangeNotifier {
         fallo = true;
       }
       for (var j = 0; j < preguntas[i].respuestas.length && !fallo; j++){
-        print(preguntas[i].respuestascorrectas.contains(preguntas[i].respuestas[j].toString()));
-        if(preguntas[i].respuestascorrectas.contains(preguntas[i].respuestas[j]) == false || (preguntas[i].tipo == 'multiple' && preguntas[i].respuestascorrectas.length != preguntas[i].respuestas.length)){
+        if(preguntas[i].tipo == 'microfono'){
+          if(preguntas[i].respuestas.length == preguntas[i].respuestascorrectas.length) {
+            if (preguntas[i].respuestas[j] != preguntas[i].respuestascorrectas[j]){
+              fallo = true;
+            }
+          }
+          else{
             fallo = true;
+          }
+        }
+        else {
+          if (preguntas[i].respuestascorrectas.contains(
+              preguntas[i].respuestas[j]) == false ||
+              (preguntas[i].tipo == 'multiple' &&
+                  preguntas[i].respuestascorrectas.length !=
+                      preguntas[i].respuestas.length)) {
+            fallo = true;
+          }
         }
 
       }
       if(!fallo){
         aciertos++;
-    /*   print("------------VERIFICADOR------------");
+      /* print("------------VERIFICADOR------------");
         print("pregunta" + i.toString());
         print("respuestas: " + preguntas[i].respuestas.toString());
 
         print("respuestascorrectas: " + preguntas[i].respuestascorrectas.toString());
-        print("CONTADOR:" + aciertos.toString());
-      */}
+        print("CONTADOR:" + aciertos.toString());*/
+      }
     }
 
   }
@@ -166,7 +185,7 @@ class Preguntas with ChangeNotifier {
       var n = extractedData['preguntas'].length;
 
 
-      var num_preguntas = min<int>(20, n);
+      var num_preguntas = min<int>(10, n);
 
       cambiarPreguntas(num_preguntas, extractedData);
 
@@ -281,7 +300,6 @@ class Preguntas with ChangeNotifier {
           "idPregunta": preguntas[i].id,
           "respuestas": preguntas[i].respuestas,
         });
-        print(preguntasTest.toString());
       }
 
 
@@ -298,7 +316,6 @@ class Preguntas with ChangeNotifier {
           }));
 
       final responseData = json.decode(response.body);
-      print(responseData);
       testId = responseData['test'];
 
       return testId;

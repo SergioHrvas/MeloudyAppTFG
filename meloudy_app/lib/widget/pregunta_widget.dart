@@ -45,13 +45,11 @@ class _PreguntaWidgetState extends State {
     final leccionId = ModalRoute.of(context).settings.arguments as String;
 
     var textovalor;
-    print("PREGUNTAS: " + preguntas.toString());
     if(preguntas[indice].tipo == 'texto'){
       textovalor =  Provider.of<Preguntas>(context, listen:false).getRespuesta(); // is the id!
     }
 
     final modo = Provider.of<Preguntas>(context, listen:false).modo;
-    print(preguntas[indice].respuestascorrectas);
     var color = 'azul';
     List<Widget> opciones = [];
     if (preguntas[indice].tipo == 'unica' ||
@@ -60,7 +58,6 @@ class _PreguntaWidgetState extends State {
           color = 'azul';
          // print(preguntas[indice].respuestas.toString() + '<<<<' + i.toString() + " --- " + preguntas[indice].respuestas.contains(i.toString()).toString());
         if(preguntas[indice].respuestas.contains(i.toString())) {
-          print(preguntas[indice].respuestascorrectas.contains(i.toString()));
           if(preguntas[indice].respuestascorrectas.contains(i.toString())){
             color = 'verde';
           }
@@ -69,9 +66,6 @@ class _PreguntaWidgetState extends State {
           }
 
         }
-        print(color);
-
-
         opciones.add(OpcionBoton(preguntas[indice].opciones[i], i, color));
       }
     } else if (preguntas[indice].tipo == 'texto') {
@@ -92,8 +86,7 @@ class _PreguntaWidgetState extends State {
     else if (preguntas[indice].tipo == 'microfono'){
       opciones.add(Container(child: MicrofonoPantalla()));
     }
-    print("PREGUNTAS: " + preguntas.toString());
-    print("INDICE; " + indice.toString());
+
     // TODO: implement build
     return ChangeNotifierProvider.value(
       value: Pregunta(),

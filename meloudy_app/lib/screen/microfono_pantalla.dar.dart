@@ -13,26 +13,26 @@ class MicrofonoPantalla extends StatefulWidget {
   _MicrofonoPantallaState createState() => _MicrofonoPantallaState();
 }
 
-
 class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
   double frequency;
   String note;
   var alt = false;
   int octave;
   bool isRecording;
-  List<String> acertadas = [];
+
   List<String> notascorrectas = [];
-  List<String> respuestas = ["???", "???", "???", "???", "???", "???"];
+  List<String> respuestas = [];
 
   int indice = 0;
   FlutterFft flutterFft = new FlutterFft();
 
   @override
-  void setState(fn){
-    if(mounted){
+  void setState(fn) {
+    if (mounted) {
       super.setState(fn);
     }
   }
+
   @override
   void initState() {
     print(flutterFft.getIsRecording);
@@ -41,50 +41,121 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
     frequency = flutterFft.getFrequency;
     note = flutterFft.getNote;
     octave = flutterFft.getOctave;
-    notascorrectas.add('C');
-    acertadas.add('U');
-    notascorrectas.add('C');
-    acertadas.add('U');
 
-    notascorrectas.add('D');
-    acertadas.add('U');
+    var ind = Provider.of<Preguntas>(context, listen: false).indice;
 
-    notascorrectas.add('C');
-    acertadas.add('U');
+    var respuestascargadas = Provider.of<Preguntas>(context, listen: false)
+        .preguntas[ind]
+        .respuestas;
+    notascorrectas = Provider.of<Preguntas>(context, listen: false)
+        .preguntas[ind]
+        .respuestascorrectas;
 
-    notascorrectas.add('F');
-    acertadas.add('U');
+    indice = respuestas.length;
+    for (var i = 0; i < respuestascargadas.length; i++) {
+      print(respuestascargadas[i]);
+      respuestas.add(respuestascargadas[i]);
+    }
 
-    notascorrectas.add('E');
-    acertadas.add('U');
     super.initState();
-
   }
 
   void repetir() {
     // Provider.of<Preguntas>(context, listen: false).vaciarRespuestas();
 
     setState(() {
-      acertadas = ["U", "U", "U", "U", "U", "U"];
+      Provider.of<Preguntas>(context, listen: false).vaciarRespuestas();
       indice = 0;
-      respuestas = ["???", "???", "???", "???", "???", "???"];
+      respuestas = [];
+    });
+  }
+
+  _initialize() async {
+    print("Starting recorder...");
+
+    if (flutterFft.getIsRecording == true) {
+      await flutterFft.stopRecorder();
+      setState(() {
+        isRecording = flutterFft.getIsRecording;
+      });
+    }
+    await flutterFft.startRecorder();
+    print("Recorder started...");
+
+    setState(() => isRecording = flutterFft.getIsRecording);
+    flutterFft.onRecorderStateChanged.listen(
+        (data) => {
+              setState(
+                () => {
+                  if (data.length > 0)
+                    {
+                      frequency = data[1],
+                      note = data[2],
+                      octave = data[5] as int,
+                    },
+                  if (!alt && indice < notascorrectas.length)
+                    {
+                      Provider.of<Preguntas>(context, listen: false)
+                          .setRespuestas(note),
+                      respuestas.add(note),
+                      indice++,
+                    },
+                  alt = !alt
+                },
+              ),
+              flutterFft.setNote = note,
+              flutterFft.setFrequency = frequency,
+              flutterFft.setOctave = octave,
+            },
+        onError: (err) {
+          print("ERROR: $err");
+        },
+        onDone: () => {print("Isdone")});
+  }
+
+  parar() async {
+    await flutterFft.stopRecorder();
+    setState(() {
+      isRecording = flutterFft.getIsRecording;
     });
   }
 
   @override
-  Widget build(BuildContext context) {
-    var ind = Provider.of<Preguntas>(context, listen: false).indice;
+  void dispose() {
+    super.dispose();
+    if (flutterFft.getIsRecording) {
+      flutterFft.stopRecorder();
+      setState(() {
+        isRecording = flutterFft.getIsRecording;
+      });
+    }
+  }
 
-    notascorrectas = Provider.of<Preguntas>(context, listen: false).preguntas[ind].respuestascorrectas;
-    print("A" +notascorrectas.toString());
+  @override
+  Widget build(BuildContext context) {
+    isRecording = flutterFft.getIsRecording;
+
+    final modo = Provider.of<Preguntas>(context, listen: false).modo;
+    indice = respuestas.length;
+
+    if (indice == notascorrectas.length && isRecording) {
+      flutterFft.stopRecorder();
+      setState(() {
+        isRecording = flutterFft.getIsRecording;
+      });
+    }
     List<Widget> notas = [];
 
     for (var i = 0; i < notascorrectas.length; i++) {
       notas.add(Text(
-        indice < i ? "????" : respuestas[i],
+        i < respuestas.length ? respuestas[i] : "???",
         style: TextStyle(
-            color: acertadas[i] == "T" ? Colors.blue : Colors.red,
-            fontWeight: indice == i ? FontWeight.bold : FontWeight.normal),
+            color: i < respuestas.length ? modo == 'revisando' ? respuestas[i] == notascorrectas[i] ? Colors.green : Colors.red : Colors.blue : Colors.blue,
+            fontWeight:
+                i < respuestas.length ? FontWeight.bold : FontWeight.normal,
+                fontSize:
+                i == respuestas.length ? 35 : 30,
+        ),
       ));
     }
 
@@ -92,33 +163,21 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          isRecording
-              ? Text(
-                  "Current note: $note",
-                  style: TextStyle(
-                    fontSize: 35,
-                  ),
-                )
-              : Text(
-                  "None yet",
-                  style: TextStyle(
-                    fontSize: 35,
-                  ),
-                ),
-          isRecording
-              ? Text(
-                  "Current frequency: ${frequency.toStringAsFixed(2)}",
-                  style: TextStyle(
-                    fontSize: 35,
-                  ),
-                )
-              : Text(
-                  "None yet",
-                  style: TextStyle(
-                    fontSize: 35,
-                  ),
-                ),
           ...notas,
+          modo == 'respondiendo' ? Container(
+            child: Column(children: [
+          Container(
+              child: isRecording
+                  ? Icon(
+                      Icons.mic_rounded,
+                      size: 60,
+                      color: Colors.green,
+                    )
+                  : Icon(
+                      Icons.mic_off_rounded,
+                      size: 60,
+                      color: Colors.red,
+                    )),
           ElevatedButton(
               onPressed: flutterFft.getIsRecording == false
                   ? () async {
@@ -140,8 +199,44 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
                         print(isRecording);
                       }
                     }
-                  : () {},
-              child: Text("NO"))
+                  : () {
+                      var ind =
+                          Provider.of<Preguntas>(context, listen: false).indice;
+                      print(Provider.of<Preguntas>(context, listen: false)
+                          .preguntas[ind]
+                          .respuestas
+                          .toString());
+                    },
+              child: Text("PARAR MICRÓFONO")),
+
+              isRecording
+                  ? Text(
+                      "Nota: $note",
+                      style: TextStyle(
+                        fontSize: 17,
+                      ),
+                    )
+                  : Text(
+                      "",
+                      style: TextStyle(
+                        fontSize: 17,
+                      ),
+                    ),
+              isRecording
+                  ? Text(
+                      "Frecuencia: ${frequency.toStringAsFixed(2)}",
+                      style: TextStyle(
+                        fontSize: 17,
+                      ),
+                    )
+                  : Text(
+                      "",
+                      style: TextStyle(
+                        fontSize: 17,
+                      ),
+                    ),
+            ]),
+          ) : Container(),
         ],
       ),
     );
@@ -157,75 +252,4 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
     }
   }
 */
-  _initialize() async {
-    print("Starting recorder...");
-    print(flutterFft.getIsRecording);
-
-    if(flutterFft.getIsRecording == true){
-      await flutterFft.stopRecorder();
-    }
-    await flutterFft.startRecorder();
-    print(flutterFft.getIsRecording);
-    print("Recorder started...");
-
-    setState(() => isRecording = flutterFft.getIsRecording);
-    print(isRecording);
-    flutterFft.onRecorderStateChanged.listen(
-        (data) => {
-              setState(
-                () => {
-                  if (data.length > 0)
-                    {
-                      frequency = data[1],
-                      note = data[2],
-                      octave = data[5] as int,
-                    },
-                  if (!alt)
-                    {
-                      print(notascorrectas),
-                      print(notascorrectas[indice]),
-                      print(note),
-                      Provider.of<Preguntas>(context, listen: false).setRespuestas(note),
-
-                      respuestas[indice] = note,
-                      print("s" + notascorrectas[indice]),
-                      print(note),
-                      if (notascorrectas[indice] == note)
-                        {
-                          acertadas[indice] = 'T',
-                          if (indice < notascorrectas.length - 1) indice++
-                        }
-                      else
-                        {
-                          acertadas[indice] = 'F',
-                          if (indice < notascorrectas.length - 1) indice++
-                        },
-                    },
-                  alt = !alt
-                },
-              ),
-              flutterFft.setNote = note,
-              flutterFft.setFrequency = frequency,
-              flutterFft.setOctave = octave,
-            },
-        onError: (err) {
-          print("ERROR: $err");
-        },
-        onDone: () => {print("Isdone")});
-    print("inddiceee");
-  }
-
-
-
-  parar() async {
-    await flutterFft.stopRecorder();
-  }
-
-  @override
-  void dispose(){
-    super.dispose();
-    if(flutterFft.getIsRecording){
-      flutterFft.stopRecorder();
-    }
-  }
 }
