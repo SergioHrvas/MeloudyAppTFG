@@ -102,7 +102,6 @@ class LeccionPantalla extends StatelessWidget {
               child: ElevatedButton(onPressed: (
                   ){
                 var id = Provider.of<Auth>(context,listen:false).userId;
-                Provider.of<Preguntas>(context, listen:false).setIdLeccion(leccionId);
                 Provider.of<Preguntas>(context, listen:false).setIdUser(id);
                 Provider.of<Preguntas>(context, listen:false).setModo('respondiendo');
                 print(leccionId);

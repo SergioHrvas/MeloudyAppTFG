@@ -21,11 +21,6 @@ const TestSchema = Schema({
         type: Boolean,
         required: true
     },
-    aciertos: 
-    {
-        type: Number,
-        required: true
-    },
     fecha_creacion: {
         type: Date,
         default: Date.now

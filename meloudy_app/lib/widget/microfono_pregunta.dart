@@ -6,14 +6,14 @@ import 'package:flutter_fft/flutter_fft.dart';
 import 'package:provider/provider.dart';
 import 'package:record/record.dart';
 import '../providers/preguntas.dart';
-import '../widget/drawer_app.dart';
+import 'drawer_app.dart';
 
-class MicrofonoPantalla extends StatefulWidget {
+class MicrofonoPregunta extends StatefulWidget {
   @override
-  _MicrofonoPantallaState createState() => _MicrofonoPantallaState();
+  _MicrofonoPreguntaState createState() => _MicrofonoPreguntaState();
 }
 
-class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
+class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
   double frequency;
   String note;
   var alt = false;
@@ -147,19 +147,22 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
     List<Widget> notas = [];
 
     for (var i = 0; i < notascorrectas.length; i++) {
-      notas.add(Text(
-        i < respuestas.length ? respuestas[i] != null ? respuestas[i] : "???" : "???",
-        style: TextStyle(
-          color: i < respuestas.length
-              ? modo == 'revisando'
-                  ? respuestas[i] == notascorrectas[i]
-                      ? Colors.green
-                      : Colors.red
-                  : Colors.blue
-              : Colors.blue,
-          fontWeight:
-              i == respuestas.length ? FontWeight.bold : FontWeight.normal,
-          fontSize: i == respuestas.length ? 35 : 30,
+      notas.add(Container(
+        margin: EdgeInsets.symmetric(horizontal: 10),
+        child: Text(
+          i < respuestas.length ? respuestas[i] != null ? respuestas[i] : "???" : "???",
+          style: TextStyle(
+            color: i < respuestas.length
+                ? modo == 'revisando'
+                    ? respuestas[i] == notascorrectas[i]
+                        ? Colors.green
+                        : Colors.red
+                    : Colors.blue
+                : Colors.blue,
+            fontWeight:
+                i == respuestas.length ? FontWeight.bold : FontWeight.normal,
+            fontSize: i == respuestas.length ? 35 : 30,
+          ),
         ),
       ));
     }
@@ -168,7 +171,11 @@ class _MicrofonoPantallaState extends State<MicrofonoPantalla> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          ...notas,
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 4),
+            child: Wrap(
+        children: [...notas]
+      )),
           modo == 'respondiendo'
               ? Container(
                   child: Column(children: [

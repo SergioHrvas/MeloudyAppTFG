@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:meloudy_app/screen/microfono_pantalla.dar.dart';
+import 'package:meloudy_app/widget/microfono_pregunta.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/widget/opcion_boton.dart';
 import '../providers/lecciones.dart';
@@ -84,7 +84,7 @@ class _PreguntaWidgetState extends State {
       ));
     }
     else if (preguntas[indice].tipo == 'microfono'){
-      opciones.add(Container(child: MicrofonoPantalla()));
+      opciones.add(Container(child: MicrofonoPregunta()));
     }
 
     // TODO: implement build
@@ -161,7 +161,9 @@ class _PreguntaWidgetState extends State {
                     Container(
                       margin: EdgeInsets.only(top:20),
                       child: ElevatedButton(onPressed: (){
-                        Navigator.pushReplacementNamed(context, TestAcabadoPantalla.routeName, arguments: leccionId);
+                        Provider.of<Preguntas>(context,listen:false).enviarTest().then((value){
+                          Navigator.pushReplacementNamed(context, TestAcabadoPantalla.routeName, arguments: leccionId);
+                        });
                       }, child: Text("FINALIZAR"),),),],
               ),
             ],

@@ -26,6 +26,7 @@ class LeccionItem extends StatelessWidget {
             onTap: () {
 
               if(_estado != 'bloqueado') {
+                Provider.of<Preguntas>(context, listen:false).setIdLeccion(leccion.id);
                 Provider.of<Preguntas>(context, listen: false)
                     .fetchAndSetPreguntas(leccion.id);
                 Navigator.of(context).pushNamed(

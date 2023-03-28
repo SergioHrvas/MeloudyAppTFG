@@ -2,7 +2,7 @@ const Lesson = require("../models/Lesson");
 const fs = require('fs');
 const path = require('path');
 const Progress = require("../models/Progress");
-
+const Test = require("../models/Test");
 const create = (req, res) => {
 
     //Recoger parametros por post
@@ -43,22 +43,74 @@ const index = (req, res) => {
 
             var tests = [];
 
-            Progress.find({ idUsuario: req.params.id }, (error, progress) => {
+            Progress.find({ idUsuario: req.params.id }, async (error, progress) => {
+                try{
                 if (error || !progress) {
                     return res.status(404).json({
                         status: "error",
                         mensaje: "El progreso no se ha podido encontrar"
                     });
                 }
-                else {
-                    
-                    return res.status(200).json({
-                        status: "success",
-                        leccion: lessons,
-                        progreso: progress,
-                        mensaje: "Las lecciones se ha encontrado"
+
+            
+                else {  
+                    var progresos = [];
+
+                //Para cada progreso buscar el número de tests aprobados
+                for (let i = 0; i < progress.length; i++) {
+                    var test = progress[i].tests;
+                    var cuenta = 0;
+                    for (let j = 0; j < test.length; j++) {
+                        try{
+                            //Buscar test
+                        await Test.findOne({ _id: test[j].toString() }, (error, test) => {
+                                console.log(test.aprobado);
+
+                            if (error || !test) {
+                                return res.status(404).json({
+                                    status: "error",
+                                    mensaje: "El test no se ha podido encontrar"
+                                });
+                            }
+                            else {
+                                if (test.aprobado) {
+                                    tests.push(test);
+                                    cuenta++;
+                                    console.log("a");
+                                }
+                            }
+                        }).clone();
+
+
+                    }
+                    catch (error){
+                        console.log(error);
+                    }
+                    }
+                    progresos.push({
+                        idLeccion: progress[i].idLeccion,
+                        testsAprobados: cuenta
                     });
+                    console.log(progresos[i].testsAprobados);
                 }
+
+
+
+                return res.status(200).json({
+                    status: "success",
+                    cuenta: progresos,
+                    progreso: progress,
+                
+                    leccion: lessons,
+                    mensaje: "Las lecciones se ha encontrado"
+                });
+            }
+        }
+        catch(error){
+            console.log(error);
+        }
+
+
             }
             );
         }
