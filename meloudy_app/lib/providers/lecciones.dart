@@ -9,9 +9,14 @@ class Lecciones with ChangeNotifier {
   List<Leccion> lecciones = []; // var _showFavoritesOnly = false;
 
   var aprobados = 0;
-  final String authToken;
+  String authToken;
 
-  Lecciones(this.authToken, this.lecciones);
+  Lecciones();
+
+  void update(tkn){
+
+    authToken = tkn;
+  }
   List<Leccion> get items {
     // if (_showFavoritesOnly) {
     //   return _items.where((prodItem) => prodItem.isFavorite).toList();
@@ -35,7 +40,6 @@ class Lecciones with ChangeNotifier {
       final response = await http.get(url);
 
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
-      print("zsdsd");
       print(response.toString());
       print(extractedData.toString());
       if (extractedData == null) {
@@ -53,8 +57,10 @@ class Lecciones with ChangeNotifier {
         var estado = 'bloqueado';
         for(var j = 0; j < extractedData['progreso'].length; j++){
 
-          if(extractedData['progreso'][j]['idLeccion']==extractedData['leccion'][i]['_id']) {
+          if(extractedData['progreso'][j]['idLeccion']  == extractedData['leccion'][i]['_id']) {
             completadovar = extractedData['progreso'][j]['completado'];
+            print(extractedData['leccion'][i]['nombre'] + completadovar.toString());
+
             if (completadovar == null){
               if(ultimo == false){
                 estado = 'desbloqueado';
@@ -65,20 +71,23 @@ class Lecciones with ChangeNotifier {
               }
           }
             else {
-              estado = 'completado';
-            }
-          }
-          else{
-            if(ultimo == false){
-              estado = 'desbloqueado';
-              ultimo = true;
-            }
-            else{
-              estado = 'bloqueado';
-            }
+              if(completadovar) {
+                estado = 'completado';
+                print("ENTRO");
+              }
+              else {
+                if (ultimo == false) {
+                  estado = 'desbloqueado';
+                  ultimo = true;
+                }
+                else {
+                  estado = 'bloqueado';
+                }
+              }}
           }
         }
 
+        print(extractedData['leccion'][i]['nombre'] + estado);
 
 
         final List<Contenido> contenidoCargado = [];
@@ -97,7 +106,7 @@ class Lecciones with ChangeNotifier {
         else
           numAprobados = -1;
 
-        print(numAprobados);
+        print(n.toString() + " " + numAprobados.toString());
         leccionesCargadas.add(Leccion(
             id: leccionesLista[i]['_id'],
             nombre: leccionesLista[i]['nombre'],
@@ -109,7 +118,6 @@ class Lecciones with ChangeNotifier {
       }
       lecciones = leccionesCargadas;
 
-      notifyListeners();
     } catch (error) {
       throw (error);
     }

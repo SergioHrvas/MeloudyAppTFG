@@ -25,6 +25,7 @@ class _LeccionesListaState extends State<LeccionesLista> {
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     if (_isInit) {
       setState(() {
         _isLoading = true;
@@ -32,13 +33,14 @@ class _LeccionesListaState extends State<LeccionesLista> {
       var id = Provider.of<Auth>(context).userId;
 
         Provider.of<Lecciones>(context).fetchAndSetLecciones(id).then((_) {
-        setState(() {
-          _isLoading = false;
-        });
+        if(this.mounted) {
+          setState(() {
+            _isLoading = false;
+          });
+        }
       });
     }
     _isInit = false;
-    super.didChangeDependencies();
   }
 
   @override

@@ -27,8 +27,10 @@ class MyApp extends StatelessWidget {
           value: Auth(),
         ),
         ChangeNotifierProxyProvider<Auth, Lecciones>(
+          create: (_) => Lecciones(),
             update: (ctx, auth, leccionesAnteriores) =>
-                Lecciones(auth.token, leccionesAnteriores == null ? [] : leccionesAnteriores.items)),
+                leccionesAnteriores..update(auth.token)
+        ),
         ChangeNotifierProxyProvider<Auth, Preguntas>(
             update: (ctx, auth, preguntasAnteriores) =>
               Preguntas(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items))

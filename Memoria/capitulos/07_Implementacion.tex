@@ -7,9 +7,9 @@ En el desarrollo de la aplicación se utilizarán varias herramientas externas q
 de ellas:
 
 \subsection{Git \& Github}
-Git es una herramienta para el control de versiones. Nos permitirá mantener un historial de cambios que nos ayudarán en la implementación cuando necesitemos "volver atrás", así como poder trabajar en distintas ramas cuando la situación lo requiera (por ejemplo, si encuentro un error puedo abrir una nueva rama para poder trabajar exclusivamente en arreglarlo).
+Git es una herramienta para el control de versiones. Nos permitirá mantener un historial de cambios que nos ayudarán en la implementación cuando necesitemos "volver atrás", así como poder trabajar en distintas ramas cuando la situación lo requiera (por ejemplo, si encontramos un error puedo abrir una nueva rama para poder trabajar exclusivamente en arreglarlo).
 
-Como complemento a Git, usaremos Github, una plataforma para alojar repositorios de Git. En Github tendremos un repositorio para el frontend y para el backend, donde se irán subiendo los cambios que se vayan realizando. Esto facilitará la posibilidad de trabajar en el desarrollo en varios dispositivos permitiendo un desarrollo más flexible a la hora de dónde (en qué dispositivo) y cuándo trabajar. 
+Como complemento a Git, usaremos Github, una plataforma para alojar repositorios de Git. En Github tendremos un repositorio para el frontend y para el backend, donde se irán subiendo los cambios que se vayan realizando. Esto facilitará la posibilidad de trabajar en el desarrollo en varios dispositivos permitiendo un desarrollo más flexible en cuanto a en qué dispositivo y cuándo trabajar. 
 
 \subsection{Jira}
 Jira es una herramienta para la gestión de proyectos. Usaré Jira para facilitar el cumplimiento de algunos de los principios de metodologías ágiles que usamos en la planificación y controlar el seguimiento de esta última. En Jira tendré un Sprint Backlog, cuyas historias de usuario y tareas irán moviéndose a los distintos Sprints para su desarrollo.
@@ -23,7 +23,7 @@ Jira es una herramienta para la gestión de proyectos. Usaré Jira para facilita
 
 
 \subsection{Visual Studio Code \& Android Studio}
-Visual Studio Code es el editor de código fuente que se usará para implementar la parte backend (NodeJS) de nuestro sistema. Nos permitirá un desarrollo más cómodo y eficiente, ya que nos ofrece una gran variedad de herramientas para el desarrollo de código, como la posibilidad de depurar el código, herramientas para el formato del código, visualizador de versiones de Git, etc.
+Visual Studio Code es el editor de código fuente que se usará para implementar la parte backend (NodeJS) de nuestro sistema. Nos permitirá un desarrollo más cómodo y eficiente, ya que nos ofrece una gran variedad de herramientas para el desarrollo, como la posibilidad de depurar el código, herramientas para el formato de los distintos lenguajes de programación, visualizador de versiones de Git, etc.
 
 Android Studio es el entorno de desarrollo integrado oficial para la plataforma Android. Se utilizará para implementar la parte de frontend (flutter) y para ejecutar la aplicación en un simulador de Android o en nuestro propio dispositivo físico.
 
@@ -38,7 +38,7 @@ Mongo Compass es una herramienta interactiva para la consulta, la gestión y el 
 \end{figure}
 
 \subsection{Postman}
-Postman es una plataforma API para diseñar, construir, probar e iterar APIs. Se utilizará en la implementación de nuestra aplicación para comprobar el funcionamiento de las rutas especificadas y codificadas en el backend. Además podremos realizar una documentación de nuestra API mediante
+Postman es una plataforma API para diseñar, construir, probar e iterar APIs. Se utilizará en la implementación de nuestra aplicación para comprobar el funcionamiento de las rutas especificadas y codificadas en el backend. Además, podremos realizar una documentación de nuestra API mediante
 esta herramienta para facilitar la comprensión y el mantenimiento de cada ruta.
 
 
@@ -71,7 +71,7 @@ La parte de frontend se ha desarrollado en Flutter, por lo que se han dividido l
 \begin{itemize}
   \item \textit{main.dart}: Archivo principal de la aplicación. En él se configura la aplicación y se importan las rutas.
   \item \textit{providers}: Carpeta que contiene los providers de la aplicación. Los providers son clases que se encargan de gestionar el estado de la aplicación.
-  \item \textit{screen}: Carpeta que contiene las pantallas de la aplicación. Dentro se encuentran distintos archivos que contiene cada pantalla de la aplicación.
+  \item \textit{screen}: Carpeta que contiene las pantallas de la aplicación. Dentro se encuentran distintos archivos que implementan cada pantalla de la aplicación.
   \item \textit{widgets}: Carpeta que contiene los widgets de la aplicación. Dentro se encuentran los archivos de los widgets que se utilizan en las distintas pantallas de la aplicación.
 \end{itemize}
 
@@ -87,7 +87,7 @@ La API cuenta con las siguientes rutas para la gestión de usuarios:
 
 \begin{itemize}
     \item \textit{POST /api/user/registro}: Ruta para registrar un usuario. Recibe los datos del usuario en el cuerpo de la petición, encripta la contraseña y almacena todos los datos en la base de datos. Si el usuario se registra correctamente, se devuelve un token que se utilizará para la autenticación de las peticiones que se hagan a la API.
-    \item \textit{POST /api/user/login}: Ruta para iniciar sesión. Recibe los datos del usuario en el cuerpo de la petición y comprueba si el usuario existe en la base de datos. Si el usuario existe, se comprueba que la contraseña sea correcta. Si la contraseña es correcta, se devuelve un token que se utilizará para la autenticación de las peticiones que se hagan a la API.
+    \item \textit{POST /api/user/login}: Ruta para iniciar sesión. Recibe los datos del usuario en el cuerpo de la petición y comprueba si el usuario existe en la base de datos. En caso de que el usuario exista, se comprueba que la contraseña sea correcta. Si la contraseña es correcta, se devuelve un token que se utilizará para la autenticación de las peticiones que se hagan a la API.
     \item \textit{GET /api/user/get-user/\{id\}}: Ruta para obtener los datos de un usuario. Recibe por parámetro el id del usuario y devuelve los datos de dicho usuario.
     \item \textit{GET /api/user/get-users}: Ruta para obtener los datos de todos los usuarios. No recibe ningún parámetro y devuelve una lista de los datos de todos los usuarios.
 %    \item \textit{PUT /api/user}: Ruta para actualizar los datos de un usuario. Recibe los datos del usuario en el cuerpo de la petición y los actualiza en la base de datos. Si el usuario se actualiza correctamente, se devuelve un token que se utilizará para la autenticación de las peticiones que se hagan a la API.
@@ -102,7 +102,7 @@ La API cuenta con las siguientes rutas para la gestión de lecciones:
 \begin{itemize}
 %    \item \textit{POST /api/lesson/get-lessons/\{id\}}: Ruta para crear una lección. Recibe los datos de la lección en el cuerpo de la petición y los almacena en la base de datos. Si la lección se crea correctamente, se devuelve la lección creada.
 %    \item \textit{GET /api/lessons}: Ruta para obtener las lecciones de un usuario. Recibe el token del usuario en el encabezado de la petición y comprueba si el token es correcto. Si el token es correcto, se devuelve las lecciones del usuario.
-    \item \textit{POST /api/lesson/get-lessons/\{id\}}: Ruta para obtener los datos de una lección. Recibe por parámetro el id de la lección y se devuelven los datos de esta.
+    \item \textit{GET /api/lesson/get-lessons/\{id\}}: Ruta para obtener los datos de una lección. Recibe por parámetro el id de la lección y se devuelven los datos de esta.
 %    \item \textit{PUT /api/lessons/:id}: Ruta para actualizar los datos de una lección. Recibe los datos de la lección en el cuerpo de la petición y los actualiza en la base de datos. Si la lección se actualiza correctamente, se devuelve la lección actualizada.
 %    \item \textit{DELETE /api/lessons/:id}: Ruta para eliminar una lección. Recibe el token del usuario en el encabezado de la petición y comprueba si el token es correcto. Si el token es correcto, se elimina la lección de la base de datos.
   \end{itemize}
@@ -140,7 +140,7 @@ La API cuenta con las siguientes rutas para la gestión del progreso de los usua
 
 \subsection{Middleware}
 \label{sec:middleware}
-Un middleware es una función que se ejecuta antes de que se ejecute otra. Se utiliza para realizar acciones comunes a varias funcionalidades. La API cuenta con los siguientes middleware:
+Un middleware es una función intermediaria que se utiliza para realizar acciones comunes a varias funcionalidades. La API cuenta con los siguientes middleware:
 
 \begin{itemize}
   \item \textit{auth}: Middleware que comprueba si el token del usuario es correcto (es decir, si el usuario está identificado en la aplicación). Si el token es correcto, se pasa a la siguiente función. Si el token no es correcto, se devuelve un error.
@@ -224,7 +224,7 @@ Para el inicio de sesión, el usuario deberá introducir su nombre de usuario y 
   \centering
   \subfloat[\centering Pantalla de login]{{\includegraphics[width=0.40\textwidth]{imagenes/c7/login.png} }}%
   \qquad
-  \subfloat[\centering Estructura en componentes de la pantalla de login.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/logincompo.png} }}%
+  \subfloat[\centering Estructura en componentes de la pantalla de login.]{{ \includegraphics[width=0.406\textwidth]{imagenes/c7/logincompo.png} }}%
   \caption{Pantalla de inicio de sesión del usuario donde se puede ver el formulario de inicio de sesión con los campos de usuario (correo) y contraseña.}%
   \label{fig:login}%
 \end{figure}
@@ -284,7 +284,7 @@ La aplicación cuenta con una opción para cerrar sesión. Para cerrar sesión, 
 Para el cierre de sesión, se ha añadido una fila al drawer (barra lateral) de la aplicación, el cual el usuario clicará cuando desee cerrar su sesión.
 
 \paragraph*{Lógica}
-La lógica del cierre de sesión es sencilla: se llama a la función \textit{logout} de la clase \textit{Auth} donde se reestablecen los valores de la sesión y se limpian los datos de la sesión almacenados en el dispositivo con el paquete \textit{shared\_preferences}. 
+La lógica del cierre de sesión es sencilla: se llama a la función \textit{logout} de la clase \textit{Auth} donde se restablecen los valores de la sesión y se limpian los datos de la sesión almacenados en el dispositivo con el paquete \textit{shared\_preferences}. 
 Esta limpieza de datos se realiza en el método \textit{clear}.
 Además, se ha añadido un timer que se encarga de cerrar la sesión automáticamente si el token ha expirado. Este timer se ejecuta cada cierto tiempo y comprueba si el token ha expirado. Si es así, se llama al método \textit{logout} mencionado anteriormente.
 
@@ -301,32 +301,35 @@ Además, se ha añadido un timer que se encarga de cerrar la sesión automática
 La aplicación cuenta con una lista de lecciones que el usuario puede ver. Esta lista es la pantalla inicial de la aplicación y el usuario la visualizará al iniciar sesión. También puede acceder a ella pulsando el botón \textit{Inicio} que se encuentra en el drawer (barra lateral) de la aplicación.
 
 
-\paragraph*{Vista}
-Para que el usuario pueda ver la lista de lecciones, se ha desarrollado un widget principal para la pantalla. Este widget contiene el widget \textit{ListaLecciones}, que contiene un componente para la distribución de widgets en una columna. Cada uno de estos widgets se llama \textit{LeccionItem} y contendrá la información principal de una lección, como el título y la imagen de perfil. En la siguiente figura se puede ver la pantalla de lista de lecciones:
-
-\begin{figure}[H]
+\begin{figure}[H]%
   \centering
-  \includegraphics[width=0.4\textwidth]{imagenes/c7/pantprin.png}
-  \caption{Pantalla de la lista de lecciones con el título y la imagen de cada lección.}
-  \label{fig:login}
+  \subfloat[\centering Pantalla de lecciones]{{\includegraphics[width=0.40\textwidth]{imagenes/c7/pantprin.png} }}%
+  \qquad
+  \subfloat[\centering Estructura en componentes de la pantalla de lecciones.]{{ \includegraphics[width=0.406\textwidth]{imagenes/c7/leccionescompo.png} }}%
+  \caption{Pantalla de la lista de lecciones con el título y la imagen de cada lección.}%
+  \label{fig:login}%
 \end{figure}
+
+
+\paragraph*{Vista}
+Para que el usuario pueda ver la lista de lecciones, se ha desarrollado un widget principal para la pantalla. Este widget contiene el widget \textit{ListaLecciones}, que contiene un componente para la distribución de widgets en una columna. Cada uno de estos widgets se llama \textit{LeccionItem} y contendrá la información principal de una lección, como el título y la imagen de perfil. En la figura anterior se puede ver la pantalla de lista de lecciones.
 
 \paragraph*{Lógica}
 Para la lógica de esta pantalla se ha utilizado el patrón de diseño \textit{Provider} para la gestión de estados. Un provider es un objeto que se encarga de gestionar el estado de la aplicación y proporcionarselo a los widgets que lo necesiten.
 En este caso, se ha utilizado para gestionar el estado de la lista de lecciones y se le ha llamado \textit{Lecciones}.
-Este Provider se encarga de obtener la lista de lecciones de la API (llamada HTTP con el verbo POST a la ruta (\textit{POST /api/lesson/get-lessons/\{id\}})) y almacenar cada uno de sus elementos en variables de la clase \textit{Lección}. Además, se ha creado un método público que devuelve la lista de lecciones. Este método se utiliza en el widget \textit{ListaLecciones} para obtener la lista de lecciones, añadir cada lección en forma de widget de forma iterativa
+Este Provider se encarga de obtener la lista de lecciones de la API (llamada HTTP con el verbo GET a la ruta (\textit{GET /api/lesson/get-lessons/\{id\}})) y almacenar cada uno de sus elementos en variables de la clase \textit{Lección}. Además, se ha creado un método público que devuelve la lista de lecciones. Este método se utiliza en el widget \textit{ListaLecciones} para obtener la lista de lecciones, añadir cada lección en forma de widget de forma iterativa
  y mostrarla en pantalla. 
 
 \subsection{Lección} 
 \textit{Desarrollado en el Sprint 5}
 \label{sec:leccion}
 
-La aplicación cuenta con una vista para cada lección. Esta vista se puede acceder pulsando en el título o en la imagen de una lección en la lista de lecciones. En esta vista se puede ver el contenido de la lección, como el título, el texto, las imágenes, los vídeos, etc...
+La aplicación cuenta con una vista para cada lección. Esta vista se puede acceder pulsando en el título o en la imagen de una lección en la lista de lecciones. En esta vista se puede ver el contenido de la lección, como el título, el texto, las imágenes, los vídeos, etc.
 Además, al final de la lección se puede hacer un test para comprobar los conocimientos adquiridos y revisar los tests realizados anteriormente por el usuario.
 
 \paragraph*{Vista}
 La vista de una lección proporciona al usuario información más detallada de esta. En primer lugar se muestra la imagen de la lección y el título en un componente para distribuir widgets en una fila. (Un widget \textit{Row} compuesto de un \textit{Text} y un \textit{Image} ).
-A continuación, se muestra el contenido de la lección en forma de texto, imágenes, vídeos, etc... Esto se ha conseguido construyendo widgets de forma dinámica dependiendo del tipo de contenido almacenado y añadiendolos a un widget distribuidor en columna (\textit{Column}).
+A continuación, se muestra el contenido de la lección en forma de texto, imágenes, vídeos, etc. Esto se ha conseguido construyendo widgets de forma dinámica dependiendo del tipo de contenido almacenado y añadiéndolos a un widget distribuidor en columna (\textit{Column}).
 Finalmente, se muestra un botón en pantalla para poder hacer un test y otro para ver el historial de tests realizados, ambos mediante un widget \textit{ElevatedButton}.
 En la siguiente imagen se puede ver la pantalla de una lección:
 
@@ -363,14 +366,14 @@ Esto se ha realizado mediante un widget que distribuye otros widget de forma hor
 Debajo de lo anterior, se mostrará la pregunta actual y las opciones de respuesta. Esto se ha realizado mediante un widget que distribuye otros widget de forma vertical en una columna (\textit{Column}). 
 Las opciones de respuesta dependerán del tipo de pregunta que se esté mostrando. Por ejemplo, si la pregunta es de selección única o múltiple, se muestra una lista de opciones de respuesta, mientras que si la pregunta es de entrada de texto, se muestra un campo de texto para que el usuario escriba su respuesta.
 
-En la última pregunta, aparece un botón para enviar las respuestas y ver el resultado del test. Est es para que el usuario no pueda enviar las respuestas antes de responder o pasar por todas las preguntas.
+En la última pregunta, aparece un botón para enviar las respuestas y ver el resultado del test. Dicho botón evita que el usuario no pueda enviar las respuestas antes de responder o pasar por todas las preguntas.
 
 \paragraph*{Lógica}
-Para la lógica de esta pantalla se ha utilizado el patrón de diseño \textit{Provider} para la gestión de estados. En este caso, se ha utilizado para gestionar el estado del test que se está realizando.
+Para la lógica de esta pantalla se ha utilizado el patrón de diseño \textit{Provider} para la gestión del estado del test en curso.
 Este Provider se encarga de obtener todas las preguntas del test de la API y almacenarlas en una lista privada. Para recorrer las preguntas, se ha utilizado un índice que se incrementa o decrementa en función de si el usuario quiere pasar a la siguiente o a la anterior pregunta. Este índice se almacena también en una variable privada e irá aumentando o disminuyendo en función de si el usuario quiere pasar a la siguiente pregunta o volver a la anterior.
 Cada vez que el usuario responde una pregunta, se almacenan las respuestas en una variable privada para conservarlas durante toda la navegación del test (si vuelve para atrás, por ejemplo) y se produce una retroalimentación al usuario cambiando el color de la opción a un azul más oscuro para que el usuario sepa qué opción ha respondido.
 
-Cuando el usuario pulsa el botón de enviar respuestas, se envían las respuestas al servidor para crear el test y añadirlo al progreso (se envía la petición HTTP a la ruta de la API \textit{POST /api/progress/create-test-and-progress/}:) y aparece la pantalla
+Cuando el usuario pulsa el botón de enviar respuestas, estas se envían al servidor para crear el test y añadirlo al progreso (se envía la petición HTTP a la ruta de la API \textit{POST /api/progress/create-test-and-progress/}:) y aparece la pantalla
 para ver el resultado del test.
 
 
@@ -430,14 +433,53 @@ A continuación se muestra la pantalla de una pregunta de entrada de texto, en l
   \label{fig:example}%
 \end{figure}
 
-
 \newpage
+\subsubsection{Pregunta de micrófono}
+
+\label{sec:pregunic1}
+\textit{Desarrollado en el Sprint 7}
+
+A continuación se muestra la pantalla de una pregunta de micrófono, en la que el usuario deberá grabar la respuesta mediante el micrófono del dispositivo. Esta respuesta
+debe ser fiel a la partitura que se muestra en la imagen de la pregunta. 
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Pregunta de micrófono sin respuesta introducida.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofono.png} }}%
+  \qquad
+  \subfloat[\centering Pregunta de micrófono introduciendo respuesta.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofono2.png} }}%
+  \caption{Pantallas de una pregunta de micrófono. }%
+  \label{fig:example}%
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{imagenes/c7/entradamicrofono3.png}
+  \caption{Pregunta de micrófono con respuesta introducida.}
+  \label{fig:login}
+\end{figure}
+
+\paragraph*{Lógica}
+Para realizar la lógica de esta pantalla se ha utilizado la librería \textit{flutter\_fft}, que permite realizar la transformada de Fourier de una señal de audio.
+Esta librería permite obtener la frecuencia de la señal de audio, que se utiliza para determinar el tono del sonido, y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia.
+Para ello, la librería utiliza un \textit{StreamBuilder} que se encarga de obtener la frecuencia de la señal de audio. 
+Se han realizado algunas modificaciones a la librería para que la detección de notas sea más precisa y se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
+
+Cabe mencionar que a la librería mencionada anteriormente se le pueden ajustar varios parámetros para que la detección de notas sea más o menos precisa, como el número de muestras que se toman por segundo, el tiempo de espera entre muestras, etc.
+
+Cuando el usuario pulsa el botón del micrófono, se inicia el \textit{StreamBuilder}, se cambia el estado del widget para establecer que se está grabando (variable isRecording) y se muestra una retroalimentación
+al usuario cambiando el color del botón para que el usuario sepa que está grabando.
+
+Además, las notas musicales que se obtienen van apareciendo en pantalla para que el usuario sepa qué notas está detectando el programa en cada momento.
+Cuando se completan todas las notas de la partitura, se detiene el \textit{StreamBuilder} automáticamente.
+Cuando el usuario pulsa el botón del micrófono cuando esté esta grabando, también se detiene el \textit{StreamBuilder}.
+
+Si el usuario no está conforme con la respuesta, puede pulsar el botón de "Limpiar" para vaciar las respuestas y puede volver a grabar pulsando el botón de micrófono. Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar a la siguiente pregunta.
 
 \subsubsection{Resultado del test}
 \label{sec:pregunta}
 \textit{Desarrollado en el Sprint 6}
 
-A continuación se muestra la pantalla de resultado del test, en la que se muestra el número de aciertos y el porcentaje de aciertos respecto a las preguntas. Además, se muestra una barra de progreso que muestra el porcentaje de aciertos respecto al número de preguntas preguntas.
+A continuación se muestra la pantalla de resultado del test, en la que se muestra el número y el porcentaje de aciertos respecto a las preguntas. Además, se muestra una barra de progreso que muestra el porcentaje de aciertos respecto al número de preguntas preguntas.
 
 \begin{figure}[H]%
   \centering
@@ -469,11 +511,11 @@ Una vez obtenidos estos datos, se calcula el porcentaje de aciertos.
 
 \subsection{Revisar pregunta}
 \label{sec:pregunta}
-El usuario podrá revisar las preguntas que haya contestado en un test. Como se puede ver en la pantalla anterior del resultado del test, existe un botón para poder revisar el test. El usuario podrá ver las preguntas que haya contestado y las respuestas que haya seleccionado con la validación de estas.
+El usuario podrá revisar las preguntas que haya contestado en un test. Como se puede ver en la pantalla anterior del resultado del test, existe un botón para poder revisarlo. El usuario podrá ver las preguntas que haya contestado y las respuestas que haya seleccionado con la validación de estas.
 
 \paragraph*{Vista}
 \label{sec:vista}
-La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. La diferencia es que en esta pantalla se muestran las respuestas que ha seleccionado el usuario y se muestra si son correctas o no.
+La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. La diferencia es que en esta pantalla se muestran las respuestas que ha seleccionado el usuario si son correctas o no.
 Por tanto, solo se han cambiado los colores de los botones y de los textos para mostrar si la respuesta es correcta o no (explicaré con más detalle esto en la sección de lógica).
 
 
@@ -483,10 +525,11 @@ La lógica para mostrar la revisión de las preguntas se ha realizado comparando
 
 Para mostrar si la respuesta es correcta o no, se ha cambiado el color del botón o del campo de texto. Si la respuesta es correcta, se muestra en verde, y si es incorrecta, se muestra en rojo. 
 
-Para la validación, se ha llamado a la función \textit{validarRespuesta} que se ha creado en la clase provider \textit{Preguntas}. Esta función comprueba si la(s) respuesta(s) del usuario de la pregunta actual coincide con la(s) respuesta(s) correcta(s) de la pregunta actual. Si coincide, se devuelve un valor booleano \textit{true}, y si no coincide, se devuelve un valor booleano \textit{false}.
+Para la validación, se ha llamado a la función \textit{validarRespuesta} que se ha creado en la clase provider \textit{Preguntas}. Esta función comprueba si la(s) respuesta(s) del usuario de la pregunta actual coincide con la(s) respuesta(s) correcta(s). En caso de hacerlo, se devuelve un valor booleano \textit{true}, y si no coincide, se devuelve un valor booleano \textit{false}.
 
 Para mostrar el color de los botones o de los campos de texto, se ha utilizado la función \textit{ternario} de Dart. Esta función recibe tres parámetros: una condición, un valor si la condición es \textit{true} y un valor si la condición es \textit{false}. En nuestro caso, la condición es la función \textit{validarRespuesta} que hemos creado antes. Si la condición es \textit{true}, se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 
+\newpage
 
 \subsubsection{Pregunta de selección única}
 \label{sec:pregunic1b}
@@ -532,6 +575,19 @@ Para mostrar el color de los botones o de los campos de texto, se ha utilizado l
 \end{figure}
 
 \newpage
+
+\subsubsection{Pregunta de entrada de micrófono}\mbox{}\\
+
+\label{sec:pregunic1b}
+\textit{Desarrollado en el Sprint 7}
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Entrada de micrófono acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob2.png} }}%
+  \qquad
+  \subfloat[\centering Entrada de micrófono fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob.png} }}%
+  \caption{Pantalla de la pregunta de entrada de micrófono en revisión.}%
+  \label{fig:example}%
+\end{figure}
 
 
 
