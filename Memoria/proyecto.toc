@@ -99,13 +99,15 @@
 \contentsline {subsubsection}{\numberline {7.5.3.1}Pregunta de selección única.}{85}{subsubsection.7.5.3.1}%
 \contentsline {subsubsection}{\numberline {7.5.3.2}Pregunta de selección múltiple}{86}{subsubsection.7.5.3.2}%
 \contentsline {subsubsection}{\numberline {7.5.3.3}Pregunta de entrada de texto}{87}{subsubsection.7.5.3.3}%
-\contentsline {subsubsection}{\numberline {7.5.3.4}Resultado del test}{88}{subsubsection.7.5.3.4}%
-\contentsline {subsection}{\numberline {7.5.4}Revisar pregunta}{89}{subsection.7.5.4}%
-\contentsline {subsubsection}{\numberline {7.5.4.1}Pregunta de selección única}{90}{subsubsection.7.5.4.1}%
-\contentsline {subsubsection}{\numberline {7.5.4.2}Pregunta de selección múltiple}{91}{subsubsection.7.5.4.2}%
-\contentsline {subsubsection}{\numberline {7.5.4.3}Pregunta de entrada de texto}{92}{subsubsection.7.5.4.3}%
-\contentsline {section}{\numberline {7.6}Funcionalidad del profesor}{93}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Dashboard}{93}{subsection.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}Lista de lecciones}{94}{subsection.7.6.2}%
-\contentsline {chapter}{\numberline {8}Pruebas}{95}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{97}{chapter.9}%
+\contentsline {subsubsection}{\numberline {7.5.3.4}Pregunta de micrófono}{88}{subsubsection.7.5.3.4}%
+\contentsline {subsubsection}{\numberline {7.5.3.5}Resultado del test}{90}{subsubsection.7.5.3.5}%
+\contentsline {subsection}{\numberline {7.5.4}Revisar pregunta}{92}{subsection.7.5.4}%
+\contentsline {subsubsection}{\numberline {7.5.4.1}Pregunta de selección única}{93}{subsubsection.7.5.4.1}%
+\contentsline {subsubsection}{\numberline {7.5.4.2}Pregunta de selección múltiple}{94}{subsubsection.7.5.4.2}%
+\contentsline {subsubsection}{\numberline {7.5.4.3}Pregunta de entrada de texto}{95}{subsubsection.7.5.4.3}%
+\contentsline {subsubsection}{\numberline {7.5.4.4}Pregunta de entrada de micrófono}{96}{subsubsection.7.5.4.4}%
+\contentsline {section}{\numberline {7.6}Funcionalidad del profesor}{96}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Dashboard}{96}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Lista de lecciones}{97}{subsection.7.6.2}%
+\contentsline {chapter}{\numberline {8}Pruebas}{99}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{101}{chapter.9}%

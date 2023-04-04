@@ -2,7 +2,7 @@ const Lesson = require("../models/Lesson");
 const fs = require('fs');
 const path = require('path');
 const Progress = require("../models/Progress");
-
+const Test = require("../models/Test");
 const create = (req, res) => {
 
     //Recoger parametros por post
@@ -30,9 +30,12 @@ const create = (req, res) => {
 }
 
 
-const index = (req, res) => {
+const index = async (req, res) => {
     // Return all users
-    Lesson.find({}, (error, lessons) => {
+
+    console.log("===================");
+    console.log(req.params.id);
+    await Lesson.find({}, async (error, lessons) => {
         if (error || !lessons) {
             return res.status(404).json({
                 status: "error",
@@ -43,28 +46,90 @@ const index = (req, res) => {
 
             var tests = [];
 
-            Progress.find({ idUsuario: req.params.id }, (error, progress) => {
+            await Progress.find({ idUsuario: req.params.id }, async (error, progress) => {
+                try{
                 if (error || !progress) {
                     return res.status(404).json({
                         status: "error",
                         mensaje: "El progreso no se ha podido encontrar"
                     });
                 }
-                else {
-                    
-                    return res.status(200).json({
-                        status: "success",
-                        leccion: lessons,
-                        progreso: progress,
-                        mensaje: "Las lecciones se ha encontrado"
+
+            
+                else {  
+                    var progresos = [];
+                    console.log("TAM: " + progress.length);
+                //Para cada progreso buscar el número de tests aprobados
+                for (let i = 0; i < progress.length; i++) {
+                    var test = progress[i].tests;
+                    var cuenta = 0;
+                    try {
+ 
+                    for (let j = 0; j < test.length; j++) {
+                            //Buscar test
+                        var a = await Test.findOne({ _id: test[j].toString() }, (error, test) => {
+                            try{
+                            if(test.aprobado != undefined)
+                                console.log(test.aprobado);
+
+                            if (error || !test) {
+                                return res.status(404).json({
+                                    status: "error",
+                                    mensaje: "El test no se ha podido encontrar"
+                                });
+                            }
+
+                            return cuenta;
+                        }
+                        catch(error){
+                            console.log(error);
+                        }
+                        }).clone();
+                        
+                        if(a.aprobado!=undefined){
+                            if(a.aprobado==true)    
+                                cuenta++;
+                                console.log("CUENTA: " + cuenta);
+
+                        }                            
+                    }
+                    progresos.push({
+                        idLeccion: progress[i].idLeccion,
+                        testsAprobados: cuenta
                     });
+                    console.log(i + " : " +progresos[i].testsAprobados);
+                    }
+                    catch (error){
+                        console.log(error);
+                    }
+
                 }
+
+
+
+                return res.status(200).json({
+                    status: "success",
+                    cuenta: progresos,
+                    progreso: progress,
+                
+                    leccion: lessons,
+                    mensaje: "Las lecciones se ha encontrado"
+                });
             }
-            );
+        }
+        catch(error){
+            console.log(error);
+        }
+
+
+            }
+            ).clone();
         }
     }
 
-    );
+    ).clone();
+
+    console.log("===================");
 }
 
 

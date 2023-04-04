@@ -20,6 +20,7 @@ const create = (req, res) => {
 
 const index = (req, res) => {
     // Return all questions
+    console.log("ENTROS");
     Question.find({}, (error, questions) => {
         if (error || !questions) {
             return res.status(404).json({
@@ -29,7 +30,7 @@ const index = (req, res) => {
         }
         return res.status(200).json({
             status: "success",
-            pregunta: questions,
+            preguntas: questions,
         });
     }
     );

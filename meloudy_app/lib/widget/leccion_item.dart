@@ -26,6 +26,7 @@ class LeccionItem extends StatelessWidget {
             onTap: () {
 
               if(_estado != 'bloqueado') {
+                Provider.of<Preguntas>(context, listen:false).setIdLeccion(leccion.id);
                 Provider.of<Preguntas>(context, listen: false)
                     .fetchAndSetPreguntas(leccion.id);
                 Navigator.of(context).pushNamed(
@@ -47,7 +48,16 @@ class LeccionItem extends StatelessWidget {
                     child: Container(
                       height: 30,
                       width: 30,
-                      child: Image.asset('assets/${_imagenprincipal}'),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black),
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage('assets/${_imagenprincipal}'),
+                        )
+
+                      ),
                     )),
           Container(
                 margin: EdgeInsets.only(left: 12),

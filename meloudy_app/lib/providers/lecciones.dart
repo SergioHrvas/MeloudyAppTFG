@@ -8,9 +8,15 @@ import './leccion.dart';
 class Lecciones with ChangeNotifier {
   List<Leccion> lecciones = []; // var _showFavoritesOnly = false;
 
-  final String authToken;
+  var aprobados = 0;
+  String authToken;
 
-  Lecciones(this.authToken, this.lecciones);
+  Lecciones();
+
+  void update(tkn){
+
+    authToken = tkn;
+  }
   List<Leccion> get items {
     // if (_showFavoritesOnly) {
     //   return _items.where((prodItem) => prodItem.isFavorite).toList();
@@ -32,7 +38,10 @@ class Lecciones with ChangeNotifier {
         'http://${IP.ip}:5000/api/lesson/get-lessons/${id}?auth=$authToken');
     try {
       final response = await http.get(url);
+
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
+      print(response.toString());
+      print(extractedData.toString());
       if (extractedData == null) {
         return;
       }
@@ -48,31 +57,61 @@ class Lecciones with ChangeNotifier {
         var estado = 'bloqueado';
         for(var j = 0; j < extractedData['progreso'].length; j++){
 
-          if(extractedData['progreso'][j]['idLeccion']==extractedData['leccion'][i]['_id']) {
+          if(extractedData['progreso'][j]['idLeccion']  == extractedData['leccion'][i]['_id']) {
             completadovar = extractedData['progreso'][j]['completado'];
+            print(extractedData['leccion'][i]['nombre'] + completadovar.toString());
+
             if (completadovar == null){
               if(ultimo == false){
                 estado = 'desbloqueado';
                 ultimo = true;
+                print("a");
               }
               else{
                 estado = 'bloqueado';
+                print("b");
+
               }
           }
             else {
-              estado = 'completado';
-            }
-          }
-          else{
-            if(ultimo == false){
-              estado = 'desbloqueado';
-              ultimo = true;
-            }
-            else{
-              estado = 'bloqueado';
-            }
+              if(completadovar) {
+                estado = 'completado';
+                print("ENTRO");
+                print("c");
+
+              }
+              else {
+                if (ultimo == false) {
+                  estado = 'desbloqueado';
+                  ultimo = true;
+                  print("d");
+
+                }
+                else {
+                  estado = 'bloqueado';
+                  print("e");
+
+                }
+              }}
           }
         }
+
+        if(i >= extractedData['progreso'].length){
+          if (ultimo == false) {
+            estado = 'desbloqueado';
+            ultimo = true;
+            print("d");
+
+          }
+          else {
+            estado = 'bloqueado';
+            print("e");
+
+          }
+        }
+
+        print(extractedData['leccion'][i]['nombre'] + estado);
+
 
         final List<Contenido> contenidoCargado = [];
         var contenidoLista = extractedData['leccion'][i]['contenido'];
@@ -81,20 +120,41 @@ class Lecciones with ChangeNotifier {
               texto: contenidoLista[i]['texto'],
               tipo: contenidoLista[i]['tipo']));
         }
+
+        var n = buscarNumAprobados(extractedData['cuenta'], leccionesLista[i]['_id']);
+        var numAprobados = 0;
+
+        if(n!=-1)
+        numAprobados =  extractedData['cuenta'][n]['testsAprobados'];
+        else
+          numAprobados = -1;
+
+        print(n.toString() + " " + numAprobados.toString());
         leccionesCargadas.add(Leccion(
             id: leccionesLista[i]['_id'],
             nombre: leccionesLista[i]['nombre'],
             contenido: contenidoCargado,
             imagenprincipal: leccionesLista[i]['imagenprincipal'],
-            estado: estado));
-
+            estado: estado,
+            num_aprobados: numAprobados
+        ));
       }
       lecciones = leccionesCargadas;
-
       notifyListeners();
+
     } catch (error) {
       throw (error);
     }
+  }
+
+  int buscarNumAprobados(data, id){
+
+    for(var i = 0; i < data.length; i++){
+      if(data[i]['idLeccion'] == id){
+        return i;
+      }
+    }
+    return -1;
   }
 
   Future<void> fetchAndSetTests(idLeccion, idUsuario) async{

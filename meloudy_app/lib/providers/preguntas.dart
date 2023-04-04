@@ -67,6 +67,7 @@ class Preguntas with ChangeNotifier {
 
   void setIdLeccion(id){
     idLeccion = id;
+    print("ID " + idLeccion);
   }
 
   void setIdUser(id){
@@ -112,9 +113,6 @@ class Preguntas with ChangeNotifier {
 
 
   int get indiceValor {
-    // if (_showFavoritesOnly) {
-    //   return _items.where((prodItem) => prodItem.isFavorite).toList();
-    // }
     return indice;
   }
 
@@ -286,6 +284,7 @@ class Preguntas with ChangeNotifier {
   Future<void> enviarTest() async{
     final url = Uri.parse('http://${IP.ip}:5000/api/progress/create-test-and-progress');
 
+    print("IDLECCION" + idLeccion);
     try{
       aciertos = getAciertos();
       var aprobado = false;
@@ -301,8 +300,13 @@ class Preguntas with ChangeNotifier {
           "respuestas": preguntas[i].respuestas,
         });
       }
+      print("===========");
 
-
+      print(idLeccion);
+      print(preguntasTest.toString());
+      print(userId);
+      print(aprobado);
+      print("===========");
       final response = await http.post(url,
           headers: {
             "Accept": "application/json",
@@ -317,7 +321,7 @@ class Preguntas with ChangeNotifier {
 
       final responseData = json.decode(response.body);
       testId = responseData['test'];
-
+      print(responseData.toString());
       return testId;
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);

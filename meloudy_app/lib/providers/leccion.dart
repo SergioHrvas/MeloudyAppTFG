@@ -15,13 +15,17 @@ class Leccion with ChangeNotifier {
   final List<Contenido> contenido;
   final String imagenprincipal;
   final String estado;
+  final int num_aprobados;
+
   List<Test> tests = [];
+
   Leccion({
     @required this.id,
     @required this.nombre,
     @required this.contenido,
     @required this.imagenprincipal,
-    @required this.estado
+    @required this.estado,
+    @required this.num_aprobados
   });
 
   void setTests(testsCargados){
