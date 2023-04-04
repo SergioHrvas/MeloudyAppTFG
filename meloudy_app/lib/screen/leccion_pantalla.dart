@@ -88,7 +88,16 @@ class LeccionPantalla extends StatelessWidget {
             height: 130,
             width: 130,
             margin: EdgeInsets.only(bottom: 20),
-            child: Image.asset('assets/musica.png'),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+                border: Border.all(color: Colors.black),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage('assets/${loadedLesson.imagenprincipal}'),
+                )
+
+            ),
           ),
           Container(
             decoration: BoxDecoration(

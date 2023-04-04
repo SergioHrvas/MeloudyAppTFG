@@ -54,6 +54,20 @@ const create = (req, res) => {
                 }
                 else {
                     progress.tests.push(testSaved);
+
+                    var aprobados = 0;
+                    for(var i = 0; i < progress.tests.length; i++){
+                        if(progress.tests[i].aprobado == true){
+                            aprobados++;
+                        }
+
+                    }
+
+                    if(aprobados >= 3){
+                        progress.completado = true;
+                    }
+
+
                     //guardamos el progreso
                     progress.save((error, progressSaved) => {
                         if (error || !progressSaved) {

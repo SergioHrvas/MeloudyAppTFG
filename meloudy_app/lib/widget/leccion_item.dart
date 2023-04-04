@@ -48,7 +48,16 @@ class LeccionItem extends StatelessWidget {
                     child: Container(
                       height: 30,
                       width: 30,
-                      child: Image.asset('assets/${_imagenprincipal}'),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black),
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage('assets/${_imagenprincipal}'),
+                        )
+
+                      ),
                     )),
           Container(
                 margin: EdgeInsets.only(left: 12),

@@ -113,9 +113,6 @@ class Preguntas with ChangeNotifier {
 
 
   int get indiceValor {
-    // if (_showFavoritesOnly) {
-    //   return _items.where((prodItem) => prodItem.isFavorite).toList();
-    // }
     return indice;
   }
 

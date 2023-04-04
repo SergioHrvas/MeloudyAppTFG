@@ -1,4 +1,5 @@
 import 'package:meloudy_app/providers/preguntas.dart';
+import 'package:meloudy_app/providers/preguntas_profesor.dart';
 import 'package:meloudy_app/screen/TestAcabadoPantalla.dart';
 import 'package:meloudy_app/screen/historial_tests.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
@@ -8,6 +9,8 @@ import 'package:meloudy_app/login.dart';
 import 'package:meloudy_app/providers/auth.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/leccion_pantalla_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_crear_pregunta_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_preguntas_profesor.dart';
 import 'package:meloudy_app/widget/microfono_pregunta.dart';
 import 'package:meloudy_app/screen/pregunta_pantalla.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +36,10 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProxyProvider<Auth, Preguntas>(
             update: (ctx, auth, preguntasAnteriores) =>
-              Preguntas(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items))
+              Preguntas(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items)),
+      ChangeNotifierProxyProvider<Auth, PreguntasProfesor>(
+          update: (ctx, auth, preguntasAnteriores) =>
+              PreguntasProfesor(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items))
       ],
       child: Consumer<Auth>(
         builder: (ctx, auth, _) => MaterialApp(
@@ -56,6 +62,8 @@ class MyApp extends StatelessWidget {
             PreguntaPantalla.routeName: (ctx) => PreguntaPantalla(),
             TestAcabadoPantalla.routeName: (ctx) => TestAcabadoPantalla(),
             HistorialTests.routeName: (ctx) => HistorialTests(),
+            PantallaPreguntasProfesor.routeName: (ctx) => PantallaPreguntasProfesor(),
+            PantallaCrearPreguntaProfesor.routeName: (ctx) => PantallaCrearPreguntaProfesor(),
 
 
 

@@ -1,39 +1,104 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/widget/drawer_app.dart';
+import 'package:provider/provider.dart';
 
-class PantallaDashboard extends StatelessWidget{
+import '../providers/preguntas_profesor.dart';
+
+class PantallaDashboard extends StatelessWidget {
   static const routeName = '/dashboard';
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("DASHBOARD"),),
-      drawer: DrawerApp(),
-      body: Container(
-        padding: EdgeInsets.only(top: 20),
-          alignment: Alignment.center, child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-
-          Container(
-            margin: EdgeInsets.only(bottom: 20),
-            child: ElevatedButton(style: ElevatedButton.styleFrom(minimumSize: Size(180, 50), primary: Colors.purple),onPressed: (){
-              Navigator.of(context).pushNamed(
-                LeccionesPantallaProfesor.routeName,
-              );
-
-            }, child: Text("Lecciones")),
-          ),
-          Container(            margin: EdgeInsets.only(bottom: 20),
-              child: ElevatedButton(style: ElevatedButton.styleFrom(minimumSize: Size(180, 50), primary: Colors.purple), onPressed: (){}, child: Text("Preguntas"))),
-          Container(            margin: EdgeInsets.only(bottom: 20),
-              child: ElevatedButton(style: ElevatedButton.styleFrom(minimumSize: Size(180, 50), primary: Colors.purple), onPressed: (){}, child: Text("Usuarios"))),
-
-        ],
-      ))
-
-    );
+        appBar: AppBar(
+          title: Text("DASHBOARD"),
+        ),
+        drawer: DrawerApp(),
+        body: Container(
+            padding: EdgeInsets.only(top: 20),
+            alignment: Alignment.center,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(220, 50),
+                        primary: Colors.purple,
+                        padding: EdgeInsets.only(bottom: 10, top: 10),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(
+                          LeccionesPantallaProfesor.routeName,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            child: Icon(
+                              Icons.book,
+                              size: 35,
+                            ),
+                            margin: EdgeInsets.only(bottom: 5),
+                          ),
+                          Text(
+                            "Lecciones",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ],
+                      )),
+                ),
+                Container(
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(220, 50),
+                          primary: Colors.purple,
+                          padding: EdgeInsets.only(bottom: 10, top: 10),
+                        ),
+                        onPressed: () {
+                          Provider.of<PreguntasProfesor>(context, listen: false)
+                              .fetchAndSetPreguntas()
+                              .then((_) {
+                            Navigator.pushReplacementNamed(
+                                context, '/listapreguntas');
+                          });
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              child: Icon(
+                                Icons.question_answer,
+                                size: 35,
+                              ),
+                              margin: EdgeInsets.only(bottom: 5),
+                            ),
+                            Text("Preguntas", style: TextStyle(fontSize: 20)),
+                          ],
+                        ))),
+                Container(
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(220, 50),
+                          primary: Colors.purple,
+                          padding: EdgeInsets.only(bottom: 10, top: 10),
+                        ),
+                        onPressed: () {},
+                        child: Column(
+                          children: [
+                            Container(
+                              child: Icon(
+                                Icons.people,
+                                size: 35,
+                              ),
+                              margin: EdgeInsets.only(bottom: 5),
+                            ),
+                            Text("Usuarios", style: TextStyle(fontSize: 20)),
+                          ],
+                        ))),
+              ],
+            )));
   }
 }

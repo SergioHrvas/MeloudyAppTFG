@@ -65,25 +65,48 @@ class Lecciones with ChangeNotifier {
               if(ultimo == false){
                 estado = 'desbloqueado';
                 ultimo = true;
+                print("a");
               }
               else{
                 estado = 'bloqueado';
+                print("b");
+
               }
           }
             else {
               if(completadovar) {
                 estado = 'completado';
                 print("ENTRO");
+                print("c");
+
               }
               else {
                 if (ultimo == false) {
                   estado = 'desbloqueado';
                   ultimo = true;
+                  print("d");
+
                 }
                 else {
                   estado = 'bloqueado';
+                  print("e");
+
                 }
               }}
+          }
+        }
+
+        if(i >= extractedData['progreso'].length){
+          if (ultimo == false) {
+            estado = 'desbloqueado';
+            ultimo = true;
+            print("d");
+
+          }
+          else {
+            estado = 'bloqueado';
+            print("e");
+
           }
         }
 
@@ -117,6 +140,7 @@ class Lecciones with ChangeNotifier {
         ));
       }
       lecciones = leccionesCargadas;
+      notifyListeners();
 
     } catch (error) {
       throw (error);
