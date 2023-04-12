@@ -5,6 +5,7 @@ import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
 
+import '../ips.dart';
 import '../providers/auth.dart';
 import '../providers/preguntas.dart';
 
@@ -35,7 +36,7 @@ class LeccionPantalla extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20),
           margin: EdgeInsets.only(bottom: 20),
           child: Container(
-            child: Image.asset('assets/${contenido[i].texto}'),
+            child: Image.network('http://${IP.ip}:5000/img/${contenido[i].texto}'),
             decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           ),
         ));
@@ -94,7 +95,7 @@ class LeccionPantalla extends StatelessWidget {
                 border: Border.all(color: Colors.black),
                 image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage('assets/${loadedLesson.imagenprincipal}'),
+                  image: NetworkImage('http://${IP.ip}:5000/img/${loadedLesson.imagenprincipal}'),
                 )
 
             ),

@@ -92,7 +92,6 @@ class _AuthCardState extends State<AuthCard> {
   final _passwordController = TextEditingController();
 
   Future<void> _submit() async {
-    print(_authData);
     if (!_formKey.currentState.validate()) {
       // Invalid!
       return;

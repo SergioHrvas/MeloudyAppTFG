@@ -13,7 +13,10 @@ const puerto = 5000;
 //Crear servidor node
 const app = createServer();
 
-
+// Function to serve all static files
+// inside public directory.
+app.use(express.static('public'));
+app.use('/images', express.static('images'));
 //Crear servidor y escuchar peticiones http
 app.listen(puerto, () => {
     console.log("Sever running on port " + puerto);

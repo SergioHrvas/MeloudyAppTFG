@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../ips.dart';
 import '../providers/preguntas_profesor.dart';
 import '../widget/drawer_app.dart';
 
@@ -39,7 +40,7 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                   color: Colors.white,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/${preguntas[i].imagen}'),
+                    image: NetworkImage('http://${IP.ip}:5000/img/${preguntas[i].imagen}'),
                   ),
                 ),
               ),

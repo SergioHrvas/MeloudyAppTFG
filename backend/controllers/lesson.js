@@ -3,30 +3,32 @@ const fs = require('fs');
 const path = require('path');
 const Progress = require("../models/Progress");
 const Test = require("../models/Test");
-const create = (req, res) => {
+const multer = require('multer');
 
+const create = (req, res) => {
     //Recoger parametros por post
     let param = req.body;
 
-    //Crear objeto usuario y se asignan parámetros automáticamente
-    const lesson = new Lesson(param);
+    lesson = new Lesson(param);
+
+    //Crear objeto lesson y se asignan parámetros automáticamente
+    // const lesson = new Lesson(param);
 
     //Guardar el objeto en la base de datos
     lesson.save((error, lessonSaved) => {
         if (error || !lessonSaved) {
             return res.status(404).json({
                 status: "error",
-                mensaje: "El usuario no se ha podido guardar correctamente"
+                mensaje: "La lección no se ha podido guardar correctamente"
             });
         }
         return res.status(200).json({
             status: "success",
             leccion: lessonSaved,
-            mensaje: "El usuario se ha guardado correctamente"
+            mensaje: "La lección se ha guardado correctamente"
         });
 
     });
-
 }
 
 
@@ -152,21 +154,31 @@ const get = (req, res) => {
 
 const remove = (req, res) => {
     const id = req.params.id;
+    console.log("ID: " + id);
     Lesson.findByIdAndDelete(id, (error, lesson) => {
         if (error || !lesson) {
             return res.status(404).json({
                 status: "error",
-                mensaje: "El usuario no se ha podido encontrar"
+                mensaje: "La lección no se ha podido encontrar"
             });
         }
         return res.status(200).json({
             status: "success",
-            usuario: lesson,
-            mensaje: "El usuario se ha encontrado"
+            leccion: lesson,
+            mensaje: "La lección se ha eliminado correctamente",
         });
     }
     );
 }
+
+
+
+
+        
+
+
+
+
 
 module.exports = {
     create,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../ips.dart';
 import '../providers/leccion.dart';
 
+import '../providers/lecciones.dart';
 import '../screen/leccion_pantalla_profesor.dart';
 
 class LeccionItemProfesor extends StatelessWidget {
@@ -9,7 +11,8 @@ class LeccionItemProfesor extends StatelessWidget {
   final List<Contenido> _contenido;
   final String _imagenprincipal;
   final int _indice;
-  LeccionItemProfesor(this._nombre, this._contenido, this._imagenprincipal, this._indice);
+  final String _id;
+  LeccionItemProfesor(this._nombre, this._contenido, this._imagenprincipal, this._indice, this._id);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +52,7 @@ class LeccionItemProfesor extends StatelessWidget {
                         color: Colors.white,
                         image: DecorationImage(
                           fit: BoxFit.fill,
-                          image: AssetImage('assets/${_imagenprincipal}'),
+                          image: true ? NetworkImage('http://${IP.ip}:5000/img/${_imagenprincipal}') : AssetImage('assets/${_imagenprincipal}'),
                         )
 
                     ),
@@ -80,8 +83,15 @@ class LeccionItemProfesor extends StatelessWidget {
                         mainAxisAlignment:MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                        Container(margin: EdgeInsets.symmetric(horizontal: 4),child: ElevatedButton(onPressed: (){}, child: Text("Borrar"), style: ElevatedButton.styleFrom(primary: Colors.red),)),
-                        Container(margin: EdgeInsets.symmetric(horizontal: 4), child: ElevatedButton(onPressed: (){}, child: Text("Modificar"), style: ElevatedButton.styleFrom(primary: Colors.purple),))
+                        Container(margin: EdgeInsets.symmetric(horizontal: 4),child: ElevatedButton(onPressed: (){
+                          Provider.of<Lecciones>(context, listen: false).borrarLeccion(_id);
+                        }, child: Text("Borrar"), style: ElevatedButton.styleFrom(primary: Colors.red),)),
+                        Container(margin: EdgeInsets.symmetric(horizontal: 4), child: ElevatedButton(onPressed: (){
+                          Navigator.pushNamed(context, '/editarleccion', arguments: {
+                            "id": _id
+                          });
+
+                        }, child: Text("Editar"), style: ElevatedButton.styleFrom(primary: Colors.purple),))
                       ],),
                     )
                   ],

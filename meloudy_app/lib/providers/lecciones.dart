@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:meloudy_app/ips.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -29,6 +30,7 @@ class Lecciones with ChangeNotifier {
   }
 
   Leccion findById(String id) {
+    print(id);
     return lecciones.firstWhere((prod) => prod.id == id);
   }
 
@@ -40,8 +42,7 @@ class Lecciones with ChangeNotifier {
       final response = await http.get(url);
 
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
-      print(response.toString());
-      print(extractedData.toString());
+
       if (extractedData == null) {
         return;
       }
@@ -59,37 +60,29 @@ class Lecciones with ChangeNotifier {
 
           if(extractedData['progreso'][j]['idLeccion']  == extractedData['leccion'][i]['_id']) {
             completadovar = extractedData['progreso'][j]['completado'];
-            print(extractedData['leccion'][i]['nombre'] + completadovar.toString());
 
             if (completadovar == null){
               if(ultimo == false){
                 estado = 'desbloqueado';
                 ultimo = true;
-                print("a");
               }
               else{
                 estado = 'bloqueado';
-                print("b");
 
               }
           }
             else {
               if(completadovar) {
                 estado = 'completado';
-                print("ENTRO");
-                print("c");
-
               }
               else {
                 if (ultimo == false) {
                   estado = 'desbloqueado';
                   ultimo = true;
-                  print("d");
 
                 }
                 else {
                   estado = 'bloqueado';
-                  print("e");
 
                 }
               }}
@@ -100,25 +93,24 @@ class Lecciones with ChangeNotifier {
           if (ultimo == false) {
             estado = 'desbloqueado';
             ultimo = true;
-            print("d");
 
           }
           else {
             estado = 'bloqueado';
-            print("e");
 
           }
         }
 
-        print(extractedData['leccion'][i]['nombre'] + estado);
 
 
         final List<Contenido> contenidoCargado = [];
         var contenidoLista = extractedData['leccion'][i]['contenido'];
-        for (var i = 0; i < contenidoLista.length; i++) {
-          contenidoCargado.add(Contenido(
-              texto: contenidoLista[i]['texto'],
-              tipo: contenidoLista[i]['tipo']));
+        if(contenidoLista!=null) {
+          for (var i = 0; i < contenidoLista.length; i++) {
+            contenidoCargado.add(Contenido(
+                texto: contenidoLista[i]['texto'],
+                tipo: contenidoLista[i]['tipo']));
+          }
         }
 
         var n = buscarNumAprobados(extractedData['cuenta'], leccionesLista[i]['_id']);
@@ -129,7 +121,6 @@ class Lecciones with ChangeNotifier {
         else
           numAprobados = -1;
 
-        print(n.toString() + " " + numAprobados.toString());
         leccionesCargadas.add(Leccion(
             id: leccionesLista[i]['_id'],
             nombre: leccionesLista[i]['nombre'],
@@ -147,6 +138,48 @@ class Lecciones with ChangeNotifier {
     }
   }
 
+  Future<void> crearLeccion(data, filename) async{
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/lesson/create-lesson?auth=$authToken');
+
+    print(data);
+    final response = await http.post(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: json.encode({
+          "nombre": data['nombre'],
+          "imagenprincipal": filename,
+          "contenido": data['contenido']
+        })
+    );
+    print(response.body);
+
+    var extractedData = json.decode(response.body);
+
+    final List<Contenido> contenidovector = [];
+    if(extractedData['leccion']!=null) {
+      if (extractedData['leccion']['contenido'] != null) {
+        for (var i = 0; i < extractedData['leccion']['contenido'].length; i++) {
+          contenidovector.add(Contenido(
+              tipo: extractedData['leccion']['contenido'][i]['tipo'].toString(),
+              texto: extractedData['leccion']['contenido'][i]['texto']
+                  .toString()
+          ));
+        }
+      }
+
+    lecciones.add(Leccion(
+      id: extractedData['leccion']['_id'],
+      nombre: extractedData['leccion']['nombre'],
+      imagenprincipal: extractedData['leccion']['imagenprincipal'],
+      contenido: contenidovector
+    )
+    );
+    }
+  }
+
   int buscarNumAprobados(data, id){
 
     for(var i = 0; i < data.length; i++){
@@ -159,15 +192,13 @@ class Lecciones with ChangeNotifier {
 
   Future<void> fetchAndSetTests(idLeccion, idUsuario) async{
     final url = Uri.parse(
-        'http://${IP.ip}:5000/api/test/get-tests-progress/${idUsuario}/${idLeccion}');
+        'http://${IP.ip}:5000/api/test/get-tests-progress/${idUsuario}/${idLeccion}?auth=$authToken');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
-      print("eeeddd: " + extractedData.toString());
 
       final List<Test> testsCargados = [];
 
-      print(extractedData['tests'].length);
       for(var i = 0; i < extractedData['tests'].length; i++){
         testsCargados.add(Test(
             id: extractedData['tests'][i]['_id'],
@@ -186,6 +217,27 @@ class Lecciones with ChangeNotifier {
 
   }
 
+
+
+
+
+  Future<void> borrarLeccion(String id) async {
+    final url = Uri.parse('http://${IP.ip}:5000/api/lesson/delete-lesson/$id?auth=$authToken');
+    final leccionExistenteIndice = lecciones.indexWhere((leccion) => leccion.id == id);
+    var leccionExistente = lecciones[leccionExistenteIndice];
+    lecciones.removeAt(leccionExistenteIndice);
+    final response = await http.delete(url);
+
+    if (response.statusCode >= 400) {
+      print(response.statusCode);
+      lecciones.insert(leccionExistenteIndice, leccionExistente);
+      notifyListeners();
+      throw HttpException('Could not delete product.');
+    }
+    notifyListeners();
+
+    leccionExistente = null;
+  }
 
 
   /* Future<void> addProduct(Leccion leccion) async {
@@ -229,19 +281,5 @@ class Lecciones with ChangeNotifier {
       print('...');
     }
   }
-
-  Future<void> deleteProduct(String id) async {
-    final url = 'https://flutter-update.firebaseio.com/products/$id.json';
-    final existingProductIndex = _items.indexWhere((prod) => prod.id == id);
-    var existingProduct = _items[existingProductIndex];
-    _items.removeAt(existingProductIndex);
-    notifyListeners();
-    final response = await http.delete(url);
-    if (response.statusCode >= 400) {
-      _items.insert(existingProductIndex, existingProduct);
-      notifyListeners();
-      throw HttpException('Could not delete product.');
-    }
-    existingProduct = null;
-  }*/
+*/
 }

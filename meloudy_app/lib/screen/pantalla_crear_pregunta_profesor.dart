@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../ips.dart';
 import '../providers/preguntas_profesor.dart';
 import '../widget/drawer_app.dart';
 
@@ -27,7 +28,7 @@ class _PantallaCrearPreguntaProfesorState extends State<PantallaCrearPreguntaPro
             children: [
               Container(
                 decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-                child: Image.asset('assets/musica.png')
+                child: Image.network('http://${IP.ip}:5000/img//musica.png')
 
               ),
               Container(

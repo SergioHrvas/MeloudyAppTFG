@@ -4,7 +4,7 @@ const auth = require('../middleware/auth'); //Trabajar con subida de archivos
 const TestController = require('../controllers/test.js');
 
 // Rutas asociadas a los usuarios
-router.get("/get-tests-progress/:idUsuario/:idLeccion", TestController.indexTests);
+router.get("/get-tests-progress/:idUsuario/:idLeccion", auth, TestController.indexTests);
 
 // router.get("/get-tests", auth, TestController.index);
 // router.get("/get-test/:id", auth, TestController.get);

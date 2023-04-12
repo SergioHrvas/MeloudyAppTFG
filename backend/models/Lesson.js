@@ -23,7 +23,9 @@ const LessonSchema = Schema({
             texto: {
                 type: String,
                 required: true
-            }
+            },
+            _id: false
+            
 
         },
 

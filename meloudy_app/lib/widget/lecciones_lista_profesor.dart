@@ -53,7 +53,8 @@ class _LeccionesListaProfesorState extends State<LeccionesListaProfesor> {
             lecciones[i].nombre,
             lecciones[i].contenido,
             lecciones[i].imagenprincipal,
-            i+1
+            i+1,
+            lecciones[i].id
             // products[i].imageUrl,
           ),
         ),

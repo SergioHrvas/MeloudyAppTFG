@@ -9,7 +9,9 @@ import 'package:meloudy_app/login.dart';
 import 'package:meloudy_app/providers/auth.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/leccion_pantalla_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_crear_leccion_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_pregunta_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_editar_leccion_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_preguntas_profesor.dart';
 import 'package:meloudy_app/widget/microfono_pregunta.dart';
 import 'package:meloudy_app/screen/pregunta_pantalla.dart';
@@ -64,6 +66,8 @@ class MyApp extends StatelessWidget {
             HistorialTests.routeName: (ctx) => HistorialTests(),
             PantallaPreguntasProfesor.routeName: (ctx) => PantallaPreguntasProfesor(),
             PantallaCrearPreguntaProfesor.routeName: (ctx) => PantallaCrearPreguntaProfesor(),
+            PantallaCrearLeccionProfesor.routeName: (ctx) => PantallaCrearLeccionProfesor(),
+            PantallaEditarLeccionProfesor.routeName: (ctx) => PantallaEditarLeccionProfesor(),
 
 
 

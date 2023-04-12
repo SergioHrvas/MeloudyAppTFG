@@ -18,7 +18,6 @@ class _LeccionesPantallaState extends State<LeccionesPantalla> {
 
   @override
   Widget build(BuildContext context) {
-    print("ASASASASDFADFSDDFSDGFSFa");
     return Scaffold(
       appBar: AppBar(title: Text("MELOUDY")),
       drawer: DrawerApp(),
@@ -29,9 +28,9 @@ class _LeccionesPantallaState extends State<LeccionesPantalla> {
       await Provider.of<Lecciones>(context, listen: false).fetchAndSetLecciones(id);
     },
           child: Stack(children:[
-
+            ListView(),
            SingleChildScrollView(child: LeccionesLista()),
-          ListView()])),
+          ])),
     );
   }
 }
