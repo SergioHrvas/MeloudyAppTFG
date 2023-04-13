@@ -4,6 +4,7 @@ import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/preguntas_profesor.dart';
+import '../providers/usuarios.dart';
 
 class PantallaDashboard extends StatelessWidget {
   static const routeName = '/dashboard';
@@ -85,7 +86,13 @@ class PantallaDashboard extends StatelessWidget {
                           primary: Colors.purple,
                           padding: EdgeInsets.only(bottom: 10, top: 10),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Provider.of<Usuarios>(context, listen: false)
+                              .fetchAndSetUsers()
+                              .then((_) {
+                            Navigator.pushNamed(context, '/listausuarios');
+                          });
+                        },
                         child: Column(
                           children: [
                             Container(

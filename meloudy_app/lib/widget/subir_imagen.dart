@@ -71,6 +71,9 @@ class _SubirImagenState extends State<SubirImagenFul>{
     funcionImagen(img, file);
   }
 
+
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -93,7 +96,7 @@ class _SubirImagenState extends State<SubirImagenFul>{
               }, child: Text("Subir imagen")) : Container(),
               Container(
                 width: 120,
-                child: file != null ? Image.file(File(file.path)) : this.datos != null ? Image.network('http://${IP.ip}:5000/img/${this.datos}') : Container(),
+                child: file != null ? Image.file(File(file.path)) : this.datos != "" ? Image.network('http://${IP.ip}:5000/img/${this.datos}') : Container(),
               ),
             ],
           ),

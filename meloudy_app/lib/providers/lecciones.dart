@@ -138,7 +138,61 @@ class Lecciones with ChangeNotifier {
     }
   }
 
-  Future<void> crearLeccion(data, filename) async{
+  int getIndice(id){
+    for(var i = 0; i < lecciones.length; i++){
+      if(lecciones[i].id == id){
+        return i;
+      }
+    }
+    return -1;
+
+  }
+
+  Future<void> modificarLeccion(data, id) async{
+    print(data['nombre']);
+    print(data['imagenprincipal']);
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/lesson/update-lesson/${id}?auth=$authToken');
+
+    final response = await http.put(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: json.encode({
+          "nombre": data['nombre'],
+          "imagenprincipal": data['imagenprincipal'],
+          "contenido": data['contenido']
+        })
+    );
+    print(response.body);
+
+    /*var extractedData = json.decode(response.body);
+
+    final List<Contenido> contenidovector = [];
+    if(extractedData['leccion']!=null) {
+      if (extractedData['leccion']['contenido'] != null) {
+        for (var i = 0; i < extractedData['leccion']['contenido'].length; i++) {
+          contenidovector.add(Contenido(
+              tipo: extractedData['leccion']['contenido'][i]['tipo'].toString(),
+              texto: extractedData['leccion']['contenido'][i]['texto']
+                  .toString()
+          ));
+        }
+      }
+
+      var i = getIndice(id);
+
+    lecciones[i] = Leccion(
+      id: extractedData['leccion']['_id'],
+      nombre: extractedData['leccion']['nombre'],
+      imagenprincipal: extractedData['leccion']['imagenprincipal'],
+      contenido: contenidovector
+    );
+    }*/
+  }
+
+  Future<void> crearLeccion(data) async{
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/lesson/create-lesson?auth=$authToken');
 
@@ -150,7 +204,7 @@ class Lecciones with ChangeNotifier {
         },
         body: json.encode({
           "nombre": data['nombre'],
-          "imagenprincipal": filename,
+          "imagenprincipal": data['imagenprincipal'],
           "contenido": data['contenido']
         })
     );
@@ -170,15 +224,16 @@ class Lecciones with ChangeNotifier {
         }
       }
 
-    lecciones.add(Leccion(
-      id: extractedData['leccion']['_id'],
-      nombre: extractedData['leccion']['nombre'],
-      imagenprincipal: extractedData['leccion']['imagenprincipal'],
-      contenido: contenidovector
-    )
-    );
+      lecciones.add(Leccion(
+          id: extractedData['leccion']['_id'],
+          nombre: extractedData['leccion']['nombre'],
+          imagenprincipal: extractedData['leccion']['imagenprincipal'],
+          contenido: contenidovector
+      )
+      );
     }
   }
+
 
   int buscarNumAprobados(data, id){
 

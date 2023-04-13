@@ -1,5 +1,6 @@
 import 'package:meloudy_app/providers/preguntas.dart';
 import 'package:meloudy_app/providers/preguntas_profesor.dart';
+import 'package:meloudy_app/providers/usuarios.dart';
 import 'package:meloudy_app/screen/TestAcabadoPantalla.dart';
 import 'package:meloudy_app/screen/historial_tests.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
@@ -13,6 +14,7 @@ import 'package:meloudy_app/screen/pantalla_crear_leccion_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_pregunta_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_editar_leccion_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_preguntas_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_usuarios_profesor.dart';
 import 'package:meloudy_app/widget/microfono_pregunta.dart';
 import 'package:meloudy_app/screen/pregunta_pantalla.dart';
 import 'package:provider/provider.dart';
@@ -32,10 +34,13 @@ class MyApp extends StatelessWidget {
           value: Auth(),
         ),
         ChangeNotifierProxyProvider<Auth, Lecciones>(
-          create: (_) => Lecciones(),
+            create: (_) => Lecciones(),
             update: (ctx, auth, leccionesAnteriores) =>
-                leccionesAnteriores..update(auth.token)
+            leccionesAnteriores..update(auth.token)
         ),
+        ChangeNotifierProxyProvider<Auth, Usuarios>(
+            update: (ctx, auth, usuariosAnteriores) =>
+    Usuarios(auth.token, usuariosAnteriores == null ? [] : usuariosAnteriores.items)),
         ChangeNotifierProxyProvider<Auth, Preguntas>(
             update: (ctx, auth, preguntasAnteriores) =>
               Preguntas(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items)),
@@ -68,6 +73,7 @@ class MyApp extends StatelessWidget {
             PantallaCrearPreguntaProfesor.routeName: (ctx) => PantallaCrearPreguntaProfesor(),
             PantallaCrearLeccionProfesor.routeName: (ctx) => PantallaCrearLeccionProfesor(),
             PantallaEditarLeccionProfesor.routeName: (ctx) => PantallaEditarLeccionProfesor(),
+            PantallaUsuariosProfesor.routeName: (ctx) => PantallaUsuariosProfesor(),
 
 
 

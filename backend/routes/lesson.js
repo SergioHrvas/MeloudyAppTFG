@@ -17,7 +17,7 @@ var storage = multer.diskStorage({
 router.get("/get-lessons/:id", auth, LessonController.index);
 router.post("/create-lesson", auth, LessonController.create);
 // router.get("/get-lesson/:id", auth, LessonController.get);
-// router.put("/update-lesson/:id", auth, LessonController.update);    
+router.put("/update-lesson/:id", auth, LessonController.update);    
 router.delete("/delete-lesson/:id", auth, LessonController.remove);
 router.post("/upload-image", auth, upload.single('image'));
 

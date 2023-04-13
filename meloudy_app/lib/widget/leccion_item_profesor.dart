@@ -14,6 +14,46 @@ class LeccionItemProfesor extends StatelessWidget {
   final String _id;
   LeccionItemProfesor(this._nombre, this._contenido, this._imagenprincipal, this._indice, this._id);
 
+
+  showAlertDialog(BuildContext context) {
+    // Create button
+    Widget okButton = ElevatedButton(
+      child: Text("Confirmar"),
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+
+      onPressed: () {
+        Provider.of<Lecciones>(context, listen: false).borrarLeccion(_id).then((_) {
+          Navigator.of(context).pop();
+        });
+      },
+    );
+
+    Widget noButton = ElevatedButton(
+      child: Text("Cancelar"),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("¿Desea eliminar la lección?"),
+      content: Text("Pulse \"Confirmar\" si desea eliminarla. En caso contrario pulse \"Cancelar\"."),
+      actions: [
+        noButton,
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final leccion = Provider.of<Leccion>(context, listen: false);
@@ -84,7 +124,7 @@ class LeccionItemProfesor extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                         Container(margin: EdgeInsets.symmetric(horizontal: 4),child: ElevatedButton(onPressed: (){
-                          Provider.of<Lecciones>(context, listen: false).borrarLeccion(_id);
+                            showAlertDialog(context);
                         }, child: Text("Borrar"), style: ElevatedButton.styleFrom(primary: Colors.red),)),
                         Container(margin: EdgeInsets.symmetric(horizontal: 4), child: ElevatedButton(onPressed: (){
                           Navigator.pushNamed(context, '/editarleccion', arguments: {

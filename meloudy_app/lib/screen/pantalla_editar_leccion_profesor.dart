@@ -39,6 +39,8 @@ class _PantallaEditarLeccionProfesorState
   var imgs = [];
   var ind = 0;
 
+  var id = "";
+
   final GlobalKey<FormState> _formKey = GlobalKey();
   Map<String, dynamic> _authData = {};
 
@@ -74,6 +76,7 @@ class _PantallaEditarLeccionProfesorState
   }
 
   void borrar(i) {
+    print(i);
     setState(() {
       if(partes[i].child.tipo.toString() == 'img'){
         var j = getIndiceImagen(i);
@@ -127,7 +130,8 @@ class _PantallaEditarLeccionProfesorState
       else{
         img =  file.uri.path.split('/').last;
       }
-    Provider.of<Lecciones>(context,listen: false).crearLeccion(_authData, img).then((value) =>
+      _authData['imagenprincipal'] = img;
+    Provider.of<Lecciones>(context,listen: false).modificarLeccion(_authData, id).then((value) =>
         Navigator.pushReplacementNamed(context, '/leccionesPantallaProfesor')
     );});
 
@@ -138,6 +142,7 @@ class _PantallaEditarLeccionProfesorState
     print("PATH:" + file.path);
 
     imgs.add({"img": img, "file": file});
+    print("asas");
   }
 
 
@@ -145,23 +150,29 @@ class _PantallaEditarLeccionProfesorState
   Widget build(BuildContext context) {
     var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
     print(arg['id']);
-    var leccion = Provider.of<Lecciones>(context, listen: false).findById(arg['id']);
 
-    for(var i = 0; i < leccion.contenido.length; i++){
-      if(leccion.contenido[i].tipo == 'img') {
-        partes.add(
-          Container(
-            width: 350,
-            child: SubirImagen(indice, borrar, funcionImagen, leccion.contenido[i].texto)),);
-      }
-      else if (leccion.contenido[i].tipo == 'texto') {
-        partes.add(
-            Container(child: SubirTexto(indice, borrar, leccion.contenido[i].texto)),);
-      }
-      else if (leccion.contenido[i].tipo == 'titulo'){
-        partes.add(
-          Container(child: SubirTitulo(indice, borrar, leccion.contenido[i].texto)),
-        );
+    id = arg['id'];
+    var leccion = Provider.of<Lecciones>(context, listen: false).findById(arg['id']);
+    if(partes.length == 0) {
+      for (var i = 0; i < leccion.contenido.length; i++) {
+        if (leccion.contenido[i].tipo == 'img') {
+          partes.add(
+            Container(
+                width: 350,
+                child: SubirImagen(indice, borrar, funcionImagen,
+                    leccion.contenido[i].texto)),);
+        }
+        else if (leccion.contenido[i].tipo == 'texto') {
+          partes.add(
+            Container(child: SubirTexto(
+                indice, borrar, leccion.contenido[i].texto)),);
+        }
+        else if (leccion.contenido[i].tipo == 'titulo') {
+          partes.add(
+            Container(
+                child: SubirTitulo(indice, borrar, leccion.contenido[i].texto)),
+          );
+        }
       }
     }
     indice = leccion.contenido.length;
@@ -316,7 +327,7 @@ class _PantallaEditarLeccionProfesorState
                   await submit();
                   }
                 ,
-                child: Text("Crear Lección", style: TextStyle(fontSize: 20),),),)
+                child: Text("Editar Lección", style: TextStyle(fontSize: 20),),),)
             ]),
           ),
         ),

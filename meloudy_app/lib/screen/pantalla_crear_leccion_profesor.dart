@@ -75,7 +75,7 @@ class _PantallaCrearLeccionProfesorState
 
   void borrar(i) {
     setState(() {
-      if(partes[i].child.tipo.toString() == 'img'){
+      if(partes[i].child.tipo.toString() == 'img' && partes[i].child.datos != ""){
         var j = getIndiceImagen(i);
         imgs.removeAt(j);
       }
@@ -127,7 +127,9 @@ class _PantallaCrearLeccionProfesorState
       else{
         img =  file.uri.path.split('/').last;
       }
-    Provider.of<Lecciones>(context,listen: false).crearLeccion(_authData, img).then((value) =>
+      _authData['imagenprincipal'] = img;
+
+      Provider.of<Lecciones>(context,listen: false).crearLeccion(_authData).then((value) =>
         Navigator.pushReplacementNamed(context, '/leccionesPantallaProfesor')
     );});
 

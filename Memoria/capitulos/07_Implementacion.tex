@@ -100,12 +100,12 @@ La API cuenta con las siguientes rutas para la gestión de usuarios:
 La API cuenta con las siguientes rutas para la gestión de lecciones:
 
 \begin{itemize}
-%    \item \textit{POST /api/lesson/get-lessons/\{id\}}: Ruta para crear una lección. Recibe los datos de la lección en el cuerpo de la petición y los almacena en la base de datos. Si la lección se crea correctamente, se devuelve la lección creada.
-%    \item \textit{GET /api/lessons}: Ruta para obtener las lecciones de un usuario. Recibe el token del usuario en el encabezado de la petición y comprueba si el token es correcto. Si el token es correcto, se devuelve las lecciones del usuario.
+    \item \textit{POST /api/lesson/create-lesson}: Ruta para crear una lección. Recibe los datos de la lección en el cuerpo de la petición y los almacena en la base de datos. Si la lección se crea correctamente, se devuelve la lección creada.
     \item \textit{GET /api/lesson/get-lessons/\{id\}}: Ruta para obtener los datos de una lección. Recibe por parámetro el id de la lección y se devuelven los datos de esta.
-%    \item \textit{PUT /api/lessons/:id}: Ruta para actualizar los datos de una lección. Recibe los datos de la lección en el cuerpo de la petición y los actualiza en la base de datos. Si la lección se actualiza correctamente, se devuelve la lección actualizada.
-%    \item \textit{DELETE /api/lessons/:id}: Ruta para eliminar una lección. Recibe el token del usuario en el encabezado de la petición y comprueba si el token es correcto. Si el token es correcto, se elimina la lección de la base de datos.
-  \end{itemize}
+    \item \textit{PUT /api/lessons/:id}: Ruta para actualizar los datos de una lección. Recibe los datos de la lección en el cuerpo de la petición y los actualiza en la base de datos. Si la lección se actualiza correctamente, se devuelve la lección actualizada.
+    \item \textit{DELETE /api/lessons/:id}: Ruta para eliminar una lección. Recibe el token del usuario en el encabezado de la petición y comprueba si el token es correcto. Si el token es correcto, se elimina de la base de datos la lección cuyo id coincida con el recibido.
+    \item \textit{POST /api/lesson/upload-image/}: Ruta para subir una imagen de una lección al servidor. Recibe por parámetro el id de la lección y la imagen en el cuerpo de la petición.
+\end{itemize}
 
 \subsubsection{Preguntas}
 \label{sec:preguntas}
@@ -589,6 +589,20 @@ Para mostrar el color de los botones o de los campos de texto, se ha utilizado l
   \label{fig:example}%
 \end{figure}
 
+\subsection{Historial de tests}
+\textit{Desarrollado en el Sprint 6}
+\label{sec:historial}
+
+\paragraph*{Vista}
+\label{sec:vista}
+La vista de esta pantalla consiste en un distribuidor de columnas (Column) que contiene una lista de tests (ListView) verticalmente. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{imagenes/c7/historialtest.png}
+  \caption{Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.}
+  \label{fig:login}
+\end{figure}
 
 
 \section{Funcionalidad del profesor}
@@ -614,7 +628,7 @@ Se ha implementado una pantalla de dashboard para la gestión de la aplicación.
 \textit{Desarrollado en el Sprint 5}
 
 \paragraph*{Vista}
-La lista de lecciones del profesor es muy similar a la del usuario. Las diferencias, aparte de los estilos, son los botones de tipo ElevatedButton que se han añadido para la gestión de las lecciones y que permiten al profesor crear y eliminar lecciones. En la siguiente imagen se puede ver la pantalla de lista de lecciones del profesor:
+La lista de lecciones del profesor es muy similar a la del usuario. Las diferencias, aparte de los estilos, son los botones de tipo ElevatedButton que se han añadido para la gestión de las lecciones y que permiten al profesor crear, modificar y eliminar lecciones. En la siguiente imagen se puede ver la pantalla de lista de lecciones del profesor:
 
 \begin{figure}[H]
   \centering
@@ -622,3 +636,119 @@ La lista de lecciones del profesor es muy similar a la del usuario. Las diferenc
   \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
   \label{fig:login}
 \end{figure}
+
+\subsection{Borrar lección} 
+\textit{Desarrollado en el Sprint 8}
+El profesor podrá borrar una lección de la lista de lecciones al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la lección.
+
+\paragraph*{Vista}
+Para la vista de la pantalla de borrado de lecciones, se ha utilizado el widget \textit{AlertDialog}, que posee
+un título, un texto descriptivo y dos botones: uno para cancelar el borrado y otro para confirmarlo.
+En la siguiente imagen se puede ver la pantalla de borrado de lecciones:
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{imagenes/c7/borrarleccion.png}
+  \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
+  \label{fig:login}
+\end{figure}
+
+\paragraph*{Lógica}
+Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la lección. Si el profesor confirma, se borra la lección de la base de datos y se actualiza la lista de lecciones.
+Este borrado se realiza llamando a la función borrarLeccion() del provider \textit{Lecciones}. En dicha función se borrará la lección de la lista de lecciones del provider y se actualizará la lista de lecciones de la base de datos enviando
+una petición DELETE a la API con el id de la lección a borrar. La ruta de la petición es \textit{DELETE /api/lesson/delete-lesson}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
+
+\newpage
+\subsection{Crear lección} 
+\textit{Desarrollado en el Sprint 8}
+Los profesores podrán crear lecciones para que los usuarios puedan estudiarlas. Para ello, se ha implementado una pantalla de creación de lecciones que permite al profesor añadir títulos, textos explicativos y contenido multimedia a la lección. Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
+
+
+\paragraph*{Vista}
+La vista de esta pantalla consiste en un formulario de creación de lecciones. Este formulario consta de:
+\begin{itemize}
+  \item Un campo de texto para el título de la lección.
+  \item Un campo de texto para la imagen de la lección.
+  \item Un número variable de campos de texto para los títulos.
+  \item Un número variable de campos de texto para los textos explicativos.
+  \item Un número variable de botones (\textit{ElevatedButton}) para las imágenes.
+  \item Un número variable de campos de texto para los vídeos.
+\end{itemize}
+
+Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. 
+En la parte inferior de la pantalla, se encuentran varios iconos organizados en una fila. Estos iconos permiten al profesor añadir más widgets en el contenido de la lección
+ya que pulsando en uno de estos iconos, se añade un nuevo widget a la lista.
+
+En las siguientes imágenes se puede ver la pantalla de creación de lecciones:
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de lección vacía \#1.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/crearleccion1.png} }}%
+  \qquad
+  \subfloat[\centering Creación de lección vacía \#2.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/crearleccion2.png} }}%
+  \caption{Pantalla de la creación de lecciones sin datos introducidos.}%
+  \label{fig:example}%
+\end{figure}
+
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de lección rellena \#1.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/crearleccion1b.png} }}%
+  \qquad
+  \subfloat[\centering Creación de lección rellena \#2.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/crearleccion2b.png} }}%
+  \caption{Pantalla de la creación de lecciones con datos introducidos. }%
+  \label{fig:example}%
+\end{figure}
+
+\paragraph*{Lógica}
+La funcionalidad de crear lección ha necesitado desarrollar varias utilidades debido a su complejidad. 
+La primera de ellas es la de añadir campos de texto a la pantalla de creación de lecciones. Para ello, se han creado varios widgets que contienen un campo de texto y un botón para eliminar dicho campo. Estos widgets se han llamado \textit{SubirTexto}, \textit{SubirTitulo} y \textit{SubirVideo}. 
+Estos widget se añaden de forma dinámica a un vector de widgets ubicado en la pantalla de creación de lecciones al pulsar el botón correspondiente.
+
+Para subir una imagen se ha hecho uso de la librería \textit{image\_picker}, que permite al usuario seleccionar una imagen de su galería y
+devuelve la ruta de la imagen seleccionada. Una vez tenemos el archivo de la imagen, se manda una petición de tipo multipart con la imagen a la API para que la suba al servidor.
+Para el guardado de la imagen recibida en el servidor, se ha usado el paquete de NodeJS \textit{multer}. Este paquete permite la subida de archivos al servidor y la creación de carpetas para almacenar dichos archivos.
+La ruta de la petición es \textit{POST /api/lesson/upload-image}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente. En caso contrario, se mostrará un mensaje de error.
+
+El profesor también podrá eliminar widgets de la pantalla de creación de lecciones. Para ello, se ha implementado un botón en cada widget que permite al profesor eliminar dicho widget. Al pulsar este botón, se llama al método borrar(). En este se elimina el widget de la lista y se actualiza la pantalla de creación de lecciones al ser un widget de tipo \textit{StatefulWidget}.
+
+Una vez el usuario ha rellenado el formulario de creación de lecciones, se ha implementado un botón que permite al profesor guardar la lección. Al pulsar este botón, se envía una petición POST a la API con los datos de la lección. La ruta de la petición es \textit{POST /api/lesson/create-lesson}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
+
+
+\subsection{Editar lección} 
+\textit{Desarrollado en el Sprint 8}
+Los profesores podrán editar la información y el contenido de las lecciones. Para ello, se ha implementado una pantalla de edición de lecciones que permite al profesor modificar el título, la imagen y todo el contenido.
+
+\paragraph*{Vista}
+La vista de esta pantalla es muy similar a la de la creación de lecciones. La diferencia es que en esta pantalla, los campos de texto ya están rellenos con la información de la lección que se está editando.
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Edición de lección \#1.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/editarleccion.png} }}%
+  \qquad
+  \subfloat[\centering Edición de lección \#2.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/editarleccion2.png} }}%
+  \caption{Pantalla de la edición de lecciones existentes por parte del profesor.}%
+  \label{fig:example}%
+\end{figure}
+
+
+\paragraph*{Lógica}
+En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de lecciones.
+
+La única diferencia es que al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la lección. La ruta de la petición es \textit{PUT /api/lesson/update-lesson}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
+
+\subsection{Lista de preguntas} 
+\textit{Desarrollado en el Sprint 8}
+
+\paragraph*{Vista}
+La lista de preguntas contiene todas las preguntas existentes en el sistema. Se ha utilizado un distribuidor de columnas para mostrar las preguntas verticalmente. 
+Cada pregunta tiene un distribuidor de elementos horizontal que contiene a la izquierda la imagen de la pregunta y a la derecha el texto de la cuestión, el tipo de pregunta y su identificador. 
+Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuario modificar la pregunta.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{imagenes/c7/listapreguntas.png}
+  \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
+  \label{fig:login}
+\end{figure}
+

@@ -171,6 +171,26 @@ const remove = (req, res) => {
     );
 }
 
+const update = (req, res) => {
+    const id = req.params.id;
+    const param = req.body;
+    
+    console.log(param);
+     Lesson.findByIdAndUpdate(id, param, { new: true }, (error, lesson) => {
+        if (error || !lesson) {
+            return res.status(404).json({
+                status: "error",
+                mensaje: "La lección no se ha podido encontrar"
+            });
+        }
+        return res.status(200).json({
+            status: "success",
+            leccion: lesson,
+            mensaje: "La lección se ha actualizado correctamente",
+        });
+    }
+    ); 
+}
 
 
 
@@ -184,6 +204,7 @@ module.exports = {
     create,
     index,
     get,
-    remove
+    remove,
+    update
 }
 
