@@ -176,7 +176,7 @@ abre y se cierra clickando en el icono superior izquierdo de la aplicación. Se 
 Se han desarrollado tres características adicionales relacionadas con la sesión de usuario y que explicaremos con más detalle en cada uno de los apartados de la sesión.
 \begin{itemize}
     \item \textbf{Encriptación de la contraseña:} La contraseña del usuario se encripta antes de ser almacenada en la base de datos para evitar que sea visible por cualquier persona que tenga acceso a esta. De esta forma
-    garantizamos que se cumple el requisito de seguridad de la contraseña. Para esto se ha utilizado un algoritmo hash de la librería \textit{bcrypt}.
+    garantizamos que se cumple el requisito de seguridad de la contraseña. Para esto se ha utilizado un algoritmo hash de la biblioteca \textit{bcrypt}.
     El diagrama que explica el proceso de encriptación se muestra en la siguiente imagen:
     \begin{figure}[H]
       \centering
@@ -197,7 +197,7 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
     \end{figure}
 
     \item \textbf{Sesión entre instancias:} La sesión se mantiene entre instancias de la aplicación. Es decir, si el usuario cierra la aplicación y la vuelve a abrir, no tendrá que volver a iniciar sesión si no ha cerrado la sesión o si el token no ha expirado. 
-    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la librería \textit{shared\_preferences}. De esta forma, cuando el usuario inicia sesión, el token se almacena en el almacenamiento local del dispositivo 
+    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la biblioteca \textit{shared\_preferences}. De esta forma, cuando el usuario inicia sesión, el token se almacena en el almacenamiento local del dispositivo 
     y cuando el usuario cierra la aplicación y la vuelve a abrir, el token se recupera del almacenamiento local del dispositivo y se comprueba si es correcto. Si es correcto, se pasa a la siguiente pantalla. Si no es correcto, se vuelve a la pantalla de inicio de sesión.
     Este token además estará siendo comprobado constantemente para que si el este expira, se cierre la sesión y se vuelva a la pantalla de inicio de sesión evitando accesos no autorizados.
 
@@ -459,21 +459,21 @@ debe ser fiel a la partitura que se muestra en la imagen de la pregunta.
 \end{figure}
 
 \paragraph*{Lógica}
-Para realizar la lógica de esta pantalla se ha utilizado la librería \textit{flutter\_fft}, que permite realizar la transformada de Fourier de una señal de audio.
-Esta librería permite obtener la frecuencia de la señal de audio, que se utiliza para determinar el tono del sonido, y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia.
-Para ello, la librería utiliza un \textit{StreamBuilder} que se encarga de obtener la frecuencia de la señal de audio. 
-Se han realizado algunas modificaciones a la librería para que la detección de notas sea más precisa y se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
+Para realizar la lógica de esta pantalla se ha utilizado la biblioteca \textit{flutter\_fft}, que permite realizar la transformada de Fourier de una señal de audio.
+Esta biblioteca permite obtener la frecuencia de la señal de audio, que se utiliza para determinar el tono del sonido, y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia.
+Para ello, la biblioteca utiliza un \textit{StreamBuilder} que se encarga de obtener la frecuencia de la señal de audio. 
+Se han realizado algunas modificaciones al código de la biblioteca para que la detección de notas sea más precisa y se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
 
-Cabe mencionar que a la librería mencionada anteriormente se le pueden ajustar varios parámetros para que la detección de notas sea más o menos precisa, como el número de muestras que se toman por segundo, el tiempo de espera entre muestras, etc.
+Cabe mencionar que \textit{flutter\_fft} se le pueden ajustar varios parámetros para que la detección de notas sea más o menos precisa, como el número de muestras que se toman por segundo, el tiempo de espera entre muestras, etc.
 
 Cuando el usuario pulsa el botón del micrófono, se inicia el \textit{StreamBuilder}, se cambia el estado del widget para establecer que se está grabando (variable isRecording) y se muestra una retroalimentación
-al usuario cambiando el color del botón para que el usuario sepa que está grabando.
+al usuario cambiando el color del botón para notificar al usuario.
 
-Además, las notas musicales que se obtienen van apareciendo en pantalla para que el usuario sepa qué notas está detectando el programa en cada momento.
+Además, las notas musicales se muestran en pantalla conforme el algoritmo las identifica. De esta manera, el usuario puede comprobar la exactitud de su interpretación en tiempo real.
 Cuando se completan todas las notas de la partitura, se detiene el \textit{StreamBuilder} automáticamente.
-Cuando el usuario pulsa el botón del micrófono cuando esté esta grabando, también se detiene el \textit{StreamBuilder}.
+Además, en el momento en el que el usuario pulsa el botón del micrófono cuando esté esta grabando, también se detiene el \textit{StreamBuilder}.
 
-Si el usuario no está conforme con la respuesta, puede pulsar el botón de "Limpiar" para vaciar las respuestas y puede volver a grabar pulsando el botón de micrófono. Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar a la siguiente pregunta.
+Si el usuario no está conforme con la respuesta, puede pulsar el botón de "Reiniciar" para resetear el ejercicio y puede volver a grabar pulsando el botón de micrófono. Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar a la siguiente pregunta.
 
 \subsubsection{Resultado del test}
 \label{sec:pregunta}
@@ -498,14 +498,15 @@ Dentro de dicho widget tendremos:
 \begin{itemize}
   \item la imagen de la lección (widget \textit{Image}).
   \item un campo de texto para mostrar el número de aciertos (widget \textit{Text}).
-  \item una barra de progreso para mostrar el porcentaje de aciertos (widget \textit{CircularPercentIndicator}). Para este test se ha utilizado la libreria de flutter \textit{percent\_indicator}.
+  \item una barra de progreso para mostrar el porcentaje de aciertos (widget \textit{CircularPercentIndicator}). Para este test se ha utilizado la biblioteca de flutter \textit{percent\_indicator}.
   \item un botón para poder revisar el test (widget \textit{ElevatedButton}).
 \end{itemize}
 
 \paragraph*{Lógica}
 \label{sec:logica}
-La lógica para mostrar el resultado del test es bastante sencilla. Se obtiene el número de aciertos y el número de preguntas del test al enviar el test al servidor, comparando las respuestas del usuario con las respuestas correctas almacenadas en cada una de las preguntas (estas últimas se obtienen mediante el Provider de las preguntas). 
-Una vez obtenidos estos datos, se calcula el porcentaje de aciertos.
+La lógica para mostrar el resultado del test es bastante sencilla.
+Tras enviar las respuestas del usuario mediante la petición del envío de test (POST /create-test-and-progress) al servidor, se comparan las respuestas del usuario con las respuestas correctas almacenadas en cada una de las preguntas (estas últimas se obtienen mediante el Provider de las preguntas). 
+Una vez obtenidos estos datos, se calcula el porcentaje de aciertos y se envía a la vista.
 
 
 
@@ -516,14 +517,13 @@ El usuario podrá revisar las preguntas que haya contestado en un test. Como se 
 \paragraph*{Vista}
 \label{sec:vista}
 La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. La diferencia es que en esta pantalla se muestran las respuestas que ha seleccionado el usuario si son correctas o no.
-Por tanto, solo se han cambiado los colores de los botones y de los textos para mostrar si la respuesta es correcta o no (explicaré con más detalle esto en la sección de lógica).
-
+Por tanto, solo se han cambiado los colores de los botones y de los textos para mostrar si la respuesta es correcta o no.
 
 \paragraph*{Lógica}
 \label{sec:logica}
 La lógica para mostrar la revisión de las preguntas se ha realizado comparando las respuestas del usuario con las respuestas correctas almacenadas en cada una de las preguntas (estas últimas se obtienen mediante el Provider de las preguntas).
 
-Para mostrar si la respuesta es correcta o no, se ha cambiado el color del botón o del campo de texto. Si la respuesta es correcta, se muestra en verde, y si es incorrecta, se muestra en rojo. 
+Para mostrar si la respuesta es correcta o no, se ha cambiado el color del botón o del campo de texto. Si la respuesta es correcta, se muestra en verde y, si es incorrecta, se muestra en rojo. 
 
 Para la validación, se ha llamado a la función \textit{validarRespuesta} que se ha creado en la clase provider \textit{Preguntas}. Esta función comprueba si la(s) respuesta(s) del usuario de la pregunta actual coincide con la(s) respuesta(s) correcta(s). En caso de hacerlo, se devuelve un valor booleano \textit{true}, y si no coincide, se devuelve un valor booleano \textit{false}.
 
@@ -531,22 +531,22 @@ Para mostrar el color de los botones o de los campos de texto, se ha utilizado l
 
 \newpage
 
-\subsubsection{Pregunta de selección única}
+\subsubsection{Revisión de pregunta de selección única}
 \label{sec:pregunic1b}
 \textit{Desarrollado en el Sprint 6}
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Selección única acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/selecunicab.png} }}%
+  \subfloat[\centering Revisión de selección única acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/selecunicab.png} }}%
   \qquad
-  \subfloat[\centering Selección única fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/selecunicab2.png} }}%
+  \subfloat[\centering Revisión de selección única fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/selecunicab2.png} }}%
   \caption{Pantalla de la pregunta de selección única en revisión.}%
   \label{fig:example}%
 \end{figure}
 
 \newpage
 
-\subsubsection{Pregunta de selección múltiple}\mbox{}\\
+\subsubsection{Revisión de pregunta de selección múltiple}\mbox{}\\
 \label{sec:pregunic1b}
 \textit{Desarrollado en el Sprint 6}
 
@@ -561,30 +561,30 @@ Para mostrar el color de los botones o de los campos de texto, se ha utilizado l
 
 \newpage
 
-\subsubsection{Pregunta de entrada de texto}\mbox{}\\
+\subsubsection{Revisión de pregunta de entrada de texto}\mbox{}\\
 
 \label{sec:pregunic1b}
 \textit{Desarrollado en el Sprint 6}
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Entrada de texto acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextob.png} }}%
+  \subfloat[\centering Revisión de entrada de texto acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextob.png} }}%
   \qquad
-  \subfloat[\centering Entrada de texto fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextb2.png} }}%
+  \subfloat[\centering Revisión de entrada de texto fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextb2.png} }}%
   \caption{Pantalla de la pregunta de entrada de texto en revisión.}%
   \label{fig:example}%
 \end{figure}
 
 \newpage
 
-\subsubsection{Pregunta de entrada de micrófono}\mbox{}\\
+\subsubsection{Revisión de pregunta de entrada de micrófono}\mbox{}\\
 
 \label{sec:pregunic1b}
 \textit{Desarrollado en el Sprint 7}
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Entrada de micrófono acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob2.png} }}%
+  \subfloat[\centering Revisión de entrada de micrófono acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob2.png} }}%
   \qquad
-  \subfloat[\centering Entrada de micrófono fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob.png} }}%
+  \subfloat[\centering Revisión de entrada de micrófono fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob.png} }}%
   \caption{Pantalla de la pregunta de entrada de micrófono en revisión.}%
   \label{fig:example}%
 \end{figure}
@@ -706,7 +706,7 @@ La funcionalidad de crear lección ha necesitado desarrollar varias utilidades d
 La primera de ellas es la de añadir campos de texto a la pantalla de creación de lecciones. Para ello, se han creado varios widgets que contienen un campo de texto y un botón para eliminar dicho campo. Estos widgets se han llamado \textit{SubirTexto}, \textit{SubirTitulo} y \textit{SubirVideo}. 
 Estos widget se añaden de forma dinámica a un vector de widgets ubicado en la pantalla de creación de lecciones al pulsar el botón correspondiente.
 
-Para subir una imagen se ha hecho uso de la librería \textit{image\_picker}, que permite al usuario seleccionar una imagen de su galería y
+Para subir una imagen se ha hecho uso de la biblioteca \textit{image\_picker}, que permite al usuario seleccionar una imagen de su galería y
 devuelve la ruta de la imagen seleccionada. Una vez tenemos el archivo de la imagen, se manda una petición de tipo multipart con la imagen a la API para que la suba al servidor.
 Para el guardado de la imagen recibida en el servidor, se ha usado el paquete de NodeJS \textit{multer}. Este paquete permite la subida de archivos al servidor y la creación de carpetas para almacenar dichos archivos.
 La ruta de la petición es \textit{POST /api/lesson/upload-image}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente. En caso contrario, se mostrará un mensaje de error.

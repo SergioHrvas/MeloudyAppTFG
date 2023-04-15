@@ -102,10 +102,10 @@
 \contentsline {subsubsection}{\numberline {7.5.3.4}Pregunta de micrófono}{88}{subsubsection.7.5.3.4}%
 \contentsline {subsubsection}{\numberline {7.5.3.5}Resultado del test}{90}{subsubsection.7.5.3.5}%
 \contentsline {subsection}{\numberline {7.5.4}Revisar pregunta}{92}{subsection.7.5.4}%
-\contentsline {subsubsection}{\numberline {7.5.4.1}Pregunta de selección única}{93}{subsubsection.7.5.4.1}%
-\contentsline {subsubsection}{\numberline {7.5.4.2}Pregunta de selección múltiple}{94}{subsubsection.7.5.4.2}%
-\contentsline {subsubsection}{\numberline {7.5.4.3}Pregunta de entrada de texto}{95}{subsubsection.7.5.4.3}%
-\contentsline {subsubsection}{\numberline {7.5.4.4}Pregunta de entrada de micrófono}{96}{subsubsection.7.5.4.4}%
+\contentsline {subsubsection}{\numberline {7.5.4.1}Revisión de pregunta de selección única}{93}{subsubsection.7.5.4.1}%
+\contentsline {subsubsection}{\numberline {7.5.4.2}Revisión de pregunta de selección múltiple}{94}{subsubsection.7.5.4.2}%
+\contentsline {subsubsection}{\numberline {7.5.4.3}Revisión de pregunta de entrada de texto}{95}{subsubsection.7.5.4.3}%
+\contentsline {subsubsection}{\numberline {7.5.4.4}Revisión de pregunta de entrada de micrófono}{96}{subsubsection.7.5.4.4}%
 \contentsline {subsection}{\numberline {7.5.5}Historial de tests}{96}{subsection.7.5.5}%
 \contentsline {section}{\numberline {7.6}Funcionalidad del profesor}{97}{section.7.6}%
 \contentsline {subsection}{\numberline {7.6.1}Dashboard}{97}{subsection.7.6.1}%
