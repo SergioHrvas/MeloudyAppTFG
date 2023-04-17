@@ -34,11 +34,11 @@ class _PantallaEditarLeccionProfesorState
 
   final ImagePicker picker = ImagePicker();
   var partes = [];
-
   var indice = 0;
   var imgs = [];
   var ind = 0;
-
+  var leccion;
+var recienborrado = false;
   var id = "";
 
   final GlobalKey<FormState> _formKey = GlobalKey();
@@ -55,10 +55,10 @@ class _PantallaEditarLeccionProfesorState
     });
   }
 
+
   int getProximaImagen(ind){
     for(var i = ind; i < _authData['contenido'].length; i++){
       if(_authData['contenido'][i]['tipo'] == 'img'){
-        print("aaa" +i.toString());
         return i;
       }
     }
@@ -76,13 +76,19 @@ class _PantallaEditarLeccionProfesorState
   }
 
   void borrar(i) {
-    print(i);
+
     setState(() {
       if(partes[i].child.tipo.toString() == 'img'){
         var j = getIndiceImagen(i);
         imgs.removeAt(j);
       }
+
+
       partes.removeAt(i);
+
+      if(partes.length == 0)
+        recienborrado = true;
+
       for (var j = i; j < partes.length; j++) {
         partes[j].child.cambiarIndice(i);
       }
@@ -94,6 +100,7 @@ class _PantallaEditarLeccionProfesorState
     List<Map<String, String>> vectordatos = [];
 
     for(var i = 0; i < partes.length; i++){
+
        vectordatos.add({
         'tipo':partes[i].child.tipo.toString(),
         'texto':partes[i].child.datos.toString(),
@@ -108,30 +115,36 @@ class _PantallaEditarLeccionProfesorState
     var token = Provider.of<Auth>(context, listen: false).token;
 
     for(var i = 0; i < imgs.length; i++){
-      await ImageController().upload(imgs[i]['img'], token).then((_){
-        var img;
-        if(imgs[i]['img'] == null){
-          img = "musica.png";
-        }
-        else{
-          img = imgs[i]['file'].path.split('/').last;
-        }
-        var j = getProximaImagen(ind);
-        ind = j;
-        _authData['contenido'][ind]['texto'] =  img;
-        ind++;
-      });
+      if(imgs[i] != null) {
+        await ImageController().upload(imgs[i]['img'], token).then((_) {
+          var img;
+          if (imgs[i]['img'] == null) {
+            img = "musica.png";
+          }
+          else {
+            img = imgs[i]['file'].path
+                .split('/')
+                .last;
+          }
+          var j = getProximaImagen(ind);
+          ind = j;
+          _authData['contenido'][ind]['texto'] = img;
+          ind++;
+        });
+      }
     }
     await ImageController().upload(_image, token).then((_){
       var img;
-      if(_image == null){
-        img = "musica.png";
+      if(_image == null) {
+        img = leccion.imagenprincipal;
       }
       else{
         img =  file.uri.path.split('/').last;
+
       }
       _authData['imagenprincipal'] = img;
-    Provider.of<Lecciones>(context,listen: false).modificarLeccion(_authData, id).then((value) =>
+
+      Provider.of<Lecciones>(context,listen: false).modificarLeccion(_authData, id).then((value) =>
         Navigator.pushReplacementNamed(context, '/leccionesPantallaProfesor')
     );});
 
@@ -139,23 +152,24 @@ class _PantallaEditarLeccionProfesorState
   }
 
   void funcionImagen(img, file){
-    print("PATH:" + file.path);
-
     imgs.add({"img": img, "file": file});
-    print("asas");
   }
 
 
   @override
   Widget build(BuildContext context) {
+
     var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
     print(arg['id']);
 
     id = arg['id'];
-    var leccion = Provider.of<Lecciones>(context, listen: false).findById(arg['id']);
-    if(partes.length == 0) {
+    leccion = Provider.of<Lecciones>(context, listen: false).findById(arg['id']);
+
+      if(partes.length == 0 && recienborrado == false) {
+        recienborrado = false;
       for (var i = 0; i < leccion.contenido.length; i++) {
         if (leccion.contenido[i].tipo == 'img') {
+          imgs.add(null);
           partes.add(
             Container(
                 width: 350,
@@ -173,10 +187,13 @@ class _PantallaEditarLeccionProfesorState
                 child: SubirTitulo(indice, borrar, leccion.contenido[i].texto)),
           );
         }
+        indice++;
       }
-    }
+
     indice = leccion.contenido.length;
-    return Scaffold(
+      }
+
+      return Scaffold(
       appBar: AppBar(),
       drawer: DrawerApp(),
       body: SingleChildScrollView(
@@ -187,6 +204,7 @@ class _PantallaEditarLeccionProfesorState
 
             child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Container(
+
                 width: 250,
                 child: TextFormField(
                   onSaved: (value){

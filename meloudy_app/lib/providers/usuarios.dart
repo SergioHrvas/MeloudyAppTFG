@@ -41,6 +41,12 @@ class Usuarios with ChangeNotifier {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
 
+      for(var i = 0; i < extractedData['usuario'].length; i++) {
+        usuarios.add(
+            Usuario(id: extractedData['usuario'][i]['_id'],
+                nombre: extractedData['usuario'][i]['nombre'])
+        );
+      }
       if (extractedData == null) {
         return;
       }

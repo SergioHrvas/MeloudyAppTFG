@@ -57,13 +57,13 @@ const index = (req, res) => {
         if (error || !users) {
             return res.status(404).json({
                 status: "error",
-                mensaje: "El usuario no se ha podido encontrar"
+                mensaje: "Los usuarios no se han podido encontrar"
             });
         }
         return res.status(200).json({
             status: "success",
             usuario: users,
-            mensaje: "El usuario se ha encontrado"
+            mensaje: "Los usuarios se han encontrado"
         });
     }
     );
