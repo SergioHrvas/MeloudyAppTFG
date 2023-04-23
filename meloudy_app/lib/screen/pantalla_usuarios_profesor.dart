@@ -41,7 +41,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                   color: Colors.white,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage('http://${IP.ip}:5000/img/musica.png}'),
+                    image: NetworkImage('http://${IP.ip}:5000/img/${usuarios[i].foto}'),
                   ),
                 ),
               ),
@@ -56,7 +56,12 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                             margin: EdgeInsets.only(left: 15,bottom: 10),
                             child: Row(
                               children: [
-                                Expanded(child: Text(usuarios[i].nombre, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),)),
+                                Expanded(child: Row(children: [
+                                  Text(usuarios[i].nombre + " ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                                  Text(usuarios[i].apellidos[0] + " ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                                  Text(usuarios[i].apellidos[1], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                                ]
+                  )),
                                 Container(margin: EdgeInsets.only(left: 10),
                                     child: Icon(Icons.edit_document, color: Colors.blue))
                               ],
@@ -64,7 +69,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                         Container(
                             margin: EdgeInsets.only(left: 10),
                             alignment: Alignment.centerLeft,
-                            child: Text("Id: " + usuarios[i].id)),
+                            child: Text("" + usuarios[i].id, style: TextStyle(color: Colors.grey),)),
 
                       ],
                     ),

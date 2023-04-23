@@ -184,7 +184,7 @@ var recienborrado = false;
         else if (leccion.contenido[i].tipo == 'titulo') {
           partes.add(
             Container(
-                child: SubirTitulo(indice, borrar, leccion.contenido[i].texto)),
+                child: SubirTitulo(indice, borrar, leccion.contenido[i].texto, "Introduzca el título del apartado")),
           );
         }
         indice++;
@@ -312,7 +312,7 @@ var recienborrado = false;
                       onTap: () {
                         setState(() {
                           partes.add(
-                            Container(child: SubirTitulo(indice, borrar, "")),
+                            Container(child: SubirTitulo(indice, borrar, "", "Introduzca el título del apartado")),
                           );
                           indice++;
                         });

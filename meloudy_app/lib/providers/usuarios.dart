@@ -38,13 +38,27 @@ class Usuarios with ChangeNotifier {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/user/get-users/?auth=$authToken');
     try {
+      usuarios = [];
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
 
       for(var i = 0; i < extractedData['usuario'].length; i++) {
+        var apellidos = extractedData['usuario'][i]['apellidos'];
+        List<String> apellidosmap = [];
+
+        for(var j = 0; j < apellidos.length; j++){
+          apellidosmap.add(apellidos[j]);
+        }
+
         usuarios.add(
             Usuario(id: extractedData['usuario'][i]['_id'],
-                nombre: extractedData['usuario'][i]['nombre'])
+                nombre: extractedData['usuario'][i]['nombre'],
+                foto: extractedData['usuario'][i]['foto'],
+                apellidos: apellidosmap,
+                correo: extractedData['usuario'][i]['correo'],
+                username: extractedData['usuario'][i]['username']
+
+            )
         );
       }
       if (extractedData == null) {

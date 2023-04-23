@@ -1,3 +1,5 @@
+import 'package:meloudy_app/providers/notas.dart';
+import 'package:meloudy_app/providers/opciones.dart';
 import 'package:meloudy_app/providers/preguntas.dart';
 import 'package:meloudy_app/providers/preguntas_profesor.dart';
 import 'package:meloudy_app/providers/usuarios.dart';
@@ -46,7 +48,13 @@ class MyApp extends StatelessWidget {
               Preguntas(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items)),
       ChangeNotifierProxyProvider<Auth, PreguntasProfesor>(
           update: (ctx, auth, preguntasAnteriores) =>
-              PreguntasProfesor(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items))
+              PreguntasProfesor(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items)),
+        ChangeNotifierProxyProvider<Auth, Opciones>(
+            update: (ctx, auth, opcionesanteriores,) =>
+                Opciones(opcionesanteriores == null ? [] : opcionesanteriores.items)),
+        ChangeNotifierProxyProvider<Auth, Notas>(
+            update: (ctx, auth, notasanteriores, ) =>
+                Notas(notasanteriores == null ? [] : notasanteriores.items))
       ],
       child: Consumer<Auth>(
         builder: (ctx, auth, _) => MaterialApp(

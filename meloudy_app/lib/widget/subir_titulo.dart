@@ -5,13 +5,15 @@ class SubirTitulo extends StatelessWidget{
   var indice;
   var f;
   final tipo = "titulo";
+  var etiqueta;
   var datos = "";
 
 
-  SubirTitulo(ind, borrar, texto){
+  SubirTitulo(ind, borrar, texto, et){
     indice = ind;
     f = borrar;
     datos = texto;
+    etiqueta = et;
   }
 
   void cambiarIndice(i){

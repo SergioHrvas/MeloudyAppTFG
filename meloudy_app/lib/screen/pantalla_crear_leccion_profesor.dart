@@ -262,7 +262,7 @@ class _PantallaCrearLeccionProfesorState
                       onTap: () {
                         setState(() {
                           partes.add(
-                            Container(child: SubirTitulo(indice, borrar, "")),
+                            Container(child: SubirTitulo(indice, borrar, "", "Introduzca el título del apartado")),
                           );
                           indice++;
                         });

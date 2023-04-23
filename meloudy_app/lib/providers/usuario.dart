@@ -5,9 +5,9 @@ import 'package:meloudy_app/providers/test.dart';
 class Usuario with ChangeNotifier {
   final String id;
   final String nombre;
-  final String apellidos;
+  final List<String> apellidos;
   final String username;
-  final String imagen;
+  final String foto;
   final String correo;
 
 
@@ -19,7 +19,7 @@ class Usuario with ChangeNotifier {
     @required this.apellidos,
     @required this.correo,
     @required this.username,
-    @required this.imagen,
+    @required this.foto,
 
   });
 

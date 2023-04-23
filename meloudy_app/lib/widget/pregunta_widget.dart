@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:meloudy_app/widget/microfono_pregunta.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/widget/opcion_boton.dart';
+import '../ips.dart';
 import '../providers/lecciones.dart';
 import '../providers/pregunta.dart';
 import '../providers/preguntas.dart';
@@ -122,7 +123,7 @@ class _PreguntaWidgetState extends State {
                         width: 250,
                         margin: EdgeInsets.only(bottom: 20),
                         child: Container(
-                            child: Image.asset('assets/${preguntas[indice].imagen}',))),
+                            child: Image.network('http://${IP.ip}:5000/img/${preguntas[indice].imagen}'))),
                     Container(
                         child: IconButton(
                       iconSize: 60,

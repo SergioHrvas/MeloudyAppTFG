@@ -11,62 +11,39 @@ import 'package:provider/provider.dart';
 
 import 'auth.dart';
 
-class Opciones with ChangeNotifier {
-  List<bool> opciones = [];
+class Notas with ChangeNotifier {
+  List<String> notas = [];
 
-  Opciones(this.opciones);
+  Notas(this.notas);
 
-  var valor = false;
-
-
-  int setValore(){
-    valor = !valor;
-    notifyListeners();
+  List<String> get items {
+    return [...notas];
   }
 
-
-  bool get val{
-    return valor;
+  void anadirNota(){
+    notas.add("Do");
   }
 
-
-  List<bool> get items {
-    // if (_showFavoritesOnly) {
-    //   return _items.where((prodItem) => prodItem.isFavorite).toList();
-    // }
-    return [...opciones];
+  void borrarNota(i){
+    notas.removeAt(i);
   }
 
-  void anadirOpcion(){
-    opciones.add(false);
+  void setValor(indice, nota){
+    notas[indice] = nota;
+    print(indice.toString() + " " + nota);
 
-    for(var i = 0; i < opciones.length; i++){
-      print(opciones[i]);
+    print("=======");
+    for(var i = 0; i < notas.length; i++){
+      print(notas[i]);
     }
-  }
-
-  void borrarOpcion(i){
-    opciones.removeAt(i);
-  }
-
-  void setValor(indice, tipo){
-    if(tipo == 'unica' && opciones[indice]==false){
-      for(var i = 0; i < opciones.length; i++){
-        opciones[i] = false;
-      }
-    }
-    opciones[indice] = !opciones[indice];
-    notifyListeners();
   }
 
   void limpiar(){
-    opciones = [];
+    notas = [];
   }
 
-
-
-  bool getOpcion(i){
-    return opciones[i];
+  String getNota(i){
+    return notas[i];
   }
 
 

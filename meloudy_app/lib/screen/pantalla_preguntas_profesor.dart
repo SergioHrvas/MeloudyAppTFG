@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../providers/auth.dart';
+import '../providers/lecciones.dart';
 import '../providers/preguntas_profesor.dart';
 import '../widget/drawer_app.dart';
 
@@ -90,7 +92,11 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                   child: ElevatedButton(onPressed:(){
-                    Navigator.pushNamed(context, '/crearpregunta');
+                    var id = Provider.of<Auth>(context, listen:false).userId;
+                    Provider.of<Lecciones>(context, listen: false).fetchAndSetLecciones(id).then((_){
+                      Navigator.pushNamed(context, '/crearpregunta');
+                    }
+                    );
                   },
                     child: Container(
                       width: 175,

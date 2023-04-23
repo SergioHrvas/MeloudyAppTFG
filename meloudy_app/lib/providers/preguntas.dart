@@ -11,10 +11,8 @@ import 'package:provider/provider.dart';
 
 import 'auth.dart';
 
-
-
 class Preguntas with ChangeNotifier {
-  List <Pregunta> preguntas = [];
+  List<Pregunta> preguntas = [];
   int indice = 0;
   String idLeccion;
   final String authToken;
@@ -26,51 +24,49 @@ class Preguntas with ChangeNotifier {
 
   Preguntas(this.authToken, this.preguntas);
 
-  void setVariable(){
+  void setVariable() {
     variable++;
   }
 
-
-  void limpiarVariable(){
+  void limpiarVariable() {
     variable = 0;
   }
-  void setModo(nuevomodo){
+
+  void setModo(nuevomodo) {
     modo = nuevomodo;
     indice = 0;
   }
 
   void setRespuestas(resp) {
-    if(preguntas[indice].tipo == 'microfono'){
+    if (preguntas[indice].tipo == 'microfono') {
       preguntas[indice].respuestas.add(resp);
-    }
-    else{
-    if(preguntas[indice].respuestas.contains(resp)) {
-      if(preguntas[indice].tipo == 'multiple'){
-        preguntas[indice].respuestas.remove(resp);
+    } else {
+      if (preguntas[indice].respuestas.contains(resp)) {
+        if (preguntas[indice].tipo == 'multiple') {
+          preguntas[indice].respuestas.remove(resp);
+        }
+      } else {
+        if (preguntas[indice].tipo == 'texto' ||
+            preguntas[indice].tipo == 'unica') {
+          preguntas[indice]
+              .respuestas
+              .removeRange(0, preguntas[indice].respuestas.length);
+          preguntas[indice].respuestas.add(resp);
+        } else if (preguntas[indice].tipo == 'multiple') {
+          preguntas[indice].respuestas.add(resp);
+        }
       }
-    }
-    else {
-      if (preguntas[indice].tipo == 'texto' ||
-          preguntas[indice].tipo == 'unica') {
-        preguntas[indice].respuestas.removeRange(
-            0, preguntas[indice].respuestas.length);
-        preguntas[indice].respuestas.add(resp);
-      }
-      else if (preguntas[indice].tipo == 'multiple') {
-        preguntas[indice].respuestas.add(resp);
-      }
-    }
     }
 
-  //  print("RESPUESTAS: " + preguntas[indice].respuestas.toString());
+    //  print("RESPUESTAS: " + preguntas[indice].respuestas.toString());
   }
 
-  void setIdLeccion(id){
+  void setIdLeccion(id) {
     idLeccion = id;
     print("ID " + idLeccion);
   }
 
-  void setIdUser(id){
+  void setIdUser(id) {
     userId = id;
   }
 
@@ -82,15 +78,15 @@ class Preguntas with ChangeNotifier {
   }
 
   String get idtest {
-
     return testId;
   }
 
-  Future<void> setPulsado(num) async{
+  Future<void> setPulsado(num) async {
     preguntas[indice].pulsado[num] = !preguntas[indice].pulsado[num];
-    if(preguntas[indice].tipo == 'unica' && preguntas[indice].pulsado[num] == true){
-      for(var i = 0; i < preguntas[indice].pulsado.length; i++){
-        if (i != num){
+    if (preguntas[indice].tipo == 'unica' &&
+        preguntas[indice].pulsado[num] == true) {
+      for (var i = 0; i < preguntas[indice].pulsado.length; i++) {
+        if (i != num) {
           preguntas[indice].pulsado[i] = false;
         }
       }
@@ -98,61 +94,60 @@ class Preguntas with ChangeNotifier {
     notifyListeners();
   }
 
-
-  bool getPulsado(num){
+  bool getPulsado(num) {
     return preguntas[indice].pulsado[num];
   }
 
-  String getRespuesta(){
+  String getRespuesta() {
     var resp = "";
-    if(preguntas[indice].respuestas.length > 0){
+    if (preguntas[indice].respuestas.length > 0) {
       resp = preguntas[indice].respuestas[0];
     }
     return resp;
   }
 
-
   int get indiceValor {
     return indice;
   }
 
-  int getAciertos(){
+  int getAciertos() {
     return aciertos;
   }
 
-  int calcularAciertos(){
+  int calcularAciertos() {
     aciertos = 0;
     var fallo;
-    for(var i = 0; i < preguntas.length; i++){
+    for (var i = 0; i < preguntas.length; i++) {
       fallo = false;
-      if(preguntas[i].respuestas.length <= 0){
+      if (preguntas[i].respuestas.length <= 0) {
         fallo = true;
       }
-      for (var j = 0; j < preguntas[i].respuestas.length && !fallo; j++){
-        if(preguntas[i].tipo == 'microfono'){
-          if(preguntas[i].respuestas.length == preguntas[i].respuestascorrectas.length) {
-            if (preguntas[i].respuestas[j] != preguntas[i].respuestascorrectas[j]){
+      for (var j = 0; j < preguntas[i].respuestas.length && !fallo; j++) {
+        if (preguntas[i].tipo == 'microfono') {
+          if (preguntas[i].respuestas.length ==
+              preguntas[i].respuestascorrectas.length) {
+            if (preguntas[i].respuestas[j] !=
+                preguntas[i].respuestascorrectas[j]) {
               fallo = true;
             }
-          }
-          else{
+          } else {
             fallo = true;
           }
-        }
-        else {
-          if (preguntas[i].respuestascorrectas.contains(
-              preguntas[i].respuestas[j]) == false ||
+        } else {
+          if (preguntas[i]
+                      .respuestascorrectas
+                      .contains(preguntas[i].respuestas[j]) ==
+                  false ||
               (preguntas[i].tipo == 'multiple' &&
                   preguntas[i].respuestascorrectas.length !=
                       preguntas[i].respuestas.length)) {
             fallo = true;
           }
         }
-
       }
-      if(!fallo){
+      if (!fallo) {
         aciertos++;
-      /* print("------------VERIFICADOR------------");
+        /* print("------------VERIFICADOR------------");
         print("pregunta" + i.toString());
         print("respuestas: " + preguntas[i].respuestas.toString());
 
@@ -160,7 +155,6 @@ class Preguntas with ChangeNotifier {
         print("CONTADOR:" + aciertos.toString());*/
       }
     }
-
   }
 
   Future<void> fetchAndSetPreguntas(leccion) async {
@@ -182,7 +176,6 @@ class Preguntas with ChangeNotifier {
       preguntas = [];
       var n = extractedData['preguntas'].length;
 
-
       var num_preguntas = min<int>(10, n);
 
       cambiarPreguntas(num_preguntas, extractedData);
@@ -192,7 +185,6 @@ class Preguntas with ChangeNotifier {
       throw (error);
     }
   }
-
 
   Future<void> setPreguntas(test) async {
     final url = Uri.parse(
@@ -208,16 +200,19 @@ class Preguntas with ChangeNotifier {
         return;
       }
 
-
       var num_preguntas = extractedData['preguntas'].length;
 
       cambiarPreguntas(num_preguntas, extractedData);
 
       //Cambiamos las respuestas
 
-    for(var i = 0; i < extractedData['test']['preguntas'].length; i++){
-        for(var j = 0; j < extractedData['test']['preguntas'][i]['respuestas'].length; j++) {
-          preguntas[i].respuestas.add(extractedData['test']['preguntas'][i]['respuestas'][j]);
+      for (var i = 0; i < extractedData['test']['preguntas'].length; i++) {
+        for (var j = 0;
+            j < extractedData['test']['preguntas'][i]['respuestas'].length;
+            j++) {
+          preguntas[i]
+              .respuestas
+              .add(extractedData['test']['preguntas'][i]['respuestas'][j]);
         }
       }
       notifyListeners();
@@ -226,12 +221,11 @@ class Preguntas with ChangeNotifier {
     }
   }
 
-  void cambiarPreguntas(num_preguntas, extractedData){
+  void cambiarPreguntas(num_preguntas, extractedData) {
     final List<Pregunta> preguntasCargadas = [];
     var preguntasLista = extractedData['preguntas'];
 
     for (var i = 0; i < num_preguntas; i++) {
-
       final List<String> contenidoCargado = [];
       var contenidoLista = extractedData['preguntas'][i]['opciones'];
       List<bool> pulsadoLista = [];
@@ -241,12 +235,12 @@ class Preguntas with ChangeNotifier {
       }
 
       List<String> respuestasCorrectas = [];
-      var contenidoListaRP = extractedData['preguntas'][i]['respuestascorrectas'];
+      var contenidoListaRP =
+          extractedData['preguntas'][i]['respuestascorrectas'];
 
       for (var j = 0; j < contenidoListaRP.length; j++) {
         respuestasCorrectas.add(contenidoListaRP[j]);
       }
-
 
       preguntasCargadas.add(Pregunta(
           id: preguntasLista[i]['_id'],
@@ -255,46 +249,44 @@ class Preguntas with ChangeNotifier {
           imagen: preguntasLista[i]['imagen'],
           opciones: contenidoCargado,
           pulsado: pulsadoLista,
-          respuestascorrectas: respuestasCorrectas
-      ));
+          respuestascorrectas: respuestasCorrectas));
     }
     preguntas = preguntasCargadas;
-
   }
 
-  void vaciarPreguntas(){
+  void vaciarPreguntas() {
     preguntas = [];
   }
 
-  void vaciarRespuestas(){
+  void vaciarRespuestas() {
     preguntas[indice].respuestas = [];
   }
 
-  Future<void> siguientePregunta() async{
+  Future<void> siguientePregunta() async {
     indice++;
     notifyListeners();
-
   }
 
-  Future<void> preguntaAnterior() async{
+  Future<void> preguntaAnterior() async {
     indice--;
     notifyListeners();
   }
 
-  Future<void> enviarTest() async{
-    final url = Uri.parse('http://${IP.ip}:5000/api/progress/create-test-and-progress');
+  Future<void> enviarTest() async {
+    final url =
+        Uri.parse('http://${IP.ip}:5000/api/progress/create-test-and-progress');
 
     print("IDLECCION" + idLeccion);
-    try{
+    try {
       aciertos = getAciertos();
       var aprobado = false;
-      if(aciertos>=5){
+      if (aciertos >= 5) {
         aprobado = true;
       }
 
       var preguntasTest = <Map<String, dynamic>>[];
 
-      for(var i = 0; i < preguntas.length; i++){
+      for (var i = 0; i < preguntas.length; i++) {
         preguntasTest.add(<String, dynamic>{
           "idPregunta": preguntas[i].id,
           "respuestas": preguntas[i].respuestas,
@@ -326,13 +318,38 @@ class Preguntas with ChangeNotifier {
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);
       }
-
-
-    } catch (error){
-        throw(error);
+    } catch (error) {
+      throw (error);
     }
   }
 
+  crearPregunta(Map<String, dynamic> authData) async {
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/question/create-question?auth=$authToken');
+      print(authData);
 
 
+
+    var cuerpo = json.encode({
+      "tipo": authData['tipo'],
+      "cuestion": authData['cuestion'],
+      "imagen": authData['imagen'],
+      "leccion": authData['leccion'],
+      "opciones": authData['opciones'],
+      "respuestascorrectas" : authData['respuestascorrectas']
+    });
+
+    print(cuerpo);
+
+    final response = await http.post(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: cuerpo);
+
+    print(response.body);
+
+
+  }
 }

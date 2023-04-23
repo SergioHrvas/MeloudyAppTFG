@@ -4,75 +4,65 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../providers/notas.dart';
 
-class SubirImagen extends StatelessWidget{
+class SubirNotas extends StatelessWidget {
   var indice;
   final f;
-  final funcionImagen;
-  final tipo = "img";
   var datos = "";
+  var widget;
 
-  SubirImagen(this.indice, this.f, this.funcionImagen, this.datos);
+  SubirNotas(this.indice, this.f, this.datos);
 
-  void cambiarIndice(i){
+  void cambiarIndice(i) {
+    indice = i;
+    print(widget.children[0].cambiarIndice(i));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    widget = Column(
+      children: [
+        SubirNotasFul(this.datos, this.indice),
+        GestureDetector(
+            onTap: () {
+              f(indice);
+            },
+            child: Icon(
+              Icons.delete_forever,
+              size: 40,
+              color: Colors.red,
+            ))
+      ],
+    );
+    return widget;
+  }
+}
+
+class SubirNotasFul extends StatefulWidget {
+  var indice;
+  final datos;
+
+  void cambiarIndice(i) {
     indice = i;
   }
 
-  @override
-  Widget build(BuildContext context){
-    return Column(
-      children: [
-        SubirImagenFul(this.funcionImagen, this.datos),
-        GestureDetector(onTap: (){
-          f(indice);
-        },
-            child: Icon(Icons.delete_forever, size: 40, color:Colors.red,))
-      ],
-    );
-  }
-}
-
-class SubirImagenFul extends StatefulWidget{
-
-  final funcionImagen;
-  final datos;
-  SubirImagenFul(this.funcionImagen, this.datos);
+  SubirNotasFul(this.datos, this.indice);
 
   @override
-  _SubirImagenState createState() =>
-      _SubirImagenState(this.funcionImagen, this.datos);
+  _SubirNotasState createState() => _SubirNotasState(this.datos, this.indice);
 }
 
-class _SubirImagenState extends State<SubirImagenFul>{
-
-  PickedFile image;
-  File file;
+class _SubirNotasState extends State<SubirNotasFul> {
+  final indice;
+  var nota = "Do";
   var datos;
-  final funcionImagen;
+  final notas = ["Do", "Re", "Mi", "Fa", "Sol", "La", "Si"];
 
-  _SubirImagenState(this.funcionImagen, this.datos);
-
-  final ImagePicker picker = ImagePicker();
-
-
-
-
-
-  Future getImage(ImageSource media) async {
-    var img = await picker.getImage(source: media);
-    setState(() {
-      file = File(img.path);
-      image = img;
-    });
-
-    print("PATH:" + file.path);
-    funcionImagen(img, file);
-  }
-
-
-
+  _SubirNotasState(this.datos, this.indice);
 
   @override
   Widget build(BuildContext context) {
@@ -80,31 +70,29 @@ class _SubirImagenState extends State<SubirImagenFul>{
 
     return Container(
       margin: EdgeInsets.only(top: 30),
-
       child: Column(
         children: [
-
-
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              file == null ? ElevatedButton(onPressed: (){
-
-                getImage(ImageSource.gallery);
-
-
-              }, child: Text("Subir imagen")) : Container(),
-              Container(
-                width: 120,
-                child: file != null ? Image.file(File(file.path)) : this.datos != "" ? Image.network('http://${IP.ip}:5000/img/${this.datos}') : Container(),
-              ),
+              DropdownButton(
+                  items: notas.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  value: nota, //CAMBIAR ESTO
+                  onChanged: (String newvalue) {
+                    setState(() {
+                      nota = newvalue;
+                      Provider.of<Notas>(context, listen: false).setValor(indice, nota);
+                    });
+                  }),
             ],
           ),
-
-
         ],
       ),
     );
   }
-  
 }
