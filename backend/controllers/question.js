@@ -138,11 +138,33 @@ const remove = (req, res) => {
 }
 
 
+const update = (req, res) => {
+    const id = req.params.id;
+
+    Question.findByIdAndUpdate(id, req.body, { new: true }, (error, question) => {
+        if (error || !question) {
+            return res.status(404).json({
+                status: "error",
+                mensaje: "La pregunta no se ha podido encontrar"
+            });
+        }
+        return res.status(200).json({
+            status: "success",
+            pregunta: question,
+            mensaje: "La pregunta se ha encontrado"
+        });
+    }
+    );
+}
+
+
+
 module.exports = {
     create,
     index,
     indexTest,
     get,
     getquestions,
-    remove
+    remove,
+    update
 }
