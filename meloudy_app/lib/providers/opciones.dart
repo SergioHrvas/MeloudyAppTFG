@@ -12,12 +12,12 @@ import 'package:provider/provider.dart';
 import 'auth.dart';
 
 class Opciones with ChangeNotifier {
-  List<bool> opciones = [];
+  List<dynamic> opciones = [];
   List<String> opcionesTexto = [];
 
   Opciones(this.opciones);
 
-  List<bool> get items {
+  List<dynamic> get items {
     return [...opciones];
   }
 
@@ -28,6 +28,19 @@ class Opciones with ChangeNotifier {
   void anadirOpcion(){
     opciones.add(false);
     opcionesTexto.add("");
+  }
+
+
+  Future<void> setOpciones(respuestascorrectas, opcs) async{
+
+    opciones = respuestascorrectas;
+    opcionesTexto = opcs;
+
+    print("OPCIONES: " + opcs.toString());
+    print("OPCIONES2: " + opcionesTexto.toString());
+    print("OPCIONES3: " + respuestascorrectas.toString());
+
+
   }
 
 
@@ -43,6 +56,7 @@ class Opciones with ChangeNotifier {
       }
     }
     opciones[indice] = !opciones[indice];
+    print(opciones.toString());
     notifyListeners();
   }
 

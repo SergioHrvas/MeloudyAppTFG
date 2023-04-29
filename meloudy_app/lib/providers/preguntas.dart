@@ -292,13 +292,7 @@ class Preguntas with ChangeNotifier {
           "respuestas": preguntas[i].respuestas,
         });
       }
-      print("===========");
 
-      print(idLeccion);
-      print(preguntasTest.toString());
-      print(userId);
-      print(aprobado);
-      print("===========");
       final response = await http.post(url,
           headers: {
             "Accept": "application/json",
@@ -313,7 +307,6 @@ class Preguntas with ChangeNotifier {
 
       final responseData = json.decode(response.body);
       testId = responseData['test'];
-      print(responseData.toString());
       return testId;
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);
@@ -323,10 +316,38 @@ class Preguntas with ChangeNotifier {
     }
   }
 
+  actualizarPregunta(Map<String, dynamic> authData, id) async {
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/question/update-question/${id}?auth=$authToken');
+      print(authData);
+
+
+
+    var cuerpo = json.encode({
+      "tipo": authData['tipo'],
+      "cuestion": authData['cuestion'],
+      "imagen": authData['imagen'],
+      "leccion": authData['leccion'],
+      "opciones": authData['opciones'],
+      "respuestascorrectas" : authData['respuestascorrectas']
+    });
+
+    print("CUERPO: " + cuerpo.toString());
+
+    final response = await http.put(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: cuerpo);
+
+    print("RESPONSE: "  + response.body.toString());
+  }
+
   crearPregunta(Map<String, dynamic> authData) async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/create-question?auth=$authToken');
-      print(authData);
+    print(authData);
 
 
 

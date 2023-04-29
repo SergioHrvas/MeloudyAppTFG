@@ -516,7 +516,7 @@ El usuario podrá revisar las preguntas que haya contestado en un test. Como se 
 
 \paragraph*{Vista}
 \label{sec:vista}
-La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. La diferencia es que en esta pantalla se muestran las respuestas que ha seleccionado el usuario si son correctas o no.
+La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. La diferencia es que se muestran las respuestas que ha seleccionado el usuario si son correctas o no.
 Por tanto, solo se han cambiado los colores de los botones y de los textos para mostrar si la respuesta es correcta o no.
 
 \paragraph*{Lógica}
@@ -605,6 +605,8 @@ La vista de esta pantalla consiste en un distribuidor de columnas (Column) que c
 \end{figure}
 
 
+\newpage
+
 \section{Funcionalidad del profesor}
 
 \subsection{Dashboard}
@@ -618,11 +620,12 @@ Se ha implementado una pantalla de dashboard para la gestión de la aplicación.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\textwidth]{imagenes/c7/dashboard.png}
+  \includegraphics[width=0.45\textwidth]{imagenes/c7/dashboard.png}
   \caption{Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.}
   \label{fig:login}
 \end{figure}
 
+\newpage
 
 \subsection{Lista de lecciones} 
 \textit{Desarrollado en el Sprint 5}
@@ -632,36 +635,39 @@ La lista de lecciones del profesor es muy similar a la del usuario. Las diferenc
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\textwidth]{imagenes/c7/listalecciones.png}
+  \includegraphics[width=0.45\textwidth]{imagenes/c7/listalecciones.png}
   \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
   \label{fig:login}
 \end{figure}
+
+\newpage
 
 \subsection{Borrar lección} 
 \textit{Desarrollado en el Sprint 8}
 El profesor podrá borrar una lección de la lista de lecciones al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la lección.
 
 \paragraph*{Vista}
-Para la vista de la pantalla de borrado de lecciones, se ha utilizado el widget \textit{AlertDialog}, que posee
+La pantalla del borrado de lecciones utiliza el widget \textit{AlertDialog}, que posee
 un título, un texto descriptivo y dos botones: uno para cancelar el borrado y otro para confirmarlo.
 En la siguiente imagen se puede ver la pantalla de borrado de lecciones:
 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\textwidth]{imagenes/c7/borrarleccion.png}
+  \includegraphics[width=0.5\textwidth]{imagenes/c7/borrarleccion.png}
   \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
   \label{fig:login}
 \end{figure}
 
 \paragraph*{Lógica}
-Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la lección. Si el profesor confirma, se borra la lección de la base de datos y se actualiza la lista de lecciones.
-Este borrado se realiza llamando a la función borrarLeccion() del provider \textit{Lecciones}. En dicha función se borrará la lección de la lista de lecciones del provider y se actualizará la lista de lecciones de la base de datos enviando
+Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la lección. Si el profesor confirma.
+Este borrado se realiza llamando a la función borrarLeccion() del provider \textit{Lecciones}. En dicha función se borrará la lección de la lista del provider y se actualizará la base de datos enviando
 una petición DELETE a la API con el id de la lección a borrar. La ruta de la petición es \textit{DELETE /api/lesson/delete-lesson}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
 
-\newpage
+
 \subsection{Crear lección} 
 \textit{Desarrollado en el Sprint 8}
+
 Los profesores podrán crear lecciones para que los usuarios puedan estudiarlas. Para ello, se ha implementado una pantalla de creación de lecciones que permite al profesor añadir títulos, textos explicativos y contenido multimedia a la lección. Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
 
 
@@ -669,7 +675,7 @@ Los profesores podrán crear lecciones para que los usuarios puedan estudiarlas.
 La vista de esta pantalla consiste en un formulario de creación de lecciones. Este formulario consta de:
 \begin{itemize}
   \item Un campo de texto para el título de la lección.
-  \item Un campo de texto para la imagen de la lección.
+  \item Un botón para subir la imagen de la lección.
   \item Un número variable de campos de texto para los títulos.
   \item Un número variable de campos de texto para los textos explicativos.
   \item Un número variable de botones (\textit{ElevatedButton}) para las imágenes.
@@ -677,9 +683,10 @@ La vista de esta pantalla consiste en un formulario de creación de lecciones. E
 \end{itemize}
 
 Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. 
-En la parte inferior de la pantalla, se encuentran varios iconos organizados en una fila. Estos iconos permiten al profesor añadir más widgets en el contenido de la lección
+En la parte inferior de la pantalla, se encuentran varios iconos organizados en una fila, que permiten incorporar nuevas widgets al contenido de la lección
 ya que pulsando en uno de estos iconos, se añade un nuevo widget a la lista.
 
+\newpage
 En las siguientes imágenes se puede ver la pantalla de creación de lecciones:
 
 \begin{figure}[H]%
@@ -703,12 +710,11 @@ En las siguientes imágenes se puede ver la pantalla de creación de lecciones:
 
 \paragraph*{Lógica}
 La funcionalidad de crear lección ha necesitado desarrollar varias utilidades debido a su complejidad. 
-La primera de ellas es la de añadir campos de texto a la pantalla de creación de lecciones. Para ello, se han creado varios widgets que contienen un campo de texto y un botón para eliminar dicho campo. Estos widgets se han llamado \textit{SubirTexto}, \textit{SubirTitulo} y \textit{SubirVideo}. 
-Estos widget se añaden de forma dinámica a un vector de widgets ubicado en la pantalla de creación de lecciones al pulsar el botón correspondiente.
+La primera de ellas es la de añadir campos de texto a la pantalla de creación de lecciones. Para ello, se han creado varios widgets que contienen un campo de texto y un botón para eliminar dicho campo. Estos widgets se han llamado \textit{SubirTexto}, \textit{SubirTitulo} y \textit{SubirVideo} y se añaden de forma dinámica a un vector ubicado en la pantalla de creación de lecciones al pulsar el botón correspondiente.
 
 Para subir una imagen se ha hecho uso de la biblioteca \textit{image\_picker}, que permite al usuario seleccionar una imagen de su galería y
 devuelve la ruta de la imagen seleccionada. Una vez tenemos el archivo de la imagen, se manda una petición de tipo multipart con la imagen a la API para que la suba al servidor.
-Para el guardado de la imagen recibida en el servidor, se ha usado el paquete de NodeJS \textit{multer}. Este paquete permite la subida de archivos al servidor y la creación de carpetas para almacenar dichos archivos.
+El almacenamiento de la imagen utiliza la funcionalidad proporcionada por el paquete de NodeJS llamado \textit{multer}. Este paquete permite la subida de archivos al servidor y la creación de carpetas para almacenar dichos archivos.
 La ruta de la petición es \textit{POST /api/lesson/upload-image}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente. En caso contrario, se mostrará un mensaje de error.
 
 El profesor también podrá eliminar widgets de la pantalla de creación de lecciones. Para ello, se ha implementado un botón en cada widget que permite al profesor eliminar dicho widget. Al pulsar este botón, se llama al método borrar(). En este se elimina el widget de la lista y se actualiza la pantalla de creación de lecciones al ser un widget de tipo \textit{StatefulWidget}.
@@ -721,13 +727,13 @@ Una vez el usuario ha rellenado el formulario de creación de lecciones, se ha i
 Los profesores podrán editar la información y el contenido de las lecciones. Para ello, se ha implementado una pantalla de edición de lecciones que permite al profesor modificar el título, la imagen y todo el contenido.
 
 \paragraph*{Vista}
-La vista de esta pantalla es muy similar a la de la creación de lecciones. La diferencia es que en esta pantalla, los campos de texto ya están rellenos con la información de la lección que se está editando.
+La vista de esta pantalla es muy similar a la de la creación de lecciones. La diferencia es que los campos de texto continene la información de la lección que se está editando.
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Edición de lección \#1.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/editarleccion.png} }}%
+  \subfloat[\centering Edición de lección \#1.]{{\includegraphics[width=0.4\textwidth]{imagenes/c7/editarleccion.png} }}%
   \qquad
-  \subfloat[\centering Edición de lección \#2.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/editarleccion2.png} }}%
+  \subfloat[\centering Edición de lección \#2.]{{ \includegraphics[width=0.4\textwidth]{imagenes/c7/editarleccion2.png} }}%
   \caption{Pantalla de la edición de lecciones existentes por parte del profesor.}%
   \label{fig:example}%
 \end{figure}
@@ -736,8 +742,9 @@ La vista de esta pantalla es muy similar a la de la creación de lecciones. La d
 \paragraph*{Lógica}
 En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de lecciones.
 
-La única diferencia es que al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la lección. La ruta de la petición es \textit{PUT /api/lesson/update-lesson}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
+La única diferencia es que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la lección. La ruta de la petición es \textit{PUT /api/lesson/update-lesson}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
 
+\newpage
 \subsection{Lista de preguntas} 
 \textit{Desarrollado en el Sprint 8}
 
@@ -748,7 +755,149 @@ Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuari
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\textwidth]{imagenes/c7/listapreguntas.png}
-  \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
-  \label{fig:login}
+  \caption{Pantalla de lista de preguntas del profesor para la gestión de estas.} 
+  \label{fig:listapreguntas}
 \end{figure}
+
+
+\newpage
+\subsection{Crear Pregunta} 
+\textit{Desarrollado en el Sprint 9}
+
+Los profesores podrán crear preguntas para que los usuarios puedan contestarlas en los tests. Para ello, se ha implementado una pantalla de creación de preguntas que permite al profesor elegir el tipo de pregunta y modificar toda la información relacionada con esta (imagen, opciones, respuestas correctas, etc). Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
+
+
+
+\paragraph*{Vista}
+La vista de esta pantalla consiste en un formulario de creación de preguntas. Este formulario consta de:
+\begin{itemize}
+  \item Un desplegable para elegir el tipo de pregunta (entre \textit{única, múltiple, micrófono y texto}).
+  \item Un botón para subir la imagen de la pregunta.
+  \item Un desplegable para elegir la lección a la que pertenece la pregunta.
+  \item Un campo de texto para el enunciado/cuestión de la pregunta.
+  \item Si es una pregunta de tipo 'única' o 'múltiple', un número variable de campos de texto para las opciones de la pregunta.
+  \item Si es una pregunta de tipo 'texto', un campo de texto para la respuesta correcta.
+  \item Si es una pregunta de tipo 'micrófono', un número variable de desplegables para elegir las notas musicales correctas.
+\end{itemize}
+
+
+
+
+Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. Dentro de este, se encuentran los widgets del formulario, que serán desde widgets de desplegables (\textit{DropdownButton}) hasta widgets de campos de texto (\textit{TextField}), pasando por casillas de verificación (\textit{Checkbox}).
+En las preguntas de tipo 'única', 'múltiple' y 'micrófono', en la parte inferior de la pantalla se encuentra un icono que permite al profesor añadir más opciones a la pregunta.
+
+En las siguientes imágenes se puede ver la pantalla de creación de preguntas de todos los tipos con los campos de texto vacíos y rellenos.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.32\textwidth]{imagenes/c7/crearpreguntaunica1.png}
+  \caption{Pantalla de creación de pregunta de tipo 'única' vacía. La pregunta de tipo múltiple y de tipo micrófono son iguales.} 
+  \label{fig:crearpreguntaunica}
+\end{figure}
+
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de pregunta 'única' rellena \#1.]{{\includegraphics[width=0.32\textwidth]{imagenes/c7/crearpreguntaunica2.png} }}%
+  \qquad
+  \subfloat[\centering Creación de pregunta 'única' rellena \#2.]{{ \includegraphics[width=0.32\textwidth]{imagenes/c7/crearpreguntaunica3.png} }}%
+  \caption{Pantalla de creación de pregunta de tipo 'única' con datos introducidos.}%
+  \label{fig:example}%
+\end{figure}
+
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de pregunta 'múltiple' rellena \#1.]{{\includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntamultiple2.png} }}%
+  \qquad
+  \subfloat[\centering Creación de pregunta 'múltiple' rellena \#2.]{{ \includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntamultiple3.png} }}%
+  \caption{Pantalla de creación de pregunta de tipo 'múltiple' con datos introducidos.}%
+  \label{fig:crearpreguntamultiple}%
+\end{figure}
+
+
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de pregunta 'micrófono' rellena \#1.]{{\includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntamicrofono1.png} }}%
+  \qquad
+  \subfloat[\centering Creación de pregunta 'micrófono' rellena \#2.]{{ \includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntamicrofono2.png} }}%
+  \caption{Pantalla de creación de pregunta de tipo 'micrófono' con datos introducidos.}%
+  \label{fig:crearpreguntamicrofono}%
+\end{figure}
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de pregunta 'texto' vacía.]{{\includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntatexto1.png} }}%
+  \qquad
+  \subfloat[\centering Creación de pregunta 'texto' rellena.]{{ \includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntatexto2.png} }}%
+  \caption{Pantalla de creación de pregunta de tipo 'texto'.}%
+  \label{fig:crearpreguntatexto}%
+\end{figure}
+
+
+
+\paragraph*{Lógica}
+La funcionalidad de crear preguntas se ha implementado utilizando el Provider de preguntas anteriormente mencionado. De esta forma
+se ha podido comunicar varias pantallas entre sí y compartir datos entre ellas. 
+
+Para empezar, se ha creado un nuevo widget llamado \textit{SubirOpcion}, que actua de forma muy parecida a los widgets mencionados en la creación de lecciones (SubirImagen, SubirTitulo, SubirTexto...). Este widget se encargará de encapsular toda la vista y la lógica relacionada con una opción concreta.
+Además he visto necesaria la creación de un nuevo Provider para las opciones de las preguntas. Este Provider contiene un vector de opciones y un vector de respuestas correctas.
+El vector de opciones contiene los textos de las opciones de la pregunta y el vector de respuestas correctas contiene los índices de las opciones correctas.
+Estos dos vectores se actualizan cada vez que el profesor añade o elimina una opción de la pregunta. De esta forma, la comunicación entre la pantalla y la clase "SubirOpcion" ha sido más sencilla tanto para borrar una opción como para desmarcar una opción cuando se marca otra distinta.
+El widget de SubirOpcion se añade de forma dinámica a un vector de widgets ubicado en la pantalla de creación de preguntas al pulsar el botón correspondiente.
+
+
+Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_picker}, que detallé en la funcionalidad de crear lecciones.
+El profesor podrá eliminar widgets mediante el botón apropiado en cada uno de ellos. Dicho botón llama al método borrar() y éste elimina el widget de la listas y actualiza la pantalla de creación de preguntas.
+
+El botón de guardar la lección envía los datos de las preguntas al servidor mediante una petición POST a la ruta /api/question/create-question. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
+
+\newpage
+
+\subsection{Editar Pregunta} 
+\textit{Desarrollado en el Sprint 9}
+Los profesores podrán editar la información y el contenido de las preguntas. Para ello, se ha implementado una pantalla de edición de preguntas que permite al profesor modificar la cuestión, la imagen y todos los demás datos.
+
+\paragraph*{Vista}
+La vista de esta pantalla es muy similar a la de la creación de las preguntas. La diferencia es que los widgets disponen de la información de la pregunta que se está editando.
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Edición de pregunta única \#1.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/editarpreguntaunica1.png} }}%
+  \qquad
+  \subfloat[\centering Edición de pregunta única\#2.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/editarpreguntaunica2.png} }}%
+  \caption{Pantalla de edición de pregunta de tipo 'única'.}%
+  \label{fig:edición_pregunta_unica}%
+\end{figure}
+
+
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Edición de pregunta múltiple\#1.]{{\includegraphics[width=0.30\textwidth]{imagenes/c7/editarpreguntamultiple1.png} }}%
+  \qquad
+  \subfloat[\centering Edición de pregunta múltiple\#2.]{{ \includegraphics[width=0.30\textwidth]{imagenes/c7/editarpreguntamultiple2.png} }}%
+  \caption{Pantalla de edición de pregunta de tipo 'múltiple'.}%
+  \label{fig:edición_pregunta_multiple}%
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.32\textwidth]{imagenes/c7/editarpreguntamicrofono.png}
+  \caption{Pantalla de edición de pregunta de tipo 'micrófono'.} 
+  \label{fig:edición_pregunta_microfono}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.32\textwidth]{imagenes/c7/editarpreguntatexto.png}
+  \caption{Pantalla de edición de pregunta de tipo 'texto'.} 
+  \label{fig:edición_pregunta_tecto}
+\end{figure}
+
+
+\paragraph*{Lógica}
+En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de lecciones.
+Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la pregunta. La ruta de la petición es \textit{PUT /api/question/update-question}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
 

@@ -16,7 +16,7 @@ class SubirOpcion extends StatefulWidget{
   SubirOpcion(this.indice, this.tipo, this.f, this.datos);
 
   void cambiarIndice(i){
-    print(datos);
+    print("CAMBIO");
     indice = i;
   }
 
@@ -46,8 +46,10 @@ var lista;
 
   @override
   Widget build(BuildContext context) {
+    print(indice);
     lista = Provider.of<Opciones>(context, listen: true).items;
 
+    print("INDIC:" + indice.toString());
      return Container(
       margin: EdgeInsets.only(top: 30),
       child: Column(

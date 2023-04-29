@@ -145,13 +145,13 @@ const update = (req, res) => {
         if (error || !question) {
             return res.status(404).json({
                 status: "error",
-                mensaje: "La pregunta no se ha podido encontrar"
+                mensaje: "La pregunta no se ha podido modificar"
             });
         }
         return res.status(200).json({
             status: "success",
             pregunta: question,
-            mensaje: "La pregunta se ha encontrado"
+            mensaje: "La pregunta se ha modificado correctamente"
         });
     }
     );

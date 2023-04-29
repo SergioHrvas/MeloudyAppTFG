@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:io';
 import 'dart:math';
 
@@ -72,7 +73,6 @@ class PreguntasProfesor with ChangeNotifier {
         respuestasCorrectas.add(contenidoListaRP[j]);
       }
 
-
       preguntasCargadas.add(Pregunta(
           id: preguntasLista[i]['_id'],
           cuestion: preguntasLista[i]['cuestion'],
@@ -80,11 +80,35 @@ class PreguntasProfesor with ChangeNotifier {
           imagen: preguntasLista[i]['imagen'],
           opciones: contenidoCargado,
           pulsado: pulsadoLista,
-          respuestascorrectas: respuestasCorrectas
+          respuestascorrectas: respuestasCorrectas,
+          leccion: preguntasLista[i]['leccion']
       ));
     }
+
     preguntas = preguntasCargadas;
 
+  }
+
+  Map<String, List<dynamic>> getOpciones(id){
+    var pregunta = findById(id);
+
+    List<dynamic> respuestascorrectas = [];
+    if(pregunta.tipo == 'multiple' || pregunta.tipo == 'unica') {
+
+    for(var i = 0; i < pregunta.opciones.length; i++){
+        respuestascorrectas.add(false);
+
+    }
+      for (var i = 0; i < pregunta.respuestascorrectas.length; i++) {
+        respuestascorrectas[int.parse(pregunta.respuestascorrectas[i])] = true;
+      }
+    }
+    else if(pregunta.tipo == 'texto' || pregunta.tipo == 'microfono'){
+        respuestascorrectas = pregunta.respuestascorrectas;
+    }
+
+    return {"opciones" : pregunta.opciones,
+      "respuestascorrectas": respuestascorrectas};
   }
 
 
@@ -94,9 +118,8 @@ class PreguntasProfesor with ChangeNotifier {
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
-
+      print(extractedData);
       print(extractedData.toString());
-      extractedData['preguntas'].shuffle();
 
       if (extractedData == null) {
         return;
@@ -116,6 +139,11 @@ class PreguntasProfesor with ChangeNotifier {
       throw (error);
     }
   }
+
+  Pregunta findById(String id) {
+    return preguntas.firstWhere((prod) => prod.id == id);
+  }
+
 
 
 

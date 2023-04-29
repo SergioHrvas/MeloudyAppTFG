@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../ips.dart';
 import '../providers/auth.dart';
 import '../providers/lecciones.dart';
+import '../providers/opciones.dart';
 import '../providers/preguntas_profesor.dart';
 import '../widget/drawer_app.dart';
 
@@ -58,8 +59,20 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                             child: Row(
                               children: [
                                 Expanded(child: Text(preguntas[i].cuestion, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),)),
-                                Container(margin: EdgeInsets.only(left: 10),
-                                    child: Icon(Icons.edit_document, color: Colors.blue))
+                                GestureDetector(
+                                  onTap: (){
+                                    var opciones = Provider.of<PreguntasProfesor>(context, listen: false).getOpciones(preguntas[i].id);
+                                    print("OPCIONES" + opciones.toString());
+                                    Provider.of<Opciones>(context, listen:false).setOpciones(opciones['respuestascorrectas'], opciones['opciones']).then((Null){
+                                      Navigator.pushNamed(context, '/editarpregunta',arguments: {
+                                        "id": preguntas[i].id
+                                      });
+                                    });
+
+                                  },
+                                  child: Container(margin: EdgeInsets.only(left: 10),
+                                      child: Icon(Icons.edit_document, color: Colors.blue)),
+                                )
                               ],
                             )),
                         Container(

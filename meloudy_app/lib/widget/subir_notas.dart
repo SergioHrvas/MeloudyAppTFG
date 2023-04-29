@@ -82,7 +82,7 @@ class _SubirNotasState extends State<SubirNotasFul> {
                       child: Text(value),
                     );
                   }).toList(),
-                  value: nota, //CAMBIAR ESTO
+                  value: nota,
                   onChanged: (String newvalue) {
                     setState(() {
                       nota = newvalue;

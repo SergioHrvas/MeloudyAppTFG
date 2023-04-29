@@ -191,6 +191,7 @@ class _PantallaCrearPreguntaProfesorState
                       setState(() {
                         tipo = newvalue;
                         opciones = [];
+                        indice = 0;
                       });
                     }),
               ),
