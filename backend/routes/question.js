@@ -10,7 +10,7 @@ router.get("/get-questions-test/:idTest", QuestionController.getquestions);
 router.post("/create-question", auth, QuestionController.create);
 //router.get("/get-question/:id", auth, QuestionController.get);
 router.put("/update-question/:id", auth, QuestionController.update);
-//router.delete("/delete-question/:id", auth, QuestionController.remove);
+router.delete("/delete-question/:id", auth, QuestionController.remove);
 
 
 module.exports = router;

@@ -20,7 +20,6 @@ const create = (req, res) => {
 
 const index = (req, res) => {
     // Return all questions
-    console.log("ENTROS");
     Question.find({}, (error, questions) => {
         if (error || !questions) {
             return res.status(404).json({
@@ -67,7 +66,6 @@ const getquestions = async (req, res) => {
             }
             var preguntas = [];
             for (let i = 0; i < test.preguntas.length; i++) {
-                console.log("aa" + test.preguntas[i]);
                 try {
 
                 const element = await Question.findById(test.preguntas[i].idPregunta, (error, question) => {
@@ -121,6 +119,7 @@ const get = (req, res) => {
 
 const remove = (req, res) => {
     const id = req.params.id;
+    console.log(id);
     Question.findByIdAndDelete(id, (error, question) => {
         if (error || !question) {
             return res.status(404).json({
