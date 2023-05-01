@@ -20,32 +20,28 @@ class Notas with ChangeNotifier {
     return [...notas];
   }
 
-  void anadirNota(){
+  void anadirNota() {
     notas.add("Do");
   }
 
-  void borrarNota(i){
+  void borrarNota(i) {
     notas.removeAt(i);
+    notifyListeners();
   }
 
-  void setValor(indice, nota){
+  void setValor(indice, nota) {
     notas[indice] = nota;
-    print(indice.toString() + " " + nota);
-
-    print("=======");
-    for(var i = 0; i < notas.length; i++){
-      print(notas[i]);
-    }
   }
 
-  void limpiar(){
+  void limpiar() {
     notas = [];
   }
 
-  String getNota(i){
+  String getNota(i) {
     return notas[i];
   }
 
-
-
+  Future<void> setNotas(respuestascorrectas) async {
+    notas = respuestascorrectas;
+  }
 }

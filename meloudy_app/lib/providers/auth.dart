@@ -50,10 +50,9 @@ class Auth with ChangeNotifier {
             "apellidos": ["as", "afdafd"],
             "rol": "Admin"
           }));
-      print("AAA");
       final responseData = json.decode(response.body);
-      print("RESPONSE DATA");
-      print(responseData);
+
+
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);
       }

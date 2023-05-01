@@ -19,7 +19,6 @@ class SubirNotas extends StatelessWidget {
 
   void cambiarIndice(i) {
     indice = i;
-    print(widget.children[0].cambiarIndice(i));
   }
 
   @override
@@ -59,14 +58,14 @@ class SubirNotasFul extends StatefulWidget {
 class _SubirNotasState extends State<SubirNotasFul> {
   final indice;
   var nota = "Do";
-  var datos;
   final notas = ["Do", "Re", "Mi", "Fa", "Sol", "La", "Si"];
 
-  _SubirNotasState(this.datos, this.indice);
+  _SubirNotasState(this.nota, this.indice);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    nota = Provider.of<Notas>(context, listen: false).getNota(indice);
 
     return Container(
       margin: EdgeInsets.only(top: 30),
@@ -86,7 +85,8 @@ class _SubirNotasState extends State<SubirNotasFul> {
                   onChanged: (String newvalue) {
                     setState(() {
                       nota = newvalue;
-                      Provider.of<Notas>(context, listen: false).setValor(indice, nota);
+                      Provider.of<Notas>(context, listen: false)
+                          .setValor(indice, nota);
                     });
                   }),
             ],

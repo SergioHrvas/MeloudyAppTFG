@@ -75,6 +75,51 @@ class Usuarios with ChangeNotifier {
     }
   }
 
+  borrarUsuario(String id, int i) async{
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/user/delete-user/${id}?auth=$authToken');
+
+    usuarios.removeAt(i);
+    final response = await http.delete(url);
+    notifyListeners();
+  }
+
+  crearUsuario(extractedData) async{
+    print(extractedData.toString());
+
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/user/registro?auth=$authToken');
+
+    var apellidos = extractedData['apellidos'];
+    List<String> apellidosmap = [];
+
+    for(var j = 0; j < apellidos.length; j++){
+      apellidosmap.add(apellidos[j]);
+    }
+
+    final response = await http.post(url,           headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+        body: json.encode({
+          "correo": extractedData['correo'],
+          "password": extractedData['password'],
+          "nombre": extractedData['nombre'],
+          "apellidos": apellidosmap,
+          "rol": extractedData['rol'],
+          "username": extractedData['username'],
+
+        }));
+    print(response.body);
+  var respuesta = jsonDecode(response.body);
+  if(respuesta['status'] == "success"){
+    usuarios.add(
+        Usuario(id: respuesta['usuario']['_id'], nombre: extractedData['nombre'], apellidos: apellidosmap, correo: extractedData['correo'], username: extractedData['username'], foto: extractedData['foto'])
+    );
+    notifyListeners();
+  }
+  }
+
 
 
 

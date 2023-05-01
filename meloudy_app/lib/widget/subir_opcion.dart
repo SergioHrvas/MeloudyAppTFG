@@ -4,10 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/opciones.dart';
 
-
-
-class SubirOpcion extends StatefulWidget{
-
+class SubirOpcion extends StatefulWidget {
   var datos;
   var indice;
   final f;
@@ -15,26 +12,25 @@ class SubirOpcion extends StatefulWidget{
 
   SubirOpcion(this.indice, this.tipo, this.f, this.datos);
 
-  void cambiarIndice(i){
-    print("CAMBIO");
+  void cambiarIndice(i) {
     indice = i;
   }
 
   @override
-  _SubirOpcionState createState() =>
-      _SubirOpcionState(this.indice, this.tipo, this.f, this.datos, "Introduzca el texto de la opción");
+  _SubirOpcionState createState() => _SubirOpcionState(this.indice, this.tipo,
+      this.f, this.datos, "Introduzca el texto de la opción");
 }
 
-class _SubirOpcionState extends State<SubirOpcion>{
+class _SubirOpcionState extends State<SubirOpcion> {
   var indice;
   var f;
   var tipo;
   var etiqueta;
   var datos = "";
   var correcta = false;
-var lista;
+  var lista;
 
-  _SubirOpcionState(ind, tip, borrar, texto, et){
+  _SubirOpcionState(ind, tip, borrar, texto, et) {
     indice = ind;
     f = borrar;
     datos = texto;
@@ -42,48 +38,53 @@ var lista;
     tipo = tip;
   }
 
-
-
   @override
   Widget build(BuildContext context) {
-    print(indice);
     lista = Provider.of<Opciones>(context, listen: true).items;
 
-    print("INDIC:" + indice.toString());
-     return Container(
+    return Container(
       margin: EdgeInsets.only(top: 30),
       child: Column(
         children: [
           TextFormField(
-            decoration: InputDecoration(labelText: "Introduzca el título del apartado"),
+            decoration:
+                InputDecoration(labelText: "Introduzca el título del apartado"),
             maxLines: 1,
             initialValue: this.datos,
-            onChanged: (value){
+            onChanged: (value) {
               widget.datos = value;
-              Provider.of<Opciones>(context, listen: false).setValorTexto(indice, value);
+              Provider.of<Opciones>(context, listen: false)
+                  .setValorTexto(indice, value);
             },
-
           ),
           Row(
             children: [
-              Text("Correcta: ", style: TextStyle(fontSize: 20),),
+              Text(
+                "Correcta: ",
+                style: TextStyle(fontSize: 20),
+              ),
               Checkbox(
                 value: lista[indice],
                 onChanged: (bool value) {
                   setState(() {
-                    Provider.of<Opciones>(context, listen: false).setValor(indice, tipo);
+                    Provider.of<Opciones>(context, listen: false)
+                        .setValor(indice, tipo);
                   });
                 },
               ),
             ],
           ), //Checkbox
-          GestureDetector(onTap: (){
-            f(indice);
-
-          },child: Icon(Icons.delete_forever, size: 40, color:Colors.red,))
+          GestureDetector(
+              onTap: () {
+                f(indice);
+              },
+              child: Icon(
+                Icons.delete_forever,
+                size: 40,
+                color: Colors.red,
+              ))
         ],
       ),
     );
   }
-
 }

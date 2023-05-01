@@ -17,9 +17,57 @@ class PantallaUsuariosProfesor extends StatefulWidget {
 class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
   _PantallaUsuariosProfesorState();
 
+  var usuarios = [];
+
+  showAlertDialog(BuildContext context, id, i) {
+    // Create button
+    Widget okButton = ElevatedButton(
+      child: Text("Borrar"),
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+      onPressed: () {
+        setState(() {
+          usuarios.removeAt(i);
+        });
+
+        Provider.of<Usuarios>(context, listen: false).borrarUsuario(id, i)
+            .then((_) {
+          Navigator.of(context).pop();
+        });
+      },
+    );
+
+    Widget noButton = ElevatedButton(
+      child: Text("Cancelar"),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
+
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("¿Desea eliminar el usuario?"),
+      content: Text(
+          "Pulse \"Confirmar\" si desea eliminarlo. En caso contrario pulse \"Cancelar\"."),
+      actions: [
+        noButton,
+        okButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
-    var usuarios =
+    usuarios =
         Provider.of<Usuarios>(context, listen: false).items;
 
     var usuariosWidget = [];
@@ -69,7 +117,46 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                         Container(
                             margin: EdgeInsets.only(left: 10),
                             alignment: Alignment.centerLeft,
-                            child: Text("" + usuarios[i].id, style: TextStyle(color: Colors.grey),)),
+                            child: Text("" + usuarios[i].id.toString(), style: TextStyle(color: Colors.grey),)),
+                        Container(
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                  margin: EdgeInsets.symmetric(horizontal: 4),
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      showAlertDialog(context, usuarios[i].id, i);
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.delete),
+                                        Text("Borrar"),
+                                      ],
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.red),
+                                  )),
+                              Container(
+                                  margin: EdgeInsets.symmetric(horizontal: 4),
+                                  child: ElevatedButton(
+                                    onPressed: () {
+
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.edit_document),
+                                        Text("Editar"),
+                                      ],
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.purple),
+                                  ))
+                            ],
+                          ),
+                        )
 
                       ],
                     ),
@@ -92,13 +179,13 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                   child: ElevatedButton(onPressed:(){
-                    Navigator.pushNamed(context, '/crearUsuario');
+                    Navigator.pushNamed(context, '/crearusuario');
                   },
                     child: Container(
                       width: 175,
                       child: Row(
                         children: [
-                          Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.add_comment)),
+                          Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add)),
                           Text("Crear Usuario",style: TextStyle(fontSize: 20),),
                         ],
                       ),

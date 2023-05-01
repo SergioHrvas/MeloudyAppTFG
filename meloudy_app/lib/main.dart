@@ -14,6 +14,7 @@ import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/leccion_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_leccion_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_pregunta_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_crear_usuario_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_editar_leccion_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_editar_pregunta_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_preguntas_profesor.dart';
@@ -84,6 +85,7 @@ class MyApp extends StatelessWidget {
             PantallaEditarLeccionProfesor.routeName: (ctx) => PantallaEditarLeccionProfesor(),
             PantallaUsuariosProfesor.routeName: (ctx) => PantallaUsuariosProfesor(),
             PantallaEditarPreguntaProfesor.routeName: (ctx) => PantallaEditarPreguntaProfesor(),
+            PantallaCrearUsuarioProfesor.routeName: (ctx) => PantallaCrearUsuarioProfesor(),
 
 
 

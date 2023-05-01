@@ -32,15 +32,8 @@ class Opciones with ChangeNotifier {
 
 
   Future<void> setOpciones(respuestascorrectas, opcs) async{
-
     opciones = respuestascorrectas;
     opcionesTexto = opcs;
-
-    print("OPCIONES: " + opcs.toString());
-    print("OPCIONES2: " + opcionesTexto.toString());
-    print("OPCIONES3: " + respuestascorrectas.toString());
-
-
   }
 
 

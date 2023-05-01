@@ -59,11 +59,14 @@ class PreguntasProfesor with ChangeNotifier {
     for (var i = 0; i < extractedData['preguntas'].length; i++) {
 
       final List<String> contenidoCargado = [];
-      var contenidoLista = extractedData['preguntas'][i]['opciones'];
+      var contenidoLista = [];
       List<bool> pulsadoLista = [];
-      for (var j = 0; j < contenidoLista.length; j++) {
-        contenidoCargado.add(contenidoLista[j]);
-        pulsadoLista.add(false);
+      if(extractedData['preguntas'][i]['opciones'] != null) {
+        contenidoLista = extractedData['preguntas'][i]['opciones'];
+        for (var j = 0; j < contenidoLista.length; j++) {
+          contenidoCargado.add(contenidoLista[j]);
+          pulsadoLista.add(false);
+        }
       }
 
       List<String> respuestasCorrectas = [];
@@ -118,8 +121,6 @@ class PreguntasProfesor with ChangeNotifier {
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
-      print(extractedData);
-      print(extractedData.toString());
 
       if (extractedData == null) {
         return;
@@ -145,7 +146,60 @@ class PreguntasProfesor with ChangeNotifier {
   }
 
 
+  actualizarPregunta(Map<String, dynamic> authData, id) async {
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/question/update-question/${id}?auth=$authToken');
+
+    var cuerpo = json.encode({
+      "cuestion": authData['cuestion'],
+      "imagen": authData['imagen'],
+      "leccion": authData['leccion'],
+      "opciones": authData['opciones'],
+      "respuestascorrectas" : authData['respuestascorrectas']
+    });
+
+    final response = await http.put(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: cuerpo);
+  }
+
+  crearPregunta(Map<String, dynamic> authData) async {
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/question/create-question?auth=$authToken');
+
+    var cuerpo = json.encode({
+      "tipo": authData['tipo'],
+      "cuestion": authData['cuestion'],
+      "imagen": authData['imagen'],
+      "leccion": authData['leccion'],
+      "opciones": authData['opciones'],
+      "respuestascorrectas" : authData['respuestascorrectas']
+    });
+
+    final response = await http.post(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: cuerpo);
+
+  }
+
+  borrarPregunta(String id, i) async {
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/question/delete-question/${id}?auth=$authToken');
+
+    preguntas.removeAt(i);
+    final response = await http.delete(url);
+    notifyListeners();
+
+  }
 
 
 
-}
+
+
+  }

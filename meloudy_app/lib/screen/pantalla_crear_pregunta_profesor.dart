@@ -147,7 +147,7 @@ class _PantallaCrearPreguntaProfesorState
           .items;
       _authData['respuestascorrectas'] = respuestasmicro;
     }
-    Provider.of<Preguntas>(context, listen: false)
+    Provider.of<PreguntasProfesor>(context, listen: false)
         .crearPregunta(_authData)
         .then((value) => Navigator.pushReplacementNamed(
             context, '/listapreguntas'));

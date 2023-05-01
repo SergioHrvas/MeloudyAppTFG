@@ -18,7 +18,7 @@ class LeccionItemProfesor extends StatelessWidget {
   showAlertDialog(BuildContext context) {
     // Create button
     Widget okButton = ElevatedButton(
-      child: Text("Confirmar"),
+      child: Text("Borrar"),
       style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
 
       onPressed: () {
@@ -38,7 +38,7 @@ class LeccionItemProfesor extends StatelessWidget {
     // Create AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text("¿Desea eliminar la lección?"),
-      content: Text("Pulse \"Confirmar\" si desea eliminarla. En caso contrario pulse \"Cancelar\"."),
+      content: Text("Pulse \"Borrar\" si desea eliminarla. En caso contrario pulse \"Cancelar\"."),
       actions: [
         noButton,
         okButton,

@@ -40,7 +40,7 @@ class _PantallaEditarPreguntaProfesorState
   var id;
   String leccion = "Introducción";
   Map<String, String> lecciones = {};
-  String tipo = "unica";
+  String tipo;
   final tipos = ["unica", "multiple", "microfono", "texto"];
 
   var opcioneswidgets = [];
@@ -62,16 +62,16 @@ class _PantallaEditarPreguntaProfesorState
   void borrar(i) {
     setState(() {
       opciones.removeAt(i);
-      Provider.of<Opciones>(context, listen: false).borrarOpcion(i);
-
+      if (tipo == "microfono") {
+        Provider.of<Notas>(context, listen: false).borrarNota(i);
+      } else {
+        Provider.of<Opciones>(context, listen: false).borrarOpcion(i);
+      }
       for (var j = i; j < opciones.length; j++) {
-        print(i);
         opciones[j].child.cambiarIndice(i);
       }
 
       indice--;
-
-      print("indice tras restar: " + indice.toString());
     });
   }
 
@@ -100,15 +100,11 @@ class _PantallaEditarPreguntaProfesorState
       _authData['imagen'] = img;
     });
 
-    _authData['tipo'] = tipo;
-
     _authData['leccion'] = lecciones[leccion];
 
     if (tipo == 'multiple' || tipo == 'unica') {
       var respuestascorrectas =
           Provider.of<Opciones>(context, listen: false).opciones;
-
-      print("rc: " + respuestascorrectas.toString());
 
       var resp = [];
       for (var i = 0; i < respuestascorrectas.length; i++) {
@@ -125,7 +121,7 @@ class _PantallaEditarPreguntaProfesorState
           Provider.of<Notas>(context, listen: false).items;
       _authData['respuestascorrectas'] = respuestasmicro;
     }
-    Provider.of<Preguntas>(context, listen: false)
+    Provider.of<PreguntasProfesor>(context, listen: false)
         .actualizarPregunta(_authData, id)
         .then((value) =>
             Navigator.pushReplacementNamed(context, '/listapreguntas'));
@@ -137,8 +133,10 @@ class _PantallaEditarPreguntaProfesorState
     var arg = ModalRoute.of(context).settings.arguments as Map<String, String>;
     opciones = [];
     id = arg['id'];
+
     pregunta = Provider.of<PreguntasProfesor>(context, listen: false)
         .findById(arg['id']);
+    tipo = pregunta.tipo;
     var lecc = Provider.of<Lecciones>(context, listen: false).items;
 
     for (var i = 0; i < lecc.length; i++) {
@@ -156,30 +154,27 @@ class _PantallaEditarPreguntaProfesorState
     var opcionestexto =
         Provider.of<Opciones>(context, listen: false).opcionesTexto;
 
-    var opcionescorrectas =
-        Provider.of<Opciones>(context, listen: false).opciones;
+    var opcionescorrectas;
 
-    print(pregunta.tipo);
+    if (pregunta.tipo == 'multiple' ||
+        pregunta.tipo == 'unica' ||
+        pregunta.tipo == 'texto') {
+      opcionescorrectas =
+          Provider.of<Opciones>(context, listen: false).opciones;
+    } else if (pregunta.tipo == 'microfono') {
+      opcionescorrectas = Provider.of<Notas>(context, listen: false).items;
+    }
     if (pregunta.tipo == 'multiple' || pregunta.tipo == 'unica') {
       for (var i = 0; i < opcionestexto.length; i++) {
         opciones.add(Container(
             child: SubirOpcion(indice, tipo, borrar, opcionestexto[i])));
         indice++;
       }
-    } else if (pregunta.tipo == 'texto') {
-      opciones.add(Container(
-        child: TextFormField(
-          decoration: InputDecoration(),
-          initialValue: opcionescorrectas[0],
-          onSaved: (value) {
-            _authData['respuestascorrectas'] = value;
-          },
-        ),
-      ));
     } else if (pregunta.tipo == 'microfono') {
-      for(var i = 0; i < opcionescorrectas.length; i++){
-        opciones.add(Container(child:
-        SubirNotas(indice, borrar, opcionescorrectas[i])));
+      for (var i = 0; i < opcionescorrectas.length; i++) {
+        opciones.add(
+            Container(child: SubirNotas(indice, borrar, opcionescorrectas[i])));
+        indice++;
       }
     }
 
@@ -279,6 +274,7 @@ class _PantallaEditarPreguntaProfesorState
                       ? Container(
                           margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                           child: TextFormField(
+                            initialValue: opcionescorrectas[0],
                             onSaved: (value) {
                               _authData['respuestascorrectas'] = [value];
                             },
