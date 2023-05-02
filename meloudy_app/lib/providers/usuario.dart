@@ -9,6 +9,7 @@ class Usuario with ChangeNotifier {
   final String username;
   final String foto;
   final String correo;
+  final String rol;
 
 
   List<Test> tests = [];
@@ -20,6 +21,7 @@ class Usuario with ChangeNotifier {
     @required this.correo,
     @required this.username,
     @required this.foto,
+    @required this.rol,
 
   });
 

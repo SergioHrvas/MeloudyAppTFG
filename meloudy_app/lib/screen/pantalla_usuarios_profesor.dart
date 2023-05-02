@@ -143,7 +143,9 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                                   margin: EdgeInsets.symmetric(horizontal: 4),
                                   child: ElevatedButton(
                                     onPressed: () {
-
+                                      Navigator.pushNamed(context, '/editarusuario', arguments: {
+                                      "id": usuarios[i].id.toString()
+                                      });
                                     },
                                     child: Row(
                                       children: [

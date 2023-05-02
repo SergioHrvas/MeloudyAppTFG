@@ -149,11 +149,39 @@ const login = async (req, res) => {
 
 }
 
+const update = (req, res) => {
+    const id = req.params.id;
+
+    param = req.body;
+    
+    console.log(param);
+    if(param.password != null){
+        encryptedpassword = bcrypt.hashSync(param.password, 10);
+        param.password = encryptedpassword;
+    }
+
+    User.findByIdAndUpdate(id, param, { new: true }, (error, user) => {
+        if (error || !user) {
+            return res.status(404).json({
+                status: "error",
+                mensaje: "El usuario no se ha podido actualizar"
+            });
+        }
+        return res.status(200).json({
+            status: "success",
+            usuario: user,
+            mensaje: "El usuario se ha actualizado"
+        });
+    });
+}
+
+
 
 module.exports = {
     create,
     get,
     remove,
     index,
-    login
+    login,
+    update
 }

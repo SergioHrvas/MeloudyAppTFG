@@ -56,7 +56,8 @@ class Usuarios with ChangeNotifier {
                 foto: extractedData['usuario'][i]['foto'],
                 apellidos: apellidosmap,
                 correo: extractedData['usuario'][i]['correo'],
-                username: extractedData['usuario'][i]['username']
+                username: extractedData['usuario'][i]['username'],
+                rol: extractedData['usuario'][i]['rol']
 
             )
         );
@@ -120,6 +121,44 @@ class Usuarios with ChangeNotifier {
   }
   }
 
+
+  actualizarUsuario(Map<String, dynamic> extractedData, id) async {
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/user/update-user/${id}?auth=$authToken');
+
+    var apellidos = extractedData['apellidos'];
+    List<String> apellidosmap = [];
+
+    for(var j = 0; j < apellidos.length; j++){
+      apellidosmap.add(apellidos[j]);
+    }
+
+    Map<String, dynamic> cuerpo = {
+      "foto": extractedData['foto'],
+      "nombre": extractedData['nombre'],
+      "apellidos": apellidosmap,
+      "username": extractedData['username'],
+      "rol": extractedData['rol']
+    };
+    if(extractedData['password'] != ""){
+      cuerpo["password"] = extractedData['password'];
+    }
+
+    var body = json.encode(cuerpo);
+
+    print(body);
+    final response = await http.put(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: body);
+  }
+
+  Usuario findById(String id) {
+    print(id);
+    return usuarios.firstWhere((prod) => prod.id == id);
+  }
 
 
 
