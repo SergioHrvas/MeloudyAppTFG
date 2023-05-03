@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import '../image_controller.dart';
 import '../ips.dart';
 import '../providers/auth.dart';
+import '../providers/logros.dart';
 import '../providers/notas.dart';
 import '../providers/opciones.dart';
 import '../providers/usuarios.dart';
@@ -15,27 +16,23 @@ import '../widget/drawer_app.dart';
 import '../widget/subir_notas.dart';
 import '../widget/subir_opcion.dart';
 
-class PantallaCrearUsuarioProfesor extends StatefulWidget {
-  static const routeName = '/crearusuario';
+class PantallaCrearLogroProfesor extends StatefulWidget {
+  static const routeName = '/crearlogro';
 
   @override
-  _PantallaCrearUsuarioProfesorState createState() =>
-      _PantallaCrearUsuarioProfesorState();
+  _PantallaCrearLogroProfesorState createState() =>
+      _PantallaCrearLogroProfesorState();
 }
 
-class _PantallaCrearUsuarioProfesorState
-    extends State<PantallaCrearUsuarioProfesor> {
-  _PantallaCrearUsuarioProfesorState();
+class _PantallaCrearLogroProfesorState
+    extends State<PantallaCrearLogroProfesor> {
+  _PantallaCrearLogroProfesorState();
 
 
   PickedFile _image;
   File file;
 
-  var rol = 'Usuario';
-
-  List<String> roles = ['Usuario', 'Admin', 'Profesor'];
   final ImagePicker picker = ImagePicker();
-
   final GlobalKey<FormState> _formKey = GlobalKey();
 
   Map<String, dynamic> _authData = {};
@@ -63,13 +60,11 @@ class _PantallaCrearUsuarioProfesorState
   void submit() async {
     _formKey.currentState.save();
 
-    _authData['rol'] = rol;
     var token = Provider.of<Auth>(context, listen: false).token;
 
     await ImageController().upload(_image, token).then((_) {
       var img;
       if (_image == null) {
-        print("aa");
         img = "musica.png";
       }
       else {
@@ -77,22 +72,21 @@ class _PantallaCrearUsuarioProfesorState
             .split('/')
             .last;
       }
-      _authData['foto'] = img;
+      _authData['imagen'] = img;
 
     });
 
 
-    Provider.of<Usuarios>(context, listen: false)
-        .crearUsuario(_authData)
+    Provider.of<Logros>(context, listen: false)
+        .crearLogro(_authData)
         .then((value) => Navigator.pushReplacementNamed(
-            context, '/listausuarios'));
+            context, '/listalogros'));
   }
 
 
   @override
   Widget build(BuildContext context) {
 
-    _authData['apellidos'] = [];
     return Scaffold(
       appBar: AppBar(),
       drawer: DrawerApp(),
@@ -132,21 +126,6 @@ class _PantallaCrearUsuarioProfesorState
                         )),
                   ),
                   Container(
-                    child: DropdownButton(
-                        items: roles.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        value: rol,
-                        onChanged: (String newvalue) {
-                          setState(() {
-                            rol = newvalue;
-                          });
-                        }),
-                  ),
-                  Container(
                 margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                 child: TextFormField(
                   onSaved: (value){
@@ -161,54 +140,10 @@ class _PantallaCrearUsuarioProfesorState
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                     child: TextFormField(
                       onSaved: (value){
-                        _authData['apellidos'].add(value);
+                        _authData['descripcion'] = (value);
                       },
                       decoration:
-                      InputDecoration(labelText: "Primer apellido"),
-                    ),
-
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
-                      onSaved: (value){
-                        _authData['apellidos'].add(value);
-                      },
-                      decoration:
-                      InputDecoration(labelText: "Segundo apellido"),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
-                      onSaved: (value){
-                        _authData['username'] = value;
-                      },
-                      decoration:
-                      InputDecoration(labelText: "Nombre de usuario"),
-                    ),
-
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
-                      onSaved: (value){
-                        _authData['correo'] = value;
-                      },
-                      decoration:
-                      InputDecoration(labelText: "Correo electrónico"),
-                    ),
-
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
-                      obscureText: true,
-                      onSaved: (value){
-                        _authData['password'] = value;
-                      },
-                      decoration:
-                      InputDecoration(labelText: "Contraseña"),
+                      InputDecoration(labelText: "Descripción"),
                     ),
 
                   ),
@@ -219,7 +154,7 @@ class _PantallaCrearUsuarioProfesorState
                     await submit();
                   },
                   child: Text(
-                    "Crear Usuario",
+                    "Crear Logro",
                     style: TextStyle(fontSize: 20),
                   ),
                 ),

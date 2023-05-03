@@ -65,6 +65,32 @@ class Logros with ChangeNotifier {
       throw (error);
     }
   }
+  crearLogro(extractedData) async{
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/achievement/create-achievement?auth=$authToken');
+
+    final response = await http.post(url,           headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+        body: json.encode({
+          "nombre": extractedData['nombre'],
+          "descripcion": extractedData['descripcion'],
+          "imagen": extractedData['imagen'],
+
+        }));
+    print(response.body);
+    var respuesta = jsonDecode(response.body);
+    if(respuesta['status'] == "success"){
+      logros.add(
+          Logro(id: respuesta['logro']['_id'], nombre: extractedData['nombre'], descripcion: extractedData['descripcion'], imagen: extractedData['imagen'])
+      );
+      notifyListeners();
+    }
+  }
+
+
+
 
   Logro findById(String id) {
     return logros.firstWhere((prod) => prod.id == id);
