@@ -90,8 +90,8 @@ class _PantallaEditarUsuarioProfesorState
 
     Provider.of<Usuarios>(context, listen: false)
         .actualizarUsuario(_authData, id)
-        .then((value) => Navigator.pushReplacementNamed(
-            context, '/listausuarios'));
+        .then((value) => Navigator.pop(
+            context));
   }
 
 

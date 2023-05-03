@@ -154,7 +154,6 @@ const update = (req, res) => {
 
     param = req.body;
     
-    console.log(param);
     if(param.password != null){
         encryptedpassword = bcrypt.hashSync(param.password, 10);
         param.password = encryptedpassword;

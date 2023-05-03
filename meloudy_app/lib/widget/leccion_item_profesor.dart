@@ -4,7 +4,6 @@ import '../ips.dart';
 import '../providers/leccion.dart';
 
 import '../providers/lecciones.dart';
-import '../screen/leccion_pantalla_profesor.dart';
 
 class LeccionItemProfesor extends StatelessWidget {
   final String _nombre;
@@ -64,14 +63,7 @@ class LeccionItemProfesor extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
       margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
 
-      child: GestureDetector(
-      onTap: () {
-    Navigator.of(context).pushNamed(
-    LeccionPantallaProfesor.routeName,
-    arguments: leccion.id,
-    );
-    },
-        child: Container(
+      child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +132,7 @@ class LeccionItemProfesor extends StatelessWidget {
             ],
           ),
         ),
-      ),
+
     );
   }
 }
