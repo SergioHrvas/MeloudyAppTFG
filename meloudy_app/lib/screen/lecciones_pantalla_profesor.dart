@@ -17,7 +17,7 @@ class LeccionesPantallaProfesor extends StatelessWidget {
             child:
                 ElevatedButton(onPressed: () {
                   Navigator.pushNamed(context, '/crearleccion');
-                }, child: Text("Crear Lección"))),
+                }, child: Text("Crear Lección", style: TextStyle(fontSize: 20)))),
         LeccionesListaProfesor()
       ])),
     );

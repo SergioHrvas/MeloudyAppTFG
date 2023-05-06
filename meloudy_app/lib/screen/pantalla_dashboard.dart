@@ -46,7 +46,7 @@ class PantallaDashboard extends StatelessWidget {
                           ),
                           Text(
                             "Lecciones",
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 25),
                           ),
                         ],
                       )),
@@ -76,7 +76,7 @@ class PantallaDashboard extends StatelessWidget {
                               ),
                               margin: EdgeInsets.only(bottom: 5),
                             ),
-                            Text("Preguntas", style: TextStyle(fontSize: 20)),
+                            Text("Preguntas", style: TextStyle(fontSize: 25)),
                           ],
                         ))),
                 Container(
@@ -103,7 +103,7 @@ class PantallaDashboard extends StatelessWidget {
                               ),
                               margin: EdgeInsets.only(bottom: 5),
                             ),
-                            Text("Usuarios", style: TextStyle(fontSize: 20)),
+                            Text("Usuarios", style: TextStyle(fontSize: 25)),
                           ],
                         ))),
                 Container(
@@ -130,7 +130,7 @@ class PantallaDashboard extends StatelessWidget {
                               ),
                               margin: EdgeInsets.only(bottom: 5),
                             ),
-                            Text("Logros", style: TextStyle(fontSize: 20)),
+                            Text("Logros", style: TextStyle(fontSize: 25)),
                           ],
                         ))),
               ],
