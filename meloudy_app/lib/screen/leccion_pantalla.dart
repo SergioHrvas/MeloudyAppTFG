@@ -36,7 +36,8 @@ class LeccionPantalla extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20),
           margin: EdgeInsets.only(bottom: 20),
           child: Container(
-            child: Image.network('http://${IP.ip}:5000/img/${contenido[i].texto}'),
+            child:
+                Image.network('http://${IP.ip}:5000/img/${contenido[i].texto}'),
             decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           ),
         ));
@@ -48,21 +49,23 @@ class LeccionPantalla extends StatelessWidget {
             child: Text(contenido[i].texto,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))));
       } else if (contenido[i].tipo == 'subtitulo') {
-    contenidos.add(Container(
-    width: double.infinity,
-    padding: EdgeInsets.only(left: 20, top: 5, bottom: 0),
-    margin: EdgeInsets.only(top: 10),
-    child: Text(contenido[i].texto,
-    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))));
-    }
-    else{
+        contenidos.add(Container(
+            width: double.infinity,
+            padding: EdgeInsets.only(left: 20, top: 5, bottom: 0),
+            margin: EdgeInsets.only(top: 10),
+            child: Text(contenido[i].texto,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))));
+      } else {
         contenidos.add(Container(
             width: double.infinity,
             child: Text("ERROR",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red))));
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red))));
       }
-      }
+    }
     return Scaffold(
       appBar: AppBar(title: Text("MELOUDY")),
       drawer: DrawerApp(),
@@ -73,7 +76,9 @@ class LeccionPantalla extends StatelessWidget {
             child: Container(
               child: Text("${loadedLesson.nombre}",
                   style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20)),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20)),
               width: 170,
               alignment: Alignment.center,
               height: 40,
@@ -95,34 +100,50 @@ class LeccionPantalla extends StatelessWidget {
                 border: Border.all(color: Colors.black),
                 image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage('http://${IP.ip}:5000/img/${loadedLesson.imagenprincipal}'),
-                )
-
-            ),
+                  image: NetworkImage(
+                      'http://${IP.ip}:5000/img/${loadedLesson.imagenprincipal}'),
+                )),
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
             ),
             margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
             child: Column(children: [...contenidos]),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 30),
-              child: ElevatedButton(onPressed: (
-                  ){
-                var id = Provider.of<Auth>(context,listen:false).userId;
-                Provider.of<Preguntas>(context, listen:false).setIdUser(id);
-                Provider.of<Preguntas>(context, listen:false).setModo('respondiendo');
-                print(leccionId);
-                Navigator.pushReplacementNamed(context, '/pregunta', arguments: leccionId);
-              }, child: Text("Hacer Test", style: TextStyle(fontSize: 20),),)),
+              margin: EdgeInsets.only(bottom: 20),
+              child: ElevatedButton(
+                onPressed: () {
+                  var id = Provider.of<Auth>(context, listen: false).userId;
+                  Provider.of<Preguntas>(context, listen: false).setIdUser(id);
+                  Provider.of<Preguntas>(context, listen: false)
+                      .setModo('respondiendo');
+                  print(leccionId);
+                  Navigator.pushReplacementNamed(context, '/pregunta',
+                      arguments: leccionId);
+                },
+                child: Text(
+                  "Hacer Test",
+                  style: TextStyle(fontSize: 20),
+                ),
+              )),
+          Container(
+              margin: EdgeInsets.only(bottom: 20),
 
-          Column(children: [Container(child:ElevatedButton(child: Text("Historial de Tests"), onPressed: (){
-            Provider.of<Lecciones>(context, listen:false).fetchAndSetTests(leccionId, idUsuario).then((resultado) {
-              Navigator.pushReplacementNamed(context, '/historial-tests', arguments: leccionId);
-            });
-          },))])
+              child: ElevatedButton(
+            child: Text("Historial",                   style: TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Provider.of<Lecciones>(context, listen: false)
+                  .fetchAndSetTests(leccionId, idUsuario)
+                  .then((resultado) {
+                Navigator.pushReplacementNamed(context, '/historial-tests',
+                    arguments: leccionId);
+              });
+            },
+          ))
         ],
       )),
     );

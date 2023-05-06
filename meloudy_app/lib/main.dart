@@ -1,3 +1,4 @@
+import 'package:meloudy_app/paleta.dart';
 import 'package:meloudy_app/providers/logros.dart';
 import 'package:meloudy_app/providers/notas.dart';
 import 'package:meloudy_app/providers/opciones.dart';
@@ -19,6 +20,7 @@ import 'package:meloudy_app/screen/pantalla_crear_logro_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_pregunta_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_usuario_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_editar_leccion_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_editar_logro_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_editar_pregunta_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_editar_usuario_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_logros_profesor.dart';
@@ -73,7 +75,8 @@ class MyApp extends StatelessWidget {
         builder: (ctx, auth, _) => MaterialApp(
           title: 'Meloudy',
           theme: ThemeData(
-            primarySwatch: Colors.blue,
+            scaffoldBackgroundColor: Paleta.blueBackground,
+            primarySwatch: Paleta.blueCustom,
           ),
           //home: MicrofonoPantalla(),
           home: auth.isAuth
@@ -100,6 +103,7 @@ class MyApp extends StatelessWidget {
             PantallaUsuario.routeName: (ctx) => PantallaUsuario(),
             PantallaLogrosProfesor.routeName: (ctx) => PantallaLogrosProfesor(),
             PantallaCrearLogroProfesor.routeName: (ctx) => PantallaCrearLogroProfesor(),
+            PantallaEditarLogroProfesor.routeName: (ctx) => PantallaEditarLogroProfesor(),
 
 
 

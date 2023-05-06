@@ -42,7 +42,10 @@ const UsuarioSchema = Schema({
     token: {
         type: String,
     },
-
+    logros: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Logro'
+    }],
 });
 
 module.exports = model('Usuario', UsuarioSchema);

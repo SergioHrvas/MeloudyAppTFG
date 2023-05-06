@@ -30,7 +30,7 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
           logros.removeAt(i);
         });
 
-        Provider.of<Usuarios>(context, listen: false).borrarUsuario(id, i)
+        Provider.of<Logros>(context, listen: false).borrarLogro(id, i)
             .then((_) {
           Navigator.of(context).pop();
         });
@@ -85,14 +85,7 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
               Container(
                 height: 75,
                 width: 75,
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  color: Colors.white,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage('http://${IP.ip}:5000/img/${logros[i].imagen}'),
-                  ),
-                ),
+                child: Image.network('http://${IP.ip}:5000/img/${logros[i].imagen}')
               ),
               Container(
                 child: Flexible(
@@ -166,7 +159,8 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
       ));
     }
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(          title: Text("Lista de logros"),
+      ),
       drawer: DrawerApp(),
       body: SingleChildScrollView(
         child: Container(

@@ -49,13 +49,21 @@ class UsuarioPerfil with ChangeNotifier {
           apellidosmap.add(apellidos[j]);
         }
 
+        var logros = extractedData['logros'];
+        List<String> logrosmap = [];
+
+        for(var j = 0; j < logros.length; j++){
+          logrosmap.add(logros[j]['imagen']);
+        }
+
         user = Usuario(id: extractedData['usuario']['_id'],
                 nombre: extractedData['usuario']['nombre'],
                 foto: extractedData['usuario']['foto'],
                 apellidos: apellidosmap,
                 correo: extractedData['usuario']['correo'],
                 username: extractedData['usuario']['username'],
-                rol: extractedData['usuario']['rol']
+                rol: extractedData['usuario']['rol'],
+                logros: logrosmap
             );
       }
       if (extractedData == null) {

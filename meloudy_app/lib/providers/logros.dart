@@ -90,7 +90,15 @@ class Logros with ChangeNotifier {
   }
 
 
+  borrarLogro(String id, int i) async{
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/achievement/delete-achievement/${id}?auth=$authToken');
 
+
+    logros.removeAt(i);
+    final response = await http.delete(url);
+    notifyListeners();
+  }
 
   Logro findById(String id) {
     return logros.firstWhere((prod) => prod.id == id);

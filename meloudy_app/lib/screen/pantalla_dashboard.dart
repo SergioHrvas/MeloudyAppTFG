@@ -17,7 +17,6 @@ class PantallaDashboard extends StatelessWidget {
         ),
         drawer: DrawerApp(),
         body: Container(
-            padding: EdgeInsets.only(top: 20),
             alignment: Alignment.center,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +27,7 @@ class PantallaDashboard extends StatelessWidget {
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(220, 50),
-                        primary: Colors.purple,
+                        primary: Colors.black45,
                         padding: EdgeInsets.only(bottom: 10, top: 10),
                       ),
                       onPressed: () {
@@ -57,7 +56,7 @@ class PantallaDashboard extends StatelessWidget {
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(220, 50),
-                          primary: Colors.purple,
+                          primary: Colors.black45,
                           padding: EdgeInsets.only(bottom: 10, top: 10),
                         ),
                         onPressed: () {
@@ -85,7 +84,7 @@ class PantallaDashboard extends StatelessWidget {
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(220, 50),
-                          primary: Colors.purple,
+                          primary: Colors.black45,
                           padding: EdgeInsets.only(bottom: 10, top: 10),
                         ),
                         onPressed: () {
@@ -112,7 +111,7 @@ class PantallaDashboard extends StatelessWidget {
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(220, 50),
-                          primary: Colors.purple,
+                          primary: Colors.black45,
                           padding: EdgeInsets.only(bottom: 10, top: 10),
                         ),
                         onPressed: () {

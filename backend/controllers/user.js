@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { generateToken } = require('../services/jwt');
+const Achievement = require("../models/Achievement");
 
 const create = async (req, res) => {
     //Recoger parametros por post
@@ -68,18 +69,42 @@ const index = (req, res) => {
     }
     );
 }
-const get = (req, res) => {
+const get = async (req, res) => {
     const id = req.params.id;
-    User.findById(id, (error, user) => {
+    User.findById(id, async (error, user) => {
         if (error || !user) {
             return res.status(404).json({
                 status: "error",
                 mensaje: "El usuario no se ha podido encontrar"
             });
         }
+
+        var logros = [];
+
+        for (let i = 0; i < user.logros.length; i++) {
+            try {
+
+            const element = await Achievement.findById(user.logros[i], (error, question) => {
+                    if (error || !question) {
+                        return res.status(404).json({
+                            status: "error",
+                            mensaje: "La pregunta no se ha podido encontrar"
+                        });
+                    }
+                    // return question;
+
+            }
+            ).clone();
+            logros.push(element);
+        } catch (error) {
+            console.log(error);
+        }
+        }
+
         return res.status(200).json({
             status: "success",
             usuario: user,
+            logros: logros,
             mensaje: "El usuario se ha encontrado"
         });
     });

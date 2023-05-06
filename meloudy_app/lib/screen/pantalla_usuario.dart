@@ -12,6 +12,7 @@ class PantallaUsuario extends StatelessWidget {
   var usuario;
   var nombre;
 
+  var logros = [];
   @override
   Widget build(BuildContext context) {
     usuario = Provider.of<UsuarioPerfil>(context, listen: false).item;
@@ -21,6 +22,25 @@ class PantallaUsuario extends StatelessWidget {
         " " +
         usuario.apellidos[1];
 
+    for(var i = 0; i < usuario.logros.length; i++){
+      logros.add(Container(
+          margin: EdgeInsets.only(right: 5),
+          width: 50,
+          child: Image.network("http://${IP.ip}:5000/img/${usuario.logros[i]}")),);
+    /*Container(
+    width: 50,
+    child: Image.network("http://${IP.ip}:5000/img/2.png")),
+    Container(
+    width: 50,
+    child: Image.network("http://${IP.ip}:5000/img/13.png")),
+    Container(
+    width: 50,
+    child: Image.network("http://${IP.ip}:5000/img/19.png")),
+    Container(
+    width: 50,
+    child: Image.network("http://${IP.ip}:5000/img/24.png")),*/
+
+    }
     return Scaffold(
         appBar: AppBar(
           title: Text("Mi perfil"),
@@ -48,7 +68,7 @@ class PantallaUsuario extends StatelessWidget {
                   margin: EdgeInsets.only(right: 20, left: 20, bottom: 20),
                   padding: EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
+                      color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: Column(
                     children: [
@@ -106,7 +126,7 @@ class PantallaUsuario extends StatelessWidget {
                                     child: Icon(Icons.edit)),
                                 Container(
                                     margin: EdgeInsets.only(left: 3),
-                                    child: Text("Editar"))
+                                    child: Text("Editar", style: TextStyle(fontSize: 20),))
                               ],
                             )),
                       ),
@@ -118,31 +138,16 @@ class PantallaUsuario extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 20),
                     padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
+                        color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: Column(
                       children: [
                         Container(
                             margin: EdgeInsets.only(bottom: 10),
                             child: Text("Mis Logros", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)),
-                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        Row(
                             children: [
-                          Container(
-                              width: 50,
-                              child: Image.network("http://${IP.ip}:5000/img/1.png")),
-                          Container(
-                              width: 50,
-                              child: Image.network("http://${IP.ip}:5000/img/2.png")),
-                          Container(
-                              width: 50,
-                              child: Image.network("http://${IP.ip}:5000/img/13.png")),
-                          Container(
-                              width: 50,
-                              child: Image.network("http://${IP.ip}:5000/img/19.png")),
-                          Container(
-                              width: 50,
-                              child: Image.network("http://${IP.ip}:5000/img/24.png")),
-
+                          ...logros
                         ]),
                       ],
                     )),

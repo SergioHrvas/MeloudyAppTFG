@@ -16,17 +16,17 @@ import '../widget/drawer_app.dart';
 import '../widget/subir_notas.dart';
 import '../widget/subir_opcion.dart';
 
-class PantallaCrearLogroProfesor extends StatefulWidget {
-  static const routeName = '/crearlogro';
+class PantallaEditarLogroProfesor extends StatefulWidget {
+  static const routeName = '/editarlogro';
 
   @override
-  _PantallaCrearLogroProfesorState createState() =>
-      _PantallaCrearLogroProfesorState();
+  _PantallaEditarLogroProfesorState createState() =>
+      _PantallaEditarLogroProfesorState();
 }
 
-class _PantallaCrearLogroProfesorState
-    extends State<PantallaCrearLogroProfesor> {
-  _PantallaCrearLogroProfesorState();
+class _PantallaEditarLogroProfesorState
+    extends State<PantallaEditarLogroProfesor> {
+  _PantallaEditarLogroProfesorState();
 
 
   PickedFile _image;
@@ -37,6 +37,8 @@ class _PantallaCrearLogroProfesorState
 
   Map<String, dynamic> _authData = {};
 
+  var id;
+  var logro;
 
   @override
   void initState() {
@@ -65,7 +67,7 @@ class _PantallaCrearLogroProfesorState
     await ImageController().upload(_image, token).then((_) {
       var img;
       if (_image == null) {
-        img = "musica.png";
+        img = logro.imagen;
       }
       else {
         img = file.uri.path
@@ -86,9 +88,15 @@ class _PantallaCrearLogroProfesorState
 
   @override
   Widget build(BuildContext context) {
+    var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
+    print(arg['id']);
 
-    return Scaffold(
-      appBar: AppBar(          title: Text("Crear Logro"),
+    id = arg['id'];
+     logro =
+          Provider.of<Logros>(context, listen: false).findById(arg['id']);
+
+      return Scaffold(
+      appBar: AppBar(          title: Text("Editar logro"),
       ),
       drawer: DrawerApp(),
       body: SingleChildScrollView(
@@ -110,6 +118,19 @@ class _PantallaCrearLogroProfesorState
                           image: FileImage(File(file.path))
                       ),
                     ) ,
+                  ) : logro.imagen != null
+                      ? Container(
+                    width: 200,
+                    height: 200,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                      border: Border.all(color: Colors.black),
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                              "http://${IP.ip}:5000/img/${logro.imagen}")),
+                    ),
                   ) : Container(),
                   Container(
                     width: 200,
@@ -129,6 +150,7 @@ class _PantallaCrearLogroProfesorState
                   Container(
                 margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                 child: TextFormField(
+                  initialValue: logro.nombre,
                   onSaved: (value){
                     _authData['nombre'] = value;
                   },
@@ -140,6 +162,8 @@ class _PantallaCrearLogroProfesorState
                   Container(
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                     child: TextFormField(
+
+                        initialValue: logro.descripcion,
                       onSaved: (value){
                         _authData['descripcion'] = (value);
                       },

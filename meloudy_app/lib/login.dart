@@ -41,7 +41,7 @@ class Login extends StatelessWidget {
                           EdgeInsets.symmetric(vertical: 8.0, horizontal: 40.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Colors.lightBlue.shade500,
+                        color: Colors.lightBlue.shade700,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 8,
