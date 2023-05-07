@@ -4,11 +4,7 @@ import '../ips.dart';
 import '../providers/leccion.dart';
 
 import '../providers/lecciones.dart';
-extension StringExtension on String {
-  String useCorrectEllipsis() {
-    return replaceAll('', '\u200B');
-  }
-}
+import '../extensiones.dart';
 
 class LeccionItemProfesor extends StatelessWidget {
   final String _nombre;
@@ -71,18 +67,18 @@ class LeccionItemProfesor extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Color.fromRGBO(100, 150, 255, 0.4509803921568675),
+        color: Color.fromRGBO(124, 135, 255, 0.615686274509804),
       ),
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 0),
       margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-                height: 80,
-                width: 80,
+                height: 120,
+                width: 120,
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(vertical: 8.0),
                 decoration: BoxDecoration(
@@ -90,7 +86,7 @@ class LeccionItemProfesor extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Container(
-                  width: 100,
+                  width: 120,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
@@ -103,13 +99,13 @@ class LeccionItemProfesor extends StatelessWidget {
                       )),
                 )),
             Container(
-              width: 230,
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              margin: EdgeInsets.only(left: 5),
+              width: 245,
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(10),
-                    width: 210,
+                    margin: EdgeInsets.only(bottom: 10),
+                    width: 230,
                     child: Text(
                       _indice.toString() + ". " + _nombre.useCorrectEllipsis(),
                       style: TextStyle(

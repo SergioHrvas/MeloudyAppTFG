@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meloudy_app/providers/preguntas.dart';
+import '../extensiones.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
@@ -78,7 +78,8 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
         alignment: Alignment.center,
         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
         padding: EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
-        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+        decoration: BoxDecoration(        borderRadius: BorderRadius.circular(20),
+          color: Color.fromRGBO(124, 135, 255, 0.615686274509804),),
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 5),
           child: Row(
@@ -107,20 +108,20 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                             child:
                                 Container(
                                     child: Text(
-                                  preguntas[i].cuestion,
+                                  preguntas[i].cuestion.toString().useCorrectEllipsis(),
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18),
+                                      fontSize: 25,
+                                  overflow: TextOverflow.ellipsis),
+                                      maxLines: 2,
+                                      softWrap: false,
                                 )),
 ),
                         Container(
-                            margin: EdgeInsets.only(left: 10),
-                            alignment: Alignment.centerLeft,
-                            child: Text("Tipo: " + preguntas[i].tipo)),
-                        Container(
-                            margin: EdgeInsets.only(left: 10),
-                            alignment: Alignment.centerLeft,
-                            child: Text("Id: " + preguntas[i].id)),
+                            margin: EdgeInsets.only(left: 10, bottom: 5),
+                            alignment: Alignment.center,
+                            child: Text("Tipo: " + preguntas[i].tipo, style: TextStyle(fontSize: 20),)),
+
                         Container(
                           alignment: Alignment.center,
                           child: Row(
@@ -136,7 +137,7 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                                     child: Row(
                                       children: [
                                         Icon(Icons.delete),
-                                        Text("Borrar"),
+                                        Text("Borrar", style: TextStyle(fontSize: 20),),
                                       ],
                                     ),
                                     style: ElevatedButton.styleFrom(
@@ -177,7 +178,7 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                                     child: Row(
                                       children: [
                                         Icon(Icons.edit_document),
-                                        Text("Editar"),
+                                        Text("Editar", style: TextStyle(fontSize: 20),),
                                       ],
                                     ),
                                     style: ElevatedButton.styleFrom(

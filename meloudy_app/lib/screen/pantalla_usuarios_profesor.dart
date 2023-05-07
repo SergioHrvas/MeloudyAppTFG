@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
-import '../providers/preguntas_profesor.dart';
+import '../extensiones.dart';
 import '../providers/usuarios.dart';
 import '../widget/drawer_app.dart';
 
@@ -72,18 +72,21 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
 
     var usuariosWidget = [];
     for (var i = 0; i < usuarios.length; i++) {
+      var nombre = usuarios[i].nombre + " " + usuarios[i].apellidos[0] + " " + usuarios[i].apellidos[1];
+
       usuariosWidget.add(Container(
         alignment: Alignment.center,
         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
         padding: EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
-        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+        decoration: BoxDecoration( borderRadius: BorderRadius.circular(20),
+          color: Color.fromRGBO(124, 135, 255, 0.615686274509804),),
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 5),
           child: Row(
             children: [
               Container(
-                height: 75,
-                width: 75,
+                height: 80,
+                width: 80,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: Colors.white,
@@ -102,22 +105,13 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                       children: [
                         Container(
                             margin: EdgeInsets.only(left: 15,bottom: 10),
-                            child: Row(
-                              children: [
-                                Expanded(child: Row(children: [
-                                  Text(usuarios[i].nombre + " ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-                                  Text(usuarios[i].apellidos[0] + " ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-                                  Text(usuarios[i].apellidos[1], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-                                ]
-                  )),
-                                Container(margin: EdgeInsets.only(left: 10),
-                                    child: Icon(Icons.edit_document, color: Colors.blue))
-                              ],
-                            )),
+
+                    child: Text(nombre.toString().useCorrectEllipsis(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, overflow: TextOverflow.ellipsis), maxLines: 1,),
+                        ),
                         Container(
-                            margin: EdgeInsets.only(left: 10),
-                            alignment: Alignment.centerLeft,
-                            child: Text("" + usuarios[i].id.toString(), style: TextStyle(color: Colors.grey),)),
+                            margin: EdgeInsets.only(left: 10, bottom: 10),
+                            alignment: Alignment.center,
+                            child: Text(usuarios[i].correo.toString(), style: TextStyle(fontSize: 18,color: Color.fromRGBO(50, 50, 50, 1)),)),
                         Container(
                           alignment: Alignment.center,
                           child: Row(
@@ -133,7 +127,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                                     child: Row(
                                       children: [
                                         Icon(Icons.delete),
-                                        Text("Borrar"),
+                                        Text("Borrar",style: TextStyle(fontSize: 20),),
                                       ],
                                     ),
                                     style: ElevatedButton.styleFrom(
@@ -150,7 +144,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                                     child: Row(
                                       children: [
                                         Icon(Icons.edit_document),
-                                        Text("Editar"),
+                                        Text("Editar",style: TextStyle(fontSize: 20),),
                                       ],
                                     ),
                                     style: ElevatedButton.styleFrom(
@@ -186,6 +180,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                     child: Container(
                       width: 175,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add)),
                           Text("Crear Usuario",style: TextStyle(fontSize: 20),),
