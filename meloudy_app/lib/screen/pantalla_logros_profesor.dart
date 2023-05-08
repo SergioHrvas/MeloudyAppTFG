@@ -3,8 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../ips.dart';
 import '../providers/logros.dart';
-import '../providers/preguntas_profesor.dart';
-import '../providers/usuarios.dart';
+import 'package:meloudy_app/extensiones.dart';
 import '../widget/drawer_app.dart';
 
 class PantallaLogrosProfesor extends StatefulWidget {
@@ -77,15 +76,16 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
         alignment: Alignment.center,
         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
         padding: EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
-        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-        child: Container(
+        decoration: BoxDecoration( borderRadius: BorderRadius.circular(20),
+          color: Color.fromRGBO(124, 135, 255, 0.615686274509804),),        child: Container(
           padding: EdgeInsets.symmetric(vertical: 5),
           child: Row(
             children: [
               Container(
                 height: 75,
                 width: 75,
-                child: Image.network('http://${IP.ip}:5000/img/${logros[i].imagen}')
+                child: Container(                decoration: BoxDecoration(border: Border.all(color: Colors.black), borderRadius: BorderRadius.circular(200)),
+                    child: Image.network('http://${IP.ip}:5000/img/${logros[i].imagen}',))
               ),
               Container(
                 child: Flexible(
@@ -95,17 +95,14 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
                     child: Column(
                       children: [
                         Container(
-                            margin: EdgeInsets.only(left: 15,bottom: 10),
-                            child: Text(logros[i].nombre + " ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                            margin: EdgeInsets.only(left: 15, bottom: 10),
+                            child: Text(logros[i].nombre.toString().useCorrectEllipsis(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, overflow: TextOverflow.ellipsis), maxLines: 1,),
                             ),
                         Container(
                           margin: EdgeInsets.only(left: 15,bottom: 10),
-                          child: Text(logros[i].descripcion)
+                          child: Text(logros[i].descripcion, style: TextStyle(fontSize: 16),)
                           ,
                         ),
-                        Container(
-                            margin: EdgeInsets.only(left: 10),
-                            child: Text("" + logros[i].id.toString(), style: TextStyle(color: Colors.grey),)),
                         Container(
                           alignment: Alignment.center,
                           child: Row(

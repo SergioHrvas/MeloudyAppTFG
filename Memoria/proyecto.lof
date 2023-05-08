@@ -91,39 +91,50 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Revisión de entrada de micrófono acertada.}}}{96}{subfigure.21.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Revisión de entrada de micrófono fallida.}}}{96}{subfigure.21.2}%
 \contentsline {figure}{\numberline {7.22}{\ignorespaces Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.\relax }}{97}{figure.caption.129}%
-\contentsline {figure}{\numberline {7.23}{\ignorespaces Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.\relax }}{98}{figure.caption.131}%
-\contentsline {figure}{\numberline {7.24}{\ignorespaces Pantalla de lista de lecciones del profesor para la gestión de estas.\relax }}{99}{figure.caption.133}%
-\contentsline {figure}{\numberline {7.25}{\ignorespaces Pantalla de lista de lecciones del profesor para la gestión de estas.\relax }}{100}{figure.caption.135}%
-\contentsline {figure}{\numberline {7.26}{\ignorespaces Pantalla de la creación de lecciones sin datos introducidos.\relax }}{102}{figure.caption.138}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección vacía \#1.}}}{102}{subfigure.26.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección vacía \#2.}}}{102}{subfigure.26.2}%
-\contentsline {figure}{\numberline {7.27}{\ignorespaces Pantalla de la creación de lecciones con datos introducidos. \relax }}{103}{figure.caption.139}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección rellena \#1.}}}{103}{subfigure.27.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección rellena \#2.}}}{103}{subfigure.27.2}%
-\contentsline {figure}{\numberline {7.28}{\ignorespaces Pantalla de la edición de lecciones existentes por parte del profesor.\relax }}{105}{figure.caption.142}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de lección \#1.}}}{105}{subfigure.28.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de lección \#2.}}}{105}{subfigure.28.2}%
-\contentsline {figure}{\numberline {7.29}{\ignorespaces Pantalla de lista de preguntas del profesor para la gestión de estas.\relax }}{106}{figure.caption.145}%
-\contentsline {figure}{\numberline {7.30}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' vacía. La pregunta de tipo múltiple y de tipo micrófono son iguales.\relax }}{108}{figure.caption.147}%
-\contentsline {figure}{\numberline {7.31}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' con datos introducidos.\relax }}{108}{figure.caption.148}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#1.}}}{108}{subfigure.31.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#2.}}}{108}{subfigure.31.2}%
-\contentsline {figure}{\numberline {7.32}{\ignorespaces Pantalla de creación de pregunta de tipo 'múltiple' con datos introducidos.\relax }}{109}{figure.caption.149}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#1.}}}{109}{subfigure.32.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#2.}}}{109}{subfigure.32.2}%
-\contentsline {figure}{\numberline {7.33}{\ignorespaces Pantalla de creación de pregunta de tipo 'micrófono' con datos introducidos.\relax }}{109}{figure.caption.150}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#1.}}}{109}{subfigure.33.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#2.}}}{109}{subfigure.33.2}%
-\contentsline {figure}{\numberline {7.34}{\ignorespaces Pantalla de creación de pregunta de tipo 'texto'.\relax }}{110}{figure.caption.151}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'texto' vacía.}}}{110}{subfigure.34.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'texto' rellena.}}}{110}{subfigure.34.2}%
-\contentsline {figure}{\numberline {7.35}{\ignorespaces Pantalla de edición de pregunta de tipo 'única'.\relax }}{112}{figure.caption.154}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta única \#1.}}}{112}{subfigure.35.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta única\#2.}}}{112}{subfigure.35.2}%
-\contentsline {figure}{\numberline {7.36}{\ignorespaces Pantalla de edición de pregunta de tipo 'múltiple'.\relax }}{113}{figure.caption.155}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta múltiple\#1.}}}{113}{subfigure.36.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta múltiple\#2.}}}{113}{subfigure.36.2}%
-\contentsline {figure}{\numberline {7.37}{\ignorespaces Pantalla de edición de pregunta de tipo 'micrófono'.\relax }}{113}{figure.caption.156}%
-\contentsline {figure}{\numberline {7.38}{\ignorespaces Pantalla de edición de pregunta de tipo 'texto'.\relax }}{114}{figure.caption.157}%
+\contentsline {figure}{\numberline {7.23}{\ignorespaces Pantalla del perfil del usuario.\relax }}{98}{figure.caption.131}%
+\contentsline {figure}{\numberline {7.24}{\ignorespaces Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.\relax }}{99}{figure.caption.134}%
+\contentsline {figure}{\numberline {7.25}{\ignorespaces Pantalla de lista de lecciones del profesor para la gestión de estas.\relax }}{100}{figure.caption.136}%
+\contentsline {figure}{\numberline {7.26}{\ignorespaces Pantalla de lista de lecciones del profesor para la gestión de estas.\relax }}{101}{figure.caption.138}%
+\contentsline {figure}{\numberline {7.27}{\ignorespaces Pantalla de la creación de lecciones sin datos introducidos.\relax }}{103}{figure.caption.141}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección vacía \#1.}}}{103}{subfigure.27.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección vacía \#2.}}}{103}{subfigure.27.2}%
+\contentsline {figure}{\numberline {7.28}{\ignorespaces Pantalla de la creación de lecciones con datos introducidos. \relax }}{104}{figure.caption.142}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección rellena \#1.}}}{104}{subfigure.28.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección rellena \#2.}}}{104}{subfigure.28.2}%
+\contentsline {figure}{\numberline {7.29}{\ignorespaces Pantalla de la edición de lecciones existentes por parte del profesor.\relax }}{106}{figure.caption.145}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de lección \#1.}}}{106}{subfigure.29.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de lección \#2.}}}{106}{subfigure.29.2}%
+\contentsline {figure}{\numberline {7.30}{\ignorespaces Pantalla de lista de preguntas del profesor para la gestión de estas.\relax }}{107}{figure.caption.148}%
+\contentsline {figure}{\numberline {7.31}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' vacía. La pregunta de tipo múltiple y de tipo micrófono son iguales.\relax }}{109}{figure.caption.150}%
+\contentsline {figure}{\numberline {7.32}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' con datos introducidos.\relax }}{109}{figure.caption.151}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#1.}}}{109}{subfigure.32.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#2.}}}{109}{subfigure.32.2}%
+\contentsline {figure}{\numberline {7.33}{\ignorespaces Pantalla de creación de pregunta de tipo 'múltiple' con datos introducidos.\relax }}{110}{figure.caption.152}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#1.}}}{110}{subfigure.33.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#2.}}}{110}{subfigure.33.2}%
+\contentsline {figure}{\numberline {7.34}{\ignorespaces Pantalla de creación de pregunta de tipo 'micrófono' con datos introducidos.\relax }}{110}{figure.caption.153}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#1.}}}{110}{subfigure.34.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#2.}}}{110}{subfigure.34.2}%
+\contentsline {figure}{\numberline {7.35}{\ignorespaces Pantalla de creación de pregunta de tipo 'texto'.\relax }}{111}{figure.caption.154}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'texto' vacía.}}}{111}{subfigure.35.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'texto' rellena.}}}{111}{subfigure.35.2}%
+\contentsline {figure}{\numberline {7.36}{\ignorespaces Pantalla de edición de pregunta de tipo 'única'.\relax }}{113}{figure.caption.157}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta única \#1.}}}{113}{subfigure.36.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta única\#2.}}}{113}{subfigure.36.2}%
+\contentsline {figure}{\numberline {7.37}{\ignorespaces Pantalla de edición de pregunta de tipo 'múltiple'.\relax }}{114}{figure.caption.158}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta múltiple\#1.}}}{114}{subfigure.37.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta múltiple\#2.}}}{114}{subfigure.37.2}%
+\contentsline {figure}{\numberline {7.38}{\ignorespaces Pantalla de edición de pregunta de tipo 'micrófono'.\relax }}{114}{figure.caption.159}%
+\contentsline {figure}{\numberline {7.39}{\ignorespaces Pantalla de edición de pregunta de tipo 'texto'.\relax }}{115}{figure.caption.160}%
+\contentsline {figure}{\numberline {7.40}{\ignorespaces Pantalla de lista de usuarios del administrador para la gestión de estos.\relax }}{116}{figure.caption.163}%
+\contentsline {figure}{\numberline {7.41}{\ignorespaces Pantallas de creación de usuarios.\relax }}{117}{figure.caption.165}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de usuario vacía. \#1.}}}{117}{subfigure.41.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de usuario rellena \#2.}}}{117}{subfigure.41.2}%
+\contentsline {figure}{\numberline {7.42}{\ignorespaces Pantalla de edición de usuario existente.\relax }}{118}{figure.caption.168}%
+\contentsline {figure}{\numberline {7.43}{\ignorespaces Pantalla de lista de logros del administrador para la gestión de estos.\relax }}{119}{figure.caption.171}%
+\contentsline {figure}{\numberline {7.44}{\ignorespaces Pantallas de creación de logros.\relax }}{120}{figure.caption.173}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de usuario logro. \#1.}}}{120}{subfigure.44.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de logro rellena \#2.}}}{120}{subfigure.44.2}%
+\contentsline {figure}{\numberline {7.45}{\ignorespaces Pantalla de edición de logro existente.\relax }}{122}{figure.caption.176}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

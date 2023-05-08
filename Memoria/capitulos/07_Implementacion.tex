@@ -599,17 +599,42 @@ La vista de esta pantalla consiste en un distribuidor de columnas (Column) que c
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\textwidth]{imagenes/c7/historialtest.png}
+  \includegraphics[width=0.44\textwidth]{imagenes/c7/historialtest.png}
   \caption{Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.}
   \label{fig:login}
 \end{figure}
 
 
-\newpage
+\subsection{Ver Mi Perfil}
+\textit{Desarrollado en el Sprint 10}
+\label{sec:miperfil}
 
-\section{Funcionalidad del profesor}
+\paragraph*{Vista}
+\label{sec:vista}
+La vista de esta pantalla consiste en un distribuidor de columnas (Column) que contiene los datos del usuario.
+En la parte superior de la pantalla se muestra la foto de perfil del usuario, y debajo de la foto se muestra el nombre, el apellido, el nombre de usuario (username), el correo electrónico y el rol.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.44\textwidth]{imagenes/c7/miperfil.png}
+  \caption{Pantalla del perfil del usuario.}
+  \label{fig:login}
+\end{figure}
+
+
+\paragraph*{Lógica}
+\label{sec:logica}
+La lógica de esta vista es muy simple. En primer lugar, cuando se accede al perfil se obtienen los datos del usuario mediante el método fetchAndSetUser de un nuevo Provider llamado UsuarioPerfil. Este método
+manda una petición HTTP \textit{(GET /api/user/get-user/\{id\})}. Una vez obtenidos los datos y cambiada la pantalla, se obtienen los datos del usuario mediante el provider UsuarioPerfil y se muestran en la vista. 
+
+\section{Funcionalidad de gestión de la aplicación}
+A continuación presentamos las funcionalidades de gestión de la aplicación. 
+El profesor podrá gestionar las lecciones y las preguntas de la aplicación. 
+Por otro lado, el administrador podrá gestionar, además de las lecciones y las preguntas, los usuarios y los logros de la aplicación.
 
 \subsection{Dashboard}
+
 \textit{Desarrollado en el Sprint 5}
 \label{sec:dashboard}
 
@@ -643,6 +668,7 @@ La lista de lecciones del profesor es muy similar a la del usuario. Las diferenc
 \newpage
 
 \subsection{Borrar lección} 
+
 \textit{Desarrollado en el Sprint 8}
 El profesor podrá borrar una lección de la lista de lecciones al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la lección.
 
@@ -666,6 +692,7 @@ una petición DELETE a la API con el id de la lección a borrar. La ruta de la p
 
 
 \subsection{Crear lección} 
+
 \textit{Desarrollado en el Sprint 8}
 
 Los profesores podrán crear lecciones para que los usuarios puedan estudiarlas. Para ello, se ha implementado una pantalla de creación de lecciones que permite al profesor añadir títulos, textos explicativos y contenido multimedia a la lección. Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
@@ -723,6 +750,7 @@ Una vez el usuario ha rellenado el formulario de creación de lecciones, se ha i
 
 
 \subsection{Editar lección} 
+
 \textit{Desarrollado en el Sprint 8}
 Los profesores podrán editar la información y el contenido de las lecciones. Para ello, se ha implementado una pantalla de edición de lecciones que permite al profesor modificar el título, la imagen y todo el contenido.
 
@@ -746,11 +774,12 @@ La única diferencia es que, al pulsar el botón de guardar, se envía una petic
 
 \newpage
 \subsection{Lista de preguntas} 
+
 \textit{Desarrollado en el Sprint 8}
 
 \paragraph*{Vista}
-La lista de preguntas contiene todas las preguntas existentes en el sistema. Se ha utilizado un distribuidor de columnas para mostrar las preguntas verticalmente. 
-Cada pregunta tiene un distribuidor de elementos horizontal que contiene a la izquierda la imagen de la pregunta y a la derecha el texto de la cuestión, el tipo de pregunta y su identificador. 
+La lista de preguntas contiene todas las preguntas existentes en el sistema. Se ha utilizado un distribuidor de columnas /textit{(Column)} para mostrar las preguntas verticalmente. 
+Cada pregunta tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la imagen de la pregunta y a la derecha el texto de la cuestión, el tipo de pregunta y su identificador. 
 Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuario modificar la pregunta.
 \begin{figure}[H]
   \centering
@@ -762,6 +791,7 @@ Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuari
 
 \newpage
 \subsection{Crear Pregunta} 
+
 \textit{Desarrollado en el Sprint 9}
 
 Los profesores podrán crear preguntas para que los usuarios puedan contestarlas en los tests. Para ello, se ha implementado una pantalla de creación de preguntas que permite al profesor elegir el tipo de pregunta y modificar toda la información relacionada con esta (imagen, opciones, respuestas correctas, etc). Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
@@ -855,6 +885,7 @@ El botón de guardar la lección envía los datos de las preguntas al servidor m
 \newpage
 
 \subsection{Editar Pregunta} 
+
 \textit{Desarrollado en el Sprint 9}
 Los profesores podrán editar la información y el contenido de las preguntas. Para ello, se ha implementado una pantalla de edición de preguntas que permite al profesor modificar la cuestión, la imagen y todos los demás datos.
 
@@ -898,6 +929,170 @@ La vista de esta pantalla es muy similar a la de la creación de las preguntas. 
 
 
 \paragraph*{Lógica}
-En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de lecciones.
+En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de preguntas.
 Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la pregunta. La ruta de la petición es \textit{PUT /api/question/update-question}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
+
+
+\newpage
+\subsection{Lista de usuarios} 
+
+\textit{Desarrollado en el Sprint 9}
+
+\paragraph*{Vista}
+La lista de usuarios contiene todos los usuarios registrados en el sistema. Se ha utilizado un distribuidor de columnas /textit{(Column)} para mostrar los usuarios de forma vertical. 
+Cada usuario tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la foto del usuario y a la derecha su nombre en negrita y el correo en un color grisáceo. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{imagenes/c7/listausuarios.png}
+  \caption{Pantalla de lista de usuarios del administrador para la gestión de estos.} 
+  \label{fig:listausuarios}
+\end{figure}
+
+
+\subsection{Crear Usuario} 
+
+\textit{Desarrollado en el Sprint 10}
+
+Los administradores podrán crear usuarios en el sistema. Para ello, se ha implementado una pantalla de creación de usuarios que permite al administrador introducir los datos del usuario como el nombre, el correo, la contraseña, la foto... Una vez creado, el usuario se añadirá a la lista de usuarios del profesor.
+
+
+\paragraph*{Vista}
+La vista de esta pantalla consiste en un formulario de creación de usuarios. Este formulario consta de:
+\begin{itemize}
+  \item Un botón para subir la imagen del usuario.
+  \item Un desplegable para elegir el rol del usuario.
+  \item Campos de texto para introducir el nombre, los apellidos, el nombre de usuario, el correo y la contraseña.
+\end{itemize}
+
+
+Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. Dentro de este, se encuentran los widgets del formulario, que serán tanto widgets de desplegables (\textit{DropdownButton}) como widgets de campos de texto (\textit{TextField}).
+
+En las siguientes imágenes se puede ver la pantalla de creación de usuarios de todos los tipos con los campos de texto vacíos y rellenos.
+
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de usuario vacía. \#1.]{{\includegraphics[width=0.32\textwidth]{imagenes/c7/crearusuario1.png} }}%
+  \qquad
+  \subfloat[\centering Creación de usuario rellena \#2.]{{ \includegraphics[width=0.32\textwidth]{imagenes/c7/crearusuario2.png} }}%
+  \caption{Pantallas de creación de usuarios.}%
+  \label{fig:example}%
+\end{figure}
+
+
+
+\paragraph*{Lógica}
+La funcionalidad de crear usuarios se ha implementado utilizando un nuevo método de creación de usuarios del Provider llamado usuarios. De esta forma
+se ha podido comunicar varias pantallas entre sí y añadir el usuario creado a la lista de usuarios del administrador.
+
+
+Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_picker}, que detallé en la funcionalidad de crear lecciones.
+
+El botón de guardar el usuario envía los datos de los usuarios al servidor mediante una petición POST a la ruta /api/user/registro. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
+
+
+\subsection{Editar Usuario} 
+
+\textit{Desarrollado en el Sprint 10}
+
+Los administradores podrán editar la información de los usuarios. Para ello, se ha implementado una pantalla de edición de usuarios que permite al profesor modificar el nombre, los apellidos, la foto y todos los demás datos.
+
+\paragraph*{Vista}
+La vista de esta pantalla es muy similar a la de la creación de los usuarios. La diferencia es que los widgets disponen de la información del usuario que se está editando.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.38\textwidth]{imagenes/c7/editarusuario.png}
+  \caption{Pantalla de edición de usuario existente.} 
+  \label{fig:edicion_usuario}
+\end{figure}
+
+
+\paragraph*{Lógica}
+En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de usuarios.
+Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos del usuario. La ruta de la petición es \textit{PUT /api/user/update-user}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
+
+
+\subsection{Lista de logros} 
+
+\textit{Desarrollado en el Sprint 10}
+
+\paragraph*{Vista}
+La lista de logros contiene todos los logros creados en el sistema. Se ha utilizado un distribuidor de columnas /textit{(Column)} para mostrar los logros de forma vertical. 
+Cada logro tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la imagen del logro y a la derecha el nombre en negrita. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.37\textwidth]{imagenes/c7/listalogros.png}
+  \caption{Pantalla de lista de logros del administrador para la gestión de estos.} 
+  \label{fig:listalogros}
+\end{figure}
+
+
+\subsection{Crear Logro} 
+
+\textit{Desarrollado en el Sprint 10}
+
+Los administradores podrán crear usuarios en el sistema. Para ello, se ha implementado una pantalla de creación de usuarios que permite al administrador introducir los datos del usuario como el nombre, el correo, la contraseña, la foto... Una vez creado, el usuario se añadirá a la lista de usuarios del profesor.
+
+
+\paragraph*{Vista}
+La vista de esta pantalla consiste en un formulario de creación de usuarios. Este formulario consta de:
+\begin{itemize}
+  \item Un botón para subir la imagen del usuario.
+  \item Un desplegable para elegir el rol del usuario.
+  \item Campos de texto para introducir el nombre, los apellidos, el nombre de usuario, el correo y la contraseña.
+\end{itemize}
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Creación de usuario logro. \#1.]{{\includegraphics[width=0.32\textwidth]{imagenes/c7/crearlogro1.png} }}%
+  \qquad
+  \subfloat[\centering Creación de logro rellena \#2.]{{ \includegraphics[width=0.32\textwidth]{imagenes/c7/crearlogro2.png} }}%
+  \caption{Pantallas de creación de logros.}%
+  \label{fig:creacion_logros}%
+\end{figure}
+
+\newpage
+
+Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. Dentro de este, se encuentran los widgets del formulario, que serán tanto widgets de desplegables (\textit{DropdownButton}) como widgets de campos de texto (\textit{TextField}).
+
+En las siguientes imágenes se puede ver la pantalla de creación de usuarios de todos los tipos con los campos de texto vacíos y rellenos.
+
+
+
+
+
+
+\paragraph*{Lógica}
+La funcionalidad de crear usuarios se ha implementado utilizando un nuevo método de creación de usuarios del Provider llamado usuarios. De esta forma
+se ha podido comunicar varias pantallas entre sí y añadir el usuario creado a la lista de usuarios del administrador.
+
+
+Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_picker}, que detallé en la funcionalidad de crear lecciones.
+
+El botón de guardar el usuario envía los datos de los usuarios al servidor mediante una petición POST a la ruta /api/user/registro. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
+
+
+\subsection{Editar Logro} 
+
+\textit{Desarrollado en el Sprint 10}
+
+Los administradores podrán editar la información de los logros. Para ello, se ha implementado una pantalla de edición de logros que permite al administrador modificar el nombre, la imagen y la descripción del logro.
+
+\paragraph*{Vista}
+La vista de esta pantalla es muy similar a la de la creación de los logros. La diferencia es que los widgets disponen de la información del logro que se está editando.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.38\textwidth]{imagenes/c7/editarlogro.png}
+  \caption{Pantalla de edición de logro existente.} 
+  \label{fig:edicion_logro}
+\end{figure}
+
+
+\paragraph*{Lógica}
+En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de logros.
+Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos del logro. La ruta de la petición es \textit{PUT /api/achievement/update-achievement}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. En caso contrario, se mostrará un mensaje de error.
 
