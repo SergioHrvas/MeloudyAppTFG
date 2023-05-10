@@ -25,6 +25,27 @@ const TestSchema = Schema({
         type: Date,
         default: Date.now
     },
+    num_aciertos: {
+        type: Number,
+        required: true
+    },
+    num_aciertos_unica: {
+        type: Number,
+        required: true
+    },
+    num_aciertos_multiple: {
+        type: Number,
+        required: true
+    },
+    num_aciertos_texto: {
+        type: Number,
+        required: true
+    },
+    num_aciertos_micro: {
+        type: Number,
+        required: true
+    },
+
 
     
 

@@ -11,7 +11,7 @@ const create = (req, res) => {
 
     //Creamos un test
     const test = new Test(param);
-    console.log("IDLECCION" + param.idLeccion);
+
     //Guardamos el test
     test.save((error, testSaved) => {
         try{

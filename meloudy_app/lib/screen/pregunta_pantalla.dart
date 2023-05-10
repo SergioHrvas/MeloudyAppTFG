@@ -16,6 +16,6 @@ class PreguntaPantalla extends StatelessWidget {
           title: Text("TEST"),
         ),
         drawer: DrawerApp(),
-        body: PreguntaWidget());
+        body: SingleChildScrollView(child: PreguntaWidget()));
   }
 }

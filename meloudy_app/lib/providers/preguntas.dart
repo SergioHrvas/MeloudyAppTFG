@@ -19,7 +19,10 @@ class Preguntas with ChangeNotifier {
   String userId;
   String testId;
   String modo;
+
   int aciertos = 0;
+  int preguntasunica = 0, preguntasmultiple = 0, preguntastexto = 0, preguntasmicrofono = 0;
+
   int variable = 0;
 
   Preguntas(this.authToken, this.preguntas);
@@ -30,6 +33,11 @@ class Preguntas with ChangeNotifier {
 
   void limpiarVariable() {
     variable = 0;
+    preguntasmicrofono = 0;
+    aciertos = 0;
+    preguntastexto = 0;
+    preguntasmultiple = 0;
+    preguntasunica = 0;
   }
 
   void setModo(nuevomodo) {
@@ -147,6 +155,18 @@ class Preguntas with ChangeNotifier {
       }
       if (!fallo) {
         aciertos++;
+        if(preguntas[i].tipo == 'unica'){
+          preguntasunica++;
+        }
+        else if(preguntas[i].tipo == 'multiple'){
+          preguntasmultiple++;
+        }
+        else if(preguntas[i].tipo == 'texto'){
+          preguntastexto++;
+        }
+        else if(preguntas[i].tipo == 'microfono'){
+          preguntasmicrofono++;
+        }
         /* print("------------VERIFICADOR------------");
         print("pregunta" + i.toString());
         print("respuestas: " + preguntas[i].respuestas.toString());
@@ -276,9 +296,7 @@ class Preguntas with ChangeNotifier {
     final url =
         Uri.parse('http://${IP.ip}:5000/api/progress/create-test-and-progress');
 
-    print("IDLECCION" + idLeccion);
     try {
-      aciertos = getAciertos();
       var aprobado = false;
       if (aciertos >= 5) {
         aprobado = true;
@@ -293,6 +311,11 @@ class Preguntas with ChangeNotifier {
         });
       }
 
+      print(aciertos);
+      print(preguntasunica);
+      print(preguntasmultiple);
+      print(preguntastexto);
+      print(preguntasmicrofono);
       final response = await http.post(url,
           headers: {
             "Accept": "application/json",
@@ -302,8 +325,15 @@ class Preguntas with ChangeNotifier {
             'idLeccion': idLeccion,
             'preguntas': preguntasTest,
             'idUsuario': userId,
-            "aprobado": aprobado
+            "aprobado": aprobado,
+            "num_aciertos": aciertos,
+            "num_aciertos_unica": preguntasunica,
+            "num_aciertos_multiple": preguntasmultiple,
+            "num_aciertos_texto": preguntastexto,
+            "num_aciertos_micro": preguntasmicrofono,
+
           }));
+      print(response.body);
 
       final responseData = json.decode(response.body);
       testId = responseData['test'];

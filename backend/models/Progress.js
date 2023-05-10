@@ -18,6 +18,8 @@ const ProgressSchema = Schema({
     },
     completado: {
         type: Boolean,
+        required: true
+
     },
     tests: [{
         type: Schema.Types.ObjectId,
@@ -25,7 +27,6 @@ const ProgressSchema = Schema({
     }],
     completado: {
         type: Boolean,
-        required: true
     },
 
 
