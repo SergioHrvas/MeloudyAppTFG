@@ -162,9 +162,8 @@ class _PreguntaWidgetState extends State {
                     Container(
                       margin: EdgeInsets.only(top:20),
                       child: ElevatedButton(onPressed: (){
-                        Provider.of<Preguntas>(context,listen:false).enviarTest().then((value){
+
                           Navigator.pushReplacementNamed(context, TestAcabadoPantalla.routeName, arguments: leccionId);
-                        });
                       }, child: Text("FINALIZAR"),),),],
               ),
             ],

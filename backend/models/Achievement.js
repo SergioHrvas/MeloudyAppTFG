@@ -12,6 +12,16 @@ const AchievementSchema = Schema({
         type: String,
         required: true
     },    
+    tipo
+    : {
+        type: String,
+        required: true
+    },
+    condicion: {
+        type: String,
+        required: true
+    },
+    
 });
 
 module.exports = model('Achievement', AchievementSchema);

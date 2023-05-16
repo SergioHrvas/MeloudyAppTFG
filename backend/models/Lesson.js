@@ -28,8 +28,12 @@ const LessonSchema = Schema({
             
 
         },
-
-    ]
+        
+    ],
+    logro: {
+        type: Schema.Types.ObjectId,
+    },
+    
 });
 
 module.exports = model('Lesson', LessonSchema);

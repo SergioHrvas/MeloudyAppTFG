@@ -115,13 +115,16 @@
 \contentsline {subsection}{\numberline {7.6.4}Crear lección}{102}{subsection.7.6.4}%
 \contentsline {subsection}{\numberline {7.6.5}Editar lección}{105}{subsection.7.6.5}%
 \contentsline {subsection}{\numberline {7.6.6}Lista de preguntas}{107}{subsection.7.6.6}%
-\contentsline {subsection}{\numberline {7.6.7}Crear Pregunta}{108}{subsection.7.6.7}%
-\contentsline {subsection}{\numberline {7.6.8}Editar Pregunta}{113}{subsection.7.6.8}%
-\contentsline {subsection}{\numberline {7.6.9}Lista de usuarios}{116}{subsection.7.6.9}%
-\contentsline {subsection}{\numberline {7.6.10}Crear Usuario}{116}{subsection.7.6.10}%
-\contentsline {subsection}{\numberline {7.6.11}Editar Usuario}{118}{subsection.7.6.11}%
-\contentsline {subsection}{\numberline {7.6.12}Lista de logros}{119}{subsection.7.6.12}%
-\contentsline {subsection}{\numberline {7.6.13}Crear Logro}{120}{subsection.7.6.13}%
-\contentsline {subsection}{\numberline {7.6.14}Editar Logro}{121}{subsection.7.6.14}%
-\contentsline {chapter}{\numberline {8}Pruebas}{123}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{125}{chapter.9}%
+\contentsline {subsection}{\numberline {7.6.7}Borrar pregunta}{108}{subsection.7.6.7}%
+\contentsline {subsection}{\numberline {7.6.8}Crear Pregunta}{109}{subsection.7.6.8}%
+\contentsline {subsection}{\numberline {7.6.9}Editar Pregunta}{114}{subsection.7.6.9}%
+\contentsline {subsection}{\numberline {7.6.10}Lista de usuarios}{117}{subsection.7.6.10}%
+\contentsline {subsection}{\numberline {7.6.11}Borrar usuario}{117}{subsection.7.6.11}%
+\contentsline {subsection}{\numberline {7.6.12}Crear Usuario}{119}{subsection.7.6.12}%
+\contentsline {subsection}{\numberline {7.6.13}Editar Usuario}{121}{subsection.7.6.13}%
+\contentsline {subsection}{\numberline {7.6.14}Lista de logros}{122}{subsection.7.6.14}%
+\contentsline {subsection}{\numberline {7.6.15}Borrar logro}{122}{subsection.7.6.15}%
+\contentsline {subsection}{\numberline {7.6.16}Crear Logro}{124}{subsection.7.6.16}%
+\contentsline {subsection}{\numberline {7.6.17}Editar Logro}{125}{subsection.7.6.17}%
+\contentsline {chapter}{\numberline {8}Pruebas}{127}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{129}{chapter.9}%

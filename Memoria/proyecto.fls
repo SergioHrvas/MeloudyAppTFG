@@ -1400,6 +1400,11 @@ INPUT ./imagenes/c7/listapreguntas.png
 INPUT imagenes/c7/listapreguntas.png
 INPUT ./imagenes/c7/listapreguntas.png
 INPUT ./imagenes/c7/listapreguntas.png
+INPUT ./imagenes/c7/borrarpregunta.png
+INPUT ./imagenes/c7/borrarpregunta.png
+INPUT imagenes/c7/borrarpregunta.png
+INPUT ./imagenes/c7/borrarpregunta.png
+INPUT ./imagenes/c7/borrarpregunta.png
 INPUT ./imagenes/c7/crearpreguntaunica1.png
 INPUT ./imagenes/c7/crearpreguntaunica1.png
 INPUT imagenes/c7/crearpreguntaunica1.png
@@ -1480,6 +1485,11 @@ INPUT ./imagenes/c7/listausuarios.png
 INPUT imagenes/c7/listausuarios.png
 INPUT ./imagenes/c7/listausuarios.png
 INPUT ./imagenes/c7/listausuarios.png
+INPUT ./imagenes/c7/borrarusuario.png
+INPUT ./imagenes/c7/borrarusuario.png
+INPUT imagenes/c7/borrarusuario.png
+INPUT ./imagenes/c7/borrarusuario.png
+INPUT ./imagenes/c7/borrarusuario.png
 INPUT ./imagenes/c7/crearusuario1.png
 INPUT ./imagenes/c7/crearusuario1.png
 INPUT imagenes/c7/crearusuario1.png
@@ -1500,6 +1510,11 @@ INPUT ./imagenes/c7/listalogros.png
 INPUT imagenes/c7/listalogros.png
 INPUT ./imagenes/c7/listalogros.png
 INPUT ./imagenes/c7/listalogros.png
+INPUT ./imagenes/c7/borrarlogro.png
+INPUT ./imagenes/c7/borrarlogro.png
+INPUT imagenes/c7/borrarlogro.png
+INPUT ./imagenes/c7/borrarlogro.png
+INPUT ./imagenes/c7/borrarlogro.png
 INPUT ./imagenes/c7/crearlogro1.png
 INPUT ./imagenes/c7/crearlogro1.png
 INPUT imagenes/c7/crearlogro1.png

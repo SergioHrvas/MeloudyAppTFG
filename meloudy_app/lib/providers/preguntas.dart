@@ -333,6 +333,22 @@ class Preguntas with ChangeNotifier {
             "num_aciertos_micro": preguntasmicrofono,
 
           }));
+
+
+      print(json.encode({
+        'idLeccion': idLeccion,
+        'preguntas': preguntasTest,
+        'idUsuario': userId,
+        "aprobado": aprobado,
+        "num_aciertos": aciertos,
+        "num_aciertos_unica": preguntasunica,
+        "num_aciertos_multiple": preguntasmultiple,
+        "num_aciertos_texto": preguntastexto,
+        "num_aciertos_micro": preguntasmicrofono,
+
+      }));
+
+      print("RESPUESTA:");
       print(response.body);
 
       final responseData = json.decode(response.body);

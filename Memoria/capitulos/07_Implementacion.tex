@@ -681,12 +681,12 @@ En la siguiente imagen se puede ver la pantalla de borrado de lecciones:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{imagenes/c7/borrarleccion.png}
-  \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
-  \label{fig:login}
+  \caption{Pantalla del borrado de una lección.} 
+  \label{fig:borradoleccion}
 \end{figure}
 
 \paragraph*{Lógica}
-Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la lección. Si el profesor confirma.
+Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la lección.
 Este borrado se realiza llamando a la función borrarLeccion() del provider \textit{Lecciones}. En dicha función se borrará la lección de la lista del provider y se actualizará la base de datos enviando
 una petición DELETE a la API con el id de la lección a borrar. La ruta de la petición es \textit{DELETE /api/lesson/delete-lesson}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
 
@@ -709,20 +709,21 @@ La vista de esta pantalla consiste en un formulario de creación de lecciones. E
   \item Un número variable de campos de texto para los vídeos.
 \end{itemize}
 
+\newpage
+
 Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. 
 En la parte inferior de la pantalla, se encuentran varios iconos organizados en una fila, que permiten incorporar nuevas widgets al contenido de la lección
 ya que pulsando en uno de estos iconos, se añade un nuevo widget a la lista.
 
-\newpage
 En las siguientes imágenes se puede ver la pantalla de creación de lecciones:
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Creación de lección vacía \#1.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/crearleccion1.png} }}%
+  \subfloat[\centering Creación de lección vacía \#1.]{{\includegraphics[width=0.44\textwidth]{imagenes/c7/crearleccion1.png} }}%
   \qquad
-  \subfloat[\centering Creación de lección vacía \#2.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/crearleccion2.png} }}%
+  \subfloat[\centering Creación de lección vacía \#2.]{{ \includegraphics[width=0.44\textwidth]{imagenes/c7/crearleccion2.png} }}%
   \caption{Pantalla de la creación de lecciones sin datos introducidos.}%
-  \label{fig:example}%
+  \label{fig:creacionleccionvacia}%
 \end{figure}
 
 
@@ -732,7 +733,7 @@ En las siguientes imágenes se puede ver la pantalla de creación de lecciones:
   \qquad
   \subfloat[\centering Creación de lección rellena \#2.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/crearleccion2b.png} }}%
   \caption{Pantalla de la creación de lecciones con datos introducidos. }%
-  \label{fig:example}%
+  \label{fig:creacionleccionrellena}%
 \end{figure}
 
 \paragraph*{Lógica}
@@ -763,7 +764,7 @@ La vista de esta pantalla es muy similar a la de la creación de lecciones. La d
   \qquad
   \subfloat[\centering Edición de lección \#2.]{{ \includegraphics[width=0.4\textwidth]{imagenes/c7/editarleccion2.png} }}%
   \caption{Pantalla de la edición de lecciones existentes por parte del profesor.}%
-  \label{fig:example}%
+  \label{fig:edicionleccion}%
 \end{figure}
 
 
@@ -788,8 +789,32 @@ Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuari
   \label{fig:listapreguntas}
 \end{figure}
 
-
 \newpage
+\subsection{Borrar pregunta} 
+
+\textit{Desarrollado en el Sprint 9}
+
+El profesor podrá borrar una pregunta de la lista al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la pregunta.
+
+\paragraph*{Vista}
+La pantalla del borrado de preguntas utiliza el widget \textit{AlertDialog}, que posee
+un título, un texto descriptivo y dos botones: uno para cancelar el borrado y otro para confirmarlo.
+En la siguiente imagen se puede ver la pantalla de borrado de preguntas:
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{imagenes/c7/borrarpregunta.png}
+  \caption{Pantalla del borrado de una pregunta.} 
+  \label{fig:borradopregunta}
+\end{figure}
+
+\paragraph*{Lógica}
+Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la pregunta.
+Este borrado se realiza llamando a la función borrarPregunta() del provider \textit{PreguntasProfesor}. En dicha función se borrará la pregunta de la lista del provider y se actualizará la base de datos enviando
+una petición DELETE a la API con el id de la pregunta a borrar. La ruta de la petición es \textit{DELETE /api/question/delete-question}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
+
+
 \subsection{Crear Pregunta} 
 
 \textit{Desarrollado en el Sprint 9}
@@ -811,15 +836,14 @@ La vista de esta pantalla consiste en un formulario de creación de preguntas. E
 \end{itemize}
 
 
-
-
+\newpage
 Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. Dentro de este, se encuentran los widgets del formulario, que serán desde widgets de desplegables (\textit{DropdownButton}) hasta widgets de campos de texto (\textit{TextField}), pasando por casillas de verificación (\textit{Checkbox}).
 En las preguntas de tipo 'única', 'múltiple' y 'micrófono', en la parte inferior de la pantalla se encuentra un icono que permite al profesor añadir más opciones a la pregunta.
 
 En las siguientes imágenes se puede ver la pantalla de creación de preguntas de todos los tipos con los campos de texto vacíos y rellenos.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.32\textwidth]{imagenes/c7/crearpreguntaunica1.png}
+  \includegraphics[width=0.45\textwidth]{imagenes/c7/crearpreguntaunica1.png}
   \caption{Pantalla de creación de pregunta de tipo 'única' vacía. La pregunta de tipo múltiple y de tipo micrófono son iguales.} 
   \label{fig:crearpreguntaunica}
 \end{figure}
@@ -827,11 +851,11 @@ En las siguientes imágenes se puede ver la pantalla de creación de preguntas d
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Creación de pregunta 'única' rellena \#1.]{{\includegraphics[width=0.32\textwidth]{imagenes/c7/crearpreguntaunica2.png} }}%
+  \subfloat[\centering Creación de pregunta 'única' rellena \#1.]{{\includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntaunica2.png} }}%
   \qquad
-  \subfloat[\centering Creación de pregunta 'única' rellena \#2.]{{ \includegraphics[width=0.32\textwidth]{imagenes/c7/crearpreguntaunica3.png} }}%
+  \subfloat[\centering Creación de pregunta 'única' rellena \#2.]{{ \includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntaunica3.png} }}%
   \caption{Pantalla de creación de pregunta de tipo 'única' con datos introducidos.}%
-  \label{fig:example}%
+  \label{fig:crearpreguntaunica}%
 \end{figure}
 
 
@@ -949,6 +973,28 @@ Cada usuario tiene un distribuidor de elementos horizontal /textit{(Row)} que co
   \label{fig:listausuarios}
 \end{figure}
 
+\subsection{Borrar usuario} 
+
+\textit{Desarrollado en el Sprint 10}
+El administrador podrá borrar un usuario de la lista al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el administrador confirme que desea borrar el usuario.
+
+\paragraph*{Vista}
+La pantalla del borrado de usuarios utiliza el widget \textit{AlertDialog}, que posee
+un título, un texto descriptivo y dos botones: uno para cancelar el borrado y otro para confirmarlo.
+En la siguiente imagen se puede ver la pantalla de borrado de usuarios:
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{imagenes/c7/borrarusuario.png}
+  \caption{Pantalla de borrado de un usuario.} 
+  \label{fig:borradousuario}
+\end{figure}
+
+\paragraph*{Lógica}
+Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el administrador confirme que desea borrar el usuario.
+Este borrado se realiza llamando a la función borrarUsuario() del provider \textit{Usuarios}. En dicha función se borrará el usuario de la lista del provider y se actualizará la base de datos enviando
+una petición DELETE a la API con el id del usuario a borrar. La ruta de la petición es \textit{DELETE /api/user/delete-user}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
 
 \subsection{Crear Usuario} 
 
@@ -977,7 +1023,7 @@ En las siguientes imágenes se puede ver la pantalla de creación de usuarios de
   \qquad
   \subfloat[\centering Creación de usuario rellena \#2.]{{ \includegraphics[width=0.32\textwidth]{imagenes/c7/crearusuario2.png} }}%
   \caption{Pantallas de creación de usuarios.}%
-  \label{fig:example}%
+  \label{fig:creacionusuario}%
 \end{figure}
 
 
@@ -991,6 +1037,7 @@ Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_p
 
 El botón de guardar el usuario envía los datos de los usuarios al servidor mediante una petición POST a la ruta /api/user/registro. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
 
+\newpage
 
 \subsection{Editar Usuario} 
 
@@ -1003,7 +1050,7 @@ La vista de esta pantalla es muy similar a la de la creación de los usuarios. L
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.38\textwidth]{imagenes/c7/editarusuario.png}
+  \includegraphics[width=0.36\textwidth]{imagenes/c7/editarusuario.png}
   \caption{Pantalla de edición de usuario existente.} 
   \label{fig:edicion_usuario}
 \end{figure}
@@ -1017,7 +1064,6 @@ Entre las diferencias notamos que al entrar se deben inicializar los valores de 
 \subsection{Lista de logros} 
 
 \textit{Desarrollado en el Sprint 10}
-
 \paragraph*{Vista}
 La lista de logros contiene todos los logros creados en el sistema. Se ha utilizado un distribuidor de columnas /textit{(Column)} para mostrar los logros de forma vertical. 
 Cada logro tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la imagen del logro y a la derecha el nombre en negrita. 
@@ -1030,35 +1076,61 @@ Cada logro tiene un distribuidor de elementos horizontal /textit{(Row)} que cont
 \end{figure}
 
 
+\subsection{Borrar logro} 
+
+\textit{Desarrollado en el Sprint 10}
+El administrador podrá borrar un logro de la lista al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el administrador confirme que desea borrar el logro.
+
+\newpage
+\paragraph*{Vista}
+La pantalla del borrado de logros utiliza el widget \textit{AlertDialog}, que posee
+un título, un texto descriptivo y dos botones: uno para cancelar el borrado y otro para confirmarlo.
+En la siguiente imagen se puede ver la pantalla de borrado de logros:
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth]{imagenes/c7/borrarlogro.png}
+  \caption{Pantalla del borrado de un logro.} 
+  \label{fig:borradologro}
+\end{figure}
+
+\paragraph*{Lógica}
+Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el administrador confirme que desea borrar la logro.
+Este borrado se realiza llamando a la función borrarLogro() del provider \textit{Logros}. En dicha función se borrará el logro de la lista del provider y se actualizará la base de datos enviando
+una petición DELETE a la API con el id del logro a borrar. La ruta de la petición es \textit{DELETE /api/achievement/delete-achievement}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. En caso contrario, se mostrará un mensaje de error.
+
+
+
 \subsection{Crear Logro} 
 
 \textit{Desarrollado en el Sprint 10}
 
-Los administradores podrán crear usuarios en el sistema. Para ello, se ha implementado una pantalla de creación de usuarios que permite al administrador introducir los datos del usuario como el nombre, el correo, la contraseña, la foto... Una vez creado, el usuario se añadirá a la lista de usuarios del profesor.
+Los administradores podrán crear logros en el sistema. Para ello, se ha implementado una pantalla de creación de logros que permite al administrador introducir los datos del logro como el nombre y la descripción. Una vez creado, el logro se añadirá a la lista de logros de la pantalla del administrador.
 
 
 \paragraph*{Vista}
-La vista de esta pantalla consiste en un formulario de creación de usuarios. Este formulario consta de:
+La vista de esta pantalla consiste en un formulario de creación de logros. Este formulario consta de:
 \begin{itemize}
-  \item Un botón para subir la imagen del usuario.
-  \item Un desplegable para elegir el rol del usuario.
-  \item Campos de texto para introducir el nombre, los apellidos, el nombre de usuario, el correo y la contraseña.
+  \item Un botón para subir la imagen del logro.
+  \item Un campo de texto para introducir el nombre del logro.
+  \item Un campo de texto para introducir la descripción del logro.
 \end{itemize}
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Creación de usuario logro. \#1.]{{\includegraphics[width=0.32\textwidth]{imagenes/c7/crearlogro1.png} }}%
+  \subfloat[\centering Creación de logro vacío. \#1.]{{\includegraphics[width=0.35\textwidth]{imagenes/c7/crearlogro1.png} }}%
   \qquad
-  \subfloat[\centering Creación de logro rellena \#2.]{{ \includegraphics[width=0.32\textwidth]{imagenes/c7/crearlogro2.png} }}%
+  \subfloat[\centering Creación de logro rellena \#2.]{{ \includegraphics[width=0.35\textwidth]{imagenes/c7/crearlogro2.png} }}%
   \caption{Pantallas de creación de logros.}%
   \label{fig:creacion_logros}%
 \end{figure}
 
 \newpage
 
-Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. Dentro de este, se encuentran los widgets del formulario, que serán tanto widgets de desplegables (\textit{DropdownButton}) como widgets de campos de texto (\textit{TextField}).
+Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}.
 
-En las siguientes imágenes se puede ver la pantalla de creación de usuarios de todos los tipos con los campos de texto vacíos y rellenos.
+En las imágenes anteriores se puede ver la pantalla de creación de logros con los campos de texto vacíos y rellenos.
 
 
 
@@ -1066,13 +1138,13 @@ En las siguientes imágenes se puede ver la pantalla de creación de usuarios de
 
 
 \paragraph*{Lógica}
-La funcionalidad de crear usuarios se ha implementado utilizando un nuevo método de creación de usuarios del Provider llamado usuarios. De esta forma
-se ha podido comunicar varias pantallas entre sí y añadir el usuario creado a la lista de usuarios del administrador.
+La funcionalidad de crear logros se ha implementado utilizando un nuevo método de creación de logros del Provider llamado logros. De esta forma
+se ha podido comunicar varias pantallas entre sí y añadir el logro creado a la lista de logros del administrador.
 
 
 Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_picker}, que detallé en la funcionalidad de crear lecciones.
 
-El botón de guardar el usuario envía los datos de los usuarios al servidor mediante una petición POST a la ruta /api/user/registro. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
+El botón de guardar el logro envía los datos de los logros al servidor mediante una petición POST a la ruta /api/achievement/create-achievement. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. En caso contrario, se mostrará un mensaje de error.
 
 
 \subsection{Editar Logro} 

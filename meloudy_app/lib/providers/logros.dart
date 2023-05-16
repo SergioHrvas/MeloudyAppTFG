@@ -49,6 +49,8 @@ class Logros with ChangeNotifier {
                 nombre: extractedData['logros'][i]['nombre'],
                 imagen: extractedData['logros'][i]['imagen'],
                 descripcion: extractedData['logros'][i]['descripcion'],
+                tipo: extractedData['logros'][i]['tipo'],
+                condicion: extractedData['logros'][i]['condicion']
             )
         );
       }
