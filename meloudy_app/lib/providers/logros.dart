@@ -12,17 +12,14 @@ import 'package:provider/provider.dart';
 import 'auth.dart';
 import 'logro.dart';
 
-
-
 class Logros with ChangeNotifier {
-  List <Logro> logros = [];
+  List<Logro> logros = [];
 
   String authToken;
 
-
   Logros(this.authToken, this.logros);
 
-  void update(tkn){
+  void update(tkn) {
     authToken = tkn;
   }
 
@@ -33,8 +30,6 @@ class Logros with ChangeNotifier {
     return [...logros];
   }
 
-
-
   Future<void> fetchAndSetLogros() async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/achievement/get-achievement/?auth=$authToken');
@@ -43,16 +38,14 @@ class Logros with ChangeNotifier {
 
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
-      for(var i = 0; i < extractedData['logros'].length; i++) {
-        logros.add(
-            Logro(id: extractedData['logros'][i]['_id'],
-                nombre: extractedData['logros'][i]['nombre'],
-                imagen: extractedData['logros'][i]['imagen'],
-                descripcion: extractedData['logros'][i]['descripcion'],
-                tipo: extractedData['logros'][i]['tipo'],
-                condicion: extractedData['logros'][i]['condicion']
-            )
-        );
+      for (var i = 0; i < extractedData['logros'].length; i++) {
+        logros.add(Logro(
+            id: extractedData['logros'][i]['_id'],
+            nombre: extractedData['logros'][i]['nombre'],
+            imagen: extractedData['logros'][i]['imagen'],
+            descripcion: extractedData['logros'][i]['descripcion'],
+            tipo: extractedData['logros'][i]['tipo'],
+            condicion: extractedData['logros'][i]['condicion']));
       }
 
       if (extractedData == null) {
@@ -67,35 +60,36 @@ class Logros with ChangeNotifier {
       throw (error);
     }
   }
-  crearLogro(extractedData) async{
+
+  crearLogro(extractedData) async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/achievement/create-achievement?auth=$authToken');
 
-    final response = await http.post(url,           headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/json"
-    },
+    final response = await http.post(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
         body: json.encode({
           "nombre": extractedData['nombre'],
           "descripcion": extractedData['descripcion'],
           "imagen": extractedData['imagen'],
-
         }));
     print(response.body);
     var respuesta = jsonDecode(response.body);
-    if(respuesta['status'] == "success"){
-      logros.add(
-          Logro(id: respuesta['logro']['_id'], nombre: extractedData['nombre'], descripcion: extractedData['descripcion'], imagen: extractedData['imagen'])
-      );
+    if (respuesta['status'] == "success") {
+      logros.add(Logro(
+          id: respuesta['logro']['_id'],
+          nombre: extractedData['nombre'],
+          descripcion: extractedData['descripcion'],
+          imagen: extractedData['imagen']));
       notifyListeners();
     }
   }
 
-
-  borrarLogro(String id, int i) async{
+  borrarLogro(String id, int i) async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/achievement/delete-achievement/${id}?auth=$authToken');
-
 
     logros.removeAt(i);
     final response = await http.delete(url);
@@ -106,6 +100,24 @@ class Logros with ChangeNotifier {
     return logros.firstWhere((prod) => prod.id == id);
   }
 
+  Future<Logro> getLogro(String id) async {
+    print("id" + id);
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/achievement/get-achievement/${id}?auth=$authToken');
 
+    final response = await http.get(url);
+    print(response.body);
+    var respuesta = jsonDecode(response.body);
 
+    print(respuesta);
+
+    return Logro(
+        id: respuesta['logro']['_id'],
+        imagen: respuesta['logro']['imagen'],
+        nombre: respuesta['logro']['nombre'],
+        descripcion: respuesta['logro']['descripcion'],
+        tipo: respuesta['logro']['tipo']
+
+    );
+  }
 }

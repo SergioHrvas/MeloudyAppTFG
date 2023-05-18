@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:meloudy_app/providers/test.dart';
 
+import 'logro.dart';
+
 
 class Usuario with ChangeNotifier {
   final String id;
@@ -10,7 +12,7 @@ class Usuario with ChangeNotifier {
   final String foto;
   final String correo;
   final String rol;
-  final List<String> logros;
+  final List<Logro> logros;
 
 
   List<Test> tests = [];

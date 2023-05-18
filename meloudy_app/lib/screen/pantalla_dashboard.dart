@@ -118,7 +118,7 @@ class PantallaDashboard extends StatelessWidget {
                           Provider.of<Logros>(context, listen: false)
                               .fetchAndSetLogros()
                               .then((_) {
-                            Navigator.pushNamed(context, '/listalogros');
+                            Navigator.pushNamed(context, '/listalogrosprofesor');
                           });
                         },
                         child: Column(

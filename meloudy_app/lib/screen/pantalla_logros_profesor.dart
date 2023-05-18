@@ -7,7 +7,7 @@ import 'package:meloudy_app/extensiones.dart';
 import '../widget/drawer_app.dart';
 
 class PantallaLogrosProfesor extends StatefulWidget {
-  static const routeName = '/listalogros';
+  static const routeName = '/listalogrosprofesor';
 
   @override
   _PantallaLogrosProfesorState createState() =>

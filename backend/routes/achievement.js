@@ -7,7 +7,7 @@ const AchievementController = require('../controllers/achievement.js');
 router.get("/get-achievement", AchievementController.index);
 router.get("/get-achievements/:idUser", AchievementController.indexUser);
 router.post("/create-achievement", auth, AchievementController.create);
-//router.get("/get-question/:id", auth, AchievementController.get);
+router.get("/get-achievement/:id", auth, AchievementController.get);
 router.put("/update-achievement/:id", auth, AchievementController.update);
 router.delete("/delete-achievement/:id", auth, AchievementController.remove);
 

@@ -10,6 +10,7 @@ import 'package:meloudy_app/providers/usuario.dart';
 import 'package:provider/provider.dart';
 
 import 'auth.dart';
+import 'logro.dart';
 
 
 
@@ -50,10 +51,17 @@ class UsuarioPerfil with ChangeNotifier {
         }
 
         var logros = extractedData['logros'];
-        List<String> logrosmap = [];
+        List<Logro> logrosmap = [];
 
         for(var j = 0; j < logros.length; j++){
-          logrosmap.add(logros[j]['imagen']);
+          logrosmap.add(Logro(
+            id: logros[j]['_id'],
+           nombre: logros[j]['nombre'],
+           descripcion: logros[j]['descripcion'],
+           imagen: logros[j]['imagen'],
+              tipo: logros[j]['tipo']
+
+          ));
         }
 
         user = Usuario(id: extractedData['usuario']['_id'],

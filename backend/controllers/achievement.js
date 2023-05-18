@@ -110,6 +110,26 @@ const update = (req, res) => {
     );
 }
 
+const get = (req, res) => {
+    const id = req.params.id;
+
+    Achievement.findById(id, (error, achievement) => {
+        if (error || !achievement) {
+            return res.status(404).json({
+                status: "error",
+                mensaje: "El logro no se ha podido encontrar"
+            });
+        }
+        return res.status(200).json({
+            status: "success",
+            logro: achievement,
+            mensaje: "El logro se ha encontrado"
+        });
+    }
+    );
+}
+
+
 
 
 module.exports = {
@@ -117,5 +137,6 @@ module.exports = {
     index,
     indexUser,
     remove,
-    update
+    update,
+    get
 }
