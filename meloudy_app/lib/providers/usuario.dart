@@ -6,12 +6,12 @@ import 'logro.dart';
 
 class Usuario with ChangeNotifier {
   final String id;
-  final String nombre;
-  final List<String> apellidos;
-  final String username;
-  final String foto;
-  final String correo;
-  final String rol;
+  String nombre;
+  List<String> apellidos;
+  String username;
+  String foto;
+  String correo;
+  String rol;
   final List<Logro> logros;
 
 

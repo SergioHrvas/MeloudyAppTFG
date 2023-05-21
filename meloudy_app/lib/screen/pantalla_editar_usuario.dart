@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
+import 'package:meloudy_app/providers/usuario_perfil.dart';
 import 'package:provider/provider.dart';
 
 import '../image_controller.dart';
@@ -15,17 +16,17 @@ import '../widget/drawer_app.dart';
 import '../widget/subir_notas.dart';
 import '../widget/subir_opcion.dart';
 
-class PantallaEditarUsuarioProfesor extends StatefulWidget {
-  static const routeName = '/editarusuario';
+class PantallaEditarUsuario extends StatefulWidget {
+  static const routeName = '/editarperfil';
 
   @override
-  _PantallaEditarUsuarioProfesorState createState() =>
-      _PantallaEditarUsuarioProfesorState();
+  _PantallaEditarUsuarioState createState() =>
+      _PantallaEditarUsuarioState();
 }
 
-class _PantallaEditarUsuarioProfesorState
-    extends State<PantallaEditarUsuarioProfesor> {
-  _PantallaEditarUsuarioProfesorState();
+class _PantallaEditarUsuarioState
+    extends State<PantallaEditarUsuario> {
+  _PantallaEditarUsuarioState();
 
 
   PickedFile _image;
@@ -62,7 +63,6 @@ class _PantallaEditarUsuarioProfesorState
   }
 
   void submit() async {
-    List<Map<String, String>> vectordatos = [];
     _formKey.currentState.save();
 
     _authData['rol'] = rol;
@@ -88,26 +88,24 @@ class _PantallaEditarUsuarioProfesorState
     });
 
     var indice = 0;
-
-    Provider.of<Usuarios>(context, listen: false)
+    var idUsuario = Provider.of<Auth>(context, listen: false).userId;
+    Provider.of<UsuarioPerfil>(context, listen: false)
         .actualizarUsuario(_authData, id)
         .then((value) => Navigator.popUntil(
-            context, (_) =>
-           indice++ >= 2
-    )).then((value) => Navigator.pushNamed(context, '/listausuarios'));
+        context, (_) =>
+    indice++ >= 2
+    )).then((value) =>
+        Navigator.pushNamed(context, '/usuario'));
   }
 
 
   @override
   Widget build(BuildContext context) {
-    var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
-    print(arg['id']);
-
-    id = arg['id'];
     if(primeravez) {
       usuario =
-          Provider.of<Usuarios>(context, listen: false).findById(arg['id']);
+          Provider.of<UsuarioPerfil>(context, listen: false).item;
       rol = usuario.rol;
+      id = usuario.id;
     }
     print(rol);
     _authData['apellidos'] = [];

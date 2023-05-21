@@ -311,11 +311,6 @@ class Preguntas with ChangeNotifier {
         });
       }
 
-      print(aciertos);
-      print(preguntasunica);
-      print(preguntasmultiple);
-      print(preguntastexto);
-      print(preguntasmicrofono);
       final response = await http.post(url,
           headers: {
             "Accept": "application/json",
@@ -348,8 +343,6 @@ class Preguntas with ChangeNotifier {
 
       }));
 
-      print("RESPUESTA:");
-      print(response.body);
 
       final responseData = json.decode(response.body);
       testId = responseData['test'];

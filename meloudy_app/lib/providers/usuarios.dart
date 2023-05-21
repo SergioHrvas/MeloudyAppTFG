@@ -1,5 +1,3 @@
-import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -135,6 +133,7 @@ class Usuarios with ChangeNotifier {
 
     Map<String, dynamic> cuerpo = {
       "foto": extractedData['foto'],
+      "correo": extractedData['correo'],
       "nombre": extractedData['nombre'],
       "apellidos": apellidosmap,
       "username": extractedData['username'],
@@ -146,17 +145,24 @@ class Usuarios with ChangeNotifier {
 
     var body = json.encode(cuerpo);
 
-    print(body);
+
     final response = await http.put(url,
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json"
         },
         body: body);
+
+    var user = findById(id);
+    user.nombre = extractedData["nombre"];
+
+    print(usuarios[2].nombre);
+    notifyListeners();
+
   }
 
+
   Usuario findById(String id) {
-    print(id);
     return usuarios.firstWhere((prod) => prod.id == id);
   }
 

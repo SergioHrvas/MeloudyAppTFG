@@ -31,11 +31,24 @@ class _PantallaEditarLogroProfesorState
 
   PickedFile _image;
   File file;
+  var primeravez = true;
+  var tipo = "amigos";
+  final tipos = [
+    "amigos",
+    "tests",
+    "leccion",
+    "lecciones",
+    "preguntasunica",
+    "preguntastexto",
+    "preguntasmultiple",
+    "preguntasmicro"
+  ];
+  var condicion;
 
   final ImagePicker picker = ImagePicker();
   final GlobalKey<FormState> _formKey = GlobalKey();
 
-  Map<String, dynamic> _authData = {};
+  Map<String, dynamic> _extractedData = {};
 
   var id;
   var logro;
@@ -74,28 +87,37 @@ class _PantallaEditarLogroProfesorState
             .split('/')
             .last;
       }
-      _authData['imagen'] = img;
+      _extractedData['imagen'] = img;
+      _extractedData["tipo"] = tipo;
 
     });
 
-
+  var indice = 0;
     Provider.of<Logros>(context, listen: false)
-        .crearLogro(_authData)
-        .then((value) => Navigator.pushReplacementNamed(
-            context, '/listalogros'));
+        .editarLogro(_extractedData, id)
+        .then((value) => Navigator.popUntil(
+            context, (_) => indice++>=2 )).then((value){
+              Navigator.pushNamed(context, '/listalogrosprofesor');
+    });
   }
 
 
   @override
   Widget build(BuildContext context) {
     var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
-    print(arg['id']);
 
     id = arg['id'];
      logro =
           Provider.of<Logros>(context, listen: false).findById(arg['id']);
 
-      return Scaffold(
+     if(primeravez) {
+       tipo = logro.tipo;
+       print("a");
+     }
+     print(tipo);
+     condicion = logro.condicion;
+
+    return Scaffold(
       appBar: AppBar(          title: Text("Editar logro"),
       ),
       drawer: DrawerApp(),
@@ -152,7 +174,7 @@ class _PantallaEditarLogroProfesorState
                 child: TextFormField(
                   initialValue: logro.nombre,
                   onSaved: (value){
-                    _authData['nombre'] = value;
+                    _extractedData['nombre'] = value;
                   },
                   decoration:
                       InputDecoration(labelText: "Nombre"),
@@ -165,12 +187,71 @@ class _PantallaEditarLogroProfesorState
 
                         initialValue: logro.descripcion,
                       onSaved: (value){
-                        _authData['descripcion'] = (value);
+                        _extractedData['descripcion'] = (value);
                       },
                       decoration:
                       InputDecoration(labelText: "Descripción"),
                     ),
 
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 20),
+                          child: Text("Tipo:"),
+                        ),
+                        DropdownButton(
+
+                          items:
+                          tipos.map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String newvalue) {
+                            setState(() {
+                              tipo = newvalue;
+                              primeravez = false;
+                            });
+                          },
+                          value: tipo,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 20, right: 40, left: 40),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(right: 10),
+                          child: Text(tipo == "leccion"
+                              ? "ID"
+                              : tipo == "lecciones"
+                              ? "Nro Lecciones >= "
+                              : tipo == "amigos"
+                              ? "Nro Amigos >= "
+                              : tipo == "tests" ? "Nro Tests >= " : "Nro Preguntas >= "),
+                        ),
+                        Expanded(
+                          child: TextFormField(
+                            initialValue: condicion.toString(),
+                            onSaved: (value) {
+                              if(tipo != "leccion")
+                                _extractedData['condicion'] = int.parse(value);
+                              else
+                                _extractedData['condicion']=value;
+                            },
+                            decoration: InputDecoration(labelText: "Condicion"),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
               Container(
                 margin: EdgeInsets.only(top: 20, bottom: 20),
@@ -179,7 +260,7 @@ class _PantallaEditarLogroProfesorState
                     await submit();
                   },
                   child: Text(
-                    "Crear Logro",
+                    "Editar Logro",
                     style: TextStyle(fontSize: 20),
                   ),
                 ),

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class Pregunta with ChangeNotifier {
   final String id;
-  final String cuestion;
+  String cuestion;
   final String tipo;
-  final List<String> opciones;
-  List<String> respuestascorrectas = [];
-  final String imagen;
+  List<dynamic> opciones;
+  List<dynamic> respuestascorrectas = [];
+  String imagen;
   List<String> respuestas = [];
   List <bool> pulsado = [];
-  final String leccion;
+  String leccion;
 
   Pregunta({
     @required this.id,

@@ -121,16 +121,20 @@ class _PantallaEditarPreguntaProfesorState
           Provider.of<Notas>(context, listen: false).items;
       _authData['respuestascorrectas'] = respuestasmicro;
     }
+
+    var indice = 0;
     Provider.of<PreguntasProfesor>(context, listen: false)
         .actualizarPregunta(_authData, id)
         .then((value) =>
-            Navigator.pushReplacementNamed(context, '/listapreguntas'));
+            Navigator.popUntil(context, (_) => indice++ >= 2 )).then((value){
+              Navigator.pushNamed(context, "/listapreguntas");
+            });
   }
 
   @override
   Widget build(BuildContext context) {
     indice = 0;
-    var arg = ModalRoute.of(context).settings.arguments as Map<String, String>;
+    var arg = ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
     opciones = [];
     id = arg['id'];
 

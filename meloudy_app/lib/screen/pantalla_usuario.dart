@@ -126,7 +126,7 @@ class PantallaUsuario extends StatelessWidget {
                           width: 130,
                           child: ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/editarusuario', arguments: {
+                                Navigator.pushNamed(context, '/editarperfil', arguments: {
                                 "id": usuario.id.toString()
                                 });
                               },

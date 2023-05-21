@@ -74,6 +74,8 @@ class Logros with ChangeNotifier {
           "nombre": extractedData['nombre'],
           "descripcion": extractedData['descripcion'],
           "imagen": extractedData['imagen'],
+          "tipo":extractedData['tipo'],
+          "condicion":extractedData['condicion']
         }));
     print(response.body);
     var respuesta = jsonDecode(response.body);
@@ -82,10 +84,46 @@ class Logros with ChangeNotifier {
           id: respuesta['logro']['_id'],
           nombre: extractedData['nombre'],
           descripcion: extractedData['descripcion'],
-          imagen: extractedData['imagen']));
+          imagen: extractedData['imagen'],
+          tipo: extractedData['tipo'],
+          condicion: extractedData['condicion']
+      ));
+
       notifyListeners();
     }
   }
+
+  editarLogro(extractedData, id) async {
+    final url = Uri.parse(
+        'http://${IP.ip}:5000/api/achievement/update-achievement/${id}?auth=$authToken');
+
+    print("ss" + extractedData['tipo'].toString());
+    final response = await http.put(url,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: json.encode({
+          "nombre": extractedData['nombre'],
+          "descripcion": extractedData['descripcion'],
+          "imagen": extractedData['imagen'],
+          "tipo":extractedData['tipo'],
+          "condicion":extractedData['condicion']
+        }));
+
+
+    var respuesta = jsonDecode(response.body);
+    if (respuesta['status'] == "success") {
+      var logro = findById(id);
+      logro.nombre = extractedData['nombre'];
+      logro.descripcion = extractedData['descripcion'];
+      logro.imagen = extractedData['imagen'];
+      logro.tipo = extractedData['tipo'];
+      logro.condicion = extractedData['condicion'];
+      notifyListeners();
+    }
+  }
+
 
   borrarLogro(String id, int i) async {
     final url = Uri.parse(

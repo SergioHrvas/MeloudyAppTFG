@@ -147,10 +147,13 @@ class _PantallaCrearPreguntaProfesorState
           .items;
       _authData['respuestascorrectas'] = respuestasmicro;
     }
+    var indice = 0;
     Provider.of<PreguntasProfesor>(context, listen: false)
         .crearPregunta(_authData)
-        .then((value) => Navigator.pushReplacementNamed(
-            context, '/listapreguntas'));
+        .then((value) => Navigator.popUntil(
+            context, (_) => indice++ >= 2 )).then((value){
+      Navigator.pushNamed(context, "/listapreguntas");
+    });
   }
 
 

@@ -4,11 +4,11 @@ import 'package:meloudy_app/providers/test.dart';
 
 class Logro with ChangeNotifier {
   final String id;
-  final String nombre;
-  final String descripcion;
-  final String imagen;
-  final String tipo;
-  final dynamic condicion;
+  String nombre;
+  String descripcion;
+  String imagen;
+  String tipo;
+  dynamic condicion;
 
   Logro({
     @required this.id,

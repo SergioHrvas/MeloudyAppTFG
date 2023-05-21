@@ -12,10 +12,8 @@ import 'package:provider/provider.dart';
 
 import 'auth.dart';
 
-
-
 class PreguntasProfesor with ChangeNotifier {
-  List <Pregunta> preguntas = [];
+  List<Pregunta> preguntas = [];
   int indice = 0;
 
   final String authToken;
@@ -31,18 +29,16 @@ class PreguntasProfesor with ChangeNotifier {
   }
 
   String get idtest {
-
     return testId;
   }
 
-  String getRespuesta(){
+  String getRespuesta() {
     var resp = "";
-    if(preguntas[indice].respuestas.length > 0){
+    if (preguntas[indice].respuestas.length > 0) {
       resp = preguntas[indice].respuestas[0];
     }
     return resp;
   }
-
 
   int get indiceValor {
     // if (_showFavoritesOnly) {
@@ -51,17 +47,15 @@ class PreguntasProfesor with ChangeNotifier {
     return indice;
   }
 
-
-  void cambiarPreguntas(extractedData){
+  void cambiarPreguntas(extractedData) {
     final List<Pregunta> preguntasCargadas = [];
     var preguntasLista = extractedData['preguntas'];
 
     for (var i = 0; i < extractedData['preguntas'].length; i++) {
-
       final List<String> contenidoCargado = [];
       var contenidoLista = [];
       List<bool> pulsadoLista = [];
-      if(extractedData['preguntas'][i]['opciones'] != null) {
+      if (extractedData['preguntas'][i]['opciones'] != null) {
         contenidoLista = extractedData['preguntas'][i]['opciones'];
         for (var j = 0; j < contenidoLista.length; j++) {
           contenidoCargado.add(contenidoLista[j]);
@@ -70,7 +64,8 @@ class PreguntasProfesor with ChangeNotifier {
       }
 
       List<String> respuestasCorrectas = [];
-      var contenidoListaRP = extractedData['preguntas'][i]['respuestascorrectas'];
+      var contenidoListaRP =
+          extractedData['preguntas'][i]['respuestascorrectas'];
 
       for (var j = 0; j < contenidoListaRP.length; j++) {
         respuestasCorrectas.add(contenidoListaRP[j]);
@@ -84,36 +79,32 @@ class PreguntasProfesor with ChangeNotifier {
           opciones: contenidoCargado,
           pulsado: pulsadoLista,
           respuestascorrectas: respuestasCorrectas,
-          leccion: preguntasLista[i]['leccion']
-      ));
+          leccion: preguntasLista[i]['leccion']));
     }
 
     preguntas = preguntasCargadas;
-
   }
 
-  Map<String, List<dynamic>> getOpciones(id){
+  Map<String, List<dynamic>> getOpciones(id) {
     var pregunta = findById(id);
 
     List<dynamic> respuestascorrectas = [];
-    if(pregunta.tipo == 'multiple' || pregunta.tipo == 'unica') {
-
-    for(var i = 0; i < pregunta.opciones.length; i++){
+    if (pregunta.tipo == 'multiple' || pregunta.tipo == 'unica') {
+      for (var i = 0; i < pregunta.opciones.length; i++) {
         respuestascorrectas.add(false);
-
-    }
+      }
       for (var i = 0; i < pregunta.respuestascorrectas.length; i++) {
         respuestascorrectas[int.parse(pregunta.respuestascorrectas[i])] = true;
       }
-    }
-    else if(pregunta.tipo == 'texto' || pregunta.tipo == 'microfono'){
-        respuestascorrectas = pregunta.respuestascorrectas;
+    } else if (pregunta.tipo == 'texto' || pregunta.tipo == 'microfono') {
+      respuestascorrectas = pregunta.respuestascorrectas;
     }
 
-    return {"opciones" : pregunta.opciones,
-      "respuestascorrectas": respuestascorrectas};
+    return {
+      "opciones": pregunta.opciones,
+      "respuestascorrectas": respuestascorrectas
+    };
   }
-
 
   Future<void> fetchAndSetPreguntas() async {
     final url = Uri.parse(
@@ -132,7 +123,6 @@ class PreguntasProfesor with ChangeNotifier {
       preguntas = [];
       var n = extractedData['preguntas'].length;
 
-
       cambiarPreguntas(extractedData);
 
       notifyListeners();
@@ -145,18 +135,33 @@ class PreguntasProfesor with ChangeNotifier {
     return preguntas.firstWhere((prod) => prod.id == id);
   }
 
-
-  actualizarPregunta(Map<String, dynamic> authData, id) async {
+  actualizarPregunta(Map<String, dynamic> extractedData, id) async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/update-question/${id}?auth=$authToken');
 
     var cuerpo = json.encode({
-      "cuestion": authData['cuestion'],
-      "imagen": authData['imagen'],
-      "leccion": authData['leccion'],
-      "opciones": authData['opciones'],
-      "respuestascorrectas" : authData['respuestascorrectas']
+      "cuestion": extractedData['cuestion'],
+      "imagen": extractedData['imagen'],
+      "leccion": extractedData['leccion'],
+      "opciones": extractedData['opciones'],
+      "respuestascorrectas": extractedData['respuestascorrectas']
     });
+
+    var pregunta = findById(id);
+    print(pregunta.cuestion);
+    pregunta.cuestion = extractedData['cuestion'];
+
+    pregunta.imagen = extractedData['imagen'];
+    pregunta.leccion = extractedData['leccion'];
+    pregunta.opciones = [];
+
+    for (var i = 0; i < extractedData['opciones'].length; i++) {
+      pregunta.opciones.add(extractedData["opciones"][i]);
+    }
+    for (var i = 0; i < extractedData["respuestascorrectas"].length; i++) {
+      pregunta.respuestascorrectas
+          .add(extractedData["respuestascorrectas"][i].toString());
+    }
 
     final response = await http.put(url,
         headers: {
@@ -164,20 +169,33 @@ class PreguntasProfesor with ChangeNotifier {
           "Content-Type": "application/json"
         },
         body: cuerpo);
+
+    notifyListeners();
   }
 
-  crearPregunta(Map<String, dynamic> authData) async {
+  crearPregunta(Map<String, dynamic> extractedData) async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/create-question?auth=$authToken');
 
     var cuerpo = json.encode({
-      "tipo": authData['tipo'],
-      "cuestion": authData['cuestion'],
-      "imagen": authData['imagen'],
-      "leccion": authData['leccion'],
-      "opciones": authData['opciones'],
-      "respuestascorrectas" : authData['respuestascorrectas']
+      "tipo": extractedData['tipo'],
+      "cuestion": extractedData['cuestion'],
+      "imagen": extractedData['imagen'],
+      "leccion": extractedData['leccion'],
+      "opciones": extractedData['opciones'],
+      "respuestascorrectas": extractedData['respuestascorrectas']
     });
+
+
+
+    preguntas.add(Pregunta(
+        id: extractedData['_id'],
+        cuestion: extractedData['cuestion'],
+        tipo: extractedData['tipo'],
+        opciones: extractedData['opciones'],
+        respuestascorrectas: extractedData['respuestascorrectas'],
+        imagen: extractedData['imagen'],
+    ));
 
     final response = await http.post(url,
         headers: {
@@ -185,7 +203,6 @@ class PreguntasProfesor with ChangeNotifier {
           "Content-Type": "application/json"
         },
         body: cuerpo);
-
   }
 
   borrarPregunta(String id, i) async {
@@ -195,11 +212,5 @@ class PreguntasProfesor with ChangeNotifier {
     preguntas.removeAt(i);
     final response = await http.delete(url);
     notifyListeners();
-
   }
-
-
-
-
-
-  }
+}
