@@ -628,6 +628,41 @@ En la parte superior de la pantalla se muestra la foto de perfil del usuario, y 
 La lógica de esta vista es muy simple. En primer lugar, cuando se accede al perfil se obtienen los datos del usuario mediante el método fetchAndSetUser de un nuevo Provider llamado UsuarioPerfil. Este método
 manda una petición HTTP \textit{(GET /api/user/get-user/\{id\})}. Una vez obtenidos los datos y cambiada la pantalla, se obtienen los datos del usuario mediante el provider UsuarioPerfil y se muestran en la vista. 
 
+
+\subsection{Ver logro} 
+
+\textit{Desarrollado en el Sprint 11}
+
+Los usuarios podrán ver de forma detallada cada logro que hayan conseguido. Para ello, se ha desarrollado una pantalla que muestra la información de un único logro (imagen, título y descripción). A esta pantalla se accederá
+cuando el usuario pinche en uno de los logros dentro de su perfil.
+\paragraph*{Vista}
+La vista de esta pantalla es muy sencilla. Esta consiste en un distribuidor de columnas (Column) de contenedores que contienen la información a mostrar. En la siguiente imagen se puede ver la pantalla de un logro: 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.38\textwidth]{imagenes/c7/verlogro.png}
+  \caption{Pantalla de visualización de logro asignado.} 
+  \label{fig:ver_logro}
+\end{figure}
+
+
+\subsection{Mis logros} 
+
+\textit{Desarrollado en el Sprint 11}
+
+Los usuarios podrán ver una lista de todos los logros que hayan conseguido. Hay que tener en cuenta que en el perfil del usuario solo se muestran algunos. A esta lista se accederá cuando el usuario
+pulse el botón "Más" de la sección de logros del perfil.
+\paragraph*{Vista}
+La vista de esta pantalla es muy sencilla. Esta consiste en un distribuidor de columnas (Column) de contenedores que contienen la información a mostrar de cada logro. Cada una de las filas contiene un distribuidor de filas (Row) que se encargará
+de visualizar a la izquierda la imagen de perfil y a la derecha la información de texto (esta última información a su vez está dentro de otro widget Column). En la siguiente imagen se puede ver la pantalla de los logros del usuario:: 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.38\textwidth]{imagenes/c7/listalogrosperfil.png}
+  \caption{Pantalla de visualización de la lista de logros asignados.} 
+  \label{fig:ver_logros_perfil}
+\end{figure}
+
 \section{Funcionalidad de gestión de la aplicación}
 A continuación presentamos las funcionalidades de gestión de la aplicación. 
 El profesor podrá gestionar las lecciones y las preguntas de la aplicación. 
@@ -1106,7 +1141,7 @@ una petición DELETE a la API con el id del logro a borrar. La ruta de la petici
 
 \textit{Desarrollado en el Sprint 10}
 
-Los administradores podrán crear logros en el sistema. Para ello, se ha implementado una pantalla de creación de logros que permite al administrador introducir los datos del logro como el nombre y la descripción. Una vez creado, el logro se añadirá a la lista de logros de la pantalla del administrador.
+Los administradores podrán crear logros en el sistema. Para ello, se ha implementado una pantalla de creación de logros que permite al administrador introducir el nombre, la imagen, la descripción, el tipo y la condición del logro. Una vez creado, se añadirá a la lista de logros de la pantalla del administrador.
 
 
 \paragraph*{Vista}
@@ -1115,6 +1150,8 @@ La vista de esta pantalla consiste en un formulario de creación de logros. Este
   \item Un botón para subir la imagen del logro.
   \item Un campo de texto para introducir el nombre del logro.
   \item Un campo de texto para introducir la descripción del logro.
+  \item Un desplegable para elegir el tipo de logro (entre \textit{amigos, lección, lecciones, tests, preguntas, preguntasunica, preguntasmultiple, preguntasmicrofono y preguntastexto}).  
+  \item Un campo de texto para introducir la condición dependiente del tipo.
 \end{itemize}
 
 \begin{figure}[H]%
@@ -1134,9 +1171,6 @@ En las imágenes anteriores se puede ver la pantalla de creación de logros con 
 
 
 
-
-
-
 \paragraph*{Lógica}
 La funcionalidad de crear logros se ha implementado utilizando un nuevo método de creación de logros del Provider llamado logros. De esta forma
 se ha podido comunicar varias pantallas entre sí y añadir el logro creado a la lista de logros del administrador.
@@ -1151,7 +1185,7 @@ El botón de guardar el logro envía los datos de los logros al servidor mediant
 
 \textit{Desarrollado en el Sprint 10}
 
-Los administradores podrán editar la información de los logros. Para ello, se ha implementado una pantalla de edición de logros que permite al administrador modificar el nombre, la imagen y la descripción del logro.
+Los administradores podrán editar la información de los logros. Para ello, se ha implementado una pantalla de edición de logros que permite al administrador modificar el nombre, la imagen, la descripción, el tipo y la condición del logro.
 
 \paragraph*{Vista}
 La vista de esta pantalla es muy similar a la de la creación de los logros. La diferencia es que los widgets disponen de la información del logro que se está editando.
