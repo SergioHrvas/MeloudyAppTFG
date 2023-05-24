@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  23 MAY 2023 23:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.6.1)  25 MAY 2023 00:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,6 +464,9 @@ LaTeX Warning: Label `fig:login' multiply defined.
 LaTeX Warning: Label `fig:example' multiply defined.
 
 
+LaTeX Warning: Label `fig:example' multiply defined.
+
+
 LaTeX Warning: Label `sec:pregunic1' multiply defined.
 
 
@@ -531,12 +534,6 @@ LaTeX Warning: Label `fig:login' multiply defined.
 
 
 LaTeX Warning: Label `sec:logica' multiply defined.
-
-
-LaTeX Warning: Label `fig:login' multiply defined.
-
-
-LaTeX Warning: Label `fig:login' multiply defined.
 
 
 LaTeX Warning: Label `fig:crearpreguntaunica' multiply defined.
@@ -772,12 +769,12 @@ Package spanish Warning: Replacing `OT1/cmr/bx/sc' by
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
 [6]
-LaTeX Info: Redefining \. on input line 98.
-LaTeX Info: Redefining \% on input line 98.
+LaTeX Info: Redefining \. on input line 99.
+LaTeX Info: Redefining \% on input line 99.
 
 
 Package spanish Warning: Replacing `OT1/cmr/bx/sc' by 
-(spanish)                faked small caps on input line 98.
+(spanish)                faked small caps on input line 99.
 
 [7])
 \tf@lof=\write5
@@ -821,7 +818,7 @@ l.1 \chapter
 
 ]
 Cap\'{\i }tulo 2.
-<imagenes/c2/duolingo.png, id=919, 513.92pt x 513.92pt>
+<imagenes/c2/duolingo.png, id=921, 513.92pt x 513.92pt>
 File: imagenes/c2/duolingo.png Graphic file (type png)
 <use imagenes/c2/duolingo.png>
 Package pdftex.def Info: imagenes/c2/duolingo.png  used on input line 16.
@@ -831,7 +828,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has b
                    \relax 
 l.25 \newpage
               [5 <./imagenes/c2/duolingo.png>]
-<imagenes/c2/duolingo.jpeg, id=927, 221.8689pt x 446.6286pt>
+<imagenes/c2/duolingo.jpeg, id=929, 221.8689pt x 446.6286pt>
 File: imagenes/c2/duolingo.jpeg Graphic file (type jpg)
 <use imagenes/c2/duolingo.jpeg>
 Package pdftex.def Info: imagenes/c2/duolingo.jpeg  used on input line 43.
@@ -843,7 +840,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has b
                    \relax 
 l.53 
       [6 <./imagenes/c2/duolingo.jpeg>]
-<imagenes/c2/artly.jpeg, id=932, 221.8689pt x 448.7967pt>
+<imagenes/c2/artly.jpeg, id=934, 221.8689pt x 448.7967pt>
 File: imagenes/c2/artly.jpeg Graphic file (type jpg)
 <use imagenes/c2/artly.jpeg>
 Package pdftex.def Info: imagenes/c2/artly.jpeg  used on input line 64.
@@ -858,12 +855,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has b
                    \relax 
 l.76 
       [7 <./imagenes/c2/artly.jpeg>]
-<imagenes/c2/bmath.jpeg, id=940, 370.5042pt x 173.448pt>
+<imagenes/c2/bmath.jpeg, id=942, 370.5042pt x 173.448pt>
 File: imagenes/c2/bmath.jpeg Graphic file (type jpg)
 <use imagenes/c2/bmath.jpeg>
 Package pdftex.def Info: imagenes/c2/bmath.jpeg  used on input line 91.
 (pdftex.def)             Requested size: 360.0pt x 168.53018pt.
-<imagenes/c2/bmath2.jpeg, id=941, 370.5042pt x 173.448pt>
+<imagenes/c2/bmath2.jpeg, id=943, 370.5042pt x 173.448pt>
 File: imagenes/c2/bmath2.jpeg Graphic file (type jpg)
 <use imagenes/c2/bmath2.jpeg>
 Package pdftex.def Info: imagenes/c2/bmath2.jpeg  used on input line 99.
@@ -885,7 +882,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has b
                    \relax 
 l.106 \newpage
                [9 <./imagenes/c2/bmath2.jpeg>]
-<imagenes/c2/cursomusica.jpeg, id=950, 221.8689pt x 450.2421pt>
+<imagenes/c2/cursomusica.jpeg, id=952, 221.8689pt x 450.2421pt>
 File: imagenes/c2/cursomusica.jpeg Graphic file (type jpg)
 <use imagenes/c2/cursomusica.jpeg>
 Package pdftex.def Info: imagenes/c2/cursomusica.jpeg  used on input line 123.
@@ -897,12 +894,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has 
                    \relax 
 l.134 
        [10 <./imagenes/c2/cursomusica.jpeg>]
-<imagenes/c2/sonid.jpeg, id=957, 221.1462pt x 323.0469pt>
+<imagenes/c2/sonid.jpeg, id=959, 221.1462pt x 323.0469pt>
 File: imagenes/c2/sonid.jpeg Graphic file (type jpg)
 <use imagenes/c2/sonid.jpeg>
 Package pdftex.def Info: imagenes/c2/sonid.jpeg  used on input line 153.
 (pdftex.def)             Requested size: 126.0022pt x 184.0647pt.
-<imagenes/c2/sonid1.jpeg, id=958, 218.9781pt x 317.988pt>
+<imagenes/c2/sonid1.jpeg, id=960, 218.9781pt x 317.988pt>
 File: imagenes/c2/sonid1.jpeg Graphic file (type jpg)
 <use imagenes/c2/sonid1.jpeg>
 Package pdftex.def Info: imagenes/c2/sonid1.jpeg  used on input line 155.
@@ -914,12 +911,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has 
                    \relax 
 l.158 \newpage
                [11 <./imagenes/c2/sonid.jpeg> <./imagenes/c2/sonid1.jpeg>]
-<imagenes/c2/flutter.png, id=968, 801.99625pt x 228.855pt>
+<imagenes/c2/flutter.png, id=970, 801.99625pt x 228.855pt>
 File: imagenes/c2/flutter.png Graphic file (type png)
 <use imagenes/c2/flutter.png>
 Package pdftex.def Info: imagenes/c2/flutter.png  used on input line 170.
 (pdftex.def)             Requested size: 97.20154pt x 27.73378pt.
-<imagenes/c2/reactnative.png, id=969, 185.69376pt x 49.18375pt>
+<imagenes/c2/reactnative.png, id=971, 185.69376pt x 49.18375pt>
 File: imagenes/c2/reactnative.png Graphic file (type png)
 <use imagenes/c2/reactnative.png>
 Package pdftex.def Info: imagenes/c2/reactnative.png  used on input line 194.
@@ -931,7 +928,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has 
                    \relax 
 l.200 
        [12 <./imagenes/c2/flutter.png> <./imagenes/c2/reactnative.png>]
-<imagenes/c2/dart.png, id=975, 2007.5pt x 532.99126pt>
+<imagenes/c2/dart.png, id=977, 2007.5pt x 532.99126pt>
 File: imagenes/c2/dart.png Graphic file (type png)
 <use imagenes/c2/dart.png>
 Package pdftex.def Info: imagenes/c2/dart.png  used on input line 219.
@@ -946,7 +943,7 @@ LaTeX Info: Redefining \% on input line 239.
 LaTeX Info: Redefining \. on input line 271.
 LaTeX Info: Redefining \% on input line 271.
  [14]
-<imagenes/c2/mongodb.png, id=986, 291.0875pt x 104.39pt>
+<imagenes/c2/mongodb.png, id=988, 291.0875pt x 104.39pt>
 File: imagenes/c2/mongodb.png Graphic file (type png)
 <use imagenes/c2/mongodb.png>
 Package pdftex.def Info: imagenes/c2/mongodb.png  used on input line 297.
@@ -954,12 +951,12 @@ Package pdftex.def Info: imagenes/c2/mongodb.png  used on input line 297.
 LaTeX Info: Redefining \. on input line 304.
 LaTeX Info: Redefining \% on input line 304.
  [15 <./imagenes/c2/mongodb.png>]
-<imagenes/c2/MERN.png, id=992, 856.19875pt x 192.72pt>
+<imagenes/c2/MERN.png, id=994, 856.19875pt x 192.72pt>
 File: imagenes/c2/MERN.png Graphic file (type png)
 <use imagenes/c2/MERN.png>
 Package pdftex.def Info: imagenes/c2/MERN.png  used on input line 316.
 (pdftex.def)             Requested size: 251.9989pt x 56.71956pt.
-<imagenes/c2/mariadb.png, id=993, 417.56pt x 118.4425pt>
+<imagenes/c2/mariadb.png, id=995, 417.56pt x 118.4425pt>
 File: imagenes/c2/mariadb.png Graphic file (type png)
 <use imagenes/c2/mariadb.png>
 Package pdftex.def Info: imagenes/c2/mariadb.png  used on input line 328.
@@ -981,7 +978,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 47.
 LaTeX Info: Redefining \% on input line 47.
  [20]
-<imagenes/c3/diagrama.png, id=1017, 655.44875pt x 723.70375pt>
+<imagenes/c3/diagrama.png, id=1019, 655.44875pt x 723.70375pt>
 File: imagenes/c3/diagrama.png Graphic file (type png)
 <use imagenes/c3/diagrama.png>
 Package pdftex.def Info: imagenes/c3/diagrama.png  used on input line 51.
@@ -995,7 +992,7 @@ LaTeX Info: Redefining \% on input line 96.
 LaTeX Info: Redefining \. on input line 127.
 LaTeX Info: Redefining \% on input line 127.
  [23]
-<imagenes/c3/boceto.png, id=1031, 813.0375pt x 1016.29688pt>
+<imagenes/c3/boceto.png, id=1033, 813.0375pt x 1016.29688pt>
 File: imagenes/c3/boceto.png Graphic file (type png)
 <use imagenes/c3/boceto.png>
 Package pdftex.def Info: imagenes/c3/boceto.png  used on input line 137.
@@ -1015,7 +1012,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 4.
-<imagenes/c4/scrum.png, id=1056, 1124.2pt x 490.83376pt>
+<imagenes/c4/scrum.png, id=1058, 1124.2pt x 490.83376pt>
 File: imagenes/c4/scrum.png Graphic file (type png)
 <use imagenes/c4/scrum.png>
 Package pdftex.def Info: imagenes/c4/scrum.png  used on input line 25.
@@ -1099,61 +1096,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 255--256
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
 LaTeX Info: Redefining \. on input line 273.
 LaTeX Info: Redefining \% on input line 273.
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 
  []
 
-<imagenes/c4/gantt.png, id=1103, 1868.9825pt x 927.465pt>
+<imagenes/c4/gantt.png, id=1105, 1868.9825pt x 927.465pt>
 File: imagenes/c4/gantt.png Graphic file (type png)
 <use imagenes/c4/gantt.png>
-Package pdftex.def Info: imagenes/c4/gantt.png  used on input line 308.
+Package pdftex.def Info: imagenes/c4/gantt.png  used on input line 309.
 (pdftex.def)             Requested size: 360.0pt x 178.64017pt.
-LaTeX Info: Redefining \. on input line 312.
-LaTeX Info: Redefining \% on input line 312.
+LaTeX Info: Redefining \. on input line 313.
+LaTeX Info: Redefining \% on input line 313.
 [39]
-<imagenes/c4/gantt1.png, id=1108, 1324.95pt x 678.535pt>
+<imagenes/c4/gantt1.png, id=1110, 1324.95pt x 678.535pt>
 File: imagenes/c4/gantt1.png Graphic file (type png)
 <use imagenes/c4/gantt1.png>
-Package pdftex.def Info: imagenes/c4/gantt1.png  used on input line 331.
+Package pdftex.def Info: imagenes/c4/gantt1.png  used on input line 332.
 (pdftex.def)             Requested size: 360.0pt x 184.35614pt.
 
 Underfull \vbox (badness 1087) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 335.
-LaTeX Info: Redefining \% on input line 335.
+LaTeX Info: Redefining \. on input line 336.
+LaTeX Info: Redefining \% on input line 336.
  [40 <./imagenes/c4/gantt.png>]
-<imagenes/c4/gantt2.png, id=1114, 1324.95pt x 855.195pt>
+<imagenes/c4/gantt2.png, id=1116, 1324.95pt x 855.195pt>
 File: imagenes/c4/gantt2.png Graphic file (type png)
 <use imagenes/c4/gantt2.png>
-Package pdftex.def Info: imagenes/c4/gantt2.png  used on input line 339.
+Package pdftex.def Info: imagenes/c4/gantt2.png  used on input line 340.
 (pdftex.def)             Requested size: 360.0pt x 232.3542pt.
-<imagenes/c4/gantt3.png, id=1115, 1324.95pt x 811.03pt>
+<imagenes/c4/gantt3.png, id=1117, 1324.95pt x 811.03pt>
 File: imagenes/c4/gantt3.png Graphic file (type png)
 <use imagenes/c4/gantt3.png>
-Package pdftex.def Info: imagenes/c4/gantt3.png  used on input line 346.
+Package pdftex.def Info: imagenes/c4/gantt3.png  used on input line 347.
 (pdftex.def)             Requested size: 396.0022pt x 242.3951pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 350.
-LaTeX Info: Redefining \% on input line 350.
+LaTeX Info: Redefining \. on input line 351.
+LaTeX Info: Redefining \% on input line 351.
  [41 <./imagenes/c4/gantt1.png> <./imagenes/c4/gantt2.png>]
-<imagenes/c4/gantt4.png, id=1122, 1324.95pt x 501.875pt>
+<imagenes/c4/gantt4.png, id=1124, 1324.95pt x 501.875pt>
 File: imagenes/c4/gantt4.png Graphic file (type png)
 <use imagenes/c4/gantt4.png>
-Package pdftex.def Info: imagenes/c4/gantt4.png  used on input line 353.
+Package pdftex.def Info: imagenes/c4/gantt4.png  used on input line 354.
 (pdftex.def)             Requested size: 431.9989pt x 163.63583pt.
 ) (./capitulos/05_Analisis.tex
 LaTeX Info: Redefining \. on input line 1.
@@ -1175,7 +1172,7 @@ LaTeX Info: Redefining \% on input line 413.
 LaTeX Info: Redefining \. on input line 512.
 LaTeX Info: Redefining \% on input line 512.
  [47]
-<imagenes/c5/diagramadeclases.png, id=1183, 906.38625pt x 736.7525pt>
+<imagenes/c5/diagramadeclases.png, id=1185, 906.38625pt x 736.7525pt>
 File: imagenes/c5/diagramadeclases.png Graphic file (type png)
 <use imagenes/c5/diagramadeclases.png>
 Package pdftex.def Info: imagenes/c5/diagramadeclases.png  used on input line 520.
@@ -1190,7 +1187,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 6.
-<imagenes/c6/arch.png, id=1199, 1416.29124pt x 439.6425pt>
+<imagenes/c6/arch.png, id=1201, 1416.29124pt x 439.6425pt>
 File: imagenes/c6/arch.png Graphic file (type png)
 <use imagenes/c6/arch.png>
 Package pdftex.def Info: imagenes/c6/arch.png  used on input line 15.
@@ -1199,7 +1196,7 @@ Package pdftex.def Info: imagenes/c6/arch.png  used on input line 15.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [51]
-<imagenes/c6/bbdd.png, id=1204, 1000.73875pt x 919.435pt>
+<imagenes/c6/bbdd.png, id=1206, 1000.73875pt x 919.435pt>
 File: imagenes/c6/bbdd.png Graphic file (type png)
 <use imagenes/c6/bbdd.png>
 Package pdftex.def Info: imagenes/c6/bbdd.png  used on input line 30.
@@ -1210,7 +1207,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 34.
 LaTeX Info: Redefining \% on input line 34.
  [52 <./imagenes/c6/arch.png>]
-<imagenes/c6/diagramadeclases.png, id=1210, 906.38625pt x 736.7525pt>
+<imagenes/c6/diagramadeclases.png, id=1212, 906.38625pt x 736.7525pt>
 File: imagenes/c6/diagramadeclases.png Graphic file (type png)
 <use imagenes/c6/diagramadeclases.png>
 Package pdftex.def Info: imagenes/c6/diagramadeclases.png  used on input line 49.
@@ -1218,7 +1215,7 @@ Package pdftex.def Info: imagenes/c6/diagramadeclases.png  used on input line 49
 LaTeX Info: Redefining \. on input line 52.
 LaTeX Info: Redefining \% on input line 52.
  [53 <./imagenes/c6/bbdd.png>]
-<imagenes/c6/diagramadesecuencia.png, id=1216, 896.34875pt x 593.21625pt>
+<imagenes/c6/diagramadesecuencia.png, id=1218, 896.34875pt x 593.21625pt>
 File: imagenes/c6/diagramadesecuencia.png Graphic file (type png)
 <use imagenes/c6/diagramadesecuencia.png>
 Package pdftex.def Info: imagenes/c6/diagramadesecuencia.png  used on input line 62.
@@ -1226,7 +1223,7 @@ Package pdftex.def Info: imagenes/c6/diagramadesecuencia.png  used on input line
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
  [54 <./imagenes/c6/diagramadeclases.png>]
-<imagenes/c6/diagramadesecuencia2.png, id=1222, 1363.0925pt x 569.12625pt>
+<imagenes/c6/diagramadesecuencia2.png, id=1224, 1363.0925pt x 569.12625pt>
 File: imagenes/c6/diagramadesecuencia2.png Graphic file (type png)
 <use imagenes/c6/diagramadesecuencia2.png>
 Package pdftex.def Info: imagenes/c6/diagramadesecuencia2.png  used on input line 69.
@@ -1238,12 +1235,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--79
 
  []
 
-<imagenes/c6/9.png, id=1230, 813.0375pt x 1016.29688pt>
+<imagenes/c6/9.png, id=1232, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/9.png Graphic file (type png)
 <use imagenes/c6/9.png>
 Package pdftex.def Info: imagenes/c6/9.png  used on input line 86.
 (pdftex.def)             Requested size: 161.9989pt x 202.49591pt.
-<imagenes/c6/10.png, id=1231, 813.0375pt x 1016.29688pt>
+<imagenes/c6/10.png, id=1233, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/10.png Graphic file (type png)
 <use imagenes/c6/10.png>
 Package pdftex.def Info: imagenes/c6/10.png  used on input line 98.
@@ -1251,12 +1248,12 @@ Package pdftex.def Info: imagenes/c6/10.png  used on input line 98.
 LaTeX Info: Redefining \. on input line 102.
 LaTeX Info: Redefining \% on input line 102.
 [56 <./imagenes/c6/9.png>]
-<imagenes/c6/1.png, id=1239, 813.0375pt x 1016.29688pt>
+<imagenes/c6/1.png, id=1241, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/1.png Graphic file (type png)
 <use imagenes/c6/1.png>
 Package pdftex.def Info: imagenes/c6/1.png  used on input line 110.
 (pdftex.def)             Requested size: 161.9989pt x 202.49591pt.
-<imagenes/c6/2.png, id=1240, 813.0375pt x 1016.29688pt>
+<imagenes/c6/2.png, id=1242, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/2.png Graphic file (type png)
 <use imagenes/c6/2.png>
 Package pdftex.def Info: imagenes/c6/2.png  used on input line 121.
@@ -1267,7 +1264,7 @@ Underfull \vbox (badness 5359) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 124.
 LaTeX Info: Redefining \% on input line 124.
  [57 <./imagenes/c6/10.png> <./imagenes/c6/1.png>]
-<imagenes/c6/3.png, id=1248, 813.0375pt x 1016.29688pt>
+<imagenes/c6/3.png, id=1250, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/3.png Graphic file (type png)
 <use imagenes/c6/3.png>
 Package pdftex.def Info: imagenes/c6/3.png  used on input line 131.
@@ -1275,7 +1272,7 @@ Package pdftex.def Info: imagenes/c6/3.png  used on input line 131.
 LaTeX Info: Redefining \. on input line 139.
 LaTeX Info: Redefining \% on input line 139.
  [58 <./imagenes/c6/2.png> <./imagenes/c6/3.png>]
-<imagenes/c6/4.png, id=1257, 813.0375pt x 1016.29688pt>
+<imagenes/c6/4.png, id=1259, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/4.png Graphic file (type png)
 <use imagenes/c6/4.png>
 Package pdftex.def Info: imagenes/c6/4.png  used on input line 142.
@@ -1283,7 +1280,7 @@ Package pdftex.def Info: imagenes/c6/4.png  used on input line 142.
 LaTeX Info: Redefining \. on input line 147.
 LaTeX Info: Redefining \% on input line 147.
  [59 <./imagenes/c6/4.png>]
-<imagenes/c6/5.png, id=1264, 813.0375pt x 1016.29688pt>
+<imagenes/c6/5.png, id=1266, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/5.png Graphic file (type png)
 <use imagenes/c6/5.png>
 Package pdftex.def Info: imagenes/c6/5.png  used on input line 156.
@@ -1291,7 +1288,7 @@ Package pdftex.def Info: imagenes/c6/5.png  used on input line 156.
 LaTeX Info: Redefining \. on input line 161.
 LaTeX Info: Redefining \% on input line 161.
  [60 <./imagenes/c6/5.png>]
-<imagenes/c6/6.png, id=1271, 813.0375pt x 1016.29688pt>
+<imagenes/c6/6.png, id=1273, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/6.png Graphic file (type png)
 <use imagenes/c6/6.png>
 Package pdftex.def Info: imagenes/c6/6.png  used on input line 169.
@@ -1299,7 +1296,7 @@ Package pdftex.def Info: imagenes/c6/6.png  used on input line 169.
 LaTeX Info: Redefining \. on input line 174.
 LaTeX Info: Redefining \% on input line 174.
  [61 <./imagenes/c6/6.png>]
-<imagenes/c6/7.png, id=1279, 813.0375pt x 1016.29688pt>
+<imagenes/c6/7.png, id=1281, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/7.png Graphic file (type png)
 <use imagenes/c6/7.png>
 Package pdftex.def Info: imagenes/c6/7.png  used on input line 182.
@@ -1307,7 +1304,7 @@ Package pdftex.def Info: imagenes/c6/7.png  used on input line 182.
 LaTeX Info: Redefining \. on input line 187.
 LaTeX Info: Redefining \% on input line 187.
  [62 <./imagenes/c6/7.png>]
-<imagenes/c6/8.png, id=1286, 813.0375pt x 1016.29688pt>
+<imagenes/c6/8.png, id=1288, 813.0375pt x 1016.29688pt>
 File: imagenes/c6/8.png Graphic file (type png)
 <use imagenes/c6/8.png>
 Package pdftex.def Info: imagenes/c6/8.png  used on input line 195.
@@ -1315,7 +1312,7 @@ Package pdftex.def Info: imagenes/c6/8.png  used on input line 195.
 LaTeX Info: Redefining \. on input line 200.
 LaTeX Info: Redefining \% on input line 200.
  [63 <./imagenes/c6/8.png>]
-<imagenes/c6/diagrambocetos.png, id=1293, 2048.65375pt x 1377.145pt>
+<imagenes/c6/diagrambocetos.png, id=1295, 2048.65375pt x 1377.145pt>
 File: imagenes/c6/diagrambocetos.png Graphic file (type png)
 <use imagenes/c6/diagrambocetos.png>
 Package pdftex.def Info: imagenes/c6/diagrambocetos.png  used on input line 207.
@@ -1328,7 +1325,7 @@ Cap\'{\i }tulo 7.
 [65
 
 ]
-<imagenes/c7/jira.png, id=1305, 967.615pt x 780.9175pt>
+<imagenes/c7/jira.png, id=1307, 967.615pt x 780.9175pt>
 File: imagenes/c7/jira.png Graphic file (type png)
 <use imagenes/c7/jira.png>
 Package pdftex.def Info: imagenes/c7/jira.png  used on input line 19.
@@ -1336,7 +1333,7 @@ Package pdftex.def Info: imagenes/c7/jira.png  used on input line 19.
 LaTeX Info: Redefining \. on input line 29.
 LaTeX Info: Redefining \% on input line 29.
  [66 <./imagenes/c7/jira.png>]
-<imagenes/c7/compass.png, id=1311, 774.895pt x 620.3175pt>
+<imagenes/c7/compass.png, id=1313, 774.895pt x 620.3175pt>
 File: imagenes/c7/compass.png Graphic file (type png)
 <use imagenes/c7/compass.png>
 Package pdftex.def Info: imagenes/c7/compass.png  used on input line 35.
@@ -1344,7 +1341,7 @@ Package pdftex.def Info: imagenes/c7/compass.png  used on input line 35.
 LaTeX Info: Redefining \. on input line 49.
 LaTeX Info: Redefining \% on input line 49.
  [67 <./imagenes/c7/compass.png>]
-<imagenes/c7/estructura.png, id=1318, 1064.97874pt x 472.76625pt>
+<imagenes/c7/estructura.png, id=1320, 1064.97874pt x 472.76625pt>
 File: imagenes/c7/estructura.png Graphic file (type png)
 <use imagenes/c7/estructura.png>
 Package pdftex.def Info: imagenes/c7/estructura.png  used on input line 53.
@@ -1371,7 +1368,7 @@ Overfull \hbox (2.05011pt too wide) in paragraph at lines 135--136
 LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
 [71]
-<imagenes/c7/drawer.png, id=1341, 416.55624pt x 885.3075pt>
+<imagenes/c7/drawer.png, id=1343, 416.55624pt x 885.3075pt>
 File: imagenes/c7/drawer.png Graphic file (type png)
 <use imagenes/c7/drawer.png>
 Package pdftex.def Info: imagenes/c7/drawer.png  used on input line 168.
@@ -1379,12 +1376,12 @@ Package pdftex.def Info: imagenes/c7/drawer.png  used on input line 168.
 LaTeX Info: Redefining \. on input line 178.
 LaTeX Info: Redefining \% on input line 178.
  [72 <./imagenes/c7/drawer.png>]
-<imagenes/c7/logindiag.png, id=1347, 815.045pt x 532.99126pt>
+<imagenes/c7/logindiag.png, id=1349, 815.045pt x 532.99126pt>
 File: imagenes/c7/logindiag.png Graphic file (type png)
 <use imagenes/c7/logindiag.png>
 Package pdftex.def Info: imagenes/c7/logindiag.png  used on input line 183.
 (pdftex.def)             Requested size: 323.9978pt x 211.87521pt.
-<imagenes/c7/tokendiag.png, id=1348, 738.76pt x 443.6575pt>
+<imagenes/c7/tokendiag.png, id=1350, 738.76pt x 443.6575pt>
 File: imagenes/c7/tokendiag.png Graphic file (type png)
 <use imagenes/c7/tokendiag.png>
 Package pdftex.def Info: imagenes/c7/tokendiag.png  used on input line 194.
@@ -1395,7 +1392,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 198.
 LaTeX Info: Redefining \% on input line 198.
  [73 <./imagenes/c7/logindiag.png>]
-<imagenes/c7/token2.png, id=1355, 738.76pt x 633.36626pt>
+<imagenes/c7/token2.png, id=1357, 738.76pt x 633.36626pt>
 File: imagenes/c7/token2.png Graphic file (type png)
 <use imagenes/c7/token2.png>
 Package pdftex.def Info: imagenes/c7/token2.png  used on input line 208.
@@ -1406,12 +1403,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 213.
 LaTeX Info: Redefining \% on input line 213.
  [74 <./imagenes/c7/tokendiag.png>]
-<imagenes/c7/login.png, id=1361, 416.55624pt x 885.3075pt>
+<imagenes/c7/login.png, id=1363, 416.55624pt x 885.3075pt>
 File: imagenes/c7/login.png Graphic file (type png)
 <use imagenes/c7/login.png>
 Package pdftex.def Info: imagenes/c7/login.png  used on input line 225.
 (pdftex.def)             Requested size: 143.9978pt x 306.0393pt.
-<imagenes/c7/logincompo.png, id=1362, 395.4775pt x 830.10126pt>
+<imagenes/c7/logincompo.png, id=1364, 395.4775pt x 830.10126pt>
 File: imagenes/c7/logincompo.png Graphic file (type png)
 <use imagenes/c7/logincompo.png>
 Package pdftex.def Info: imagenes/c7/logincompo.png  used on input line 227.
@@ -1428,7 +1425,7 @@ LaTeX Info: Redefining \% on input line 242.
 LaTeX Info: Redefining \. on input line 246.
 LaTeX Info: Redefining \% on input line 246.
  [77]
-<imagenes/c7/registro.png, id=1384, 416.55624pt x 885.3075pt>
+<imagenes/c7/registro.png, id=1386, 416.55624pt x 885.3075pt>
 File: imagenes/c7/registro.png Graphic file (type png)
 <use imagenes/c7/registro.png>
 Package pdftex.def Info: imagenes/c7/registro.png  used on input line 260.
@@ -1439,544 +1436,572 @@ LaTeX Info: Redefining \% on input line 270.
 LaTeX Info: Redefining \. on input line 291.
 LaTeX Info: Redefining \% on input line 291.
  [79]
-<imagenes/c7/pantprin.png, id=1402, 416.55624pt x 885.3075pt>
+<imagenes/c7/pantprin.png, id=1404, 454.69875pt x 962.59625pt>
 File: imagenes/c7/pantprin.png Graphic file (type png)
 <use imagenes/c7/pantprin.png>
 Package pdftex.def Info: imagenes/c7/pantprin.png  used on input line 306.
-(pdftex.def)             Requested size: 143.9978pt x 306.0393pt.
-<imagenes/c7/leccionescompo.png, id=1403, 395.4775pt x 830.10126pt>
-File: imagenes/c7/leccionescompo.png Graphic file (type png)
-<use imagenes/c7/leccionescompo.png>
-Package pdftex.def Info: imagenes/c7/leccionescompo.png  used on input line 308.
-(pdftex.def)             Requested size: 146.16211pt x 306.79066pt.
-LaTeX Info: Redefining \. on input line 317.
-LaTeX Info: Redefining \% on input line 317.
- [80 <./imagenes/c7/pantprin.png> <./imagenes/c7/leccionescompo.png>]
-<imagenes/c7/leccion.png, id=1413, 416.55624pt x 885.3075pt>
+(pdftex.def)             Requested size: 161.9989pt x 342.95052pt.
+<imagenes/c7/listaleccionescompo.png, id=1405, 395.4775pt x 830.10126pt>
+File: imagenes/c7/listaleccionescompo.png Graphic file (type png)
+<use imagenes/c7/listaleccionescompo.png>
+Package pdftex.def Info: imagenes/c7/listaleccionescompo.png  used on input line 308.
+(pdftex.def)             Requested size: 161.9989pt x 340.03973pt.
+LaTeX Info: Redefining \. on input line 313.
+LaTeX Info: Redefining \% on input line 313.
+ [80 <./imagenes/c7/pantprin.png> <./imagenes/c7/listaleccionescompo.png>]
+<imagenes/c7/leccion.png, id=1414, 416.55624pt x 885.3075pt>
 File: imagenes/c7/leccion.png Graphic file (type png)
 <use imagenes/c7/leccion.png>
-Package pdftex.def Info: imagenes/c7/leccion.png  used on input line 339.
-(pdftex.def)             Requested size: 158.40088pt x 336.65pt.
-<imagenes/c7/leccion2.png, id=1414, 344.28625pt x 715.67375pt>
+Package pdftex.def Info: imagenes/c7/leccion.png  used on input line 333.
+(pdftex.def)             Requested size: 136.80176pt x 290.74747pt.
+<imagenes/c7/leccion2.png, id=1415, 344.28625pt x 715.67375pt>
 File: imagenes/c7/leccion2.png Graphic file (type png)
 <use imagenes/c7/leccion2.png>
-Package pdftex.def Info: imagenes/c7/leccion2.png  used on input line 341.
-(pdftex.def)             Requested size: 158.40088pt x 329.26852pt.
+Package pdftex.def Info: imagenes/c7/leccion2.png  used on input line 335.
+(pdftex.def)             Requested size: 136.80176pt x 284.37521pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 345.
-LaTeX Info: Redefining \% on input line 345.
+LaTeX Info: Redefining \. on input line 339.
+LaTeX Info: Redefining \% on input line 339.
  [81]
-LaTeX Info: Redefining \. on input line 355.
-LaTeX Info: Redefining \% on input line 355.
+<imagenes/c7/leccioncompo.png, id=1423, 395.4775pt x 830.10126pt>
+File: imagenes/c7/leccioncompo.png Graphic file (type png)
+<use imagenes/c7/leccioncompo.png>
+Package pdftex.def Info: imagenes/c7/leccioncompo.png  used on input line 348.
+(pdftex.def)             Requested size: 136.80176pt x 287.14522pt.
+<imagenes/c7/leccioncompo2.png, id=1424, 395.4775pt x 830.10126pt>
+File: imagenes/c7/leccioncompo2.png Graphic file (type png)
+<use imagenes/c7/leccioncompo2.png>
+Package pdftex.def Info: imagenes/c7/leccioncompo2.png  used on input line 350.
+(pdftex.def)             Requested size: 136.80176pt x 287.14522pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 354.
+LaTeX Info: Redefining \% on input line 354.
  [82 <./imagenes/c7/leccion.png> <./imagenes/c7/leccion2.png>]
-LaTeX Info: Redefining \. on input line 375.
-LaTeX Info: Redefining \% on input line 375.
- [83]
-LaTeX Info: Redefining \. on input line 380.
-LaTeX Info: Redefining \% on input line 380.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 367.
+LaTeX Info: Redefining \% on input line 367.
+ [83 <./imagenes/c7/leccioncompo.png> <./imagenes/c7/leccioncompo2.png>]
+LaTeX Info: Redefining \. on input line 387.
+LaTeX Info: Redefining \% on input line 387.
  [84]
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+LaTeX Info: Redefining \. on input line 392.
+LaTeX Info: Redefining \% on input line 392.
+ [85]
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 
  []
 
-<imagenes/c7/selecunica.png, id=1441, 344.28625pt x 715.67375pt>
+<imagenes/c7/selecunica.png, id=1454, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecunica.png Graphic file (type png)
 <use imagenes/c7/selecunica.png>
-Package pdftex.def Info: imagenes/c7/selecunica.png  used on input line 391.
+Package pdftex.def Info: imagenes/c7/selecunica.png  used on input line 403.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-<imagenes/c7/selecunica2.png, id=1442, 344.28625pt x 715.67375pt>
+<imagenes/c7/selecunica2.png, id=1455, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecunica2.png Graphic file (type png)
 <use imagenes/c7/selecunica2.png>
-Package pdftex.def Info: imagenes/c7/selecunica2.png  used on input line 393.
+Package pdftex.def Info: imagenes/c7/selecunica2.png  used on input line 405.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-LaTeX Info: Redefining \. on input line 398.
-LaTeX Info: Redefining \% on input line 398.
-[85 <./imagenes/c7/selecunica.png> <./imagenes/c7/selecunica2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
+LaTeX Info: Redefining \. on input line 410.
+LaTeX Info: Redefining \% on input line 410.
+[86 <./imagenes/c7/selecunica.png> <./imagenes/c7/selecunica2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
-<imagenes/c7/selecmulti.png, id=1453, 344.28625pt x 715.67375pt>
+<imagenes/c7/selecmulti.png, id=1465, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecmulti.png Graphic file (type png)
 <use imagenes/c7/selecmulti.png>
-Package pdftex.def Info: imagenes/c7/selecmulti.png  used on input line 409.
+Package pdftex.def Info: imagenes/c7/selecmulti.png  used on input line 421.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-<imagenes/c7/selecmulti2.png, id=1454, 344.28625pt x 715.67375pt>
+<imagenes/c7/selecmulti2.png, id=1466, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecmulti2.png Graphic file (type png)
 <use imagenes/c7/selecmulti2.png>
-Package pdftex.def Info: imagenes/c7/selecmulti2.png  used on input line 411.
+Package pdftex.def Info: imagenes/c7/selecmulti2.png  used on input line 423.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-LaTeX Info: Redefining \. on input line 418.
-LaTeX Info: Redefining \% on input line 418.
-[86 <./imagenes/c7/selecmulti.png> <./imagenes/c7/selecmulti2.png>]
-<imagenes/c7/entradatexto.png, id=1464, 344.28625pt x 715.67375pt>
+LaTeX Info: Redefining \. on input line 430.
+LaTeX Info: Redefining \% on input line 430.
+[87 <./imagenes/c7/selecmulti.png> <./imagenes/c7/selecmulti2.png>]
+<imagenes/c7/entradatexto.png, id=1476, 344.28625pt x 715.67375pt>
 File: imagenes/c7/entradatexto.png Graphic file (type png)
 <use imagenes/c7/entradatexto.png>
-Package pdftex.def Info: imagenes/c7/entradatexto.png  used on input line 429.
+Package pdftex.def Info: imagenes/c7/entradatexto.png  used on input line 441.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-<imagenes/c7/entradatexto2.png, id=1465, 344.28625pt x 715.67375pt>
+<imagenes/c7/entradatexto2.png, id=1477, 344.28625pt x 715.67375pt>
 File: imagenes/c7/entradatexto2.png Graphic file (type png)
 <use imagenes/c7/entradatexto2.png>
-Package pdftex.def Info: imagenes/c7/entradatexto2.png  used on input line 431.
+Package pdftex.def Info: imagenes/c7/entradatexto2.png  used on input line 443.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-LaTeX Info: Redefining \. on input line 436.
-LaTeX Info: Redefining \% on input line 436.
- [87 <./imagenes/c7/entradatexto.png> <./imagenes/c7/entradatexto2.png>]
-<imagenes/c7/entradamicrofono.png, id=1475, 394.47375pt x 829.0975pt>
+LaTeX Info: Redefining \. on input line 448.
+LaTeX Info: Redefining \% on input line 448.
+ [88 <./imagenes/c7/entradatexto.png> <./imagenes/c7/entradatexto2.png>]
+<imagenes/c7/entradamicrofono.png, id=1487, 394.47375pt x 829.0975pt>
 File: imagenes/c7/entradamicrofono.png Graphic file (type png)
 <use imagenes/c7/entradamicrofono.png>
-Package pdftex.def Info: imagenes/c7/entradamicrofono.png  used on input line 447.
+Package pdftex.def Info: imagenes/c7/entradamicrofono.png  used on input line 459.
 (pdftex.def)             Requested size: 161.9989pt x 340.48883pt.
-<imagenes/c7/entradamicrofono2.png, id=1476, 394.47375pt x 829.0975pt>
+<imagenes/c7/entradamicrofono2.png, id=1488, 394.47375pt x 829.0975pt>
 File: imagenes/c7/entradamicrofono2.png Graphic file (type png)
 <use imagenes/c7/entradamicrofono2.png>
-Package pdftex.def Info: imagenes/c7/entradamicrofono2.png  used on input line 449.
+Package pdftex.def Info: imagenes/c7/entradamicrofono2.png  used on input line 461.
 (pdftex.def)             Requested size: 161.9989pt x 340.48883pt.
-<imagenes/c7/entradamicrofono3.png, id=1477, 394.47375pt x 829.0975pt>
+<imagenes/c7/entradamicrofono3.png, id=1489, 394.47375pt x 829.0975pt>
 File: imagenes/c7/entradamicrofono3.png Graphic file (type png)
 <use imagenes/c7/entradamicrofono3.png>
-Package pdftex.def Info: imagenes/c7/entradamicrofono3.png  used on input line 456.
+Package pdftex.def Info: imagenes/c7/entradamicrofono3.png  used on input line 468.
 (pdftex.def)             Requested size: 143.9978pt x 302.6497pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 460.
-LaTeX Info: Redefining \% on input line 460.
- [88 <./imagenes/c7/entradamicrofono.png> <./imagenes/c7/entradamicrofono2.png>]
-Underfull \vbox (badness 1701) has occurred while \output is active []
-
 LaTeX Info: Redefining \. on input line 472.
 LaTeX Info: Redefining \% on input line 472.
- [89 <./imagenes/c7/entradamicrofono3.png>]
-<imagenes/c7/porcentaje.png, id=1493, 344.28625pt x 715.67375pt>
+ [89 <./imagenes/c7/entradamicrofono.png> <./imagenes/c7/entradamicrofono2.png>]
+Underfull \vbox (badness 1701) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 484.
+LaTeX Info: Redefining \% on input line 484.
+ [90 <./imagenes/c7/entradamicrofono3.png>]
+<imagenes/c7/porcentaje.png, id=1505, 344.28625pt x 715.67375pt>
 File: imagenes/c7/porcentaje.png Graphic file (type png)
 <use imagenes/c7/porcentaje.png>
-Package pdftex.def Info: imagenes/c7/porcentaje.png  used on input line 486.
+Package pdftex.def Info: imagenes/c7/porcentaje.png  used on input line 498.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 486.
+(Font)              <9> on input line 498.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 486.
-<imagenes/c7/porcentaje2.png, id=1494, 344.28625pt x 715.67375pt>
+(Font)              <5> on input line 498.
+<imagenes/c7/porcentaje2.png, id=1506, 344.28625pt x 715.67375pt>
 File: imagenes/c7/porcentaje2.png Graphic file (type png)
 <use imagenes/c7/porcentaje2.png>
-Package pdftex.def Info: imagenes/c7/porcentaje2.png  used on input line 488.
+Package pdftex.def Info: imagenes/c7/porcentaje2.png  used on input line 500.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 492.
-LaTeX Info: Redefining \% on input line 492.
- [90]
-LaTeX Info: Redefining \. on input line 510.
-LaTeX Info: Redefining \% on input line 510.
- [91 <./imagenes/c7/porcentaje.png> <./imagenes/c7/porcentaje2.png>]
-LaTeX Info: Redefining \. on input line 532.
-LaTeX Info: Redefining \% on input line 532.
- [92]
-<imagenes/c7/selecunicab.png, id=1517, 344.28625pt x 715.67375pt>
+LaTeX Info: Redefining \. on input line 504.
+LaTeX Info: Redefining \% on input line 504.
+ [91]
+LaTeX Info: Redefining \. on input line 522.
+LaTeX Info: Redefining \% on input line 522.
+ [92 <./imagenes/c7/porcentaje.png> <./imagenes/c7/porcentaje2.png>]
+LaTeX Info: Redefining \. on input line 544.
+LaTeX Info: Redefining \% on input line 544.
+ [93]
+<imagenes/c7/selecunicab.png, id=1529, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecunicab.png Graphic file (type png)
 <use imagenes/c7/selecunicab.png>
-Package pdftex.def Info: imagenes/c7/selecunicab.png  used on input line 540.
+Package pdftex.def Info: imagenes/c7/selecunicab.png  used on input line 552.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-<imagenes/c7/selecunicab2.png, id=1518, 344.28625pt x 715.67375pt>
+<imagenes/c7/selecunicab2.png, id=1530, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecunicab2.png Graphic file (type png)
 <use imagenes/c7/selecunicab2.png>
-Package pdftex.def Info: imagenes/c7/selecunicab2.png  used on input line 542.
+Package pdftex.def Info: imagenes/c7/selecunicab2.png  used on input line 554.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-LaTeX Info: Redefining \. on input line 547.
-LaTeX Info: Redefining \% on input line 547.
- [93 <./imagenes/c7/selecunicab.png> <./imagenes/c7/selecunicab2.png>]
-<imagenes/c7/selecmultib.png, id=1528, 344.28625pt x 715.67375pt>
+LaTeX Info: Redefining \. on input line 559.
+LaTeX Info: Redefining \% on input line 559.
+ [94 <./imagenes/c7/selecunicab.png> <./imagenes/c7/selecunicab2.png>]
+<imagenes/c7/selecmultib.png, id=1540, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecmultib.png Graphic file (type png)
 <use imagenes/c7/selecmultib.png>
-Package pdftex.def Info: imagenes/c7/selecmultib.png  used on input line 555.
+Package pdftex.def Info: imagenes/c7/selecmultib.png  used on input line 567.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-<imagenes/c7/selecmultib2.png, id=1529, 344.28625pt x 715.67375pt>
+<imagenes/c7/selecmultib2.png, id=1541, 344.28625pt x 715.67375pt>
 File: imagenes/c7/selecmultib2.png Graphic file (type png)
 <use imagenes/c7/selecmultib2.png>
-Package pdftex.def Info: imagenes/c7/selecmultib2.png  used on input line 557.
+Package pdftex.def Info: imagenes/c7/selecmultib2.png  used on input line 569.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-LaTeX Info: Redefining \. on input line 562.
-LaTeX Info: Redefining \% on input line 562.
- [94 <./imagenes/c7/selecmultib.png> <./imagenes/c7/selecmultib2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 564--565
+LaTeX Info: Redefining \. on input line 574.
+LaTeX Info: Redefining \% on input line 574.
+ [95 <./imagenes/c7/selecmultib.png> <./imagenes/c7/selecmultib2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
-<imagenes/c7/entradatextob.png, id=1539, 344.28625pt x 715.67375pt>
+<imagenes/c7/entradatextob.png, id=1551, 344.28625pt x 715.67375pt>
 File: imagenes/c7/entradatextob.png Graphic file (type png)
 <use imagenes/c7/entradatextob.png>
-Package pdftex.def Info: imagenes/c7/entradatextob.png  used on input line 570.
+Package pdftex.def Info: imagenes/c7/entradatextob.png  used on input line 582.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-<imagenes/c7/entradatextb2.png, id=1540, 344.28625pt x 715.67375pt>
+<imagenes/c7/entradatextb2.png, id=1552, 344.28625pt x 715.67375pt>
 File: imagenes/c7/entradatextb2.png Graphic file (type png)
 <use imagenes/c7/entradatextb2.png>
-Package pdftex.def Info: imagenes/c7/entradatextb2.png  used on input line 572.
+Package pdftex.def Info: imagenes/c7/entradatextb2.png  used on input line 584.
 (pdftex.def)             Requested size: 161.9989pt x 336.74892pt.
-LaTeX Info: Redefining \. on input line 577.
-LaTeX Info: Redefining \% on input line 577.
-[95 <./imagenes/c7/entradatextob.png> <./imagenes/c7/entradatextb2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
+LaTeX Info: Redefining \. on input line 589.
+LaTeX Info: Redefining \% on input line 589.
+[96 <./imagenes/c7/entradatextob.png> <./imagenes/c7/entradatextb2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 591--592
 
  []
 
-<imagenes/c7/entradamicrofonob2.png, id=1550, 394.47375pt x 829.0975pt>
+<imagenes/c7/entradamicrofonob2.png, id=1562, 394.47375pt x 829.0975pt>
 File: imagenes/c7/entradamicrofonob2.png Graphic file (type png)
 <use imagenes/c7/entradamicrofonob2.png>
-Package pdftex.def Info: imagenes/c7/entradamicrofonob2.png  used on input line 585.
+Package pdftex.def Info: imagenes/c7/entradamicrofonob2.png  used on input line 597.
 (pdftex.def)             Requested size: 161.9989pt x 340.48883pt.
-<imagenes/c7/entradamicrofonob.png, id=1551, 394.47375pt x 829.0975pt>
+<imagenes/c7/entradamicrofonob.png, id=1563, 394.47375pt x 829.0975pt>
 File: imagenes/c7/entradamicrofonob.png Graphic file (type png)
 <use imagenes/c7/entradamicrofonob.png>
-Package pdftex.def Info: imagenes/c7/entradamicrofonob.png  used on input line 587.
+Package pdftex.def Info: imagenes/c7/entradamicrofonob.png  used on input line 599.
 (pdftex.def)             Requested size: 161.9989pt x 340.48883pt.
-<imagenes/c7/historialtest.png, id=1552, 344.28625pt x 715.67375pt>
+<imagenes/c7/historialtest.png, id=1564, 344.28625pt x 715.67375pt>
 File: imagenes/c7/historialtest.png Graphic file (type png)
 <use imagenes/c7/historialtest.png>
-Package pdftex.def Info: imagenes/c7/historialtest.png  used on input line 602.
+Package pdftex.def Info: imagenes/c7/historialtest.png  used on input line 614.
 (pdftex.def)             Requested size: 158.40088pt x 329.26852pt.
-LaTeX Info: Redefining \. on input line 606.
-LaTeX Info: Redefining \% on input line 606.
-[96 <./imagenes/c7/entradamicrofonob2.png> <./imagenes/c7/entradamicrofonob.png>]
-<imagenes/c7/miperfil.png, id=1563, 453.695pt x 966.61125pt>
+LaTeX Info: Redefining \. on input line 618.
+LaTeX Info: Redefining \% on input line 618.
+[97 <./imagenes/c7/entradamicrofonob2.png> <./imagenes/c7/entradamicrofonob.png>]
+<imagenes/c7/miperfil.png, id=1577, 453.695pt x 966.61125pt>
 File: imagenes/c7/miperfil.png Graphic file (type png)
 <use imagenes/c7/miperfil.png>
-Package pdftex.def Info: imagenes/c7/miperfil.png  used on input line 620.
+Package pdftex.def Info: imagenes/c7/miperfil.png  used on input line 632.
 (pdftex.def)             Requested size: 158.40088pt x 337.4783pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 624.
-LaTeX Info: Redefining \% on input line 624.
- [97 <./imagenes/c7/historialtest.png>]
-LaTeX Info: Redefining \. on input line 640.
-LaTeX Info: Redefining \% on input line 640.
- [98 <./imagenes/c7/miperfil.png>]
-<imagenes/c7/verlogro.png, id=1578, 453.695pt x 966.61125pt>
+LaTeX Info: Redefining \. on input line 636.
+LaTeX Info: Redefining \% on input line 636.
+ [98 <./imagenes/c7/historialtest.png>]
+LaTeX Info: Redefining \. on input line 652.
+LaTeX Info: Redefining \% on input line 652.
+ [99 <./imagenes/c7/miperfil.png>]
+<imagenes/c7/verlogro.png, id=1590, 453.695pt x 966.61125pt>
 File: imagenes/c7/verlogro.png Graphic file (type png)
 <use imagenes/c7/verlogro.png>
-Package pdftex.def Info: imagenes/c7/verlogro.png  used on input line 643.
+Package pdftex.def Info: imagenes/c7/verlogro.png  used on input line 655.
 (pdftex.def)             Requested size: 136.80176pt x 291.46054pt.
-<imagenes/c7/listalogrosperfil.png, id=1579, 453.695pt x 966.61125pt>
+<imagenes/c7/listalogrosperfil.png, id=1591, 453.695pt x 966.61125pt>
 File: imagenes/c7/listalogrosperfil.png Graphic file (type png)
 <use imagenes/c7/listalogrosperfil.png>
-Package pdftex.def Info: imagenes/c7/listalogrosperfil.png  used on input line 661.
+Package pdftex.def Info: imagenes/c7/listalogrosperfil.png  used on input line 673.
 (pdftex.def)             Requested size: 136.80176pt x 291.46054pt.
-LaTeX Info: Redefining \. on input line 665.
-LaTeX Info: Redefining \% on input line 665.
- [99 <./imagenes/c7/verlogro.png>]
-LaTeX Info: Redefining \. on input line 680.
-LaTeX Info: Redefining \% on input line 680.
- [100 <./imagenes/c7/listalogrosperfil.png>]
-<imagenes/c7/dashboard.png, id=1593, 452.69125pt x 950.55125pt>
+LaTeX Info: Redefining \. on input line 677.
+LaTeX Info: Redefining \% on input line 677.
+ [100 <./imagenes/c7/verlogro.png>]
+LaTeX Info: Redefining \. on input line 692.
+LaTeX Info: Redefining \% on input line 692.
+ [101 <./imagenes/c7/listalogrosperfil.png>]
+<imagenes/c7/dashboard.png, id=1605, 452.69125pt x 950.55125pt>
 File: imagenes/c7/dashboard.png Graphic file (type png)
 <use imagenes/c7/dashboard.png>
-Package pdftex.def Info: imagenes/c7/dashboard.png  used on input line 683.
+Package pdftex.def Info: imagenes/c7/dashboard.png  used on input line 696.
 (pdftex.def)             Requested size: 161.9989pt x 340.15309pt.
-LaTeX Info: Redefining \. on input line 688.
-LaTeX Info: Redefining \% on input line 688.
- [101 <./imagenes/c7/dashboard.png>]
-<imagenes/c7/listalecciones.png, id=1599, 458.71375pt x 954.56625pt>
-File: imagenes/c7/listalecciones.png Graphic file (type png)
-<use imagenes/c7/listalecciones.png>
-Package pdftex.def Info: imagenes/c7/listalecciones.png  used on input line 698.
-(pdftex.def)             Requested size: 161.9989pt x 337.11826pt.
+<imagenes/c7/dashboardcompo.png, id=1606, 395.4775pt x 830.10126pt>
+File: imagenes/c7/dashboardcompo.png Graphic file (type png)
+<use imagenes/c7/dashboardcompo.png>
+Package pdftex.def Info: imagenes/c7/dashboardcompo.png  used on input line 698.
+(pdftex.def)             Requested size: 161.9989pt x 340.03973pt.
 LaTeX Info: Redefining \. on input line 703.
 LaTeX Info: Redefining \% on input line 703.
- [102 <./imagenes/c7/listalecciones.png>]
-<imagenes/c7/borrarleccion.png, id=1606, 458.71375pt x 954.56625pt>
+ [102 <./imagenes/c7/dashboard.png> <./imagenes/c7/dashboardcompo.png>]
+<imagenes/c7/listalecciones.png, id=1615, 450.68375pt x 951.555pt>
+File: imagenes/c7/listalecciones.png Graphic file (type png)
+<use imagenes/c7/listalecciones.png>
+Package pdftex.def Info: imagenes/c7/listalecciones.png  used on input line 713.
+(pdftex.def)             Requested size: 161.9989pt x 342.03683pt.
+<imagenes/c7/leccionesprofe.png, id=1616, 395.4775pt x 830.10126pt>
+File: imagenes/c7/leccionesprofe.png Graphic file (type png)
+<use imagenes/c7/leccionesprofe.png>
+Package pdftex.def Info: imagenes/c7/leccionesprofe.png  used on input line 715.
+(pdftex.def)             Requested size: 161.9989pt x 340.03973pt.
+LaTeX Info: Redefining \. on input line 720.
+LaTeX Info: Redefining \% on input line 720.
+ [103 <./imagenes/c7/listalecciones.png> <./imagenes/c7/leccionesprofe.png>]
+<imagenes/c7/borrarleccion.png, id=1627, 458.71375pt x 954.56625pt>
 File: imagenes/c7/borrarleccion.png Graphic file (type png)
 <use imagenes/c7/borrarleccion.png>
-Package pdftex.def Info: imagenes/c7/borrarleccion.png  used on input line 718.
+Package pdftex.def Info: imagenes/c7/borrarleccion.png  used on input line 735.
 (pdftex.def)             Requested size: 180.0pt x 374.58069pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 727.
-LaTeX Info: Redefining \% on input line 727.
- [103 <./imagenes/c7/borrarleccion.png>]
-LaTeX Info: Redefining \. on input line 747.
-LaTeX Info: Redefining \% on input line 747.
- [104]
-<imagenes/c7/crearleccion1.png, id=1620, 458.71375pt x 954.56625pt>
+LaTeX Info: Redefining \. on input line 744.
+LaTeX Info: Redefining \% on input line 744.
+ [104 <./imagenes/c7/borrarleccion.png>]
+LaTeX Info: Redefining \. on input line 764.
+LaTeX Info: Redefining \% on input line 764.
+ [105]
+<imagenes/c7/crearleccion1.png, id=1640, 458.71375pt x 954.56625pt>
 File: imagenes/c7/crearleccion1.png Graphic file (type png)
 <use imagenes/c7/crearleccion1.png>
-Package pdftex.def Info: imagenes/c7/crearleccion1.png  used on input line 757.
+Package pdftex.def Info: imagenes/c7/crearleccion1.png  used on input line 774.
 (pdftex.def)             Requested size: 158.40088pt x 329.63159pt.
-<imagenes/c7/crearleccion2.png, id=1621, 458.71375pt x 954.56625pt>
+<imagenes/c7/crearleccion2.png, id=1641, 458.71375pt x 954.56625pt>
 File: imagenes/c7/crearleccion2.png Graphic file (type png)
 <use imagenes/c7/crearleccion2.png>
-Package pdftex.def Info: imagenes/c7/crearleccion2.png  used on input line 759.
+Package pdftex.def Info: imagenes/c7/crearleccion2.png  used on input line 776.
 (pdftex.def)             Requested size: 158.40088pt x 329.63159pt.
-<imagenes/c7/crearleccion1b.png, id=1622, 458.71375pt x 954.56625pt>
+<imagenes/c7/crearleccion1b.png, id=1642, 458.71375pt x 954.56625pt>
 File: imagenes/c7/crearleccion1b.png Graphic file (type png)
 <use imagenes/c7/crearleccion1b.png>
-Package pdftex.def Info: imagenes/c7/crearleccion1b.png  used on input line 767.
+Package pdftex.def Info: imagenes/c7/crearleccion1b.png  used on input line 784.
 (pdftex.def)             Requested size: 161.9989pt x 337.11826pt.
-<imagenes/c7/crearleccion2b.png, id=1623, 458.71375pt x 954.56625pt>
+<imagenes/c7/crearleccion2b.png, id=1643, 458.71375pt x 954.56625pt>
 File: imagenes/c7/crearleccion2b.png Graphic file (type png)
 <use imagenes/c7/crearleccion2b.png>
-Package pdftex.def Info: imagenes/c7/crearleccion2b.png  used on input line 769.
+Package pdftex.def Info: imagenes/c7/crearleccion2b.png  used on input line 786.
 (pdftex.def)             Requested size: 161.9989pt x 337.11826pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 773.
-LaTeX Info: Redefining \% on input line 773.
- [105 <./imagenes/c7/crearleccion1.png> <./imagenes/c7/crearleccion2.png>]
+LaTeX Info: Redefining \. on input line 790.
+LaTeX Info: Redefining \% on input line 790.
+ [106 <./imagenes/c7/crearleccion1.png> <./imagenes/c7/crearleccion2.png>]
 Underfull \vbox (badness 1668) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 782.
-LaTeX Info: Redefining \% on input line 782.
- [106 <./imagenes/c7/crearleccion1b.png> <./imagenes/c7/crearleccion2b.png>]
-<imagenes/c7/editarleccion.png, id=1641, 459.7175pt x 961.5925pt>
+LaTeX Info: Redefining \. on input line 799.
+LaTeX Info: Redefining \% on input line 799.
+ [107 <./imagenes/c7/crearleccion1b.png> <./imagenes/c7/crearleccion2b.png>]
+<imagenes/c7/editarleccion.png, id=1661, 459.7175pt x 961.5925pt>
 File: imagenes/c7/editarleccion.png Graphic file (type png)
 <use imagenes/c7/editarleccion.png>
-Package pdftex.def Info: imagenes/c7/editarleccion.png  used on input line 798.
+Package pdftex.def Info: imagenes/c7/editarleccion.png  used on input line 815.
 (pdftex.def)             Requested size: 143.9978pt x 301.2012pt.
-<imagenes/c7/editarleccion2.png, id=1642, 459.7175pt x 961.5925pt>
+<imagenes/c7/editarleccion2.png, id=1662, 459.7175pt x 961.5925pt>
 File: imagenes/c7/editarleccion2.png Graphic file (type png)
 <use imagenes/c7/editarleccion2.png>
-Package pdftex.def Info: imagenes/c7/editarleccion2.png  used on input line 800.
+Package pdftex.def Info: imagenes/c7/editarleccion2.png  used on input line 817.
 (pdftex.def)             Requested size: 143.9978pt x 301.2012pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 804.
-LaTeX Info: Redefining \% on input line 804.
- [107]
-LaTeX Info: Redefining \. on input line 811.
-LaTeX Info: Redefining \% on input line 811.
- [108 <./imagenes/c7/editarleccion.png> <./imagenes/c7/editarleccion2.png>]
-<imagenes/c7/listapreguntas.png, id=1657, 458.71375pt x 954.56625pt>
+LaTeX Info: Redefining \. on input line 821.
+LaTeX Info: Redefining \% on input line 821.
+ [108]
+LaTeX Info: Redefining \. on input line 828.
+LaTeX Info: Redefining \% on input line 828.
+ [109 <./imagenes/c7/editarleccion.png> <./imagenes/c7/editarleccion2.png>]
+<imagenes/c7/listapreguntas.png, id=1678, 458.71375pt x 954.56625pt>
 File: imagenes/c7/listapreguntas.png Graphic file (type png)
 <use imagenes/c7/listapreguntas.png>
-Package pdftex.def Info: imagenes/c7/listapreguntas.png  used on input line 822.
+Package pdftex.def Info: imagenes/c7/listapreguntas.png  used on input line 839.
 (pdftex.def)             Requested size: 143.9978pt x 299.6558pt.
-LaTeX Info: Redefining \. on input line 827.
-LaTeX Info: Redefining \% on input line 827.
- [109 <./imagenes/c7/listapreguntas.png>]
-<imagenes/c7/borrarpregunta.png, id=1665, 450.68375pt x 957.5775pt>
+LaTeX Info: Redefining \. on input line 844.
+LaTeX Info: Redefining \% on input line 844.
+ [110 <./imagenes/c7/listapreguntas.png>]
+<imagenes/c7/borrarpregunta.png, id=1685, 450.68375pt x 957.5775pt>
 File: imagenes/c7/borrarpregunta.png Graphic file (type png)
 <use imagenes/c7/borrarpregunta.png>
-Package pdftex.def Info: imagenes/c7/borrarpregunta.png  used on input line 842.
+Package pdftex.def Info: imagenes/c7/borrarpregunta.png  used on input line 859.
 (pdftex.def)             Requested size: 180.0pt x 382.45436pt.
-LaTeX Info: Redefining \. on input line 851.
-LaTeX Info: Redefining \% on input line 851.
- [110 <./imagenes/c7/borrarpregunta.png>]
-LaTeX Info: Redefining \. on input line 874.
-LaTeX Info: Redefining \% on input line 874.
- [111]
-<imagenes/c7/crearpreguntaunica1.png, id=1678, 465.74pt x 985.6825pt>
+LaTeX Info: Redefining \. on input line 868.
+LaTeX Info: Redefining \% on input line 868.
+ [111 <./imagenes/c7/borrarpregunta.png>]
+LaTeX Info: Redefining \. on input line 891.
+LaTeX Info: Redefining \% on input line 891.
+ [112]
+<imagenes/c7/crearpreguntaunica1.png, id=1698, 465.74pt x 985.6825pt>
 File: imagenes/c7/crearpreguntaunica1.png Graphic file (type png)
 <use imagenes/c7/crearpreguntaunica1.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntaunica1.png  used on input line 881.
+Package pdftex.def Info: imagenes/c7/crearpreguntaunica1.png  used on input line 898.
 (pdftex.def)             Requested size: 161.9989pt x 342.84328pt.
-<imagenes/c7/crearpreguntaunica2.png, id=1679, 465.74pt x 985.6825pt>
+<imagenes/c7/crearpreguntaunica2.png, id=1699, 465.74pt x 985.6825pt>
 File: imagenes/c7/crearpreguntaunica2.png Graphic file (type png)
 <use imagenes/c7/crearpreguntaunica2.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntaunica2.png  used on input line 889.
+Package pdftex.def Info: imagenes/c7/crearpreguntaunica2.png  used on input line 906.
 (pdftex.def)             Requested size: 108.0011pt x 228.5672pt.
-<imagenes/c7/crearpreguntaunica3.png, id=1680, 465.74pt x 985.6825pt>
+<imagenes/c7/crearpreguntaunica3.png, id=1700, 465.74pt x 985.6825pt>
 File: imagenes/c7/crearpreguntaunica3.png Graphic file (type png)
 <use imagenes/c7/crearpreguntaunica3.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntaunica3.png  used on input line 891.
+Package pdftex.def Info: imagenes/c7/crearpreguntaunica3.png  used on input line 908.
 (pdftex.def)             Requested size: 108.0011pt x 228.5672pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 895.
-LaTeX Info: Redefining \% on input line 895.
- [112 <./imagenes/c7/crearpreguntaunica1.png>]
-<imagenes/c7/crearpreguntamultiple2.png, id=1686, 465.74pt x 985.6825pt>
+LaTeX Info: Redefining \. on input line 912.
+LaTeX Info: Redefining \% on input line 912.
+ [113 <./imagenes/c7/crearpreguntaunica1.png>]
+<imagenes/c7/crearpreguntamultiple2.png, id=1707, 465.74pt x 985.6825pt>
 File: imagenes/c7/crearpreguntamultiple2.png Graphic file (type png)
 <use imagenes/c7/crearpreguntamultiple2.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntamultiple2.png  used on input line 899.
+Package pdftex.def Info: imagenes/c7/crearpreguntamultiple2.png  used on input line 916.
 (pdftex.def)             Requested size: 108.0011pt x 228.5672pt.
-<imagenes/c7/crearpreguntamultiple3.png, id=1687, 465.74pt x 985.6825pt>
+<imagenes/c7/crearpreguntamultiple3.png, id=1708, 465.74pt x 985.6825pt>
 File: imagenes/c7/crearpreguntamultiple3.png Graphic file (type png)
 <use imagenes/c7/crearpreguntamultiple3.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntamultiple3.png  used on input line 901.
+Package pdftex.def Info: imagenes/c7/crearpreguntamultiple3.png  used on input line 918.
 (pdftex.def)             Requested size: 108.0011pt x 228.5672pt.
-<imagenes/c7/crearpreguntamicrofono1.png, id=1688, 464.73625pt x 978.65625pt>
+<imagenes/c7/crearpreguntamicrofono1.png, id=1709, 464.73625pt x 978.65625pt>
 File: imagenes/c7/crearpreguntamicrofono1.png Graphic file (type png)
 <use imagenes/c7/crearpreguntamicrofono1.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntamicrofono1.png  used on input line 910.
+Package pdftex.def Info: imagenes/c7/crearpreguntamicrofono1.png  used on input line 927.
 (pdftex.def)             Requested size: 108.0011pt x 227.4307pt.
-<imagenes/c7/crearpreguntamicrofono2.png, id=1689, 464.73625pt x 978.65625pt>
+<imagenes/c7/crearpreguntamicrofono2.png, id=1710, 464.73625pt x 978.65625pt>
 File: imagenes/c7/crearpreguntamicrofono2.png Graphic file (type png)
 <use imagenes/c7/crearpreguntamicrofono2.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntamicrofono2.png  used on input line 912.
+Package pdftex.def Info: imagenes/c7/crearpreguntamicrofono2.png  used on input line 929.
 (pdftex.def)             Requested size: 108.0011pt x 227.4307pt.
-LaTeX Info: Redefining \. on input line 916.
-LaTeX Info: Redefining \% on input line 916.
- [113 <./imagenes/c7/crearpreguntaunica2.png> <./imagenes/c7/crearpreguntaunica3.png> <./imagenes/c7/crearpreguntamultiple2.png> <./imagenes/c7/crearpreguntamultiple3.png>]
-<imagenes/c7/crearpreguntatexto1.png, id=1703, 464.73625pt x 978.65625pt>
+LaTeX Info: Redefining \. on input line 933.
+LaTeX Info: Redefining \% on input line 933.
+ [114 <./imagenes/c7/crearpreguntaunica2.png> <./imagenes/c7/crearpreguntaunica3.png> <./imagenes/c7/crearpreguntamultiple2.png> <./imagenes/c7/crearpreguntamultiple3.png>]
+<imagenes/c7/crearpreguntatexto1.png, id=1723, 464.73625pt x 978.65625pt>
 File: imagenes/c7/crearpreguntatexto1.png Graphic file (type png)
 <use imagenes/c7/crearpreguntatexto1.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntatexto1.png  used on input line 919.
+Package pdftex.def Info: imagenes/c7/crearpreguntatexto1.png  used on input line 936.
 (pdftex.def)             Requested size: 108.0011pt x 227.4307pt.
-<imagenes/c7/crearpreguntatexto2.png, id=1704, 464.73625pt x 978.65625pt>
+<imagenes/c7/crearpreguntatexto2.png, id=1724, 464.73625pt x 978.65625pt>
 File: imagenes/c7/crearpreguntatexto2.png Graphic file (type png)
 <use imagenes/c7/crearpreguntatexto2.png>
-Package pdftex.def Info: imagenes/c7/crearpreguntatexto2.png  used on input line 921.
+Package pdftex.def Info: imagenes/c7/crearpreguntatexto2.png  used on input line 938.
 (pdftex.def)             Requested size: 108.0011pt x 227.4307pt.
-LaTeX Info: Redefining \. on input line 931.
-LaTeX Info: Redefining \% on input line 931.
- [114 <./imagenes/c7/crearpreguntamicrofono1.png> <./imagenes/c7/crearpreguntamicrofono2.png> <./imagenes/c7/crearpreguntatexto1.png> <./imagenes/c7/crearpreguntatexto2.png>]
-LaTeX Info: Redefining \. on input line 944.
-LaTeX Info: Redefining \% on input line 944.
- [115]
-<imagenes/c7/editarpreguntaunica1.png, id=1723, 464.73625pt x 978.65625pt>
+LaTeX Info: Redefining \. on input line 948.
+LaTeX Info: Redefining \% on input line 948.
+ [115 <./imagenes/c7/crearpreguntamicrofono1.png> <./imagenes/c7/crearpreguntamicrofono2.png> <./imagenes/c7/crearpreguntatexto1.png> <./imagenes/c7/crearpreguntatexto2.png>]
+LaTeX Info: Redefining \. on input line 961.
+LaTeX Info: Redefining \% on input line 961.
+ [116]
+<imagenes/c7/editarpreguntaunica1.png, id=1743, 464.73625pt x 978.65625pt>
 File: imagenes/c7/editarpreguntaunica1.png Graphic file (type png)
 <use imagenes/c7/editarpreguntaunica1.png>
-Package pdftex.def Info: imagenes/c7/editarpreguntaunica1.png  used on input line 956.
+Package pdftex.def Info: imagenes/c7/editarpreguntaunica1.png  used on input line 973.
 (pdftex.def)             Requested size: 161.9989pt x 341.1311pt.
-<imagenes/c7/editarpreguntaunica2.png, id=1724, 464.73625pt x 978.65625pt>
+<imagenes/c7/editarpreguntaunica2.png, id=1744, 464.73625pt x 978.65625pt>
 File: imagenes/c7/editarpreguntaunica2.png Graphic file (type png)
 <use imagenes/c7/editarpreguntaunica2.png>
-Package pdftex.def Info: imagenes/c7/editarpreguntaunica2.png  used on input line 958.
+Package pdftex.def Info: imagenes/c7/editarpreguntaunica2.png  used on input line 975.
 (pdftex.def)             Requested size: 161.9989pt x 341.1311pt.
-<imagenes/c7/editarpreguntamultiple1.png, id=1725, 464.73625pt x 978.65625pt>
+<imagenes/c7/editarpreguntamultiple1.png, id=1745, 464.73625pt x 978.65625pt>
 File: imagenes/c7/editarpreguntamultiple1.png Graphic file (type png)
 <use imagenes/c7/editarpreguntamultiple1.png>
-Package pdftex.def Info: imagenes/c7/editarpreguntamultiple1.png  used on input line 967.
+Package pdftex.def Info: imagenes/c7/editarpreguntamultiple1.png  used on input line 984.
 (pdftex.def)             Requested size: 108.0011pt x 227.4307pt.
-<imagenes/c7/editarpreguntamultiple2.png, id=1726, 464.73625pt x 978.65625pt>
+<imagenes/c7/editarpreguntamultiple2.png, id=1746, 464.73625pt x 978.65625pt>
 File: imagenes/c7/editarpreguntamultiple2.png Graphic file (type png)
 <use imagenes/c7/editarpreguntamultiple2.png>
-Package pdftex.def Info: imagenes/c7/editarpreguntamultiple2.png  used on input line 969.
+Package pdftex.def Info: imagenes/c7/editarpreguntamultiple2.png  used on input line 986.
 (pdftex.def)             Requested size: 108.0011pt x 227.4307pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 973.
-LaTeX Info: Redefining \% on input line 973.
- [116 <./imagenes/c7/editarpreguntaunica1.png> <./imagenes/c7/editarpreguntaunica2.png>]
-<imagenes/c7/editarpreguntamicrofono.png, id=1736, 464.73625pt x 978.65625pt>
+LaTeX Info: Redefining \. on input line 990.
+LaTeX Info: Redefining \% on input line 990.
+ [117 <./imagenes/c7/editarpreguntaunica1.png> <./imagenes/c7/editarpreguntaunica2.png>]
+<imagenes/c7/editarpreguntamicrofono.png, id=1756, 464.73625pt x 978.65625pt>
 File: imagenes/c7/editarpreguntamicrofono.png Graphic file (type png)
 <use imagenes/c7/editarpreguntamicrofono.png>
-Package pdftex.def Info: imagenes/c7/editarpreguntamicrofono.png  used on input line 977.
+Package pdftex.def Info: imagenes/c7/editarpreguntamicrofono.png  used on input line 994.
 (pdftex.def)             Requested size: 115.20264pt x 242.58777pt.
-<imagenes/c7/editarpreguntatexto.png, id=1737, 464.73625pt x 978.65625pt>
+<imagenes/c7/editarpreguntatexto.png, id=1757, 464.73625pt x 978.65625pt>
 File: imagenes/c7/editarpreguntatexto.png Graphic file (type png)
 <use imagenes/c7/editarpreguntatexto.png>
-Package pdftex.def Info: imagenes/c7/editarpreguntatexto.png  used on input line 984.
+Package pdftex.def Info: imagenes/c7/editarpreguntatexto.png  used on input line 1001.
 (pdftex.def)             Requested size: 115.20264pt x 242.58777pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 988.
-LaTeX Info: Redefining \% on input line 988.
- [117 <./imagenes/c7/editarpreguntamultiple1.png> <./imagenes/c7/editarpreguntamultiple2.png> <./imagenes/c7/editarpreguntamicrofono.png>]
-LaTeX Info: Redefining \. on input line 995.
-LaTeX Info: Redefining \% on input line 995.
- [118 <./imagenes/c7/editarpreguntatexto.png>]
-<imagenes/c7/listausuarios.png, id=1753, 452.69125pt x 950.55125pt>
+LaTeX Info: Redefining \. on input line 1005.
+LaTeX Info: Redefining \% on input line 1005.
+ [118 <./imagenes/c7/editarpreguntamultiple1.png> <./imagenes/c7/editarpreguntamultiple2.png> <./imagenes/c7/editarpreguntamicrofono.png>]
+LaTeX Info: Redefining \. on input line 1012.
+LaTeX Info: Redefining \% on input line 1012.
+ [119 <./imagenes/c7/editarpreguntatexto.png>]
+<imagenes/c7/listausuarios.png, id=1773, 452.69125pt x 950.55125pt>
 File: imagenes/c7/listausuarios.png Graphic file (type png)
 <use imagenes/c7/listausuarios.png>
-Package pdftex.def Info: imagenes/c7/listausuarios.png  used on input line 1006.
+Package pdftex.def Info: imagenes/c7/listausuarios.png  used on input line 1023.
 (pdftex.def)             Requested size: 143.9978pt x 302.35509pt.
 
 Underfull \vbox (badness 1521) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1020.
-LaTeX Info: Redefining \% on input line 1020.
- [119 <./imagenes/c7/listausuarios.png>]
-<imagenes/c7/borrarusuario.png, id=1760, 450.68375pt x 957.5775pt>
+LaTeX Info: Redefining \. on input line 1037.
+LaTeX Info: Redefining \% on input line 1037.
+ [120 <./imagenes/c7/listausuarios.png>]
+<imagenes/c7/borrarusuario.png, id=1780, 450.68375pt x 957.5775pt>
 File: imagenes/c7/borrarusuario.png Graphic file (type png)
 <use imagenes/c7/borrarusuario.png>
-Package pdftex.def Info: imagenes/c7/borrarusuario.png  used on input line 1024.
+Package pdftex.def Info: imagenes/c7/borrarusuario.png  used on input line 1041.
 (pdftex.def)             Requested size: 180.0pt x 382.45436pt.
-LaTeX Info: Redefining \. on input line 1034.
-LaTeX Info: Redefining \% on input line 1034.
- [120 <./imagenes/c7/borrarusuario.png>]
-<imagenes/c7/crearusuario1.png, id=1768, 452.69125pt x 950.55125pt>
+LaTeX Info: Redefining \. on input line 1051.
+LaTeX Info: Redefining \% on input line 1051.
+ [121 <./imagenes/c7/borrarusuario.png>]
+<imagenes/c7/crearusuario1.png, id=1789, 452.69125pt x 950.55125pt>
 File: imagenes/c7/crearusuario1.png Graphic file (type png)
 <use imagenes/c7/crearusuario1.png>
-Package pdftex.def Info: imagenes/c7/crearusuario1.png  used on input line 1057.
+Package pdftex.def Info: imagenes/c7/crearusuario1.png  used on input line 1074.
 (pdftex.def)             Requested size: 115.20264pt x 241.88696pt.
-<imagenes/c7/crearusuario2.png, id=1769, 452.69125pt x 950.55125pt>
+<imagenes/c7/crearusuario2.png, id=1790, 452.69125pt x 950.55125pt>
 File: imagenes/c7/crearusuario2.png Graphic file (type png)
 <use imagenes/c7/crearusuario2.png>
-Package pdftex.def Info: imagenes/c7/crearusuario2.png  used on input line 1059.
+Package pdftex.def Info: imagenes/c7/crearusuario2.png  used on input line 1076.
 (pdftex.def)             Requested size: 115.20264pt x 241.88696pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1063.
-LaTeX Info: Redefining \% on input line 1063.
- [121]
-LaTeX Info: Redefining \. on input line 1075.
-LaTeX Info: Redefining \% on input line 1075.
- [122 <./imagenes/c7/crearusuario1.png> <./imagenes/c7/crearusuario2.png>]
-<imagenes/c7/editarusuario.png, id=1785, 452.69125pt x 950.55125pt>
+LaTeX Info: Redefining \. on input line 1080.
+LaTeX Info: Redefining \% on input line 1080.
+ [122]
+LaTeX Info: Redefining \. on input line 1092.
+LaTeX Info: Redefining \% on input line 1092.
+ [123 <./imagenes/c7/crearusuario1.png> <./imagenes/c7/crearusuario2.png>]
+<imagenes/c7/editarusuario.png, id=1805, 452.69125pt x 950.55125pt>
 File: imagenes/c7/editarusuario.png Graphic file (type png)
 <use imagenes/c7/editarusuario.png>
-Package pdftex.def Info: imagenes/c7/editarusuario.png  used on input line 1088.
+Package pdftex.def Info: imagenes/c7/editarusuario.png  used on input line 1105.
 (pdftex.def)             Requested size: 129.60022pt x 272.12828pt.
-LaTeX Info: Redefining \. on input line 1102.
-LaTeX Info: Redefining \% on input line 1102.
- [123 <./imagenes/c7/editarusuario.png>]
-<imagenes/c7/listalogros.png, id=1793, 452.69125pt x 950.55125pt>
-File: imagenes/c7/listalogros.png Graphic file (type png)
-<use imagenes/c7/listalogros.png>
-Package pdftex.def Info: imagenes/c7/listalogros.png  used on input line 1108.
-(pdftex.def)             Requested size: 133.19824pt x 279.68498pt.
 LaTeX Info: Redefining \. on input line 1119.
 LaTeX Info: Redefining \% on input line 1119.
- [124 <./imagenes/c7/listalogros.png>]
-<imagenes/c7/borrarlogro.png, id=1800, 450.68375pt x 957.5775pt>
+ [124 <./imagenes/c7/editarusuario.png>]
+<imagenes/c7/listalogros.png, id=1813, 452.69125pt x 950.55125pt>
+File: imagenes/c7/listalogros.png Graphic file (type png)
+<use imagenes/c7/listalogros.png>
+Package pdftex.def Info: imagenes/c7/listalogros.png  used on input line 1125.
+(pdftex.def)             Requested size: 133.19824pt x 279.68498pt.
+LaTeX Info: Redefining \. on input line 1136.
+LaTeX Info: Redefining \% on input line 1136.
+ [125 <./imagenes/c7/listalogros.png>]
+<imagenes/c7/borrarlogro.png, id=1820, 450.68375pt x 957.5775pt>
 File: imagenes/c7/borrarlogro.png Graphic file (type png)
 <use imagenes/c7/borrarlogro.png>
-Package pdftex.def Info: imagenes/c7/borrarlogro.png  used on input line 1128.
+Package pdftex.def Info: imagenes/c7/borrarlogro.png  used on input line 1145.
 (pdftex.def)             Requested size: 161.9989pt x 344.20163pt.
 
 Underfull \vbox (badness 3724) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1144.
-LaTeX Info: Redefining \% on input line 1144.
- [125 <./imagenes/c7/borrarlogro.png>]
-<imagenes/c7/crearlogro1.png, id=1808, 453.695pt x 966.61125pt>
+LaTeX Info: Redefining \. on input line 1161.
+LaTeX Info: Redefining \% on input line 1161.
+ [126 <./imagenes/c7/borrarlogro.png>]
+<imagenes/c7/crearlogro1.png, id=1828, 453.695pt x 966.61125pt>
 File: imagenes/c7/crearlogro1.png Graphic file (type png)
 <use imagenes/c7/crearlogro1.png>
-Package pdftex.def Info: imagenes/c7/crearlogro1.png  used on input line 1159.
+Package pdftex.def Info: imagenes/c7/crearlogro1.png  used on input line 1176.
 (pdftex.def)             Requested size: 126.0022pt x 268.45166pt.
-<imagenes/c7/crearlogro2.png, id=1809, 453.695pt x 966.61125pt>
+<imagenes/c7/crearlogro2.png, id=1829, 453.695pt x 966.61125pt>
 File: imagenes/c7/crearlogro2.png Graphic file (type png)
 <use imagenes/c7/crearlogro2.png>
-Package pdftex.def Info: imagenes/c7/crearlogro2.png  used on input line 1161.
+Package pdftex.def Info: imagenes/c7/crearlogro2.png  used on input line 1178.
 (pdftex.def)             Requested size: 126.0022pt x 268.45166pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1165.
-LaTeX Info: Redefining \% on input line 1165.
- [126]
-LaTeX Info: Redefining \. on input line 1166.
-LaTeX Info: Redefining \% on input line 1166.
- [127 <./imagenes/c7/crearlogro1.png> <./imagenes/c7/crearlogro2.png>]
-<imagenes/c7/editarlogro.png, id=1824, 453.695pt x 966.61125pt>
+LaTeX Info: Redefining \. on input line 1182.
+LaTeX Info: Redefining \% on input line 1182.
+ [127]
+LaTeX Info: Redefining \. on input line 1183.
+LaTeX Info: Redefining \% on input line 1183.
+ [128 <./imagenes/c7/crearlogro1.png> <./imagenes/c7/crearlogro2.png>]
+<imagenes/c7/editarlogro.png, id=1845, 453.695pt x 966.61125pt>
 File: imagenes/c7/editarlogro.png Graphic file (type png)
 <use imagenes/c7/editarlogro.png>
-Package pdftex.def Info: imagenes/c7/editarlogro.png  used on input line 1195.
+Package pdftex.def Info: imagenes/c7/editarlogro.png  used on input line 1212.
 (pdftex.def)             Requested size: 136.80176pt x 291.46054pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1199.
-LaTeX Info: Redefining \% on input line 1199.
- [128]) (./capitulos/08_Pruebas.tex
+LaTeX Info: Redefining \. on input line 1216.
+LaTeX Info: Redefining \% on input line 1216.
+ [129]) (./capitulos/08_Pruebas.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [129 <./imagenes/c7/editarlogro.png>] [130
-
-]
+ [130 <./imagenes/c7/editarlogro.png>]
 Cap\'{\i }tulo 8.
-) (./capitulos/09_Conclusion.tex [131] [132
+) (./capitulos/09_Conclusion.tex [131
+
+] [132
 
 ]
 Cap\'{\i }tulo 9.
@@ -1993,21 +2018,21 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `proyecto.out' has not changed.
-(rerunfilecheck)             Checksum: A1366D74607703215E7C04480B50AADF;17694.
+(rerunfilecheck)             Checksum: 4DEAE1FF7FDD7082C56D06301BFE218F;17717.
  ) 
 Here is how much of TeX's memory you used:
- 17414 strings out of 478287
- 292551 string characters out of 5849290
- 614099 words of memory out of 5000000
- 34696 multiletter control sequences out of 15000+600000
+ 17451 strings out of 478287
+ 293630 string characters out of 5849290
+ 613195 words of memory out of 5000000
+ 34722 multiletter control sequences out of 15000+600000
  477597 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,18n,79p,935b,824s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on proyecto.pdf (159 pages, 13211360 bytes).
+Output written on proyecto.pdf (159 pages, 13576768 bytes).
 PDF statistics:
- 2027 PDF objects out of 2073 (max. 8388607)
- 1607 compressed objects within 17 object streams
- 514 named destinations out of 1000 (max. 500000)
- 1443 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2044 PDF objects out of 2073 (max. 8388607)
+ 1616 compressed objects within 17 object streams
+ 521 named destinations out of 1000 (max. 500000)
+ 1463 words of extra memory for PDF output out of 10000 (max. 10000000)
 

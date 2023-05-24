@@ -303,13 +303,14 @@ La aplicación cuenta con una lista de lecciones que el usuario puede ver. Esta 
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Pantalla de lecciones]{{\includegraphics[width=0.40\textwidth]{imagenes/c7/pantprin.png} }}%
+  \subfloat[\centering Pantalla de lecciones]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/pantprin.png} }}%
   \qquad
-  \subfloat[\centering Estructura en componentes de la pantalla de lecciones.]{{ \includegraphics[width=0.406\textwidth]{imagenes/c7/leccionescompo.png} }}%
+  \subfloat[\centering Estructura en componentes de la pantalla de lecciones.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/listaleccionescompo.png} }}%
   \caption{Pantalla de la lista de lecciones con el título y la imagen de cada lección.}%
   \label{fig:login}%
 \end{figure}
 
+\newpage
 
 \paragraph*{Vista}
 Para que el usuario pueda ver la lista de lecciones, se ha desarrollado un widget principal para la pantalla. Este widget contiene el widget \textit{ListaLecciones}, que contiene un componente para la distribución de widgets en una columna. Cada uno de estos widgets se llama \textit{LeccionItem} y contendrá la información principal de una lección, como el título y la imagen de perfil. En la figura anterior se puede ver la pantalla de lista de lecciones.
@@ -320,12 +321,21 @@ En este caso, se ha utilizado para gestionar el estado de la lista de lecciones 
 Este Provider se encarga de obtener la lista de lecciones de la API (llamada HTTP con el verbo GET a la ruta (\textit{GET /api/lesson/get-lessons/\{id\}})) y almacenar cada uno de sus elementos en variables de la clase \textit{Lección}. Además, se ha creado un método público que devuelve la lista de lecciones. Este método se utiliza en el widget \textit{ListaLecciones} para obtener la lista de lecciones, añadir cada lección en forma de widget de forma iterativa
  y mostrarla en pantalla. 
 
-\subsection{Lección} 
+\subsection{Ver lección} 
 \textit{Desarrollado en el Sprint 5}
 \label{sec:leccion}
 
 La aplicación cuenta con una vista para cada lección. Esta vista se puede acceder pulsando en el título o en la imagen de una lección en la lista de lecciones. En esta vista se puede ver el contenido de la lección, como el título, el texto, las imágenes, los vídeos, etc.
 Además, al final de la lección se puede hacer un test para comprobar los conocimientos adquiridos y revisar los tests realizados anteriormente por el usuario.
+
+\begin{figure}[H]%
+  \centering
+  \subfloat[\centering Parte 1.]{{\includegraphics[width=0.38\textwidth]{imagenes/c7/leccion.png} }}%
+  \qquad
+  \subfloat[\centering Parte 2.]{{ \includegraphics[width=0.38\textwidth]{imagenes/c7/leccion2.png} }}%
+  \caption{Pantalla de una lección en concreto con los contenidos (títulos, texto, multimedia...) del temario y los dos botones relacionados con los tests.}%
+  \label{fig:example}%
+\end{figure}
 
 \paragraph*{Vista}
 La vista de una lección proporciona al usuario información más detallada de esta. En primer lugar se muestra la imagen de la lección y el título en un componente para distribuir widgets en una fila. (Un widget \textit{Row} compuesto de un \textit{Text} y un \textit{Image} ).
@@ -333,15 +343,17 @@ A continuación, se muestra el contenido de la lección en forma de texto, imág
 Finalmente, se muestra un botón en pantalla para poder hacer un test y otro para ver el historial de tests realizados, ambos mediante un widget \textit{ElevatedButton}.
 En la siguiente imagen se puede ver la pantalla de una lección:
 
-
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Parte 1.]{{\includegraphics[width=0.44\textwidth]{imagenes/c7/leccion.png} }}%
+  \subfloat[\centering Parte 1.]{{\includegraphics[width=0.38\textwidth]{imagenes/c7/leccioncompo.png} }}%
   \qquad
-  \subfloat[\centering Parte 2.]{{ \includegraphics[width=0.44\textwidth]{imagenes/c7/leccion2.png} }}%
+  \subfloat[\centering Parte 2.]{{ \includegraphics[width=0.38\textwidth]{imagenes/c7/leccioncompo2.png} }}%
   \caption{Pantalla de una lección en concreto con los contenidos (títulos, texto, multimedia...) del temario y los dos botones relacionados con los tests.}%
   \label{fig:example}%
 \end{figure}
+
+
+
 
 \paragraph*{Lógica}
 Para la lógica de esta pantalla se ha utilizado el provider \textit{Lecciones} mencionado anteriormente. En este caso, el provider se encarga de obtener la lección que se quiere mostrar en pantalla de la lista de lecciones y devolverla al widget que la mostrará en pantalla.
@@ -678,11 +690,14 @@ Un dashboard es una interfaz de usuario que muestra información de forma resumi
 \paragraph*{Vista}
 Se ha implementado una pantalla de dashboard para la gestión de la aplicación. En esta pantalla, se muestran las opciones de gestión disponibles para la persona que utiliza la aplicación en función de su rol mediante una columna de ElevatedButton. En la siguiente imagen se puede ver la pantalla de dashboard:
 
-\begin{figure}[H]
+
+\begin{figure}[H]%
   \centering
-  \includegraphics[width=0.45\textwidth]{imagenes/c7/dashboard.png}
-  \caption{Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.}
-  \label{fig:login}
+  \subfloat[\centering Pantalla de dashboard con las opciones de gestión disponibles para el profesor.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/dashboard.png} }}%
+  \qquad
+  \subfloat[\centering Composición de la pantalla de dashboard.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/dashboardcompo.png} }}%
+  \caption{Vista del dashboard}%
+  \label{fig:dashboard}%
 \end{figure}
 
 \newpage
@@ -693,11 +708,13 @@ Se ha implementado una pantalla de dashboard para la gestión de la aplicación.
 \paragraph*{Vista}
 La lista de lecciones del profesor es muy similar a la del usuario. Las diferencias, aparte de los estilos, son los botones de tipo ElevatedButton que se han añadido para la gestión de las lecciones y que permiten al profesor crear, modificar y eliminar lecciones. En la siguiente imagen se puede ver la pantalla de lista de lecciones del profesor:
 
-\begin{figure}[H]
+\begin{figure}[H]%
   \centering
-  \includegraphics[width=0.45\textwidth]{imagenes/c7/listalecciones.png}
-  \caption{Pantalla de lista de lecciones del profesor para la gestión de estas.} 
-  \label{fig:login}
+  \subfloat[\centering Pantalla de lista de lecciones del profesor para la gestión de estas.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/listalecciones.png} }}%
+  \qquad
+  \subfloat[\centering Composición de la pantalla de la lista de lecciones.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/leccionesprofe.png} }}%
+  \caption{Vista de la lista de las lecciones.}%
+  \label{fig:listalecciones}%
 \end{figure}
 
 \newpage
