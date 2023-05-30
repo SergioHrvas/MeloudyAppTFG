@@ -258,7 +258,7 @@ class Lecciones with ChangeNotifier {
         testsCargados.add(Test(
             id: extractedData['tests'][i]['_id'],
             fecha_creacion: extractedData['tests'][i]['fecha_creacion'],
-            aciertos: extractedData['tests'][i]['aciertos'],
+            aciertos: extractedData['tests'][i]['num_aciertos'],
         ));
       }
 

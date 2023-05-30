@@ -143,11 +143,18 @@ La API cuenta con las siguientes rutas para la gestión del progreso de los usua
 Un middleware es una función intermediaria que se utiliza para realizar acciones comunes a varias funcionalidades. La API cuenta con los siguientes middleware:
 
 \begin{itemize}
-  \item \textit{auth}: Middleware que comprueba si el token del usuario es correcto (es decir, si el usuario está identificado en la aplicación). Si el token es correcto, se pasa a la siguiente función. Si el token no es correcto, se devuelve un error.
-%  \item \textit{authAdmin}: Middleware que comprueba si el token del usuario es correcto y si el usuario es administrador. Si el token es correcto y el usuario es administrador, se pasa a la siguiente función. Si el token no es correcto o el usuario no es administrador, se devuelve un error.
+  \item \textit{auth}: Middleware que comprueba si el token del usuario es correcto (es decir, si el usuario está identificado en la aplicación).
+   Si el token es correcto, se pasa a la siguiente función. Si el token no es correcto, se devuelve un error.
 \end {itemize}
 
+A continuación se explicarán todas las pantallas y funcionalidades de la aplicación. Para cada una de ellas se explicará la vista y la lógica de la misma. 
+Para la vista, se mostrará una captura de pantalla de la pantalla en cuestión y un diagrama de la estructura de widgets que se han utilizado para construir la pantalla. 
+Este diagrama detallará los principales widgets utilizados en cada vista. \textit{Cabe destacar que en algunas pantallas se han omitido algunos widgets para simplificar 
+el diagrama y se han utilizado los nombres "C1, C2, C3..." para referirse a los hijos del widget distribuidor en columna (Column) y "F1, F2, F3..." para referirse a los hijos
+ del widget distribuidor en fila (Row).}
 \newpage
+
+
 \section{Funcionalidad de inicio}
 \label{sec:inicio}
 A continuación presentamos la funcionalidad básica de la aplicación que usará cualquier usuario que se registre:
@@ -175,8 +182,9 @@ abre y se cierra clickando en el icono superior izquierdo de la aplicación. Se 
 \label{sec:sesion}
 Se han desarrollado tres características adicionales relacionadas con la sesión de usuario y que explicaremos con más detalle en cada uno de los apartados de la sesión.
 \begin{itemize}
-    \item \textbf{Encriptación de la contraseña:} La contraseña del usuario se encripta antes de ser almacenada en la base de datos para evitar que sea visible por cualquier persona que tenga acceso a esta. De esta forma
-    garantizamos que se cumple el requisito de seguridad de la contraseña. Para esto se ha utilizado un algoritmo hash de la biblioteca \textit{bcrypt}.
+    \item \textbf{Encriptación de la contraseña:} La contraseña del usuario se encripta antes de ser almacenada en la base de datos para evitar que sea
+     visible por cualquier persona que tenga acceso a esta. De esta forma garantizamos que se cumple el requisito de seguridad de la contraseña. 
+     Para esto se ha utilizado un algoritmo hash de la biblioteca \textit{bcrypt}.
     El diagrama que explica el proceso de encriptación se muestra en la siguiente imagen:
     \begin{figure}[H]
       \centering
@@ -185,8 +193,10 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
       \label{fig:login}
     \end{figure}
 
-    \item \textbf{Intercambio de token:} El servidor proporciona un token al usuario cuando se registra o inicia sesión. Este token se añade a las peticiones que se hagan a la API. De esta forma, garantizamos que se cumple el requisito de seguridad de la sesión y 
-    que todas las peticiones válidas que se hagan a la API son de usuarios registrados. Además, el token fija una fecha de expiración al crearse para aumentar la seguridad del usuario. Esta funcionalidad se ha logrado con el paquete \textit{jsonwebtoken} de NodeJS.
+    \item \textbf{Intercambio de token:} El servidor proporciona un token al usuario cuando se registra o inicia sesión. Este token se añade a las peticiones 
+    que se hagan a la API. De esta forma, garantizamos que se cumple el requisito de seguridad de la sesión y 
+    que todas las peticiones válidas que se hagan a la API son de usuarios registrados. Además, el token fija una fecha de expiración al crearse para aumentar
+     la seguridad del usuario. Esta funcionalidad se ha logrado con el paquete \textit{jsonwebtoken} de NodeJS.
     El diagrama que explica el proceso de intercambio de token se muestra en la siguiente imagen:
 
     \begin{figure}[H]
@@ -196,9 +206,12 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
       \label{fig:token}
     \end{figure}
 
-    \item \textbf{Sesión entre instancias:} La sesión se mantiene entre instancias de la aplicación. Es decir, si el usuario cierra la aplicación y la vuelve a abrir, no tendrá que volver a iniciar sesión si no ha cerrado la sesión o si el token no ha expirado. 
-    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la biblioteca \textit{shared\_preferences}. De esta forma, cuando el usuario inicia sesión, el token se almacena en el almacenamiento local del dispositivo 
-    y cuando el usuario cierra la aplicación y la vuelve a abrir, el token se recupera del almacenamiento local del dispositivo y se comprueba si es correcto. Si es correcto, se pasa a la siguiente pantalla. Si no es correcto, se vuelve a la pantalla de inicio de sesión.
+    \item \textbf{Sesión entre instancias:} La sesión se mantiene entre instancias de la aplicación. Es decir, si el usuario cierra la aplicación y 
+    la vuelve a abrir, no tendrá que volver a iniciar sesión si no ha cerrado la sesión o si el token no ha expirado. 
+    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la biblioteca \textit{shared\_preferences}. 
+    De esta forma, cuando el usuario inicia sesión, el token se almacena en el almacenamiento local del dispositivo 
+    y cuando el usuario cierra la aplicación y la vuelve a abrir, el token se recupera del almacenamiento local del dispositivo y se comprueba si es correcto. 
+    Si es correcto, se pasa a la siguiente pantalla. Si no es correcto, se vuelve a la pantalla de inicio de sesión.
     Este token además estará siendo comprobado constantemente para que si el este expira, se cierre la sesión y se vuelva a la pantalla de inicio de sesión evitando accesos no autorizados.
 
     El diagrama que explica el proceso de sesión entre instancias se muestra en la siguiente imagen:
@@ -218,7 +231,8 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
 \label{sec:login}
 
 La aplicación cuenta con una pantalla de inicio de sesión para que los usuarios puedan acceder a la aplicación con su cuenta registrada previamente. 
-Para el inicio de sesión, el usuario deberá introducir su nombre de usuario y su contraseña. Si el usuario no tiene una cuenta, podrá registrarse pulsando en el botón 'Registrarse'. En la siguiente imagen se puede ver la pantalla de inicio de sesión:
+Para el inicio de sesión, el usuario deberá introducir su nombre de usuario y su contraseña. 
+Si el usuario no tiene una cuenta, podrá registrarse pulsando en el botón 'Registrarse'. En la siguiente imagen se puede ver la pantalla de inicio de sesión:
 
 \begin{figure}[H]%
   \centering
@@ -231,29 +245,43 @@ Para el inicio de sesión, el usuario deberá introducir su nombre de usuario y 
 
 
 \paragraph*{Vista}
-Empezando por la vista, se ha desarrollado un widget para la pantalla de inicio de sesión. Este widget se compone de un formulario con dos campos de texto, uno para el nombre de usuario y otro para la contraseña. Además, el formulario contiene un botón para iniciar sesión y otro para ir a registrarse si el usuario así lo desea.
+Empezando por la vista, se ha desarrollado un widget para la pantalla de inicio de sesión. Este widget se compone de un formulario con dos 
+campos de texto, uno para el nombre de usuario y otro para la contraseña. Además, el formulario contiene un botón para iniciar sesión y otro 
+para ir a registrarse si el usuario así lo desea.
 
-La pantalla tiene una pila que contiene dos widgets: un container con un fondo en degradado conseguido con el atributo \textit{gradient} de la clase \textit{BoxDecoration} de Flutter, y un SingleChildScrollView que consta de un widget Column para poder colocar los elementos de forma vertical. Dichos elementos son: un \textit{Container} para el título de la aplicación y un Widget personalizado que contiene el formulario de inicio de sesión \textit{AuthCard()}.
-Este último no es más que un widget de la clase \textit{Card} con dos \textit{TextFormField} (uno para el correo electrónico y otro para la contraseña) y un \textit{ElevatedButton} para proceder al inicio de sesión.
+La pantalla tiene una pila que contiene dos widgets: un container con un fondo en degradado conseguido con el atributo \textit{gradient} de la 
+clase \textit{BoxDecoration} de Flutter, y un SingleChildScrollView que consta de un widget Column para poder colocar los elementos de forma vertical. 
+Dichos elementos son: un \textit{Container} para el título de la aplicación y un Widget personalizado que contiene el formulario de inicio de sesión \textit{AuthCard()}.
+
+Este último no es más que un widget de la clase \textit{Card} con dos \textit{TextFormField} (uno para el correo electrónico y otro para la contraseña) 
+y un \textit{ElevatedButton} para proceder al inicio de sesión.
 
 \paragraph*{Lógica}
-En cuanto a la lógica, una vez el cliente pulsa el botón de 'Iniciar sesión', se llama a la función asíncrona \textit{submit}, la cual se encarga de comprobar que los datos introducidos son correctos.
-Cuando los datos son comprobados, se procede a iniciar sesión en la aplicación mediante el método de inicio de sesión del Provider Auth. Para esto, se envia una petición HTTP POST a la ruta \textit{/user/login} de la API con los datos escritos en el formulario de inicio de sesión.
+En cuanto a la lógica, una vez el cliente pulsa el botón de 'Iniciar sesión', se llama a la función asíncrona \textit{submit}, 
+la cual se encarga de comprobar que los datos introducidos son correctos.
+Cuando los datos son comprobados, se procede a iniciar sesión en la aplicación mediante el método de inicio de sesión del Provider Auth.
+ Para esto, se envia una petición HTTP POST a la ruta \textit{/user/login} de la API con los datos escritos en el formulario de inicio de sesión.
 
-Por otro lado, en el servidor cuando la petición es recibida a dicha ruta, se ejecuta una función en el controlador para el inicio de sesión de usuarios. Esta función capta los valores y comprueba que el usuario existe en la base de datos. Si el usuario existe, se comprueba que la contraseña introducida es correcta mediante el método \textit{verify} de bcrypt. Si los datos son correctos, se genera el token de sesión y se devuelve al cliente. Si el usuario no existe o la contraseña es incorrecta, se devuelve un código de estado 400 y un mensaje de error.
+Por otro lado, en el servidor cuando la petición es recibida a dicha ruta, se ejecuta una función en el controlador para el inicio de sesión de usuarios.
+ Esta función capta los valores y comprueba que el usuario existe en la base de datos. Si el usuario existe, se comprueba que la contraseña introducida es correcta mediante el método \textit{verify} de bcrypt. Si los datos son correctos, se genera el token de sesión y se devuelve al cliente. Si el usuario no existe o la contraseña es incorrecta, se devuelve un código de estado 400 y un mensaje de error.
 
-Cuando el cliente recibe la respuesta del servidor, se comprueba si el código de estado es 200, lo que significa que el inicio de sesión ha sido correcto. En este caso, se almacena el token de sesión en el dispositivo tal y como se ha explica en la sección \ref{sec:sesion}. 
-\newpage
+Cuando el cliente recibe la respuesta del servidor, se comprueba si el código de estado es 200, lo que significa que el inicio de sesión ha sido correcto.
+ En este caso, se almacena el token de sesión en el dispositivo tal y como se ha explica en la sección \ref{sec:sesion}. 
+
+ \newpage
 \subsubsection{Registro}
 \textit{Desarrollado en el Sprint 5}
 \label{sec:register}
 
-La aplicación cuenta con una pantalla de registro para que los usuarios puedan registrarse en la aplicación. Para el registro, el usuario deberá introducir su nombre de usuario y su contraseña dos veces. Si el usuario ya tiene una cuenta, podrá iniciar sesión pulsando en el botón 'Iniciar sesión'. En la siguiente imagen se puede ver la pantalla de registro:
+La aplicación cuenta con una pantalla de registro para que los usuarios puedan registrarse en la aplicación. 
+Para el registro, el usuario deberá introducir su nombre de usuario y su contraseña dos veces. Si el usuario ya tiene una cuenta,
+ podrá iniciar sesión pulsando en el botón 'Iniciar sesión'. En la siguiente imagen se puede ver la pantalla de registro:
 
 
 
 \paragraph*{Vista}
-La vista del registro es muy similar a la del inicio de sesión. La única diferencia es que el formulario contiene un campo adicional para introducir la contraseña otra vez por razones de seguridad.
+La vista del registro es muy similar a la del inicio de sesión. La única diferencia es que el formulario contiene 
+un campo adicional para introducir la contraseña otra vez por razones de seguridad.
 
 \begin{figure}[H]
   \centering
@@ -265,8 +293,8 @@ La vista del registro es muy similar a la del inicio de sesión. La única difer
 
 \paragraph*{Lógica}
 En cuanto a la lógica, una vez el cliente pulsa el botón de 'Registrarse', también se llama a la función asíncrona \textit{submit}, que se encarga de comprobar que los datos introducidos 
-son correctos. Cuando se ha hecho esto, si los datos son válidos, la función llama al método de registro del Provider Auth, el cual envia una petición HTTP POST a la ruta \textit{/user/registro}
- de la API con los datos escritos en el formulario de registro. 
+son correctos. Cuando se ha hecho esto, si los datos son válidos, la función llama al método de registro del Provider Auth, 
+el cual envia una petición HTTP POST a la ruta \textit{/user/registro} de la API con los datos escritos en el formulario de registro. 
 
 Para poder procesar esta petición de Flutter, una vez el servidor recibe la petición a la ruta de registro, se ejecuta una función en el controlador para el registro de usuarios.
  Esta función capta los valores, encripta la contraseña y crea el usuario en la base de datos. Si los datos son correctos, se genera un token de sesión y
@@ -278,15 +306,18 @@ Para poder procesar esta petición de Flutter, una vez el servidor recibe la pet
 \textit{Desarrollado en el Sprint 5}
 \label{sec:logout}
 
-La aplicación cuenta con una opción para cerrar sesión. Para cerrar sesión, el usuario deberá pulsar en el botón \textit{Cerrar sesión} que se encuentra en el drawer (barra lateral) de la aplicación. También se cerrará sesión automáticamente si el token ha expirado.
+La aplicación cuenta con una opción para cerrar sesión. Para cerrar sesión, el usuario deberá pulsar en el botón \textit{Cerrar sesión}
+ que se encuentra en el drawer (barra lateral) de la aplicación. También se cerrará sesión automáticamente si el token ha expirado.
 
 \paragraph*{Vista}
 Para el cierre de sesión, se ha añadido una fila al drawer (barra lateral) de la aplicación, el cual el usuario clicará cuando desee cerrar su sesión.
 
 \paragraph*{Lógica}
-La lógica del cierre de sesión es sencilla: se llama a la función \textit{logout} de la clase \textit{Auth} donde se restablecen los valores de la sesión y se limpian los datos de la sesión almacenados en el dispositivo con el paquete \textit{shared\_preferences}. 
+La lógica del cierre de sesión es sencilla: se llama a la función \textit{logout} de la clase \textit{Auth} donde se restablecen 
+los valores de la sesión y se limpian los datos de la sesión almacenados en el dispositivo con el paquete \textit{shared\_preferences}. 
 Esta limpieza de datos se realiza en el método \textit{clear}.
-Además, se ha añadido un timer que se encarga de cerrar la sesión automáticamente si el token ha expirado. Este timer se ejecuta cada cierto tiempo y comprueba si el token ha expirado. Si es así, se llama al método \textit{logout} mencionado anteriormente.
+Además, se ha añadido un timer que se encarga de cerrar la sesión automáticamente si el token ha expirado. Este timer se ejecuta 
+cada cierto tiempo y comprueba si el token ha expirado. Si es así, se llama al método \textit{logout} mencionado anteriormente.
 
 \newpage
 
@@ -298,7 +329,8 @@ Además, se ha añadido un timer que se encarga de cerrar la sesión automática
 \textit{Desarrollado en el Sprint 5}
 \label{sec:lista_lecciones}
 
-La aplicación cuenta con una lista de lecciones que el usuario puede ver. Esta lista es la pantalla inicial de la aplicación y el usuario la visualizará al iniciar sesión. También puede acceder a ella pulsando el botón \textit{Inicio} que se encuentra en el drawer (barra lateral) de la aplicación.
+La aplicación cuenta con una lista de lecciones que el usuario puede ver. Esta lista es la pantalla inicial de la aplicación y el usuario 
+la visualizará al iniciar sesión. También puede acceder a ella pulsando el botón \textit{Inicio} que se encuentra en el drawer (barra lateral) de la aplicación.
 
 
 \begin{figure}[H]%
@@ -313,19 +345,25 @@ La aplicación cuenta con una lista de lecciones que el usuario puede ver. Esta 
 \newpage
 
 \paragraph*{Vista}
-Para que el usuario pueda ver la lista de lecciones, se ha desarrollado un widget principal para la pantalla. Este widget contiene el widget \textit{ListaLecciones}, que contiene un componente para la distribución de widgets en una columna. Cada uno de estos widgets se llama \textit{LeccionItem} y contendrá la información principal de una lección, como el título y la imagen de perfil. En la figura anterior se puede ver la pantalla de lista de lecciones.
+Para que el usuario pueda ver la lista de lecciones, se ha desarrollado un widget principal para la pantalla. Este widget contiene el widget \textit{ListaLecciones}, 
+que contiene un componente para la distribución de widgets en una columna. Cada uno de estos widgets se llama \textit{LeccionItem} y contendrá la
+ información principal de una lección, como el título y la imagen de perfil. En la figura anterior se puede ver la pantalla de lista de lecciones.
 
 \paragraph*{Lógica}
-Para la lógica de esta pantalla se ha utilizado el patrón de diseño \textit{Provider} para la gestión de estados. Un provider es un objeto que se encarga de gestionar el estado de la aplicación y proporcionarselo a los widgets que lo necesiten.
+Para la lógica de esta pantalla se ha utilizado el patrón de diseño \textit{Provider} para la gestión de estados. Un provider es un objeto que se 
+encarga de gestionar el estado de la aplicación y proporcionarselo a los widgets que lo necesiten.
 En este caso, se ha utilizado para gestionar el estado de la lista de lecciones y se le ha llamado \textit{Lecciones}.
-Este Provider se encarga de obtener la lista de lecciones de la API (llamada HTTP con el verbo GET a la ruta (\textit{GET /api/lesson/get-lessons/\{id\}})) y almacenar cada uno de sus elementos en variables de la clase \textit{Lección}. Además, se ha creado un método público que devuelve la lista de lecciones. Este método se utiliza en el widget \textit{ListaLecciones} para obtener la lista de lecciones, añadir cada lección en forma de widget de forma iterativa
+Este Provider se encarga de obtener la lista de lecciones de la API (llamada HTTP con el verbo GET a la ruta (\textit{GET /api/lesson/get-lessons/\{id\}}))
+ y almacenar cada uno de sus elementos en variables de la clase \textit{Lección}. Además, se ha creado un método público que devuelve la lista de lecciones. 
+ Este método se utiliza en el widget \textit{ListaLecciones} para obtener la lista de lecciones, añadir cada lección en forma de widget de forma iterativa
  y mostrarla en pantalla. 
 
 \subsection{Ver lección} 
 \textit{Desarrollado en el Sprint 5}
 \label{sec:leccion}
 
-La aplicación cuenta con una vista para cada lección. Esta vista se puede acceder pulsando en el título o en la imagen de una lección en la lista de lecciones. En esta vista se puede ver el contenido de la lección, como el título, el texto, las imágenes, los vídeos, etc.
+La aplicación cuenta con una vista para cada lección. Esta vista se puede acceder pulsando en el título o en la imagen de una lección en la lista de lecciones.
+ En esta vista se puede ver el contenido de la lección, como el título, el texto, las imágenes, los vídeos, etc.
 Además, al final de la lección se puede hacer un test para comprobar los conocimientos adquiridos y revisar los tests realizados anteriormente por el usuario.
 
 \begin{figure}[H]%
@@ -338,8 +376,10 @@ Además, al final de la lección se puede hacer un test para comprobar los conoc
 \end{figure}
 
 \paragraph*{Vista}
-La vista de una lección proporciona al usuario información más detallada de esta. En primer lugar se muestra la imagen de la lección y el título en un componente para distribuir widgets en una fila. (Un widget \textit{Row} compuesto de un \textit{Text} y un \textit{Image} ).
-A continuación, se muestra el contenido de la lección en forma de texto, imágenes, vídeos, etc. Esto se ha conseguido construyendo widgets de forma dinámica dependiendo del tipo de contenido almacenado y añadiéndolos a un widget distribuidor en columna (\textit{Column}).
+La vista de una lección proporciona al usuario información más detallada de esta. En primer lugar se muestra la imagen de la lección y el título 
+en un componente para distribuir widgets en una fila. (Un widget \textit{Row} compuesto de un \textit{Text} y un \textit{Image} ).
+A continuación, se muestra el contenido de la lección en forma de texto, imágenes, vídeos, etc. Esto se ha conseguido construyendo 
+widgets de forma dinámica dependiendo del tipo de contenido almacenado y añadiéndolos a un widget distribuidor en columna (\textit{Column}).
 Finalmente, se muestra un botón en pantalla para poder hacer un test y otro para ver el historial de tests realizados, ambos mediante un widget \textit{ElevatedButton}.
 En la siguiente imagen se puede ver la pantalla de una lección:
 
@@ -356,8 +396,12 @@ En la siguiente imagen se puede ver la pantalla de una lección:
 
 
 \paragraph*{Lógica}
-Para la lógica de esta pantalla se ha utilizado el provider \textit{Lecciones} mencionado anteriormente. En este caso, el provider se encarga de obtener la lección que se quiere mostrar en pantalla de la lista de lecciones y devolverla al widget que la mostrará en pantalla.
-Además, se ha implementado una funcionalidad para poder construir el constenido de la lección de forma dinámica. Para esto se ha realizado un bucle que recorre el contenido de la lección y dependiendo del tipo de contenido, se construye un widget diferente. Por ejemplo, si el contenido es un texto, se construye un widget \textit{Text} y se añade a la lista de widgets que se devolverán al final del método. Si el contenido es una imagen, se construye un widget \textit{Image} y se añade a la lista de widgets que se devolverán al final del método. De esta forma 
+Para la lógica de esta pantalla se ha utilizado el provider \textit{Lecciones} mencionado anteriormente. En este caso, el provider se encarga 
+de obtener la lección que se quiere mostrar en pantalla de la lista de lecciones y devolverla al widget que la mostrará en pantalla.
+Además, se ha implementado una funcionalidad para poder construir el constenido de la lección de forma dinámica.
+ Para esto se ha realizado un bucle que recorre el contenido de la lección y dependiendo del tipo de contenido, se construye un widget diferente. 
+ Por ejemplo, si el contenido es un texto, se construye un widget \textit{Text} y se añade a la lista de widgets que se devolverán al final del método. 
+ Si el contenido es una imagen, se construye un widget \textit{Image} y se añade a la lista de widgets que se devolverán al final del método. De esta forma 
 se consigue que el contenido de la lección se muestre en pantalla en función del tipo y facilitaremos la adición de contenido a cada lección por parte del profesor en un futuro.
 
 \subsection{Test}
@@ -366,27 +410,36 @@ se consigue que el contenido de la lección se muestre en pantalla en función d
 
 La lección contiene un test que se puede realizar al final de la lección. Este test consta de una serie de preguntas que el usuario deberá responder.
 
-El usuario podrá responder a las preguntas de la siguiente forma: seleccionando una opción de la lista de opciones, seleccionando varias, escribiendo una respuesta en un campo de texto... El usuario podrá 
-responder la opción que desee y pasar a la siguiente pregunta. A continuación se muestran las diferentes preguntas que se pueden realizar en el test.
+El usuario podrá responder a las preguntas de la siguiente forma: seleccionando una opción de la lista de opciones, seleccionando varias, 
+escribiendo una respuesta en un campo de texto... El usuario podrá responder la opción que desee y pasar a la siguiente pregunta.
+ A continuación se muestran las diferentes preguntas que se pueden realizar en el test.
 
 
 \paragraph*{Vista}
-La vista de un test consiste en una serie de preguntas que el usuario deberá responder. Al seleccionar el botón de \textit{Hacer Test} ubicado en la pantalla de la lección, se muestra la pantalla de un test.
-En esta pantalla se presenta una pregunta a la vez, y el usuario deberá responderla. Para pasar a la siguiente pregunta, pulsará la flecha ubicada a la derecha de la imagen y para retroceder a la pregunta anterior, pulsará la flecha izquierda.
-Esto se ha realizado mediante un widget que distribuye otros widget de forma horizontal en una fila (\textit{Row}). Este widget se encarga de mostrar la imagen de la pregunta actual y las flechas para pasar a la siguiente o anterior pregunta.
+La vista de un test consiste en una serie de preguntas que el usuario deberá responder. Al seleccionar el botón de \textit{Hacer Test} 
+ubicado en la pantalla de la lección, se muestra la pantalla de un test. En esta pantalla se presenta una pregunta a la vez, y el usuario deberá responderla. 
+Para pasar a la siguiente pregunta, pulsará la flecha ubicada a la derecha de la imagen y para retroceder a la pregunta anterior, pulsará la flecha izquierda.
+Esto se ha realizado mediante un widget que distribuye otros widget de forma horizontal en una fila (\textit{Row}). 
+Este widget se encarga de mostrar la imagen de la pregunta actual y las flechas para pasar a la siguiente o anterior pregunta.
 
-Debajo de lo anterior, se mostrará la pregunta actual y las opciones de respuesta. Esto se ha realizado mediante un widget que distribuye otros widget de forma vertical en una columna (\textit{Column}). 
-Las opciones de respuesta dependerán del tipo de pregunta que se esté mostrando. Por ejemplo, si la pregunta es de selección única o múltiple, se muestra una lista de opciones de respuesta, mientras que si la pregunta es de entrada de texto, se muestra un campo de texto para que el usuario escriba su respuesta.
+Debajo de lo anterior, se mostrará la pregunta actual y las opciones de respuesta. Esto se ha realizado mediante un widget que distribuye
+ otros widget de forma vertical en una columna (\textit{Column}). Las opciones de respuesta dependerán del tipo de pregunta que se esté mostrando. 
+ Por ejemplo, si la pregunta es de selección única o múltiple, se muestra una lista de opciones de respuesta, mientras que si la pregunta es de entrada de texto,
+  se muestra un campo de texto para que el usuario escriba su respuesta.
 
-En la última pregunta, aparece un botón para enviar las respuestas y ver el resultado del test. Dicho botón evita que el usuario no pueda enviar las respuestas antes de responder o pasar por todas las preguntas.
+En la última pregunta, aparece un botón para enviar las respuestas y ver el resultado del test. 
+Dicho botón evita que el usuario no pueda enviar las respuestas antes de responder o pasar por todas las preguntas.
 
 \paragraph*{Lógica}
 Para la lógica de esta pantalla se ha utilizado el patrón de diseño \textit{Provider} para la gestión del estado del test en curso.
-Este Provider se encarga de obtener todas las preguntas del test de la API y almacenarlas en una lista privada. Para recorrer las preguntas, se ha utilizado un índice que se incrementa o decrementa en función de si el usuario quiere pasar a la siguiente o a la anterior pregunta. Este índice se almacena también en una variable privada e irá aumentando o disminuyendo en función de si el usuario quiere pasar a la siguiente pregunta o volver a la anterior.
-Cada vez que el usuario responde una pregunta, se almacenan las respuestas en una variable privada para conservarlas durante toda la navegación del test (si vuelve para atrás, por ejemplo) y se produce una retroalimentación al usuario cambiando el color de la opción a un azul más oscuro para que el usuario sepa qué opción ha respondido.
+Este Provider se encarga de obtener todas las preguntas del test de la API y almacenarlas en una lista privada.
+ Para recorrer las preguntas, se ha utilizado un índice que se incrementa o decrementa en función de si el usuario quiere pasar a la siguiente o a la anterior pregunta. 
+ Este índice se almacena también en una variable privada e irá aumentando o disminuyendo en función de si el usuario quiere pasar a la siguiente pregunta o volver a la anterior.
+Cada vez que el usuario responde una pregunta, se almacenan las respuestas en una variable privada para conservarlas durante toda la navegación del test 
+(si vuelve para atrás, por ejemplo) y se produce una retroalimentación al usuario cambiando el color de la opción a un azul más oscuro para que el usuario sepa qué opción ha respondido.
 
-Cuando el usuario pulsa el botón de enviar respuestas, estas se envían al servidor para crear el test y añadirlo al progreso (se envía la petición HTTP a la ruta de la API \textit{POST /api/progress/create-test-and-progress/}:) y aparece la pantalla
-para ver el resultado del test.
+Cuando el usuario pulsa el botón de enviar respuestas, estas se envían al servidor para crear el test y añadirlo al progreso (se envía la petición HTTP
+ a la ruta de la API \textit{POST /api/progress/create-test-and-progress/}:) y aparece la pantalla para ver el resultado del test.
 
 
 \newpage 
@@ -472,26 +525,31 @@ debe ser fiel a la partitura que se muestra en la imagen de la pregunta.
 
 \paragraph*{Lógica}
 Para realizar la lógica de esta pantalla se ha utilizado la biblioteca \textit{flutter\_fft}, que permite realizar la transformada de Fourier de una señal de audio.
-Esta biblioteca permite obtener la frecuencia de la señal de audio, que se utiliza para determinar el tono del sonido, y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia.
+Esta biblioteca permite obtener la frecuencia de la señal de audio, que se utiliza para determinar el tono del sonido,
+ y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia.
 Para ello, la biblioteca utiliza un \textit{StreamBuilder} que se encarga de obtener la frecuencia de la señal de audio. 
-Se han realizado algunas modificaciones al código de la biblioteca para que la detección de notas sea más precisa y se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
+Se han realizado algunas modificaciones al código de la biblioteca para que la detección de notas sea más precisa y
+ se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
 
-Cabe mencionar que \textit{flutter\_fft} se le pueden ajustar varios parámetros para que la detección de notas sea más o menos precisa, como el número de muestras que se toman por segundo, el tiempo de espera entre muestras, etc.
+Cabe mencionar que \textit{flutter\_fft} se le pueden ajustar varios parámetros para que la detección de notas sea más o menos precisa, 
+como el número de muestras que se toman por segundo, el tiempo de espera entre muestras, etc.
 
-Cuando el usuario pulsa el botón del micrófono, se inicia el \textit{StreamBuilder}, se cambia el estado del widget para establecer que se está grabando (variable isRecording) y se muestra una retroalimentación
-al usuario cambiando el color del botón para notificar al usuario.
+Cuando el usuario pulsa el botón del micrófono, se inicia el \textit{StreamBuilder}, se cambia el estado del widget para establecer 
+que se está grabando (variable isRecording) y se muestra una retroalimentación al usuario cambiando el color del botón para notificar al usuario.
 
 Además, las notas musicales se muestran en pantalla conforme el algoritmo las identifica. De esta manera, el usuario puede comprobar la exactitud de su interpretación en tiempo real.
 Cuando se completan todas las notas de la partitura, se detiene el \textit{StreamBuilder} automáticamente.
 Además, en el momento en el que el usuario pulsa el botón del micrófono cuando esté esta grabando, también se detiene el \textit{StreamBuilder}.
 
-Si el usuario no está conforme con la respuesta, puede pulsar el botón de "Reiniciar" para resetear el ejercicio y puede volver a grabar pulsando el botón de micrófono. Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar a la siguiente pregunta.
+Si el usuario no está conforme con la respuesta, puede pulsar el botón de "Reiniciar" para resetear el ejercicio y puede volver a grabar pulsando el botón de micrófono. 
+Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar a la siguiente pregunta.
 
 \subsubsection{Resultado del test}
 \label{sec:pregunta}
 \textit{Desarrollado en el Sprint 6}
 
-A continuación se muestra la pantalla de resultado del test, en la que se muestra el número y el porcentaje de aciertos respecto a las preguntas. Además, se muestra una barra de progreso que muestra el porcentaje de aciertos respecto al número de preguntas preguntas.
+A continuación se muestra la pantalla de resultado del test, en la que se muestra el número y el porcentaje de aciertos respecto a las preguntas. 
+Además, se muestra una barra de progreso que muestra el porcentaje de aciertos respecto al número de preguntas preguntas.
 
 \begin{figure}[H]%
   \centering
@@ -510,36 +568,47 @@ Dentro de dicho widget tendremos:
 \begin{itemize}
   \item la imagen de la lección (widget \textit{Image}).
   \item un campo de texto para mostrar el número de aciertos (widget \textit{Text}).
-  \item una barra de progreso para mostrar el porcentaje de aciertos (widget \textit{CircularPercentIndicator}). Para este test se ha utilizado la biblioteca de flutter \textit{percent\_indicator}.
+  \item una barra de progreso para mostrar el porcentaje de aciertos (widget \textit{CircularPercentIndicator}). 
+  Para este test se ha utilizado la biblioteca de flutter \textit{percent\_indicator}.
   \item un botón para poder revisar el test (widget \textit{ElevatedButton}).
 \end{itemize}
 
 \paragraph*{Lógica}
 \label{sec:logica}
 La lógica para mostrar el resultado del test es bastante sencilla.
-Tras el envío del test al servidor, se comparan las respuestas del usuario con las respuestas correctas almacenadas en cada una de las preguntas (estas últimas se obtienen mediante el Provider de las preguntas). 
+Tras el envío del test al servidor, se comparan las respuestas del usuario con las respuestas correctas almacenadas en cada una de las preguntas 
+(estas últimas se obtienen mediante el Provider de las preguntas). 
 Una vez obtenidos estos datos, se calcula el porcentaje de aciertos y se envía a la vista.
 
 
 
 \subsection{Revisar pregunta}
 \label{sec:pregunta}
-El usuario podrá revisar las preguntas que haya contestado en un test. Como se puede ver en la pantalla anterior del resultado del test, existe un botón para poder revisarlo. El usuario podrá ver las preguntas que haya contestado y las respuestas que haya seleccionado con la validación de estas.
+El usuario podrá revisar las preguntas que haya contestado en un test. Como se puede ver en la pantalla anterior del resultado del test, 
+existe un botón para poder revisarlo. El usuario podrá ver las preguntas que haya contestado y las respuestas que haya seleccionado con la validación de estas.
 
 \paragraph*{Vista}
 \label{sec:vista}
-La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. La diferencia es que se muestran las respuestas que ha seleccionado el usuario si son correctas o no.
+La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. 
+La diferencia es que se muestran las respuestas que ha seleccionado el usuario si son correctas o no.
 Por tanto, solo se han cambiado los colores de los botones y de los textos para mostrar si la respuesta es correcta o no.
 
 \paragraph*{Lógica}
 \label{sec:logica}
-La lógica para mostrar la revisión de las preguntas se ha realizado comparando las respuestas del usuario con las respuestas correctas almacenadas en cada una de las preguntas (estas últimas se obtienen mediante el Provider de las preguntas).
+La lógica para mostrar la revisión de las preguntas se ha realizado comparando las respuestas del usuario con las respuestas correctas almacenadas
+ en cada una de las preguntas (estas últimas se obtienen mediante el Provider de las preguntas).
 
-Para mostrar si la respuesta es correcta o no, se ha cambiado el color del botón o del campo de texto. Si la respuesta es correcta, se muestra en verde y, si es incorrecta, se muestra en rojo. 
+Para mostrar si la respuesta es correcta o no, se ha cambiado el color del botón o del campo de texto. Si la respuesta es correcta, 
+se muestra en verde y, si es incorrecta, se muestra en rojo. 
 
-Para la validación, se ha llamado a la función \textit{validarRespuesta} que se ha creado en la clase provider \textit{Preguntas}. Esta función comprueba si la(s) respuesta(s) del usuario de la pregunta actual coincide con la(s) respuesta(s) correcta(s). En caso de hacerlo, se devuelve un valor booleano \textit{true}, y si no coincide, se devuelve un valor booleano \textit{false}.
+Para la validación, se ha llamado a la función \textit{validarRespuesta} que se ha creado en la clase provider \textit{Preguntas}. 
+Esta función comprueba si la(s) respuesta(s) del usuario de la pregunta actual coincide con la(s) respuesta(s) correcta(s). 
+En caso de hacerlo, se devuelve un valor booleano \textit{true}, y si no coincide, se devuelve un valor booleano \textit{false}.
 
-Para mostrar el color de los botones o de los campos de texto, se ha utilizado la función \textit{ternario} de Dart. Esta función recibe tres parámetros: una condición, un valor si la condición es \textit{true} y un valor si la condición es \textit{false}. En nuestro caso, la condición es la función \textit{validarRespuesta} que hemos creado antes. Si la condición es \textit{true}, se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
+Para mostrar el color de los botones o de los campos de texto, se ha utilizado la función \textit{ternario} de Dart. 
+Esta función recibe tres parámetros: una condición, un valor si la condición es \textit{true} y un valor si la condición es \textit{false}. 
+En nuestro caso, la condición es la función \textit{validarRespuesta} que hemos creado antes. Si la condición es \textit{true}, 
+se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 
 \newpage
 
@@ -623,8 +692,9 @@ La vista de esta pantalla consiste en un distribuidor de columnas (Column) que c
 
 \paragraph*{Vista}
 \label{sec:vista}
-La vista de esta pantalla consiste en un distribuidor de columnas (Column) que contiene los datos del usuario.
-En la parte superior de la pantalla se muestra la foto de perfil del usuario, y debajo de la foto se muestra el nombre, el apellido, el nombre de usuario (username), el correo electrónico y el rol.
+Se ha utilizado un distribuidor de columnas (Column) que contienen los datos de los usuarios.
+En la parte superior de la pantalla se muestra la foto de perfil del usuario, y debajo de la foto se muestra el nombre, 
+el apellido, el nombre de usuario (username), el correo electrónico y el rol.
 
 
 \begin{figure}[H]
@@ -637,18 +707,19 @@ En la parte superior de la pantalla se muestra la foto de perfil del usuario, y 
 
 \paragraph*{Lógica}
 \label{sec:logica}
-La lógica de esta vista es muy simple. En primer lugar, cuando se accede al perfil se obtienen los datos del usuario mediante el método fetchAndSetUser de un nuevo Provider llamado UsuarioPerfil. Este método
-manda una petición HTTP \textit{(GET /api/user/get-user/\{id\})}. Una vez obtenidos los datos y cambiada la pantalla, se obtienen los datos del usuario mediante el provider UsuarioPerfil y se muestran en la vista. 
+En primer lugar, cuando se accede al perfil se obtienen los datos del usuario
+ mediante el método fetchAndSetUser de un nuevo Provider llamado UsuarioPerfil. Este método
+manda una petición \textit{GET} a la ruta \textit{(/api/user/get-user/\{id\})}. Una vez obtenidos los datos del usuario mediante el provider UsuarioPerfil, estos se muestran en la vista. 
 
 
 \subsection{Ver logro} 
 
 \textit{Desarrollado en el Sprint 11}
 
-Los usuarios podrán ver de forma detallada cada logro que hayan conseguido. Para ello, se ha desarrollado una pantalla que muestra la información de un único logro (imagen, título y descripción). A esta pantalla se accederá
-cuando el usuario pinche en uno de los logros dentro de su perfil.
+Los usuarios podrán ver de forma detallada cada logro que hayan conseguido. Para ello, se ha desarrollado una pantalla que muestra la información de un único logro 
+(imagen, título y descripción). A esta pantalla se accederá cuando el usuario pinche en uno de los logros dentro de su perfil.
 \paragraph*{Vista}
-La vista de esta pantalla es muy sencilla. Esta consiste en un distribuidor de columnas (Column) de contenedores que contienen la información a mostrar. En la siguiente imagen se puede ver la pantalla de un logro: 
+Esta pantalla consta de un distribuidor de columnas (Column) de contenedores que contienen la información a mostrar. En la siguiente imagen se puede ver la pantalla de un logro: 
 
 \begin{figure}[H]
   \centering
@@ -657,16 +728,21 @@ La vista de esta pantalla es muy sencilla. Esta consiste en un distribuidor de c
   \label{fig:ver_logro}
 \end{figure}
 
+\paragraph*{Lógica}
+Para cargar la información del logro no ha hecho falta llamar al provider pues la información del logro se encuentra en el provider UsuarioPerfil.
+Por tanto, solo ha hecho falta obtener dichos datos y cargarlos en la nueva vista.
 
 \subsection{Mis logros} 
 
 \textit{Desarrollado en el Sprint 11}
 
-Los usuarios podrán ver una lista de todos los logros que hayan conseguido. Hay que tener en cuenta que en el perfil del usuario solo se muestran algunos. A esta lista se accederá cuando el usuario
-pulse el botón "Más" de la sección de logros del perfil.
+Los usuarios podrán ver una lista de todos los logros que hayan conseguido. Hay que tener en cuenta que en el perfil del usuario solo se muestran algunos. 
+A esta lista se accederá cuando el usuario pulse el botón "Más" de la sección de logros del perfil.
 \paragraph*{Vista}
-La vista de esta pantalla es muy sencilla. Esta consiste en un distribuidor de columnas (Column) de contenedores que contienen la información a mostrar de cada logro. Cada una de las filas contiene un distribuidor de filas (Row) que se encargará
-de visualizar a la izquierda la imagen de perfil y a la derecha la información de texto (esta última información a su vez está dentro de otro widget Column). En la siguiente imagen se puede ver la pantalla de los logros del usuario:: 
+La información visual de esta funcionalidad consiste en un distribuidor de columnas (Column) de contenedores que contienen la información a mostrar de cada logro. 
+Cada una de las filas contiene un distribuidor de filas (Row) que se encargará de visualizar a la izquierda la imagen de perfil y
+ a la derecha la información de texto (esta última información a su vez está dentro de otro widget Column). 
+ En la siguiente imagen se puede ver la pantalla de los logros del usuario:: 
 
 \begin{figure}[H]
   \centering
@@ -674,6 +750,11 @@ de visualizar a la izquierda la imagen de perfil y a la derecha la información 
   \caption{Pantalla de visualización de la lista de logros asignados.} 
   \label{fig:ver_logros_perfil}
 \end{figure}
+
+\paragraph*{Lógica}
+Para cargar la lista de logros no ha hecho falta llamar al provider pues los datos de los logros se encuentran en el provider UsuarioPerfil.
+Por tanto, solo ha hecho falta obtener dichos datos y cargarlos en la nueva vista.
+
 
 \section{Funcionalidad de gestión de la aplicación}
 A continuación presentamos las funcionalidades de gestión de la aplicación. 
@@ -685,10 +766,13 @@ Por otro lado, el administrador podrá gestionar, además de las lecciones y las
 \textit{Desarrollado en el Sprint 5}
 \label{sec:dashboard}
 
-Un dashboard es una interfaz de usuario que muestra información de forma resumida y que permite al usuario acceder a las diferentes funcionalidades de la aplicación. En este caso, el dashboard del profesor muestra las opciones de gestión de lecciones y preguntas.
+Un dashboard es una interfaz de usuario que muestra información de forma resumida y que permite al usuario acceder a las diferentes funcionalidades de la aplicación.
+ En este caso, el dashboard del profesor muestra las opciones de gestión de lecciones y preguntas.
 
 \paragraph*{Vista}
-Se ha implementado una pantalla de dashboard para la gestión de la aplicación. En esta pantalla, se muestran las opciones de gestión disponibles para la persona que utiliza la aplicación en función de su rol mediante una columna de ElevatedButton. En la siguiente imagen se puede ver la pantalla de dashboard:
+Se ha implementado una pantalla de dashboard para la gestión de la aplicación.
+En esta pantalla, se muestran las opciones de gestión disponibles para la persona que utiliza la aplicación en función de su rol mediante una columna de ElevatedButton.
+ En la siguiente imagen se puede ver la pantalla de dashboard:
 
 
 \begin{figure}[H]%
@@ -706,7 +790,9 @@ Se ha implementado una pantalla de dashboard para la gestión de la aplicación.
 \textit{Desarrollado en el Sprint 5}
 
 \paragraph*{Vista}
-La lista de lecciones del profesor es muy similar a la del usuario. Las diferencias, aparte de los estilos, son los botones de tipo ElevatedButton que se han añadido para la gestión de las lecciones y que permiten al profesor crear, modificar y eliminar lecciones. En la siguiente imagen se puede ver la pantalla de lista de lecciones del profesor:
+La lista de lecciones del profesor es muy similar a la del usuario. Las diferencias, aparte de los estilos, son los botones de tipo ElevatedButton
+ que se han añadido para la gestión de las lecciones y que permiten al profesor crear, modificar y eliminar lecciones.
+  En la siguiente imagen se puede ver la pantalla de lista de lecciones del profesor:
 
 \begin{figure}[H]%
   \centering
@@ -722,7 +808,8 @@ La lista de lecciones del profesor es muy similar a la del usuario. Las diferenc
 \subsection{Borrar lección} 
 
 \textit{Desarrollado en el Sprint 8}
-El profesor podrá borrar una lección de la lista de lecciones al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la lección.
+El profesor podrá borrar una lección de la lista de lecciones al pulsar el icono de la papelera mostrado en la vista del apartado anterior. 
+Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la lección.
 
 \paragraph*{Vista}
 La pantalla del borrado de lecciones utiliza el widget \textit{AlertDialog}, que posee
@@ -739,15 +826,19 @@ En la siguiente imagen se puede ver la pantalla de borrado de lecciones:
 
 \paragraph*{Lógica}
 Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la lección.
-Este borrado se realiza llamando a la función borrarLeccion() del provider \textit{Lecciones}. En dicha función se borrará la lección de la lista del provider y se actualizará la base de datos enviando
-una petición DELETE a la API con el id de la lección a borrar. La ruta de la petición es \textit{DELETE /api/lesson/delete-lesson}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
+Este borrado se realiza llamando a la función borrarLeccion() del provider \textit{Lecciones}. 
+En dicha función se borrará la lección de la lista del provider y se actualizará la base de datos enviando
+una petición DELETE a la API con el id de la lección a borrar. La ruta de la petición es \textit{DELETE /api/lesson/delete-lesson}. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. 
+En caso contrario, se mostrará un mensaje de error.
 
 
 \subsection{Crear lección} 
 
 \textit{Desarrollado en el Sprint 8}
 
-Los profesores podrán crear lecciones para que los usuarios puedan estudiarlas. Para ello, se ha implementado una pantalla de creación de lecciones que permite al profesor añadir títulos, textos explicativos y contenido multimedia a la lección. Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
+Los profesores podrán crear lecciones para que los usuarios puedan estudiarlas. Para ello, se ha implementado una pantalla de creación de lecciones 
+que permite al profesor añadir títulos, textos explicativos y contenido multimedia a la lección. Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
 
 
 \paragraph*{Vista}
@@ -790,22 +881,33 @@ En las siguientes imágenes se puede ver la pantalla de creación de lecciones:
 
 \paragraph*{Lógica}
 La funcionalidad de crear lección ha necesitado desarrollar varias utilidades debido a su complejidad. 
-La primera de ellas es la de añadir campos de texto a la pantalla de creación de lecciones. Para ello, se han creado varios widgets que contienen un campo de texto y un botón para eliminar dicho campo. Estos widgets se han llamado \textit{SubirTexto}, \textit{SubirTitulo} y \textit{SubirVideo} y se añaden de forma dinámica a un vector ubicado en la pantalla de creación de lecciones al pulsar el botón correspondiente.
+La primera de ellas es la de añadir campos de texto a la pantalla de creación de lecciones. 
+Para ello, se han creado varios widgets que contienen un campo de texto y un botón para eliminar dicho campo. 
+Estos widgets se han llamado \textit{SubirTexto}, \textit{SubirTitulo} y \textit{SubirVideo} y se añaden de forma dinámica a un vector ubicado 
+en la pantalla de creación de lecciones al pulsar el botón correspondiente.
 
 Para subir una imagen se ha hecho uso de la biblioteca \textit{image\_picker}, que permite al usuario seleccionar una imagen de su galería y
 devuelve la ruta de la imagen seleccionada. Una vez tenemos el archivo de la imagen, se manda una petición de tipo multipart con la imagen a la API para que la suba al servidor.
-El almacenamiento de la imagen utiliza la funcionalidad proporcionada por el paquete de NodeJS llamado \textit{multer}. Este paquete permite la subida de archivos al servidor y la creación de carpetas para almacenar dichos archivos.
-La ruta de la petición es \textit{POST /api/lesson/upload-image}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente. En caso contrario, se mostrará un mensaje de error.
+El almacenamiento de la imagen utiliza la funcionalidad proporcionada por el paquete de NodeJS llamado \textit{multer}. 
+Este paquete permite la subida de archivos al servidor y la creación de carpetas para almacenar dichos archivos.
+La ruta de la petición es \textit{POST /api/lesson/upload-image}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente. 
+En caso contrario, se mostrará un mensaje de error.
 
-El profesor también podrá eliminar widgets de la pantalla de creación de lecciones. Para ello, se ha implementado un botón en cada widget que permite al profesor eliminar dicho widget. Al pulsar este botón, se llama al método borrar(). En este se elimina el widget de la lista y se actualiza la pantalla de creación de lecciones al ser un widget de tipo \textit{StatefulWidget}.
+El profesor también podrá eliminar widgets de la pantalla de creación de lecciones.
+ Para ello, se ha implementado un botón en cada widget que permite al profesor eliminar dicho widget. Al pulsar este botón, se llama al método borrar(). 
+ En este se elimina el widget de la lista y se actualiza la pantalla de creación de lecciones al ser un widget de tipo \textit{StatefulWidget}.
 
-Una vez el usuario ha rellenado el formulario de creación de lecciones, se ha implementado un botón que permite al profesor guardar la lección. Al pulsar este botón, se envía una petición POST a la API con los datos de la lección. La ruta de la petición es \textit{POST /api/lesson/create-lesson}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
+Una vez el usuario ha rellenado el formulario de creación de lecciones, se ha implementado un botón que permite al profesor guardar la lección. 
+Al pulsar este botón, se envía una petición POST a la API con los datos de la lección. La ruta de la petición es \textit{POST /api/lesson/create-lesson}. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. 
+En caso contrario, se mostrará un mensaje de error.
 
 
 \subsection{Editar lección} 
 
 \textit{Desarrollado en el Sprint 8}
-Los profesores podrán editar la información y el contenido de las lecciones. Para ello, se ha implementado una pantalla de edición de lecciones que permite al profesor modificar el título, la imagen y todo el contenido.
+Los profesores podrán editar la información y el contenido de las lecciones. Para ello, se ha implementado una pantalla de edición de lecciones 
+que permite al profesor modificar el título, la imagen y todo el contenido.
 
 \paragraph*{Vista}
 La vista de esta pantalla es muy similar a la de la creación de lecciones. La diferencia es que los campos de texto continene la información de la lección que se está editando.
@@ -823,7 +925,9 @@ La vista de esta pantalla es muy similar a la de la creación de lecciones. La d
 \paragraph*{Lógica}
 En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de lecciones.
 
-La única diferencia es que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la lección. La ruta de la petición es \textit{PUT /api/lesson/update-lesson}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
+La única diferencia es que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la lección. 
+La ruta de la petición es \textit{PUT /api/lesson/update-lesson}. La API devolverá un código de estado 200 si la operación se 
+ha realizado correctamente y se actualizará la lista de lecciones del provider. En caso contrario, se mostrará un mensaje de error.
 
 \newpage
 \subsection{Lista de preguntas} 
@@ -832,8 +936,8 @@ La única diferencia es que, al pulsar el botón de guardar, se envía una petic
 
 \paragraph*{Vista}
 La lista de preguntas contiene todas las preguntas existentes en el sistema. Se ha utilizado un distribuidor de columnas /textit{(Column)} para mostrar las preguntas verticalmente. 
-Cada pregunta tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la imagen de la pregunta y a la derecha el texto de la cuestión, el tipo de pregunta y su identificador. 
-Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuario modificar la pregunta.
+Cada pregunta tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la imagen de la pregunta y 
+a la derecha el texto de la cuestión, el tipo de pregunta y su identificador. Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuario modificar la pregunta.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\textwidth]{imagenes/c7/listapreguntas.png}
@@ -846,7 +950,8 @@ Además de esto, cada pregunta tiene un icono de tipo Icon que permite al usuari
 
 \textit{Desarrollado en el Sprint 9}
 
-El profesor podrá borrar una pregunta de la lista al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la pregunta.
+El profesor podrá borrar una pregunta de la lista al pulsar el icono de la papelera mostrado en la vista del apartado anterior.
+ Una vez pulsado, se mostrará un diálogo de confirmación para que el profesor confirme que desea borrar la pregunta.
 
 \paragraph*{Vista}
 La pantalla del borrado de preguntas utiliza el widget \textit{AlertDialog}, que posee
@@ -863,15 +968,19 @@ En la siguiente imagen se puede ver la pantalla de borrado de preguntas:
 
 \paragraph*{Lógica}
 Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el profesor confirme que desea borrar la pregunta.
-Este borrado se realiza llamando a la función borrarPregunta() del provider \textit{PreguntasProfesor}. En dicha función se borrará la pregunta de la lista del provider y se actualizará la base de datos enviando
-una petición DELETE a la API con el id de la pregunta a borrar. La ruta de la petición es \textit{DELETE /api/question/delete-question}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
+Este borrado se realiza llamando a la función borrarPregunta() del provider \textit{PreguntasProfesor}. En dicha función se borrará la pregunta 
+de la lista del provider y se actualizará la base de datos enviando una petición DELETE a la API con el id de la pregunta a borrar. 
+La ruta de la petición es \textit{DELETE /api/question/delete-question}.La API devolverá un código de estado 200 si 
+la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
 
 
 \subsection{Crear Pregunta} 
 
 \textit{Desarrollado en el Sprint 9}
 
-Los profesores podrán crear preguntas para que los usuarios puedan contestarlas en los tests. Para ello, se ha implementado una pantalla de creación de preguntas que permite al profesor elegir el tipo de pregunta y modificar toda la información relacionada con esta (imagen, opciones, respuestas correctas, etc). Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
+Los profesores podrán crear preguntas para que los usuarios puedan contestarlas en los tests. 
+Para ello, se ha implementado una pantalla de creación de preguntas que permite al profesor elegir el tipo de pregunta y modificar 
+toda la información relacionada con esta (imagen, opciones, respuestas correctas, etc). Una vez creada, la lección se añadirá a la lista de lecciones del profesor.
 
 
 
@@ -889,7 +998,9 @@ La vista de esta pantalla consiste en un formulario de creación de preguntas. E
 
 
 \newpage
-Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. Dentro de este, se encuentran los widgets del formulario, que serán desde widgets de desplegables (\textit{DropdownButton}) hasta widgets de campos de texto (\textit{TextField}), pasando por casillas de verificación (\textit{Checkbox}).
+Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. 
+Dentro de este, se encuentran los widgets del formulario, que serán desde widgets de desplegables (\textit{DropdownButton}) 
+hasta widgets de campos de texto (\textit{TextField}), pasando por casillas de verificación (\textit{Checkbox}).
 En las preguntas de tipo 'única', 'múltiple' y 'micrófono', en la parte inferior de la pantalla se encuentra un icono que permite al profesor añadir más opciones a la pregunta.
 
 En las siguientes imágenes se puede ver la pantalla de creación de preguntas de todos los tipos con los campos de texto vacíos y rellenos.
@@ -946,24 +1057,30 @@ En las siguientes imágenes se puede ver la pantalla de creación de preguntas d
 La funcionalidad de crear preguntas se ha implementado utilizando el Provider de preguntas anteriormente mencionado. De esta forma
 se ha podido comunicar varias pantallas entre sí y compartir datos entre ellas. 
 
-Para empezar, se ha creado un nuevo widget llamado \textit{SubirOpcion}, que actua de forma muy parecida a los widgets mencionados en la creación de lecciones (SubirImagen, SubirTitulo, SubirTexto...). Este widget se encargará de encapsular toda la vista y la lógica relacionada con una opción concreta.
+Para empezar, se ha creado un nuevo widget llamado \textit{SubirOpcion}, que actua de forma muy parecida a los widgets mencionados 
+en la creación de lecciones (SubirImagen, SubirTitulo, SubirTexto...). Este widget se encargará de encapsular toda la vista y la lógica relacionada con una opción concreta.
 Además he visto necesaria la creación de un nuevo Provider para las opciones de las preguntas. Este Provider contiene un vector de opciones y un vector de respuestas correctas.
 El vector de opciones contiene los textos de las opciones de la pregunta y el vector de respuestas correctas contiene los índices de las opciones correctas.
-Estos dos vectores se actualizan cada vez que el profesor añade o elimina una opción de la pregunta. De esta forma, la comunicación entre la pantalla y la clase "SubirOpcion" ha sido más sencilla tanto para borrar una opción como para desmarcar una opción cuando se marca otra distinta.
+Estos dos vectores se actualizan cada vez que el profesor añade o elimina una opción de la pregunta. 
+De esta forma, la comunicación entre la pantalla y la clase "SubirOpcion" ha sido más sencilla tanto para borrar una opción como para desmarcar una opción cuando se marca otra distinta.
 El widget de SubirOpcion se añade de forma dinámica a un vector de widgets ubicado en la pantalla de creación de preguntas al pulsar el botón correspondiente.
 
 
 Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_picker}, que detallé en la funcionalidad de crear lecciones.
-El profesor podrá eliminar widgets mediante el botón apropiado en cada uno de ellos. Dicho botón llama al método borrar() y éste elimina el widget de la listas y actualiza la pantalla de creación de preguntas.
+El profesor podrá eliminar widgets mediante el botón apropiado en cada uno de ellos. Dicho botón llama al método borrar() y 
+éste elimina el widget de la listas y actualiza la pantalla de creación de preguntas.
 
-El botón de guardar la lección envía los datos de las preguntas al servidor mediante una petición POST a la ruta /api/question/create-question. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
+El botón de guardar la lección envía los datos de las preguntas al servidor mediante una petición POST a la ruta /api/question/create-question.
+ La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. 
+ En caso contrario, se mostrará un mensaje de error.
 
 \newpage
 
 \subsection{Editar Pregunta} 
 
 \textit{Desarrollado en el Sprint 9}
-Los profesores podrán editar la información y el contenido de las preguntas. Para ello, se ha implementado una pantalla de edición de preguntas que permite al profesor modificar la cuestión, la imagen y todos los demás datos.
+Los profesores podrán editar la información y el contenido de las preguntas. Para ello, se ha implementado una pantalla de edición 
+de preguntas que permite al profesor modificar la cuestión, la imagen y todos los demás datos.
 
 \paragraph*{Vista}
 La vista de esta pantalla es muy similar a la de la creación de las preguntas. La diferencia es que los widgets disponen de la información de la pregunta que se está editando.
@@ -1006,7 +1123,10 @@ La vista de esta pantalla es muy similar a la de la creación de las preguntas. 
 
 \paragraph*{Lógica}
 En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de preguntas.
-Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la pregunta. La ruta de la petición es \textit{PUT /api/question/update-question}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
+Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de
+ la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos de la pregunta. 
+ La ruta de la petición es \textit{PUT /api/question/update-question}. La API devolverá un código de estado 200 si 
+ la operación se ha realizado correctamente y se actualizará la lista de preguntas del provider. En caso contrario, se mostrará un mensaje de error.
 
 
 \newpage
@@ -1016,7 +1136,8 @@ Entre las diferencias notamos que al entrar se deben inicializar los valores de 
 
 \paragraph*{Vista}
 La lista de usuarios contiene todos los usuarios registrados en el sistema. Se ha utilizado un distribuidor de columnas /textit{(Column)} para mostrar los usuarios de forma vertical. 
-Cada usuario tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la foto del usuario y a la derecha su nombre en negrita y el correo en un color grisáceo. 
+Cada usuario tiene un distribuidor de elementos horizontal /textit{(Row)} que contiene a la izquierda la foto del usuario y 
+a la derecha su nombre en negrita y el correo en un color grisáceo. 
 
 \begin{figure}[H]
   \centering
@@ -1028,7 +1149,9 @@ Cada usuario tiene un distribuidor de elementos horizontal /textit{(Row)} que co
 \subsection{Borrar usuario} 
 
 \textit{Desarrollado en el Sprint 10}
-El administrador podrá borrar un usuario de la lista al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el administrador confirme que desea borrar el usuario.
+
+El administrador podrá borrar un usuario de la lista al pulsar en el botón de "Borrar" mostrado en la Figura \ref{fig:listausuarios}.
+Una vez pulsado, se mostrará un diálogo para que el administrador confirme que desea borrar el usuario.
 
 \paragraph*{Vista}
 La pantalla del borrado de usuarios utiliza el widget \textit{AlertDialog}, que posee
@@ -1044,15 +1167,18 @@ En la siguiente imagen se puede ver la pantalla de borrado de usuarios:
 \end{figure}
 
 \paragraph*{Lógica}
-Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el administrador confirme que desea borrar el usuario.
-Este borrado se realiza llamando a la función borrarUsuario() del provider \textit{Usuarios}. En dicha función se borrará el usuario de la lista del provider y se actualizará la base de datos enviando
-una petición DELETE a la API con el id del usuario a borrar. La ruta de la petición es \textit{DELETE /api/user/delete-user}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
+Una vez pulsado el botón de \textit{Borrar}, se muestra un diálogo para que el administrador confirme que desea borrar el usuario. Este borrado se hará
+ llamando a la función borrarUsuario() del provider \textit{Usuarios}. En dicha función se borrará el usuario de la lista del provider 
+y se actualizará la base de datos enviando una petición DELETE a la API con el id del usuario a borrar. La ruta de la petición es \textit{DELETE /api/user/delete-user}. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, 
+se mostrará un mensaje de error.
 
-\subsection{Crear Usuario} 
+\subsection{Crear usuario} 
 
 \textit{Desarrollado en el Sprint 10}
 
-Los administradores podrán crear usuarios en el sistema. Para ello, se ha implementado una pantalla de creación de usuarios que permite al administrador introducir los datos del usuario como el nombre, el correo, la contraseña, la foto... Una vez creado, el usuario se añadirá a la lista de usuarios del profesor.
+Los administradores podrán crear usuarios en el sistema. Para ello, se ha implementado una pantalla de creación de usuarios que permite 
+introducir los datos del usuario: nombre, el correo, la contraseña, la foto... Una vez creado, el usuario se añadirá a la lista de usuarios del profesor.
 
 
 \paragraph*{Vista}
@@ -1064,7 +1190,8 @@ La vista de esta pantalla consiste en un formulario de creación de usuarios. Es
 \end{itemize}
 
 
-Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. Dentro de este, se encuentran los widgets del formulario, que serán tanto widgets de desplegables (\textit{DropdownButton}) como widgets de campos de texto (\textit{TextField}).
+Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. 
+Dentro de este, se encuentran los widgets del formulario, que serán tanto widgets de desplegables (\textit{DropdownButton}) como widgets de campos de texto (\textit{TextField}).
 
 En las siguientes imágenes se puede ver la pantalla de creación de usuarios de todos los tipos con los campos de texto vacíos y rellenos.
 
@@ -1087,15 +1214,18 @@ se ha podido comunicar varias pantallas entre sí y añadir el usuario creado a 
 
 Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_picker}, que detallé en la funcionalidad de crear lecciones.
 
-El botón de guardar el usuario envía los datos de los usuarios al servidor mediante una petición POST a la ruta /api/user/registro. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
+El botón de guardar el usuario envía los datos de los usuarios al servidor mediante una petición POST a la ruta /api/user/registro. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. 
+En caso contrario, se mostrará un mensaje de error.
 
 \newpage
 
-\subsection{Editar Usuario} 
+\subsection{Editar usuario} 
 
 \textit{Desarrollado en el Sprint 10}
 
-Los administradores podrán editar la información de los usuarios. Para ello, se ha implementado una pantalla de edición de usuarios que permite al profesor modificar el nombre, los apellidos, la foto y todos los demás datos.
+Los administradores podrán editar la información de los usuarios. Para ello, se ha implementado una pantalla de edición de usuarios 
+que permite al profesor modificar el nombre, los apellidos, la foto y todos los demás datos.
 
 \paragraph*{Vista}
 La vista de esta pantalla es muy similar a la de la creación de los usuarios. La diferencia es que los widgets disponen de la información del usuario que se está editando.
@@ -1109,8 +1239,10 @@ La vista de esta pantalla es muy similar a la de la creación de los usuarios. L
 
 
 \paragraph*{Lógica}
-En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de usuarios.
-Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos del usuario. La ruta de la petición es \textit{PUT /api/user/update-user}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. En caso contrario, se mostrará un mensaje de error.
+Los datos del usuario se inician con la información almacenada en la base de datos. Una vez confirmadas las modificaciones, 
+se envía una petición PUT a la API con los datos actualizados del usuario a la ruta \textit{/api/user/update-user}. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de usuarios del provider. 
+En caso contrario, se mostrará un mensaje de error.
 
 
 \subsection{Lista de logros} 
@@ -1123,7 +1255,7 @@ Cada logro tiene un distribuidor de elementos horizontal /textit{(Row)} que cont
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.37\textwidth]{imagenes/c7/listalogros.png}
-  \caption{Pantalla de lista de logros del administrador para la gestión de estos.} 
+  \caption{Pantalla de lista de logros del administrador.} 
   \label{fig:listalogros}
 \end{figure}
 
@@ -1131,7 +1263,8 @@ Cada logro tiene un distribuidor de elementos horizontal /textit{(Row)} que cont
 \subsection{Borrar logro} 
 
 \textit{Desarrollado en el Sprint 10}
-El administrador podrá borrar un logro de la lista al pulsar el icono de la papelera mostrado en la vista del apartado anterior. Una vez pulsado, se mostrará un diálogo de confirmación para que el administrador confirme que desea borrar el logro.
+El administrador podrá borrar un logro de la lista al pulsar el botón \"Borrar\" mostrado en la vista de la figura \ref{fig:listalogros}. 
+Una vez pulsado, se mostrará un diálogo de confirmación para que el administrador confirme que desea borrar el logro.
 
 \newpage
 \paragraph*{Vista}
@@ -1148,17 +1281,21 @@ En la siguiente imagen se puede ver la pantalla de borrado de logros:
 \end{figure}
 
 \paragraph*{Lógica}
-Una vez el botón de \textit{Confirmar} es pulsado, se muestra un diálogo de confirmación para que el administrador confirme que desea borrar la logro.
-Este borrado se realiza llamando a la función borrarLogro() del provider \textit{Logros}. En dicha función se borrará el logro de la lista del provider y se actualizará la base de datos enviando
-una petición DELETE a la API con el id del logro a borrar. La ruta de la petición es \textit{DELETE /api/achievement/delete-achievement}.La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. En caso contrario, se mostrará un mensaje de error.
+Una vez pulsado el botón de \textit{Borrar}, se muestra un diálogo para que el administrador confirme que desea borrar el logro.
+Este borrado se realiza llamando a la función borrarLogro() del provider \textit{Logros}. 
+En dicha función se borrará el logro de la lista del provider y se actualizará la base de datos enviando
+una petición \textit{DELETE} a la ruta \textit{/api/achievement/delete-achievement}. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. 
+En caso contrario, se mostrará un mensaje de error.
 
 
 
-\subsection{Crear Logro} 
+\subsection{Crear logro} 
 
 \textit{Desarrollado en el Sprint 10}
 
-Los administradores podrán crear logros en el sistema. Para ello, se ha implementado una pantalla de creación de logros que permite al administrador introducir el nombre, la imagen, la descripción, el tipo y la condición del logro. Una vez creado, se añadirá a la lista de logros de la pantalla del administrador.
+Los administradores podrán crear logros en el sistema. Para ello, se ha implementado una pantalla de creación de logros que permite introducir 
+el nombre, la imagen, la descripción, el tipo y la condición del logro. Una vez creado, se añadirá a la lista de logros de la pantalla del administrador.
 
 
 \paragraph*{Vista}
@@ -1168,7 +1305,8 @@ La vista de esta pantalla consiste en un formulario de creación de logros. Este
   \item Un campo de texto para introducir el nombre del logro.
   \item Un campo de texto para introducir la descripción del logro.
   \item Un desplegable para elegir el tipo de logro (entre \textit{amigos, lección, lecciones, tests, preguntas, preguntasunica, preguntasmultiple, preguntasmicrofono y preguntastexto}).  
-  \item Un campo de texto para introducir la condición dependiente del tipo.
+  \item Si el logro no es de tipo \'leccion\', un campo de texto para introducir la condición dependiente del tipo.
+  \item Si el logro es de tipo \'leccion\', un desplegable para elegir la lección a la que pertenece el logro.
 \end{itemize}
 
 \begin{figure}[H]%
@@ -1189,20 +1327,23 @@ En las imágenes anteriores se puede ver la pantalla de creación de logros con 
 
 
 \paragraph*{Lógica}
-La funcionalidad de crear logros se ha implementado utilizando un nuevo método de creación de logros del Provider llamado logros. De esta forma
+Se ha implementado utilizando un nuevo método de creación de logros del Provider llamado logros. De esta forma
 se ha podido comunicar varias pantallas entre sí y añadir el logro creado a la lista de logros del administrador.
 
 
 Para subir una imagen se ha hecho uso de nuevo de la biblioteca \textit{image\_picker}, que detallé en la funcionalidad de crear lecciones.
 
-El botón de guardar el logro envía los datos de los logros al servidor mediante una petición POST a la ruta /api/achievement/create-achievement. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. En caso contrario, se mostrará un mensaje de error.
+El botón de guardar el logro envía los datos de los logros al servidor mediante una petición POST a la ruta /api/achievement/create-achievement. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. 
+En caso contrario, se mostrará un mensaje de error.
 
 
-\subsection{Editar Logro} 
+\subsection{Editar logro} 
 
 \textit{Desarrollado en el Sprint 10}
 
-Los administradores podrán editar la información de los logros. Para ello, se ha implementado una pantalla de edición de logros que permite al administrador modificar el nombre, la imagen, la descripción, el tipo y la condición del logro.
+Los administradores podrán editar la información de los logros. Para ello, se ha implementado una pantalla de edición de logros 
+que permite al administrador modificar el nombre, la imagen, la descripción, el tipo y la condición del logro.
 
 \paragraph*{Vista}
 La vista de esta pantalla es muy similar a la de la creación de los logros. La diferencia es que los widgets disponen de la información del logro que se está editando.
@@ -1216,6 +1357,8 @@ La vista de esta pantalla es muy similar a la de la creación de los logros. La 
 
 
 \paragraph*{Lógica}
-En cuanto a la lógica, muchas de las funcionalidades de esta pantalla son iguales a las de la pantalla de creación de logros.
-Entre las diferencias notamos que al entrar se deben inicializar los valores de cada uno de los campos con aquellos obtenidos de la base de datos y que, al pulsar el botón de guardar, se envía una petición PUT a la API con los datos del logro. La ruta de la petición es \textit{PUT /api/achievement/update-achievement}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. En caso contrario, se mostrará un mensaje de error.
+Los datos del logro se inician con la información almacenada en la base de datos. Una vez confirmadas las modificaciones, 
+se envía una petición PUT a la API con los datos actualizados del logro a la ruta \textit{/api/achievement/update-achievement}. 
+La API devolverá un código de estado 200 si la operación se ha realizado correctamente y se actualizará la lista de logros del provider. 
+En caso contrario, se mostrará un mensaje de error.
 

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1684965876 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1684965883
+["pdflatex"] 1685475974 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1685475980
   "/etc/texmf/web2c/texmf.cnf" 1650479083 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" 1677702548 5901 e7bf80b13b09254f1b6dbbc521aefdcc ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -133,7 +133,7 @@
   "capitulos/04_Planificacion.tex" 1684965853 22348 aa372469d13835730b937ce38a2f723e ""
   "capitulos/05_Analisis.tex" 1676656685 50055 c50df2c4af60f0f158e0d5d83dd29576 ""
   "capitulos/06_Diseño.tex" 1677953666 15134 bf072ef039c6f40cbe4b35ad4e9b8312 ""
-  "capitulos/07_Implementacion.tex" 1684965631 80532 10624fd52e1eed9ec47c564d34175cfb ""
+  "capitulos/07_Implementacion.tex" 1685475974 81067 d637f3a0770bad211355ee5f2352fc2c ""
   "capitulos/08_Pruebas.tex" 1668254426 18 e9f28e639779fe6b21d204b9f3bc3ee7 ""
   "capitulos/09_Conclusion.tex" 1668254521 23 8dd28fdca787fa798488f50001886caf ""
   "imagenes/c2/MERN.png" 1669508265 100291 4e46ee86e41535f0939d13bca37b99cf ""
@@ -257,11 +257,11 @@
   "portada/portada.tex" 1668251997 1142 a402399b0f22146e34e4c13ff33dd541 ""
   "portada/portada_2.tex" 1668251614 1192 bbdcbec8504e23108950405322ec271f ""
   "prefacios/prefacio.tex" 1668251154 2618 b1bc60cf82215c54c475f5a6f76b3785 ""
-  "proyecto.aux" 1684965883 62705 eb9c02add71ee4fd502bcf52e74c61db "pdflatex"
-  "proyecto.lof" 1684965883 22505 a4fdd0741ac8df511e0a6bb8ca1c3199 "pdflatex"
-  "proyecto.out" 1684965883 17717 4deae1ff7fdd7082c56d06301bfe218f "pdflatex"
+  "proyecto.aux" 1685475980 62657 cdec717122a1032057c0b840bce68b6c "pdflatex"
+  "proyecto.lof" 1685475980 22480 0d260ccd8d298e2f515c6ec5eccd0ad7 "pdflatex"
+  "proyecto.out" 1685475980 17717 f690c3acb016326605c1e0a66ee6566d "pdflatex"
   "proyecto.tex" 1677702548 5901 e7bf80b13b09254f1b6dbbc521aefdcc ""
-  "proyecto.toc" 1684965883 11784 17ef94319200ff62728775839ebf1835 "pdflatex"
+  "proyecto.toc" 1685475980 11785 aa517d8ee703e04fd732f4a23ab702b8 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.lof"

@@ -86,47 +86,47 @@
 \contentsline {subsubsection}{\numberline {7.3.1.4}Tests}{71}{subsubsection.7.3.1.4}%
 \contentsline {subsubsection}{\numberline {7.3.1.5}Progress}{71}{subsubsection.7.3.1.5}%
 \contentsline {subsection}{\numberline {7.3.2}Middleware}{71}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Funcionalidad de inicio}{72}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}Drawer}{72}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}Sesión}{72}{subsection.7.4.2}%
-\contentsline {subsubsection}{\numberline {7.4.2.1}Inicio de sesión}{75}{subsubsection.7.4.2.1}%
-\contentsline {subsubsection}{\numberline {7.4.2.2}Registro}{78}{subsubsection.7.4.2.2}%
-\contentsline {subsubsection}{\numberline {7.4.2.3}Cierre de sesión}{79}{subsubsection.7.4.2.3}%
-\contentsline {section}{\numberline {7.5}Funcionalidad de usuario}{80}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Lista de lecciones}{80}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Ver lección}{81}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}Test}{84}{subsection.7.5.3}%
-\contentsline {subsubsection}{\numberline {7.5.3.1}Pregunta de selección única.}{86}{subsubsection.7.5.3.1}%
-\contentsline {subsubsection}{\numberline {7.5.3.2}Pregunta de selección múltiple}{87}{subsubsection.7.5.3.2}%
-\contentsline {subsubsection}{\numberline {7.5.3.3}Pregunta de entrada de texto}{88}{subsubsection.7.5.3.3}%
-\contentsline {subsubsection}{\numberline {7.5.3.4}Pregunta de micrófono}{89}{subsubsection.7.5.3.4}%
-\contentsline {subsubsection}{\numberline {7.5.3.5}Resultado del test}{91}{subsubsection.7.5.3.5}%
-\contentsline {subsection}{\numberline {7.5.4}Revisar pregunta}{93}{subsection.7.5.4}%
-\contentsline {subsubsection}{\numberline {7.5.4.1}Revisión de pregunta de selección única}{94}{subsubsection.7.5.4.1}%
-\contentsline {subsubsection}{\numberline {7.5.4.2}Revisión de pregunta de selección múltiple}{95}{subsubsection.7.5.4.2}%
-\contentsline {subsubsection}{\numberline {7.5.4.3}Revisión de pregunta de entrada de texto}{96}{subsubsection.7.5.4.3}%
-\contentsline {subsubsection}{\numberline {7.5.4.4}Revisión de pregunta de entrada de micrófono}{97}{subsubsection.7.5.4.4}%
-\contentsline {subsection}{\numberline {7.5.5}Historial de tests}{97}{subsection.7.5.5}%
-\contentsline {subsection}{\numberline {7.5.6}Ver Mi Perfil}{98}{subsection.7.5.6}%
-\contentsline {subsection}{\numberline {7.5.7}Ver logro}{99}{subsection.7.5.7}%
-\contentsline {subsection}{\numberline {7.5.8}Mis logros}{100}{subsection.7.5.8}%
-\contentsline {section}{\numberline {7.6}Funcionalidad de gestión de la aplicación}{101}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Dashboard}{101}{subsection.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}Lista de lecciones}{103}{subsection.7.6.2}%
-\contentsline {subsection}{\numberline {7.6.3}Borrar lección}{104}{subsection.7.6.3}%
-\contentsline {subsection}{\numberline {7.6.4}Crear lección}{105}{subsection.7.6.4}%
-\contentsline {subsection}{\numberline {7.6.5}Editar lección}{108}{subsection.7.6.5}%
-\contentsline {subsection}{\numberline {7.6.6}Lista de preguntas}{110}{subsection.7.6.6}%
-\contentsline {subsection}{\numberline {7.6.7}Borrar pregunta}{111}{subsection.7.6.7}%
-\contentsline {subsection}{\numberline {7.6.8}Crear Pregunta}{112}{subsection.7.6.8}%
-\contentsline {subsection}{\numberline {7.6.9}Editar Pregunta}{117}{subsection.7.6.9}%
-\contentsline {subsection}{\numberline {7.6.10}Lista de usuarios}{120}{subsection.7.6.10}%
-\contentsline {subsection}{\numberline {7.6.11}Borrar usuario}{120}{subsection.7.6.11}%
-\contentsline {subsection}{\numberline {7.6.12}Crear Usuario}{122}{subsection.7.6.12}%
-\contentsline {subsection}{\numberline {7.6.13}Editar Usuario}{124}{subsection.7.6.13}%
-\contentsline {subsection}{\numberline {7.6.14}Lista de logros}{125}{subsection.7.6.14}%
-\contentsline {subsection}{\numberline {7.6.15}Borrar logro}{125}{subsection.7.6.15}%
-\contentsline {subsection}{\numberline {7.6.16}Crear Logro}{127}{subsection.7.6.16}%
-\contentsline {subsection}{\numberline {7.6.17}Editar Logro}{129}{subsection.7.6.17}%
-\contentsline {chapter}{\numberline {8}Pruebas}{131}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{133}{chapter.9}%
+\contentsline {section}{\numberline {7.4}Funcionalidad de inicio}{73}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Drawer}{73}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Sesión}{73}{subsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}Inicio de sesión}{76}{subsubsection.7.4.2.1}%
+\contentsline {subsubsection}{\numberline {7.4.2.2}Registro}{79}{subsubsection.7.4.2.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.3}Cierre de sesión}{80}{subsubsection.7.4.2.3}%
+\contentsline {section}{\numberline {7.5}Funcionalidad de usuario}{81}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Lista de lecciones}{81}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Ver lección}{82}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}Test}{85}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}Pregunta de selección única.}{87}{subsubsection.7.5.3.1}%
+\contentsline {subsubsection}{\numberline {7.5.3.2}Pregunta de selección múltiple}{88}{subsubsection.7.5.3.2}%
+\contentsline {subsubsection}{\numberline {7.5.3.3}Pregunta de entrada de texto}{89}{subsubsection.7.5.3.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.4}Pregunta de micrófono}{90}{subsubsection.7.5.3.4}%
+\contentsline {subsubsection}{\numberline {7.5.3.5}Resultado del test}{92}{subsubsection.7.5.3.5}%
+\contentsline {subsection}{\numberline {7.5.4}Revisar pregunta}{94}{subsection.7.5.4}%
+\contentsline {subsubsection}{\numberline {7.5.4.1}Revisión de pregunta de selección única}{95}{subsubsection.7.5.4.1}%
+\contentsline {subsubsection}{\numberline {7.5.4.2}Revisión de pregunta de selección múltiple}{96}{subsubsection.7.5.4.2}%
+\contentsline {subsubsection}{\numberline {7.5.4.3}Revisión de pregunta de entrada de texto}{97}{subsubsection.7.5.4.3}%
+\contentsline {subsubsection}{\numberline {7.5.4.4}Revisión de pregunta de entrada de micrófono}{98}{subsubsection.7.5.4.4}%
+\contentsline {subsection}{\numberline {7.5.5}Historial de tests}{98}{subsection.7.5.5}%
+\contentsline {subsection}{\numberline {7.5.6}Ver Mi Perfil}{99}{subsection.7.5.6}%
+\contentsline {subsection}{\numberline {7.5.7}Ver logro}{100}{subsection.7.5.7}%
+\contentsline {subsection}{\numberline {7.5.8}Mis logros}{101}{subsection.7.5.8}%
+\contentsline {section}{\numberline {7.6}Funcionalidad de gestión de la aplicación}{102}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Dashboard}{103}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Lista de lecciones}{105}{subsection.7.6.2}%
+\contentsline {subsection}{\numberline {7.6.3}Borrar lección}{106}{subsection.7.6.3}%
+\contentsline {subsection}{\numberline {7.6.4}Crear lección}{107}{subsection.7.6.4}%
+\contentsline {subsection}{\numberline {7.6.5}Editar lección}{110}{subsection.7.6.5}%
+\contentsline {subsection}{\numberline {7.6.6}Lista de preguntas}{112}{subsection.7.6.6}%
+\contentsline {subsection}{\numberline {7.6.7}Borrar pregunta}{113}{subsection.7.6.7}%
+\contentsline {subsection}{\numberline {7.6.8}Crear Pregunta}{114}{subsection.7.6.8}%
+\contentsline {subsection}{\numberline {7.6.9}Editar Pregunta}{119}{subsection.7.6.9}%
+\contentsline {subsection}{\numberline {7.6.10}Lista de usuarios}{122}{subsection.7.6.10}%
+\contentsline {subsection}{\numberline {7.6.11}Borrar usuario}{122}{subsection.7.6.11}%
+\contentsline {subsection}{\numberline {7.6.12}Crear usuario}{124}{subsection.7.6.12}%
+\contentsline {subsection}{\numberline {7.6.13}Editar usuario}{126}{subsection.7.6.13}%
+\contentsline {subsection}{\numberline {7.6.14}Lista de logros}{127}{subsection.7.6.14}%
+\contentsline {subsection}{\numberline {7.6.15}Borrar logro}{127}{subsection.7.6.15}%
+\contentsline {subsection}{\numberline {7.6.16}Crear logro}{129}{subsection.7.6.16}%
+\contentsline {subsection}{\numberline {7.6.17}Editar logro}{131}{subsection.7.6.17}%
+\contentsline {chapter}{\numberline {8}Pruebas}{133}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{135}{chapter.9}%
