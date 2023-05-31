@@ -31,6 +31,10 @@ class _PantallaCrearLogroProfesorState
   PickedFile _image;
   File file;
 
+  var leccionelegida = "";
+  var nombreslecciones = [""];
+  Map<String, String> leccionesmap = {};
+
   var tipo = "amigos";
   final tipos = [
     "amigos",
@@ -42,6 +46,8 @@ class _PantallaCrearLogroProfesorState
     "preguntasmultiple",
     "preguntasmicro"
   ];
+
+
   final ImagePicker picker = ImagePicker();
   final GlobalKey<FormState> _formKey = GlobalKey();
 
@@ -50,7 +56,13 @@ class _PantallaCrearLogroProfesorState
   @override
   void initState() {
     // TODO: implement initState
-
+    nombreslecciones = [];
+    var lecciones = Provider.of<Lecciones>(context, listen: false).items;
+    for (var i = 0; i < lecciones.length; i++) {
+      nombreslecciones.add(lecciones[i].nombre);
+      leccionesmap[lecciones[i].nombre] = lecciones[i].id;
+    }
+    leccionelegida = nombreslecciones[0];
     super.initState();
   }
 
@@ -77,9 +89,12 @@ class _PantallaCrearLogroProfesorState
       }
       _extractedData['imagen'] = img;
     });
-    _extractedData["tipo"] = tipo;
 
-    
+    _extractedData["tipo"] = tipo;
+    if(tipo == 'leccion') {
+      _extractedData["condicion"] = leccionesmap[leccionelegida];
+    }
+
     var indice = 0;
     Provider.of<Logros>(context, listen: false)
         .crearLogro(_extractedData)
@@ -91,6 +106,8 @@ class _PantallaCrearLogroProfesorState
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Crear Logro"),
@@ -184,24 +201,41 @@ class _PantallaCrearLogroProfesorState
                     Container(
                       margin: EdgeInsets.only(right: 10),
                       child: Text(tipo == "leccion"
-                          ? "ID"
+                          ? "Lección "
                           : tipo == "lecciones"
                               ? "Nro Lecciones >= "
                               : tipo == "amigos"
                                   ? "Nro Amigos >= "
-                                  : tipo == "tests" ? "Nro Tests >= " : "Nro Preguntas >= "),
+                                  : tipo == "tests"
+                                      ? "Nro Tests >= "
+                                      : "Nro Preguntas >= "),
                     ),
-                    Expanded(
-                      child: TextFormField(
-                        onSaved: (value) {
-                          if(tipo != "leccion")
-                          _extractedData['condicion'] = int.parse(value);
-                          else
-                            _extractedData['condicion']=value;
-                        },
-                        decoration: InputDecoration(labelText: "Condicion"),
-                      ),
-                    ),
+                    (tipo != "leccion")
+                        ? Expanded(
+                            child: TextFormField(
+                              onSaved: (value) {
+                                _extractedData['condicion'] = int.parse(value);
+                              },
+                              decoration:
+                                  InputDecoration(labelText: "Condicion"),
+                            ),
+                          )
+                        : Expanded(
+                            child: DropdownButton(
+                                items: nombreslecciones
+                                    .map<DropdownMenuItem<String>>(
+                                        (String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value,
+                                    child: Text(value),
+                                  );
+                                }).toList(),
+                                onChanged: (String value) {
+                                  setState(() {
+                                    leccionelegida = value;
+                                  });
+                                },
+                                value: leccionelegida)),
                   ],
                 ),
               ),

@@ -129,4 +129,5 @@
 \contentsline {subsection}{\numberline {7.6.16}Crear logro}{129}{subsection.7.6.16}%
 \contentsline {subsection}{\numberline {7.6.17}Editar logro}{131}{subsection.7.6.17}%
 \contentsline {chapter}{\numberline {8}Pruebas}{133}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Pruebas de integración}{133}{section.8.1}%
 \contentsline {chapter}{\numberline {9}Conclusiones}{135}{chapter.9}%

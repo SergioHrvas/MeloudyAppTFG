@@ -28,10 +28,16 @@ class _PantallaEditarLogroProfesorState
     extends State<PantallaEditarLogroProfesor> {
   _PantallaEditarLogroProfesorState();
 
+  var leccionelegida = "";
+  var nombreslecciones = [""];
+  var lecciones = [];
+  Map<String, String> leccionesmap = {};
+
 
   PickedFile _image;
   File file;
   var primeravez = true;
+  var primeravez2 = true;
   var tipo = "amigos";
   final tipos = [
     "amigos",
@@ -56,6 +62,13 @@ class _PantallaEditarLogroProfesorState
   @override
   void initState() {
     // TODO: implement initState
+    nombreslecciones = [];
+    lecciones = Provider.of<Lecciones>(context, listen: false).items;
+    for (var i = 0; i < lecciones.length; i++) {
+      print("d");
+      nombreslecciones.add(lecciones[i].nombre);
+      leccionesmap[lecciones[i].nombre] = lecciones[i].id;
+    }
 
     super.initState();
 
@@ -89,6 +102,9 @@ class _PantallaEditarLogroProfesorState
       }
       _extractedData['imagen'] = img;
       _extractedData["tipo"] = tipo;
+      if(tipo == 'leccion') {
+        _extractedData["condicion"] = leccionesmap[leccionelegida];
+      }
 
     });
 
@@ -107,14 +123,29 @@ class _PantallaEditarLogroProfesorState
     var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
 
     id = arg['id'];
-     logro =
-          Provider.of<Logros>(context, listen: false).findById(arg['id']);
+    logro = Provider.of<Logros>(context, listen: false).findById(arg['id']);
+
+    print(logro.tipo);
+    print(logro.condicion);
+
+
 
      if(primeravez) {
        tipo = logro.tipo;
-       print("a");
      }
-     print(tipo);
+
+     if(primeravez2){
+       if(logro.tipo == "leccion")
+         leccionelegida = Provider.of<Lecciones>(context, listen: false).findById(logro.condicion).nombre;
+          print(leccionelegida);
+          if(leccionelegida==""){
+            print(lecciones.toString());
+            leccionelegida = lecciones[0].nombre;
+          }
+     }
+
+
+
      condicion = logro.condicion;
 
     return Scaffold(
@@ -238,18 +269,34 @@ class _PantallaEditarLogroProfesorState
                               ? "Nro Amigos >= "
                               : tipo == "tests" ? "Nro Tests >= " : "Nro Preguntas >= "),
                         ),
+                        (tipo != "leccion") ?
                         Expanded(
                           child: TextFormField(
                             initialValue: condicion.toString(),
                             onSaved: (value) {
                               if(tipo != "leccion")
                                 _extractedData['condicion'] = int.parse(value);
-                              else
-                                _extractedData['condicion']=value;
                             },
                             decoration: InputDecoration(labelText: "Condicion"),
                           ),
-                        ),
+                        )
+                            : Expanded(
+                            child: DropdownButton(
+                                items: nombreslecciones
+                                    .map<DropdownMenuItem<String>>(
+                                        (String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(value),
+                                      );
+                                    }).toList(),
+                                onChanged: (String value) {
+                                  setState(() {
+                                    leccionelegida = value;
+                                    primeravez2 = false;
+                                  });
+                                },
+                                value: leccionelegida)),
                       ],
                     ),
                   ),

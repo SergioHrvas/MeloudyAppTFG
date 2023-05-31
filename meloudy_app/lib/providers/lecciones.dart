@@ -30,7 +30,7 @@ class Lecciones with ChangeNotifier {
   }
 
   Leccion findById(String id) {
-    print(id);
+    print("a" + id);
     return lecciones.firstWhere((prod) => prod.id == id);
   }
 
@@ -132,6 +132,7 @@ class Lecciones with ChangeNotifier {
       }
       lecciones = leccionesCargadas;
       notifyListeners();
+      print(lecciones);
 
     } catch (error) {
       throw (error);

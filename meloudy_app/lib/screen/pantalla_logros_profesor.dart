@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../providers/auth.dart';
+import '../providers/lecciones.dart';
 import '../providers/logros.dart';
 import 'package:meloudy_app/extensiones.dart';
 import '../widget/drawer_app.dart';
@@ -167,7 +169,9 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                   child: ElevatedButton(onPressed:(){
-                    Navigator.pushNamed(context, '/crearlogro');
+                    Provider.of<Lecciones>(context, listen: false).fetchAndSetLecciones(Provider.of<Auth>(context, listen: false).userId).then((_){
+    Navigator.pushNamed(context, '/crearlogro');
+    });
                   },
                     child: Container(
                       width: 150,

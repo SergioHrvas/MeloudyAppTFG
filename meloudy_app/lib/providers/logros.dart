@@ -111,6 +111,7 @@ class Logros with ChangeNotifier {
           "condicion":extractedData['condicion']
         }));
 
+    print(response.body);
 
     var respuesta = jsonDecode(response.body);
     if (respuesta['status'] == "success") {
