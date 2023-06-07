@@ -129,5 +129,7 @@
 \contentsline {subsection}{\numberline {7.6.16}Crear logro}{129}{subsection.7.6.16}%
 \contentsline {subsection}{\numberline {7.6.17}Editar logro}{131}{subsection.7.6.17}%
 \contentsline {chapter}{\numberline {8}Pruebas}{133}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Pruebas de integración}{133}{section.8.1}%
+\contentsline {section}{\numberline {8.1}Paquetes utilizados}{133}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Pruebas de unidad}{133}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Lecciones}{134}{subsection.8.2.1}%
 \contentsline {chapter}{\numberline {9}Conclusiones}{135}{chapter.9}%

@@ -17,7 +17,7 @@ class Usuarios with ChangeNotifier {
   String authToken;
 
 
-  Usuarios(this.authToken, this.usuarios);
+  Usuarios();
 
   void update(tkn){
     authToken = tkn;

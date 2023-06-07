@@ -35,8 +35,6 @@ const create = (req, res) => {
 const index = async (req, res) => {
     // Return all users
 
-    console.log("===================");
-    console.log(req.params.id);
     await Lesson.find({}, async (error, lessons) => {
         if (error || !lessons) {
             return res.status(404).json({
@@ -45,95 +43,76 @@ const index = async (req, res) => {
             });
         }
         else {
-
             var tests = [];
 
             await Progress.find({ idUsuario: req.params.id }, async (error, progress) => {
                 try{
-                if (error || !progress) {
-                    return res.status(404).json({
-                        status: "error",
-                        mensaje: "El progreso no se ha podido encontrar"
-                    });
-                }
-
-            
-                else {  
-                    var progresos = [];
-                    console.log("TAM: " + progress.length);
-                //Para cada progreso buscar el número de tests aprobados
-                for (let i = 0; i < progress.length; i++) {
-                    var test = progress[i].tests;
-                    var cuenta = 0;
-                    try {
+                    if (error || !progress) {
+                        return res.status(404).json({
+                            status: "error",
+                            mensaje: "El progreso no se ha podido encontrar"
+                        });
+                    }
+                    else {  
+                        var tests = [];
+                        //Para cada progreso buscar el número de tests aprobados
+                        
+                        for (let i = 0; i < progress.length; i++) {
+                            var test = progress[i].tests;
+                            var cuenta = 0;
+                            try {
  
-                    for (let j = 0; j < test.length; j++) {
-                            //Buscar test
-                        var a = await Test.findOne({ _id: test[j].toString() }, (error, test) => {
-                            try{
-                            if(test.aprobado != undefined)
-                                console.log(test.aprobado);
+                                for (let j = 0; j < test.length; j++) {
+                                    //Buscar test
+                                    var a = await Test.findOne({ _id: test[j].toString() }, (error, test) => {
+                                        try{
+                                        if (error || !test) {
+                                            return res.status(404).json({
+                                                status: "error",
+                                                mensaje: "El test no se ha podido encontrar"
+                                            });
+                                        }
 
-                            if (error || !test) {
-                                return res.status(404).json({
-                                    status: "error",
-                                    mensaje: "El test no se ha podido encontrar"
+                                        //return cuenta;
+                                        }
+                                        catch(error){
+                                            console.log(error);
+                                        }
+                                    }).clone();
+                        
+                                    if(a.aprobado != undefined){
+                                        if(a.aprobado == true)    
+                                            cuenta++;
+                                    }                            
+                                }
+                    
+                                tests.push({
+                                    idLeccion: progress[i].idLeccion,
+                                    testsAprobados: cuenta
                                 });
                             }
-
-                            return cuenta;
+                            catch (error){
+                                console.log(error);
+                            }
                         }
-                        catch(error){
-                            console.log(error);
-                        }
-                        }).clone();
-                        
-                        if(a.aprobado!=undefined){
-                            if(a.aprobado==true)    
-                                cuenta++;
-                                console.log("CUENTA: " + cuenta);
-
-                        }                            
-                    }
-                    progresos.push({
-                        idLeccion: progress[i].idLeccion,
-                        testsAprobados: cuenta
-                    });
-                    console.log(i + " : " +progresos[i].testsAprobados);
-                    }
-                    catch (error){
-                        console.log(error);
-                    }
-
-                }
-
-
-
-                return res.status(200).json({
-                    status: "success",
-                    cuenta: progresos,
-                    progreso: progress,
                 
-                    leccion: lessons,
-                    mensaje: "Las lecciones se ha encontrado"
-                });
-            }
+                        return res.status(200).json({
+                            status: "success",
+                            tests: tests,
+                            progreso: progress,
+                        
+                            leccion: lessons,
+                            mensaje: "Las lecciones se ha encontrado"
+                        });
+                    }
+                }
+                catch(error){
+                    console.log(error);
+                }
+            }).clone();
         }
-        catch(error){
-            console.log(error);
-        }
-
-
-            }
-            ).clone();
-        }
-    }
-
-    ).clone();
-
-    console.log("===================");
+    }).clone();
 }
-
 
 const get = (req, res) => {
     Lesson.findById(id, (error, lesson) => {
