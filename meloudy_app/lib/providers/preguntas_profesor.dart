@@ -16,13 +16,13 @@ class PreguntasProfesor with ChangeNotifier {
   List<Pregunta> preguntas = [];
   int indice = 0;
 
-  final String authToken;
+  String authToken;
 
   String idLeccion;
   String userId;
   String testId;
 
-  PreguntasProfesor(this.authToken, this.preguntas);
+  PreguntasProfesor();
 
   List<Pregunta> get items {
     return [...preguntas];
@@ -106,6 +106,16 @@ class PreguntasProfesor with ChangeNotifier {
     };
   }
 
+  int getIndice(id) {
+    for (var i = 0; i < preguntas.length; i++) {
+      if (preguntas[i].id == id) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+
   Future<void> fetchAndSetPreguntas() async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/get-questions?auth=$authToken');
@@ -154,6 +164,7 @@ class PreguntasProfesor with ChangeNotifier {
     pregunta.imagen = extractedData['imagen'];
     pregunta.leccion = extractedData['leccion'];
     pregunta.opciones = [];
+
 
     for (var i = 0; i < extractedData['opciones'].length; i++) {
       pregunta.opciones.add(extractedData["opciones"][i]);
@@ -205,7 +216,9 @@ class PreguntasProfesor with ChangeNotifier {
         body: cuerpo);
   }
 
-  borrarPregunta(String id, i) async {
+  borrarPregunta(String id) async {
+
+    var i = getIndice(id);
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/delete-question/${id}?auth=$authToken');
 

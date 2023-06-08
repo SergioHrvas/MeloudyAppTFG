@@ -33,7 +33,7 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
           preguntas.removeAt(i);
         });
 
-        Provider.of<PreguntasProfesor>(context, listen: false).borrarPregunta(id, i)
+        Provider.of<PreguntasProfesor>(context, listen: false).borrarPregunta(id)
             .then((_) {
           Navigator.of(context).pop();
         });

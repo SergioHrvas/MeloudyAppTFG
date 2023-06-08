@@ -7,10 +7,10 @@ const QuestionController = require('../controllers/question.js');
 router.get("/get-questions", QuestionController.index);
 router.get("/get-questions/:idLeccion", QuestionController.indexTest);
 router.get("/get-questions-test/:idTest", QuestionController.getquestions);
-router.post("/create-question", auth, QuestionController.create);
+router.post("/create-question", QuestionController.create);
 //router.get("/get-question/:id", auth, QuestionController.get);
-router.put("/update-question/:id", auth, QuestionController.update);
-router.delete("/delete-question/:id", auth, QuestionController.remove);
+router.put("/update-question/:id", QuestionController.update);
+router.delete("/delete-question/:id", QuestionController.remove);
 
 
 module.exports = router;
