@@ -29,7 +29,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
           usuarios.removeAt(i);
         });
 
-        Provider.of<Usuarios>(context, listen: false).borrarUsuario(id, i)
+        Provider.of<Usuarios>(context, listen: false).borrarUsuario(id)
             .then((_) {
           Navigator.of(context).pop();
         });

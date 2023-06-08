@@ -24,12 +24,17 @@ class Usuarios with ChangeNotifier {
   }
 
   List<Usuario> get items {
-    // if (_showFavoritesOnly) {
-    //   return _items.where((prodItem) => prodItem.isFavorite).toList();
-    // }
     return [...usuarios];
   }
 
+  int getIndice(id) {
+    for (var i = 0; i < usuarios.length; i++) {
+      if (usuarios[i].id == id) {
+        return i;
+      }
+    }
+    return -1;
+  }
 
 
   Future<void> fetchAndSetUsers() async {
@@ -74,18 +79,17 @@ class Usuarios with ChangeNotifier {
     }
   }
 
-  borrarUsuario(String id, int i) async{
+  borrarUsuario(String id) async{
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/user/delete-user/${id}?auth=$authToken');
 
+    var i = getIndice(id);
     usuarios.removeAt(i);
     final response = await http.delete(url);
     notifyListeners();
   }
 
   crearUsuario(extractedData) async{
-    print(extractedData.toString());
-
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/user/registro?auth=$authToken');
 
@@ -109,7 +113,6 @@ class Usuarios with ChangeNotifier {
           "username": extractedData['username'],
 
         }));
-    print(response.body);
   var respuesta = jsonDecode(response.body);
   if(respuesta['status'] == "success"){
     usuarios.add(
@@ -154,9 +157,16 @@ class Usuarios with ChangeNotifier {
         body: body);
 
     var user = findById(id);
-    user.nombre = extractedData["nombre"];
 
-    print(usuarios[2].nombre);
+    user.nombre = extractedData["nombre"];
+    user.username = extractedData["username"];
+    user.rol = extractedData["rol"];
+    user.correo = extractedData["correo"];
+    user.foto = extractedData["foto"];
+
+    user.apellidos[0] = extractedData["apellidos"][0];
+    user.apellidos[1] = extractedData["apellidos"][1];
+
     notifyListeners();
 
   }

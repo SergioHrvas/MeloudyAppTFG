@@ -129,6 +129,7 @@ test('Se borra una lección correctamente', () async {
 
   var longitudprevia = c.lecciones.length;
 
+
   await c.borrarLeccion(c.lecciones[c.lecciones.length-1].id);
 
   var longitudposterior = c.lecciones.length;
