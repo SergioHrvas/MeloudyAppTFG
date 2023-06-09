@@ -31,7 +31,7 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
           logros.removeAt(i);
         });
 
-        Provider.of<Logros>(context, listen: false).borrarLogro(id, i)
+        Provider.of<Logros>(context, listen: false).borrarLogro(id)
             .then((_) {
           Navigator.of(context).pop();
         });

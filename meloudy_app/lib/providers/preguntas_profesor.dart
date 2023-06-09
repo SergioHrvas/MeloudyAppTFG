@@ -28,6 +28,10 @@ class PreguntasProfesor with ChangeNotifier {
     return [...preguntas];
   }
 
+  void update(tkn){
+    authToken = tkn;
+  }
+
   String get idtest {
     return testId;
   }

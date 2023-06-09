@@ -8,7 +8,7 @@ import 'package:meloudy_app/providers/preguntas_profesor.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
-  test('Las preguntas deben obtenerse y guardarse en el vector del provider',
+  test('Las preguntas del profesor deben obtenerse y guardarse en el vector del provider PreguntasProfesor',
       () async {
     final c = PreguntasProfesor();
 
@@ -117,5 +117,15 @@ void main() async {
     expect(longitudprevia, greaterThan(longitudposterior));
   });
 
+  test('Las preguntas deben obtenerse y guardarse en el vector del provider Preguntas',
+          () async {
+        final c = Preguntas();
 
+        var leccion = '63f94104d79a4308398b1f07';
+
+        await c.fetchAndSetPreguntas(leccion);
+
+        expect(c.preguntas.length, greaterThanOrEqualTo(1));
+      });
 }
+

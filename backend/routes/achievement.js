@@ -6,10 +6,10 @@ const AchievementController = require('../controllers/achievement.js');
 // Rutas asociadas a los usuarios
 router.get("/get-achievement", AchievementController.index);
 router.get("/get-achievements/:idUser", AchievementController.indexUser);
-router.post("/create-achievement", auth, AchievementController.create);
-router.get("/get-achievement/:id", auth, AchievementController.get);
-router.put("/update-achievement/:id", auth, AchievementController.update);
-router.delete("/delete-achievement/:id", auth, AchievementController.remove);
+router.post("/create-achievement",  AchievementController.create);
+router.get("/get-achievement/:id",AchievementController.get);
+router.put("/update-achievement/:id", AchievementController.update);
+router.delete("/delete-achievement/:id", AchievementController.remove);
 
 
 module.exports = router;

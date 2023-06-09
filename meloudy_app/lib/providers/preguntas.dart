@@ -15,7 +15,7 @@ class Preguntas with ChangeNotifier {
   List<Pregunta> preguntas = [];
   int indice = 0;
   String idLeccion;
-  final String authToken;
+  String authToken;
   String userId;
   String testId;
   String modo;
@@ -25,7 +25,12 @@ class Preguntas with ChangeNotifier {
 
   int variable = 0;
 
-  Preguntas(this.authToken, this.preguntas);
+  Preguntas();
+
+  void update(tkn){
+    authToken = tkn;
+  }
+
 
   void setVariable() {
     variable++;

@@ -58,12 +58,14 @@ class MyApp extends StatelessWidget {
             usuariosAnteriores..update(auth.token)
         ),
         ChangeNotifierProxyProvider<Auth, Preguntas>(
+            create: (_) => Preguntas(),
             update: (ctx, auth, preguntasAnteriores) =>
-              Preguntas(auth.token, preguntasAnteriores == null ? [] : preguntasAnteriores.items)),
+            preguntasAnteriores..update(auth.token)
+        ),
         ChangeNotifierProxyProvider<Auth, PreguntasProfesor>(
             create: (_) => PreguntasProfesor(),
-            update: (ctx, auth, usuariosAnteriores) =>
-            usuariosAnteriores..update(auth.token)
+            update: (ctx, auth, preguntasAnteriores) =>
+            preguntasAnteriores..update(auth.token)
         ),
         ChangeNotifierProxyProvider<Auth, Opciones>(
             update: (ctx, auth, opcionesanteriores,) =>
@@ -75,8 +77,10 @@ class MyApp extends StatelessWidget {
             update: (ctx, auth, userant, ) =>
                 UsuarioPerfil(auth.token, userant == null ? Usuario() : userant.item)),
         ChangeNotifierProxyProvider<Auth, Logros>(
-            update: (ctx, auth, logrosanteriores, ) =>
-                Logros(auth.token, logrosanteriores == null ? [] : logrosanteriores.items))
+            create: (_) => Logros(),
+            update: (ctx, auth, logrosAnteriores) =>
+            logrosAnteriores..update(auth.token)
+        )
       ],
       child: Consumer<Auth>(
         builder: (ctx, auth, _) => MaterialApp(

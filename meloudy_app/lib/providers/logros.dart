@@ -17,7 +17,7 @@ class Logros with ChangeNotifier {
 
   String authToken;
 
-  Logros(this.authToken, this.logros);
+  Logros();
 
   void update(tkn) {
     authToken = tkn;
@@ -28,6 +28,15 @@ class Logros with ChangeNotifier {
     //   return _items.where((prodItem) => prodItem.isFavorite).toList();
     // }
     return [...logros];
+  }
+
+  int getIndice(id) {
+    for (var i = 0; i < logros.length; i++) {
+      if (logros[i].id == id) {
+        return i;
+      }
+    }
+    return -1;
   }
 
   Future<void> fetchAndSetLogros() async {
@@ -126,11 +135,14 @@ class Logros with ChangeNotifier {
   }
 
 
-  borrarLogro(String id, int i) async {
+
+  borrarLogro(String id) async {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/achievement/delete-achievement/${id}?auth=$authToken');
 
+    var i = getIndice(id);
     logros.removeAt(i);
+
     final response = await http.delete(url);
     notifyListeners();
   }
