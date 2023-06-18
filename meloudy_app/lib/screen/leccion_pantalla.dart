@@ -36,12 +36,13 @@ class LeccionPantalla extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20),
           margin: EdgeInsets.only(bottom: 20),
           child: Container(
-            child:
-                Image.network('http://${IP.ip}:5000/img/${contenido[i].texto}'),
+            /*child:
+                Image.network('http://${IP.ip}:5000/img/${contenido[i].texto}'),*/
             decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           ),
         ));
       } else if (contenido[i].tipo == 'titulo') {
+        print(contenido[i].texto);
         contenidos.add(Container(
             width: double.infinity,
             padding: EdgeInsets.only(left: 20, top: 5, bottom: 0),
@@ -98,11 +99,11 @@ class LeccionPantalla extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.white,
                 border: Border.all(color: Colors.black),
-                image: DecorationImage(
+                /*image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage(
                       'http://${IP.ip}:5000/img/${loadedLesson.imagenprincipal}'),
-                )),
+                )*/),
           ),
           Container(
             decoration: BoxDecoration(

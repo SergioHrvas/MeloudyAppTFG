@@ -16,6 +16,7 @@ class LeccionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final leccion = Provider.of<Leccion>(context, listen: false);
+    print('entrar'+leccion.nombre);
     return Container(
       alignment: Alignment.topCenter,
       padding: EdgeInsets.all(20),
@@ -23,10 +24,12 @@ class LeccionItem extends StatelessWidget {
         width: 300,
         alignment: Alignment.topCenter,
         margin: EdgeInsets.only(bottom: 12.0),
+        key: Key('entrar'+leccion.nombre),
         child: GestureDetector(
             onTap: () {
-
+              print("ID " + leccion.id);
               if(_estado != 'bloqueado') {
+                print("-");
                 Provider.of<Preguntas>(context, listen:false).setIdLeccion(leccion.id);
                 Provider.of<Preguntas>(context, listen: false)
                     .fetchAndSetPreguntas(leccion.id);
@@ -53,10 +56,10 @@ class LeccionItem extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: Colors.white,
                         border: Border.all(color: Colors.black),
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: NetworkImage('http://${IP.ip}:5000/img/${_imagenprincipal}'),
-                        )
+                        /*image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: NetworkImage('http://${IP.ip}:5000/img/${_imagenprincipal}'),
+                          )*/
 
                       ),
                     )),

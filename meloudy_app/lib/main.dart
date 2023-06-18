@@ -35,8 +35,12 @@ import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
 import 'package:meloudy_app/screen/pantalla_cargando.dart';
 import 'package:meloudy_app/screen/pantalla_dashboard.dart';
+
+import 'modo.dart';
 void main() {
+  MODO.modo = 0;
   runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -68,8 +72,10 @@ class MyApp extends StatelessWidget {
             preguntasAnteriores..update(auth.token)
         ),
         ChangeNotifierProxyProvider<Auth, Opciones>(
-            update: (ctx, auth, opcionesanteriores,) =>
-                Opciones(opcionesanteriores == null ? [] : opcionesanteriores.items)),
+            create: (_) => Opciones(),
+            update: (ctx, auth, opcionesAnteriores) =>
+            opcionesAnteriores..update(auth.token)
+        ),
         ChangeNotifierProxyProvider<Auth, Notas>(
             update: (ctx, auth, notasanteriores, ) =>
                 Notas(notasanteriores == null ? [] : notasanteriores.items)),
@@ -89,13 +95,13 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: Paleta.blueBackground,
             primarySwatch: Paleta.blueCustom,
           ),
-          //home: MicrofonoPantalla(),
-          home: auth.isAuth
-              ? LeccionesPantalla() : FutureBuilder(
+          home: /*LeccionesPantalla()*/
+              auth.isAuth
+              ? LeccionesPantalla() : MODO.modo == 0 ? FutureBuilder(
                 future: auth.tryAutoLogin(),
                 builder: (ctx, authResultSnapshot) =>
                   authResultSnapshot.connectionState == ConnectionState.waiting ? PantallaCargando() : Login(),
-          ),
+          ) : Login(),
           routes: {
             LeccionPantalla.routeName: (ctx) => LeccionPantalla(),
             LeccionesPantallaProfesor.routeName: (ctx) => LeccionesPantallaProfesor(),

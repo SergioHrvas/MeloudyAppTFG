@@ -9,26 +9,121 @@ Para realizar las pruebas se han utilizado los siguientes paquetes:
 
 \begin{itemize}
     \item \textbf{flutter\_test}: paquete que contiene las clases necesarias para realizar las pruebas de unidad.
-    \item \textbf{flutter\_driver}: paquete que contiene las clases necesarias para realizar las pruebas de integración.
+    \item \textbf{nock}: paquete que permite simular las peticiones HTTP realizadas por la aplicación y devolver una respuesta simulada
 \end{itemize}
+
 
 \section{Pruebas de unidad}
 \label{sec:pruebas-unidad}
 Las pruebas de unidad son aquellas que se realizan sobre los componentes más pequeños del sistema, como pueden ser las funciones o los métodos. Estas pruebas se realizan de forma individual, aislando el componente a probar de los demás componentes del sistema. 
 De esta forma nos aseguramos de que el componente funciona correctamente y que no depende de otros componentes para su correcto funcionamiento.
+\newpage
+
+
 
 \subsection{Lecciones}
 \label{subsec:pruebas-unidad-lecciones}
+A continuación se describen las pruebas realizadas sobre las lecciones:
+\begin{itemize}
+    \item \textbf{Obtención y guardado}: Las lecciones deben obtenerse y guardarse en el vector del provider (método fetchAndSetLecciones). \textit{Tras la ejecución del método el provider debe contener una lista no vacía de lecciones.} 
+    \item \textbf{Obtención del índice mediante el id}: Dado un id de una lección, se debe obtener el índice de la lección en el vector del provider (método getIndice). \textit{El método no debe devolver el valor '-1'.}
+    \item \textbf{Creación de una lección}: Se debe crear una lección con los datos correctos (método crearLeccion). \textit{Tras ejecutar el método, el vector de lecciones del provider debe tener una longitud mayor que antes de ejecutarlo.}
+    \item \textbf{Modificación de una lección}: Se debe modificar una lección con los datos correctos (método modificarLeccion). \textit{Tras ejecutar el método, los datos antiguos y nuevos de la lección deben ser distintos.}
+    \item \textbf{Eliminación de una lección}: Se debe eliminar una lección coorectamente (método eliminarLeccion). \textit{Tras ejecutar el método, el vector de lecciones del provider debe tener una longitud menor que antes de ejecutarlo.}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/c8/pruebalecciones.png}
+    \caption{Resulados de las pruebas de unidad de las lecciones}
+    \label{fig:pruebas_unidad_lecciones}
+\end{figure}
 
 
+\subsection{Preguntas}
+\label{subsec:pruebas-unidad-preguntas}
+Las pruebas realizadas sobre las preguntas son las siguientes:
+\begin{itemize}
+    \item \textbf{Obtención y guardado de preguntas del profesor}: Las preguntas de la vista del profesor deben obtenerse y guardarse en el vector del provider PreguntasProfesor (método fetchAndSetPreguntas). \textit{Después de ejecutar el método, el provider debe contener una lista no vacía de preguntas.}
+    \item \textbf{Obtención del índice mediante el id}: Dado un id de una pregunta, se debe obtener el índice de la pregunta en el vector del provider (método getIndice). \textit{El método no debe devolver el valor '-1'.}
+    \item \textbf{Creación de una pregunta}: Se debe crear una pregunta con los datos correctos (método crearPregunta). \textit{Tras ejecutar el método, el vector de preguntas del provider debe tener una longitud mayor que antes de ejecutarlo }
+    \item \textbf{Modificación de una pregunta}: Se debe modificar una pregunta con los datos correctos (método modificarPregunta). \textit{Tras la ejución del método, los datos antiguos y nuevos de la pregunta deben ser distintos.}
+    \item \textbf{Eliminación de una pregunta}: Se debe eliminar una pregunta coorectamente (método eliminarPregunta). \textit{Tras ejecutar el método, el provider no debe contener la pregunta.}
+    \item \textbf{Obtención y guardado de preguntas}: Las preguntas deben obtenerse y guardarse en el vector del provider Preguntas (método fetchAndSetPreguntas). \textit{Después de ejecutar el método, el provider debe contener una lista no vacía de preguntas.}
+    \item \textbf{Asignar opción}: Se debe asignar una opción a una pregunta correctamente cuando se crea o modifica una pregunta (método setValor). \textit{Tras ejecutar el método, las opciones de la pregunta deben coincidir con las opciones asignadas.}
+    \item \textbf{Asignar respuesta}: Se debe asignar una respuesta a una pregunta correctamente cuando el usuario responde (método setRespuestas). \textit{Después de la ejecución, la respuesta de la pregunta debe coincidir con la respuesta asignada.}
+    \item \textbf{Asignar pulsado}: Se debe asignar el valor de la variable "pulsado" correctamente cuando el usuario pulsa una opción (método setPulsado). \textit{Después de la ejecución, los valores del array "pulsado" deben coincidir con los asignados.}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/c8/pruebapreguntas.png}
+    \caption{Resulados de las pruebas de unidad de las preguntas}
+    \label{fig:pruebas_unidad_preguntas}
+\end{figure}
+
+
+\subsection{Usuarios}
+\label{subsec:pruebas-unidad-usuarios}
+Las pruebas realizadas sobre los usuarios son las siguientes:
+\begin{itemize}
+    \item \textbf{Obtención y guardado}: Los usuarios deben obtenerse y guardarse en el vector del provider (método fetchAndSetUsuarios). \textit{Tras la ejecución del método el provider debe contener una lista no vacía de usuarios.}
+    \item \textbf{Obtención del índice mediante el id}: Dado un id de un usuario, se debe obtener el índice del usuario en el vector del provider (método getIndice). \textit{El método no debe devolver el valor '-1'.}
+    \item \textbf{Creación de un usuario}: Se debe crear un usuario con los datos correctos (método crearUsuario). \textit{Tras ejecutar el método, el vector de usuarios del provider debe tener una longitud mayor que antes de ejecutarlo.}
+    \item \textbf{Modificación de un usuario}: Se debe modificar un usuario con los datos correctos (método modificarUsuario). \textit{Tras ejecutar el método, los datos antiguos y nuevos del usuario deben ser distintos.}
+    \item \textbf{Eliminación de un usuario}: Se debe eliminar un usuario coorectamente (método eliminarUsuario). \textit{Tras ejecutar el método, el vector de usuarios del provider debe tener una longitud menor que antes de ejecutarlo.}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/c8/pruebausuarios.png}
+    \caption{Resulados de las pruebas de unidad de los usuarios}
+    \label{fig:pruebas_unidad_usuarios}
+\end{figure}
+
+\subsection{Logros}
+\label{subsec:pruebas-unidad-logros}
+Las pruebas realizadas sobre los logros son las siguientes:
+\begin{itemize}
+    \item \textbf{Obtención y guardado}: Los logros deben obtenerse y guardarse en el vector del provider (método fetchAndSetLogros). \textit{Tras la ejecución del método el provider debe contener una lista no vacía de logros.}
+    \item \textbf{Obtención del índice mediante el id}: Dado un id de un logro, se debe obtener el índice del logro en el vector del provider (método getIndice). \textit{El método no debe devolver el valor '-1'.}
+    \item \textbf{Creación de un logro}: Se debe crear un logro con los datos correctos (método crearLogro). \textit{Tras ejecutar el método, el vector de logros del provider debe tener una longitud mayor que antes de ejecutarlo.}
+    \item \textbf{Modificación de un logro}: Se debe modificar un logro con los datos correctos (método modificarLogro). \textit{Tras ejecutar el método, los datos antiguos y nuevos del logro deben ser distintos.}
+    \item \textbf{Eliminación de un logro}: Se debe eliminar un logro coorectamente (método borrarLogro). \textit{Tras ejecutar el método, el vector de logros del provider debe tener una longitud menor que antes de ejecutarlo.}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/c8/pruebalogros.png}
+    \caption{Resulados de las pruebas de unidad de los logros}
+    \label{fig:pruebas_unidad_logros}
+\end{figure}
 
 
 \section*{Pruebas de controlador o widget}
 \label{sec:pruebas-controlador}
 Las pruebas de controlador o widget son aquellas que se realizan sobre los controladores o widgets de la aplicación. Estas pruebas se realizan de forma individual, aislando el controlador o widget a probar de los demás componentes del sistema.
+A continuación se muestran las pruebas realizadas sobre algunos widgets de la aplicación.
 
+\subsection{Botón de acceso a lección}
+\label{subsec:pruebas-controlador-boton-leccion}
+La pantalla de lecciones del usuario contiene un botón para acceder a cada lección. Se ha realizado una prueba sobre el botón de la lección 2 ("Los instrumentos"), comprobando que al pulsar el botón se accede a la lección 2.
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la lección 2, en este caso "Los instrumentos".
+
+\subsection{Botón de acceso a lista de lecciones}
+\label{subsec:pruebas-controlador-boton-lecciones}
+El dashboard del usuario contiene un botón para acceder a las lecciones. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lecciones. 
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "1. Introducción".
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/c8/pruebaleccion.png}
+    \caption{Resulados de las pruebas de los widget de acceso a lección y a lista de lecciones}
+    \label{fig:pruebas_controlador_boton_leccion}
+\end{figure}
 
 \section*{Pruebas de sistema o de integración}
 \label{sec:pruebas-sistema}
 Las pruebas de sistema o de integración son aquellas que se realizan sobre el sistema completo. Estas pruebas se realizan de forma conjunta, comprobando que todos los componentes del sistema funcionan correctamente y que se comunican entre ellos de forma correcta.
 De esta forma nos aseguramos de que el sistema funciona de forma adecuada simulando varias acciones que podría realizar un usuario.
+

@@ -6,6 +6,8 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../modo.dart';
+
 class Auth with ChangeNotifier {
   String _token;
   DateTime _expiryDate;
@@ -79,8 +81,8 @@ class Auth with ChangeNotifier {
             "correo": email,
             "password": password,
           }));
+
       final responseData = json.decode(response.body);
-      print(responseData);
       if (responseData['error'] != null) {
         throw HttpException(responseData['error']['message']);
       }
@@ -89,26 +91,29 @@ class Auth with ChangeNotifier {
       _rol = responseData['usuario']['rol'];
       _expiryDate =
           DateTime.now().add(Duration(seconds: responseData['expiresIn']));
-      _autoLogout();
+      if(MODO.modo == 0)
+        _autoLogout();
       notifyListeners();
+      if(MODO.modo == 0) {
+        final prefs = await SharedPreferences.getInstance();
+        final userData = json.encode(
+          {
+            'token': _token,
+            'userId': _userId,
+            'rol': _rol,
+            'expireDate': _expiryDate.toIso8601String(),
+          },
+        );
 
-      final prefs = await SharedPreferences.getInstance();
-      final userData = json.encode(
-        {
-          'token': _token,
-          'userId': _userId,
-          'rol': _rol,
-          'expireDate': _expiryDate.toIso8601String(),
-        },
-      );
-
-      prefs.setString('userData', userData);
+        prefs.setString('userData', userData);
+      }
     } catch (error) {
       throw error;
     }
   }
 
   Future<bool> tryAutoLogin() async {
+
     final prefs = await SharedPreferences.getInstance();
     if (!prefs.containsKey('userData')) {
       return false;

@@ -31,7 +31,6 @@ class _LeccionesListaState extends State<LeccionesLista> {
         _isLoading = true;
       });
       var id = Provider.of<Auth>(context).userId;
-
         Provider.of<Lecciones>(context).fetchAndSetLecciones(id).then((_) {
         if(this.mounted) {
           setState(() {
@@ -47,6 +46,7 @@ class _LeccionesListaState extends State<LeccionesLista> {
   Widget build(BuildContext context) {
     final leccionesData = Provider.of<Lecciones>(context);
     final lecciones = leccionesData.items;
+
     var child = new List<Widget>();
     for (var i = 0; i < lecciones.length; i++) {
       child.add(
@@ -65,7 +65,7 @@ class _LeccionesListaState extends State<LeccionesLista> {
       );
     }
     return Column(
-      children: child,
+      children: [...child],
     );
   }
 }

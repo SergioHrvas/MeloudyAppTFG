@@ -70,13 +70,10 @@ class Preguntas with ChangeNotifier {
         }
       }
     }
-
-    //  print("RESPUESTAS: " + preguntas[indice].respuestas.toString());
   }
 
   void setIdLeccion(id) {
     idLeccion = id;
-    print("ID " + idLeccion);
   }
 
   void setIdUser(id) {
@@ -172,12 +169,7 @@ class Preguntas with ChangeNotifier {
         else if(preguntas[i].tipo == 'microfono'){
           preguntasmicrofono++;
         }
-        /* print("------------VERIFICADOR------------");
-        print("pregunta" + i.toString());
-        print("respuestas: " + preguntas[i].respuestas.toString());
 
-        print("respuestascorrectas: " + preguntas[i].respuestascorrectas.toString());
-        print("CONTADOR:" + aciertos.toString());*/
       }
     }
   }
@@ -188,6 +180,8 @@ class Preguntas with ChangeNotifier {
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
+      print(response.body.toString());
+      print('···································3');
 
       extractedData['preguntas'].shuffle();
 
@@ -334,19 +328,6 @@ class Preguntas with ChangeNotifier {
 
           }));
 
-
-      print(json.encode({
-        'idLeccion': idLeccion,
-        'preguntas': preguntasTest,
-        'idUsuario': userId,
-        "aprobado": aprobado,
-        "num_aciertos": aciertos,
-        "num_aciertos_unica": preguntasunica,
-        "num_aciertos_multiple": preguntasmultiple,
-        "num_aciertos_texto": preguntastexto,
-        "num_aciertos_micro": preguntasmicrofono,
-
-      }));
 
 
       final responseData = json.decode(response.body);

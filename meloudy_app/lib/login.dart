@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:meloudy_app/providers/lecciones.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/auth.dart';
 import 'package:meloudy_app/widget/drawer_app.dart';
@@ -8,6 +9,8 @@ enum AuthMode { Signup, Login }
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    print("aasasasadasdasd");
+
     final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(title: Text("MELOUDY")),
@@ -110,8 +113,8 @@ class _AuthCardState extends State<AuthCard> {
       await Provider.of<Auth>(context, listen: false).registro(
           _authData['email'],
           _authData['password'],
-          "Nombreprueba",
-          ["ApellidoPrueba","ddsda"],
+          " ",
+          ["ApellidoPrueba"," "],
           "Usuario");
       // Sign user up
     }
@@ -135,6 +138,7 @@ class _AuthCardState extends State<AuthCard> {
   @override
   Widget build(BuildContext context) {
 
+    Provider.of<Lecciones>(context, listen: false).fetchAndSetLecciones('');
     final deviceSize = MediaQuery.of(context).size;
     //obtenerLecciones();
     return Card(
@@ -156,6 +160,7 @@ class _AuthCardState extends State<AuthCard> {
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Correo electrónico'),
                   keyboardType: TextInputType.emailAddress,
+                  key: Key('correo'),
                   validator: (value) {
                     if (value.isEmpty || !value.contains('@')) {
                       return '¡Correo inválido!';
@@ -169,6 +174,8 @@ class _AuthCardState extends State<AuthCard> {
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Contraseña'),
                   obscureText: true,
+                  key: Key('password'),
+
                   controller: _passwordController,
                   validator: (value) {
                     if (value.isEmpty || value.length < 5) {

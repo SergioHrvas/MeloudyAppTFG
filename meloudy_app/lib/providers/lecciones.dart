@@ -30,10 +30,14 @@ class Lecciones with ChangeNotifier {
   }
 
   Future<void> fetchAndSetLecciones(id) async {
+    id = '63fe53c56ac25d3aa7ac988b';
     final url = Uri.parse(
-        'http://${IP.ip}:5000/api/lesson/get-lessons/${id}?auth=$authToken');
+        'http://${IP.ip}:5000/api/lesson/get-lessons/${id}');
     try {
+      print("a");
       final response = await http.get(url);
+      print("b");
+
 
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
 
@@ -132,7 +136,6 @@ class Lecciones with ChangeNotifier {
   }
 
   Future<void> modificarLeccion(data, id) async {
-    print(data);
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/lesson/update-lesson/${id}?auth=$authToken');
 
@@ -176,7 +179,6 @@ class Lecciones with ChangeNotifier {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/lesson/create-lesson?auth=$authToken');
 
-    print(data);
     final response = await http.post(url,
         headers: {
           "Accept": "application/json",

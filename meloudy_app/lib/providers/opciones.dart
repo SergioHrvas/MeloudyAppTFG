@@ -15,7 +15,13 @@ class Opciones with ChangeNotifier {
   List<dynamic> opciones = [];
   List<String> opcionesTexto = [];
 
-  Opciones(this.opciones);
+  Opciones();
+
+  String authToken;
+
+
+  void update(tkn){
+  }
 
   List<dynamic> get items {
     return [...opciones];
@@ -49,7 +55,6 @@ class Opciones with ChangeNotifier {
       }
     }
     opciones[indice] = !opciones[indice];
-    print(opciones.toString());
     notifyListeners();
   }
 

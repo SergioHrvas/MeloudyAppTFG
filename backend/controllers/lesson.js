@@ -133,7 +133,6 @@ const get = (req, res) => {
 
 const remove = (req, res) => {
     const id = req.params.id;
-    console.log("ID: " + id);
     Lesson.findByIdAndDelete(id, (error, lesson) => {
         if (error || !lesson) {
             return res.status(404).json({
@@ -154,7 +153,6 @@ const update = (req, res) => {
     const id = req.params.id;
     const param = req.body;
     
-    console.log(param);
      Lesson.findByIdAndUpdate(id, param, { new: true }, (error, lesson) => {
         if (error || !lesson) {
             return res.status(404).json({
