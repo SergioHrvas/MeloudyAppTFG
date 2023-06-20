@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meloudy_app/screen/pregunta_pantalla.dart';
+import 'package:meloudy_app/screen/pantalla_pregunta.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/auth.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/leccion.dart';
 
 import '../providers/lecciones.dart';
@@ -63,7 +64,7 @@ class LeccionItemProfesor extends StatelessWidget {
     for(var i = 0; i < _nombre.length; i++){
       nombreleccion.add(_nombre[i]);
     }
-
+    print(_nombre);
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -90,13 +91,13 @@ class LeccionItemProfesor extends StatelessWidget {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
-                      image: DecorationImage(
+                      /*image: DecorationImage(
                         fit: BoxFit.fill,
-                        image: true
+                        image: MODO.modo != 1
                             ? NetworkImage(
                                 'http://${IP.ip}:5000/img/${_imagenprincipal}')
-                            : AssetImage('assets/${_imagenprincipal}'),
-                      )),
+                            : AssetImage('assets/musica.png'),
+                      )*/),
                 )),
             Container(
               margin: EdgeInsets.only(left: 5),
@@ -124,27 +125,31 @@ class LeccionItemProfesor extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                            margin: EdgeInsets.symmetric(horizontal: 4),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                showAlertDialog(context);
-                              },
-                              child: Text("Borrar",style: TextStyle(fontSize: 20)),
-                              style:
-                                  ElevatedButton.styleFrom(primary: Colors.red),
-                            )),
-                        Container(
-                            margin: EdgeInsets.symmetric(horizontal: 4),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushNamed(context, '/editarleccion',
-                                    arguments: {"id": _id});
-                              },
-                              child: Text("Editar", style: TextStyle(fontSize: 20),),
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.purple,),
-                            ))
+                        Flexible(
+                          child: Container(
+                              margin: EdgeInsets.symmetric(horizontal: 4),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  showAlertDialog(context);
+                                },
+                                child: Text("Borrar",style: TextStyle(fontSize: 20)),
+                                style:
+                                    ElevatedButton.styleFrom(primary: Colors.red),
+                              )),
+                        ),
+                        Flexible(
+                          child: Container(
+                              margin: EdgeInsets.symmetric(horizontal: 4),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/editarleccion',
+                                      arguments: {"id": _id});
+                                },
+                                child: Text("Editar", style: TextStyle(fontSize: 20),),
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.purple,),
+                              )),
+                        )
                       ],
                     ),
                   )

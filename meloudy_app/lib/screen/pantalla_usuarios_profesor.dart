@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../ips.dart';
 import '../extensiones.dart';
+import '../modo.dart';
 import '../providers/usuarios.dart';
 import '../widget/drawer_app.dart';
 
@@ -92,7 +93,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                   color: Colors.white,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage('http://${IP.ip}:5000/img/${usuarios[i].foto}'),
+                    image: MODO.modo != 1 ? NetworkImage('http://${IP.ip}:5000/img/${usuarios[i].foto}') : AssetImage('assets/musica.png'),
                   ),
                 ),
               ),
@@ -182,8 +183,8 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add)),
-                          Text("Crear Usuario",style: TextStyle(fontSize: 20),),
+                          Flexible(child: Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add))),
+                          Flexible(child: Text("Crear Usuario",style: TextStyle(fontSize: 20),)),
                         ],
                       ),
                     ),)),

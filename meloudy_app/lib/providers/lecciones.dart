@@ -4,6 +4,7 @@ import 'package:meloudy_app/ips.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:meloudy_app/providers/test.dart';
+import '../modo.dart';
 import './leccion.dart';
 
 class Lecciones with ChangeNotifier {
@@ -30,13 +31,14 @@ class Lecciones with ChangeNotifier {
   }
 
   Future<void> fetchAndSetLecciones(id) async {
-    id = '63fe53c56ac25d3aa7ac988b';
+    print(" - " + id.toString() + " - ");
+    if((id == "" || id == null) && MODO.modo == 1)
+       id = '63fe53c56ac25d3aa7ac988b';
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/lesson/get-lessons/${id}');
     try {
       print("a");
       final response = await http.get(url);
-      print("b");
 
 
       final extractedData = json.decode(response.body) as Map<String, dynamic>;

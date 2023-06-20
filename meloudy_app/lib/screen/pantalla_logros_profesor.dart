@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/auth.dart';
 import '../providers/lecciones.dart';
 import '../providers/logros.dart';
@@ -87,7 +88,7 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
                 height: 75,
                 width: 75,
                 child: Container(                decoration: BoxDecoration(border: Border.all(color: Colors.black), borderRadius: BorderRadius.circular(200)),
-                    child: Image.network('http://${IP.ip}:5000/img/${logros[i].imagen}',))
+                    child: MODO.modo != 1 ? Image.network('http://${IP.ip}:5000/img/${logros[i].imagen}',) : Container())
               ),
               Container(
                 child: Flexible(
@@ -177,8 +178,8 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
                       width: 150,
                       child: Row(
                         children: [
-                          Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add)),
-                          Text("Crear Logro",style: TextStyle(fontSize: 20),),
+                          Flexible(child: Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add))),
+                          Flexible(child: Text("Crear Logro",style: TextStyle(fontSize: 20),)),
                         ],
                       ),
                     ),)),

@@ -6,6 +6,7 @@ import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/logro.dart';
 import '../providers/logros.dart';
 import '../widget/pregunta_widget.dart';
@@ -41,8 +42,8 @@ class PantallaLogro extends StatelessWidget {
                       border: Border.all(color: Colors.black),
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                              "http://${IP.ip}:5000/img/${logro.imagen}"))),
+                          image: MODO.modo != 1 ? NetworkImage(
+                              "http://${IP.ip}:5000/img/${logro.imagen}") : AssetImage('assets/musica.png') )),
                 ),
                 Container(
                   margin: EdgeInsets.only(right: 20, left: 20, bottom: 20),

@@ -3,6 +3,7 @@ import 'package:meloudy_app/providers/usuario_perfil.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/logros.dart';
 import 'package:meloudy_app/extensiones.dart';
 import '../widget/drawer_app.dart';
@@ -44,7 +45,7 @@ class _PantallaLogrosState extends State<PantallaLogros> {
                 height: 75,
                 width: 75,
                 child: Container(                decoration: BoxDecoration(border: Border.all(color: Colors.black), borderRadius: BorderRadius.circular(200)),
-                    child: Image.network('http://${IP.ip}:5000/img/${logros[i].imagen}',))
+                    child: MODO.modo != 1 ? Image.network('http://${IP.ip}:5000/img/${logros[i].imagen}',) : Container())
               ),
               Container(
                 child: Flexible(

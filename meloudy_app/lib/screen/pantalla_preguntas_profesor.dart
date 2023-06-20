@@ -3,6 +3,7 @@ import '../extensiones.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/auth.dart';
 import '../providers/lecciones.dart';
 import '../providers/notas.dart';
@@ -92,8 +93,8 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                   color: Colors.white,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                        'http://${IP.ip}:5000/img/${preguntas[i].imagen}'),
+                    image: MODO.modo != 1 ? NetworkImage(
+                        'http://${IP.ip}:5000/img/${preguntas[i].imagen}') : AssetImage('assets/musica.png'),
                   ),
                 ),
               ),
@@ -220,12 +221,16 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                       width: 175,
                       child: Row(
                         children: [
-                          Container(
-                              margin: EdgeInsets.only(right: 10),
-                              child: Icon(Icons.add_comment)),
-                          Text(
-                            "Crear pregunta",
-                            style: TextStyle(fontSize: 20),
+                          Flexible(
+                            child: Container(
+                                margin: EdgeInsets.only(right: 10),
+                                child: Icon(Icons.add_comment)),
+                          ),
+                          Flexible(
+                            child: Text(
+                              "Crear Pregunta",
+                              style: TextStyle(fontSize: 20),
+                            ),
                           ),
                         ],
                       ),

@@ -1,93 +1,20 @@
-
 import 'package:flutter/material.dart';
-import 'package:meloudy_app/providers/lecciones.dart';
 import 'package:provider/provider.dart';
-import 'package:meloudy_app/providers/auth.dart';
-import 'package:meloudy_app/widget/drawer_app.dart';
+
+import '../providers/auth.dart';
+import '../providers/lecciones.dart';
 enum AuthMode { Signup, Login }
 
-class Login extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    print("aasasasadasdasd");
-
-    final deviceSize = MediaQuery.of(context).size;
-    return Scaffold(
-        appBar: AppBar(title: Text("MELOUDY")),
-        drawer: DrawerApp(),
-        body: Stack(children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromRGBO(117, 234, 255, 1.0).withOpacity(0.5),
-                  Color.fromRGBO(115, 100, 200, 1).withOpacity(0.9),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                stops: [0, 1],
-              ),
-            ),
-          ),
-          SingleChildScrollView(
-            child: Container(
-              height: deviceSize.height,
-              width: deviceSize.width,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Flexible(
-                    child: Container(
-                      margin: EdgeInsets.only(bottom: 30.0, top: 30.0),
-                      padding:
-                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 40.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.lightBlue.shade700,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 8,
-                            color: Colors.black26,
-                            offset: Offset(0, 2),
-                          )
-                        ],
-                      ),
-                      child: Text(
-                        "MELOUDY",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 50,
-                          fontFamily: 'Anton',
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Flexible(
-                    flex: deviceSize.width > 600 ? 2 : 1,
-                    child: AuthCard(),
-                  )
-                ],
-              ),
-              padding: EdgeInsets.only(left: 20, right: 20),
-              margin: EdgeInsets.only(top: 5),
-            ),
-          ),
-        ]));
-  }
-}
-
-class AuthCard extends StatefulWidget {
-  const AuthCard({
+class TarjetaLogin extends StatefulWidget {
+  const TarjetaLogin({
     Key key,
   }) : super(key: key);
 
   @override
-  _AuthCardState createState() => _AuthCardState();
+  _TarjetaLoginState createState() => _TarjetaLoginState();
 }
 
-class _AuthCardState extends State<AuthCard> {
+class _TarjetaLoginState extends State<TarjetaLogin> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode = AuthMode.Login;
   Map<String, String> _authData = {'email': '', 'password': ''};
@@ -104,10 +31,9 @@ class _AuthCardState extends State<AuthCard> {
       _isLoading = true;
     });
     if (_authMode == AuthMode.Login) {
-
       await Provider.of<Auth>(context, listen: false).login(
-        _authData['email'],
-        _authData['password']
+          _authData['email'],
+          _authData['password']
       );
     } else {
       await Provider.of<Auth>(context, listen: false).registro(
@@ -149,7 +75,7 @@ class _AuthCardState extends State<AuthCard> {
       child: Container(
         height: _authMode == AuthMode.Signup ? 320 : 260,
         constraints:
-            BoxConstraints(minHeight: _authMode == AuthMode.Signup ? 320 : 260),
+        BoxConstraints(minHeight: _authMode == AuthMode.Signup ? 320 : 260),
         width: deviceSize.width * 0.75,
         padding: EdgeInsets.all(16.0),
         child: Form(
@@ -190,14 +116,14 @@ class _AuthCardState extends State<AuthCard> {
                   TextFormField(
                     enabled: _authMode == AuthMode.Signup,
                     decoration:
-                        InputDecoration(labelText: 'Confirmar contraseña'),
+                    InputDecoration(labelText: 'Confirmar contraseña'),
                     obscureText: true,
                     validator: _authMode == AuthMode.Signup
                         ? (value) {
-                            if (value != _passwordController.text) {
-                              return '¡Las contraseñas no coinciden!';
-                            }
-                          }
+                      if (value != _passwordController.text) {
+                        return '¡Las contraseñas no coinciden!';
+                      }
+                    }
                         : null,
                   ),
                 SizedBox(

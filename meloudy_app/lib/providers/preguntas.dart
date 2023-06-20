@@ -9,6 +9,7 @@ import 'dart:convert';
 import 'package:meloudy_app/providers/pregunta.dart';
 import 'package:provider/provider.dart';
 
+import '../modo.dart';
 import 'auth.dart';
 
 class Preguntas with ChangeNotifier {
@@ -175,8 +176,13 @@ class Preguntas with ChangeNotifier {
   }
 
   Future<void> fetchAndSetPreguntas(leccion) async {
-    final url = Uri.parse(
+    Uri url;
+    if(MODO.modo != 1)
+    url = Uri.parse(
         'http://${IP.ip}:5000/api/question/get-questions/${leccion}?auth=$authToken');
+    else
+      url = Uri.parse(
+          'http://${IP.ip}:5000/api/question/get-questions/${leccion}');
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;

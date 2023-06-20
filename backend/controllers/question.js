@@ -36,7 +36,6 @@ const index = (req, res) => {
 }
 
 const indexTest = (req, res) => {
-    console.log("aa");
     console.log(req.params.idLeccion);
     const idLeccion = req.params.idLeccion;
     Question.find({ leccion: idLeccion }, (error, questions) => {

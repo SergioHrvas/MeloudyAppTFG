@@ -12,7 +12,7 @@ import 'package:meloudy_app/screen/historial_tests.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla.dart';
 import 'package:flutter/material.dart';
-import 'package:meloudy_app/login.dart';
+import 'package:meloudy_app/screen/pantalla_login.dart';
 import 'package:meloudy_app/providers/auth.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_leccion_profesor.dart';
@@ -30,7 +30,7 @@ import 'package:meloudy_app/screen/pantalla_logros_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_preguntas_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_usuario.dart';
 import 'package:meloudy_app/screen/pantalla_usuarios_profesor.dart';
-import 'package:meloudy_app/screen/pregunta_pantalla.dart';
+import 'package:meloudy_app/screen/pantalla_pregunta.dart';
 import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
 import 'package:meloudy_app/screen/pantalla_cargando.dart';
@@ -100,8 +100,8 @@ class MyApp extends StatelessWidget {
               ? LeccionesPantalla() : MODO.modo == 0 ? FutureBuilder(
                 future: auth.tryAutoLogin(),
                 builder: (ctx, authResultSnapshot) =>
-                  authResultSnapshot.connectionState == ConnectionState.waiting ? PantallaCargando() : Login(),
-          ) : Login(),
+                  authResultSnapshot.connectionState == ConnectionState.waiting ? PantallaCargando() : PantallaLogin(),
+          ) : PantallaLogin(),
           routes: {
             LeccionPantalla.routeName: (ctx) => LeccionPantalla(),
             LeccionesPantallaProfesor.routeName: (ctx) => LeccionesPantallaProfesor(),

@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
 
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/auth.dart';
 import '../providers/preguntas.dart';
 
@@ -36,8 +37,8 @@ class LeccionPantalla extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20),
           margin: EdgeInsets.only(bottom: 20),
           child: Container(
-            /*child:
-                Image.network('http://${IP.ip}:5000/img/${contenido[i].texto}'),*/
+            child:
+                MODO.modo == 1 ? Container() : Image.network('http://${IP.ip}:5000/img/${contenido[i].texto}'),
             decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           ),
         ));
