@@ -10,7 +10,7 @@ import 'package:meloudy_app/providers/usuarios.dart';
 import 'package:meloudy_app/screen/TestAcabadoPantalla.dart';
 import 'package:meloudy_app/screen/historial_tests.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
-import 'package:meloudy_app/screen/lecciones_pantalla.dart';
+import 'package:meloudy_app/screen/pantalla_lecciones.dart';
 import 'package:flutter/material.dart';
 import 'package:meloudy_app/screen/pantalla_login.dart';
 import 'package:meloudy_app/providers/auth.dart';
@@ -97,12 +97,13 @@ class MyApp extends StatelessWidget {
           ),
           home: /*LeccionesPantalla()*/
               auth.isAuth
-              ? LeccionesPantalla() : MODO.modo == 0 ? FutureBuilder(
+              ? PantallaLecciones() : MODO.modo == 0 ? FutureBuilder(
                 future: auth.tryAutoLogin(),
                 builder: (ctx, authResultSnapshot) =>
                   authResultSnapshot.connectionState == ConnectionState.waiting ? PantallaCargando() : PantallaLogin(),
           ) : PantallaLogin(),
           routes: {
+            PantallaLecciones.routeName: (ctx) => PantallaLecciones(),
             LeccionPantalla.routeName: (ctx) => LeccionPantalla(),
             LeccionesPantallaProfesor.routeName: (ctx) => LeccionesPantallaProfesor(),
             PantallaDashboard.routeName: (ctx) => PantallaDashboard(),

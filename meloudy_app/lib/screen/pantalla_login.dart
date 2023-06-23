@@ -50,6 +50,7 @@ class PantallaLogin extends StatelessWidget {
                       ),
                       child: Text(
                         "MELOUDY",
+                        key: Key('titulo'),
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 50,

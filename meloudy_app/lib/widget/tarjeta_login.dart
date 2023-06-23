@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../providers/auth.dart';
 import '../providers/lecciones.dart';
 enum AuthMode { Signup, Login }
@@ -63,8 +62,6 @@ class _TarjetaLoginState extends State<TarjetaLogin> {
 
   @override
   Widget build(BuildContext context) {
-
-    Provider.of<Lecciones>(context, listen: false).fetchAndSetLecciones('');
     final deviceSize = MediaQuery.of(context).size;
     //obtenerLecciones();
     return Card(
@@ -133,9 +130,11 @@ class _TarjetaLoginState extends State<TarjetaLogin> {
                   CircularProgressIndicator()
                 else
                   ElevatedButton(
+                    key: Key('boton1'),
                     child: Text(_authMode == AuthMode.Login
                         ? 'INICIAR SESIÓN'
-                        : 'REGISTRARME'),
+                        : 'REGISTRARME',
+                    ),
                     onPressed: _submit,
                     style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(

@@ -10,6 +10,7 @@ Para realizar las pruebas se han utilizado los siguientes paquetes:
 \begin{itemize}
     \item \textbf{flutter\_test}: paquete que contiene las clases necesarias para realizar las pruebas de unidad.
     \item \textbf{nock}: paquete que permite simular las peticiones HTTP realizadas por la aplicación y devolver una respuesta simulada
+    \item \textbf{flutter\_driver}: paquete que contiene las clases necesarias para realizar las pruebas de integración. 
 \end{itemize}
 
 
@@ -105,17 +106,53 @@ Las pruebas realizadas sobre los logros son las siguientes:
 Las pruebas de controlador o widget son aquellas que se realizan sobre los controladores o widgets de la aplicación. Estas pruebas se realizan de forma individual, aislando el controlador o widget a probar de los demás componentes del sistema.
 A continuación se muestran las pruebas realizadas sobre algunos widgets de la aplicación.
 
-\subsection{Botón de acceso a lección}
-\label{subsec:pruebas-controlador-boton-leccion}
-La pantalla de lecciones del usuario contiene un botón para acceder a cada lección. Se ha realizado una prueba sobre el botón de la lección 2 ("Los instrumentos"), comprobando que al pulsar el botón se accede a la lección 2.
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la lección 2, en este caso "Los instrumentos".
+\subsection{Botón de inicio de sesión}
+\label{subsec:pruebas-controlador-boton-inicio-sesión}
+El botón de inicio de sesión se encuentra en la pantalla de inicio de la aplicación. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lecciones (pantalla principal de la aplicación).
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "Los instrumentos".
 
-\subsection{Botón de acceso a lista de lecciones}
+\subsection{Botón de acceso a lista de lecciones del profesor}
 \label{subsec:pruebas-controlador-boton-lecciones}
-El dashboard del usuario contiene un botón para acceder a las lecciones. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lecciones. 
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "1. Introducción".
+El dashboard del usuario contiene un botón para acceder a las lecciones. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de lecciones. 
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "Crear Lección" y "Borrar".
+
+\subsection{Botón de acceso a lista de logros del profesor}
+\label{subsec:pruebas-controlador-boton-logros}
+El dashboard del usuario contiene un botón para acceder a los logros. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de logros. 
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de logros, en este caso "Crear Lección" y "Borrar".
+
+\subsection{Botón de acceso a lista de preguntas del profesor}
+\label{subsec:pruebas-controlador-boton-preguntas}
+El dashboard del usuario contiene un botón para acceder a los preguntas. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de preguntas. 
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de preguntas, en este caso "Crear Lección" y "Borrar".
+
+\subsection{Botón de acceso a lista de usuarios del profesor}
+\label{subsec:pruebas-controlador-boton-usuarios}
+El dashboard del usuario contiene un botón para acceder a los usuarios. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de usuarios. 
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de usuarios, en este caso "Crear Lección" y "Borrar".
+
+\subsection{Botón de acceso al perfil del usuario}
+\label{subsec:pruebas-controlador-boton-perfil-usuario}
+El drawer contiene un botón para acceder al perfil del usuario. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de perfil del usuario.
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de perfil del usuario, en este caso "Mis logros".
+
+\subsection{Botón de acceso a una lección}
+\label{subsec:pruebas-controlador-boton-leccion}
+Al pulsar sobre una lección de la lista de lecciones, se accede a la pantalla de lección. Se ha realizado una prueba sobre el botón, comprobando que dicho acceso se realiza correctamente.
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lección, en este caso "Historial".
+
+\subsection{Botón de acceso a una lección}
+\label{subsec:pruebas-controlador-boton-leccion}
+El drawer contiene un botón para acceder a la pantalla de lecciones. Se ha realizado una prueba sobre el botón, comprobando que dicho acceso se realiza correctamente.
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "Los instrumentos".
+
+\subsection{Botón de acceso al dashboard}
+\label{subsec:pruebas-controlador-boton-leccion}
+El drawer contiene un botón para acceder al dashboard. Se ha realizado una prueba sobre el botón, comprobando que dicho acceso se realiza correctamente.
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de dashboard, en este caso "Lecciones".
 
 \begin{figure}[H]
+\end{figure}
     \centering
     \includegraphics[width=\textwidth]{imagenes/c8/pruebaleccion.png}
     \caption{Resulados de las pruebas de los widget de acceso a lección y a lista de lecciones}

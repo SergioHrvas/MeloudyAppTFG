@@ -11,15 +11,19 @@ import 'package:meloudy_app/providers/auth.dart';
 import 'package:meloudy_app/providers/logros.dart';
 import 'package:meloudy_app/providers/preguntas.dart';
 import 'package:meloudy_app/providers/preguntas_profesor.dart';
+import 'package:meloudy_app/providers/usuario.dart';
+import 'package:meloudy_app/providers/usuario_perfil.dart';
 import 'package:meloudy_app/providers/usuarios.dart';
 import 'package:meloudy_app/screen/leccion_pantalla.dart';
 import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_dashboard.dart';
 import 'package:meloudy_app/screen/pantalla_logros_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_preguntas_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_usuario.dart';
 import 'package:meloudy_app/screen/pantalla_usuarios_profesor.dart';
 import 'package:meloudy_app/sesion.dart';
 import 'package:meloudy_app/widget/dashboard.dart';
+import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter/material.dart';
@@ -29,7 +33,7 @@ import 'package:meloudy_app/ips.dart';
 import 'package:meloudy_app/main.dart';
 import 'package:meloudy_app/modo.dart';
 import 'package:meloudy_app/providers/lecciones.dart';
-import 'package:meloudy_app/screen/lecciones_pantalla.dart';
+import 'package:meloudy_app/screen/pantalla_lecciones.dart';
 import 'package:meloudy_app/screen/pantalla_login.dart';
 import 'package:meloudy_app/widget/tarjeta_login.dart';
 import 'package:nock/nock.dart';
@@ -90,7 +94,7 @@ void main() {
                 ),
             home: Scaffold(
               body:               !auth.isAuth ?
-                PantallaLogin() : LeccionesPantalla(),
+                PantallaLogin() : PantallaLecciones(),
             ),
             ),
           )),
@@ -202,7 +206,7 @@ void main() {
                   primarySwatch: Paleta.blueCustom,
                 ),
                 home: Scaffold(
-                  body:         LeccionesPantalla()
+                  body:         PantallaLecciones()
                   ,
                 ),
                 routes: {
@@ -375,7 +379,134 @@ void main() {
         expect(find.text('Borrar'), findsWidgets);
       });
 
+  testWidgets('El botón de Inicio del Drawer funciona correctamente',
+          (WidgetTester tester) async {
+            nock('http://${IP.ip}:5000')
+                .get('/api/lesson/get-lessons/63fe53c56ac25d3aa7ac988b')
+                .reply(200, json.decode('{"status":"success","tests":[{"idLeccion":"63f94104d79a4308398b1f07","testsAprobados":21},{"idLeccion":"63f941efd79a4308398b1f09","testsAprobados":0}],"progreso":[{"_id":"640b00953b591db90fceb7b1","tests":["6462a2a0225c93f0488842c4","6462a323225c93f048884330","6462a942cfa832e841abe4bc","6462b0f464bd0eebefbb223d","6463f3688c2b6286f7e6f142","6463f6a32606c48c3af9a013","6463f89c01379949cfc3e74f","6463f9752afc6dcccec57a12","6463f9f0dbc909175a27b4bb","6463fa69b79137a9948ab38c","6463fb0fc619a45251a81cfb","6463fcb7cfa8f090e22704a9","6463fe830f2be99c40795f40","6463ff7ffff8e6de45c739df","646400379180fbf28af24b98","646400b45ca211fe0422a78c","64640152a17e89692d9b63c6","646402bfd8e5522c39fedec5","64640396525b19529562d016","64640661b66062ee2443445f","646406a2d256fbc576181989"],"idUsuario":"63fe53c56ac25d3aa7ac988b","idLeccion":"63f94104d79a4308398b1f07","__v":74,"completado":true},{"_id":"645c1708eb76fda410d2fbe0","tests":[],"idUsuario":"63fe53c56ac25d3aa7ac988b","idLeccion":"63f941efd79a4308398b1f09","completado":false,"__v":7}],"leccion":[{"_id":"63f94104d79a4308398b1f07","nombre":"Introduccion","texto":"adasdasdasdasd","contenido":[{"tipo":"titulo","texto":"Que es el sonido"},{"tipo":"texto","texto":"Es una onda que se propaga por el aire u otro medio, producida por la vibración de un cuerpo sonoro. El sonido posee las siguientes cualidades físicas: • Tono:  Viene determinada por la frecuencia de la vibración sonora y se mide en Hercios (Hz). Nos permite reconocer si un sonido es agudo (alta frecuencia) o grave (baja frecuencia). • Volumen: Intensidad o amplitud de la vibración sonora. Se mide en Decibelios (dB) y clasifica los sonidos en fuertes o suaves. • Duración: Tiempo que dura la vibración sonora. Está asociada al ritmo musical. • Timbre: Aquel que nos permite distinguir dos sonidos de igual tono(frecuencia) e intensidad. "},{"tipo":"img","texto":"musica1.png"},{"tipo":"titulo","texto":"¿Qué es la música?"},{"tipo":"texto","texto":"Es el arte de combinar el sonido con el tiempo. Tiene tres elementos fundamentales:"},{"tipo":"titulo","texto":"Melodía"},{"tipo":"texto","texto":"Es una sucesión lineal de sonidos que es percibida como una sola unidad."},{"tipo":"titulo","texto":"Armonía"},{"tipo":"texto","texto":"Es la combinación de varias notas que suenan al mismo tiempo."},{"tipo":"titulo","texto":"Ritmo"},{"tipo":"texto","texto":"Es la distribución de sonidos en el tiempo."},{"tipo":"img","texto":"metronomo.png"},{"tipo":"titulo","texto":"¿Que es el lenguaje musical?"},{"tipo":"texto","texto":"Estudio de las cualidades o elementos de la música."}],"imagenprincipal":"musica.png"},{"_id":"64387a88b5af7c8a197a70cf","nombre":"Los instrumentos","imagenprincipal":"musica.jpg","contenido":[{"tipo":"img","texto":"orquesta.jpg"},{"tipo":"img","texto":""}],"__v":0},{"_id":"63f941fed79a4308398b1f0a","nombre":"Figuras musicales","texto":"dasdsdasdasdasdasdasda","contenido":[{"tipo":"titulo","texto":"Que es el sonido"},{"tipo":"texto","texto":"Es una onda que se propaga por el aire u otro medio, producida por la vibración de un cuerpo sonoro. El sonido posee las siguientes cualidades físicas: • Tono:  Viene determinada por la frecuencia de la vibración sonora y se mide en Hercios (Hz). Nos permite reconocer si un sonido es agudo (alta frecuencia) o grave (baja frecuencia). • Volumen: Intensidad o amplitud de la vibración sonora. Se mide en Decibelios (dB) y clasifica los sonidos en fuertes o suaves. • Duración: Tiempo que dura la vibración sonora. Está asociada al ritmo musical. • Timbre: Aquel que nos permite distinguir dos sonidos de igual tono(frecuencia) e intensidad. "},{"tipo":"img","texto":"musica1.png"},{"tipo":"titulo","texto":"¿Qué es la música?"},{"tipo":"texto","texto":"Es el arte de combinar el sonido con el tiempo. Tiene tres elementos fundamentales:"},{"tipo":"titulo","texto":"Melodía"},{"tipo":"texto","texto":"Es una sucesión lineal de sonidos que es percibida como una sola unidad."},{"tipo":"titulo","texto":"Armonía"},{"tipo":"texto","texto":"Es la combinación de varias notas que suenan al mismo tiempo."},{"tipo":"titulo","texto":"Ritmo"},{"tipo":"texto","texto":"Es la distribución de sonidos en el tiempo."},{"tipo":"img","texto":"metronomo.png"},{"tipo":"titulo","texto":"¿Qué es el lenguaje musical?"},{"tipo":"texto","texto":"Estudio de las cualidades o elementos de la música."}],"imagenprincipal":"leccion3.png"},{"_id":"63f941efd79a4308398b1f09","nombre":"pruebamodificada","texto":"dasdsdasdasdasdasdasda","contenido":[{"tipo":"titulo","texto":"ad"},{"tipo":"imagen","texto":"bd"},{"tipo":"texto","texto":"cd"},{"tipo":"titulo","texto":"dd"},{"tipo":"texto","texto":"ed"}],"imagenprincipal":"pruebamod.png"}],"mensaje":"Las lecciones se ha encontrado"}'));
 
+            nock('http://${IP.ip}:5000')
+                .get('/api/lesson/get-lessons/63fe53c56ac25d3aa7ac988b')
+                .reply(200, json.decode('{"status":"success","tests":[{"idLeccion":"63f94104d79a4308398b1f07","testsAprobados":21},{"idLeccion":"63f941efd79a4308398b1f09","testsAprobados":0}],"progreso":[{"_id":"640b00953b591db90fceb7b1","tests":["6462a2a0225c93f0488842c4","6462a323225c93f048884330","6462a942cfa832e841abe4bc","6462b0f464bd0eebefbb223d","6463f3688c2b6286f7e6f142","6463f6a32606c48c3af9a013","6463f89c01379949cfc3e74f","6463f9752afc6dcccec57a12","6463f9f0dbc909175a27b4bb","6463fa69b79137a9948ab38c","6463fb0fc619a45251a81cfb","6463fcb7cfa8f090e22704a9","6463fe830f2be99c40795f40","6463ff7ffff8e6de45c739df","646400379180fbf28af24b98","646400b45ca211fe0422a78c","64640152a17e89692d9b63c6","646402bfd8e5522c39fedec5","64640396525b19529562d016","64640661b66062ee2443445f","646406a2d256fbc576181989"],"idUsuario":"63fe53c56ac25d3aa7ac988b","idLeccion":"63f94104d79a4308398b1f07","__v":74,"completado":true},{"_id":"645c1708eb76fda410d2fbe0","tests":[],"idUsuario":"63fe53c56ac25d3aa7ac988b","idLeccion":"63f941efd79a4308398b1f09","completado":false,"__v":7}],"leccion":[{"_id":"63f94104d79a4308398b1f07","nombre":"Introduccion","texto":"adasdasdasdasd","contenido":[{"tipo":"titulo","texto":"Que es el sonido"},{"tipo":"texto","texto":"Es una onda que se propaga por el aire u otro medio, producida por la vibración de un cuerpo sonoro. El sonido posee las siguientes cualidades físicas: • Tono:  Viene determinada por la frecuencia de la vibración sonora y se mide en Hercios (Hz). Nos permite reconocer si un sonido es agudo (alta frecuencia) o grave (baja frecuencia). • Volumen: Intensidad o amplitud de la vibración sonora. Se mide en Decibelios (dB) y clasifica los sonidos en fuertes o suaves. • Duración: Tiempo que dura la vibración sonora. Está asociada al ritmo musical. • Timbre: Aquel que nos permite distinguir dos sonidos de igual tono(frecuencia) e intensidad. "},{"tipo":"img","texto":"musica1.png"},{"tipo":"titulo","texto":"¿Qué es la música?"},{"tipo":"texto","texto":"Es el arte de combinar el sonido con el tiempo. Tiene tres elementos fundamentales:"},{"tipo":"titulo","texto":"Melodía"},{"tipo":"texto","texto":"Es una sucesión lineal de sonidos que es percibida como una sola unidad."},{"tipo":"titulo","texto":"Armonía"},{"tipo":"texto","texto":"Es la combinación de varias notas que suenan al mismo tiempo."},{"tipo":"titulo","texto":"Ritmo"},{"tipo":"texto","texto":"Es la distribución de sonidos en el tiempo."},{"tipo":"img","texto":"metronomo.png"},{"tipo":"titulo","texto":"¿Que es el lenguaje musical?"},{"tipo":"texto","texto":"Estudio de las cualidades o elementos de la música."}],"imagenprincipal":"musica.png"},{"_id":"64387a88b5af7c8a197a70cf","nombre":"Los instrumentos","imagenprincipal":"musica.jpg","contenido":[{"tipo":"img","texto":"orquesta.jpg"},{"tipo":"img","texto":""}],"__v":0},{"_id":"63f941fed79a4308398b1f0a","nombre":"Figuras musicales","texto":"dasdsdasdasdasdasdasda","contenido":[{"tipo":"titulo","texto":"Que es el sonido"},{"tipo":"texto","texto":"Es una onda que se propaga por el aire u otro medio, producida por la vibración de un cuerpo sonoro. El sonido posee las siguientes cualidades físicas: • Tono:  Viene determinada por la frecuencia de la vibración sonora y se mide en Hercios (Hz). Nos permite reconocer si un sonido es agudo (alta frecuencia) o grave (baja frecuencia). • Volumen: Intensidad o amplitud de la vibración sonora. Se mide en Decibelios (dB) y clasifica los sonidos en fuertes o suaves. • Duración: Tiempo que dura la vibración sonora. Está asociada al ritmo musical. • Timbre: Aquel que nos permite distinguir dos sonidos de igual tono(frecuencia) e intensidad. "},{"tipo":"img","texto":"musica1.png"},{"tipo":"titulo","texto":"¿Qué es la música?"},{"tipo":"texto","texto":"Es el arte de combinar el sonido con el tiempo. Tiene tres elementos fundamentales:"},{"tipo":"titulo","texto":"Melodía"},{"tipo":"texto","texto":"Es una sucesión lineal de sonidos que es percibida como una sola unidad."},{"tipo":"titulo","texto":"Armonía"},{"tipo":"texto","texto":"Es la combinación de varias notas que suenan al mismo tiempo."},{"tipo":"titulo","texto":"Ritmo"},{"tipo":"texto","texto":"Es la distribución de sonidos en el tiempo."},{"tipo":"img","texto":"metronomo.png"},{"tipo":"titulo","texto":"¿Qué es el lenguaje musical?"},{"tipo":"texto","texto":"Estudio de las cualidades o elementos de la música."}],"imagenprincipal":"leccion3.png"},{"_id":"63f941efd79a4308398b1f09","nombre":"pruebamodificada","texto":"dasdsdasdasdasdasdasda","contenido":[{"tipo":"titulo","texto":"ad"},{"tipo":"imagen","texto":"bd"},{"tipo":"texto","texto":"cd"},{"tipo":"titulo","texto":"dd"},{"tipo":"texto","texto":"ed"}],"imagenprincipal":"pruebamod.png"}],"mensaje":"Las lecciones se ha encontrado"}'));
+
+
+            nock('http://${IP.ip}:5000')
+                .get('/api/lesson/get-lessons/63fe53c56ac25d3aa7ac988b')
+                .reply(
+                200,
+                json.decode(
+                    '{"status":"success","tests":[{"idLeccion":"63f94104d79a4308398b1f07","testsAprobados":21},{"idLeccion":"63f941efd79a4308398b1f09","testsAprobados":0}],"progreso":[{"_id":"640b00953b591db90fceb7b1","tests":["6462a2a0225c93f0488842c4","6462a323225c93f048884330","6462a942cfa832e841abe4bc","6462b0f464bd0eebefbb223d","6463f3688c2b6286f7e6f142","6463f6a32606c48c3af9a013","6463f89c01379949cfc3e74f","6463f9752afc6dcccec57a12","6463f9f0dbc909175a27b4bb","6463fa69b79137a9948ab38c","6463fb0fc619a45251a81cfb","6463fcb7cfa8f090e22704a9","6463fe830f2be99c40795f40","6463ff7ffff8e6de45c739df","646400379180fbf28af24b98","646400b45ca211fe0422a78c","64640152a17e89692d9b63c6","646402bfd8e5522c39fedec5","64640396525b19529562d016","64640661b66062ee2443445f","646406a2d256fbc576181989"],"idUsuario":"63fe53c56ac25d3aa7ac988b","idLeccion":"63f94104d79a4308398b1f07","__v":74,"completado":true},{"_id":"645c1708eb76fda410d2fbe0","tests":[],"idUsuario":"63fe53c56ac25d3aa7ac988b","idLeccion":"63f941efd79a4308398b1f09","completado":false,"__v":7}],"leccion":[{"_id":"63f94104d79a4308398b1f07","nombre":"Introducción","texto":"adasdasdasdasd","contenido":[{"tipo":"titulo","texto":"¿Qué es el sonido?"},{"tipo":"texto","texto":"Es una onda que se propaga por el aire u otro medio, producida por la vibración de un cuerpo sonoro. El sonido posee las siguientes cualidades físicas: • Tono:  Viene determinada por la frecuencia de la vibración sonora y se mide en Hercios (Hz). Nos permite reconocer si un sonido es agudo (alta frecuencia) o grave (baja frecuencia). • Volumen: Intensidad o amplitud de la vibración sonora. Se mide en Decibelios (dB) y clasifica los sonidos en fuertes o suaves. • Duración: Tiempo que dura la vibración sonora. Está asociada al ritmo musical. • Timbre: Aquel que nos permite distinguir dos sonidos de igual tono(frecuencia) e intensidad. "},{"tipo":"img","texto":"musica1.png"},{"tipo":"titulo","texto":"¿Qué es la música?"},{"tipo":"texto","texto":"Es el arte de combinar el sonido con el tiempo. Tiene tres elementos fundamentales:"},{"tipo":"titulo","texto":"Melodía"},{"tipo":"texto","texto":"Es una sucesión lineal de sonidos que es percibida como una sola unidad."},{"tipo":"titulo","texto":"Armonía"},{"tipo":"texto","texto":"Es la combinación de varias notas que suenan al mismo tiempo."},{"tipo":"titulo","texto":"Ritmo"},{"tipo":"texto","texto":"Es la distribución de sonidos en el tiempo."},{"tipo":"img","texto":"metronomo.png"},{"tipo":"titulo","texto":"¿Qué es el lenguaje musical?"},{"tipo":"texto","texto":"Estudio de las cualidades o elementos de la música."}],"imagenprincipal":"musica.png"},{"_id":"64387a88b5af7c8a197a70cf","nombre":"Los instrumentos","imagenprincipal":"musica.jpg","contenido":[{"tipo":"img","texto":"orquesta.jpg"},{"tipo":"img","texto":""}],"__v":0},{"_id":"63f941fed79a4308398b1f0a","nombre":"Figuras musicales","texto":"dasdsdasdasdasdasdasda","contenido":[{"tipo":"titulo","texto":"¿Qué es el sonido?"},{"tipo":"texto","texto":"Es una onda que se propaga por el aire u otro medio, producida por la vibración de un cuerpo sonoro. El sonido posee las siguientes cualidades físicas: • Tono:  Viene determinada por la frecuencia de la vibración sonora y se mide en Hercios (Hz). Nos permite reconocer si un sonido es agudo (alta frecuencia) o grave (baja frecuencia). • Volumen: Intensidad o amplitud de la vibración sonora. Se mide en Decibelios (dB) y clasifica los sonidos en fuertes o suaves. • Duración: Tiempo que dura la vibración sonora. Está asociada al ritmo musical. • Timbre: Aquel que nos permite distinguir dos sonidos de igual tono(frecuencia) e intensidad. "},{"tipo":"img","texto":"musica1.png"},{"tipo":"titulo","texto":"¿Qué es la música?"},{"tipo":"texto","texto":"Es el arte de combinar el sonido con el tiempo. Tiene tres elementos fundamentales:"},{"tipo":"titulo","texto":"Melodía"},{"tipo":"texto","texto":"Es una sucesión lineal de sonidos que es percibida como una sola unidad."},{"tipo":"titulo","texto":"Armonía"},{"tipo":"texto","texto":"Es la combinación de varias notas que suenan al mismo tiempo."},{"tipo":"titulo","texto":"Ritmo"},{"tipo":"texto","texto":"Es la distribución de sonidos en el tiempo."},{"tipo":"img","texto":"metronomo.png"},{"tipo":"titulo","texto":"¿Qué es el lenguaje musical?"},{"tipo":"texto","texto":"Estudio de las cualidades o elementos de la música."}],"imagenprincipal":"leccion3.png"},{"_id":"63f941efd79a4308398b1f09","nombre":"pruebamodificada","texto":"dasdsdasdasdasdasdasda","contenido":[{"tipo":"titulo","texto":"ad"},{"tipo":"imagen","texto":"bd"},{"tipo":"texto","texto":"cd"},{"tipo":"titulo","texto":"dd"},{"tipo":"texto","texto":"ed"}],"imagenprincipal":"pruebamod.png"}],"mensaje":"Las lecciones se ha encontrado"}'));
+
+            final scaffoldKey = GlobalKey<ScaffoldState>();
+            await tester.pumpWidget(MultiProvider(
+          providers: [
+            ChangeNotifierProvider.value(
+              value: Auth(),
+            ),
+            ChangeNotifierProxyProvider<Auth, Lecciones>(
+                create: (_) => Lecciones(),
+                update: (ctx, auth, leccionesAnteriores) =>
+                leccionesAnteriores..update(auth.token)),
+            ChangeNotifierProxyProvider<Auth, Usuarios>(
+                create: (_) => Usuarios(),
+                update: (ctx, auth, usuariosAnteriores) =>
+                usuariosAnteriores..update(auth.token)),
+          ],
+          child: Consumer<Auth>(
+            builder: (ctx, auth, _) => MaterialApp(
+                title: 'Meloudy',
+                theme: ThemeData(
+                  scaffoldBackgroundColor: Paleta.blueBackground,
+                  primarySwatch: Paleta.blueCustom,
+                ),
+                home: Scaffold(
+                    body: Container(),
+                  drawer: DrawerApp(),
+                ),
+                routes: {
+                  PantallaUsuariosProfesor.routeName: (ctx) =>
+                      PantallaUsuariosProfesor(),
+                  PantallaLecciones.routeName: (ctx) => PantallaLecciones(),
+
+                }
+            ),
+          ),),
+        );
+        await tester.pump();
+
+
+
+            final ScaffoldState scafState = tester.firstState(find.byType(Scaffold));
+            scafState.openDrawer();
+            await tester.pumpAndSettle();
+
+        await tester.tap(find.text('Inicio'));
+        await tester.pumpAndSettle();
+
+
+        expect(find.text('Los instrumentos'), findsOneWidget);
+      });
+
+  testWidgets('El botón de Perfil del Drawer funciona correctamente',
+          (WidgetTester tester) async {
+
+
+        nock('http://${IP.ip}:5000')
+            .get('/api/user/get-user/63fe53c56ac25d3aa7ac988b?auth=null')
+            .reply(
+            200,
+            json.decode(
+                '{"status":"success","usuario":{"_id":"63fe53c56ac25d3aa7ac988b","nombre":"Luis","password":"BZE7YIw2Ia41jB3sP7xcCeII6K27zWOo6tP5LT9V6Gfix8jGqU6KW","apellidos":["López","Escudero"],"rol":"Profesor","correo":"profe@correo","foto":"Screenshot%202023-05-08%20at%2022-19-19%20ThisPersonDoesNotExist%20-%20Random%20AI%20Generado%20Fotos%20de%20Personas%20Falsas.png","__v":1,"username":"profemusical","logros":["6452d2dbe0319ab98bd4993c","6452d2dbe0319ab98bd4993b","6452d2dbe0319ab98bd4993a","6452d3ace0319ab98bd4993f","6452d3ace0319ab98bd49940","6452d3ace0319ab98bd49943","6452d3ace0319ab98bd49941","6452d4d2e0319ab98bd49951"]},"logros":[{"_id":"6452d2dbe0319ab98bd4993c","nombre":"Empollón - Lvl 3","descripcion":"Contesta 100 pregutas correctamente","imagen":"14.png","tipo":"preguntas","condicion":"100"},{"_id":"6452d2dbe0319ab98bd4993b","nombre":"Empollón - Lvl 2","descripcion":"Contesta 50 pregutas correctamente","imagen":"15.png","tipo":"preguntas","condicion":"50"},{"_id":"6452d2dbe0319ab98bd4993a","nombre":"Empollón - Lvl 1","descripcion":"Contesta 20 pregutas correctamente","imagen":"13.png","tipo":"preguntas","condicion":"20"},{"_id":"6452d3ace0319ab98bd4993f","nombre":"Preciso - Lvl 1","descripcion":"Contesta 20 pregutas de tipo única correctamente","imagen":"17.png","tipo":"preguntasunica","condicion":"20"},{"_id":"6452d3ace0319ab98bd49940","nombre":"Preciso - Lvl 2","descripcion":"Contesta 50 pregutas de tipo única correctamente","imagen":"19.png","tipo":"preguntasunica","condicion":"50"},{"_id":"6452d3ace0319ab98bd49943","nombre":"Seleccionador - Lvl 1","descripcion":"Contesta 20 pregutas de tipo múltiple correctamente","imagen":"21.png","tipo":"preguntasmultiple","condicion":"20"},{"_id":"6452d3ace0319ab98bd49941","nombre":"Preciso - Lvl 3","descripcion":"Contesta 100 pregutas de tipo única correctamente","imagen":"18.png","tipo":"preguntasunica","condicion":"100"},{"_id":"6452d4d2e0319ab98bd49951","nombre":"Novato","descripcion":"Completa la lección Introducción","imagen":"33.png","tipo":"leccion","condicion":"63f94104d79a4308398b1f07"}],"mensaje":"El usuario se ha encontrado"}'));
+
+        final scaffoldKey = GlobalKey<ScaffoldState>();
+        await tester.pumpWidget(MultiProvider(
+          providers: [
+            ChangeNotifierProvider.value(
+              value: Auth(),
+            ),
+            ChangeNotifierProxyProvider<Auth, Lecciones>(
+                create: (_) => Lecciones(),
+                update: (ctx, auth, leccionesAnteriores) =>
+                leccionesAnteriores..update(auth.token)),
+            ChangeNotifierProxyProvider<Auth, UsuarioPerfil>(
+                update: (ctx, auth, userant, ) =>
+                    UsuarioPerfil(auth.token, userant == null ? Usuario() : userant.item)),
+          ],
+          child: Consumer<Auth>(
+            builder: (ctx, auth, _) => MaterialApp(
+                title: 'Meloudy',
+                theme: ThemeData(
+                  scaffoldBackgroundColor: Paleta.blueBackground,
+                  primarySwatch: Paleta.blueCustom,
+                ),
+                home: Scaffold(
+                  body: Container(),
+                  drawer: DrawerApp(),
+                ),
+                routes: {
+                  PantallaUsuariosProfesor.routeName: (ctx) =>
+                      PantallaUsuariosProfesor(),
+                  PantallaLecciones.routeName: (ctx) => PantallaLecciones(),
+                  PantallaUsuario.routeName: (ctx) => PantallaUsuario(),
+
+                }
+            ),
+          ),),
+        );
+        await tester.pump();
+
+
+
+        final ScaffoldState scafState = tester.firstState(find.byType(Scaffold));
+        scafState.openDrawer();
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('Perfil'));
+        await tester.pumpAndSettle();
+
+
+        expect(find.text('Mi perfil'), findsOneWidget);
+      });
 
 /*
 

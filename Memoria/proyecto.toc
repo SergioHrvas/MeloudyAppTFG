@@ -135,6 +135,13 @@
 \contentsline {subsection}{\numberline {8.2.2}Preguntas}{134}{subsection.8.2.2}%
 \contentsline {subsection}{\numberline {8.2.3}Usuarios}{136}{subsection.8.2.3}%
 \contentsline {subsection}{\numberline {8.2.4}Logros}{137}{subsection.8.2.4}%
-\contentsline {subsection}{\numberline {8.2.5}Botón de acceso a lección}{138}{subsection.8.2.5}%
-\contentsline {subsection}{\numberline {8.2.6}Botón de acceso a lista de lecciones}{138}{subsection.8.2.6}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{139}{chapter.9}%
+\contentsline {subsection}{\numberline {8.2.5}Botón de inicio de sesión}{138}{subsection.8.2.5}%
+\contentsline {subsection}{\numberline {8.2.6}Botón de acceso a lista de lecciones del profesor}{138}{subsection.8.2.6}%
+\contentsline {subsection}{\numberline {8.2.7}Botón de acceso a lista de logros del profesor}{138}{subsection.8.2.7}%
+\contentsline {subsection}{\numberline {8.2.8}Botón de acceso a lista de preguntas del profesor}{138}{subsection.8.2.8}%
+\contentsline {subsection}{\numberline {8.2.9}Botón de acceso a lista de usuarios del profesor}{139}{subsection.8.2.9}%
+\contentsline {subsection}{\numberline {8.2.10}Botón de acceso al perfil del usuario}{139}{subsection.8.2.10}%
+\contentsline {subsection}{\numberline {8.2.11}Botón de acceso a una lección}{139}{subsection.8.2.11}%
+\contentsline {subsection}{\numberline {8.2.12}Botón de acceso a una lección}{139}{subsection.8.2.12}%
+\contentsline {subsection}{\numberline {8.2.13}Botón de acceso al dashboard}{139}{subsection.8.2.13}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{141}{chapter.9}%

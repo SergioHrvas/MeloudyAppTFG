@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meloudy_app/screen/pantalla_lecciones.dart';
 import 'package:meloudy_app/screen/pantalla_dashboard.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth.dart';
@@ -22,7 +23,7 @@ class DrawerApp extends StatelessWidget {
               leading: Icon(Icons.home),
               title: Text('Inicio'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/');
+                Navigator.of(context).pushReplacementNamed('/lecciones');
               },
             ),
             Divider(),

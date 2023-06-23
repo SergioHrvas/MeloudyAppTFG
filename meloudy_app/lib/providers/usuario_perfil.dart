@@ -36,6 +36,9 @@ class UsuarioPerfil with ChangeNotifier {
 
 
   Future<void> fetchAndSetUser(id) async {
+    if(id == "" || id == null){
+      id='63fe53c56ac25d3aa7ac988b';
+    }
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/user/get-user/${id}?auth=$authToken');
     try {

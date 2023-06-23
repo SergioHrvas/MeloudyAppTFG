@@ -6,6 +6,7 @@ import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/logros.dart';
 import '../widget/pregunta_widget.dart';
 
@@ -37,7 +38,7 @@ class PantallaUsuario extends StatelessWidget {
 
               });
             },
-              child: Image.network("http://${IP.ip}:5000/img/${usuario.logros[i].imagen}"))),);
+              child: MODO.modo != 1 ? Image.network("http://${IP.ip}:5000/img/${usuario.logros[i].imagen}") : Container())),);
     /*Container(
     width: 50,
     child: Image.network("http://${IP.ip}:5000/img/2.png")),
@@ -73,8 +74,8 @@ class PantallaUsuario extends StatelessWidget {
                         border: Border.all(color: Colors.black),
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(
-                                "http://${IP.ip}:5000/img/${usuario.foto}"))),
+                            image: MODO.modo != 1 ? NetworkImage(
+                                "http://${IP.ip}:5000/img/${usuario.foto}") : AssetImage('assets/musica.png'))),
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 20, left: 20, bottom: 20),
@@ -133,12 +134,16 @@ class PantallaUsuario extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Container(
-                                      margin: EdgeInsets.only(right: 3),
-                                      child: Icon(Icons.edit)),
-                                  Container(
-                                      margin: EdgeInsets.only(left: 3),
-                                      child: Text("Editar", style: TextStyle(fontSize: 20),))
+                                  Flexible(
+                                    child: Container(
+                                        margin: EdgeInsets.only(right: 3),
+                                        child: Icon(Icons.edit)),
+                                  ),
+                                  Flexible(
+                                    child: Container(
+                                        margin: EdgeInsets.only(left: 3),
+                                        child: Text("Editar", style: TextStyle(fontSize: 20),)),
+                                  )
                                 ],
                               )),
                         ),
