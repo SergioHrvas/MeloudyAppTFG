@@ -75,6 +75,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
     for (var i = 0; i < usuarios.length; i++) {
       var nombre = usuarios[i].nombre + " " + usuarios[i].apellidos[0] + " " + usuarios[i].apellidos[1];
 
+      print(usuarios[i].correo);
       usuariosWidget.add(Container(
         alignment: Alignment.center,
         margin: EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -82,6 +83,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
         decoration: BoxDecoration( borderRadius: BorderRadius.circular(20),
           color: Color.fromRGBO(124, 135, 255, 0.615686274509804),),
         child: Container(
+
           padding: EdgeInsets.symmetric(vertical: 5),
           child: Row(
             children: [
@@ -110,9 +112,11 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                     child: Text(nombre.toString().useCorrectEllipsis(), style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, overflow: TextOverflow.ellipsis), maxLines: 1,),
                         ),
                         Container(
+
                             margin: EdgeInsets.only(left: 10, bottom: 10),
                             alignment: Alignment.center,
-                            child: Text(usuarios[i].correo.toString(), style: TextStyle(fontSize: 18,color: Color.fromRGBO(50, 50, 50, 1)),)),
+                            child: Text(usuarios[i].correo.toString(),           key: Key(usuarios[i].correo),
+                              style: TextStyle(fontSize: 18,color: Color.fromRGBO(50, 50, 50, 1)),)),
                         Container(
                           alignment: Alignment.center,
                           child: Row(
@@ -184,7 +188,7 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(child: Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add))),
-                          Flexible(child: Text("Crear Usuario",style: TextStyle(fontSize: 20),)),
+                          Flexible(child: Text("Crear Usuario",key: Key('crearUsuario'),style: TextStyle(fontSize: 20),)),
                         ],
                       ),
                     ),)),

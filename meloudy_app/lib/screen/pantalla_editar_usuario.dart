@@ -181,9 +181,11 @@ class _PantallaEditarUsuarioState
                   Container(
                 margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                 child: TextFormField(
+
                   initialValue: usuario.nombre,
                   onSaved: (value){
                     _authData['nombre'] = value;
+
                   },
                   decoration:
                       InputDecoration(labelText: "Nombre"),
@@ -217,6 +219,8 @@ class _PantallaEditarUsuarioState
                   Container(
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                     child: TextFormField(
+                      key: Key('userName'),
+
                       initialValue: usuario.username,
                       onSaved: (value){
                         _authData['username'] = value;
@@ -257,7 +261,10 @@ class _PantallaEditarUsuarioState
                     await submit();
                   },
                   child: Text(
+
                     "Modificar Usuario",
+
+                    key: Key('modificar'),
                     style: TextStyle(fontSize: 20),
                   ),
                 ),

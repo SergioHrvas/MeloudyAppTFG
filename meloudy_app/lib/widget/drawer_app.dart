@@ -30,6 +30,8 @@ class DrawerApp extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.person),
               title: Text('Perfil'),
+              key: Key('perfil'),
+
               onTap: () {
                 var idUsuario =
                     Provider.of<Auth>(context, listen: false).userId;
@@ -42,6 +44,7 @@ class DrawerApp extends StatelessWidget {
               Column(children: [
                 Divider(),
                 ListTile(
+                  key: Key('dashboard'),
                   leading: Icon(Icons.dashboard),
                   title: Text('Dashboard'),
                   onTap: () {

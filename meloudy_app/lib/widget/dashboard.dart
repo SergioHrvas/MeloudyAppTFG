@@ -93,13 +93,15 @@ class Dashboard extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
+
                           child: Icon(
                             Icons.people,
                             size: 35,
                           ),
                           margin: EdgeInsets.only(bottom: 5),
                         ),
-                        Text("Usuarios", style: TextStyle(fontSize: 25)),
+                        Text("Usuarios",                  key: Key('usuarios'),
+                            style: TextStyle(fontSize: 25)),
                       ],
                     ))),
             Container(

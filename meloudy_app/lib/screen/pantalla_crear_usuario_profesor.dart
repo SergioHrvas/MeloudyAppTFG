@@ -148,7 +148,7 @@ class _PantallaCrearUsuarioProfesorState
                   ),
                   Container(
                 margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                child: TextFormField(
+                child: TextFormField(key: Key('nombreUsuario'),
                   onSaved: (value){
                     _authData['nombre'] = value;
                   },
@@ -159,7 +159,7 @@ class _PantallaCrearUsuarioProfesorState
               ),
                   Container(
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
+                    child: TextFormField(key: Key('apellido1Usuario'),
                       onSaved: (value){
                         _authData['apellidos'].add(value);
                       },
@@ -170,7 +170,7 @@ class _PantallaCrearUsuarioProfesorState
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
+                    child: TextFormField(key: Key('apellido2Usuario'),
                       onSaved: (value){
                         _authData['apellidos'].add(value);
                       },
@@ -180,7 +180,7 @@ class _PantallaCrearUsuarioProfesorState
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
+                    child: TextFormField(key: Key('userName'),
                       onSaved: (value){
                         _authData['username'] = value;
                       },
@@ -189,7 +189,7 @@ class _PantallaCrearUsuarioProfesorState
                     ),
 
                   ),
-                  Container(
+                  Container(key: Key('correoUsuario'),
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
                     child: TextFormField(
                       onSaved: (value){
@@ -202,7 +202,7 @@ class _PantallaCrearUsuarioProfesorState
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 20, right: 30, left: 30),
-                    child: TextFormField(
+                    child: TextFormField(key: Key('passwordUsuario'),
                       obscureText: true,
                       onSaved: (value){
                         _authData['password'] = value;
@@ -219,7 +219,7 @@ class _PantallaCrearUsuarioProfesorState
                     await submit();
                   },
                   child: Text(
-                    "Crear Usuario",
+                    "Crear Usuario",key: Key('botonCrear'),
                     style: TextStyle(fontSize: 20),
                   ),
                 ),

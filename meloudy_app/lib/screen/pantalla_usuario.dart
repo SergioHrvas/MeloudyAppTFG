@@ -99,6 +99,7 @@ class PantallaUsuario extends StatelessWidget {
                             margin: EdgeInsets.only(bottom: 10),
                             child: Text(
                               "@" + usuario.username,
+                              key: Key('userNameFinal'),
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
@@ -126,6 +127,7 @@ class PantallaUsuario extends StatelessWidget {
                         Container(
                           width: 130,
                           child: ElevatedButton(
+                              key: Key('editarperfil'),
                               onPressed: () {
                                 Navigator.pushNamed(context, '/editarperfil', arguments: {
                                 "id": usuario.id.toString()
