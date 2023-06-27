@@ -113,6 +113,7 @@ class _PantallaEditarUsuarioState
       appBar: AppBar(),
       drawer: DrawerApp(),
       body: SingleChildScrollView(
+        key: Key('pantallaEditarUser'),
         child: Form(
           key: _formKey,
           child: Container(

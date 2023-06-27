@@ -1,4 +1,6 @@
 // Importa la Flutter Driver API
+import 'dart:io';
+
 import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
@@ -157,6 +159,9 @@ void main() {
       await driver.tap(userName);
       await driver.enterText('LuisLopezE');
 
+      final pantallaEditarUser = find.byValueKey('pantallaEditarUser');
+      await driver.scroll(pantallaEditarUser, 0, -1400, Duration(seconds: 5));
+
       final botonEditarUser = find.byValueKey('modificar');
       await driver.tap(botonEditarUser);
 
@@ -168,5 +173,94 @@ void main() {
 
     },timeout: Timeout(Duration(minutes: 2)));
 
+
+
+    test('Realización de un test', () async {
+      await driver.clearTimeline();
+      // Usa el método `driver.getText` para verificar que el contador comience en 0.
+      /* final botonIniciarSesion = find.byValueKey('boton1');
+      final textoTitulo = find.byValueKey('titulo');
+      final botonCorreo = find.byValueKey('correo');
+      final botonPassword = find.byValueKey('password');
+      final drawer = find.byValueKey('drawer');
+
+      driver.waitFor(botonCorreo);
+      driver.tap(botonCorreo);
+      driver.enterText('profe@correo');
+
+
+      driver.tap(find.byValueKey('password'));
+      driver.enterText('profe');
+
+      driver.tap(botonIniciarSesion);
+      driver.waitFor(textoTitulo);
+
+      expect(await driver.getText(textoTitulo), "MELOUDY");*/
+
+      final SerializableFinder drawerOpenButton = find.byTooltip('Open navigation menu');
+
+      // Open the drawer
+      driver.waitFor(drawerOpenButton);
+      await driver.tap(drawerOpenButton);
+      final botonInicio = find.byValueKey('inicio');
+
+      driver.waitFor(botonInicio);
+      await driver.tap(botonInicio);
+
+
+      final botonLeccion = find.byValueKey('entrarIntroducción');
+      driver.waitFor(botonLeccion);
+
+      await driver.tap(botonLeccion);
+
+
+
+      final botonEmpezar = find.byValueKey('hacertest');
+      final pantallaleccion = find.byValueKey('pantallaleccion');
+      await driver.scroll(pantallaleccion, 0, -1400, Duration(seconds: 5));
+
+      driver.waitFor(botonEmpezar);
+
+      await driver.tap(botonEmpezar);
+
+      for(var i = 0; i < 10; i++) {
+             final preguntaTipo = find.byValueKey('preguntatipo');
+      driver.waitFor(preguntaTipo);
+
+      final tipo = await driver.getText(preguntaTipo);
+
+      if (tipo == 'texto') {
+        final campoTexto = find.byValueKey('texto');
+        await driver.tap(campoTexto);
+        await driver.enterText('melodía');
+      }
+      else if (tipo == 'unica') {
+        final opcion = find.byValueKey('opcion1');
+        await driver.tap(opcion);
+      }
+      else if (tipo == 'multiple') {
+        final opcion = find.byValueKey('opcion1');
+        await driver.tap(opcion);
+        final opcion_dos = find.byValueKey('opcion2');
+        await driver.tap(opcion_dos);
+      }
+
+        if(i<9) {
+          final siguiente = find.byValueKey('siguiente');
+          await driver.tap(siguiente);
+        }
+        else{
+          final fin = find.byValueKey('fin');
+          await driver.tap(fin);
+        }
+        }
+
+      final revisarTest = find.byValueKey('revisar');
+      driver.waitFor(revisarTest);
+      expect(await driver.getText(revisarTest), "Revisar");
+
+      sleep(Duration(seconds: 10));
+
+    },timeout: Timeout(Duration(minutes: 2)));
   });
 }

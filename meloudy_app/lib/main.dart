@@ -7,14 +7,14 @@ import 'package:meloudy_app/providers/preguntas_profesor.dart';
 import 'package:meloudy_app/providers/usuario.dart';
 import 'package:meloudy_app/providers/usuario_perfil.dart';
 import 'package:meloudy_app/providers/usuarios.dart';
-import 'package:meloudy_app/screen/TestAcabadoPantalla.dart';
-import 'package:meloudy_app/screen/historial_tests.dart';
-import 'package:meloudy_app/screen/leccion_pantalla.dart';
+import 'package:meloudy_app/screen/pantalla_final_test.dart';
+import 'package:meloudy_app/screen/pantalla_historial_tests.dart';
+import 'package:meloudy_app/screen/pantalla_leccion.dart';
 import 'package:meloudy_app/screen/pantalla_lecciones.dart';
 import 'package:flutter/material.dart';
 import 'package:meloudy_app/screen/pantalla_login.dart';
 import 'package:meloudy_app/providers/auth.dart';
-import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_lecciones_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_leccion_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_logro_profesor.dart';
 import 'package:meloudy_app/screen/pantalla_crear_pregunta_profesor.dart';
@@ -108,7 +108,7 @@ class MyApp extends StatelessWidget {
             LeccionesPantallaProfesor.routeName: (ctx) => LeccionesPantallaProfesor(),
             PantallaDashboard.routeName: (ctx) => PantallaDashboard(),
             PreguntaPantalla.routeName: (ctx) => PreguntaPantalla(),
-            TestAcabadoPantalla.routeName: (ctx) => TestAcabadoPantalla(),
+            PantallaFinalTest.routeName: (ctx) => PantallaFinalTest(),
             HistorialTests.routeName: (ctx) => HistorialTests(),
             PantallaPreguntasProfesor.routeName: (ctx) => PantallaPreguntasProfesor(),
             PantallaCrearPreguntaProfesor.routeName: (ctx) => PantallaCrearPreguntaProfesor(),

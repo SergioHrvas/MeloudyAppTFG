@@ -8,7 +8,7 @@ import '../ips.dart';
 import '../providers/lecciones.dart';
 import '../providers/pregunta.dart';
 import '../providers/preguntas.dart';
-import '../screen/TestAcabadoPantalla.dart';
+import '../screen/pantalla_final_test.dart';
 
 class PreguntaWidget extends StatefulWidget {
   @override
@@ -57,7 +57,6 @@ class _PreguntaWidgetState extends State {
         preguntas[indice].tipo == 'multiple') {
       for (int i = 0; i < preguntas[indice].opciones.length; i++) {
           color = 'azul';
-         // print(preguntas[indice].respuestas.toString() + '<<<<' + i.toString() + " --- " + preguntas[indice].respuestas.contains(i.toString()).toString());
         if(preguntas[indice].respuestas.contains(i.toString())) {
           if(preguntas[indice].respuestascorrectas.contains(i.toString())){
             color = 'verde';
@@ -73,6 +72,7 @@ class _PreguntaWidgetState extends State {
 
       opciones.add(Container(
         padding: EdgeInsets.only(left: 20, right: 20),
+        key: Key('texto'),
         child: TextFormField(
           initialValue: textovalor,
           onChanged: (texto){
@@ -126,6 +126,7 @@ class _PreguntaWidgetState extends State {
                             child: Image.network('http://${IP.ip}:5000/img/${preguntas[indice].imagen}'))),
                     Container(
                         child: IconButton(
+                          key: Key('siguiente'),
                       iconSize: 60,
                       padding: new EdgeInsets.all(0.0),
                       color: indice<preguntas.length-1 ? Colors.blue : Colors.grey,
@@ -151,6 +152,15 @@ class _PreguntaWidgetState extends State {
               Container(
                   padding: EdgeInsets.only(left: 20, right: 20),
                   margin: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Text(preguntas[indice].tipo,
+                      key: Key('preguntatipo'),
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14))),
+              Container(
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
                   child: Text(preguntas[indice].cuestion,
                       style: TextStyle(
                           color: Colors.blue,
@@ -161,9 +171,10 @@ class _PreguntaWidgetState extends State {
                   if(indice>=preguntas.length-1 && modo == 'respondiendo')
                     Container(
                       margin: EdgeInsets.only(top:20),
+                      key: Key('fin'),
                       child: ElevatedButton(onPressed: (){
 
-                          Navigator.pushReplacementNamed(context, TestAcabadoPantalla.routeName, arguments: leccionId);
+                          Navigator.pushReplacementNamed(context, PantallaFinalTest.routeName, arguments: leccionId);
                       }, child: Text("FINALIZAR"),),),],
               ),
             ],

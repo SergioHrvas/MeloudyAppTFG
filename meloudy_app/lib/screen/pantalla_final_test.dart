@@ -8,19 +8,19 @@ import '../providers/preguntas.dart';
 import '../widget/drawer_app.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-class TestAcabadoPantalla extends StatefulWidget {
+class PantallaFinalTest extends StatefulWidget {
   static const routeName = '/testacabado';
 
-  @override _TestAcabadoPantallaState createState() => _TestAcabadoPantallaState();
+  @override _PantallaFinalTestState createState() => _PantallaFinalTestState();
 
 }
 
 
-class _TestAcabadoPantallaState extends State{
+class _PantallaFinalTestState extends State{
   var _isLoading = false;
   var idTest;
 
-  _TestAcabadoPantallaState();
+  _PantallaFinalTestState();
 
   @override
   void didChangeDependencies() {
@@ -68,7 +68,8 @@ class _TestAcabadoPantallaState extends State{
                    return Container(child: ElevatedButton(onPressed: (){
                      Provider.of<Preguntas>(context, listen: false).setModo('revisando');
                      Navigator.pushReplacementNamed(context, '/pregunta');
-                   }, child: Text("Revisar"),),);
+                   }, child: Text("Revisar",        key: Key('revisar'),
+                   ),),);
     }
                  else{
                    return CircularProgressIndicator();

@@ -6,7 +6,7 @@ import '../providers/logros.dart';
 import '../providers/preguntas_profesor.dart';
 import '../providers/usuario_perfil.dart';
 import '../providers/usuarios.dart';
-import '../screen/lecciones_pantalla_profesor.dart';
+import '../screen/pantalla_lecciones_profesor.dart';
 
 class Dashboard extends StatelessWidget {
   @override

@@ -72,6 +72,7 @@ class LeccionPantalla extends StatelessWidget {
       appBar: AppBar(title: Text("MELOUDY")),
       drawer: DrawerApp(),
       body: SingleChildScrollView(
+        key: Key('pantallaleccion'),
           child: Column(
         children: [
           Container(
@@ -117,6 +118,7 @@ class LeccionPantalla extends StatelessWidget {
           Container(
               margin: EdgeInsets.only(bottom: 20),
               child: ElevatedButton(
+                key: Key('hacertest'),
                 onPressed: () {
                   var id = Provider.of<Auth>(context, listen: false).userId;
                   Provider.of<Preguntas>(context, listen: false).setIdUser(id);

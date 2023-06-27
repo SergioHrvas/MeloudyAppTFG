@@ -8,9 +8,6 @@ class PreguntaPantalla extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var preguntas = '';
-
-
     return Scaffold(
         appBar: AppBar(
           title: Text("TEST"),

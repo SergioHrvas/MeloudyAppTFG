@@ -33,6 +33,7 @@ class _OpcionBotonState extends State{
     _pulsado = Provider.of<Preguntas>(context, listen: false).getPulsado(_num);
     _modo = Provider.of<Preguntas>(context, listen: false).modo;
     return Container(
+      key: Key('opcion' + _num.toString()),
         width: 280,
         margin: EdgeInsets.only(bottom: 10),
         child: ElevatedButton(

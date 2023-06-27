@@ -21,6 +21,7 @@ class DrawerApp extends StatelessWidget {
             Divider(),
             ListTile(
               leading: Icon(Icons.home),
+              key: Key('inicio'),
               title: Text('Inicio'),
               onTap: () {
                 Navigator.of(context).pushReplacementNamed('/lecciones');

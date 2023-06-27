@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../ips.dart';
 import '../providers/leccion.dart';
-import 'package:meloudy_app/screen/leccion_pantalla.dart';
+import 'package:meloudy_app/screen/pantalla_leccion.dart';
 
 import '../providers/preguntas.dart';
 
@@ -45,7 +45,6 @@ class LeccionItem extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 179, 179, 179),
                     borderRadius: BorderRadius.circular(100)),
-
                     child: Container(
                       height: 30,
                       width: 30,

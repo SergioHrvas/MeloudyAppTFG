@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meloudy_app/screen/lecciones_pantalla_profesor.dart';
+import 'package:meloudy_app/screen/pantalla_lecciones_profesor.dart';
 import 'package:meloudy_app/widget/drawer_app.dart';
 import 'package:provider/provider.dart';
 
