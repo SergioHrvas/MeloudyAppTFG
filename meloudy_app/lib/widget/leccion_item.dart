@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../ips.dart';
+import '../modo.dart';
 import '../providers/leccion.dart';
 import 'package:meloudy_app/screen/pantalla_leccion.dart';
 
@@ -52,10 +53,10 @@ class LeccionItem extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: Colors.white,
                         border: Border.all(color: Colors.black),
-                        /*image: DecorationImage(
+                        image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: NetworkImage('http://${IP.ip}:5000/img/${_imagenprincipal}'),
-                          )*/
+                            image: MODO.modo != 1 ? NetworkImage('http://${IP.ip}:5000/img/${_imagenprincipal}') : AssetImage('assets/musica.png'),
+                          )
 
                       ),
                     )),

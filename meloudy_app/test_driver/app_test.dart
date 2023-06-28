@@ -2,18 +2,14 @@
 import 'dart:io';
 
 import 'package:flutter_driver/flutter_driver.dart';
+import 'package:meloudy_app/modo.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('Meloudy', () {
-    // Primero, define los Finders. Podemos usarlos para localizar Widgets desde
-    // la suite de test. Nota: los Strings proporcionados al método `byValueKey`
-    // deben ser los mismos que los Strings utilizados para las Keys del paso 1.
-
-
-
     FlutterDriver driver;
 
+    MODO.modo = 0;
     // Conéctate al driver de Flutter antes de ejecutar cualquier test
     setUpAll(() async {
       driver = await FlutterDriver.connect();
@@ -28,36 +24,33 @@ void main() {
 
     test('Creación de usuario', () async {
       await driver.clearTimeline();
-      // Usa el método `driver.getText` para verificar que el contador comience en 0.
-      final botonIniciarSesion = find.byValueKey('boton1');
-      final textoTitulo = find.byValueKey('titulo');
-      final botonCorreo = find.byValueKey('correo');
-      final botonPassword = find.byValueKey('password');
-      final drawer = find.byValueKey('drawer');
+      MODO.modo = 0;
 
+      final botonCorreo = find.byValueKey('correo');
       driver.waitFor(botonCorreo);
       driver.tap(botonCorreo);
       driver.enterText('profe@correo');
 
-
       driver.tap(find.byValueKey('password'));
       driver.enterText('profe');
 
+      final botonIniciarSesion = find.byValueKey('boton1');
       driver.tap(botonIniciarSesion);
-      driver.waitFor(textoTitulo);
 
+      final textoTitulo = find.byValueKey('titulo');
+      driver.waitFor(textoTitulo);
       expect(await driver.getText(textoTitulo), "MELOUDY");
 
-      final SerializableFinder drawerOpenButton = find.byTooltip('Open navigation menu');
-
-      // Open the drawer
+      //Abro el drawer
+      final SerializableFinder drawerOpenButton =
+          find.byTooltip('Open navigation menu');
       driver.waitFor(drawerOpenButton);
       await driver.tap(drawerOpenButton);
       final botonDashboard = find.byValueKey('dashboard');
 
       driver.waitFor(botonDashboard);
-      await driver.tap(botonDashboard);
 
+      await driver.tap(botonDashboard);
 
       final listaUsuarios = find.byValueKey('usuarios');
       driver.waitFor(listaUsuarios);
@@ -67,7 +60,6 @@ void main() {
       await driver.tap(listaUsuarios);
       final botonCrear = find.byValueKey('crearUsuario');
       driver.waitFor(botonCrear);
-
 
       await driver.tap(botonCrear);
 
@@ -108,45 +100,26 @@ void main() {
       final botonUser = find.byValueKey('Correo');
 
       driver.waitFor(botonUser);
+
       expect(await driver.getText(botonUser), "Correo");
-
-
-    },timeout: Timeout(Duration(minutes: 2)));
-
-
+    }, timeout: Timeout(Duration(minutes: 2)));
 
     test('Modificación del perfil', () async {
       await driver.clearTimeline();
-      // Usa el método `driver.getText` para verificar que el contador comience en 0.
-     /* final botonIniciarSesion = find.byValueKey('boton1');
-      final textoTitulo = find.byValueKey('titulo');
-      final botonCorreo = find.byValueKey('correo');
-      final botonPassword = find.byValueKey('password');
-      final drawer = find.byValueKey('drawer');
+      MODO.modo = 0;
 
-      driver.waitFor(botonCorreo);
-      driver.tap(botonCorreo);
-      driver.enterText('profe@correo');
-
-
-      driver.tap(find.byValueKey('password'));
-      driver.enterText('profe');
-
-      driver.tap(botonIniciarSesion);
-      driver.waitFor(textoTitulo);
-
-      expect(await driver.getText(textoTitulo), "MELOUDY");*/
-
-      final SerializableFinder drawerOpenButton = find.byTooltip('Open navigation menu');
+      final SerializableFinder drawerOpenButton =
+          find.byTooltip('Open navigation menu');
 
       // Open the drawer
       driver.waitFor(drawerOpenButton);
       await driver.tap(drawerOpenButton);
+
       final botonDashboard = find.byValueKey('perfil');
 
       driver.waitFor(botonDashboard);
-      await driver.tap(botonDashboard);
 
+      await driver.tap(botonDashboard);
 
       final botonEditarPerfil = find.byValueKey('editarperfil');
       driver.waitFor(botonEditarPerfil);
@@ -168,99 +141,75 @@ void main() {
       final usuarioUsername = find.byValueKey('userNameFinal');
 
       driver.waitFor(usuarioUsername);
+
       expect(await driver.getText(usuarioUsername), "@LuisLopezE");
-
-
-    },timeout: Timeout(Duration(minutes: 2)));
-
-
+    }, timeout: Timeout(Duration(minutes: 2)));
 
     test('Realización de un test', () async {
       await driver.clearTimeline();
-      // Usa el método `driver.getText` para verificar que el contador comience en 0.
-      /* final botonIniciarSesion = find.byValueKey('boton1');
-      final textoTitulo = find.byValueKey('titulo');
-      final botonCorreo = find.byValueKey('correo');
-      final botonPassword = find.byValueKey('password');
-      final drawer = find.byValueKey('drawer');
+      MODO.modo = 0;
 
-      driver.waitFor(botonCorreo);
-      driver.tap(botonCorreo);
-      driver.enterText('profe@correo');
-
-
-      driver.tap(find.byValueKey('password'));
-      driver.enterText('profe');
-
-      driver.tap(botonIniciarSesion);
-      driver.waitFor(textoTitulo);
-
-      expect(await driver.getText(textoTitulo), "MELOUDY");*/
-
-      final SerializableFinder drawerOpenButton = find.byTooltip('Open navigation menu');
+      final SerializableFinder drawerOpenButton =
+          find.byTooltip('Open navigation menu');
 
       // Open the drawer
       driver.waitFor(drawerOpenButton);
+
       await driver.tap(drawerOpenButton);
       final botonInicio = find.byValueKey('inicio');
 
       driver.waitFor(botonInicio);
       await driver.tap(botonInicio);
 
-
       final botonLeccion = find.byValueKey('entrarIntroducción');
       driver.waitFor(botonLeccion);
+      sleep(Duration(seconds: 4));
 
       await driver.tap(botonLeccion);
 
-
-
       final botonEmpezar = find.byValueKey('hacertest');
       final pantallaleccion = find.byValueKey('pantallaleccion');
+      sleep(Duration(seconds: 4));
+
       await driver.scroll(pantallaleccion, 0, -1400, Duration(seconds: 5));
 
       driver.waitFor(botonEmpezar);
 
       await driver.tap(botonEmpezar);
 
-      for(var i = 0; i < 10; i++) {
-             final preguntaTipo = find.byValueKey('preguntatipo');
-      driver.waitFor(preguntaTipo);
+      for (var i = 0; i < 10; i++) {
+        final preguntaTipo = find.byValueKey('preguntatipo');
+        driver.waitFor(preguntaTipo);
 
-      final tipo = await driver.getText(preguntaTipo);
+        final tipo = await driver.getText(preguntaTipo);
 
-      if (tipo == 'texto') {
-        final campoTexto = find.byValueKey('texto');
-        await driver.tap(campoTexto);
-        await driver.enterText('melodía');
-      }
-      else if (tipo == 'unica') {
-        final opcion = find.byValueKey('opcion1');
-        await driver.tap(opcion);
-      }
-      else if (tipo == 'multiple') {
-        final opcion = find.byValueKey('opcion1');
-        await driver.tap(opcion);
-        final opcion_dos = find.byValueKey('opcion2');
-        await driver.tap(opcion_dos);
-      }
+        if (tipo == 'texto') {
+          final campoTexto = find.byValueKey('texto');
+          await driver.tap(campoTexto);
+          await driver.enterText('melodía');
+        } else if (tipo == 'unica') {
+          final opcion = find.byValueKey('opcion1');
+          await driver.tap(opcion);
+        } else if (tipo == 'multiple') {
+          final opcion = find.byValueKey('opcion1');
+          await driver.tap(opcion);
+          final opcion_dos = find.byValueKey('opcion2');
+          await driver.tap(opcion_dos);
+        }
 
-        if(i<9) {
+        if (i < 9) {
           final siguiente = find.byValueKey('siguiente');
           await driver.tap(siguiente);
-        }
-        else{
+        } else {
           final fin = find.byValueKey('fin');
           await driver.tap(fin);
         }
-        }
+      }
 
       final revisarTest = find.byValueKey('revisar');
       driver.waitFor(revisarTest);
       expect(await driver.getText(revisarTest), "Revisar");
 
-      sleep(Duration(seconds: 10));
-
-    },timeout: Timeout(Duration(minutes: 2)));
+    }, timeout: Timeout(Duration(minutes: 2)));
   });
 }

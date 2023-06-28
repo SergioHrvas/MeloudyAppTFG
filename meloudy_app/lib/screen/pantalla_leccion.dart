@@ -101,11 +101,11 @@ class LeccionPantalla extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.white,
                 border: Border.all(color: Colors.black),
-                /*image: DecorationImage(
+                image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage(
-                      'http://${IP.ip}:5000/img/${loadedLesson.imagenprincipal}'),
-                )*/),
+                  image: MODO.modo != 1 ? NetworkImage(
+                      'http://${IP.ip}:5000/img/${loadedLesson.imagenprincipal}') : AssetImage('assets/musica.png'),
+                )),
           ),
           Container(
             decoration: BoxDecoration(
