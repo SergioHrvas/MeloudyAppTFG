@@ -61,7 +61,7 @@ class PantallaLogin extends StatelessWidget {
                     ),
                   ),
                   Flexible(
-                    flex: deviceSize.width > 600 ? 2 : 1,
+                    flex: deviceSize.width > 600 ? 2 : 2,
                     child: TarjetaLogin(),
                   )
                 ],

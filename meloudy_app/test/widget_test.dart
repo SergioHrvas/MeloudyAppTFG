@@ -274,7 +274,7 @@ void main() {
     expect(find.text('Crear Logro'), findsOneWidget);
     expect(find.text('Borrar'), findsWidgets);
   });
-  
+
 
   testWidgets('El botón de Preguntas del dashboard funciona correctamente',
       (WidgetTester tester) async {

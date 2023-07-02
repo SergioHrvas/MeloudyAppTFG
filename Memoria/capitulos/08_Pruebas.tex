@@ -1,7 +1,7 @@
 \chapter{Pruebas}
 \label{cap:pruebas}
 En este capítulo se describen las pruebas realizadas al sistema, tanto de forma individual como de forma integrada. Se describen los casos de prueba, los resultados obtenidos y las conclusiones extraídas de los mismos.
-El objetivo de las pruebas es comprobar que el sistema cumple con los requisitos establecidos en el capítulo \ref{cap:especificacion-requisitos} y que funcione correctamente.
+El objetivo de las pruebas es comprobar que el sistema cumple con los requisitos establecidos en el capítulo (Figura \ref{cap:especificacion-requisitos}) y que funcione correctamente.
 
 \section{Paquetes utilizados}
 \label{sec:paquetes-utilizados}
@@ -103,84 +103,84 @@ Las pruebas realizadas sobre los logros son las siguientes:
 
 \section{Pruebas de controlador o widget}
 \label{sec:pruebas-controlador}
-Las pruebas de controlador o widget son aquellas que se realizan sobre los controladores o widgets de la aplicación. Estas pruebas se realizan de forma individual, aislando el controlador o widget a probar de los demás componentes del sistema.
+Las pruebas de controlador o widget son aquellas que se realizan sobre los controladores o widgets de la aplicación (Figura \ref{fig:prueba_widgets}). Estas pruebas se realizan de forma individual, aislando el controlador o widget a probar de los demás componentes del sistema.
 A continuación se muestran las pruebas realizadas sobre algunos widgets de la aplicación.
 
 \subsection{Botón de inicio de sesión}
 \label{subsec:pruebas-controlador-boton-inicio-sesión}
 El botón de inicio de sesión se encuentra en la pantalla de inicio de la aplicación. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lecciones (pantalla principal de la aplicación).
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "Los instrumentos".
+El test verifica que al pulsar dicho botón aparece un texto perteneciente a la pantalla de lecciones, en este caso ``Los instrumentos''.
 
 \subsection{Botón de acceso a lista de lecciones del profesor}
 \label{subsec:pruebas-controlador-boton-lecciones}
 El dashboard del usuario contiene un botón para acceder a las lecciones. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de lecciones. 
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "Crear Lección" y "Borrar".
+El test verifica que al pulsar dicho botón se muestra un texto perteneciente a la pantalla de lecciones, en este caso ``Crear Lección'' y ``Borrar''.
 
 \subsection{Botón de acceso a lista de logros del profesor}
 \label{subsec:pruebas-controlador-boton-logros}
 El dashboard del usuario contiene un botón para acceder a los logros. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de logros. 
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de logros, en este caso "Crear Lección" y "Borrar".
+El test verifica que al pulsar dicho botón se muestra un texto perteneciente a la pantalla de logros, en este caso ``Crear Logro'' y ``Borrar'' (Figura \ref{fig:prueba_lista_logros}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{imagenes/c8/pruebawidget1.png}
     \caption{Código de la prueba de controlador o widget de acceso a lista de logros}
-    \label{fig:prueba_widget_lecciones}
+    \label{fig:prueba_lista_logros}
 \end{figure}
 
 
 \subsection{Botón de acceso a lista de preguntas del profesor}
 \label{subsec:pruebas-controlador-boton-preguntas}
-El dashboard del usuario contiene un botón para acceder a los preguntas. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de preguntas. 
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de preguntas, en este caso "Crear Lección" y "Borrar".
+El dashboard del usuario contiene un botón para acceder a las preguntas. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de preguntas. 
+El test verifica que al pulsar dicho botón aparece un texto perteneciente a la pantalla de preguntas, en este caso ``Crear Pregunta'' y ``Borrar''.
 
-\subsection{Botón de acceso a lista de usuarios del profesor}
+\subsection{Botón de acceso a lista de usuarios }
 \label{subsec:pruebas-controlador-boton-usuarios}
 El dashboard del usuario contiene un botón para acceder a los usuarios. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de lista de usuarios. 
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de usuarios, en este caso "Crear Lección" y "Borrar".
+El test verifica que al pulsar dicho botón se muestra un texto perteneciente a la pantalla de usuarios, en este caso ``Crear Usuario'' y ``Borrar''.
 
 \subsection{Botón de acceso al perfil del usuario}
 \label{subsec:pruebas-controlador-boton-perfil-usuario}
 El drawer contiene un botón para acceder al perfil del usuario. Se ha realizado una prueba sobre el botón, comprobando que al pulsar el botón se accede a la pantalla de perfil del usuario.
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de perfil del usuario, en este caso "Mis logros".
+El test verifica que al pulsar dicho botón aparece un texto perteneciente a la pantalla de perfil del usuario, en este caso ``Mis logros''.
 
 \subsection{Botón de acceso a una lección}
 \label{subsec:pruebas-controlador-boton-leccion}
 Al pulsar sobre una lección de la lista de lecciones, se accede a la pantalla de lección. Se ha realizado una prueba sobre el botón, comprobando que dicho acceso se realiza correctamente.
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lección, en este caso "Historial".
+El test verifica que al pulsar dicho botón aparece un texto perteneciente a la pantalla de lección, en este caso ``Historial''.
 
 \subsection{Botón de acceso al inicio}
 \label{subsec:pruebas-controlador-boton-leccion}
 El drawer contiene un botón para acceder a la pantalla de lecciones. Se ha realizado una prueba sobre el botón, comprobando que dicho acceso se realiza correctamente.
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de lecciones, en este caso "Los instrumentos".
+El test verifica que al pulsar dicho botón se muestra un texto perteneciente a la pantalla de lecciones, en este caso ``Los instrumentos'' (Figura \ref{fig:prueba_lecciones}).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{imagenes/c8/pruebawidget2.png}
     \caption{Código de la prueba de controlador o widget de acceso a la pantalla de lecciones}
-    \label{fig:prueba_widget_lecciones}
+    \label{fig:prueba_lecciones}
 \end{figure}
 
 \subsection{Botón de acceso al dashboard}
 \label{subsec:pruebas-controlador-boton-leccion}
 El drawer contiene un botón para acceder al dashboard. Se ha realizado una prueba sobre el botón, comprobando que dicho acceso se realiza correctamente.
-El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de dashboard, en este caso "Lecciones".
+El test verifica si al pulsar dicho botón encuentra un texto perteneciente a la pantalla de dashboard, en este caso ``Lecciones". 
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{imagenes/c8/pruebawidgets.png}
     \caption{Resultados de las pruebas de controlador o widget}
-    \label{fig:prueba_creacion_usuario}
+    \label{fig:prueba_widgets}
 \end{figure}
 
 
 \section{Pruebas de sistema o de integración}
 \label{sec:pruebas-sistema}
-Las pruebas de sistema o de integración son aquellas que se realizan sobre el sistema completo. Estas pruebas se realizan de forma conjunta, comprobando que todos los componentes del sistema funcionan correctamente y que se comunican entre ellos de forma correcta.
+Las pruebas de sistema o de integración son aquellas que se realizan sobre el sistema completo. Estas pruebas tratan de verificar el flujo de uso de una determinada funcionalidad de la aplicación.
 De esta forma nos aseguramos de que el sistema funciona de forma adecuada simulando varias acciones que podría realizar un usuario.
 
 \subsection{Creación de usuario}
-En este test se comprueba que se puede crear un usuario correctamente. Para ello se siguen los siguientes pasos:
+En este test se comprueba que se crea un usuario correctamente. Para ello se siguen los siguientes pasos:
 \begin{enumerate}
     \item Se comienza en la pantalla de inicio de sesión.
     \item Se rellenan los campos de inicio de sesión con los datos del profesor.
@@ -209,10 +209,10 @@ En este test se comprueba que se puede crear un usuario correctamente. Para ello
     \centering
     \includegraphics[width=\textwidth]{imagenes/c8/testint2.png}
     \caption{Pantallas por las que pasa la prueba de modificación de datos del perfil}
-    \label{fig:prueba_creacion_usuario}
+    \label{fig:prueba_edicion_perfil}
 \end{figure}
 
-Esta prueba verifica que se pueden editar los datos del perfil de un usuario. Para ello se siguen los siguientes pasos:
+Esta prueba verifica que se editen los datos del perfil de un usuario (Figura \ref{fig:prueba_edicion_perfil}). Para ello se siguen los siguientes pasos:
 
 \begin{enumerate}
     \item Se comienza en la pantalla de lista de lecciones. (la sesión ya está iniciada del test anterior)
@@ -226,7 +226,7 @@ Esta prueba verifica que se pueden editar los datos del perfil de un usuario. Pa
 
 
 \subsection{Realización de un test}
-Esta prueba verifica que se puede realizar un test y contestar a las preguntas de este. Para ello se siguen los siguientes pasos:
+Esta prueba verifica que se puede realizar un test (Figura \ref{fig:prueba_realizacion_test}) y contestar a las preguntas de este. Para ello se siguen los siguientes pasos:
 \begin{enumerate}
     \item Se comienza en la pantalla de lista de lecciones.
     \item Se pulsa sobre la lección "Introducción" (por ejemplo).
@@ -243,7 +243,7 @@ Esta prueba verifica que se puede realizar un test y contestar a las preguntas d
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{imagenes/c8/testint3.png}
+    \includegraphics[width=0.85\textwidth]{imagenes/c8/testint3.png}
     \caption{Pantallas por las que pasa la prueba de realización de un test}
-    \label{fig:prueba_creacion_usuario}
+    \label{fig:prueba_realizacion_test}
 \end{figure}

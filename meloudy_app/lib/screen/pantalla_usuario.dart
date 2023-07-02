@@ -39,20 +39,9 @@ class PantallaUsuario extends StatelessWidget {
               });
             },
               child: MODO.modo != 1 ? Image.network("http://${IP.ip}:5000/img/${usuario.logros[i].imagen}") : Container())),);
-    /*Container(
-    width: 50,
-    child: Image.network("http://${IP.ip}:5000/img/2.png")),
-    Container(
-    width: 50,
-    child: Image.network("http://${IP.ip}:5000/img/13.png")),
-    Container(
-    width: 50,
-    child: Image.network("http://${IP.ip}:5000/img/19.png")),
-    Container(
-    width: 50,
-    child: Image.network("http://${IP.ip}:5000/img/24.png")),*/
-
     }
+
+    print(usuario.foto);
     return Scaffold(
         appBar: AppBar(
           title: Text("Mi perfil"),
@@ -75,7 +64,7 @@ class PantallaUsuario extends StatelessWidget {
                         image: DecorationImage(
                             fit: BoxFit.cover,
                             image: MODO.modo != 1 ? NetworkImage(
-                                "http://${IP.ip}:5000/img/${usuario.foto}") : AssetImage('assets/musica.png'))),
+                                "http://${IP.ip}:5000/img/${usuario.foto}") : AssetImage('assets/personadefecto.png'))),
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 20, left: 20, bottom: 20),
@@ -125,28 +114,32 @@ class PantallaUsuario extends StatelessWidget {
                           style: TextStyle(fontSize: 20),
                         )),
                         Container(
-                          width: 130,
+                          width: 145,
+                          padding: EdgeInsets.all(0),
+
                           child: ElevatedButton(
+
                               key: Key('editarperfil'),
                               onPressed: () {
                                 Navigator.pushNamed(context, '/editarperfil', arguments: {
                                 "id": usuario.id.toString()
                                 });
+
                               },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Flexible(
-                                    child: Container(
-                                        margin: EdgeInsets.only(right: 3),
-                                        child: Icon(Icons.edit)),
-                                  ),
-                                  Flexible(
-                                    child: Container(
-                                        margin: EdgeInsets.only(left: 3),
-                                        child: Text("Editar", style: TextStyle(fontSize: 20),)),
-                                  )
-                                ],
+                              child: Container(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Flexible(
+                                      child: Container(
+                                          child: Icon(Icons.edit)),
+                                    ),
+                                    Flexible(
+                                      child: Container(
+                                          child: Text("Editar", style: TextStyle(fontSize: 20),)),
+                                    )
+                                  ],
+                                ),
                               )),
                         ),
 

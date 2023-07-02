@@ -24,20 +24,23 @@ class DrawerApp extends StatelessWidget {
               key: Key('inicio'),
               title: Text('Inicio'),
               onTap: () {
-                Navigator.of(context).pushReplacementNamed('/lecciones');
+                if(auth.isAuth) Navigator.of(context).pushReplacementNamed('/lecciones');
+                else Navigator.of(context).pushReplacementNamed('/');
               },
             ),
-            Divider(),
-            ListTile(
+            if(auth.isAuth) Divider(),
+            if(auth.isAuth) ListTile(
               leading: Icon(Icons.person),
               title: Text('Perfil'),
               key: Key('perfil'),
 
               onTap: () {
+
                 var idUsuario =
                     Provider.of<Auth>(context, listen: false).userId;
                 Provider.of<UsuarioPerfil>(context, listen: false).fetchAndSetUser(idUsuario).then((_) =>
                     Navigator.pushNamed(context, '/usuario'));
+
 
               },
             ),
@@ -54,8 +57,8 @@ class DrawerApp extends StatelessWidget {
                   },
                 ),
               ]),
-            Divider(),
-            ListTile(
+            if(auth.isAuth) Divider(),
+            if(auth.isAuth) ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text('Cerrar sesión'),
               onTap: () {
@@ -70,6 +73,8 @@ class DrawerApp extends StatelessWidget {
                 });
               },
             ),
+            if(!auth.isAuth)
+              Divider(),
           ],
         ),
       ),

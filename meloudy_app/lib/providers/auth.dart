@@ -36,21 +36,26 @@ class Auth with ChangeNotifier {
     return _userId;
   }
 
-  Future<void> registro(String email, String password, String nombre,
-      List<String> apellidos, String rol) async {
+  Future<void> registro(authData) async {
     const url = 'http://${IP.ip}:5000/api/user/registro';
     try {
+      var apellidos = [];
+      apellidos.add(authData['primerapellido']);
+      apellidos.add(authData['segundoapellido']);
+
       final response = await http.post(Uri.parse(url),
           headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"
           },
           body: json.encode({
-            "correo": email,
-            "password": password,
-            "nombre": "asassa",
-            "apellidos": ["as", "afdafd"],
-            "rol": "Admin"
+            "correo": authData['email'],
+            "password": authData['password'],
+            "nombre": authData['nombre'],
+            "apellidos": apellidos,
+            "username": authData['username'],
+            "rol": "Usuario",
+            "foto": "personadefecto.png",
           }));
       final responseData = json.decode(response.body);
 

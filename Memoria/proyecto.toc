@@ -140,9 +140,9 @@
 \contentsline {subsection}{\numberline {8.3.2}Botón de acceso a lista de lecciones del profesor}{138}{subsection.8.3.2}%
 \contentsline {subsection}{\numberline {8.3.3}Botón de acceso a lista de logros del profesor}{138}{subsection.8.3.3}%
 \contentsline {subsection}{\numberline {8.3.4}Botón de acceso a lista de preguntas del profesor}{139}{subsection.8.3.4}%
-\contentsline {subsection}{\numberline {8.3.5}Botón de acceso a lista de usuarios del profesor}{139}{subsection.8.3.5}%
+\contentsline {subsection}{\numberline {8.3.5}Botón de acceso a lista de usuarios }{139}{subsection.8.3.5}%
 \contentsline {subsection}{\numberline {8.3.6}Botón de acceso al perfil del usuario}{139}{subsection.8.3.6}%
-\contentsline {subsection}{\numberline {8.3.7}Botón de acceso a una lección}{139}{subsection.8.3.7}%
+\contentsline {subsection}{\numberline {8.3.7}Botón de acceso a una lección}{140}{subsection.8.3.7}%
 \contentsline {subsection}{\numberline {8.3.8}Botón de acceso al inicio}{140}{subsection.8.3.8}%
 \contentsline {subsection}{\numberline {8.3.9}Botón de acceso al dashboard}{140}{subsection.8.3.9}%
 \contentsline {section}{\numberline {8.4}Pruebas de sistema o de integración}{141}{section.8.4}%
@@ -150,3 +150,5 @@
 \contentsline {subsection}{\numberline {8.4.2}Edición de datos del perfil}{143}{subsection.8.4.2}%
 \contentsline {subsection}{\numberline {8.4.3}Realización de un test}{144}{subsection.8.4.3}%
 \contentsline {chapter}{\numberline {9}Conclusiones}{147}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Trabajo futuro}{148}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Valoración personal}{148}{section.9.2}%

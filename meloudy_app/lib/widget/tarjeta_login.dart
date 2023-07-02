@@ -36,11 +36,7 @@ class _TarjetaLoginState extends State<TarjetaLogin> {
       );
     } else {
       await Provider.of<Auth>(context, listen: false).registro(
-          _authData['email'],
-          _authData['password'],
-          " ",
-          ["ApellidoPrueba"," "],
-          "Usuario");
+          _authData);
       // Sign user up
     }
     setState(() {
@@ -70,9 +66,9 @@ class _TarjetaLoginState extends State<TarjetaLogin> {
       ),
       elevation: 8.0,
       child: Container(
-        height: _authMode == AuthMode.Signup ? 320 : 260,
+        height: _authMode == AuthMode.Signup ? 520 : 260,
         constraints:
-        BoxConstraints(minHeight: _authMode == AuthMode.Signup ? 320 : 260),
+        BoxConstraints(minHeight: _authMode == AuthMode.Signup ? 520 : 260),
         width: deviceSize.width * 0.75,
         padding: EdgeInsets.all(16.0),
         child: Form(
@@ -94,6 +90,42 @@ class _TarjetaLoginState extends State<TarjetaLogin> {
                     _authData['email'] = value;
                   },
                 ),
+                if (_authMode == AuthMode.Signup)
+                  TextFormField(
+                    enabled: _authMode == AuthMode.Signup,
+                    decoration:
+                    InputDecoration(labelText: 'Nombre'),
+                    onSaved: (value) {
+                      _authData['nombre'] = value;
+                    },
+                  ),
+                if (_authMode == AuthMode.Signup)
+                  TextFormField(
+                    enabled: _authMode == AuthMode.Signup,
+                    decoration:
+                    InputDecoration(labelText: 'Primer apellido'),
+                    onSaved: (value) {
+                      _authData['primerapellido'] = value;
+                    },
+                  ),
+                if (_authMode == AuthMode.Signup)
+                  TextFormField(
+                    enabled: _authMode == AuthMode.Signup,
+                    decoration:
+                    InputDecoration(labelText: 'Segundo apellido'),
+                    onSaved: (value) {
+                      _authData['segundoapellido'] = value;
+                    },
+                  ),
+                if (_authMode == AuthMode.Signup)
+                  TextFormField(
+                    enabled: _authMode == AuthMode.Signup,
+                    decoration:
+                    InputDecoration(labelText: 'Nombre de usuario'),
+                    onSaved: (value) {
+                      _authData['username'] = value;
+                    },
+                  ),
                 TextFormField(
                   decoration: InputDecoration(labelText: 'Contraseña'),
                   obscureText: true,
