@@ -50,7 +50,8 @@ const index = async (req, res) => {
                     if (error || !progress) {
                         return res.status(404).json({
                             status: "error",
-                            mensaje: "El progreso no se ha podido encontrar"
+                            mensaje: "El progreso no se ha podido encontrar",
+                            leccion: lessons,
                         });
                     }
                     else {  
@@ -59,6 +60,7 @@ const index = async (req, res) => {
                         
                         for (let i = 0; i < progress.length; i++) {
                             var test = progress[i].tests;
+                            console.log("aaaaaaaaa" + progress[i].tests.length);
                             var cuenta = 0;
                             try {
  
