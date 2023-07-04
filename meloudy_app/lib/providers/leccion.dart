@@ -17,7 +17,7 @@ class Leccion with ChangeNotifier {
   final String estado;
   final int num_aprobados;
 
-  List<Test> tests = [];
+  List<dynamic> tests = [];
 
   Leccion({
     @required this.id,
@@ -25,6 +25,7 @@ class Leccion with ChangeNotifier {
     @required this.contenido,
     @required this.imagenprincipal,
     @required this.estado,
+    @required this.tests,
     @required this.num_aprobados
   });
 

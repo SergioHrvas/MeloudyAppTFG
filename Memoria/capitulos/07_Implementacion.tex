@@ -518,21 +518,20 @@ debe ser fiel a la partitura que se muestra en la imagen de la pregunta.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\textwidth]{imagenes/c7/entradamicrofono3.png}
+  \includegraphics[width=0.37\textwidth]{imagenes/c7/entradamicrofono3.png}
   \caption{Pregunta de micrófono con respuesta introducida.}
   \label{fig:login}
 \end{figure}
 
 \paragraph*{Lógica}
-Para realizar la lógica de esta pantalla se ha utilizado la biblioteca \textit{flutter\_fft}, que permite realizar la transformada de Fourier de una señal de audio.
-Esta biblioteca permite obtener la frecuencia de la señal de audio, que se utiliza para determinar el tono del sonido,
+Para realizar la lógica de esta pantalla se ha utilizado la biblioteca \textit{flutter\_fft}, que utiliza la transformada de Fourier de una señal de audio para obtener la frecuencia que se utiliza para determinar el tono del sonido,
  y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia.
 Para ello, la biblioteca utiliza un \textit{StreamBuilder} que se encarga de obtener la frecuencia de la señal de audio. 
 Se han realizado algunas modificaciones al código de la biblioteca para que la detección de notas sea más precisa y
  se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
 
 Cabe mencionar que \textit{flutter\_fft} se le pueden ajustar varios parámetros para que la detección de notas sea más o menos precisa, 
-como el número de muestras que se toman por segundo, el tiempo de espera entre muestras, etc.
+como el número de muestras que se toman por segundo, el intervalo entre muestras, etc.
 
 Cuando el usuario pulsa el botón del micrófono, se inicia el \textit{StreamBuilder}, se cambia el estado del widget para establecer 
 que se está grabando (variable isRecording) y se muestra una retroalimentación al usuario cambiando el color del botón para notificar al usuario.
@@ -541,7 +540,7 @@ Además, las notas musicales se muestran en pantalla conforme el algoritmo las i
 Cuando se completan todas las notas de la partitura, se detiene el \textit{StreamBuilder} automáticamente.
 Además, en el momento en el que el usuario pulsa el botón del micrófono cuando esté esta grabando, también se detiene el \textit{StreamBuilder}.
 
-Si el usuario no está conforme con la respuesta, puede pulsar el botón de "Reiniciar" para resetear el ejercicio y puede volver a grabar pulsando el botón de micrófono. 
+Si el usuario no está conforme con la respuesta, puede pulsar el botón de ``Reiniciar'' para resetear el ejercicio y puede volver a grabar pulsando el botón de micrófono. 
 Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar a la siguiente pregunta.
 
 \subsubsection{Resultado del test}
@@ -549,15 +548,15 @@ Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar
 \textit{Desarrollado en el Sprint 6}
 
 A continuación se muestra la pantalla de resultado del test, en la que se muestra el número y el porcentaje de aciertos respecto a las preguntas. 
-Además, se muestra una barra de progreso que muestra el porcentaje de aciertos respecto al número de preguntas preguntas.
+Además, se muestra una barra de progreso que muestra el porcentaje de aciertos respecto al número de preguntas preguntas. (Figura \ref{fig:fin_test})
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Resultado aprobado (50\% o más).]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/porcentaje.png} }}%
+  \subfloat[\centering Resultado aprobado (50\% o más).]{{\includegraphics[width=0.37\textwidth]{imagenes/c7/porcentaje.png} }}%
   \qquad
-  \subfloat[\centering Resultado suspenso (menos del 50\%).]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/porcentaje2.png} }}%
+  \subfloat[\centering Resultado suspenso (menos del 50\%).]{{ \includegraphics[width=0.37\textwidth]{imagenes/c7/porcentaje2.png} }}%
   \caption{Pantalla que muestra el resultado del test con el número de aciertos y el porcentaje de aciertos respecto a las preguntas con un Progress Bar.}%
-  \label{fig:example}%
+  \label{fig:fin_test}%
 \end{figure}
 
 \paragraph*{Vista}
@@ -610,7 +609,7 @@ Esta función recibe tres parámetros: una condición, un valor si la condición
 En nuestro caso, la condición es la función \textit{validarRespuesta} que hemos creado antes. Si la condición es \textit{true}, 
 se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 
-\newpage
+
 
 \subsubsection{Revisión de pregunta de selección única}
 \label{sec:pregunic1b}
@@ -618,11 +617,11 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Revisión de selección única acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/selecunicab.png} }}%
+  \subfloat[\centering Revisión de selección única acertada.]{{\includegraphics[width=0.4\textwidth]{imagenes/c7/selecunicab.png} }}%
   \qquad
-  \subfloat[\centering Revisión de selección única fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/selecunicab2.png} }}%
+  \subfloat[\centering Revisión de selección única fallida.]{{ \includegraphics[width=0.4\textwidth]{imagenes/c7/selecunicab2.png} }}%
   \caption{Pantalla de la pregunta de selección única en revisión.}%
-  \label{fig:example}%
+  \label{fig:revisar_unica}%
 \end{figure}
 
 \newpage
@@ -637,7 +636,7 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
   \qquad
   \subfloat[\centering Selección múltiple fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/selecmultib2.png} }}%
   \caption{Pantalla de la pregunta de selección múltiple en revisión.}%
-  \label{fig:example}%
+  \label{fig:revisar_multiple}%
 \end{figure}
 
 \newpage
@@ -650,7 +649,7 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
   \centering
   \subfloat[\centering Revisión de entrada de texto acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextob.png} }}%
   \qquad
-  \subfloat[\centering Revisión de entrada de texto fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextb2.png} }}%
+  \subfloat[\centering Revisión de entrada de texto fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextob2.png} }}%
   \caption{Pantalla de la pregunta de entrada de texto en revisión.}%
   \label{fig:example}%
 \end{figure}
@@ -663,12 +662,14 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 \textit{Desarrollado en el Sprint 7}
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Revisión de entrada de micrófono acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob2.png} }}%
+  \subfloat[\centering Revisión de entrada de micrófono acertada.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob.png} }}%
   \qquad
-  \subfloat[\centering Revisión de entrada de micrófono fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob.png} }}%
+  \subfloat[\centering Revisión de entrada de micrófono fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob2.png} }}%
   \caption{Pantalla de la pregunta de entrada de micrófono en revisión.}%
   \label{fig:example}%
 \end{figure}
+
+\newpage
 
 \subsection{Historial de tests}
 \textit{Desarrollado en el Sprint 6}
@@ -758,6 +759,7 @@ Cada una de las filas contiene un distribuidor de filas (Row) que se encargará 
 Para cargar la lista de logros no ha hecho falta llamar al provider pues los datos de los logros se encuentran en el provider UsuarioPerfil.
 Por tanto, solo ha hecho falta obtener dichos datos y cargarlos en la nueva vista.
 
+\newpage
 
 \section{Funcionalidad de gestión de la aplicación}
 A continuación presentamos las funcionalidades de gestión de la aplicación. 
@@ -772,22 +774,23 @@ Por otro lado, el administrador podrá gestionar, además de las lecciones y las
 Un dashboard es una interfaz de usuario que muestra información de forma resumida y que permite al usuario acceder a las diferentes funcionalidades de la aplicación.
  En este caso, el dashboard del profesor muestra las opciones de gestión de lecciones y preguntas.
 
-\paragraph*{Vista}
-Se ha implementado una pantalla de dashboard para la gestión de la aplicación.
-En esta pantalla, se muestran las opciones de gestión disponibles para la persona que utiliza la aplicación en función de su rol mediante una columna de ElevatedButton.
- En la siguiente imagen se puede ver la pantalla de dashboard:
-
 
 \begin{figure}[H]%
   \centering
-  \subfloat[\centering Pantalla de dashboard con las opciones de gestión disponibles para el profesor.]{{\includegraphics[width=0.45\textwidth]{imagenes/c7/dashboard.png} }}%
+  \subfloat[\centering Pantalla de dashboard con las opciones de gestión disponibles para el profesor.]{{\includegraphics[width=0.35\textwidth]{imagenes/c7/dashboard.png} }}%
   \qquad
-  \subfloat[\centering Composición de la pantalla de dashboard.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/dashboardcompo.png} }}%
+  \subfloat[\centering Composición de la pantalla de dashboard.]{{ \includegraphics[width=0.35\textwidth]{imagenes/c7/dashboardcompo.png} }}%
   \caption{Vista del dashboard}%
   \label{fig:dashboard}%
 \end{figure}
 
-\newpage
+\paragraph*{Vista}
+Se ha implementado una pantalla de dashboard para la gestión de la aplicación.
+En esta pantalla, se muestran las opciones de gestión disponibles para la persona que utiliza la aplicación en función de su rol mediante una columna de ElevatedButton.
+ En la figura \ref*{fig:dashboard} imagen se puede ver la pantalla de dashboard.
+
+
+
 
 \subsection{Lista de lecciones} 
 \textit{Desarrollado en el Sprint 5}
@@ -854,8 +857,6 @@ La vista de esta pantalla consiste en un formulario de creación de lecciones. E
   \item Un número variable de botones (\textit{ElevatedButton}) para las imágenes.
   \item Un número variable de campos de texto para los vídeos.
 \end{itemize}
-
-\newpage
 
 Todo esto está distribuido mediante el widget que organiza los elementos de forma vertical llamado \textit{Column}. 
 En la parte inferior de la pantalla, se encuentran varios iconos organizados en una fila, que permiten incorporar nuevas widgets al contenido de la lección

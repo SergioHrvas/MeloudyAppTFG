@@ -91,13 +91,13 @@ class LeccionItemProfesor extends StatelessWidget {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white,
-                      /*image: DecorationImage(
+                      image: DecorationImage(
                         fit: BoxFit.fill,
                         image: MODO.modo != 1
                             ? NetworkImage(
                                 'http://${IP.ip}:5000/img/${_imagenprincipal}')
                             : AssetImage('assets/musica.png'),
-                      )*/),
+                      )),
                 )),
             Container(
               margin: EdgeInsets.only(left: 5),

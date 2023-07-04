@@ -44,6 +44,7 @@ class _PantallaEditarLogroProfesorState
     "tests",
     "leccion",
     "lecciones",
+    "preguntas",
     "preguntasunica",
     "preguntastexto",
     "preguntasmultiple",

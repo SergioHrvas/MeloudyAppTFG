@@ -127,6 +127,7 @@ class Preguntas with ChangeNotifier {
 
   int calcularAciertos() {
     aciertos = 0;
+
     var fallo;
     for (var i = 0; i < preguntas.length; i++) {
       fallo = false;
@@ -145,6 +146,13 @@ class Preguntas with ChangeNotifier {
             fallo = true;
           }
         } else {
+          if(preguntas[i].tipo == "texto") {
+            for (var k = 0; k < preguntas[i].respuestascorrectas.length; k++) {
+              preguntas[i].respuestascorrectas[k] =
+                  preguntas[i].respuestascorrectas[k].toLowerCase();
+            }
+            preguntas[i].respuestas[0]=preguntas[i].respuestas[0].toLowerCase();
+          }
           if (preguntas[i]
                       .respuestascorrectas
                       .contains(preguntas[i].respuestas[j]) ==

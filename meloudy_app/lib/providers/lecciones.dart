@@ -31,15 +31,11 @@ class Lecciones with ChangeNotifier {
   }
 
   Future<void> fetchAndSetLecciones(id) async {
-    print(" - " + id.toString() + " - ");
-    if((id == "" || id == null) && MODO.modo == 1)
-       id = '63fe53c56ac25d3aa7ac988b';
-    final url = Uri.parse(
-        'http://${IP.ip}:5000/api/lesson/get-lessons/${id}');
+    if ((id == "" || id == null) && MODO.modo == 1)
+      id = '63fe53c56ac25d3aa7ac988b';
+    final url = Uri.parse('http://${IP.ip}:5000/api/lesson/get-lessons/${id}');
     try {
-      print("a");
       final response = await http.get(url);
-
 
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
 
@@ -51,46 +47,48 @@ class Lecciones with ChangeNotifier {
       }
 
       final List<Leccion> leccionesCargadas = [];
-      var ultimo = false;
+      var ult = false;
       var leccionesLista = extractedData['leccion'];
 
+
+      var listaListaTests = [];
       for (var i = 0; i < extractedData['leccion'].length; i++) {
+        var pasado = false;
         var completadovar = null;
         var estado = 'bloqueado';
 
-        for (var j = 0; j < extractedData['progreso'].length; j++) {
-          if (extractedData['progreso'][j]['idLeccion'] ==
-              extractedData['leccion'][i]['_id']) {
-            completadovar = extractedData['progreso'][j]['completado'];
-            if (completadovar == null) {
-              if (ultimo == false) {
-                estado = 'desbloqueado';
-                ultimo = true;
-              } else {
-                estado = 'bloqueado';
+          for (var j = 0; j < extractedData['progreso'].length; j++) {
+            if (extractedData['progreso'][j]['idLeccion'] ==
+                extractedData['leccion'][i]['_id']) {
+              var listaTests = [];
+
+              for (var k = 0;
+                  k < extractedData['progreso'][j]['tests'].length;
+                  k++) {
+                listaTests.add(extractedData['progreso'][j]['tests'][k]);
               }
-            } else {
-              if (completadovar) {
-                estado = 'completado';
-              } else {
-                if (ultimo == false) {
-                  estado = 'desbloqueado';
-                  ultimo = true;
+
+              listaListaTests.add(listaTests);
+
+              completadovar = extractedData['progreso'][j]['completado'];
+
+              if (completadovar !=null ){
+                if (completadovar) {
+                  estado = 'completado';
                 } else {
-                  estado = 'bloqueado';
+                    estado = 'bloqueado';
                 }
               }
+              pasado = true;
             }
-          }
         }
 
-        if (i >= extractedData['progreso'].length) {
-          if (ultimo == false) {
+        if(!pasado){
+          if(!ult){
             estado = 'desbloqueado';
-            ultimo = true;
-          } else {
-            estado = 'bloqueado';
+            ult = true;
           }
+          listaListaTests.add([]);
         }
 
         final List<Contenido> contenidoCargado = [];
@@ -118,11 +116,13 @@ class Lecciones with ChangeNotifier {
             contenido: contenidoCargado,
             imagenprincipal: leccionesLista[i]['imagenprincipal'],
             estado: estado,
+            tests: listaListaTests[i],
             num_aprobados: numAprobados));
       }
-      lecciones = leccionesCargadas;
-      notifyListeners();
 
+      lecciones = leccionesCargadas;
+
+      notifyListeners();
     } catch (error) {
       throw (error);
     }
@@ -155,25 +155,23 @@ class Lecciones with ChangeNotifier {
     var extractedData = json.decode(response.body);
 
     final List<Contenido> contenidovector = [];
-    if(extractedData['leccion']!=null) {
+    if (extractedData['leccion'] != null) {
       if (extractedData['leccion']['contenido'] != null) {
         for (var i = 0; i < extractedData['leccion']['contenido'].length; i++) {
           contenidovector.add(Contenido(
               tipo: extractedData['leccion']['contenido'][i]['tipo'].toString(),
               texto: extractedData['leccion']['contenido'][i]['texto']
-                  .toString()
-          ));
+                  .toString()));
         }
       }
 
       var i = getIndice(id);
 
-    lecciones[i] = Leccion(
-      id: extractedData['leccion']['_id'],
-      nombre: extractedData['leccion']['nombre'],
-      imagenprincipal: extractedData['leccion']['imagenprincipal'],
-      contenido: contenidovector
-    );
+      lecciones[i] = Leccion(
+          id: extractedData['leccion']['_id'],
+          nombre: extractedData['leccion']['nombre'],
+          imagenprincipal: extractedData['leccion']['imagenprincipal'],
+          contenido: contenidovector);
     }
   }
 

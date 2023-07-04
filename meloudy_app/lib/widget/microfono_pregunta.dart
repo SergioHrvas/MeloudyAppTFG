@@ -136,8 +136,14 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
     isRecording = flutterFft.getIsRecording;
 
     final modo = Provider.of<Preguntas>(context, listen: false).modo;
+    print("-" + modo);
     indice = respuestas.length;
 
+    if(respuestas.length == 0 && modo == "revisando"){
+      for(var i = 0; i < notascorrectas.length; i++){
+        respuestas.add("-");
+      }
+    }
     if (indice == notascorrectas.length && isRecording) {
       flutterFft.stopRecorder();
       setState(() {

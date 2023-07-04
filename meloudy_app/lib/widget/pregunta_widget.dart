@@ -70,6 +70,9 @@ class _PreguntaWidgetState extends State {
       }
     } else if (preguntas[indice].tipo == 'texto') {
 
+      for(var j = 0; j < preguntas[indice].respuestascorrectas.length; j++){
+        preguntas[indice].respuestascorrectas[j] = preguntas[indice].respuestascorrectas[j].toLowerCase();
+      }
       opciones.add(Container(
         padding: EdgeInsets.only(left: 20, right: 20),
         key: Key('texto'),

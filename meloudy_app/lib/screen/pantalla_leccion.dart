@@ -24,6 +24,7 @@ class LeccionPantalla extends StatelessWidget {
       listen: false,
     ).findById(leccionId);
 
+    print("LL: " + loadedLesson.tests.length.toString());
     final contenido = loadedLesson.contenido;
     var contenidos = List<Widget>();
     for (var i = 0; i < contenido.length; i++) {
@@ -124,7 +125,6 @@ class LeccionPantalla extends StatelessWidget {
                   Provider.of<Preguntas>(context, listen: false).setIdUser(id);
                   Provider.of<Preguntas>(context, listen: false)
                       .setModo('respondiendo');
-                  print(leccionId);
                   Navigator.pushReplacementNamed(context, '/pregunta',
                       arguments: leccionId);
                 },
@@ -133,7 +133,7 @@ class LeccionPantalla extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
               )),
-          Container(
+          loadedLesson.tests.length != 0 ? Container(
               margin: EdgeInsets.only(bottom: 20),
 
               child: ElevatedButton(
@@ -147,7 +147,7 @@ class LeccionPantalla extends StatelessWidget {
                     arguments: leccionId);
               });
             },
-          ))
+          )) : Container()
         ],
       )),
     );

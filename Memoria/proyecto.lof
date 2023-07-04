@@ -78,85 +78,85 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Pregunta de micrófono sin respuesta introducida.}}}{90}{subfigure.16.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Pregunta de micrófono introduciendo respuesta.}}}{90}{subfigure.16.2}%
 \contentsline {figure}{\numberline {7.17}{\ignorespaces Pregunta de micrófono con respuesta introducida.\relax }}{91}{figure.caption.118}%
-\contentsline {figure}{\numberline {7.18}{\ignorespaces Pantalla que muestra el resultado del test con el número de aciertos y el porcentaje de aciertos respecto a las preguntas con un Progress Bar.\relax }}{93}{figure.caption.120}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Resultado aprobado (50\% o más).}}}{93}{subfigure.18.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Resultado suspenso (menos del 50\%).}}}{93}{subfigure.18.2}%
-\contentsline {figure}{\numberline {7.19}{\ignorespaces Pantalla de la pregunta de selección única en revisión.\relax }}{95}{figure.caption.125}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Revisión de selección única acertada.}}}{95}{subfigure.19.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Revisión de selección única fallida.}}}{95}{subfigure.19.2}%
-\contentsline {figure}{\numberline {7.20}{\ignorespaces Pantalla de la pregunta de selección múltiple en revisión.\relax }}{96}{figure.caption.126}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Selección múltiple acertada.}}}{96}{subfigure.20.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Selección múltiple fallida.}}}{96}{subfigure.20.2}%
-\contentsline {figure}{\numberline {7.21}{\ignorespaces Pantalla de la pregunta de entrada de texto en revisión.\relax }}{97}{figure.caption.127}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Revisión de entrada de texto acertada.}}}{97}{subfigure.21.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Revisión de entrada de texto fallida.}}}{97}{subfigure.21.2}%
-\contentsline {figure}{\numberline {7.22}{\ignorespaces Pantalla de la pregunta de entrada de micrófono en revisión.\relax }}{98}{figure.caption.128}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Revisión de entrada de micrófono acertada.}}}{98}{subfigure.22.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Revisión de entrada de micrófono fallida.}}}{98}{subfigure.22.2}%
-\contentsline {figure}{\numberline {7.23}{\ignorespaces Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.\relax }}{99}{figure.caption.130}%
-\contentsline {figure}{\numberline {7.24}{\ignorespaces Pantalla del perfil del usuario.\relax }}{100}{figure.caption.132}%
-\contentsline {figure}{\numberline {7.25}{\ignorespaces Pantalla de visualización de logro asignado.\relax }}{101}{figure.caption.135}%
-\contentsline {figure}{\numberline {7.26}{\ignorespaces Pantalla de visualización de la lista de logros asignados.\relax }}{102}{figure.caption.138}%
-\contentsline {figure}{\numberline {7.27}{\ignorespaces Vista del dashboard\relax }}{104}{figure.caption.141}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Pantalla de dashboard con las opciones de gestión disponibles para el profesor.}}}{104}{subfigure.27.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Composición de la pantalla de dashboard.}}}{104}{subfigure.27.2}%
-\contentsline {figure}{\numberline {7.28}{\ignorespaces Vista de la lista de las lecciones.\relax }}{105}{figure.caption.143}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Pantalla de lista de lecciones del profesor para la gestión de estas.}}}{105}{subfigure.28.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Composición de la pantalla de la lista de lecciones.}}}{105}{subfigure.28.2}%
-\contentsline {figure}{\numberline {7.29}{\ignorespaces Pantalla del borrado de una lección.\relax }}{106}{figure.caption.145}%
-\contentsline {figure}{\numberline {7.30}{\ignorespaces Pantalla de la creación de lecciones sin datos introducidos.\relax }}{108}{figure.caption.148}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección vacía \#1.}}}{108}{subfigure.30.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección vacía \#2.}}}{108}{subfigure.30.2}%
-\contentsline {figure}{\numberline {7.31}{\ignorespaces Pantalla de la creación de lecciones con datos introducidos. \relax }}{109}{figure.caption.149}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección rellena \#1.}}}{109}{subfigure.31.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección rellena \#2.}}}{109}{subfigure.31.2}%
-\contentsline {figure}{\numberline {7.32}{\ignorespaces Pantalla de la edición de lecciones existentes por parte del profesor.\relax }}{111}{figure.caption.152}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de lección \#1.}}}{111}{subfigure.32.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de lección \#2.}}}{111}{subfigure.32.2}%
-\contentsline {figure}{\numberline {7.33}{\ignorespaces Pantalla de lista de preguntas del profesor para la gestión de estas.\relax }}{112}{figure.caption.155}%
-\contentsline {figure}{\numberline {7.34}{\ignorespaces Pantalla del borrado de una pregunta.\relax }}{113}{figure.caption.157}%
-\contentsline {figure}{\numberline {7.35}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' vacía. La pregunta de tipo múltiple y de tipo micrófono son iguales.\relax }}{115}{figure.caption.160}%
-\contentsline {figure}{\numberline {7.36}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' con datos introducidos.\relax }}{116}{figure.caption.161}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#1.}}}{116}{subfigure.36.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#2.}}}{116}{subfigure.36.2}%
-\contentsline {figure}{\numberline {7.37}{\ignorespaces Pantalla de creación de pregunta de tipo 'múltiple' con datos introducidos.\relax }}{116}{figure.caption.162}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#1.}}}{116}{subfigure.37.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#2.}}}{116}{subfigure.37.2}%
-\contentsline {figure}{\numberline {7.38}{\ignorespaces Pantalla de creación de pregunta de tipo 'micrófono' con datos introducidos.\relax }}{117}{figure.caption.163}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#1.}}}{117}{subfigure.38.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#2.}}}{117}{subfigure.38.2}%
-\contentsline {figure}{\numberline {7.39}{\ignorespaces Pantalla de creación de pregunta de tipo 'texto'.\relax }}{117}{figure.caption.164}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'texto' vacía.}}}{117}{subfigure.39.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'texto' rellena.}}}{117}{subfigure.39.2}%
-\contentsline {figure}{\numberline {7.40}{\ignorespaces Pantalla de edición de pregunta de tipo 'única'.\relax }}{119}{figure.caption.167}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta única \#1.}}}{119}{subfigure.40.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta única\#2.}}}{119}{subfigure.40.2}%
-\contentsline {figure}{\numberline {7.41}{\ignorespaces Pantalla de edición de pregunta de tipo 'múltiple'.\relax }}{120}{figure.caption.168}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta múltiple\#1.}}}{120}{subfigure.41.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta múltiple\#2.}}}{120}{subfigure.41.2}%
-\contentsline {figure}{\numberline {7.42}{\ignorespaces Pantalla de edición de pregunta de tipo 'micrófono'.\relax }}{120}{figure.caption.169}%
-\contentsline {figure}{\numberline {7.43}{\ignorespaces Pantalla de edición de pregunta de tipo 'texto'.\relax }}{121}{figure.caption.170}%
-\contentsline {figure}{\numberline {7.44}{\ignorespaces Pantalla de lista de usuarios del administrador para la gestión de estos.\relax }}{122}{figure.caption.173}%
-\contentsline {figure}{\numberline {7.45}{\ignorespaces Pantalla de borrado de un usuario.\relax }}{123}{figure.caption.175}%
-\contentsline {figure}{\numberline {7.46}{\ignorespaces Pantallas de creación de usuarios.\relax }}{125}{figure.caption.178}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de usuario vacía. \#1.}}}{125}{subfigure.46.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de usuario rellena \#2.}}}{125}{subfigure.46.2}%
-\contentsline {figure}{\numberline {7.47}{\ignorespaces Pantalla de edición de usuario existente.\relax }}{126}{figure.caption.181}%
-\contentsline {figure}{\numberline {7.48}{\ignorespaces Pantalla de lista de logros del administrador.\relax }}{127}{figure.caption.184}%
-\contentsline {figure}{\numberline {7.49}{\ignorespaces Pantalla del borrado de un logro.\relax }}{128}{figure.caption.186}%
-\contentsline {figure}{\numberline {7.50}{\ignorespaces Pantallas de creación de logros.\relax }}{130}{figure.caption.189}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de logro vacío. \#1.}}}{130}{subfigure.50.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de logro rellena \#2.}}}{130}{subfigure.50.2}%
-\contentsline {figure}{\numberline {7.51}{\ignorespaces Pantalla de edición de logro existente.\relax }}{132}{figure.caption.192}%
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Pantalla que muestra el resultado del test con el número de aciertos y el porcentaje de aciertos respecto a las preguntas con un Progress Bar.\relax }}{92}{figure.caption.120}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Resultado aprobado (50\% o más).}}}{92}{subfigure.18.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Resultado suspenso (menos del 50\%).}}}{92}{subfigure.18.2}%
+\contentsline {figure}{\numberline {7.19}{\ignorespaces Pantalla de la pregunta de selección única en revisión.\relax }}{94}{figure.caption.125}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Revisión de selección única acertada.}}}{94}{subfigure.19.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Revisión de selección única fallida.}}}{94}{subfigure.19.2}%
+\contentsline {figure}{\numberline {7.20}{\ignorespaces Pantalla de la pregunta de selección múltiple en revisión.\relax }}{95}{figure.caption.126}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Selección múltiple acertada.}}}{95}{subfigure.20.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Selección múltiple fallida.}}}{95}{subfigure.20.2}%
+\contentsline {figure}{\numberline {7.21}{\ignorespaces Pantalla de la pregunta de entrada de texto en revisión.\relax }}{96}{figure.caption.127}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Revisión de entrada de texto acertada.}}}{96}{subfigure.21.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Revisión de entrada de texto fallida.}}}{96}{subfigure.21.2}%
+\contentsline {figure}{\numberline {7.22}{\ignorespaces Pantalla de la pregunta de entrada de micrófono en revisión.\relax }}{97}{figure.caption.128}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Revisión de entrada de micrófono acertada.}}}{97}{subfigure.22.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Revisión de entrada de micrófono fallida.}}}{97}{subfigure.22.2}%
+\contentsline {figure}{\numberline {7.23}{\ignorespaces Pantalla de dashboard del profesor con las opciones de gestión disponibles para el profesor.\relax }}{98}{figure.caption.130}%
+\contentsline {figure}{\numberline {7.24}{\ignorespaces Pantalla del perfil del usuario.\relax }}{99}{figure.caption.132}%
+\contentsline {figure}{\numberline {7.25}{\ignorespaces Pantalla de visualización de logro asignado.\relax }}{100}{figure.caption.135}%
+\contentsline {figure}{\numberline {7.26}{\ignorespaces Pantalla de visualización de la lista de logros asignados.\relax }}{101}{figure.caption.138}%
+\contentsline {figure}{\numberline {7.27}{\ignorespaces Vista del dashboard\relax }}{102}{figure.caption.140}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Pantalla de dashboard con las opciones de gestión disponibles para el profesor.}}}{102}{subfigure.27.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Composición de la pantalla de dashboard.}}}{102}{subfigure.27.2}%
+\contentsline {figure}{\numberline {7.28}{\ignorespaces Vista de la lista de las lecciones.\relax }}{103}{figure.caption.143}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Pantalla de lista de lecciones del profesor para la gestión de estas.}}}{103}{subfigure.28.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Composición de la pantalla de la lista de lecciones.}}}{103}{subfigure.28.2}%
+\contentsline {figure}{\numberline {7.29}{\ignorespaces Pantalla del borrado de una lección.\relax }}{104}{figure.caption.145}%
+\contentsline {figure}{\numberline {7.30}{\ignorespaces Pantalla de la creación de lecciones sin datos introducidos.\relax }}{106}{figure.caption.148}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección vacía \#1.}}}{106}{subfigure.30.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección vacía \#2.}}}{106}{subfigure.30.2}%
+\contentsline {figure}{\numberline {7.31}{\ignorespaces Pantalla de la creación de lecciones con datos introducidos. \relax }}{107}{figure.caption.149}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de lección rellena \#1.}}}{107}{subfigure.31.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de lección rellena \#2.}}}{107}{subfigure.31.2}%
+\contentsline {figure}{\numberline {7.32}{\ignorespaces Pantalla de la edición de lecciones existentes por parte del profesor.\relax }}{109}{figure.caption.152}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de lección \#1.}}}{109}{subfigure.32.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de lección \#2.}}}{109}{subfigure.32.2}%
+\contentsline {figure}{\numberline {7.33}{\ignorespaces Pantalla de lista de preguntas del profesor para la gestión de estas.\relax }}{110}{figure.caption.155}%
+\contentsline {figure}{\numberline {7.34}{\ignorespaces Pantalla del borrado de una pregunta.\relax }}{111}{figure.caption.157}%
+\contentsline {figure}{\numberline {7.35}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' vacía. La pregunta de tipo múltiple y de tipo micrófono son iguales.\relax }}{113}{figure.caption.160}%
+\contentsline {figure}{\numberline {7.36}{\ignorespaces Pantalla de creación de pregunta de tipo 'única' con datos introducidos.\relax }}{114}{figure.caption.161}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#1.}}}{114}{subfigure.36.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'única' rellena \#2.}}}{114}{subfigure.36.2}%
+\contentsline {figure}{\numberline {7.37}{\ignorespaces Pantalla de creación de pregunta de tipo 'múltiple' con datos introducidos.\relax }}{114}{figure.caption.162}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#1.}}}{114}{subfigure.37.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'múltiple' rellena \#2.}}}{114}{subfigure.37.2}%
+\contentsline {figure}{\numberline {7.38}{\ignorespaces Pantalla de creación de pregunta de tipo 'micrófono' con datos introducidos.\relax }}{115}{figure.caption.163}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#1.}}}{115}{subfigure.38.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'micrófono' rellena \#2.}}}{115}{subfigure.38.2}%
+\contentsline {figure}{\numberline {7.39}{\ignorespaces Pantalla de creación de pregunta de tipo 'texto'.\relax }}{115}{figure.caption.164}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de pregunta 'texto' vacía.}}}{115}{subfigure.39.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de pregunta 'texto' rellena.}}}{115}{subfigure.39.2}%
+\contentsline {figure}{\numberline {7.40}{\ignorespaces Pantalla de edición de pregunta de tipo 'única'.\relax }}{117}{figure.caption.167}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta única \#1.}}}{117}{subfigure.40.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta única\#2.}}}{117}{subfigure.40.2}%
+\contentsline {figure}{\numberline {7.41}{\ignorespaces Pantalla de edición de pregunta de tipo 'múltiple'.\relax }}{118}{figure.caption.168}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Edición de pregunta múltiple\#1.}}}{118}{subfigure.41.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edición de pregunta múltiple\#2.}}}{118}{subfigure.41.2}%
+\contentsline {figure}{\numberline {7.42}{\ignorespaces Pantalla de edición de pregunta de tipo 'micrófono'.\relax }}{118}{figure.caption.169}%
+\contentsline {figure}{\numberline {7.43}{\ignorespaces Pantalla de edición de pregunta de tipo 'texto'.\relax }}{119}{figure.caption.170}%
+\contentsline {figure}{\numberline {7.44}{\ignorespaces Pantalla de lista de usuarios del administrador para la gestión de estos.\relax }}{120}{figure.caption.173}%
+\contentsline {figure}{\numberline {7.45}{\ignorespaces Pantalla de borrado de un usuario.\relax }}{121}{figure.caption.175}%
+\contentsline {figure}{\numberline {7.46}{\ignorespaces Pantallas de creación de usuarios.\relax }}{123}{figure.caption.178}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de usuario vacía. \#1.}}}{123}{subfigure.46.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de usuario rellena \#2.}}}{123}{subfigure.46.2}%
+\contentsline {figure}{\numberline {7.47}{\ignorespaces Pantalla de edición de usuario existente.\relax }}{124}{figure.caption.181}%
+\contentsline {figure}{\numberline {7.48}{\ignorespaces Pantalla de lista de logros del administrador.\relax }}{125}{figure.caption.184}%
+\contentsline {figure}{\numberline {7.49}{\ignorespaces Pantalla del borrado de un logro.\relax }}{126}{figure.caption.186}%
+\contentsline {figure}{\numberline {7.50}{\ignorespaces Pantallas de creación de logros.\relax }}{128}{figure.caption.189}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Creación de logro vacío. \#1.}}}{128}{subfigure.50.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Creación de logro rellena \#2.}}}{128}{subfigure.50.2}%
+\contentsline {figure}{\numberline {7.51}{\ignorespaces Pantalla de edición de logro existente.\relax }}{130}{figure.caption.192}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Resulados de las pruebas de unidad de las lecciones\relax }}{134}{figure.caption.194}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Resulados de las pruebas de unidad de las preguntas\relax }}{136}{figure.caption.195}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Resulados de las pruebas de unidad de los usuarios\relax }}{137}{figure.caption.196}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Resulados de las pruebas de unidad de los logros\relax }}{137}{figure.caption.197}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Código de la prueba de controlador o widget de acceso a lista de logros\relax }}{139}{figure.caption.198}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Código de la prueba de controlador o widget de acceso a la pantalla de lecciones\relax }}{140}{figure.caption.199}%
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Resultados de las pruebas de controlador o widget\relax }}{141}{figure.caption.200}%
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Pantallas por las que pasa la prueba de creación de usuario\relax }}{142}{figure.caption.201}%
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Pantallas por las que pasa la prueba de modificación de datos del perfil\relax }}{143}{figure.caption.202}%
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Pantallas por las que pasa la prueba de realización de un test\relax }}{145}{figure.caption.203}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Resulados de las pruebas de unidad de las lecciones\relax }}{132}{figure.caption.194}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Resulados de las pruebas de unidad de las preguntas\relax }}{134}{figure.caption.195}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Resulados de las pruebas de unidad de los usuarios\relax }}{135}{figure.caption.196}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Resulados de las pruebas de unidad de los logros\relax }}{135}{figure.caption.197}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Código de la prueba de controlador o widget de acceso a lista de logros\relax }}{137}{figure.caption.198}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Código de la prueba de controlador o widget de acceso a la pantalla de lecciones\relax }}{138}{figure.caption.199}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Resultados de las pruebas de controlador o widget\relax }}{139}{figure.caption.200}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Pantallas por las que pasa la prueba de creación de usuario\relax }}{140}{figure.caption.201}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Pantallas por las que pasa la prueba de modificación de datos del perfil\relax }}{141}{figure.caption.202}%
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Pantallas por las que pasa la prueba de realización de un test\relax }}{143}{figure.caption.203}%
 \addvspace {10\p@ }
