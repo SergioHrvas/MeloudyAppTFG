@@ -35,7 +35,6 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
 
   @override
   void initState() {
-    print(flutterFft.getIsRecording);
 
     isRecording = flutterFft.getIsRecording;
     frequency = flutterFft.getFrequency;
@@ -71,7 +70,7 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
   }
 
   _initialize() async {
-    print("Starting recorder...");
+    print("Empenzando a grabar...");
 
     if (flutterFft.getIsRecording == true) {
       await flutterFft.stopRecorder();
@@ -80,7 +79,7 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
       });
     }
     await flutterFft.startRecorder();
-    print("Recorder started...");
+    print("Grabación empezada...");
 
     setState(() => isRecording = flutterFft.getIsRecording);
     flutterFft.onRecorderStateChanged.listen(
@@ -90,7 +89,8 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
                   if (data.length > 0)
                     {
                       frequency = data[1],
-                      note = data[2],
+                      print(data[2].toString()),
+                      note = data[2] == 'A' ? "La" : data[2] == 'B' ? "Si" : data[2] == "C" ? "Do" : data[2] == "D" ? "Re" : data[2] == "E" ? "Mi" : data[2] == "F" ? "Fa" : data[2] == "G" ? "Sol" : "La",
                       octave = data[5] as int,
                     },
                   if (!alt && indice < notascorrectas.length)
@@ -110,7 +110,7 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
         onError: (err) {
           print("ERROR: $err");
         },
-        onDone: () => {print("Isdone")});
+        onDone: () => {print("Listo")});
   }
 
   parar() async {

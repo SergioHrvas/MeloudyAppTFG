@@ -218,15 +218,17 @@ class _PantallaPreguntasProfesorState extends State<PantallaPreguntasProfesor> {
                       });
                     },
                     child: Container(
-                      width: 175,
+                      width: 170,
                       child: Row(
                         children: [
                           Flexible(
+                            flex: 0,
                             child: Container(
                                 margin: EdgeInsets.only(right: 10),
                                 child: Icon(Icons.add_comment)),
                           ),
                           Flexible(
+                            flex: 0,
                             child: Text(
                               "Crear Pregunta",
                               style: TextStyle(fontSize: 20),
