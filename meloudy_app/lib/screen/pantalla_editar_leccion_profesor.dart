@@ -160,7 +160,6 @@ var recienborrado = false;
   Widget build(BuildContext context) {
 
     var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
-    print(arg['id']);
 
     id = arg['id'];
     leccion = Provider.of<Lecciones>(context, listen: false).findById(arg['id']);

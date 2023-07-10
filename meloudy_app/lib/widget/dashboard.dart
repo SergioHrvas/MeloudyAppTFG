@@ -11,7 +11,6 @@ import '../screen/pantalla_lecciones_profesor.dart';
 class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<Auth>(context, listen: false).getRol);
     return Container(
         alignment: Alignment.center,
         child: Column(
@@ -75,7 +74,7 @@ class Dashboard extends StatelessWidget {
                         Text("Preguntas", style: TextStyle(fontSize: 25)),
                       ],
                     ))),
-            Container(
+            Provider.of<Auth>(context, listen: false).getRol == 'Administrador' ?  Container(
                 margin: EdgeInsets.only(bottom: 20),
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -103,8 +102,9 @@ class Dashboard extends StatelessWidget {
                         Text("Usuarios",                  key: Key('usuarios'),
                             style: TextStyle(fontSize: 25)),
                       ],
-                    ))),
-            Container(
+                    )))
+            : Container(),
+            Provider.of<Auth>(context, listen: false).getRol == 'Administrador' ?  Container(
                 margin: EdgeInsets.only(bottom: 20),
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -130,7 +130,7 @@ class Dashboard extends StatelessWidget {
                         ),
                         Text("Logros", style: TextStyle(fontSize: 25)),
                       ],
-                    ))),
+                    ))) : Container(),
           ],
         ));
   }

@@ -67,7 +67,6 @@ class _SubirImagenState extends State<SubirImagenFul>{
       image = img;
     });
 
-    print("PATH:" + file.path);
     funcionImagen(img, file);
   }
 

@@ -36,7 +36,6 @@ const index = (req, res) => {
 }
 
 const indexTest = (req, res) => {
-    console.log(req.params.idLeccion);
     const idLeccion = req.params.idLeccion;
     Question.find({ leccion: idLeccion }, (error, questions) => {
         if (error || !questions) {
@@ -120,7 +119,6 @@ const get = (req, res) => {
 
 const remove = (req, res) => {
     const id = req.params.id;
-    console.log(id);
     Question.findByIdAndDelete(id, (error, question) => {
         if (error || !question) {
             return res.status(404).json({

@@ -35,7 +35,6 @@ class HistorialTests extends StatelessWidget {
 
     for (var i = 0; i < tests.length; i++) {
       var fecha = parsearFecha(tests[i].fecha_creacion);
-      print(fecha);
       lista.add(Container(
           alignment: Alignment.center,
           padding: EdgeInsets.symmetric(vertical: 10),

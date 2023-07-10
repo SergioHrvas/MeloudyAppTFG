@@ -86,7 +86,7 @@ class Logros with ChangeNotifier {
           "tipo":extractedData['tipo'],
           "condicion":extractedData['condicion']
         }));
-    print(response.body);
+
     var respuesta = jsonDecode(response.body);
     if (respuesta['status'] == "success") {
       logros.add(Logro(
@@ -106,7 +106,6 @@ class Logros with ChangeNotifier {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/achievement/update-achievement/${id}?auth=$authToken');
 
-    print("ss" + extractedData['tipo'].toString());
     final response = await http.put(url,
         headers: {
           "Accept": "application/json",
@@ -119,8 +118,6 @@ class Logros with ChangeNotifier {
           "tipo":extractedData['tipo'],
           "condicion":extractedData['condicion']
         }));
-
-    print(response.body);
 
     var respuesta = jsonDecode(response.body);
     if (respuesta['status'] == "success") {
@@ -152,15 +149,11 @@ class Logros with ChangeNotifier {
   }
 
   Future<Logro> getLogro(String id) async {
-    print("id" + id);
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/achievement/get-achievement/${id}?auth=$authToken');
 
     final response = await http.get(url);
-    print(response.body);
     var respuesta = jsonDecode(response.body);
-
-    print(respuesta);
 
     return Logro(
         id: respuesta['logro']['_id'],

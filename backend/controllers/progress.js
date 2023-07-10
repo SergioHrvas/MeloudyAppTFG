@@ -13,7 +13,6 @@ const path = require('path');
 const create = async (req, res) => {
     let param = req.body;
 
-    console.log()
     //Creamos un test
     const test = new Test(param);
 
@@ -97,7 +96,6 @@ const create = async (req, res) => {
                                                                 preguntasAciertoMultiple += test.num_aciertos_multiple;
                                                                 preguntasAciertoTexto += test.num_aciertos_texto;
                                                                 preguntasAciertoMicro += test.num_aciertos_micro;
-                                                                console.log(aprobados);
                                                             }
 
 
@@ -108,10 +106,8 @@ const create = async (req, res) => {
                                                     }
                                                     ).clone();
                                                 }
-                                                console.log("APROBADOS: " + aprobados);
 
                                                 if (aprobados >= 3) {
-                                                    console.log("sdasd");
                                                     progress.completado = true;
                                                 }
 
@@ -127,44 +123,34 @@ const create = async (req, res) => {
 
                                        //get all logros
                                                 for(var i = 0; i < logros.length; i++){
-
-                                                    console.log("ENTRA");
-                                                    console.log(logros[i].tipo);
                                                     if(logros[i].tipo == "preguntas"){
                                                         if(preguntasAcierto >= logros[i].condicion && !user.logros.includes(logros[i]._id)){
                                                             user.logros.push(logros[i]._id);
-                                                            console.log("a");
                                                         }
                                                     }
                                                     else if(logros[i].tipo == "preguntasunica"){
                                                         if(preguntasAciertoUnica >= logros[i].condicion && !user.logros.includes(logros[i]._id)){
                                                             user.logros.push(logros[i]._id);
-                                                            console.log("b");
                                                         }
                                                     }
                                                     else if(logros[i].tipo == "preguntasmultiple"){
                                                         if(preguntasAciertoMultiple >= logros[i].condicion && !user.logros.includes(logros[i]._id)){
                                                             user.logros.push(logros[i]._id);
-                                                            console.log("c");
                                                         }
                                                     }
                                                     else if(logros[i].tipo == "preguntastexto"){
                                                         if(preguntasAciertoTexto >= logros[i].condicion && !user.logros.includes(logros[i]._id)){
                                                             user.logros.push(logros[i]._id);
-                                                            console.log("d");
                                                         }
                                                     }
                                                     else if(logros[i].tipo == "preguntasmicro"){
                                                         if(preguntasAciertoMicro >= logros[i].condicion && !user.logros.includes(logros[i]._id)){
                                                             user.logros.push(logros[i]._id);
-                                                            console.log("e");
                                                         }
                                                     }
 
-                                                    console.log(logros[i].condicion + "==" + ObjectId(param.idLeccion));
                                                     if(logros[i].condicion == ObjectId(param.idLeccion) && !user.logros.includes(logros[i]._id)){
                                                         user.logros.push(logros[i]._id);
-                                                        console.log("ff");
                                                     }
                                                 }
 

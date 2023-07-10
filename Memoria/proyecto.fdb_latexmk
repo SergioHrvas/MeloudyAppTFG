@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1688936287 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1688936294
+["pdflatex"] 1688984679 "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" "proyecto.pdf" "proyecto" 1688984686
   "/etc/texmf/web2c/texmf.cnf" 1650479083 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/sergio/Documentos/TFG/Memoria/proyecto.tex" 1677702548 5901 e7bf80b13b09254f1b6dbbc521aefdcc ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -130,11 +130,11 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685599241 2798448 81cc7813547bdd880345252fc2ef9414 ""
   "capitulos/01_Introduccion.tex" 1670080792 5331 4b8bf64de568f952aafc57882b679976 ""
   "capitulos/02_EstadoDelArte.tex" 1675188437 19024 accc16c7363a34b2c727e5900c8d4a16 ""
-  "capitulos/03_Requisitos.tex" 1688936078 15081 c01ef20c19d4161942e516cb285664df ""
+  "capitulos/03_Requisitos.tex" 1688983573 15169 77a0a9dbbfb8ed1b27922ee7c87fe6d1 ""
   "capitulos/04_Planificacion.tex" 1688936157 23379 e86183b0b72ec51f2d55d5cdc5b336bd ""
   "capitulos/05_Analisis.tex" 1688936287 53990 86771a737c05416fddc57ac4035b61c2 ""
   "capitulos/06_Diseño.tex" 1677953666 15134 bf072ef039c6f40cbe4b35ad4e9b8312 ""
-  "capitulos/07_Implementacion.tex" 1688737294 81070 83f410c864bbb58a6fb51121f9124089 ""
+  "capitulos/07_Implementacion.tex" 1688983868 81080 a0e2bf39c275f0fe4f91277e0ac3544d ""
   "capitulos/08_Pruebas.tex" 1688309278 17340 af7594736c982466ff25c25a3e0482b4 ""
   "capitulos/09_Conclusion.tex" 1688751326 4611 6cdfb4c254a4032c630406399c28893a ""
   "imagenes/c2/MERN.png" 1669508265 100291 4e46ee86e41535f0939d13bca37b99cf ""
@@ -266,12 +266,12 @@
   "imagenes/etsiit_logo.png" 1379672160 15686 70bc5d741d9ed0241e268f68e916ccd7 ""
   "imagenes/logo_ugr.jpg" 1228354992 85532 25866cc28cc667a1cdd972180571e7be ""
   "portada/portada.tex" 1688752358 1101 5590b4f7478f8bd984546661821be904 ""
-  "prefacios/prefacio.tex" 1688922027 4527 514f2bf531fbd487b15dcb731215ed0b ""
-  "proyecto.aux" 1688936293 71203 4aea716a20d048667df3ceeb09b5ad50 "pdflatex"
-  "proyecto.lof" 1688936294 23993 65b3775c04b215e5c824da3ade689ae3 "pdflatex"
-  "proyecto.out" 1688936294 22079 6a838ee8e547f9a3bd5fe7761ff1f7a0 "pdflatex"
+  "prefacios/prefacio.tex" 1688984497 4677 816702b1fbb434a9d4cb6c59f0abc3e9 ""
+  "proyecto.aux" 1688984686 71218 1437038f299e2cdeacb9bd37f4cfd4d5 "pdflatex"
+  "proyecto.lof" 1688984686 24003 3daf706ac35adbfe6e922cca95b6a35c "pdflatex"
+  "proyecto.out" 1688984686 22079 6a838ee8e547f9a3bd5fe7761ff1f7a0 "pdflatex"
   "proyecto.tex" 1677702548 5901 e7bf80b13b09254f1b6dbbc521aefdcc ""
-  "proyecto.toc" 1688936294 13876 180d2aba85680794c19130972c5bdfb9 "pdflatex"
+  "proyecto.toc" 1688984686 13876 cbff2e532202f137bd5b8e8e16c49665 "pdflatex"
   (generated)
   "proyecto.aux"
   "proyecto.lof"

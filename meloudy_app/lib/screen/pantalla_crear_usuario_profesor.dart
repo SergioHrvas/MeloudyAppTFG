@@ -69,7 +69,6 @@ class _PantallaCrearUsuarioProfesorState
     await ImageController().upload(_image, token).then((_) {
       var img;
       if (_image == null) {
-        print("aa");
         img = "musica.png";
       }
       else {

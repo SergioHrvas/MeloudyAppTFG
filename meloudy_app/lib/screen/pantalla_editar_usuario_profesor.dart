@@ -69,9 +69,6 @@ class _PantallaEditarUsuarioProfesorState
     var token = Provider.of<Auth>(context, listen: false).token;
 
     var opcs = Provider.of<Opciones>(context, listen: false).items;
-    for(var j = 0; j < opcs.length; j++){
-      print(opcs[j]);
-    }
 
     await ImageController().upload(_image, token).then((_) {
       var img;
@@ -101,7 +98,6 @@ class _PantallaEditarUsuarioProfesorState
   @override
   Widget build(BuildContext context) {
     var arg = ModalRoute.of(context).settings.arguments as Map<String,String>;
-    print(arg['id']);
 
     id = arg['id'];
     if(primeravez) {
@@ -109,7 +105,6 @@ class _PantallaEditarUsuarioProfesorState
           Provider.of<Usuarios>(context, listen: false).findById(arg['id']);
       rol = usuario.rol;
     }
-    print(rol);
     _authData['apellidos'] = [];
     return Scaffold(
       appBar: AppBar(),

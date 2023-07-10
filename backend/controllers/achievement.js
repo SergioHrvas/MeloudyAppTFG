@@ -1,7 +1,6 @@
 const Achievement = require('../models/Achievement');
 
 const create = (req, res) => {
-    console.log(req.body);
     const achievement = new Achievement(req.body);
     achievement.save((error, achievement) => {
         if (error || !achievement) {

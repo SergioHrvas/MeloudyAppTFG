@@ -253,7 +253,6 @@ class Lecciones with ChangeNotifier {
     final response = await http.delete(url);
 
     if (response.statusCode >= 400) {
-      print(response.statusCode);
       lecciones.insert(leccionExistenteIndice, leccionExistente);
       notifyListeners();
       throw HttpException('Could not delete product.');

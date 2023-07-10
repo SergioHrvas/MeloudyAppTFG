@@ -33,7 +33,6 @@ class PantallaUsuario extends StatelessWidget {
           child: GestureDetector(
             onTap: (){
               Provider.of<Logros>(context,listen: false).getLogro(usuario.logros[i].id).then((value){
-                print(value.nombre);
                 Navigator.pushNamed(context, '/logro', arguments: value);
 
               });
@@ -41,7 +40,6 @@ class PantallaUsuario extends StatelessWidget {
               child: MODO.modo != 1 ? Image.network("http://${IP.ip}:5000/img/${usuario.logros[i].imagen}") : Container())),);
     }
 
-    print(usuario.foto);
     return Scaffold(
         appBar: AppBar(
           title: Text("Mi perfil"),

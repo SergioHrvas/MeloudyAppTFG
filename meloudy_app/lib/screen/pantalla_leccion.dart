@@ -24,7 +24,6 @@ class LeccionPantalla extends StatelessWidget {
       listen: false,
     ).findById(leccionId);
 
-    print("LL: " + loadedLesson.tests.length.toString());
     final contenido = loadedLesson.contenido;
     var contenidos = List<Widget>();
     for (var i = 0; i < contenido.length; i++) {
@@ -44,7 +43,6 @@ class LeccionPantalla extends StatelessWidget {
           ),
         ));
       } else if (contenido[i].tipo == 'titulo') {
-        print(contenido[i].texto);
         contenidos.add(Container(
             width: double.infinity,
             padding: EdgeInsets.only(left: 20, top: 5, bottom: 0),

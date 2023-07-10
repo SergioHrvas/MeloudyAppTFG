@@ -75,7 +75,6 @@ class _PantallaUsuariosProfesorState extends State<PantallaUsuariosProfesor> {
     for (var i = 0; i < usuarios.length; i++) {
       var nombre = usuarios[i].nombre + " " + usuarios[i].apellidos[0] + " " + usuarios[i].apellidos[1];
 
-      print(usuarios[i].correo);
       usuariosWidget.add(Container(
         alignment: Alignment.center,
         margin: EdgeInsets.only(top: 20, left: 20, right: 20),

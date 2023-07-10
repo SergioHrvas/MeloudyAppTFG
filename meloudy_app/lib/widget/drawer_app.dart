@@ -8,7 +8,6 @@ import '../providers/usuario_perfil.dart';
 class DrawerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print(Provider.of<Auth>(context, listen: false).getRol);
     return Drawer(
       key: GlobalKey<ScaffoldState>(),
       child: Consumer<Auth>(

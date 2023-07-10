@@ -69,9 +69,6 @@ class _PantallaEditarUsuarioState
     var token = Provider.of<Auth>(context, listen: false).token;
 
     var opcs = Provider.of<Opciones>(context, listen: false).items;
-    for(var j = 0; j < opcs.length; j++){
-      print(opcs[j]);
-    }
 
     await ImageController().upload(_image, token).then((_) {
       var img;
@@ -107,7 +104,6 @@ class _PantallaEditarUsuarioState
       rol = usuario.rol;
       id = usuario.id;
     }
-    print(rol);
     _authData['apellidos'] = [];
     return Scaffold(
       appBar: AppBar(),

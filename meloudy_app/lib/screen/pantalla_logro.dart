@@ -20,7 +20,6 @@ class PantallaLogro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var logro = ModalRoute.of(context).settings.arguments as Logro; // is the id!
-    print(logro.toString());
 
     return Scaffold(
         appBar: AppBar(

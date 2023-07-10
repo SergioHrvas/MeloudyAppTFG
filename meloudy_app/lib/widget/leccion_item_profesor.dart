@@ -64,7 +64,8 @@ class LeccionItemProfesor extends StatelessWidget {
     for(var i = 0; i < _nombre.length; i++){
       nombreleccion.add(_nombre[i]);
     }
-    print(_nombre);
+
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),

@@ -52,7 +52,6 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
 
     indice = respuestas.length;
     for (var i = 0; i < respuestascargadas.length; i++) {
-      print(respuestascargadas[i]);
       respuestas.add(respuestascargadas[i]);
     }
 
@@ -89,7 +88,6 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
                   if (data.length > 0)
                     {
                       frequency = data[1],
-                      print(data[2].toString()),
                       note = data[2] == 'A' ? "La" : data[2] == 'B' ? "Si" : data[2] == "C" ? "Do" : data[2] == "D" ? "Re" : data[2] == "E" ? "Mi" : data[2] == "F" ? "Fa" : data[2] == "G" ? "Sol" : "La",
                       octave = data[5] as int,
                     },
@@ -136,7 +134,6 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
     isRecording = flutterFft.getIsRecording;
 
     final modo = Provider.of<Preguntas>(context, listen: false).modo;
-    print("-" + modo);
     indice = respuestas.length;
 
     if(respuestas.length == 0 && modo == "revisando"){
@@ -192,7 +189,6 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
                                 await flutterFft.stopRecorder();
                                 setState(() =>
                                     isRecording = flutterFft.getIsRecording);
-                                print(isRecording);
                               }
                             }
                           : () async {
@@ -253,14 +249,4 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
     );
   }
 
-/*  getNota(data){
-    print("as");
-    if(data < 450 && data > 440){
-      return 'G';
-    }
-    else{
-      return 'T';
-    }
-  }
-*/
 }

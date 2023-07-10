@@ -56,7 +56,6 @@ class _PantallaCrearLeccionProfesorState
   int getProximaImagen(ind){
     for(var i = ind; i < _authData['contenido'].length; i++){
       if(_authData['contenido'][i]['tipo'] == 'img'){
-        print("aaa" +i.toString());
         return i;
       }
     }
@@ -137,8 +136,6 @@ class _PantallaCrearLeccionProfesorState
   }
 
   void funcionImagen(img, file){
-    print("PATH:" + file.path);
-
     imgs.add({"img": img, "file": file});
   }
 

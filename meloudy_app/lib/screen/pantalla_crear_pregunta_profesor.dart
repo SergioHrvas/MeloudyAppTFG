@@ -69,7 +69,6 @@ class _PantallaCrearPreguntaProfesorState
   }
 
   void borrar(i) {
-    print(i);
     setState(() {
       opciones.removeAt(i);
       for (var j = i; j < opciones.length; j++) {
@@ -99,14 +98,10 @@ class _PantallaCrearPreguntaProfesorState
     var token = Provider.of<Auth>(context, listen: false).token;
 
     var opcs = Provider.of<Opciones>(context, listen: false).items;
-    for(var j = 0; j < opcs.length; j++){
-      print(opcs[j]);
-    }
 
     await ImageController().upload(_image, token).then((_) {
       var img;
       if (_image == null) {
-        print("aa");
         img = "musica.png";
       }
       else {
@@ -126,8 +121,6 @@ class _PantallaCrearPreguntaProfesorState
       var respuestascorrectas = Provider
           .of<Opciones>(context, listen: false)
           .items;
-
-      print(respuestascorrectas);
 
       var resp = [];
       for(var i = 0; i < respuestascorrectas.length; i++){

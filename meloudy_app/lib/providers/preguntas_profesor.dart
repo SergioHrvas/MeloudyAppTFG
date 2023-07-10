@@ -162,7 +162,6 @@ class PreguntasProfesor with ChangeNotifier {
     });
 
     var pregunta = findById(id);
-    print(pregunta.cuestion);
     pregunta.cuestion = extractedData['cuestion'];
 
     pregunta.imagen = extractedData['imagen'];

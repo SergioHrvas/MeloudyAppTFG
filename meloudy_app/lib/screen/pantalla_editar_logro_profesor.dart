@@ -66,7 +66,6 @@ class _PantallaEditarLogroProfesorState
     nombreslecciones = [];
     lecciones = Provider.of<Lecciones>(context, listen: false).items;
     for (var i = 0; i < lecciones.length; i++) {
-      print("d");
       nombreslecciones.add(lecciones[i].nombre);
       leccionesmap[lecciones[i].nombre] = lecciones[i].id;
     }
@@ -126,11 +125,6 @@ class _PantallaEditarLogroProfesorState
     id = arg['id'];
     logro = Provider.of<Logros>(context, listen: false).findById(arg['id']);
 
-    print(logro.tipo);
-    print(logro.condicion);
-
-
-
      if(primeravez) {
        tipo = logro.tipo;
      }
@@ -138,9 +132,7 @@ class _PantallaEditarLogroProfesorState
      if(primeravez2){
        if(logro.tipo == "leccion")
          leccionelegida = Provider.of<Lecciones>(context, listen: false).findById(logro.condicion).nombre;
-          print(leccionelegida);
           if(leccionelegida==""){
-            print(lecciones.toString());
             leccionelegida = lecciones[0].nombre;
           }
      }

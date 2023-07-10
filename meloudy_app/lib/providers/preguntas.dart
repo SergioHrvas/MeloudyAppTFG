@@ -194,8 +194,6 @@ class Preguntas with ChangeNotifier {
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
-      print(response.body.toString());
-      print('···································3');
 
       extractedData['preguntas'].shuffle();
 
