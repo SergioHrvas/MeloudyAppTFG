@@ -76,7 +76,13 @@ class Lecciones with ChangeNotifier {
                 if (completadovar) {
                   estado = 'completado';
                 } else {
+                  if(!ult){
+                    estado = 'desbloqueado';
+                    ult = true;
+                  }
+                  else {
                     estado = 'bloqueado';
+                  }
                 }
               }
               pasado = true;

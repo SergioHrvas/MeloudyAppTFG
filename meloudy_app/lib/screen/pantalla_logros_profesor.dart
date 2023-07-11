@@ -178,8 +178,10 @@ class _PantallaLogrosProfesorState extends State<PantallaLogrosProfesor> {
                       width: 150,
                       child: Row(
                         children: [
-                          Flexible(child: Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add))),
-                          Flexible(child: Text("Crear Logro",style: TextStyle(fontSize: 20),)),
+                          Flexible(                            flex: 0,
+                              child: Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.person_add))),
+                          Flexible(                            flex: 0,
+                              child: Text("Crear Logro",style: TextStyle(fontSize: 20),)),
                         ],
                       ),
                     ),)),

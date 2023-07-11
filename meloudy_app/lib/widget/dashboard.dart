@@ -74,7 +74,7 @@ class Dashboard extends StatelessWidget {
                         Text("Preguntas", style: TextStyle(fontSize: 25)),
                       ],
                     ))),
-            Provider.of<Auth>(context, listen: false).getRol == 'Administrador' ?  Container(
+            Provider.of<Auth>(context, listen: false).getRol == 'Admin' ?  Container(
                 margin: EdgeInsets.only(bottom: 20),
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -104,7 +104,7 @@ class Dashboard extends StatelessWidget {
                       ],
                     )))
             : Container(),
-            Provider.of<Auth>(context, listen: false).getRol == 'Administrador' ?  Container(
+            Provider.of<Auth>(context, listen: false).getRol == 'Admin' ?  Container(
                 margin: EdgeInsets.only(bottom: 20),
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(

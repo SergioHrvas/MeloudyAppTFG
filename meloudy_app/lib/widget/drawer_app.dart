@@ -43,7 +43,7 @@ class DrawerApp extends StatelessWidget {
 
               },
             ),
-            if (auth.getRol == "Profesor")
+            if (auth.getRol == "Profesor" || auth.getRol == "Admin")
               Column(children: [
                 Divider(),
                 ListTile(
