@@ -191,6 +191,7 @@ class PreguntasProfesor with ChangeNotifier {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/create-question?auth=$authToken');
 
+
     var cuerpo = json.encode({
       "tipo": extractedData['tipo'],
       "cuestion": extractedData['cuestion'],
@@ -200,16 +201,7 @@ class PreguntasProfesor with ChangeNotifier {
       "respuestascorrectas": extractedData['respuestascorrectas']
     });
 
-
-
-    preguntas.add(Pregunta(
-        id: extractedData['_id'],
-        cuestion: extractedData['cuestion'],
-        tipo: extractedData['tipo'],
-        opciones: extractedData['opciones'],
-        respuestascorrectas: extractedData['respuestascorrectas'],
-        imagen: extractedData['imagen'],
-    ));
+    print(extractedData);
 
     final response = await http.post(url,
         headers: {
@@ -217,6 +209,21 @@ class PreguntasProfesor with ChangeNotifier {
           "Content-Type": "application/json"
         },
         body: cuerpo);
+
+    extractedData = json.decode(response.body);
+
+
+    preguntas.add(Pregunta(
+        id: extractedData['pregunta']['_id'],
+        cuestion: extractedData['pregunta']['cuestion'],
+        tipo: extractedData['pregunta']['tipo'],
+        opciones: extractedData['pregunta']['opciones'],
+        respuestascorrectas: extractedData['pregunta']['respuestascorrectas'],
+        imagen: extractedData['pregunta']['imagen'],
+        leccion: extractedData['pregunta']['leccion']
+    ));
+
+
   }
 
   borrarPregunta(String id) async {

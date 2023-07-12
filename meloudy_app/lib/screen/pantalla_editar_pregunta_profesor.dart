@@ -38,6 +38,7 @@ class _PantallaEditarPreguntaProfesorState
   var opciones = [];
   var indice = 0;
   var id;
+  var s = 0;
   String leccion = "Introducción";
   Map<String, String> lecciones = {};
   String tipo;
@@ -49,6 +50,16 @@ class _PantallaEditarPreguntaProfesorState
   final GlobalKey<FormState> _formKey = GlobalKey();
 
   Map<String, dynamic> _authData = {};
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    Provider.of<Opciones>(context, listen: false).limpiar();
+    Provider.of<Notas>(context, listen: false).limpiar();
+
+    super.initState();
+
+  }
 
   Future getImage(ImageSource media) async {
     var img = await picker.getImage(source: media);
@@ -62,16 +73,19 @@ class _PantallaEditarPreguntaProfesorState
   void borrar(i) {
     setState(() {
       opciones.removeAt(i);
-      if (tipo == "microfono") {
-        Provider.of<Notas>(context, listen: false).borrarNota(i);
-      } else {
-        Provider.of<Opciones>(context, listen: false).borrarOpcion(i);
-      }
+
       for (var j = i; j < opciones.length; j++) {
         opciones[j].child.cambiarIndice(i);
       }
-
       indice--;
+
+      if (tipo != "microfono") {
+        Provider.of<Opciones>(context, listen: false).borrarOpcion(i);
+      } else {
+        Provider.of<Notas>(context, listen: false).borrarNota(i);
+      }
+
+
     });
   }
 
@@ -171,13 +185,16 @@ class _PantallaEditarPreguntaProfesorState
     if (pregunta.tipo == 'multiple' || pregunta.tipo == 'unica') {
       for (var i = 0; i < opcionestexto.length; i++) {
         opciones.add(Container(
+          key: Key((s++).toString()),
             child: SubirOpcion(indice, tipo, borrar, opcionestexto[i])));
         indice++;
       }
     } else if (pregunta.tipo == 'microfono') {
       for (var i = 0; i < opcionescorrectas.length; i++) {
         opciones.add(
-            Container(child: SubirNotas(indice, borrar, opcionescorrectas[i])));
+            Container(
+                key: Key((s++).toString()),
+                child: SubirNotas(indice, borrar, opcionescorrectas[i])));
         indice++;
       }
     }
@@ -298,6 +315,7 @@ class _PantallaEditarPreguntaProfesorState
                           onTap: () {
                             setState(() {
                               opciones.add(Container(
+                                key: Key((s++).toString()),
                                   margin: EdgeInsets.only(top: 10),
                                   child: (tipo == "unica" || tipo == "multiple")
                                       ? SubirOpcion(indice, tipo, borrar, "")

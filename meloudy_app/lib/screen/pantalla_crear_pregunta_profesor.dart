@@ -37,6 +37,7 @@ class _PantallaCrearPreguntaProfesorState
 
 
   var opciones = [];
+  var s = 0;
   var indice = 0;
   String leccion = "Introducción";
   Map<String, String> lecciones = {};
@@ -52,6 +53,7 @@ class _PantallaCrearPreguntaProfesorState
   void initState() {
     // TODO: implement initState
     Provider.of<Opciones>(context, listen: false).limpiar();
+    Provider.of<Notas>(context, listen: false).limpiar();
 
     super.initState();
 
@@ -75,29 +77,21 @@ class _PantallaCrearPreguntaProfesorState
         opciones[j].child.cambiarIndice(i);
       }
       indice--;
+
+      if(tipo != "microfono") {
+        Provider.of<Opciones>(context, listen: false).borrarOpcion(i);
+      } else{
+        Provider.of<Notas>(context, listen: false).borrarNota(i);
+      }
     });
-
-    Provider.of<Opciones>(context, listen: false).borrarOpcion(i);
-
-
   }
 
   void submit() async {
-    List<Map<String, String>> vectordatos = [];
-    _formKey.currentState.save();
-
-    for (var i = 0; i < opciones.length; i++) {
-      vectordatos.add({
-        'texto': opciones[i].child.datos.toString(),
-      });
-      _authData['contenido'] = vectordatos;
-    }
 
     _formKey.currentState.save();
 
     var token = Provider.of<Auth>(context, listen: false).token;
 
-    var opcs = Provider.of<Opciones>(context, listen: false).items;
 
     await ImageController().upload(_image, token).then((_) {
       var img;
@@ -281,7 +275,9 @@ class _PantallaCrearPreguntaProfesorState
                           onTap: () {
                             setState(() {
                               opciones.add(Container(
-                                margin: EdgeInsets.only(top: 10),
+                                  key: Key((s++).toString()),
+
+                                  margin: EdgeInsets.only(top: 10),
                                 child: (tipo == "unica" || tipo == "multiple")
                                     ? SubirOpcion(indice, tipo, borrar, "")
                                     : SubirNotas(this.indice, borrar, "" )
@@ -312,7 +308,7 @@ class _PantallaCrearPreguntaProfesorState
                     await submit();
                   },
                   child: Text(
-                    "Crear Lección",
+                    "Crear Pregunta",
                     style: TextStyle(fontSize: 20),
                   ),
                 ),

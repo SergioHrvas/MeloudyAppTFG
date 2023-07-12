@@ -13,7 +13,7 @@ import 'auth.dart';
 
 class Opciones with ChangeNotifier {
   List<dynamic> opciones = [];
-  List<String> opcionesTexto = [];
+  List<dynamic> opcionesTexto = [];
 
   Opciones();
 
@@ -41,7 +41,6 @@ class Opciones with ChangeNotifier {
     opciones = respuestascorrectas;
     opcionesTexto = opcs;
   }
-
 
   void borrarOpcion(i){
     opciones.removeAt(i);

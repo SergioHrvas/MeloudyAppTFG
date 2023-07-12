@@ -88,7 +88,19 @@ class _MicrofonoPreguntaState extends State<MicrofonoPregunta> {
                   if (data.length > 0)
                     {
                       frequency = data[1],
-                      note = data[2] == 'A' ? "La" : data[2] == 'B' ? "Si" : data[2] == "C" ? "Do" : data[2] == "D" ? "Re" : data[2] == "E" ? "Mi" : data[2] == "F" ? "Fa" : data[2] == "G" ? "Sol" : "La",
+                      note = data[2] == 'A' ? "La" :
+                      data[2] == 'B' ? "Si" :
+                      data[2] == "C" ? "Do" :
+                      data[2] == "D" ? "Re" :
+                      data[2] == "E" ? "Mi" :
+                      data[2] == "F" ? "Fa" :
+                      data[2] == "G" ? "Sol" :
+                      data[2] == "A#" ? "La#" :
+                      data[2] == "C#" ? "Do#" :
+                      data[2] == "D#" ? "Re#" :
+                      data[2] == "F#" ? "Fa#" :
+                      data[2] == "G#" ? "Sol#" :
+                      data[2] == "A#" ? "La#" : "*",
                       octave = data[5] as int,
                     },
                   if (!alt && indice < notascorrectas.length)

@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import '../ips.dart';
 import '../providers/notas.dart';
 
+
 class SubirNotas extends StatelessWidget {
   var indice;
   final f;

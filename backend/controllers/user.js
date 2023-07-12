@@ -26,7 +26,7 @@ const create = async (req, res) => {
 
         //Asignar valores al objeto de usuario
         user.password = param.password;
-        
+
         //Guardar el usuario en la base de datos
         user.save((error, userStored) => {
             if (error || !userStored) {
@@ -69,9 +69,13 @@ const index = (req, res) => {
     }
     );
 }
-const get = async (req, res) => {
+
+
+//Get user and his achievements
+const get = (req, res) => {
+    //Return all achievement of a user
     const id = req.params.id;
-    User.findById(id, async (error, user) => {
+    User.findById(id, (error, user) => {
         if (error || !user) {
             return res.status(404).json({
                 status: "error",
@@ -79,36 +83,33 @@ const get = async (req, res) => {
             });
         }
 
-        var logros = [];
+        logros = user.logros;
 
-        for (let i = 0; i < user.logros.length; i++) {
-            try {
-
-            const element = await Achievement.findById(user.logros[i], (error, question) => {
-                    if (error || !question) {
-                        return res.status(404).json({
-                            status: "error",
-                            mensaje: "La pregunta no se ha podido encontrar"
-                        });
-                    }
-                    // return question;
-
+        //find logros of user and return
+        Achievement.find({ _id: { $in: logros } }, (error, achievements) => {
+            if (error || !achievements) {
+                return res.status(404).json({
+                    status: "error",
+                    mensaje: "Los logros no se han podido encontrar"
+                });
             }
-            ).clone();
-            logros.push(element);
-        } catch (error) {
-            console.log(error);
-        }
+
+            return res.status(200).json({
+                status: "success",
+                logros: achievements,
+                usuario: user,
+                mensaje: "Los logros se han encontrado"
+            });
         }
 
-        return res.status(200).json({
-            status: "success",
-            usuario: user,
-            logros: logros,
-            mensaje: "El usuario se ha encontrado"
-        });
-    });
+        
+        );
+
+    }
+    );
+
 }
+
 
 const remove = (req, res) => {
     const id = req.params.id;
@@ -178,8 +179,8 @@ const update = (req, res) => {
     const id = req.params.id;
 
     param = req.body;
-    
-    if(param.password != null){
+
+    if (param.password != null) {
         encryptedpassword = bcrypt.hashSync(param.password, 10);
         param.password = encryptedpassword;
     }
