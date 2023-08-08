@@ -51,15 +51,6 @@ class _PantallaEditarPreguntaProfesorState
 
   Map<String, dynamic> _authData = {};
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    Provider.of<Opciones>(context, listen: false).limpiar();
-    Provider.of<Notas>(context, listen: false).limpiar();
-
-    super.initState();
-
-  }
 
   Future getImage(ImageSource media) async {
     var img = await picker.getImage(source: media);

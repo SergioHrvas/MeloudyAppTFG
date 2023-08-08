@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 import 'auth.dart';
 
 class Notas with ChangeNotifier {
-  List<String> notas = [];
+  List<dynamic> notas = [];
 
   Notas(this.notas);
 

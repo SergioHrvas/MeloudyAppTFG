@@ -153,6 +153,10 @@ class PreguntasProfesor with ChangeNotifier {
     final url = Uri.parse(
         'http://${IP.ip}:5000/api/question/update-question/${id}?auth=$authToken');
 
+    print(extractedData['opciones']);
+
+    print(extractedData['respuestascorrectas']);
+
     var cuerpo = json.encode({
       "cuestion": extractedData['cuestion'],
       "imagen": extractedData['imagen'],
@@ -167,10 +171,13 @@ class PreguntasProfesor with ChangeNotifier {
     pregunta.imagen = extractedData['imagen'];
     pregunta.leccion = extractedData['leccion'];
     pregunta.opciones = [];
+    pregunta.respuestascorrectas = [];
 
 
+    if(pregunta.tipo == 'unica' || pregunta.tipo == 'multiple'){
     for (var i = 0; i < extractedData['opciones'].length; i++) {
       pregunta.opciones.add(extractedData["opciones"][i]);
+    }
     }
     for (var i = 0; i < extractedData["respuestascorrectas"].length; i++) {
       pregunta.respuestascorrectas

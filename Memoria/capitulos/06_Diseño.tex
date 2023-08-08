@@ -7,7 +7,7 @@ Esta fase tiene como objetivo definir la estructura del sistema y la función de
 \section{Arquitectura del sistema}
 Para el desarrollo de la aplicación se ha decidido utilizar una arquitectura \textbf{cliente-servidor}, donde el servidor será responsable de las operaciones relacionadas con la gestión (añadir, extraer, eliminar y/o modificar) de la información almacenada en la base de datos, mientras que el cliente será 
 la aplicación móvil que se encargará de mostrar la información al usuario y de realizar las operaciones que el usuario solicite. Además, también será una arquitectura basada en el patrón de diseño \textbf{Modelo / Vista / Controlador (MVC)}, donde el modelo gestionará y mantendrá la estructura de la información
-de la base de datos, la vista se hará cargo de mostrar la información al usuario y facilitar la interacción de este con el sistema y el controlador se encargará de gestionar las operaciones que el usuario solicite. Todo esto mediante las tecnologías \textbf{Node.js} para el controlador, \textbf{Mongoose} para
+de la base de datos, la vista se hará cargo de mostrar la información al usuario y facilitar la interacción de este con el sistema y el controlador se encargará de gestionar las operaciones que el usuario solicite. Todo esto mediante las tecnologías \textbf{Node.js} para el controlador, \textbf{Mongoose} ~\cite{mongoose} para
 el modelo, \textbf{MongoDB} para la base de datos y \textbf{Flutter} para las distintas vistas que los usuarios tendrán. 
 
 \begin{figure}[H]

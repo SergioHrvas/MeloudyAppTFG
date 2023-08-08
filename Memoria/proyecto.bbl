@@ -1,0 +1,96 @@
+\begin{thebibliography}{10}
+
+\bibitem{scrum}
+Putu Adi.
+\newblock Scrum method implementation in a software development project
+  management.
+\newblock {\em International Journal of Advanced Computer Science and
+  Applications}, 6, 09 2015.
+
+\bibitem{angular}
+Angular.
+\newblock \url{https://angular.io/}, 2016.
+
+\bibitem{artly}
+Artly - comienza a entender el arte.
+\newblock \url{https://artly.world/}, 2020.
+
+\bibitem{bmath}
+Bmath - app de matemáticas para niños.
+\newblock \url{http://www.bmath.app/}, 2020.
+
+\bibitem{curlenmusi}
+Curso de lenguaje musical - apps en google play.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=curso.delenguajemusical},
+  2021.
+
+\bibitem{duolingo}
+Duolingo - la mejor manera de aprender un idioma a nivel mundial.
+\newblock \url{https://es.duolingo.com/}, 2011.
+
+\bibitem{express}
+Expressjs.
+\newblock \url{https://expressjs.com/es/}, 2010.
+
+\bibitem{flutter}
+Flutter - build apps for any screen.
+\newblock \url{https://flutter.dev/}, 2017.
+
+\bibitem{JWT}
+jsonwebtoken - npm.
+\newblock \url{https://www.npmjs.com/package/jsonwebtoken}, 2013.
+
+\bibitem{kotlin}
+Kotlin programming language.
+\newblock \url{https://kotlinlang.org/}, 2016.
+
+\bibitem{mariadb}
+Mariadb foundation - mariadb.org.
+\newblock \url{https://mariadb.org/}, 2009.
+
+\bibitem{mongodb}
+Mongodb: La plataforma de datos para aplicaciones.
+\newblock \url{https://www.mongodb.com/es/}, 2009.
+
+\bibitem{mongoose}
+Mongoose.
+\newblock \url{https://mongoosejs.com/}, 2011.
+
+\bibitem{multerpackage}
+multer - npm.
+\newblock \url{https://www.npmjs.com/package/multer}, 2014.
+
+\bibitem{nockpackage}
+nock | dart package.
+\newblock \url{https://pub.dev/packages/nock}, 2019.
+
+\bibitem{nodejs}
+Documentación | nodejs.
+\newblock \url{https://nodejs.org/es/docs/}, 2009.
+
+\bibitem{postman}
+Postman.
+\newblock \url{https://www.postman.com/}, 2012.
+
+\bibitem{react}
+React.
+\newblock \url{https://es.react.dev/}, 2013.
+
+\bibitem{reactnative}
+React native · learn once, write anywhere.
+\newblock \url{https://reactnative.dev/}, 2015.
+
+\bibitem{mern}
+Shukla Santosh~Kumar, Shivam Dubey, Tarun Rastogi, Nikita Srivastava, and
+  Editor Ijmtst.
+\newblock Application using mern stack.
+\newblock {\em International Journal for Modern Trends in Science and
+  Technology}, 8:102--105, 06 2022.
+
+\bibitem{Sonid}
+Sonid - ¡aprende teoría musical fácilmente con sonid, una aplicación para
+  ios y android!
+\newblock \url{https://sonid.app/es-es/}, 2020.
+
+\end{thebibliography}

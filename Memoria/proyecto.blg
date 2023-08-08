@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: proyecto.aux
+The style file: plain.bst
+Database file #1: capitulos/refs.bib
+Warning--I didn't find a database entry for "sharedpreferences"
+Warning--I didn't find a database entry for "fft"
+You've used 21 entries,
+            2118 wiz_defined-function locations,
+            584 strings with 5793 characters,
+and the built_in function-call counts, 3723 in all, are:
+= -- 363
+> -- 54
+< -- 0
++ -- 33
+- -- 12
+* -- 145
+:= -- 465
+add.period$ -- 44
+call.type$ -- 21
+change.case$ -- 88
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 154
+empty$ -- 481
+format.name$ -- 12
+if$ -- 904
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 2
+newline$ -- 89
+num.names$ -- 4
+pop$ -- 141
+preamble$ -- 1
+purify$ -- 67
+quote$ -- 0
+skip$ -- 166
+stack$ -- 0
+substring$ -- 126
+swap$ -- 21
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 84
+warning$ -- 0
+while$ -- 5
+width$ -- 23
+write$ -- 176
+(There were 2 warnings)

@@ -39,7 +39,7 @@ Mongo Compass es una herramienta interactiva para la consulta, la gestión y el 
 
 \subsection{Postman}
 Postman es una plataforma API para diseñar, construir, probar e iterar APIs. Se utilizará en la implementación de nuestra aplicación para comprobar el funcionamiento de las rutas especificadas y codificadas en el backend. Además, podremos realizar una documentación de nuestra API mediante
-esta herramienta para facilitar la comprensión y el mantenimiento de cada ruta.
+esta herramienta para facilitar la comprensión y el mantenimiento de cada ruta ~\cite{postman}.
 
 
 
@@ -196,7 +196,7 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
     \item \textbf{Intercambio de token:} El servidor proporciona un token al usuario cuando se registra o inicia sesión. Este token se añade a las peticiones 
     que se hagan a la API. De esta forma, garantizamos que se cumple el requisito de seguridad de la sesión y 
     que todas las peticiones válidas que se hagan a la API son de usuarios registrados. Además, el token fija una fecha de expiración al crearse para aumentar
-     la seguridad del usuario. Esta funcionalidad se ha logrado con el paquete \textit{jsonwebtoken} de NodeJS.
+     la seguridad del usuario. Esta funcionalidad se ha logrado con el paquete \textit{jsonwebtoken} de NodeJS ~\cite{JWT}.
     El diagrama que explica el proceso de intercambio de token se muestra en la siguiente imagen:
 
     \begin{figure}[H]
@@ -208,7 +208,7 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
 
     \item \textbf{Sesión entre instancias:} La sesión se mantiene entre instancias de la aplicación. Es decir, si el usuario cierra la aplicación y 
     la vuelve a abrir, no tendrá que volver a iniciar sesión si no ha cerrado la sesión o si el token no ha expirado. 
-    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la biblioteca \textit{shared\_preferences}. 
+    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la biblioteca \textit{shared\_preferences} ~\cite{sharedpreferences}.
     De esta forma, cuando el usuario inicia sesión, el token se almacena en el almacenamiento local del dispositivo 
     y cuando el usuario cierra la aplicación y la vuelve a abrir, el token se recupera del almacenamiento local del dispositivo y se comprueba si es correcto. 
     Si es correcto, se pasa a la siguiente pantalla. Si no es correcto, se vuelve a la pantalla de inicio de sesión.
@@ -525,7 +525,7 @@ debe ser fiel a la partitura que se muestra en la imagen de la pregunta.
 
 \paragraph*{Lógica}
 Para realizar la lógica de esta pantalla se ha utilizado la biblioteca \textit{flutter\_fft}, que utiliza la transformada de Fourier de una señal de audio para obtener la frecuencia que se utiliza para determinar el tono del sonido,
- y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia.
+ y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia ~\cite{fft}.
 Para ello, la biblioteca utiliza un \textit{StreamBuilder} que se encarga de obtener la frecuencia de la señal de audio. 
 Se han realizado algunas modificaciones al código de la biblioteca para que la detección de notas sea más precisa y
  se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
@@ -893,7 +893,7 @@ en la pantalla de creación de lecciones al pulsar el botón correspondiente.
 
 Para subir una imagen se ha hecho uso de la biblioteca \textit{image\_picker}, que permite al usuario seleccionar una imagen de su galería y
 devuelve la ruta de la imagen seleccionada. Una vez tenemos el archivo de la imagen, se manda una petición de tipo multipart con la imagen a la API para que la suba al servidor.
-El almacenamiento de la imagen utiliza la funcionalidad proporcionada por el paquete de NodeJS llamado \textit{multer}. 
+El almacenamiento de la imagen utiliza la funcionalidad proporcionada por el paquete de NodeJS llamado \textit{multer} ~\cite{multerpackage}. 
 Este paquete permite la subida de archivos al servidor y la creación de carpetas para almacenar dichos archivos.
 La ruta de la petición es \textit{POST /api/lesson/upload-image}. La API devolverá un código de estado 200 si la operación se ha realizado correctamente. 
 En caso contrario, se mostrará un mensaje de error.
