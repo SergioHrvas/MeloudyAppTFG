@@ -7,6 +7,10 @@ Putu Adi.
 \newblock {\em International Journal of Advanced Computer Science and
   Applications}, 6, 09 2015.
 
+\bibitem{androidstudio}
+Android studio.
+\newblock \url{https://developer.android.com/studio}, 2013.
+
 \bibitem{angular}
 Angular.
 \newblock \url{https://angular.io/}, 2016.
@@ -37,6 +41,34 @@ Expressjs.
 Flutter - build apps for any screen.
 \newblock \url{https://flutter.dev/}, 2017.
 
+\bibitem{flutterfftpackage}
+flutter\_fft | flutter package.
+\newblock \url{https://pub.dev/packages/flutter\_fft}, 2020.
+
+\bibitem{flutterdriver}
+An introduction to integration testing | flutter.
+\newblock
+  \url{hhttps://docs.flutter.dev/cookbook/testing/integration/introduction},
+  2018.
+
+\bibitem{fluttertest}
+flutter\_test library - dart api.
+\newblock
+  \url{https://api.flutter.dev/flutter/flutter_test/flutter\_test-library.html},
+  2017.
+
+\bibitem{git}
+Git.
+\newblock \url{https://git-scm.com/}, 2005.
+
+\bibitem{github}
+Github: Let\'s build from here.
+\newblock \url{https://github.com/}, 2008.
+
+\bibitem{jira}
+Jira | software de seguimiento de proyectos e incidencias.
+\newblock \url{https://www.atlassian.com/es/software/jira}, 2002.
+
 \bibitem{JWT}
 jsonwebtoken - npm.
 \newblock \url{https://www.npmjs.com/package/jsonwebtoken}, 2013.
@@ -48,6 +80,10 @@ Kotlin programming language.
 \bibitem{mariadb}
 Mariadb foundation - mariadb.org.
 \newblock \url{https://mariadb.org/}, 2009.
+
+\bibitem{mongocompas}
+Mongodb: La plataforma de datos para aplicaciones.
+\newblock \url{https://www.mongodb.com/es/}, 2007.
 
 \bibitem{mongodb}
 Mongodb: La plataforma de datos para aplicaciones.
@@ -73,6 +109,10 @@ Documentación | nodejs.
 Postman.
 \newblock \url{https://www.postman.com/}, 2012.
 
+\bibitem{provider}
+provider | flutter package.
+\newblock \url{https://pub.dev/packages/provider}, 2018.
+
 \bibitem{react}
 React.
 \newblock \url{https://es.react.dev/}, 2013.
@@ -81,6 +121,13 @@ React.
 React native · learn once, write anywhere.
 \newblock \url{https://reactnative.dev/}, 2015.
 
+\bibitem{cursonode}
+Victor Robles.
+\newblock Desarrollar una red social con javascript, angular y nodejs.
+\newblock
+  \url{https://www.udemy.com/course/desarrollar-una-red-social-con-javascript-angular-y-nodejs-mongodb},
+  2023.
+
 \bibitem{mern}
 Shukla Santosh~Kumar, Shivam Dubey, Tarun Rastogi, Nikita Srivastava, and
   Editor Ijmtst.
@@ -88,9 +135,24 @@ Shukla Santosh~Kumar, Shivam Dubey, Tarun Rastogi, Nikita Srivastava, and
 \newblock {\em International Journal for Modern Trends in Science and
   Technology}, 8:102--105, 06 2022.
 
+\bibitem{cursoflutter}
+Maximilian Schwarzmüller.
+\newblock Flutter \& dart - the complete guide 2023 edition.
+\newblock
+  \url{https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/},
+  2023.
+
+\bibitem{sharedpreferencespackage}
+shared\_preferences | flutter package.
+\newblock \url{https://pub.dev/packages/shared\_preferences}, 2017.
+
 \bibitem{Sonid}
 Sonid - ¡aprende teoría musical fácilmente con sonid, una aplicación para
   ios y android!
 \newblock \url{https://sonid.app/es-es/}, 2020.
+
+\bibitem{visualstudio}
+Visual studio code - code editing. redefined.
+\newblock \url{https://code.visualstudio.com/}, 2015.
 
 \end{thebibliography}

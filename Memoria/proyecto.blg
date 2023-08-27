@@ -2,48 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: proyecto.aux
 The style file: plain.bst
-Database file #1: capitulos/refs.bib
-Warning--I didn't find a database entry for "sharedpreferences"
-Warning--I didn't find a database entry for "fft"
-You've used 21 entries,
+Database file #1: refs.bib
+You've used 34 entries,
             2118 wiz_defined-function locations,
-            584 strings with 5793 characters,
-and the built_in function-call counts, 3723 in all, are:
-= -- 363
-> -- 54
+            629 strings with 7111 characters,
+and the built_in function-call counts, 5923 in all, are:
+= -- 579
+> -- 79
 < -- 0
-+ -- 33
-- -- 12
-* -- 145
-:= -- 465
-add.period$ -- 44
-call.type$ -- 21
-change.case$ -- 88
++ -- 51
+- -- 16
+* -- 212
+:= -- 733
+add.period$ -- 72
+call.type$ -- 34
+change.case$ -- 140
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 154
-empty$ -- 481
-format.name$ -- 12
-if$ -- 904
+cite$ -- 34
+duplicate$ -- 245
+empty$ -- 778
+format.name$ -- 16
+if$ -- 1447
 int.to.chr$ -- 0
-int.to.str$ -- 21
+int.to.str$ -- 34
 missing$ -- 2
-newline$ -- 89
-num.names$ -- 4
-pop$ -- 141
+newline$ -- 143
+num.names$ -- 8
+pop$ -- 232
 preamble$ -- 1
-purify$ -- 67
+purify$ -- 106
 quote$ -- 0
-skip$ -- 166
+skip$ -- 270
 stack$ -- 0
-substring$ -- 126
-swap$ -- 21
+substring$ -- 192
+swap$ -- 34
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
+type$ -- 136
 warning$ -- 0
-while$ -- 5
-width$ -- 23
-write$ -- 176
-(There were 2 warnings)
+while$ -- 9
+width$ -- 36
+write$ -- 284

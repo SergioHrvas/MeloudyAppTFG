@@ -7,34 +7,34 @@ En el desarrollo de la aplicación se utilizarán varias herramientas externas q
 de ellas:
 
 \subsection{Git \& Github}
-Git es una herramienta para el control de versiones. Nos permitirá mantener un historial de cambios que nos ayudarán en la implementación cuando necesitemos "volver atrás", así como poder trabajar en distintas ramas cuando la situación lo requiera (por ejemplo, si encontramos un error puedo abrir una nueva rama para poder trabajar exclusivamente en arreglarlo).
+Git es una herramienta para el control de versiones. Nos permitirá mantener un historial de cambios que nos ayudarán en la implementación cuando necesitemos "volver atrás", así como poder trabajar en distintas ramas cuando la situación lo requiera (por ejemplo, si encontramos un error puedo abrir una nueva rama para poder trabajar exclusivamente en arreglarlo) ~\cite{git}.
 
-Como complemento a Git, usaremos Github, una plataforma para alojar repositorios de Git. En Github tendremos un repositorio para el frontend y para el backend, donde se irán subiendo los cambios que se vayan realizando. Esto facilitará la posibilidad de trabajar en el desarrollo en varios dispositivos permitiendo un desarrollo más flexible en cuanto a en qué dispositivo y cuándo trabajar. 
+Como complemento a Git, usaremos Github, una plataforma para alojar repositorios de Git. En Github tendremos un repositorio para el frontend y para el backend, donde se irán subiendo los cambios que se vayan realizando. Esto facilitará la posibilidad de trabajar en el desarrollo en varios dispositivos permitiendo un desarrollo más flexible en cuanto a en qué dispositivo y cuándo trabajar ~\cite{github}.
 
 \subsection{Jira}
-Jira es una herramienta para la gestión de proyectos. Usaré Jira para facilitar el cumplimiento de algunos de los principios de metodologías ágiles que usamos en la planificación y controlar el seguimiento de esta última. En Jira tendré un Sprint Backlog, cuyas historias de usuario y tareas irán moviéndose a los distintos Sprints para su desarrollo.
+Jira es una herramienta para la gestión de proyectos. Usaré Jira para facilitar el cumplimiento de algunos de los principios de metodologías ágiles que usamos en la planificación y controlar el seguimiento de esta última. En Jira tendré un Sprint Backlog, cuyas historias de usuario y tareas irán moviéndose a los distintos Sprints para su desarrollo. ~\cite{jira}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{imagenes/c7/jira.png}
   \caption{Captura de pantalla de Jira. En ella se puede ver el Sprint Backlog, donde se encuentran las historias de usuario repartidas entre los sprints.}
-  \label{fig:login}
+  \label{fig:jira}
 \end{figure}
 
 
 \subsection{Visual Studio Code \& Android Studio}
-Visual Studio Code es el editor de código fuente que se usará para implementar la parte backend (NodeJS) de nuestro sistema. Nos permitirá un desarrollo más cómodo y eficiente, ya que nos ofrece una gran variedad de herramientas para el desarrollo, como la posibilidad de depurar el código, herramientas para el formato de los distintos lenguajes de programación, visualizador de versiones de Git, etc.
+Visual Studio Code es el editor de código fuente que se usará para implementar la parte backend (NodeJS) de nuestro sistema. Nos permitirá un desarrollo más cómodo y eficiente, ya que nos ofrece una gran variedad de herramientas para el desarrollo, como la posibilidad de depurar el código, herramientas para el formato de los distintos lenguajes de programación, visualizador de versiones de Git, etc ~\cite{visualstudio}.
 
-Android Studio es el entorno de desarrollo integrado oficial para la plataforma Android. Se utilizará para implementar la parte de frontend (flutter) y para ejecutar la aplicación en un simulador de Android o en nuestro propio dispositivo físico.
+Android Studio es el entorno de desarrollo integrado oficial para la plataforma Android. Se utilizará para implementar la parte de frontend (flutter) y para ejecutar la aplicación en un simulador de Android o en nuestro propio dispositivo físico ~\cite{androidstudio}.
 
 \subsection{Mongo Compass}
-Mongo Compass es una herramienta interactiva para la consulta, la gestión y el análisis de los datos en MongoDB. Se utilizará para comprobar si las consultas se realizan correctamente y para añadir datos a la base de datos (lecciones, preguntas...) de forma fácil, cómoda y rápida.
+Mongo Compass es una herramienta interactiva para la consulta, la gestión y el análisis de los datos en MongoDB. Se utilizará para comprobar si las consultas se realizan correctamente y para añadir datos a la base de datos (lecciones, preguntas...) de forma fácil, cómoda y rápida ~\cite{mongocompas}.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{imagenes/c7/compass.png}
   \caption{Captura de pantalla de Jira. En ella se puede ver el Sprint Backlog, donde se encuentran las historias de usuario repartidas entre los sprints.}
-  \label{fig:login}
+  \label{fig:mongo}
 \end{figure}
 
 \subsection{Postman}
@@ -52,7 +52,7 @@ La estructura del proyecto se puede ver en la siguiente imagen:
   \centering
   \includegraphics[width=\textwidth]{imagenes/c7/estructura.png}
   \caption{Estructura del proyecto, donde se puede ver la parte de frontend y la parte de backend.}
-  \label{fig:login}
+  \label{fig:estructuraproyecto}
 \end{figure}
 
 En la figura anterior podemos ver que el desarrollo del proyecto se ha realizado en dos partes, una parte de frontend y otra de backend.
@@ -70,7 +70,7 @@ La parte de frontend se ha desarrollado en Flutter, por lo que se han dividido l
 
 \begin{itemize}
   \item \textit{main.dart}: Archivo principal de la aplicación. En él se configura la aplicación y se importan las rutas.
-  \item \textit{providers}: Carpeta que contiene los providers de la aplicación. Los providers son clases que se encargan de gestionar el estado de la aplicación.
+  \item \textit{providers}: Carpeta que contiene los providers de la aplicación. Los providers son clases que se encargan de gestionar el estado de la aplicación ~\cite{provider}.
   \item \textit{screen}: Carpeta que contiene las pantallas de la aplicación. Dentro se encuentran distintos archivos que implementan cada pantalla de la aplicación.
   \item \textit{widgets}: Carpeta que contiene los widgets de la aplicación. Dentro se encuentran los archivos de los widgets que se utilizan en las distintas pantallas de la aplicación.
 \end{itemize}
@@ -154,16 +154,9 @@ el diagrama y se han utilizado los nombres "C1, C2, C3..." para referirse a los 
  del widget distribuidor en fila (Row).}
 \newpage
 
-
 \section{Funcionalidad de inicio}
 \label{sec:inicio}
-A continuación presentamos la funcionalidad básica de la aplicación que usará cualquier usuario que se registre:
-
-
-% \subsection{Pantallas y Widgets básicos}
-% \label{sec:widgets}
-% La aplicación cuenta con una serie de pantallas y widgets que se utilizan en todas las pantallas de la aplicación. 
-% Estos widgets se han desarrollado para que se puedan reutilizar en las distintas pantallas de la aplicación. A continuación se describen los widgets y pantallas que se han desarrollado:
+A continuación presentamos la funcionalidad básica de la aplicación que usará cualquier usuario que se registre ~\cite{cursoflutter}:
 
 
 \subsection{Drawer}
@@ -184,7 +177,7 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
 \begin{itemize}
     \item \textbf{Encriptación de la contraseña:} La contraseña del usuario se encripta antes de ser almacenada en la base de datos para evitar que sea
      visible por cualquier persona que tenga acceso a esta. De esta forma garantizamos que se cumple el requisito de seguridad de la contraseña. 
-     Para esto se ha utilizado un algoritmo hash de la biblioteca \textit{bcrypt}.
+     Para esto se ha utilizado un algoritmo hash de la biblioteca \textit{bcrypt} ~\cite{cursonode}.
     El diagrama que explica el proceso de encriptación se muestra en la siguiente imagen:
     \begin{figure}[H]
       \centering
@@ -208,7 +201,7 @@ Se han desarrollado tres características adicionales relacionadas con la sesió
 
     \item \textbf{Sesión entre instancias:} La sesión se mantiene entre instancias de la aplicación. Es decir, si el usuario cierra la aplicación y 
     la vuelve a abrir, no tendrá que volver a iniciar sesión si no ha cerrado la sesión o si el token no ha expirado. 
-    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la biblioteca \textit{shared\_preferences} ~\cite{sharedpreferences}.
+    Esto se ha conseguido mediante el almacenamiento del token en la memoria local del dispositivo con la biblioteca \textit{shared\_preferences} ~\cite{sharedpreferencespackage}.
     De esta forma, cuando el usuario inicia sesión, el token se almacena en el almacenamiento local del dispositivo 
     y cuando el usuario cierra la aplicación y la vuelve a abrir, el token se recupera del almacenamiento local del dispositivo y se comprueba si es correcto. 
     Si es correcto, se pasa a la siguiente pantalla. Si no es correcto, se vuelve a la pantalla de inicio de sesión.
@@ -389,7 +382,7 @@ En la siguiente imagen se puede ver la pantalla de una lección:
   \qquad
   \subfloat[\centering Parte 2.]{{ \includegraphics[width=0.38\textwidth]{imagenes/c7/leccioncompo2.png} }}%
   \caption{Pantalla de una lección en concreto con los contenidos (títulos, texto, multimedia...) del temario y los dos botones relacionados con los tests.}%
-  \label{fig:example}%
+  \label{fig:leccioncompovistas}%
 \end{figure}
 
 
@@ -457,14 +450,14 @@ A continuación se muestra la pantalla de una pregunta de selección única, en 
   \qquad
   \subfloat[\centering Selección única con una respuesta seleccionada.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/selecunica2.png} }}%
   \caption{Pantalla de una pregunta de selección única en la que las opciones se muestran en forma de lista.}%
-  \label{fig:example}%
+  \label{fig:selecunica}%
 \end{figure}
 
 \newpage
 
 \subsubsection{Pregunta de selección múltiple}\mbox{}\\
 
-\label{sec:pregunic1}
+\label{sec:pregumult1}
 \textit{Desarrollado en el Sprint 6}
 
 A continuación se muestra la pantalla de una pregunta de selección múltiple, en la que el usuario deberá seleccionar una o varias opciones de la lista de opciones:
@@ -475,7 +468,7 @@ A continuación se muestra la pantalla de una pregunta de selección múltiple, 
   \qquad
   \subfloat[\centering Selección múltiple con varias respuestas seleccionadas.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/selecmulti2.png} }}%
   \caption{Pantalla de una pregunta de selección múltiple en la que las opciones se muestran en forma de lista.}%
-  \label{fig:example}%
+  \label{fig:selecmulti}%
 \end{figure}
 
 
@@ -484,7 +477,7 @@ A continuación se muestra la pantalla de una pregunta de selección múltiple, 
 
 \subsubsection{Pregunta de entrada de texto}
 
-\label{sec:pregunic1}
+\label{sec:pregutext1}
 \textit{Desarrollado en el Sprint 6}
 
 A continuación se muestra la pantalla de una pregunta de entrada de texto, en la que el usuario deberá escribir la respuesta en un campo de texto:
@@ -495,13 +488,13 @@ A continuación se muestra la pantalla de una pregunta de entrada de texto, en l
   \qquad
   \subfloat[\centering Entrada de texto con respuesta introducida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradatexto2.png} }}%
   \caption{Pantalla de una pregunta de entrada de texto. }%
-  \label{fig:example}%
+  \label{fig:textpreg}%
 \end{figure}
 
 \newpage
 \subsubsection{Pregunta de micrófono}
 
-\label{sec:pregunic1}
+\label{sec:pregunmicro1}
 \textit{Desarrollado en el Sprint 7}
 
 A continuación se muestra la pantalla de una pregunta de micrófono, en la que el usuario deberá grabar la respuesta mediante el micrófono del dispositivo. Esta respuesta
@@ -513,19 +506,19 @@ debe ser fiel a la partitura que se muestra en la imagen de la pregunta.
   \qquad
   \subfloat[\centering Pregunta de micrófono introduciendo respuesta.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofono2.png} }}%
   \caption{Pantallas de una pregunta de micrófono. }%
-  \label{fig:example}%
+  \label{fig:micropreg}%
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.37\textwidth]{imagenes/c7/entradamicrofono3.png}
   \caption{Pregunta de micrófono con respuesta introducida.}
-  \label{fig:login}
+  \label{fig:micropreg2}
 \end{figure}
 
 \paragraph*{Lógica}
 Para realizar la lógica de esta pantalla se ha utilizado la biblioteca \textit{flutter\_fft}, que utiliza la transformada de Fourier de una señal de audio para obtener la frecuencia que se utiliza para determinar el tono del sonido,
- y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia ~\cite{fft}.
+ y obtener la nota musical que se está reproduciendo a partir de dicho valor de frecuencia ~\cite{flutterfftpackage}.
 Para ello, la biblioteca utiliza un \textit{StreamBuilder} que se encarga de obtener la frecuencia de la señal de audio. 
 Se han realizado algunas modificaciones al código de la biblioteca para que la detección de notas sea más precisa y
  se pueda obtener la nota musical real que se está reproduciendo (había cierto desajuste que detectaba medio semitono más de lo que se estaba tocando).
@@ -544,7 +537,7 @@ Si el usuario no está conforme con la respuesta, puede pulsar el botón de ``Re
 Por otro lado, si está conforme, puede pulsar el botón de siguiente para pasar a la siguiente pregunta.
 
 \subsubsection{Resultado del test}
-\label{sec:pregunta}
+\label{sec:resultadotest}
 \textit{Desarrollado en el Sprint 6}
 
 A continuación se muestra la pantalla de resultado del test, en la que se muestra el número y el porcentaje de aciertos respecto a las preguntas. 
@@ -560,7 +553,7 @@ Además, se muestra una barra de progreso que muestra el porcentaje de aciertos 
 \end{figure}
 
 \paragraph*{Vista}
-\label{sec:vista}
+\label{sec:vistaresultado}
 
 Para realizar la vista de la pantalla se ha utilizado de nuevo el widget \textit{Column} para poder mostrar los elementos de la pantalla de forma vertical. 
 Dentro de dicho widget tendremos:
@@ -587,7 +580,7 @@ El usuario podrá revisar las preguntas que haya contestado en un test. Como se 
 existe un botón para poder revisarlo. El usuario podrá ver las preguntas que haya contestado y las respuestas que haya seleccionado con la validación de estas.
 
 \paragraph*{Vista}
-\label{sec:vista}
+\label{sec:vistarevisar}
 La vista de la pantalla de revisión de preguntas es muy similar a la vista de la pantalla de la pregunta. 
 La diferencia es que se muestran las respuestas que ha seleccionado el usuario si son correctas o no.
 Por tanto, solo se han cambiado los colores de los botones y de los textos para mostrar si la respuesta es correcta o no.
@@ -627,7 +620,7 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 \newpage
 
 \subsubsection{Revisión de pregunta de selección múltiple}\mbox{}\\
-\label{sec:pregunic1b}
+\label{sec:pregunmulti1b}
 \textit{Desarrollado en el Sprint 6}
 
 \begin{figure}[H]%
@@ -643,7 +636,7 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 
 \subsubsection{Revisión de pregunta de entrada de texto}\mbox{}\\
 
-\label{sec:pregunic1b}
+\label{sec:preguntext1b}
 \textit{Desarrollado en el Sprint 6}
 \begin{figure}[H]%
   \centering
@@ -651,14 +644,14 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
   \qquad
   \subfloat[\centering Revisión de entrada de texto fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradatextob2.png} }}%
   \caption{Pantalla de la pregunta de entrada de texto en revisión.}%
-  \label{fig:example}%
+  \label{fig:revisiontexto}%
 \end{figure}
 
 \newpage
 
 \subsubsection{Revisión de pregunta de entrada de micrófono}\mbox{}\\
 
-\label{sec:pregunic1b}
+\label{sec:pregunmicro1b}
 \textit{Desarrollado en el Sprint 7}
 \begin{figure}[H]%
   \centering
@@ -666,7 +659,7 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
   \qquad
   \subfloat[\centering Revisión de entrada de micrófono fallida.]{{ \includegraphics[width=0.45\textwidth]{imagenes/c7/entradamicrofonob2.png} }}%
   \caption{Pantalla de la pregunta de entrada de micrófono en revisión.}%
-  \label{fig:example}%
+  \label{fig:revisionmicro}%
 \end{figure}
 
 \newpage
@@ -676,14 +669,14 @@ se devuelve el color verde, y si es \textit{false}, se devuelve el color rojo.
 \label{sec:historial}
 
 \paragraph*{Vista}
-\label{sec:vista}
+\label{sec:vistahistorial}
 La vista de esta pantalla consiste en un distribuidor de columnas (Column) que contiene una lista de tests (ListView) verticalmente. 
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.44\textwidth]{imagenes/c7/historialtest.png}
   \caption{Pantalla de dashboard del profesor con las opciones de gestión disponibles para el administrador.}
-  \label{fig:login}
+  \label{fig:historialtests}
 \end{figure}
 
 
@@ -692,7 +685,7 @@ La vista de esta pantalla consiste en un distribuidor de columnas (Column) que c
 \label{sec:miperfil}
 
 \paragraph*{Vista}
-\label{sec:vista}
+\label{sec:vistaperfil}
 Se ha utilizado un distribuidor de columnas (Column) que contienen los datos de los usuarios.
 En la parte superior de la pantalla se muestra la foto de perfil del usuario, y debajo de la foto se muestra el nombre, 
 el apellido, el nombre de usuario (username), el correo electrónico y el rol.
@@ -702,7 +695,7 @@ el apellido, el nombre de usuario (username), el correo electrónico y el rol.
   \centering
   \includegraphics[width=0.44\textwidth]{imagenes/c7/miperfil.png}
   \caption{Pantalla del perfil del usuario.}
-  \label{fig:login}
+  \label{fig:miperfil}
 \end{figure}
 
 
@@ -1023,7 +1016,7 @@ En las siguientes imágenes se puede ver la pantalla de creación de preguntas d
   \qquad
   \subfloat[\centering Creación de pregunta 'única' rellena \#2.]{{ \includegraphics[width=0.30\textwidth]{imagenes/c7/crearpreguntaunica3.png} }}%
   \caption{Pantalla de creación de pregunta de tipo 'única' con datos introducidos.}%
-  \label{fig:crearpreguntaunica}%
+  \label{fig:crearpreguntaunica2}%
 \end{figure}
 
 
